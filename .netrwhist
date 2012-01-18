@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/var/www/lims_helper/lib/lims_helper'
+let g:netrw_dirhist_2='/var/www/user_center_helper/lib/user_center_helper'
+let g:netrw_dirhist_3='/var/www/acts_as_menu/lib/acts_as_menu'
+let g:netrw_dirhist_4='/var/www/acts_as_lims/lib/acts_as_lims'
+let g:netrw_dirhist_5='/var/www/lims_helper/lib/lims_helper'
+let g:netrw_dirhist_6='/var/www/user_center_helper/lib'
+let g:netrw_dirhist_7='/var/www/user_center_helper/.git'
+let g:netrw_dirhist_8='/var/www/user_center_helper/lib/user_center_helper'

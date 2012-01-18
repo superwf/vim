@@ -1,0 +1,322 @@
+let SessionLoad = 1
+if &cp | set nocp | endif
+let s:cpo_save=&cpo
+set cpo&vim
+inoremap <expr> <Plug>VimimOneKey g:vimim_onekey()
+map Q gq
+vmap [% [%m'gv``
+nmap \vl <Plug>VLToggle
+vmap ]% ]%m'gv``
+vmap a% [%v]%
+nmap gx <Plug>NetrwBrowseX
+noremap <silent> n :call g:vimim_search_next()n
+nnoremap <silent> <Plug>NetrwBrowseX :call netrw#NetrwBrowseX(expand("<cWORD>"),0)
+nmap <silent> <Plug>VLToggle :let g:VeryLiteral = !g:VeryLiteral| echo "VeryLiteral " . (g:VeryLiteral ? "On" : "Off")
+vmap <kMultiply> *
+map <F4> "*p
+map <F2> :NERDTree:set number
+map <F3> :up
+imap <silent>  <Plug>VimIM
+imap <silent>  <Plug>VimimOneKey
+abbr =e =end
+abbr =b =begin
+let &cpo=s:cpo_save
+unlet s:cpo_save
+set backspace=indent,eol,start
+set expandtab
+set fileencodings=utf-8,ucs-bom,euc-jp,gb18030,gbk,gb2312,cp936
+set helplang=cn
+set history=50
+set hlsearch
+set incsearch
+set isident=@,48-57,_,192-255,$
+set iskeyword=@,48-57,_,192-255,$
+set nomodeline
+set mouse=a
+set omnifunc=rubycomplete#Complete
+set printoptions=paper:a4
+set pumheight=10
+set ruler
+set runtimepath=~/.vim,/var/lib/vim/addons,/usr/share/vim/vimfiles,/usr/share/vim/vim72,/usr/share/vim/vimfiles/after,/var/lib/vim/addons/after,~/.vim/after
+set shiftwidth=2
+set showcmd
+set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
+set suffixesadd=.yml,.csv
+set tabstop=2
+set viminfo='200,%,!,<50,s10,h,rA,rB,/50,:50
+set window=21
+let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
+let v:this_session=expand("<sfile>:p")
+silent only
+cd /var/www/lims
+if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
+  let s:wipebuf = bufnr('%')
+endif
+set shortmess=aoO
+badd +18 app/controllers/primer_dilutions_controller.rb
+badd +1 /var/www/user_center_helper/lib/models/record_user_observer.rb
+badd +80 Gemfile
+badd +329 app/models/sample_board.rb
+badd +27 app/models/sample.rb
+badd +10 app/views/reactions/_sample_board.html.haml
+badd +1 app/models/reaction.rb
+badd +20 app/controllers/prechecks_controller.rb
+badd +6 app/views/prechecks/new.html.haml
+badd +10 app/views/prechecks/_board.html.haml
+badd +23 app/models/precheck.rb
+badd +19 app/controllers/reactions_controller.rb
+badd +36 app/views/reactions/new.html.haml
+badd +7 app/views/reactions/_to_reaction_sample_boards.html.haml
+badd +26 app/views/reactions/sample_board.js.erb
+badd +1 public/stylesheets/body_background.css
+badd +41 app/models/reaction_board.rb
+badd +14 db/migrate/20111103015429_create_reaction_boards.rb
+badd +7 app/views/reaction_boards/_reaction_board_mapL.html.haml
+badd +11 app/controllers/reaction_boards_controller.rb
+badd +10 app/views/reaction_boards/primer_map.html.haml
+badd +7 app/views/reaction_boards/show.html.haml
+badd +8 app/views/reaction_boards/show.js.erb
+badd +1 app/views/reaction_boards/_board.html.haml
+badd +1 app/views/reaction_boards/_boardL.html.haml
+badd +8 app/views/reaction_boards/primer_mapL.html.haml
+badd +1 app/views/reaction_boards/_quadrant_primer_map.html.haml
+badd +10 app/views/reaction_boards/_primer_mapL.html.haml
+badd +1 app/views/reactions/_transaction_by_layer.html.haml
+badd +12 app/views/reactions/_transaction_primer.html.haml
+badd +15 app/views/reaction_boards/_quadrant.html.haml
+badd +1 app/views/reaction_boards/_reaction_board_mapM.html.haml
+badd +6 app/views/reaction_boards/_boardM.html.haml
+badd +151 spec/fixtures/menus.yml
+badd +14 app/models/primer_observer.rb
+badd +1 app/controllers/plasmid_codes_controller.rb
+badd +7 app/controllers/plasmids_controller.rb
+badd +39 app/views/plasmids/_board.html.haml
+badd +8 app/views/reactions/_transaction_single_quadrant.html.haml
+badd +42 app/views/reactions/_transaction_quadrant.html.haml
+badd +11 config/routes.rb
+badd +95 app/controllers/sample_boards_controller.rb
+badd +39 app/controllers/bacteria_swayings_controller.rb
+badd +11 app/models/bacteria_swaying.rb
+badd +1 app/helpers/sample_boards_helper.rb
+badd +5 app/helpers/reaction_boards_helper.rb
+badd +12 app/views/sample_boards/running.html.haml
+badd +1 app/controllers/electrophoresis_controller.rb
+badd +44 app/views/reactions/_transaction_double_quadrant.html.haml
+badd +13 NERD_tree_3
+badd +13 config/locales/samples/cn.yml
+badd +21 app/models/sample_cancel.rb
+badd +97 app/models/primer.rb
+badd +5 app/controllers/primer_logs_controller.rb
+badd +8 app/models/primer_log.rb
+badd +3 app/views/primer_logs/index.html.haml
+badd +8 db/migrate/20111110060809_create_primer_dilutions.rb
+badd +7 db/migrate/20111128081527_create_primer_logs.rb
+badd +12 app/views/primer_logs/_search.html.haml
+badd +6 app/controllers/users_controller.rb
+badd +7 app/views/users/index.js.erb
+badd +8 app/models/user.rb
+badd +4 app/views/users/_search.html.haml
+badd +6 app/views/users/_list.html.haml
+badd +37 app/views/primers/index.js.erb
+badd +28 app/views/primers/_list.html.haml
+badd +19 app/views/primer_logs/_list.html.haml
+badd +1 app/models/primer_board.rb
+badd +12 app/views/primers/index.html.haml
+badd +1 app/controllers/primers_controller.rb
+badd +15 app/views/reaction_boards/to_confirm.html.haml
+badd +1 app/controllers/precheck_codes_controller.rb
+badd +225 spec/fixtures/primers.yml
+badd +8 spec/fixtures/primer_board_types.yml
+badd +1 spec/fixtures/primer_holes.yml
+badd +5 spec/fixtures/primer_boards.yml
+badd +7 db/seeds.rb
+badd +5 /home/wangfan/desktop/template.csv
+badd +12 app/controllers/primer_boards_controller.rb
+badd +10 app/views/primer_boards/index.html.haml
+badd +21 app/views/primer_boards/_board.html.haml
+badd +59 app/models/primer_dilution.rb
+badd +1 app/controllers/abi_records_controller.rb
+badd +7 app/views/plasmids/new.html.haml
+badd +23 app/assets/stylesheets/partial/_selectable.scss
+badd +2 /var/www/user_center/app/views/home/index.html.haml
+badd +2 app/views/home/index.html.haml
+badd +28 app/assets/javascripts/jquery.cookie.js
+badd +1 app/assets/javascripts/jquery-ui.min.js
+badd +35 app/assets/javascripts/application.js
+badd +25 app/views/primer_dilutions/_primers.html.haml
+badd +7 app/views/reaction_boards/_confirm_boardL.html.haml
+badd +9 app/views/reaction_boards/running.html.haml
+badd +3 config/locales/reaction_boards/cn.yml
+badd +6 app/views/reaction_boards/_reaction_count.html.haml
+badd +13 app/views/heat_cycles/new.html.haml
+badd +4 app/views/alcohol_purifications/new.html.haml
+badd +7 app/models/heat_cycle.rb
+badd +10 app/models/alcohol_purification.rb
+badd +1 app/views/abi_records/new.html.haml
+badd +10 app/views/abi_records/_form.html.haml
+badd +11 app/controllers/heat_cycles_controller.rb
+badd +1 app/models/abi_record.rb
+badd +4 app/models/abi.rb
+badd +12 db/migrate/20111122064429_create_abi_records.rb
+badd +4 mount_abis
+badd +5 ../primer_synthesis/fetch_email.rb
+badd +4 mount_abis.rb
+badd +10 db/migrate/20111122064322_create_abis.rb
+badd +5 app/controllers/abis_controller.rb
+badd +8 config/locales/abis/cn.yml
+badd +6 spec/fixtures/abis.yml
+silent! argdel *
+edit app/models/abi.rb
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+let s:cpo_save=&cpo
+set cpo&vim
+nmap <buffer> gf <Plug>RailsTabFind
+nmap <buffer> f <Plug>RailsSplitFind
+nmap <buffer> [f <Plug>RailsAlternate
+nmap <buffer> ]f <Plug>RailsRelated
+nmap <buffer> gf <Plug>RailsFind
+nnoremap <buffer> <silent> <Plug>RailsTabFind :RTfind
+nnoremap <buffer> <silent> <Plug>RailsVSplitFind :RVfind
+nnoremap <buffer> <silent> <Plug>RailsSplitFind :RSfind
+nnoremap <buffer> <silent> <Plug>RailsFind :REfind
+nnoremap <buffer> <silent> <Plug>RailsRelated :R
+nnoremap <buffer> <silent> <Plug>RailsAlternate :A
+let &cpo=s:cpo_save
+unlet s:cpo_save
+setlocal keymap=
+setlocal noarabic
+setlocal noautoindent
+setlocal balloonexpr=RubyBalloonexpr()
+setlocal nobinary
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal nocindent
+setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal comments=:#
+setlocal commentstring=#\ %s
+setlocal complete=.,w,b,u,t,i
+setlocal completefunc=syntaxcomplete#Complete
+setlocal nocopyindent
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal define=^\\s*def\\s\\+\\(self\\.\\)\\=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal expandtab
+if &filetype != 'ruby'
+setlocal filetype=ruby
+endif
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=croql
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal grepprg=
+setlocal iminsert=2
+setlocal imsearch=2
+setlocal include=^\\s*\\<\\(load\\|w*require\\)\\>
+setlocal includeexpr=RailsIncludeexpr()
+setlocal indentexpr=GetRubyIndent()
+setlocal indentkeys=0{,0},0),0],!^F,o,O,e,=end,=elsif,=when,=ensure,=rescue,==begin,==end
+setlocal noinfercase
+setlocal iskeyword=@-@,@,48-57,128-167,224-235,_
+setlocal keywordprg=ri
+setlocal nolinebreak
+setlocal nolisp
+setlocal nolist
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:]
+setlocal nomodeline
+setlocal modifiable
+setlocal nrformats=octal,hex
+set number
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=rubycomplete#Complete
+setlocal path=.,/var/www/lims,/var/www/lims/app,/var/www/lims/app/models,/var/www/lims/app/controllers,/var/www/lims/app/helpers,/var/www/lims/config,/var/www/lims/lib,/var/www/lims/app/views,/var/www/lims/spec,/var/www/lims/spec/models,/var/www/lims/spec/controllers,/var/www/lims/spec/helpers,/var/www/lims/spec/views,/var/www/lims/spec/lib,/var/www/lims/spec/requests,/var/www/lims/spec/integration,/var/www/lims/app/*,/var/www/lims/vendor,/var/www/lims/vendor/plugins/*/lib,/var/www/lims/vendor/plugins/*/test,/var/www/lims/vendor/rails/*/lib,/var/www/lims/vendor/rails/*/test,NOTE:\\\ Gem.all_load_paths\\\ is\\\ deprecated\\\ with\\\ no\\\ replacement.\\\ It\\\ will\\\ be\\\ removed\\\ on\\\ or\\\ after\\\ 2011-10-01.\
+Gem.all_load_paths\\\ called\\\ from\\\ -e:1.\
+NOTE:\\\ Gem.all_partials\\\ is\\\ deprecated\\\ with\\\ no\\\ replacement.\\\ It\\\ will\\\ be\\\ removed\\\ on\\\ or\\\ after\\\ 2011-10-01.\
+Gem.all_partials\\\ called\\\ from\\\ /usr/local/lib/site_ruby/1.9.1/rubygems.rb:258.\
+NOTE:\\\ Gem.all_partials\\\ is\\\ deprecated\\\ with\\\ no\\\ replacement.\\\ It\\\ will\\\ be\\\ removed\\\ on\\\ or\\\ after\\\ 2011-10-01.\
+Gem.all_partials\\\ called\\\ from\\\ /usr/local/lib/site_ruby/1.9.1/rubygems.rb:258.\
+/usr/local/lib/site_ruby/1.9.1/rubygems.rb:259:in\\\ `block\\\ (2\\\ levels)\\\ in\\\ all_load_paths':\\\ undefined\\\ method\\\ `add'\\\ for\\\ \"/usr/lib/ruby/gems/1.9.1\":String\\\ (NoMethodError)\
+\	from\\\ /usr/local/lib/site_ruby/1.9.1/rubygems.rb:427:in\\\ `block\\\ (2\\\ levels)\\\ in\\\ each_load_path'\
+\	from\\\ /usr/local/lib/site_ruby/1.9.1/rubygems.rb:426:in\\\ `each'\
+\	from\\\ /usr/local/lib/site_ruby/1.9.1/rubygems.rb:426:in\\\ `block\\\ in\\\ each_load_path'\
+\	from\\\ /usr/local/lib/site_ruby/1.9.1/rubygems.rb:421:in\\\ `each'\
+\	from\\\ /usr/local/lib/site_ruby/1.9.1/rubygems.rb:421:in\\\ `each_load_path'\
+\	from\\\ /usr/local/lib/site_ruby/1.9.1/rubygems.rb:258:in\\\ `block\\\ in\\\ all_load_paths'\
+\	from\\\ /usr/local/lib/site_ruby/1.9.1/rubygems.rb:257:in\\\ `each'\
+\	from\\\ /usr/local/lib/site_ruby/1.9.1/rubygems.rb:257:in\\\ `all_load_paths'\
+\	from\\\ /usr/local/lib/site_ruby/1.9.1/rubygems/deprecate.rb:62:in\\\ `block\\\ (2\\\ levels)\\\ in\\\ deprecate'\
+\	from\\\ -e:1:in\\\ `<main>'\
+
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norightleft
+setlocal rightleftcmd=search
+setlocal noscrollbind
+setlocal shiftwidth=2
+setlocal noshortname
+setlocal nosmartindent
+setlocal softtabstop=2
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal statusline=
+setlocal suffixesadd=.rb,.rhtml,.erb,.rxml,.builder,.rjs,.mab,.liquid,.haml,.dryml,.mn,.slim
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'ruby'
+setlocal syntax=ruby
+endif
+setlocal tabstop=2
+setlocal tags=/var/www/lims/tmp/tags,./tags,./TAGS,tags,TAGS,/var/www/lims/tags
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal nowinfixheight
+setlocal nowinfixwidth
+setlocal wrap
+setlocal wrapmargin=0
+silent! normal! zE
+let s:l = 10 - ((9 * winheight(0) + 10) / 21)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+10
+normal! 028l
+tabnext 1
+if exists('s:wipebuf')
+  silent exe 'bwipe ' . s:wipebuf
+endif
+unlet! s:wipebuf
+set winheight=1 winwidth=20 shortmess=filnxtToO
+let s:sx = expand("<sfile>:p:r")."x.vim"
+if file_readable(s:sx)
+  exe "source " . fnameescape(s:sx)
+endif
+let &so = s:so_save | let &siso = s:siso_save
+doautoall SessionLoadPost
+unlet SessionLoad
+" vim: set ft=vim :
