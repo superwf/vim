@@ -14,7 +14,7 @@ nnoremap <silent> <Plug>NetrwBrowseX :call netrw#NetrwBrowseX(expand("<cWORD>")
 nmap <silent> <Plug>VLToggle :let g:VeryLiteral = !g:VeryLiteral| echo "VeryLiteral " . (g:VeryLiteral ? "On" : "Off")
 vmap <kMultiply> *
 map <F4> "*p
-map <F2> :NERDTree:set number
+map <F2> :up
 map <F3> :up
 imap <silent>  <Plug>VimIM
 imap <silent>  <Plug>VimimOneKey
@@ -33,7 +33,7 @@ set nomodeline
 set mouse=a
 set printoptions=paper:a4
 set ruler
-set runtimepath=~/.vim,/var/lib/vim/addons,/usr/share/vim/vimfiles,/usr/share/vim/vim72,/usr/share/vim/vimfiles/after,/var/lib/vim/addons/after,~/.vim/after
+set runtimepath=~/.vim,/var/lib/vim/addons,/usr/share/vim/vimfiles,/usr/share/vim/vim73,/usr/share/vim/vimfiles/after,/var/lib/vim/addons/after,~/.vim/after
 set shiftwidth=2
 set showcmd
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
@@ -42,7 +42,7 @@ set viminfo='200,%,!,<50,s10,h,rA,rB,/50,:50
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd /var/www/primer_synthesis
+cd /home/wangfan/.vim
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
@@ -56,21 +56,6 @@ set nosplitright
 wincmd t
 set winheight=1 winwidth=1
 argglobal
-let s:cpo_save=&cpo
-set cpo&vim
-nmap <buffer> gf <Plug>RailsTabFind
-nmap <buffer> f <Plug>RailsSplitFind
-nmap <buffer> [f <Plug>RailsAlternate
-nmap <buffer> ]f <Plug>RailsRelated
-nmap <buffer> gf <Plug>RailsFind
-nnoremap <buffer> <silent> <Plug>RailsTabFind :RTfind
-nnoremap <buffer> <silent> <Plug>RailsVSplitFind :RVfind
-nnoremap <buffer> <silent> <Plug>RailsSplitFind :RSfind
-nnoremap <buffer> <silent> <Plug>RailsFind :REfind
-nnoremap <buffer> <silent> <Plug>RailsRelated :R
-nnoremap <buffer> <silent> <Plug>RailsAlternate :A
-let &cpo=s:cpo_save
-unlet s:cpo_save
 setlocal keymap=
 setlocal noarabic
 setlocal noautoindent
@@ -83,11 +68,16 @@ setlocal nocindent
 setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
 setlocal cinoptions=
 setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
 setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
 setlocal commentstring=/*%s*/
 setlocal complete=.,w,b,u,t,i
+setlocal concealcursor=
+setlocal conceallevel=0
 setlocal completefunc=
 setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
 setlocal nocursorcolumn
 setlocal nocursorline
 setlocal define=
@@ -116,7 +106,7 @@ setlocal grepprg=
 setlocal iminsert=2
 setlocal imsearch=2
 setlocal include=
-setlocal includeexpr=RailsIncludeexpr()
+setlocal includeexpr=
 setlocal indentexpr=
 setlocal indentkeys=0{,0},:,0#,!^F,o,O,e
 setlocal noinfercase
@@ -134,11 +124,12 @@ set number
 setlocal number
 setlocal numberwidth=4
 setlocal omnifunc=
-setlocal path=.,/var/www/primer_synthesis,/var/www/primer_synthesis/app,/var/www/primer_synthesis/app/models,/var/www/primer_synthesis/app/controllers,/var/www/primer_synthesis/app/helpers,/var/www/primer_synthesis/config,/var/www/primer_synthesis/lib,/var/www/primer_synthesis/app/views,/var/www/primer_synthesis/spec,/var/www/primer_synthesis/spec/models,/var/www/primer_synthesis/spec/controllers,/var/www/primer_synthesis/spec/helpers,/var/www/primer_synthesis/spec/views,/var/www/primer_synthesis/spec/lib,/var/www/primer_synthesis/spec/requests,/var/www/primer_synthesis/spec/integration,/var/www/primer_synthesis/app/*,/var/www/primer_synthesis/vendor,/var/www/primer_synthesis/vendor/plugins/*/lib,/var/www/primer_synthesis/vendor/plugins/*/test,/var/www/primer_synthesis/vendor/rails/*/lib,/var/www/primer_synthesis/vendor/rails/*/test,/usr/include,
+setlocal path=
 setlocal nopreserveindent
 setlocal nopreviewwindow
 setlocal quoteescape=\\
 setlocal noreadonly
+setlocal norelativenumber
 setlocal norightleft
 setlocal rightleftcmd=search
 setlocal noscrollbind
@@ -151,27 +142,28 @@ setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
 setlocal spellfile=
 setlocal spelllang=en
 setlocal statusline=
-setlocal suffixesadd=.rb,.rhtml,.erb,.rxml,.builder,.rjs,.mab,.liquid,.haml,.dryml,.mn,.slim
+setlocal suffixesadd=
 setlocal swapfile
 setlocal synmaxcol=3000
 if &syntax != ''
 setlocal syntax=
 endif
 setlocal tabstop=2
-setlocal tags=/var/www/primer_synthesis/tmp/tags,./tags,./TAGS,tags,TAGS,/var/www/primer_synthesis/tags
+setlocal tags=
 setlocal textwidth=0
 setlocal thesaurus=
+setlocal noundofile
 setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 13 - ((12 * winheight(0) + 10) / 21)
+let s:l = 1 - ((0 * winheight(0) + 10) / 20)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-13
-normal! 011l
+1
+normal! 08l
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf

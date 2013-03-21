@@ -14,7 +14,7 @@ nnoremap <silent> <Plug>NetrwBrowseX :call netrw#NetrwBrowseX(expand("<cWORD>")
 nmap <silent> <Plug>VLToggle :let g:VeryLiteral = !g:VeryLiteral| echo "VeryLiteral " . (g:VeryLiteral ? "On" : "Off")
 vmap <kMultiply> *
 map <F4> "*p
-map <F2> :NERDTree:set number
+map <F2> :up
 map <F3> :up
 imap <silent>  <Plug>VimIM
 imap <silent>  <Plug>VimimOneKey
@@ -29,99 +29,28 @@ set helplang=cn
 set history=50
 set hlsearch
 set incsearch
-set isident=@,48-57,_,192-255,$
 set iskeyword=@,48-57,_,192-255,$
 set nomodeline
 set mouse=a
-set omnifunc=rubycomplete#Complete
 set printoptions=paper:a4
-set pumheight=10
 set ruler
-set runtimepath=~/.vim,/var/lib/vim/addons,/usr/share/vim/vimfiles,/usr/share/vim/vim72,/usr/share/vim/vimfiles/after,/var/lib/vim/addons/after,~/.vim/after
+set runtimepath=~/.vim,/var/lib/vim/addons,/usr/share/vim/vimfiles,/usr/share/vim/vim73,/usr/share/vim/vimfiles/after,/var/lib/vim/addons/after,~/.vim/after
 set shiftwidth=2
 set showcmd
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
-set suffixesadd=.yml,.csv
 set tabstop=2
 set viminfo='200,%,!,<50,s10,h,rA,rB,/50,:50
-set window=18
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd /var/www/lims
+cd /var/www/lims/app/assets/javascripts
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +16 spec/fixtures/menus.yml
-badd +50 app/models/order.rb
-badd +11 /etc/hosts
-badd +44 app/views/redo_samples/index.html.haml
-badd +1 app/views/redo_samples/_samples.html.haml
-badd +1 app/views/sample_boards/index.html.haml
-badd +50 app/controllers/sample_boards_controller.rb
-badd +349 app/models/sample_board.rb
-badd +3 /var/www/user_center/app/assets/stylesheets/partial/_selectable.scss
-badd +37 public/stylesheets/body_background.css
-badd +25 app/views/orders/new.html.haml
-badd +1 app/views/orders/_form.html.haml
-badd +1 app/views/orders/appendage.html.haml
-badd +9 db/migrate/20110929061233_create_orders.rb
-badd +3 app/views/sample_boards/index.js.erb
-badd +5 app/views/sample_boards/show.html.haml
-badd +4 app/models/precheck_code.rb
-badd +3 app/views/prechecks/new.html.haml
-badd +34 app/views/sample_boards/_board.html.haml
-badd +40 app/views/prechecks/_board.html.haml
-badd +191 app/models/reaction.rb
-badd +14 app/views/reaction_boards/edit.html.haml
-badd +12 app/views/reaction_boards/sample_map.html.haml
-badd +14 app/views/reaction_boards/primer_map.html.haml
-badd +2 app/views/reaction_boards/_back.html.haml
-badd +1 app/views/reaction_boards/_reaction_board_mapL.html.haml
-badd +4 app/models/reaction_board.rb
-badd +1 app/views/reaction_boards/_sample_board_map.html.haml
-badd +16 app/views/reaction_boards/confirm.html.haml
-badd +55 app/controllers/reaction_boards_controller.rb
-badd +1 app/views/sample_boards/to_confirm.html.haml
-badd +4 app/controllers/qualities_controller.rb
-badd +18 app/views/qualities/abi_record.html.haml
-badd +23 app/views/qualities/_abi_record.html.haml
-badd +8 app/views/qualities/_my_reactions.html.haml
-badd +19 app/models/plasmid.rb
-badd +19 app/models/bacteria_swaying.rb
-badd +5 app/models/record_user_observer.rb
-badd +15 app/views/qualities/new.html.haml
-badd +6 app/views/result_emails/new.html.haml
-badd +1 app/controllers/result_emails_controller.rb
-badd +3 app/views/home/index.html.haml
-badd +6 .gitignore
-badd +33 app/helpers/sample_boards_helper.rb
-badd +22 app/views/sample_boards/running.html.haml
-badd +20 app/models/sample.rb
-badd +1 config/routes.rb
-badd +1 config/initializers/inflections.rb
-badd +1 app/models/electrophoresis.rb
-badd +28 app/models/precheck.rb
-badd +31 app/controllers/electrophoresis_controller.rb
-badd +25 app/views/home/videos.html.haml
-badd +108 ~/.vimrc
-badd +28 app/views/reactions/new.html.haml
-badd +1 app/views/reactions/_transaction_quadrant.html.haml
-badd +7 spec/fixtures/sample_holes.yml
-badd +2 app/views/reactions/sample_board.js.erb
-badd +18 app/views/reactions/_sample_board.html.haml
-badd +1 app/views/qualities/_color.html.haml
-badd +1 spec/requests/orders_spec.rb
-badd +11 spec/support/login_support.rb
-badd +1 app/controllers/bacteria_swayings_controller.rb
-badd +28 app/helpers/reaction_boards_helper.rb
-badd +12 app/views/reaction_boards/running.html.haml
-badd +38 app/models/alcohol_purification.rb
-badd +16 app/models/heat_cycle.rb
-badd +0 app/assets/javascripts/application.js
-silent! argdel *
-edit app/assets/javascripts/application.js
+badd +0 application.js
+args application.js
+edit application.js
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -132,15 +61,7 @@ let s:cpo_save=&cpo
 set cpo&vim
 nmap <buffer> gf <Plug>RailsTabFind
 nmap <buffer> f <Plug>RailsSplitFind
-nmap <buffer> [f <Plug>RailsAlternate
-nmap <buffer> ]f <Plug>RailsRelated
 nmap <buffer> gf <Plug>RailsFind
-nnoremap <buffer> <silent> <Plug>RailsTabFind :RTfind
-nnoremap <buffer> <silent> <Plug>RailsVSplitFind :RVfind
-nnoremap <buffer> <silent> <Plug>RailsSplitFind :RSfind
-nnoremap <buffer> <silent> <Plug>RailsFind :REfind
-nnoremap <buffer> <silent> <Plug>RailsRelated :R
-nnoremap <buffer> <silent> <Plug>RailsAlternate :A
 let &cpo=s:cpo_save
 unlet s:cpo_save
 setlocal keymap=
@@ -153,13 +74,18 @@ setlocal buflisted
 setlocal buftype=
 setlocal cindent
 setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
-setlocal cinoptions=
+setlocal cinoptions=j1,J1
 setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
 setlocal comments=sO:*\ -,mO:*\ \ ,exO:*/,s1:/*,mb:*,ex:*/,://
 setlocal commentstring=//%s
 setlocal complete=.,w,b,u,t,i
-setlocal completefunc=syntaxcomplete#Complete
+setlocal concealcursor=
+setlocal conceallevel=0
+setlocal completefunc=
 setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
 setlocal nocursorcolumn
 setlocal nocursorline
 setlocal define=
@@ -206,24 +132,25 @@ set number
 setlocal number
 setlocal numberwidth=4
 setlocal omnifunc=javascriptcomplete#CompleteJS
-setlocal path=.,/var/www/lims,/var/www/lims/app,/var/www/lims/app/models,/var/www/lims/app/controllers,/var/www/lims/app/helpers,/var/www/lims/config,/var/www/lims/lib,/var/www/lims/app/views,/var/www/lims/app/views/application,/var/www/lims/public,/var/www/lims/spec,/var/www/lims/spec/models,/var/www/lims/spec/controllers,/var/www/lims/spec/helpers,/var/www/lims/spec/views,/var/www/lims/spec/lib,/var/www/lims/spec/requests,/var/www/lims/spec/integration,/var/www/lims/app/*,/var/www/lims/vendor,/var/www/lims/vendor/plugins/*/lib,/var/www/lims/vendor/plugins/*/test,/var/www/lims/vendor/rails/*/lib,/var/www/lims/vendor/rails/*/test,/usr/include,
+setlocal path=.,/var/www/lims,/var/www/lims/app,/var/www/lims/app/models,/var/www/lims/app/controllers,/var/www/lims/app/helpers,/var/www/lims/config,/var/www/lims/lib,/var/www/lims/app/views,/var/www/lims/app/views/application,/var/www/lims/public,/var/www/lims/test,/var/www/lims/test/unit,/var/www/lims/test/functional,/var/www/lims/test/integration,/var/www/lims/spec,/var/www/lims/spec/models,/var/www/lims/spec/controllers,/var/www/lims/spec/helpers,/var/www/lims/spec/views,/var/www/lims/spec/lib,/var/www/lims/spec/requests,/var/www/lims/spec/integration,/var/www/lims/app/*,/var/www/lims/vendor,/var/www/lims/vendor/plugins/*/lib,/var/www/lims/vendor/plugins/*/test,/var/www/lims/vendor/rails/*/lib,/var/www/lims/vendor/rails/*/test,/usr/include,
 setlocal nopreserveindent
 setlocal nopreviewwindow
 setlocal quoteescape=\\
 setlocal noreadonly
+setlocal norelativenumber
 setlocal norightleft
 setlocal rightleftcmd=search
 setlocal noscrollbind
 setlocal shiftwidth=2
 setlocal noshortname
 setlocal nosmartindent
-setlocal softtabstop=2
+setlocal softtabstop=0
 setlocal nospell
 setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
 setlocal spellfile=
 setlocal spelllang=en
 setlocal statusline=
-setlocal suffixesadd=.rb,.rhtml,.erb,.rxml,.builder,.rjs,.mab,.liquid,.haml,.dryml,.mn,.slim
+setlocal suffixesadd=.rb
 setlocal swapfile
 setlocal synmaxcol=3000
 if &syntax != 'javascript'
@@ -233,17 +160,18 @@ setlocal tabstop=2
 setlocal tags=/var/www/lims/tmp/tags,./tags,./TAGS,tags,TAGS,/var/www/lims/tags
 setlocal textwidth=0
 setlocal thesaurus=
+setlocal noundofile
 setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 109 - ((11 * winheight(0) + 9) / 18)
+let s:l = 19 - ((18 * winheight(0) + 14) / 28)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-109
-normal! 023l
+19
+normal! 0
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf

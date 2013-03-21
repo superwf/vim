@@ -14,7 +14,7 @@ nnoremap <silent> <Plug>NetrwBrowseX :call netrw#NetrwBrowseX(expand("<cWORD>")
 nmap <silent> <Plug>VLToggle :let g:VeryLiteral = !g:VeryLiteral| echo "VeryLiteral " . (g:VeryLiteral ? "On" : "Off")
 vmap <kMultiply> *
 map <F4> "*p
-map <F2> :NERDTree:set number
+map <F2> :up
 map <F3> :up
 imap <silent>  <Plug>VimIM
 imap <silent>  <Plug>VimimOneKey
@@ -33,7 +33,7 @@ set nomodeline
 set mouse=a
 set printoptions=paper:a4
 set ruler
-set runtimepath=~/.vim,/var/lib/vim/addons,/usr/share/vim/vimfiles,/usr/share/vim/vim72,/usr/share/vim/vimfiles/after,/var/lib/vim/addons/after,~/.vim/after
+set runtimepath=~/.vim,/var/lib/vim/addons,/usr/share/vim/vimfiles,/usr/share/vim/vim73,/usr/share/vim/vimfiles/after,/var/lib/vim/addons/after,~/.vim/after
 set shiftwidth=2
 set showcmd
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
@@ -42,14 +42,15 @@ set viminfo='200,%,!,<50,s10,h,rA,rB,/50,:50
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd /var/www/test_app
+cd /var/www/user_passport
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +0 config/database.yml
+badd +18 config/database.yml
+badd +0 /var/www/user_passport.bak/config/database.yml
 args config/database.yml
-edit config/database.yml
+edit /var/www/user_passport.bak/config/database.yml
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -60,21 +61,12 @@ let s:cpo_save=&cpo
 set cpo&vim
 nmap <buffer> gf <Plug>RailsTabFind
 nmap <buffer> f <Plug>RailsSplitFind
-nmap <buffer> [f <Plug>RailsAlternate
-nmap <buffer> ]f <Plug>RailsRelated
 nmap <buffer> gf <Plug>RailsFind
-nnoremap <buffer> <silent> <Plug>RailsTabFind :RTfind
-nnoremap <buffer> <silent> <Plug>RailsVSplitFind :RVfind
-nnoremap <buffer> <silent> <Plug>RailsSplitFind :RSfind
-nnoremap <buffer> <silent> <Plug>RailsFind :REfind
-nnoremap <buffer> <silent> <Plug>RailsRelated :R
-nnoremap <buffer> <silent> <Plug>RailsAlternate :A
 let &cpo=s:cpo_save
 unlet s:cpo_save
 setlocal keymap=
 setlocal noarabic
 setlocal noautoindent
-setlocal balloonexpr=
 setlocal nobinary
 setlocal bufhidden=
 setlocal buflisted
@@ -83,11 +75,16 @@ setlocal nocindent
 setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
 setlocal cinoptions=
 setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
 setlocal comments=:#
 setlocal commentstring=#\ %s
 setlocal complete=.,w,b,u,t,i
+setlocal concealcursor=
+setlocal conceallevel=0
 setlocal completefunc=syntaxcomplete#Complete
 setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
 setlocal nocursorcolumn
 setlocal nocursorline
 setlocal define=^\\%(\\h\\k*:\\)\\@=
@@ -113,8 +110,8 @@ setlocal formatexpr=
 setlocal formatoptions=croql
 setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
 setlocal grepprg=
-setlocal iminsert=2
-setlocal imsearch=2
+setlocal iminsert=0
+setlocal imsearch=0
 setlocal include=
 setlocal includeexpr=RailsIncludeexpr()
 setlocal indentexpr=
@@ -134,11 +131,12 @@ set number
 setlocal number
 setlocal numberwidth=4
 setlocal omnifunc=
-setlocal path=.,/var/www/test_app,/var/www/test_app/app,/var/www/test_app/app/models,/var/www/test_app/app/controllers,/var/www/test_app/app/helpers,/var/www/test_app/config,/var/www/test_app/lib,/var/www/test_app/app/views,/var/www/test_app/test,/var/www/test_app/test/unit,/var/www/test_app/test/functional,/var/www/test_app/test/integration,/var/www/test_app/app/*,/var/www/test_app/vendor,/var/www/test_app/vendor/plugins/*/lib,/var/www/test_app/vendor/plugins/*/test,/var/www/test_app/vendor/rails/*/lib,/var/www/test_app/vendor/rails/*/test,/usr/include,
+setlocal path=.,/var/www/user_passport.bak,/var/www/user_passport.bak/app,/var/www/user_passport.bak/app/models,/var/www/user_passport.bak/app/controllers,/var/www/user_passport.bak/app/helpers,/var/www/user_passport.bak/config,/var/www/user_passport.bak/lib,/var/www/user_passport.bak/app/views,/var/www/user_passport.bak/spec,/var/www/user_passport.bak/spec/models,/var/www/user_passport.bak/spec/controllers,/var/www/user_passport.bak/spec/helpers,/var/www/user_passport.bak/spec/views,/var/www/user_passport.bak/spec/lib,/var/www/user_passport.bak/spec/requests,/var/www/user_passport.bak/spec/integration,/var/www/user_passport.bak/app/*,/var/www/user_passport.bak/vendor,/var/www/user_passport.bak/vendor/plugins/*/lib,/var/www/user_passport.bak/vendor/plugins/*/test,/var/www/user_passport.bak/vendor/rails/*/lib,/var/www/user_passport.bak/vendor/rails/*/test,/usr/include,
 setlocal nopreserveindent
 setlocal nopreviewwindow
 setlocal quoteescape=\\
 setlocal noreadonly
+setlocal norelativenumber
 setlocal norightleft
 setlocal rightleftcmd=search
 setlocal noscrollbind
@@ -151,27 +149,28 @@ setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
 setlocal spellfile=
 setlocal spelllang=en
 setlocal statusline=
-setlocal suffixesadd=.rb,.rhtml,.erb,.rxml,.builder,.rjs,.mab,.liquid,.haml,.dryml,.mn,.slim
+setlocal suffixesadd=.rb
 setlocal swapfile
 setlocal synmaxcol=3000
 if &syntax != 'yaml'
 setlocal syntax=yaml
 endif
 setlocal tabstop=2
-setlocal tags=/var/www/test_app/tmp/tags,./tags,./TAGS,tags,TAGS,/var/www/test_app/tags
+setlocal tags=/var/www/user_passport.bak/tmp/tags,./tags,./TAGS,tags,TAGS,/var/www/user_passport.bak/tags
 setlocal textwidth=0
 setlocal thesaurus=
+setlocal noundofile
 setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 41 - ((18 * winheight(0) + 10) / 20)
+let s:l = 18 - ((13 * winheight(0) + 7) / 14)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-41
-normal! 014l
+18
+normal! 0
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf

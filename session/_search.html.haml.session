@@ -14,7 +14,7 @@ nnoremap <silent> <Plug>NetrwBrowseX :call netrw#NetrwBrowseX(expand("<cWORD>")
 nmap <silent> <Plug>VLToggle :let g:VeryLiteral = !g:VeryLiteral| echo "VeryLiteral " . (g:VeryLiteral ? "On" : "Off")
 vmap <kMultiply> *
 map <F4> "*p
-map <F2> :NERDTree:set number
+map <F2> :up
 map <F3> :up
 imap <silent>  <Plug>VimIM
 imap <silent>  <Plug>VimimOneKey
@@ -30,11 +30,12 @@ set history=50
 set hlsearch
 set incsearch
 set isident=@,48-57,_,192-255,$
+set iskeyword=@,48-57,_,192-255,$
 set nomodeline
 set mouse=a
 set printoptions=paper:a4
 set ruler
-set runtimepath=~/.vim,/var/lib/vim/addons,/usr/share/vim/vimfiles,/usr/share/vim/vim72,/usr/share/vim/vimfiles/after,/var/lib/vim/addons/after,~/.vim/after
+set runtimepath=~/.vim,/var/lib/vim/addons,/usr/share/vim/vimfiles,/usr/share/vim/vim73,/usr/share/vim/vimfiles/after,/var/lib/vim/addons/after,~/.vim/after
 set shiftwidth=2
 set showcmd
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
@@ -43,23 +44,107 @@ set viminfo='200,%,!,<50,s10,h,rA,rB,/50,:50
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd /var/www/user_center_helper
+cd /var/www/sino_project
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +2 lib/views/companies/index.js.erb
-badd +10 lib/views/clients/_search.html.haml
-badd +1 lib/views/clients/_list.html.haml
-badd +0 lib/views/companies/_search.html.haml
-args lib/views/companies/index.js.erb
-edit lib/views/companies/_search.html.haml
+badd +1 app/views/projects/running_ht.html.haml
+badd +1 /var/www/lims/spec/models/primer_spec.rb
+badd +1 app/views/projects/index.html.haml
+badd +20 /var/www/superwf/superwf_scaffold/lib/views/scaffolds/index.js.erb
+badd +1 app/views/projects/_table.html.haml
+badd +3 app/views/invoices/index.html.haml
+badd +3 app/views/invoices/_table.html.haml
+badd +8 app/views/layouts/_show_cols.html.haml
+badd +1 /var/www/lims/Gemfile
+badd +1 /var/www/lims/app/models/primer.rb
+badd +7 /var/www/lims/app/models/client.rb
+badd +9 /var/www/lims/spec/factories/companies.rb
+badd +6 /var/www/lims/spec/factories/clients.rb
+badd +61 /var/www/lims/spec/spec_helper.rb
+badd +6 /var/www/lims/spec/factories/primer_heads.rb
+badd +1 /var/www/lims/spec/fixtures/primer_heads.yml
+badd +98 /var/www/lims/app/models/sample_board.rb
+badd +156 /var/www/lims/spec/models/sample_board_spec.rb
+badd +96 /var/www/lims/app/models/sample.rb
+badd +9 /var/www/lims/spec/factories/samples.rb
+badd +19 /var/www/lims/db/migrate/20130118092212_create_samples.rb
+badd +249 /var/www/lims/spec/models/sample_spec.rb
+badd +93 /var/www/lims/app/models/order.rb
+badd +71 /var/www/lims/spec/controllers/abi_records_controller_spec.rb
+badd +13 /var/www/lims/spec/factories/orders.rb
+badd +135 /var/www/lims/spec/models/order_spec.rb
+badd +19 /var/www/lims/app/views/orders/_form.html.haml
+badd +13 /var/www/lims/config/locales/orders.cn.yml
+badd +12 /var/www/lims/app/assets/javascripts/orders.js.coffee
+badd +1 /var/www/lims/app/controllers/sample_boards_controller.rb
+badd +1 /var/www/lims/app/views/sample_boards/select.js.erb
+badd +17 /var/www/lims/app/controllers/orders_controller.rb
+badd +22 /var/www/lims/db/migrate/20130111012728_create_orders.rb
+badd +5 /var/www/lims/app/views/orders/_search.html.haml
+badd +5 /var/www/lims/lib/board.rb
+badd +19 /var/www/lims/db/migrate/20130118021310_create_sample_boards.rb
+badd +19 /var/www/lims/app/models/sample_procedure.rb
+badd +5 /var/www/lims/app/views/clients/_search.html.haml
+badd +117 /var/www/lims/spec/models/client_spec.rb
+badd +6 /var/www/lims/app/models/checkout.rb
+badd +1 /var/www/lims/app/views/checkout_signs/_form.html.haml
+badd +8 /var/www/lims/config/routes.rb
+badd +39 /var/www/lims/app/controllers/checkouts_controller.rb
+badd +8 /var/www/lims/app/views/checkouts/flow.html.haml
+badd +3 /var/www/lims/app/views/checkout_signs/_input.html.haml
+badd +3 /var/www/lims/app/views/prepayment_records/_table.html.haml
+badd +10 /var/www/lims/app/views/checkouts/_form.html.haml
+badd +1 /var/www/lims/app/views/prepayment_records/new.html.haml
+badd +7 /var/www/lims/app/controllers/prepayment_records_controller.rb
+badd +1 /var/www/lims/app/views/prepayment_records/new.js.erb
+badd +9 /var/www/lims/app/views/prepayment_records/_form.html.haml
+badd +8 /var/www/lims/db/migrate/20130301063930_create_prepayment_records.rb
+badd +25 /var/www/lims/app/views/checkouts/scope.html.haml
+badd +8 /var/www/lims/app/views/checkouts/_go.html.haml
+badd +1 /var/www/lims/app/models/checkout_order.rb
+badd +7 /var/www/lims/db/migrate/20130301050229_create_checkout_orders.rb
+badd +12 /var/www/lims/db/migrate/20130301043447_create_checkouts.rb
+badd +1 /var/www/lims/app/models/prepayment.rb
+badd +14 /var/www/lims/config/locales/prepayment_records.cn.yml
+badd +1 /var/www/lims/app/models/prepayment_record.rb
+badd +1 /var/www/lims/app/views/prepayment_records/index.js.erb
+badd +1 /var/www/lims/app/views/prepayment_records/_ajax_table.html.haml
+badd +3 /var/www/lims/app/views/prepayment_records/destroy.js.erb
+badd +1 /var/www/lims/app/views/prepayments/edit.html.haml
+badd +2 /var/www/lims/app/views/samples/redo_typeset.html.haml
+badd +38 /var/www/lims/app/assets/javascripts/redo_typeset.js.coffee
+badd +39 /var/www/lims/config/locales/samples.cn.yml
+badd +13 /var/www/lims/spec/factories/primers.rb
+badd +20 /var/www/lims/app/models/primer_board.rb
+badd +9 /var/www/lims/app/views/samples/_search.html.haml
+badd +7 app/views/projects/_flow_ht.html.haml
+badd +0 app/views/projects/_search.html.haml
+silent! argdel *
+edit app/views/projects/_search.html.haml
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
 argglobal
+let s:cpo_save=&cpo
+set cpo&vim
+nmap <buffer> gf <Plug>RailsTabFind
+nmap <buffer> f <Plug>RailsSplitFind
+nnoremap <buffer> <silent> g} :exe        "ptjump =RubyCursorIdentifier()"
+nnoremap <buffer> <silent> } :exe          "ptag =RubyCursorIdentifier()"
+nnoremap <buffer> <silent> g] :exe      "stselect =RubyCursorIdentifier()"
+nnoremap <buffer> <silent> g :exe        "stjump =RubyCursorIdentifier()"
+nnoremap <buffer> <silent>  :exe v:count1."stag =RubyCursorIdentifier()"
+nnoremap <buffer> <silent> ] :exe v:count1."stag =RubyCursorIdentifier()"
+nnoremap <buffer> <silent>  :exe  v:count1."tag =RubyCursorIdentifier()"
+nmap <buffer> gf <Plug>RailsFind
+nnoremap <buffer> <silent> g] :exe       "tselect =RubyCursorIdentifier()"
+nnoremap <buffer> <silent> g :exe         "tjump =RubyCursorIdentifier()"
+let &cpo=s:cpo_save
+unlet s:cpo_save
 setlocal keymap=
 setlocal noarabic
 setlocal autoindent
@@ -72,11 +157,16 @@ setlocal nocindent
 setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
 setlocal cinoptions=
 setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
 setlocal comments=
 setlocal commentstring=-#\ %s
 setlocal complete=.,w,b,u,t,i
-setlocal completefunc=
+setlocal concealcursor=
+setlocal conceallevel=0
+setlocal completefunc=syntaxcomplete#Complete
 setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
 setlocal nocursorcolumn
 setlocal nocursorline
 setlocal define=
@@ -105,11 +195,11 @@ setlocal grepprg=
 setlocal iminsert=2
 setlocal imsearch=2
 setlocal include=^\\s*\\<\\(load\\|w*require\\)\\>
-setlocal includeexpr=substitute(substitute(v:fname,'::','/','g'),'$','.rb','')
+setlocal includeexpr=RailsIncludeexpr()
 setlocal indentexpr=GetHamlIndent()
 setlocal indentkeys=o,O,*<Return>,},],0),!^F,=end,=else,=elsif,=rescue,=ensure,=when
 setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255
+setlocal iskeyword=@,48-57,_,192-255,$
 setlocal keywordprg=ri
 setlocal nolinebreak
 setlocal nolisp
@@ -123,35 +213,25 @@ set number
 setlocal number
 setlocal numberwidth=4
 setlocal omnifunc=rubycomplete#Complete
-setlocal path=.,NOTE:\ Gem.all_load_paths\ is\ deprecated\ with\ no\ replacement.\ It\ will\ be\ removed\ on\ or\ after\ 2011-10-01.\
-Gem.all_load_paths\ called\ from\ -e:1.\
-NOTE:\ Gem.all_partials\ is\ deprecated\ with\ no\ replacement.\ It\ will\ be\ removed\ on\ or\ after\ 2011-10-01.\
-Gem.all_partials\ called\ from\ /usr/local/lib/site_ruby/1.9.1/rubygems.rb:258.\
-NOTE:\ Gem.all_partials\ is\ deprecated\ with\ no\ replacement.\ It\ will\ be\ removed\ on\ or\ after\ 2011-10-01.\
-Gem.all_partials\ called\ from\ /usr/local/lib/site_ruby/1.9.1/rubygems.rb:258.\
-/usr/local/lib/site_ruby/1.9.1/rubygems.rb:259:in\ `block\ (2\ levels)\ in\ all_load_paths':\ undefined\ method\ `add'\ for\ \"/usr/lib/ruby/gems/1.9.1\":String\ (NoMethodError)\
-\	from\ /usr/local/lib/site_ruby/1.9.1/rubygems.rb:427:in\ `block\ (2\ levels)\ in\ each_load_path'\
-\	from\ /usr/local/lib/site_ruby/1.9.1/rubygems.rb:426:in\ `each'\
-\	from\ /usr/local/lib/site_ruby/1.9.1/rubygems.rb:426:in\ `block\ in\ each_load_path'\
-\	from\ /usr/local/lib/site_ruby/1.9.1/rubygems.rb:421:in\ `each'\
-\	from\ /usr/local/lib/site_ruby/1.9.1/rubygems.rb:421:in\ `each_load_path'\
-\	from\ /usr/local/lib/site_ruby/1.9.1/rubygems.rb:258:in\ `block\ in\ all_load_paths'\
-\	from\ /usr/local/lib/site_ruby/1.9.1/rubygems.rb:257:in\ `each'\
-\	from\ /usr/local/lib/site_ruby/1.9.1/rubygems.rb:257:in\ `all_load_paths'\
-\	from\ /usr/local/lib/site_ruby/1.9.1/rubygems/deprecate.rb:62:in\ `block\ (2\ levels)\ in\ deprecate'\
-\	from\ -e:1:in\ `<main>'\
-
+setlocal path=.,/var/www/sino_project,/var/www/sino_project/app,/var/www/sino_project/app/models,/var/www/sino_project/app/controllers,/var/www/sino_project/app/helpers,/var/www/sino_project/config,/var/www/sino_project/lib,/var/www/sino_project/app/views,/var/www/sino_project/app/views/projects,/var/www/sino_project/public,/var/www/sino_project/test,/var/www/sino_project/test/unit,/var/www/sino_project/test/functional,/var/www/sino_project/test/integration,/var/www/sino_project/spec,/var/www/sino_project/spec/models,/var/www/sino_project/spec/controllers,/var/www/sino_project/spec/helpers,/var/www/sino_project/spec/views,/var/www/sino_project/spec/lib,/var/www/sino_project/spec/requests,/var/www/sino_project/spec/integration,/var/www/sino_project/app/*,/var/www/sino_project/vendor,/var/www/sino_project/vendor/plugins/*/lib,/var/www/sino_project/vendor/plugins/*/test,/var/www/sino_project/vendor/rails/*/lib,/var/www/sino_project/vendor/rails/*/test,NOTE:\\\ Gem.all_load_paths\\\ is\\\ deprecated\\\ with\\\ no\\\ replacement.\\\ It\\\ will\\\ be\\\ removed\\\ on\\\ or\\\ after\\\ 2011-10-01.\
+Gem.all_load_paths\\\ called\\\ from\\\ -e:1.\
+NOTE:\\\ Gem.all_partials\\\ is\\\ deprecated\\\ with\\\ no\\\ replacement.\\\ It\\\ will\\\ be\\\ removed\\\ on\\\ or\\\ after\\\ 2011-10-01.\
+Gem.all_partials\\\ called\\\ from\\\ /usr/local/rvm/rubies/ruby-2.0.0-p0/lib/ruby/site_ruby/2.0.0/rubygems.rb:261.\
+NOTE:\\\ Gem.all_partials\\\ is\\\ deprecated\\\ with\\\ no\\\ replacement.\\\ It\\\ will\\\ be\\\ removed\\\ on\\\ or\\\ after\\\ 2011-10-01.\
+Gem.all_partials\\\ called\\\ from\\\ /usr/local/rvm/rubies/ruby-2.0.0-p0/lib/ruby/site_ruby/2.0.0/rubygems.rb:261.\
+/usr/local/rvm/rubies/ruby-2.0.0-p0/lib/ruby/site_ruby/2.0.0,/usr/local/rvm/rubies/ruby-2.0.0-p0/lib/ruby/site_ruby/2.0.0/x86_64-linux,/usr/local/rvm/rubies/ruby-2.0.0-p0/lib/ruby/site_ruby,/usr/local/rvm/rubies/ruby-2.0.0-p0/lib/ruby/vendor_ruby/2.0.0,/usr/local/rvm/rubies/ruby-2.0.0-p0/lib/ruby/vendor_ruby/2.0.0/x86_64-linux,/usr/local/rvm/rubies/ruby-2.0.0-p0/lib/ruby/vendor_ruby,/usr/local/rvm/rubies/ruby-2.0.0-p0/lib/ruby/2.0.0,/usr/local/rvm/rubies/ruby-2.0.0-p0/lib/ruby/2.0.0/x86_64-linux,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/Ascii85-1.0.1/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/Ascii85-1.0.2/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/ZenTest-4.8.3/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/actionmailer-3.1.3/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/actionmailer-3.2.10/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/actionmailer-3.2.11/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/actionmailer-3.2.12/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/actionmailer-3.2.8/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/actionpack-3.1.3/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/actionpack-3.2.10/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/actionpack-3.2.11/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/actionpack-3.2.12/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/actionpack-3.2.8/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/activemodel-3.1.3/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/activemodel-3.2.10/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/activemodel-3.2.11/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/activemodel-3.2.12/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/activemodel-3.2.8/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/activerecord-3.1.3/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/activerecord-3.2.10/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/activerecord-3.2.11/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/activerecord-3.2.12/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/activerecord-3.2.8/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/activeresource-3.1.3/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/activeresource-3.2.10/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/activeresource-3.2.11/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/activeresource-3.2.12/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/activeresource-3.2.8/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/activesupport-3.1.3/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/activesupport-3.2.10/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/activesupport-3.2.11/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/activesupport-3.2.12/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/activesupport
 setlocal nopreserveindent
 setlocal nopreviewwindow
 setlocal quoteescape=\\
 setlocal noreadonly
+setlocal norelativenumber
 setlocal norightleft
 setlocal rightleftcmd=search
 setlocal noscrollbind
 setlocal shiftwidth=2
 setlocal noshortname
 setlocal nosmartindent
-setlocal softtabstop=0
+setlocal softtabstop=2
 setlocal nospell
 setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
 setlocal spellfile=
@@ -164,19 +244,20 @@ if &syntax != 'haml'
 setlocal syntax=haml
 endif
 setlocal tabstop=2
-setlocal tags=
+setlocal tags=/var/www/sino_project/tmp/tags,./tags,./TAGS,tags,TAGS,/var/www/sino_project/tags
 setlocal textwidth=0
 setlocal thesaurus=
+setlocal noundofile
 setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 11) / 23)
+let s:l = 2 - ((1 * winheight(0) + 8) / 16)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
+2
 normal! 0
 tabnext 1
 if exists('s:wipebuf')
