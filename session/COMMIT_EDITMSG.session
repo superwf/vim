@@ -14,7 +14,7 @@ nnoremap <silent> <Plug>NetrwBrowseX :call netrw#NetrwBrowseX(expand("<cWORD>")
 nmap <silent> <Plug>VLToggle :let g:VeryLiteral = !g:VeryLiteral| echo "VeryLiteral " . (g:VeryLiteral ? "On" : "Off")
 vmap <kMultiply> *
 map <F4> "*p
-map <F2> :up
+map <F2> :NERDTree:set number
 map <F3> :up
 imap <silent>  <Plug>VimIM
 imap <silent>  <Plug>VimimOneKey
@@ -24,7 +24,7 @@ let &cpo=s:cpo_save
 unlet s:cpo_save
 set backspace=indent,eol,start
 set expandtab
-set fileencodings=utf-8,ucs-bom,euc-jp,gb18030,gbk,gb2312,cp936
+set fileencodings=utf-8,gbk,ucs-bom,gb18030,euc-jp,gb2312,cp936
 set helplang=cn
 set history=50
 set hlsearch
@@ -42,7 +42,7 @@ set viminfo='200,%,!,<50,s10,h,rA,rB,/50,:50
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd /home/wangfan/.vim
+cd /var/www/lims
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
@@ -56,6 +56,13 @@ set nosplitright
 wincmd t
 set winheight=1 winwidth=1
 argglobal
+let s:cpo_save=&cpo
+set cpo&vim
+nmap <buffer> gf <Plug>RailsTabFind
+nmap <buffer> f <Plug>RailsSplitFind
+nmap <buffer> gf <Plug>RailsFind
+let &cpo=s:cpo_save
+unlet s:cpo_save
 setlocal keymap=
 setlocal noarabic
 setlocal noautoindent
@@ -106,12 +113,12 @@ setlocal grepprg=
 setlocal iminsert=2
 setlocal imsearch=2
 setlocal include=
-setlocal includeexpr=substitute(v:fname,'^[^/]\\+/','','')
+setlocal includeexpr=RailsIncludeexpr()
 setlocal indentexpr=
 setlocal indentkeys=0{,0},:,0#,!^F,o,O,e
 setlocal noinfercase
 setlocal iskeyword=@,48-57,_,192-255
-setlocal keywordprg=git\ --git-dir='/home/wangfan/.vim/.git'\ show
+setlocal keywordprg=git\ --git-dir='/var/www/lims/.git'\ show
 setlocal nolinebreak
 setlocal nolisp
 setlocal nolist
@@ -124,7 +131,7 @@ set number
 setlocal number
 setlocal numberwidth=4
 setlocal omnifunc=
-setlocal path=/home/wangfan/.vim/.git,/home/wangfan/.vim,
+setlocal path=lib,vendor,app/models/concerns,app/controllers/concerns,app/controllers,app/helpers,app/mailers,app/models,app/*,app/views,test,test/unit,test/functional,test/integration,test/controllers,test/helpers,test/mailers,test/models,spec,spec/controllers,spec/helpers,spec/mailers,spec/models,spec/views,spec/lib,spec/features,spec/requests,spec/integration,vendor/plugins/*/lib,vendor/plugins/*/test,vendor/rails/*/lib,vendor/rails/*/test,/var/www/lims,/var/www/lims/.git
 setlocal nopreserveindent
 setlocal nopreviewwindow
 setlocal quoteescape=\\
@@ -142,14 +149,14 @@ setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
 setlocal spellfile=
 setlocal spelllang=en
 setlocal statusline=
-setlocal suffixesadd=
+setlocal suffixesadd=.rb
 setlocal swapfile
 setlocal synmaxcol=3000
 if &syntax != 'gitcommit'
 setlocal syntax=gitcommit
 endif
 setlocal tabstop=2
-setlocal tags=
+setlocal tags=/var/www/lims/tags,/var/www/lims/tmp/tags,./tags,./TAGS,tags,TAGS
 setlocal textwidth=72
 setlocal thesaurus=
 setlocal noundofile
@@ -158,11 +165,11 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 329 - ((19 * winheight(0) + 10) / 20)
+let s:l = 32 - ((16 * winheight(0) + 8) / 17)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-329
+32
 normal! 0
 tabnext 1
 if exists('s:wipebuf')

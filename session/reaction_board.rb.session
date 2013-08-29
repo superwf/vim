@@ -30,9 +30,11 @@ set history=50
 set hlsearch
 set incsearch
 set isident=@,48-57,_,192-255,$
+set iskeyword=@,48-57,_,192-255,$
 set nomodeline
 set mouse=a
 set printoptions=paper:a4
+set pumheight=10
 set ruler
 set runtimepath=~/.vim,/var/lib/vim/addons,/usr/share/vim/vimfiles,/usr/share/vim/vim73,/usr/share/vim/vimfiles/after,/var/lib/vim/addons/after,~/.vim/after
 set shiftwidth=2
@@ -40,38 +42,74 @@ set showcmd
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
 set tabstop=2
 set viminfo='200,%,!,<50,s10,h,rA,rB,/50,:50
+set window=13
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd /var/www/2011/lims
+cd /var/www/lims
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +0 app/models/reaction_board.rb
-badd +32 /var/www/superwf/superwf_audited/lib/superwf_audited.rb
+badd +49 config/routes.rb
+badd +10 app/controllers/api/v1/reaction_boards_controller.rb
+badd +13 app/controllers/api/v1/reaction_files_controller.rb
+badd +1 app/controllers/api/v1/consts_controller.rbr
+badd +59 Gemfile
+badd +1 /var/www/lims/app/controllers/api/v1/api_controller.rb
+badd +68 /var/www/lims/app/models/reaction_file.rb
+badd +94 /var/www/lims/app/models/reaction_board.rb
+badd +1 /var/www/lims/app/controllers/api/v1/orders_controller.rb
+badd +1 spec/factories/reaction_procedures.rb
+badd +11 spec/fixtures/reaction_procedures.yml
+badd +4 app/views/sample_boards/show.html.haml
+badd +31 config/locales/sample_boards.cn.yml
+badd +33 app/views/reaction_boards/scope.html.haml
+badd +20 /var/www/lims/app/controllers/reaction_boards_controller.rb
+badd +32 /var/www/lims/config/environments/development.rb
+badd +1 Gemfile.lock
+badd +4 lib/board.rb
+badd +47 /var/www/lims/app/models/sample_board.rb
+badd +93 /var/www/lims/app/models/checkout.rb
+badd +81 /var/www/lims/app/models/quality.rb
+badd +16 /var/www/lims/app/models/sample_flow_go_observer.rb
+badd +1 /var/www/lims/config/initializers/active_record.rb
+badd +1 /var/www/lims/config/initializers/i18n.rb
+badd +1 /var/www/lims/config/initializers/session_store.rb
+badd +1 /var/www/lims/config/initializers/will_paginate.rb
+badd +1 /var/www/lims/app/controllers/sample_boards_controller.rb
+badd +2 app/views/qualities/new.html.haml
+badd +6 /var/www/lims/app/controllers/qualities_controller.rb
+badd +1 /var/www/lims/app/models/order.rb
+badd +1 app/views/primers/new.html.haml
+badd +12 /var/www/lims/app/controllers/reactions_controller.rb
+badd +44 /var/www/lims/app/models/reaction.rb
+badd +25 /var/www/lims/app/controllers/prechecks_controller.rb
+badd +49 /var/www/lims/app/models/precheck.rb
+badd +16 /var/www/lims/app/models/sample.rb
+badd +0 app/views/reactions/_table.html.haml
 silent! argdel *
-edit app/models/reaction_board.rb
+edit /var/www/lims/app/models/reaction_board.rb
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
 argglobal
-let s:cpo_save=&cpo
-set cpo&vim
-nmap <buffer> gf <Plug>RailsTabFind
-nmap <buffer> f <Plug>RailsSplitFind
 nnoremap <buffer> <silent> g} :exe        "ptjump =RubyCursorIdentifier()"
 nnoremap <buffer> <silent> } :exe          "ptag =RubyCursorIdentifier()"
 nnoremap <buffer> <silent> g] :exe      "stselect =RubyCursorIdentifier()"
 nnoremap <buffer> <silent> g :exe        "stjump =RubyCursorIdentifier()"
 nnoremap <buffer> <silent>  :exe v:count1."stag =RubyCursorIdentifier()"
 nnoremap <buffer> <silent> ] :exe v:count1."stag =RubyCursorIdentifier()"
+let s:cpo_save=&cpo
+set cpo&vim
+nmap <buffer> gf <Plug>RailsTabFind
+nmap <buffer> f <Plug>RailsSplitFind
 nnoremap <buffer> <silent>  :exe  v:count1."tag =RubyCursorIdentifier()"
-nmap <buffer> gf <Plug>RailsFind
 nnoremap <buffer> <silent> g] :exe       "tselect =RubyCursorIdentifier()"
 nnoremap <buffer> <silent> g :exe         "tjump =RubyCursorIdentifier()"
+nmap <buffer> gf <Plug>RailsFind
 let &cpo=s:cpo_save
 unlet s:cpo_save
 setlocal keymap=
@@ -142,13 +180,8 @@ set number
 setlocal number
 setlocal numberwidth=4
 setlocal omnifunc=rubycomplete#Complete
-setlocal path=.,/var/www/2011/lims,/var/www/2011/lims/app,/var/www/2011/lims/app/models,/var/www/2011/lims/app/controllers,/var/www/2011/lims/app/helpers,/var/www/2011/lims/config,/var/www/2011/lims/lib,/var/www/2011/lims/app/views,/var/www/2011/lims/spec,/var/www/2011/lims/spec/models,/var/www/2011/lims/spec/controllers,/var/www/2011/lims/spec/helpers,/var/www/2011/lims/spec/views,/var/www/2011/lims/spec/lib,/var/www/2011/lims/spec/requests,/var/www/2011/lims/spec/integration,/var/www/2011/lims/app/*,/var/www/2011/lims/vendor,/var/www/2011/lims/vendor/plugins/*/lib,/var/www/2011/lims/vendor/plugins/*/test,/var/www/2011/lims/vendor/rails/*/lib,/var/www/2011/lims/vendor/rails/*/test,NOTE:\\\ Gem.all_load_paths\\\ is\\\ deprecated\\\ with\\\ no\\\ replacement.\\\ It\\\ will\\\ be\\\ removed\\\ on\\\ or\\\ after\\\ 2011-10-01.\
-Gem.all_load_paths\\\ called\\\ from\\\ -e:1.\
-NOTE:\\\ Gem.all_partials\\\ is\\\ deprecated\\\ with\\\ no\\\ replacement.\\\ It\\\ will\\\ be\\\ removed\\\ on\\\ or\\\ after\\\ 2011-10-01.\
-Gem.all_partials\\\ called\\\ from\\\ /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/site_ruby/1.9.1/rubygems.rb:261.\
-NOTE:\\\ Gem.all_partials\\\ is\\\ deprecated\\\ with\\\ no\\\ replacement.\\\ It\\\ will\\\ be\\\ removed\\\ on\\\ or\\\ after\\\ 2011-10-01.\
-Gem.all_partials\\\ called\\\ from\\\ /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/site_ruby/1.9.1/rubygems.rb:261.\
-/usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/site_ruby/1.9.1,/usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/site_ruby/1.9.1/x86_64-linux,/usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/site_ruby,/usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/vendor_ruby/1.9.1,/usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/vendor_ruby/1.9.1/x86_64-linux,/usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/vendor_ruby,/usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1,/usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/x86_64-linux,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/Ascii85-1.0.1/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/Ascii85-1.0.2/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/ZenTest-4.8.2/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/ZenTest-4.8.3/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionmailer-3.1.1/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionmailer-3.1.3/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionmailer-3.2.10/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionmailer-3.2.11/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionmailer-3.2.3/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionmailer-3.2.8/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.1.1/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.1.3/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.10/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.11/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/activemodel-3.1.1/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/activemodel-3.1.3/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/activemodel-3.2.10/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/activemodel-3.2.11/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/activemodel-3.2.3/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/activemodel-3.2.8/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/activerecord-3.1.1/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/activerecord-3.1.3/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/activerecord-3.2.10/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/activerecord-3.2.11/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/activerecord-3.2.3/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/activerecord-3.2.8/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/activeresource-3.1.1/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/activeresource-3.1.3/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/activeresource-3.2.10/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/activeresource-3.2.11/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/activeresource-3.2.3/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/activeresource-3.2.8/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.1.1/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.1.3/lib,
+setlocal path=.,lib,vendor,app/models/concerns,app/controllers/concerns,app/controllers,app/helpers,app/mailers,app/models,app/*,app/views,test,test/unit,test/functional,test/integration,test/controllers,test/helpers,test/mailers,test/models,spec,spec/controllers,spec/helpers,spec/mailers,spec/models,spec/views,spec/lib,spec/features,spec/requests,spec/integration,vendor/plugins/*/lib,vendor/plugins/*/test,vendor/rails/*/lib,vendor/rails/*/test,/var/www/lims,-e:1:in\\\ `<main>':\\\ undefined\\\ method\\\ `all_load_paths'\\\ for\\\ Gem:Module\\\ (NoMethodError)\
+
 setlocal nopreserveindent
 setlocal nopreviewwindow
 setlocal quoteescape=\\
@@ -160,7 +193,7 @@ setlocal noscrollbind
 setlocal shiftwidth=2
 setlocal noshortname
 setlocal nosmartindent
-setlocal softtabstop=2
+setlocal softtabstop=0
 setlocal nospell
 setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
 setlocal spellfile=
@@ -173,7 +206,7 @@ if &syntax != 'ruby'
 setlocal syntax=ruby
 endif
 setlocal tabstop=2
-setlocal tags=/var/www/2011/lims/tmp/tags,./tags,./TAGS,tags,TAGS,/var/www/2011/lims/tags
+setlocal tags=/var/www/lims/tags,/var/www/lims/tmp/tags,./tags,./TAGS,tags,TAGS
 setlocal textwidth=0
 setlocal thesaurus=
 setlocal noundofile
@@ -182,12 +215,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 65 - ((12 * winheight(0) + 7) / 14)
+let s:l = 143 - ((6 * winheight(0) + 6) / 13)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-65
-normal! 02l
+143
+normal! 04l
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf

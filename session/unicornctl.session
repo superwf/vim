@@ -14,7 +14,7 @@ nnoremap <silent> <Plug>NetrwBrowseX :call netrw#NetrwBrowseX(expand("<cWORD>")
 nmap <silent> <Plug>VLToggle :let g:VeryLiteral = !g:VeryLiteral| echo "VeryLiteral " . (g:VeryLiteral ? "On" : "Off")
 vmap <kMultiply> *
 map <F4> "*p
-map <F2> :up
+map <F2> :NERDTree:set number
 map <F3> :up
 imap <silent>  <Plug>VimIM
 imap <silent>  <Plug>VimimOneKey
@@ -24,7 +24,7 @@ let &cpo=s:cpo_save
 unlet s:cpo_save
 set backspace=indent,eol,start
 set expandtab
-set fileencodings=utf-8,ucs-bom,euc-jp,gb18030,gbk,gb2312,cp936
+set fileencodings=utf-8,gbk,ucs-bom,gb18030,euc-jp,gb2312,cp936
 set helplang=cn
 set history=50
 set hlsearch
@@ -39,35 +39,36 @@ set showcmd
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
 set tabstop=2
 set viminfo='200,%,!,<50,s10,h,rA,rB,/50,:50
-set window=13
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd /var/www/lims
+cd /var/www/superwf
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +0 unicornctl
-args unicornctl
-edit unicornctl
+badd +0 bin/unicornctl
+args bin/unicornctl
+edit bin/unicornctl
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
 argglobal
-let s:cpo_save=&cpo
-set cpo&vim
-nmap <buffer> gf <Plug>RailsTabFind
-nmap <buffer> f <Plug>RailsSplitFind
-nmap <buffer> gf <Plug>RailsFind
-let &cpo=s:cpo_save
-unlet s:cpo_save
+nnoremap <buffer> <silent> g} :exe        "ptjump =RubyCursorIdentifier()"
+nnoremap <buffer> <silent> } :exe          "ptag =RubyCursorIdentifier()"
+nnoremap <buffer> <silent> g] :exe      "stselect =RubyCursorIdentifier()"
+nnoremap <buffer> <silent> g :exe        "stjump =RubyCursorIdentifier()"
+nnoremap <buffer> <silent>  :exe v:count1."stag =RubyCursorIdentifier()"
+nnoremap <buffer> <silent> ] :exe v:count1."stag =RubyCursorIdentifier()"
+nnoremap <buffer> <silent>  :exe  v:count1."tag =RubyCursorIdentifier()"
+nnoremap <buffer> <silent> g] :exe       "tselect =RubyCursorIdentifier()"
+nnoremap <buffer> <silent> g :exe         "tjump =RubyCursorIdentifier()"
 setlocal keymap=
 setlocal noarabic
 setlocal noautoindent
-setlocal balloonexpr=
+setlocal balloonexpr=RubyBalloonexpr()
 setlocal nobinary
 setlocal bufhidden=
 setlocal buflisted
@@ -77,8 +78,8 @@ setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
 setlocal cinoptions=
 setlocal cinwords=if,else,while,do,for,switch
 setlocal colorcolumn=
-setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
-setlocal commentstring=#%s
+setlocal comments=:#
+setlocal commentstring=#\ %s
 setlocal complete=.,w,b,u,t,i
 setlocal concealcursor=
 setlocal conceallevel=0
@@ -94,8 +95,8 @@ setlocal nodiff
 setlocal equalprg=
 setlocal errorformat=
 setlocal expandtab
-if &filetype != 'sh'
-setlocal filetype=sh
+if &filetype != 'ruby'
+setlocal filetype=ruby
 endif
 setlocal foldcolumn=0
 setlocal foldenable
@@ -108,18 +109,18 @@ setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal foldtext=foldtext()
 setlocal formatexpr=
-setlocal formatoptions=tcq
+setlocal formatoptions=croql
 setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
 setlocal grepprg=
 setlocal iminsert=2
 setlocal imsearch=2
-setlocal include=
-setlocal includeexpr=RailsIncludeexpr()
-setlocal indentexpr=GetShIndent()
-setlocal indentkeys=0{,0},!^F,o,O,e,0=then,0=do,0=else,0=elif,0=fi,0=esac,0=done,),0=;;,0=;&,0=fin,0=fil,0=fip,0=fir,0=fix
+setlocal include=^\\s*\\<\\(load\\|w*require\\)\\>
+setlocal includeexpr=substitute(substitute(v:fname,'::','/','g'),'$','.rb','')
+setlocal indentexpr=GetRubyIndent()
+setlocal indentkeys=0{,0},0),0],!^F,o,O,e,=end,=elsif,=when,=ensure,=rescue,==begin,==end
 setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255,.
-setlocal keywordprg=
+setlocal iskeyword=@-@,@,48-57,128-167,224-235,_
+setlocal keywordprg=ri
 setlocal nolinebreak
 setlocal nolisp
 setlocal nolist
@@ -131,8 +132,9 @@ setlocal nrformats=octal,hex
 set number
 setlocal number
 setlocal numberwidth=4
-setlocal omnifunc=
-setlocal path=.,/var/www/lims,/var/www/lims/app,/var/www/lims/app/models,/var/www/lims/app/controllers,/var/www/lims/app/helpers,/var/www/lims/config,/var/www/lims/lib,/var/www/lims/app/views,/var/www/lims/test,/var/www/lims/test/unit,/var/www/lims/test/functional,/var/www/lims/test/integration,/var/www/lims/spec,/var/www/lims/spec/models,/var/www/lims/spec/controllers,/var/www/lims/spec/helpers,/var/www/lims/spec/views,/var/www/lims/spec/lib,/var/www/lims/spec/requests,/var/www/lims/spec/integration,/var/www/lims/app/*,/var/www/lims/vendor,/var/www/lims/vendor/plugins/*/lib,/var/www/lims/vendor/plugins/*/test,/var/www/lims/vendor/rails/*/lib,/var/www/lims/vendor/rails/*/test,/usr/include,
+setlocal omnifunc=rubycomplete#Complete
+setlocal path=.,-e:1:in\ `<main>':\ undefined\ method\ `all_load_paths'\ for\ Gem:Module\ (NoMethodError)\
+
 setlocal nopreserveindent
 setlocal nopreviewwindow
 setlocal quoteescape=\\
@@ -153,11 +155,11 @@ setlocal statusline=
 setlocal suffixesadd=.rb
 setlocal swapfile
 setlocal synmaxcol=3000
-if &syntax != 'sh'
-setlocal syntax=sh
+if &syntax != 'ruby'
+setlocal syntax=ruby
 endif
 setlocal tabstop=2
-setlocal tags=/var/www/lims/tmp/tags,./tags,./TAGS,tags,TAGS,/var/www/lims/tags
+setlocal tags=
 setlocal textwidth=0
 setlocal thesaurus=
 setlocal noundofile
@@ -166,12 +168,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 9 - ((7 * winheight(0) + 6) / 13)
+let s:l = 5 - ((4 * winheight(0) + 7) / 14)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-9
-normal! 03l
+5
+normal! 037l
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf

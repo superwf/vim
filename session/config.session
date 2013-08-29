@@ -24,12 +24,11 @@ let &cpo=s:cpo_save
 unlet s:cpo_save
 set backspace=indent,eol,start
 set expandtab
-set fileencodings=utf-8,ucs-bom,euc-jp,gb18030,gbk,gb2312,cp936
+set fileencodings=utf-8,gbk,ucs-bom,gb18030,euc-jp,gb2312,cp936
 set helplang=cn
 set history=50
 set hlsearch
 set incsearch
-set nomodeline
 set mouse=a
 set printoptions=paper:a4
 set ruler
@@ -117,7 +116,7 @@ setlocal nolisp
 setlocal nolist
 setlocal makeprg=
 setlocal matchpairs=(:),{:},[:]
-setlocal nomodeline
+setlocal modeline
 setlocal modifiable
 setlocal nrformats=octal,hex
 set number
@@ -158,12 +157,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 57 - ((10 * winheight(0) + 7) / 14)
+let s:l = 106 - ((14 * winheight(0) + 7) / 15)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-57
-normal! 0
+106
+normal! 014l
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf

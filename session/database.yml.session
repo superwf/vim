@@ -14,7 +14,7 @@ nnoremap <silent> <Plug>NetrwBrowseX :call netrw#NetrwBrowseX(expand("<cWORD>")
 nmap <silent> <Plug>VLToggle :let g:VeryLiteral = !g:VeryLiteral| echo "VeryLiteral " . (g:VeryLiteral ? "On" : "Off")
 vmap <kMultiply> *
 map <F4> "*p
-map <F2> :up
+map <F2> :NERDTree:set number
 map <F3> :up
 imap <silent>  <Plug>VimIM
 imap <silent>  <Plug>VimimOneKey
@@ -24,7 +24,7 @@ let &cpo=s:cpo_save
 unlet s:cpo_save
 set backspace=indent,eol,start
 set expandtab
-set fileencodings=utf-8,ucs-bom,euc-jp,gb18030,gbk,gb2312,cp936
+set fileencodings=utf-8,gbk,ucs-bom,gb18030,euc-jp,gb2312,cp936
 set helplang=cn
 set history=50
 set hlsearch
@@ -42,15 +42,14 @@ set viminfo='200,%,!,<50,s10,h,rA,rB,/50,:50
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd /var/www/user_passport
+cd /var/www/primer_synthesis
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +18 config/database.yml
-badd +0 /var/www/user_passport.bak/config/database.yml
+badd +0 config/database.yml
 args config/database.yml
-edit /var/www/user_passport.bak/config/database.yml
+edit config/database.yml
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -67,6 +66,7 @@ unlet s:cpo_save
 setlocal keymap=
 setlocal noarabic
 setlocal noautoindent
+setlocal balloonexpr=
 setlocal nobinary
 setlocal bufhidden=
 setlocal buflisted
@@ -81,7 +81,7 @@ setlocal commentstring=#\ %s
 setlocal complete=.,w,b,u,t,i
 setlocal concealcursor=
 setlocal conceallevel=0
-setlocal completefunc=syntaxcomplete#Complete
+setlocal completefunc=
 setlocal nocopyindent
 setlocal cryptmethod=
 setlocal nocursorbind
@@ -110,8 +110,8 @@ setlocal formatexpr=
 setlocal formatoptions=croql
 setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
 setlocal grepprg=
-setlocal iminsert=0
-setlocal imsearch=0
+setlocal iminsert=2
+setlocal imsearch=2
 setlocal include=
 setlocal includeexpr=RailsIncludeexpr()
 setlocal indentexpr=
@@ -131,7 +131,7 @@ set number
 setlocal number
 setlocal numberwidth=4
 setlocal omnifunc=
-setlocal path=.,/var/www/user_passport.bak,/var/www/user_passport.bak/app,/var/www/user_passport.bak/app/models,/var/www/user_passport.bak/app/controllers,/var/www/user_passport.bak/app/helpers,/var/www/user_passport.bak/config,/var/www/user_passport.bak/lib,/var/www/user_passport.bak/app/views,/var/www/user_passport.bak/spec,/var/www/user_passport.bak/spec/models,/var/www/user_passport.bak/spec/controllers,/var/www/user_passport.bak/spec/helpers,/var/www/user_passport.bak/spec/views,/var/www/user_passport.bak/spec/lib,/var/www/user_passport.bak/spec/requests,/var/www/user_passport.bak/spec/integration,/var/www/user_passport.bak/app/*,/var/www/user_passport.bak/vendor,/var/www/user_passport.bak/vendor/plugins/*/lib,/var/www/user_passport.bak/vendor/plugins/*/test,/var/www/user_passport.bak/vendor/rails/*/lib,/var/www/user_passport.bak/vendor/rails/*/test,/usr/include,
+setlocal path=.,lib,vendor,app/models/concerns,app/controllers/concerns,app/controllers,app/helpers,app/mailers,app/models,app/*,app/views,test,test/unit,test/functional,test/integration,test/controllers,test/helpers,test/mailers,test/models,vendor/plugins/*/lib,vendor/plugins/*/test,vendor/rails/*/lib,vendor/rails/*/test,/var/www/primer_synthesis,/usr/include,
 setlocal nopreserveindent
 setlocal nopreviewwindow
 setlocal quoteescape=\\
@@ -143,7 +143,7 @@ setlocal noscrollbind
 setlocal shiftwidth=2
 setlocal noshortname
 setlocal nosmartindent
-setlocal softtabstop=2
+setlocal softtabstop=0
 setlocal nospell
 setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
 setlocal spellfile=
@@ -156,7 +156,7 @@ if &syntax != 'yaml'
 setlocal syntax=yaml
 endif
 setlocal tabstop=2
-setlocal tags=/var/www/user_passport.bak/tmp/tags,./tags,./TAGS,tags,TAGS,/var/www/user_passport.bak/tags
+setlocal tags=/var/www/primer_synthesis/tags,/var/www/primer_synthesis/tmp/tags,./tags,./TAGS,tags,TAGS
 setlocal textwidth=0
 setlocal thesaurus=
 setlocal noundofile
@@ -165,12 +165,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 18 - ((13 * winheight(0) + 7) / 14)
+let s:l = 17 - ((1 * winheight(0) + 8) / 16)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-18
-normal! 0
+17
+normal! 014l
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf

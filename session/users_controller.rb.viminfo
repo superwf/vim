@@ -8,117 +8,117 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/clerks
+~MSle0~/primer_board
 
 # Last Substitute Search Pattern:
-~MSle0&contract
+~MSle0&"
 
 # Last Substitute String:
-$
+$'
 
 # Command Line History (newest to oldest):
-:Rcontroller users
-:Rmodel clerks
-:Rmodel user
-:Rmodel area
-:Rmodel client
+:q
+:Rview users/_form.html.haml
+:Rview users/edit.html.haml
+:e Gemfile
+:Rview users/_table.html.haml
+:Rview lims
+:Rcontroller api/v1/users
+:Rmigration create_users
+:vsplit Gemfile
+:Rcontroller api/v1/credentials
+:vs /var/www/lims/app/controllers/gridfs_controller.rb
 :Rcontroller gridfs
+:Rmodel user
+:Rspec models/new_primer
+:Rspec models/primer
 :Rmodel primer
-:Rcontroller syntheses
-:Rview syntheses/index.html.haml
+:vs config/routes.rb
+:Rview new_primers/_table.html.haml
+:Rview new_reactions/_table.html.haml
 :Rcontroller orders
 :Rmodel order
-:Rview produces/_list.html.haml
-:Rview print_labels/index.html.haml
-:vs app/models/primer.rb
-:e config/routes.rb
-:e config/receive_email.yml
-:Rview orders/_list.html.haml
-:Rview primers/_list.html.haml
-:tabedit Gemfile
-:vs app/models/order.rb
-:Rview orders/_primers.html.haml
+:Rview _clients.html.haml
+:Rview orders/_clients.html.haml
+:e start_rake_tasks
+:Rtask order
+:Rtask primer
+:Rlocale notifiers.cn.yml
+:Rview notifier/send_order_mail.html.haml
+:Rview notifier/tendaysover_primers.html.haml
+:Rmodel order_mail
 :R
+:Rmigration create_order_mail
+:Rmigration create_order_mails
+:Rmailer notifier
+:Rlocale nogi
+:Rview tendaysover_primers.html.haml
+:Rlocale 
+:e app/views/notifier/send_order_mail.html.haml
+:e app/views/notifier/send
 :Rlocale cn.yml
-:Rmigration create_primers
-:q
-:Rmodel sample
-:Rmigration create_re
-:Rlocale sample_boards
-:Rmigration create_samples
+:Rlocale precheck_codes.cn.yml
 :Rmodel precheck
-:Rmigration create_prechecks
-:Rmodel vector
-:Rhelper sample_boards
-:Rview sample_boards/running.html.haml
-:vs app/models/sample_board.rb
-:vs app/models/sample_board
-:Rcontroller sample_boards
-:Rmodel sample_cancel
-:Rmodel sample_board
-:Rmigration create_sample_boards
-:Rinitializer session_store
-:Rinitializer doorkeeper
-:Rinitializer devise
-:Rview checkouts/_form.html.haml
-:Rview 
-:Rmigration create_projects
-:Rmodel create_projects
-:Rmigration 
-:Rmigration create_areas
-:Rmigration create_checking
+:Renvironment development
+:e config/mail.yml
+:e config/application.rb
+:Rcontroller nogi
+:Rm
+:Rcontroller order
+:Rlocale order
+:Rlocale order_mails.cn.yml
 
 # Search String History (newest to oldest):
-?/clerks
-?/clerk_ids
-? \<to_synthesis_csv\>
-?/download_csv
-?/print_location
-?/table
-?/report
-?/orders
-?/location
-?/avai
-?/create
-? \<destroy_reaction_datas\>
-?/checkout_detail
-?/invoice
-?/can_relate
-?/head
-?/month_s
-?/technic
-?/prom
-?/propmt
-?/def go
-?/workflow_
-?/name
-? \<money_per_period\>
-?/conv_statistic
-?/enum
-? \<create_primer_board_type\>
-? \<create_primer_board\>
-?/before
+?/superwf_
+?/resq
 ?/primer_board
-?/TRAN
-?/tran
-?/property
-? \<bslash\>
-? \<project_types\>
-?/before_save
-?/error
-? \<validates\>
-?/I18n
-?/I1
-?/body
-?/sync
-?/mongoid
-?/controller
+?/CSV
+?/CVS
+?/cvs
 ?/title
-?/users
-?/mailer_sender
-? \<prawn\>
-? \<acts_as_tree\>
-? \<simple_form\>
+?/footer
+?/mail
+?/to_zip
+?/type
+?/send_mail
+?/search
+?/scope
+?/#submit
+?/order_mail
+?/before_transition
+?/downloading
+?/has_
+? \<update_all\>
+?/destroy
+?/primer_heads
+?/gridfs
+?/origin
+?/status
+?/ho
+?/before_create
+?/new_primers
+? "
+?/rest
+?/UPDATE
+?/config
+?/true
+?/api
+?/client_email
+?/upd
+?/last_updated
+?/last_up
+? \<updated_in_7_days\>
+? \<available\>
+?/must_reaction_text
+?/must_
+?/RETURN
+?/replace
+?/procedures
+?/vector
+?/new_order
+? \<confirm_board\>
+?/insert_sample
+?/insert_primer
 
 # Expression History (newest to oldest):
 
@@ -128,46 +128,77 @@ $
 
 # å¯„å­˜å™¨:
 "0	LINE	0
-	          $(this).find(":checkbox").attr("checked")
-"1	LINE	0
-	        return false
+	  skip_before_filter :set_model
+	  def serve
+	    gridfs_path = env['PATH_INFO'].sub(/^\/uploads\//, '')
+	    reg = env['PATH_INFO'].match /^\/uploads\/(\w+)\/(\w+)\/(\d+)\//
+	    env['PATH_INFO'].match /^\/uploads\/(\w+)\/\/(\w+)\/\/(\d+)\//
+	    model, attr, id = reg[1..3]
+	    begin
+	      gridfs_file = ::Mongoid::GridFS[gridfs_path]
+	      self.response_body = gridfs_file.data
+	      self.content_type = gridfs_file.content_type
+	      headers['Content-disposition'] = "attachmennt; filename=#{eval(model.classify).find(id).send(attr).send(:original_filename)}"
+	    rescue ::Exception => e
+	      self.status = :file_not_found
+	      ::Rails.logger.debug { "#{e}" }
+	      self.content_type = 'text/plain'
+	      self.response_body = ''
+	      raise e
+	    end
+	  end
+""1	LINE	0
+	= render 'subnav', :links => [btn(:back, :class => 'btn-primary')]
 "2	LINE	0
-	%button#select_all_location é€‰æ‹©æ‰€æœ‰æœ‰ä½ç½®çš„å¼•ç‰©
+	
 "3	LINE	0
-	        $()
+	    def signature
+	    end
 "4	LINE	0
-	        name: ç‰‡åŒºåç§°
-	        clerks: ä¸šåŠ¡å‘˜
-	        servicers: å®¢æœäººå‘˜
-	        creator_id: å½•å…¥äºº
-	        companies_count: å…¬å¸æ•°é‡
-	        created_at: å½•å…¥æ—¶é—´
-	        updated_at: æœ€åæ›´æ–°æ—¶é—´
-	        companies: å…¬å¸
-	        clerk: ä¸šåŠ¡å‘˜
-	        servicer: å®¢æœäººå‘˜
-	        remark: è¯´æ˜
-	  areas:
-	    table:
-	      view_companies: æŸ¥çœ‹å…¬å¸
+	  def serve
+	    gridfs_path = env['PATH_INFO'].sub(/^\/uploads\//, '')
+	    gridfs_path.match /\/(\d+)\//
+	    id = $1
+	    gridfs_path.match /^(\w+)\//
+	    model = $1
+	    begin
+	      gridfs_file = ::Mongoid::GridFS[gridfs_path]
+	      self.response_body = gridfs_file.data
+	      self.content_type = gridfs_file.content_type
+	      headers['Content-disposition'] = "attachmennt; filename=#{eval(model.classify).find(id).original_filename}"
+	    rescue ::Exception => e
+	      self.status = :file_not_found
+	      ::Rails.logger.debug { "#{e}" }
+	      self.content_type = 'text/plain'
+	      self.response_body = ''
+	      raise e
+	    end
+	  end
 "5	LINE	0
-	      t.
+	gem 'resque'
 "6	LINE	0
-	      t.
+	      tel:
 "7	LINE	0
-	  include ::SuperwfAudited::Creator
+	
 "8	LINE	0
-	  include Mongoid::Document
+	    self.qualities.update_all 'status = "sent"'
 "9	LINE	0
-	class Checking
-"a	BLOCK	23
-	{style: 'width: 100px;'}
-"b	BLOCK	23
+	      order_mail.send!
+"a	LINE	0
+	      if ::Rails.env.test?
+	        t.string :remark
+	      else
+	        t.text :remark
+	      end
+"b@	BLOCK	23
 	 NOT NULL AUTO_INCREMENT
 "g	CHAR	0
 	
 "k	CHAR	0
-	j
+	2698
+<jh:Rsp	 mo	sample/comlet€kb€kb€kbplete!jjjjjjjjkkekkkkoprecheck = o€kbdouble()iprecheck'xbi:oprecheck.stub()ipassed: true€k3zzjjjkkojjjjjkkwkkkkkkjI@#€kbjjjjjkkkko@s.stub()iprecheck: @precheckjjjjjkzzbo@s.passed.should be_niljjbo@s.passed.should eq()i@precheck.passedo@s.ddjjjjjwjjzzo@s.passed.should be_nilkkkkkkkkkkkkkk€k3bbbb€ıL€ıL€ıL€ıLgthjjjjkzzjjkkkkkkkkkkkkkkkkkjjjjjjjjjjjjjjjjjjk%%kwzzkkwwwcacwvalidatebcwvalid?€k3lhjjj%%kwoit '' doendkllitypesetted?biif ela can not be dewt€kb€kbstroyedljjzzkkkkkkkjjbjjkCcomplete!kVkdjjjjjgthkjlkkkkkkkkkkkjjjjkkkoreturn false unless p€kbself.precheckbbbbcwifbbbveeebhxjjjoendkVkk>€k3jjjjjjjjjjjbgtebzhjjjhjjjjkkkouVjdkkkkkkkwO@p.sam;pl€kb€kb€kble.shoulsample.should_re()i:complete!jjjjjjoit '' doendklliif typesetted?zza €kb, can not be destroyedlkkkkkwwwwww@##nnnnnho@p.sample.typesetted?lbbvelxnnbbvexxnn/delegateeeea, :typesetted?€k3hbcistub :A = €kb> truelnkkkwwwww#ho@p.savekddpo@p.s€kbdestroyo@p.should_not be_destroyedjzzoit '' doendklllhiafter destroy ,€kb€kb, sample should e€kbunl€kbcop€kbmplete!o@p.saveo@p.det€kbstt€kbroyko@p.sample.typesestub t€kb:typesetted? => falsejozz€kb€kbddzzkwO@p.sample.should_rec :uncom!€k3ljjjjzzjjjzzbzzjjkzzhjjjddjk%%ocontext '' doendkwatest scopeszzobefor €kbe :each doendko@p.savezzjoit '' doendklliwhen passed, €kb€kbzzo@€kb::Precheck.passed.should be_inc€kbn€kbl()i@pko@p.s€kbpassed.should be_truejzzo::Precheck.unpassed.should_no be_inc€kb()i@pjzzoit' ' €kb€kb€kb€kb '' doendklliwhen unpassedo@p.precheck_code.stub()i:passed: €kb€kb:bhxela falsas€kbezzo@p.s€kbddkwkonew_recor€kb€kb€kb€kb€kbcode = create_precheck_code passed: falsejbbbbbbbCupdate_attribute precheck-cod€kb_code_id: new_code.ido@p.validatelkkkkkkkkkkkkkkkkkkkkhkeasjljjjjjjzzjjjjzzhbcwpassed.should be_falseokkkukkkkkkVkdujjjjjjjpjfuvlxkP€k3ljjjjzzhzzGoukoit '' doendkllitest show methodzzo@p.show €kb.should eq()lkwvf"yhPbbbbbbbbbcw@pwwwww.€k3ljjjzzjwwcwcode€k3€k3€k3€k3hjoit '' doendklliself.test to_s methodo@p.to_s.should eq()i@p.codde€kb€kbe€k3ljjjggGkkkkjjwkkkkggkjk:Rmo	 hea	h:Rsp	 sp	msp	mmo	heheat	jjjwCbefore :each doendko::@h = ::Fac.cu€kb€kbbuild :heat_cy, reaction_board_id: reactcreate_reaction_board.id€k3:Rfix	 heat	jjjwocreate€kbor_id `€kb12€kboremark ''irrrrr€k3lhoquadrant ''ixxxx€k3ljjjjjjjjjjjjkkwh:Rmi	 create_heat	joit '' doendkllihas theset €kb€kb attributes can mass-assign€k3lgghkkoit'' €kb€kb€kb '' doendklliis boardo::Heat.€kb::BOar€kb€kb.should be_true€k3jjjjzzkotest_an€kb ::HeatC€kb, []ljjwwwbv$hyhP€k3zzjjk
+"l	CHAR	0
+	
 "p	LINE	0
 	
 	
@@ -193,146 +224,172 @@ $
 	::::::::::::::::::::::::
 	
 	æ²¡æœ‰åŒ¹é…çš„è‡ªåŠ¨å‘½ä»¤
-	æ²¡æœ‰åŒ¹é…çš„è‡ªåŠ¨å‘½ä»¤
+	æ²¡æœ‰åŒ¹é…çš„è‡ªåŠ¨å‘½ä»¤	
+"q	CHAR	0
+	2232
+<auence€k3€kul:Rlhggl:Rlo	 primernto€kb€kboti	kkkkkex€k3€k3€k3€k3€k3€k3€k3€ı,€ı.€ıL€ıL€ı,€ı.€ı,€ı.a{}iborder: 1€k3€ı,€ı.€ıK€ıK€ı,€ı.x€k3€k3€k3€k3€ı,€ı.€ı,€ı.€ı,€ı.veeesstyle: ''iborder: 1px, €kb€kb sok€kblid;€k3€ıL€ıK€ıK€ı,€ı.€ıL€ı,€ı.€ıL€ıL€ıL€ı,€ı.€ı,€ı.€ıL€ıL€ıK€ı,€ı.€ı,€ı.€ı,€ı.€ü €ı,€ü €ı.€ı,€ı.€ı,€ı.€ı,€ı.€ü €ı,€ü €ı.€ı,€ı.€ü €ı,€ü €ı.€ı,€ı.€ü €ı,€ü €ı.€ı,€ı.€ıK€ı,€ı.:Rlo	 pi€kbrimers	ggjjjjjjjjjjjwkwhkkkkkkj$bbcwcreated_datejjjjjjjkjjbbbCcreated_date€k3jjjjjjkYjjkkhjjjljjjjjjjjjjjkkkkkkkkkkkkkkkkkkkkkkkkkkkGh€ıK€ıK€ıK€ıK€ı,€ı.a €kb, border: 1€k3€k3€ıK€ıK€ı,€ı.jo:cssotd{}iborder: 1px, so€kb€kb€kb€kb sok€kblid;€k3jjjjjjjjjjkkbbbbbbDjjzzjwwla{}iwistyle: ''iwit€kbdth: 5ema;ll%%yjPjPjzzkjP€k3€k3€k3€k3€k3€k3€k3€ıK€ıK€ıK€ıK€ıK€ı,€ı.ea, th€k3jjjjjjjjjjjjjjjjjjjjjjkkkkkkkkkkkkkjkkkj€k3€k3€k3€k3€k3€k3€k3€k3€k3€k3€ı,€ı.ves20%kkka{}istyle: ''iwidth: 100%;€k3€k3€k3€k3€k3€k3hhjjjjkljves20a%jjkbves30a%jbves30%€k3kkkkjhhr3jjjjkr2€k3€k3€k3€k3€k3€k3jjjkjjjjjjjkkkkkkkkkkkkkkkkkkkkjjj€k3€k3€k3€ıK€ıK€ı,€ı.€ı,€ı.Vjdjjjjjjjjjjjjjkkkkkkwwwwwwwwwwwbhhhxs8llllli, border: 1, cellspacing: 0jjjbbbbbbbr2jjr2€k3€k3€ı,€ı.at€kb text-align: cr€kbenter;€k3€k3€k3l:Rtask	 prim	kjzzxjjjjjjjjjjkkkkbjbjjjxkx€k3jjjjjjjjjjggx€k3€ıL€ıL€ıL€ıL€ıL€ıL€ıL€ıK€ıK€ıK€ıK€ıK€ıK€ıK€ıL€ıL€ıLggu€k3€ıL€ıL€ıL€ıL€ıL€ıL€ıL€ıK€ıKe€ıK€ıK€ıKbbggjh:e cRenvggljjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjkkkwggGkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkjjjjjjjjjjjjjjj€ı,€ı.€ıL€ıL€ıL€ı,€ı.:Rlo	 prijersprimers	kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkjjjjjwjkkkkkkkkkkkkkkjjkkkjjjhjjjjjjjkzzbYpwwwwwwwwwwwwwwwwwwcwp€kbover_datejjjjjjjjjjkkYp$bcwor€kbver_datekkkkkkkkkkkkkkjjjhhhjjjjkkkkjjkjjknjkjkkkk€k3uuuuu€k3€k3€k3€ı,€ı.b€ıL€ıL€ı,€ı.b€ı,€ı.v%%%xj.j.j.j.€k3ljjjjjjjjjjjjjjjjjkkkkkkjI#€k3€k3€k3jjjjjjjkh:Rtsa€kb€kbask	 or	jjjjjjjjkklgg:Rvi	 order	no	s€kbsen			n			sen		hjjjjjjjjjjjjjjjjjjjjjjjjjjj:Rmai	 	kGkw%jjjjjjjjjjjjjjjjjjjkkkkkkkkkkkkkkkkkl:Rs€kbtask	 or	hklkkkjwwwwwwhvex€k3hwwwwbC_mail€k3€k3€k3€k3€k3€k3€k3€k3€k3€k3jbiore€kbder_mail.bbbbbiorder_mail.€k3jkkoorder = order_mail.orderjbbbdwx€k3jjjjjjjjjjjjjjjjjjjkkkkkkkkkkkkkjjjjjjjjjjjwwex€k3€k3€k3:Rzz
+"s	CHAR	0
+	552
+<,hi,llxxepwxxxsuuf}xexepwxxxwewwxepwxxxwwllDjjwwxxewbea_tagea, params[]iswwxepwxxxwwwwwwxepwxxxwwxepwxxxjjkkjjj^wxxea_g€kbtagwwwwwxepwxxx€k3€ı,€ı.xepwxxxjjkwwwwwwwwwxepwxxxwwwwwwxepwxxxwwxepwxxxwjbbbbbbbbxepwxxx€k3€k3€ı,€ı.:Rvi	 quality_co	_ta	jkVjdljkggjjkwpVj>.jwveehxwwr xu$xbbbbbbbxepwxxx€k3hdd€k3l:Rvi	 €ı,€ı.€ıL€ıK€ıL€ı,€ı.€ı,€ı.$ibcwtruebbbbbwi, params[]i:result€k3:Rmo	 qual	Gkgg:_c	Gkwkkkwji#€k3€k3€k3€k3u€k3h:Rcon	 qua	jjjjjjjjjjjjjjjjjjjjjjjjjjjj:€kb€kb€kby_co	a, :desc€k3l:Rmo	 sample_he	G/searchgg:R
 "v	CHAR	0
 	389
 <jkV%>wveesself€k3€ıK€ıK€ıK€ıL€ıL€ıK€ıL€ıL€ı,€ı-€ı-€ı-€ı-€ı-€ı-€ı-€ı-€ı-€ı.sselfwwwwblveesself€k3gt:gtjjV%ddd€k3hjjbbbbluuwC€ı,€ı.€ı,€ı.bcwbcwc€kbmoduleA F€kb€kbFac€k3hjjjjjjbbbbveelx€k3€k3€k3€k3€k3€ı,€ı.cw::Filewwww.€k3€ı,€ı.xkjjI#€k3kY:Rfix	 hr€kbtcon	jjjjj:Rfix 	htRfix	 ht_smaple-re	€kb€kb€kb_r	:€kb€kb€kb€kb€kb€kb€kbamp		jkpdkddljjV%ddd€k3h€k3jjl€k3h
 "w	CHAR	0
-	
-""-	CHAR	0
-		
+	wwwDulpjzzhjzzlVGkkkkdhVjjzzjjjzzjjjylPGkkkkjddkVkkzzkkkkkzzk>jkjj€k3€k3€k3€k3€k3€k3€k3€k3zzwjjjjjjjkkkkkkkkkkh:e co	r	:e 
+"-	CHAR	0
+	primer_boards 
 
 # å…¨å±€å˜é‡:
 
 # æ–‡ä»¶æ ‡è®°:
-'0  9  44  /var/www/sino_project/app/controllers/users_controller.rb
-'1  8  0  /var/www/primer_synthesis/.git/COMMIT_EDITMSG
-'2  19  18  /var/www/primer_synthesis/.git/COMMIT_EDITMSG
-'3  206  3  /var/www/primer_synthesis/app/models/primer.rb
-'4  139  10  /var/www/superwf/superwf_scaffold/lib/superwf_scaffold.rb
-'5  9  0  /var/www/genetest/.git/COMMIT_EDITMSG
-'6  27  28  /var/www/2011/lims/app/models/sample.rb
-'7  47  38  /var/www/2011/lims/app/models/sample.rb
-'8  65  2  /var/www/superwf/superwf_scaffold/lib/helpers/application_helper.rb
-'9  58  47  /var/www/superwf/superwf_scaffold/lib/helpers/application_helper.rb
+'0  14  4  /var/www/user_passport/app/controllers/api/v1/users_controller.rb
+'1  3  2  /var/www/user_passport/app/controllers/gridfs_controller.rb
+'2  65  0  /var/www/lims/Gemfile
+'3  66  10  /var/www/lims/Gemfile
+'4  44  72  /var/www/lims/db/seeds.rb
+'5  6  2  /var/www/lims_order/app/models/primer.rb
+'6  146  11  /var/www/genetest/app/controllers/orders_controller.rb
+'7  61  2  /var/www/genetest/app/models/order.rb
+'8  1  0  /var/www/primer_synthesis/app/views/orders/_clients.html.haml
+'9  211  101  /var/www/lims/app/models/order.rb
 
 # è·³è½¬åˆ—è¡¨ (ä»æ–°åˆ°æ—§):
--'  9  44  /var/www/sino_project/app/controllers/users_controller.rb
--'  5  27  /var/www/sino_project/app/models/area.rb
--'  1  0  /var/www/sino_project/app/models/user.rb
--'  12  4  /var/www/sino_project/app/models/user.rb
--'  3  26  /var/www/sino_project/app/models/area.rb
--'  11  2  /var/www/sino_project/app/models/area.rb
--'  9  21  /var/www/sino_project/app/models/client.rb
--'  1  0  /var/www/sino_project/app/models/client.rb
--'  8  17  /var/www/sino_project/app/controllers/users_controller.rb
--'  2  2  /var/www/sino_project/app/controllers/gridfs_controller.rb
--'  1  0  /var/www/sino_project/app/controllers/gridfs_controller.rb
--'  8  0  /var/www/primer_synthesis/.git/COMMIT_EDITMSG
--'  1  0  /var/www/primer_synthesis/.git/COMMIT_EDITMSG
--'  19  18  /var/www/primer_synthesis/.git/COMMIT_EDITMSG
--'  10  0  /var/www/primer_synthesis/.git/COMMIT_EDITMSG
--'  206  3  /var/www/primer_synthesis/app/models/primer.rb
--'  64  60  /var/www/primer_synthesis/config/routes.rb
--'  1  0  /var/www/primer_synthesis/config/receive_email.yml
--'  200  88  /var/www/primer_synthesis/app/controllers/orders_controller.rb
--'  195  4  /var/www/primer_synthesis/app/controllers/orders_controller.rb
--'  192  2  /var/www/primer_synthesis/app/controllers/orders_controller.rb
--'  186  6  /var/www/primer_synthesis/app/controllers/orders_controller.rb
--'  245  2  /var/www/primer_synthesis/app/controllers/orders_controller.rb
--'  263  2  /var/www/primer_synthesis/app/controllers/orders_controller.rb
--'  260  4  /var/www/primer_synthesis/app/controllers/orders_controller.rb
--'  259  2  /var/www/primer_synthesis/app/controllers/orders_controller.rb
--'  276  2  /var/www/primer_synthesis/app/controllers/orders_controller.rb
--'  273  6  /var/www/primer_synthesis/app/controllers/orders_controller.rb
--'  267  2  /var/www/primer_synthesis/app/controllers/orders_controller.rb
--'  298  2  /var/www/primer_synthesis/app/controllers/orders_controller.rb
--'  295  6  /var/www/primer_synthesis/app/controllers/orders_controller.rb
--'  280  2  /var/www/primer_synthesis/app/controllers/orders_controller.rb
--'  332  2  /var/www/primer_synthesis/app/controllers/orders_controller.rb
--'  320  12  /var/www/primer_synthesis/app/controllers/orders_controller.rb
--'  302  2  /var/www/primer_synthesis/app/controllers/orders_controller.rb
--'  82  27  /var/www/primer_synthesis/app/controllers/orders_controller.rb
--'  29  22  /var/www/primer_synthesis/config/routes.rb
--'  28  63  /var/www/primer_synthesis/config/routes.rb
--'  19  64  /var/www/primer_synthesis/config/routes.rb
--'  13  20  /var/www/primer_synthesis/config/routes.rb
--'  12  50  /var/www/primer_synthesis/config/routes.rb
--'  11  49  /var/www/primer_synthesis/config/routes.rb
--'  1  0  /var/www/primer_synthesis/config/routes.rb
--'  12  17  /var/www/primer_synthesis/app/views/orders/_primers.html.haml
--'  46  34  /var/www/primer_synthesis/app/views/produces/_list.html.haml
--'  30  4  /var/www/primer_synthesis/app/views/print_labels/index.html.haml
--'  29  31  /var/www/primer_synthesis/app/models/primer.rb
--'  20  2  /var/www/primer_synthesis/app/models/primer.rb
--'  162  50  /var/www/primer_synthesis/app/models/primer.rb
--'  26  23  /var/www/primer_synthesis/db/migrate/20110705052601_create_primers.rb
--'  64  27  /var/www/primer_synthesis/config/locales/cn.yml
--'  1  0  /var/www/primer_synthesis/db/migrate/20110705052601_create_primers.rb
--'  139  10  /var/www/superwf/superwf_scaffold/lib/superwf_scaffold.rb
--'  127  8  /var/www/superwf/superwf_scaffold/lib/superwf_scaffold.rb
--'  9  0  /var/www/genetest/.git/COMMIT_EDITMSG
--'  1  0  /var/www/genetest/.git/COMMIT_EDITMSG
--'  27  28  /var/www/2011/lims/app/models/sample.rb
--'  47  38  /var/www/2011/lims/app/models/sample.rb
--'  1  0  /var/www/2011/lims/app/models/precheck.rb
--'  11  218  /var/www/2011/lims/app/models/precheck.rb
--'  17  15  /var/www/2011/lims/app/models/precheck.rb
--'  10  6  /var/www/2011/lims/app/helpers/sample_boards_helper.rb
--'  64  4  /var/www/2011/lims/app/controllers/sample_boards_controller.rb
--'  19  0  /var/www/2011/lims/app/models/sample_cancel.rb
--'  16  35  /var/www/2011/lims/app/models/sample_board.rb
--'  15  36  /var/www/2011/lims/db/migrate/20111028055516_create_sample_boards.rb
--'  50  23  /var/www/2011/lims/app/models/sample_board.rb
--'  1  0  /var/www/2011/lims/db/migrate/20111028055516_create_sample_boards.rb
--'  65  2  /var/www/superwf/superwf_scaffold/lib/helpers/application_helper.rb
--'  58  47  /var/www/superwf/superwf_scaffold/lib/helpers/application_helper.rb
--'  67  28  /var/www/superwf/superwf_scaffold/lib/helpers/application_helper.rb
--'  1  0  /var/www/user_passport/config/initializers/doorkeeper.rb
--'  6  0  /var/www/user_passport/config/initializers/session_store.rb
--'  206  3  /var/www/primer_synthesis/app/models/primer.rb
--'  64  60  /var/www/primer_synthesis/config/routes.rb
--'  1  0  /var/www/primer_synthesis/config/receive_email.yml
--'  200  88  /var/www/primer_synthesis/app/controllers/orders_controller.rb
--'  195  4  /var/www/primer_synthesis/app/controllers/orders_controller.rb
--'  192  2  /var/www/primer_synthesis/app/controllers/orders_controller.rb
--'  186  6  /var/www/primer_synthesis/app/controllers/orders_controller.rb
--'  245  2  /var/www/primer_synthesis/app/controllers/orders_controller.rb
--'  263  2  /var/www/primer_synthesis/app/controllers/orders_controller.rb
--'  260  4  /var/www/primer_synthesis/app/controllers/orders_controller.rb
--'  259  2  /var/www/primer_synthesis/app/controllers/orders_controller.rb
--'  276  2  /var/www/primer_synthesis/app/controllers/orders_controller.rb
--'  273  6  /var/www/primer_synthesis/app/controllers/orders_controller.rb
--'  267  2  /var/www/primer_synthesis/app/controllers/orders_controller.rb
--'  298  2  /var/www/primer_synthesis/app/controllers/orders_controller.rb
--'  295  6  /var/www/primer_synthesis/app/controllers/orders_controller.rb
--'  280  2  /var/www/primer_synthesis/app/controllers/orders_controller.rb
--'  332  2  /var/www/primer_synthesis/app/controllers/orders_controller.rb
+-'  14  4  /var/www/user_passport/app/controllers/api/v1/users_controller.rb
+-'  1  0  /var/www/user_passport/app/controllers/api/v1/users_controller.rb
+-'  12  2  /var/www/user_passport/app/controllers/api/v1/credentials_controller.rb
+-'  1  0  /var/www/user_passport/app/controllers/api/v1/credentials_controller.rb
+-'  3  2  /var/www/user_passport/app/controllers/gridfs_controller.rb
+-'  21  2  /var/www/user_passport/app/controllers/gridfs_controller.rb
+-'  1  0  /var/www/user_passport/app/controllers/gridfs_controller.rb
+-'  1  0  /var/www/user_passport/app/views/users/_form.html.haml
+-'  5  2  /var/www/user_passport/app/models/user.rb
+-'  7  6  /var/www/user_passport/db/migrate/20120620055748_create_users.rb
+-'  1  0  /var/www/user_passport/db/migrate/20120620055748_create_users.rb
+-'  65  0  /var/www/lims/Gemfile
+-'  66  10  /var/www/lims/Gemfile
+-'  59  2  /var/www/lims/Gemfile
+-'  1  0  /var/www/lims/Gemfile
+-'  44  72  /var/www/lims/db/seeds.rb
+-'  16  0  /var/www/lims/db/seeds.rb
+-'  6  2  /var/www/lims_order/app/models/primer.rb
+-'  1  0  /var/www/lims_order/app/views/new_primers/_table.html.haml
+-'  16  14  /var/www/lims_order/app/views/new_primers/_table.html.haml
+-'  28  45  /var/www/lims_order/app/views/new_reactions/_table.html.haml
+-'  13  22  /var/www/lims_order/app/views/new_reactions/_table.html.haml
+-'  1  0  /var/www/lims_order/app/views/new_reactions/_table.html.haml
+-'  146  11  /var/www/genetest/app/controllers/orders_controller.rb
+-'  1  0  /var/www/genetest/app/controllers/orders_controller.rb
+-'  61  2  /var/www/genetest/app/models/order.rb
+-'  60  19  /var/www/genetest/app/models/order.rb
+-'  68  2  /var/www/genetest/app/models/order.rb
+-'  1  0  /var/www/genetest/app/models/order.rb
+-'  1  0  /var/www/primer_synthesis/app/views/orders/_clients.html.haml
+-'  21  2  /var/www/primer_synthesis/app/views/orders/_clients.html.haml
+-'  211  101  /var/www/lims/app/models/order.rb
+-'  126  6  /var/www/lims/app/models/order.rb
+-'  23  2  /var/www/lims/app/models/order_mail.rb
+-'  28  7  /var/www/lims/app/assets/javascripts/order_mails.js.coffee
+-'  1  0  /var/www/lims/app/assets/javascripts/order_mails.js.coffee
+-'  73  375  /var/www/lims/config/application.rb
+-'  78  87  /var/www/lims/config/application.rb
+-'  223  34  /var/www/lims/config/routes.rb
+-'  1  0  /var/www/lims/app/models/reaction_file.rb
+-'  70  2  /var/www/lims/app/models/reaction_file.rb
+-'  98  8  /var/www/lims/app/models/reaction_file.rb
+-'  45  71  /var/www/lims/app/models/precheck.rb
+-'  37  21  /var/www/lims/app/models/precheck.rb
+-'  44  23  /var/www/lims/app/models/precheck.rb
+-'  49  4  /var/www/lims/app/models/precheck.rb
+-'  1  0  /var/www/lims/app/models/primer.rb
+-'  99  10  /var/www/lims/app/models/primer.rb
+-'  117  4  /var/www/lims/app/models/order.rb
+-'  111  4  /var/www/lims/app/models/order.rb
+-'  134  2  /var/www/lims/app/models/order.rb
+-'  303  0  /var/www/lims/app/models/order.rb
+-'  3  0  /var/www/lims/app/models/order.rb
+-'  11  0  /var/www/lims/app/models/client.rb
+-'  56  4  /var/www/lims/app/models/client.rb
+-'  1  0  /var/www/lims/app/models/order.rb
+-'  128  49  /var/www/lims/app/models/order.rb
+-'  95  68  /var/www/lims/app/models/primer.rb
+-'  76  4  /var/www/lims/app/models/primer.rb
+-'  70  4  /var/www/lims/app/models/primer.rb
+-'  108  2  /var/www/lims/app/models/primer.rb
+-'  56  4  /var/www/lims/app/models/primer.rb
+-'  120  45  /var/www/lims/app/models/order.rb
+-'  3  2  /var/www/lims/app/models/client.rb
+-'  7  74  /var/www/lims/app/models/client.rb
+-'  1  0  /var/www/lims/app/controllers/electrophoresis_controller.rb
+-'  11  141  /var/www/lims/app/controllers/electrophoresis_controller.rb
+-'  68  14  /var/www/lims/app/models/reaction_file.rb
+-'  62  13  /var/www/lims/config/routes.rb
+-'  3  71  /var/www/lims/app/assets/javascripts/reaction_files.js.coffee
+-'  1  0  /var/www/lims/app/assets/javascripts/reaction_files.js.coffee
+-'  1  0  /var/www/lims/app/views/modification_logs/_table.html.haml
+-'  2  59  /var/www/lims/app/views/modification_logs/_table.html.haml
+-'  6  10  /var/www/lims/app/views/modification_logs/_table.html.haml
+-'  6  0  /var/www/lims/app/models/modification_log.rb
+-'  1  0  /var/www/lims/app/models/modification_log.rb
+-'  4  2  /var/www/lims/app/models/modification_log.rb
+-'  18  2  /var/www/lims/app/models/modification_log.rb
+-'  12  4  /var/www/lims/app/models/modification_log.rb
+-'  10  2  /var/www/lims/app/models/modification_log.rb
+-'  14  62  /var/www/lims/app/models/modification_log.rb
+-'  19  0  /var/www/lims/app/models/modification_log.rb
+-'  1  0  /var/www/lims/app/models/primer_head.rb
+-'  4  39  /var/www/lims/config/routes.rb
+-'  1  0  /var/www/lims/app/models/primer_board.rb
+-'  4  0  /var/www/lims/app/models/primer_board.rb
+-'  31  19  /var/www/lims/app/models/primer_board.rb
+-'  24  4  /var/www/lims/app/models/primer_board.rb
+-'  18  2  /var/www/lims/app/models/primer_board.rb
+-'  29  2  /var/www/lims/app/models/primer_board.rb
+-'  48  4  /var/www/lims/app/models/primer_board.rb
+-'  189  10  /var/www/primer_synthesis/app/models/order.rb
+-'  186  9  /var/www/primer_synthesis/app/models/order.rb
+-'  39  0  /var/www/primer_synthesis/app/models/order.rb
+-'  82  2  /var/www/primer_synthesis/app/models/primer.rb
+-'  41  2  /var/www/primer_synthesis/app/models/order.rb
+-'  134  29  /var/www/primer_synthesis/app/models/order.rb
+-'  24  2  /etc/nginx/sites-enabled/user_passport
 
 # ç¼“å†²åŒºåˆ—è¡¨:
-%/var/www/sino_project/app/controllers/gridfs_controller.rb	2	2
-%/var/www/primer_synthesis/.git/COMMIT_EDITMSG	8	0
-%/var/www/sino_project/app/models/area.rb	5	27
-%/var/www/sino_project/app/models/user.rb	1	0
-%/var/www/sino_project/app/controllers/users_controller.rb	9	44
-%/var/www/sino_project/app/models/client.rb	9	21
+%/var/www/user_passport/app/controllers/api/v1/credentials_controller.rb	12	2
+%/var/www/user_passport/db/migrate/20120620055748_create_users.rb	7	6
+%/var/www/lims/Gemfile	65	0
+%/var/www/user_passport/app/models/user.rb	5	2
+%/var/www/user_passport/app/views/users/_form.html.haml	12	8
+%/var/www/user_passport/app/controllers/gridfs_controller.rb	3	2
+%/var/www/lims/app/controllers/gridfs_controller.rb	2	0
+%/var/www/user_passport/Gemfile	1	0
+%/var/www/user_passport/app/controllers/api/v1/users_controller.rb	14	4
+%/var/www/user_passport/app/views/users/_table.html.haml	24	14
+%/var/www/user_passport/app/views/users/edit.html.haml	1	0
 
 # æ–‡ä»¶å†…çš„æ ‡è®°å†å²è®°å½• (ä»æ–°åˆ°æ—§):
 
-> /var/www/sino_project/app/controllers/gridfs_controller.rb
-	"	2	2
+> /var/www/user_passport/app/controllers/api/v1/credentials_controller.rb
+	"	12	2
+	.	12	0
+	+	12	17
+	+	12	0
 
-> /var/www/sino_project/app/models/area.rb
-	"	5	27
+> /var/www/user_passport/db/migrate/20120620055748_create_users.rb
+	"	7	6
 
-> /var/www/sino_project/app/models/user.rb
+> /var/www/user_passport/app/views/users/_form.html.haml
+	"	12	8
+
+> /var/www/user_passport/Gemfile
 	"	1	0
 
-> /var/www/sino_project/app/controllers/users_controller.rb
-	"	9	44
-	^	9	45
-	.	9	44
-	+	9	44
+> /var/www/user_passport/app/controllers/api/v1/users_controller.rb
+	"	14	4
 
-> /var/www/sino_project/app/models/client.rb
-	"	9	21
+> /var/www/user_passport/app/views/users/_table.html.haml
+	"	24	14
+
+> /var/www/user_passport/app/views/users/edit.html.haml
+	"	1	0
+	.	1	0
+	+	1	0

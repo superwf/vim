@@ -34,7 +34,6 @@ set iskeyword=@,48-57,_,192-255,$
 set nomodeline
 set mouse=a
 set printoptions=paper:a4
-set pumheight=10
 set ruler
 set runtimepath=~/.vim,/var/lib/vim/addons,/usr/share/vim/vimfiles,/usr/share/vim/vim73,/usr/share/vim/vimfiles/after,/var/lib/vim/addons/after,~/.vim/after
 set shiftwidth=2
@@ -42,81 +41,17 @@ set showcmd
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
 set tabstop=2
 set viminfo='200,%,!,<50,s10,h,rA,rB,/50,:50
-set window=17
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd /var/www/lims
+cd /var/www/lims_order/app/assets/javascripts
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +4 app/views/sample_boards/_show.html.haml
-badd +11 /var/www/sino_project/app/models/checkout.rb
-badd +15 /var/www/sino_project/app/assets/stylesheets/application.css.scss
-badd +23 /var/www/sino_project/app/views/ht_samples/unrelated.html.haml
-badd +8 /var/www/sino_project/config/locales/invoices.cn.yml
-badd +134 /var/www/sino_project/app/assets/javascripts/superwf.js
-badd +8 /var/www/sino_project/config/locales/service_types.cn.yml
-badd +6 /var/www/sino_project/app/views/service_types/_table.html.haml
-badd +5 /var/www/sino_project/app/views/service_types/edit.html.haml
-badd +4 /var/www/sino_project/app/views/service_types/new.html.haml
-badd +8 /var/www/sino_project/app/views/service_types/_form.html.haml
-badd +34 /var/www/sino_project/app/models/project.rb
-badd +24 /var/www/sino_project/app/models/invoice.rb
-badd +4 /var/www/sino_project/db/migrate/20121019062603_create_projects.rb
-badd +4 /var/www/sino_project/db/migrate/20121107062918_create_invoices.rb
-badd +6 /var/www/sino_project/app/models/service_type.rb
-badd +15 /var/www/sino_project/spec/models/service_type_spec.rb
-badd +52 /var/www/sino_project/app/views/projects/_form.html.haml
-badd +11 /var/www/sino_project/app/views/invoices/_form.html.haml
-badd +1 /var/www/sino_project/app/views/invoices/_show_projects.html.haml
-badd +15 /var/www/sino_project/app/views/invoices/_table.html.haml
-badd +10 /var/www/sino_project/app/views/invoices/_flow_table.html.haml
-badd +1 /var/www/sino_project/config/locales/project_checks.cn.yml
-badd +15 /var/www/sino_project/config/locales/projects.cn.yml
-badd +4 /var/www/sino_project/app/views/invoices/edit.html.haml
-badd +3 /var/www/sino_project/app/views/invoices/_select_checkout_details_js.html.haml
-badd +3 /var/www/sino_project/app/views/deliver_bills/_copy_client.html.haml
-badd +5 /var/www/sino_project/app/views/runs/_lanes.html.haml
-badd +35 /var/www/sino_project/app/views/checkouts/_form.html.haml
-badd +13 /var/www/sino_project/app/views/sale_projects/_table.html.haml
-badd +1 /var/www/sino_project/app/views/sale_projects/_form.html.haml
-badd +3 /var/www/sino_project/app/views/deliver_samples/new.html.haml
-badd +1 /var/www/sino_project/app/views/deliver_samples/_form.html.haml
-badd +3 /var/www/sino_project/app/uploaders/mongo_uploader.rb
-badd +9 /var/www/sino_project/app/assets/stylesheets/fixed-top.sass
-badd +4 /var/www/sino_project/app/helpers/deliver_bills_helper.rb
-badd +48 /var/www/sino_project/app/controllers/deliver_bills_controller.rb
-badd +41 /var/www/sino_project/app/controllers/deliver_samples_controller.rb
-badd +10 /var/www/sino_project/app/helpers/deliver_samples_helper.rb
-badd +5 app/assets/javascripts/orders.js.coffee
-badd +15 app/views/sample_boards/_new_order.html.haml
-badd +1 Gemfile
-badd +24 app/models/order.rb
-badd +3 app/models/sample.rb
-badd +9 app/controllers/orders_controller.rb
-badd +1 app/views/orders/_form.html.haml
-badd +6 db/migrate/20130118024219_create_reactions.rb
-badd +4 db/migrate/20130118031820_create_bacteria.rb
-badd +1 app/models/reaction.rb
-badd +16 db/migrate/20130118092212_create_samples.rb
-badd +1 app/views/sample_boards/select.js.erb
-badd +5 app/views/sample_boards/show.js.erb
-badd +1 /var/www/lims/app/controllers/_controller.rb
-badd +2 app/controllers/sample_board_confirms_controller.rb
-badd +1 app/controllers/sample_boards_controller.rb
-badd +4 config/locales/electrophoresis.cn.yml
-badd +37 app/models/sample_board.rb
-badd +7 app/models/sample_head.rb
-badd +9 config/locales/samples.cn.yml
-badd +1 app/views/samples/_form.html.haml
-badd +19 app/controllers/permit_controller.rb
-badd +24 ../sino_project/app/controllers/permit_controller.rb
-badd +29 app/views/orders/new.html.haml
-badd +67 config/locales/cn.yml
-silent! argdel *
-edit app/assets/javascripts/orders.js.coffee
+badd +0 orders.js.coffee
+args orders.js.coffee
+edit orders.js.coffee
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -148,7 +83,7 @@ setlocal commentstring=#\ %s
 setlocal complete=.,w,b,u,t,i
 setlocal concealcursor=
 setlocal conceallevel=0
-setlocal completefunc=syntaxcomplete#Complete
+setlocal completefunc=
 setlocal nocopyindent
 setlocal cryptmethod=
 setlocal nocursorbind
@@ -189,7 +124,7 @@ setlocal keywordprg=
 setlocal nolinebreak
 setlocal nolisp
 setlocal nolist
-setlocal makeprg=coffee\ -c\ \ $*\ app/assets/javascripts/orders.js.coffee
+setlocal makeprg=coffee\ -c\ \ $*\ orders.js.coffee
 setlocal matchpairs=(:),{:},[:]
 setlocal nomodeline
 setlocal modifiable
@@ -198,7 +133,7 @@ set number
 setlocal number
 setlocal numberwidth=4
 setlocal omnifunc=javascriptcomplete#CompleteJS
-setlocal path=.,/var/www/lims,/var/www/lims/app,/var/www/lims/app/models,/var/www/lims/app/controllers,/var/www/lims/app/helpers,/var/www/lims/config,/var/www/lims/lib,/var/www/lims/app/views,/var/www/lims/app/views/orders,/var/www/lims/public,/var/www/lims/test,/var/www/lims/test/unit,/var/www/lims/test/functional,/var/www/lims/test/integration,/var/www/lims/spec,/var/www/lims/spec/models,/var/www/lims/spec/controllers,/var/www/lims/spec/helpers,/var/www/lims/spec/views,/var/www/lims/spec/lib,/var/www/lims/spec/requests,/var/www/lims/spec/integration,/var/www/lims/app/*,/var/www/lims/vendor,/var/www/lims/vendor/plugins/*/lib,/var/www/lims/vendor/plugins/*/test,/var/www/lims/vendor/rails/*/lib,/var/www/lims/vendor/rails/*/test,/usr/include
+setlocal path=.,lib,vendor,app/models/concerns,app/controllers/concerns,app/controllers,app/helpers,app/mailers,app/models,app/*,app/views,app/views/orders,public,test,test/unit,test/functional,test/integration,test/controllers,test/helpers,test/mailers,test/models,spec,spec/controllers,spec/helpers,spec/mailers,spec/models,spec/views,spec/lib,spec/features,spec/requests,spec/integration,vendor/plugins/*/lib,vendor/plugins/*/test,vendor/rails/*/lib,vendor/rails/*/test,/var/www/lims_order,/usr/include,
 setlocal nopreserveindent
 setlocal nopreviewwindow
 setlocal quoteescape=\\
@@ -210,7 +145,7 @@ setlocal noscrollbind
 setlocal shiftwidth=2
 setlocal noshortname
 setlocal nosmartindent
-setlocal softtabstop=2
+setlocal softtabstop=0
 setlocal nospell
 setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
 setlocal spellfile=
@@ -223,7 +158,7 @@ if &syntax != 'coffee'
 setlocal syntax=coffee
 endif
 setlocal tabstop=2
-setlocal tags=/var/www/lims/tmp/tags,./tags,./TAGS,tags,TAGS,/var/www/lims/tags
+setlocal tags=/var/www/lims_order/tags,/var/www/lims_order/tmp/tags,./tags,./TAGS,tags,TAGS
 setlocal textwidth=0
 setlocal thesaurus=
 setlocal noundofile
@@ -232,12 +167,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 5 - ((4 * winheight(0) + 8) / 17)
+let s:l = 1 - ((0 * winheight(0) + 6) / 13)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-5
-normal! 025l
+1
+normal! 0
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf

@@ -14,7 +14,7 @@ nnoremap <silent> <Plug>NetrwBrowseX :call netrw#NetrwBrowseX(expand("<cWORD>")
 nmap <silent> <Plug>VLToggle :let g:VeryLiteral = !g:VeryLiteral| echo "VeryLiteral " . (g:VeryLiteral ? "On" : "Off")
 vmap <kMultiply> *
 map <F4> "*p
-map <F2> :up
+map <F2> :NERDTree:set number
 map <F3> :up
 imap <silent>  <Plug>VimIM
 imap <silent>  <Plug>VimimOneKey
@@ -24,7 +24,7 @@ let &cpo=s:cpo_save
 unlet s:cpo_save
 set backspace=indent,eol,start
 set expandtab
-set fileencodings=utf-8,ucs-bom,euc-jp,gb18030,gbk,gb2312,cp936
+set fileencodings=utf-8,gbk,ucs-bom,gb18030,euc-jp,gb2312,cp936
 set helplang=cn
 set history=50
 set hlsearch
@@ -42,14 +42,14 @@ set viminfo='200,%,!,<50,s10,h,rA,rB,/50,:50
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd /var/www/superwf/superwf_permission/lib
+cd /var/www/superwf/lib
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +0 superwf_permission/version.rb
-args superwf_permission/version.rb
-edit superwf_permission/version.rb
+badd +0 superwf/version.rb
+args superwf/version.rb
+edit superwf/version.rb
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -133,13 +133,8 @@ set number
 setlocal number
 setlocal numberwidth=4
 setlocal omnifunc=rubycomplete#Complete
-setlocal path=.,NOTE:\ Gem.all_load_paths\ is\ deprecated\ with\ no\ replacement.\ It\ will\ be\ removed\ on\ or\ after\ 2011-10-01.\
-Gem.all_load_paths\ called\ from\ -e:1.\
-NOTE:\ Gem.all_partials\ is\ deprecated\ with\ no\ replacement.\ It\ will\ be\ removed\ on\ or\ after\ 2011-10-01.\
-Gem.all_partials\ called\ from\ /usr/local/rvm/rubies/ruby-2.0.0-p0/lib/ruby/site_ruby/2.0.0/rubygems.rb:261.\
-NOTE:\ Gem.all_partials\ is\ deprecated\ with\ no\ replacement.\ It\ will\ be\ removed\ on\ or\ after\ 2011-10-01.\
-Gem.all_partials\ called\ from\ /usr/local/rvm/rubies/ruby-2.0.0-p0/lib/ruby/site_ruby/2.0.0/rubygems.rb:261.\
-/usr/local/rvm/rubies/ruby-2.0.0-p0/lib/ruby/site_ruby/2.0.0,/usr/local/rvm/rubies/ruby-2.0.0-p0/lib/ruby/site_ruby/2.0.0/x86_64-linux,/usr/local/rvm/rubies/ruby-2.0.0-p0/lib/ruby/site_ruby,/usr/local/rvm/rubies/ruby-2.0.0-p0/lib/ruby/vendor_ruby/2.0.0,/usr/local/rvm/rubies/ruby-2.0.0-p0/lib/ruby/vendor_ruby/2.0.0/x86_64-linux,/usr/local/rvm/rubies/ruby-2.0.0-p0/lib/ruby/vendor_ruby,/usr/local/rvm/rubies/ruby-2.0.0-p0/lib/ruby/2.0.0,/usr/local/rvm/rubies/ruby-2.0.0-p0/lib/ruby/2.0.0/x86_64-linux,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/Ascii85-1.0.2/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/ZenTest-4.8.3/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/actionmailer-3.2.10/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/actionmailer-3.2.12/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/actionpack-3.2.10/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/actionpack-3.2.12/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/activemodel-3.2.10/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/activemodel-3.2.12/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/activerecord-3.2.10/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/activerecord-3.2.12/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/activeresource-3.2.10/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/activeresource-3.2.12/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/activesupport-3.2.10/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/activesupport-3.2.12/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/acts_as_tree-1.2.0/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/afm-0.2.0/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/arel-3.0.2/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/autotest-4.4.6/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/bcrypt-ruby-3.0.1/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/bootstrap-sass-2.3.0.1/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/bson-1.8.3/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/bson_ext-1.8.3/ext/bson_ext,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/builder-3.0.0/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/bundler-1.3.2/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/cancan-1.6.9/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/carrierwave-0.8.0/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/carrierwave-mongoid-0.5.0/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/coffee-rails-3.2.2/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/coffee-script-2.2.0/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/coffee-script-source-1.6.1/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/dalli-2.6.2/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/database_cleaner-0.9.1/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/devise-2.2.3/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/diff-lcs-1.2.1/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/doorkeeper-0.6.7/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/enum_column3-0.1.4/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/erubis-2.7.0/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/execjs-1.4.0/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/factory_girl-4.2.0/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/factory_girl_rails-4.2.1/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/faraday-0.8.6/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/haml-4.0.0/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/haml-rails-0.4/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/hashery-2.1.0/alt,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/hashery-2.1.0/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/hashie-1.2.0/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/hike-1.2.1/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/httpauth-0.2.0/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/i18n-0.6.4/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/journey-1.0.4/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/g
+setlocal path=.,-e:1:in\ `<main>':\ undefined\ method\ `all_load_paths'\ for\ Gem:Module\ (NoMethodError)\
+
 setlocal nopreserveindent
 setlocal nopreviewwindow
 setlocal quoteescape=\\
@@ -173,12 +168,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 2 - ((1 * winheight(0) + 7) / 15)
+let s:l = 1 - ((0 * winheight(0) + 8) / 16)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-2
-normal! 015l
+1
+normal! 0
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf

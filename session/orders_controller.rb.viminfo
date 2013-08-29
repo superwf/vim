@@ -8,117 +8,117 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/dialog
+~MSle0~/csv
 
 # Last Substitute Search Pattern:
-~MSle0&PrimerBoardType
+~MSle0&params
 
 # Last Substitute String:
-$PrimerHead
+$board
 
 # Command Line History (newest to oldest):
-:Rcontroller orders
 :q
-:e Gemfile.lock
-:Rcontroller api/v1/reaction_files
-:Rcontroller api/v1/api
-:Rcontroller api/v1/resource_files
-:Rcontroller api/v1/roles
-:e config/routes.rb
-:Rcontroller home
-:R
-:Rcontroller application
-:Rcontroller reaction_files
-:Rmodel reaction_procedure
-:Rmodel reaction_file
-:e <F3>
-:e db/seeds.rb
-:Rlocale menus.cn.yml
-:Rl
-:e spec/fixtures/menus.yml.erb
-:%s/PrimerBoardType/PrimerHead/g
-:%s/primer_board_type/primer_head/g
-:Rspec models/primer_head
-:Rspec models/primer_board_type
-:Rcontroller primer_heads
-:Rcontroller primer_board_types
-:Rmodel primer
-:Rmodel primer_board
-::R
-:Rfixtures primer_board_types.rb
-:Rfixtures primer_heads.rb
-:Rmigration primer_heads
-:Rmigration create_primer_board_types
-:Rmodel primer_head
-:Rmodel primer_board_type
-:Rmigration create_primers
-:Rjavascript primers
-:Rview _form.html.haml
-:Rview primers/new.html.haml
-:Rcontroller primers
-:Rmigration create_samples
-:Rlocale samples.cn.yml
-:Rlocale orders.cn.yml
-:Rlocale orders
-:Rlocale reaction_boards.cn.yml
+:Rcontroller orders
+:Rmodel order
 :Rmigration create_reaction_boards
-:Rview reaction_boards/scope.html.haml
-:Rlayout application.html.haml
-:Rview orders/new.html.haml
-:Rcontroller 
-:Rview prechecks/new.html.haml
+:Rmodel sample
+:Rview sample_boards/_td_typesetting.html.haml
+:e lib/hole.rb
+:Rspec models/reaction_board
+:Rmodel reaction_board
+:Rmodel sample_flow_go_observer
+:Rfixtures order_mails.rb
+:Rmigration create_order_mails
+:Rspec models/order_mail
+:Rmodel order_mail
+:Rview orders/_ajax_search.html.haml
+:Rview samples/_ajax_search.html.haml
+:Rcontroller samples
+:Rview samp
+:Rview _
+:Rview samples/_search.html.haml
+:Rspec models/sample_cancel_log
+:Rmigration create_sample_cancel_logs
+:Rmodel sample_cancel_log
+:Rfixtures sample_cancel_logs.rb
+:Rjavascript superwf
+:Rmodel primer
+:Rmodel client
+:Rmodel precheck
+:Rspec models/order
+:Rmigration create_samples
+:Rmodel reaction
+:Rview orders/_table.html.haml
+:Rmigration create_qualities
+:Rmigration create_reactions
+:Rspec models/sample
+:w
+:Rmigration create_prechecks
+:e spec/spec_helper.rb
+:Rfixtures precheck_codes.rb
+:Rlocale precheck_codes.cn.yml
+:R
+:e lib/code.rb
+:Rmodel precheck_code
+:Rspec models/precheck
+:Rmigration plasmids
+:Rfixtures plasmids.rb
+:Rmigration create_plasmids
+:Rspec models/plasmid
+:Rmodel plasmid
+:Rcontroller primers
 
 # Search String History (newest to oldest):
-?/dialog
-?/di
-?/def new
-?/activeresource
-? \<def\>
-? \<reaction_files\>
-?/primer_heads
-?/primer_board_
-? PrimerBoardType
-? primer_board_type
-?/primer_board_type
-?/type
-?/col
-? \<hole\>
-?/doorkeeper
-?/create
-?/before
-?/be
-?/notice
-?/sample_board_table
-?/sample_board
-?/sample_b
-? \<sample_board\>
-?/typese
+?/csv
+?/CSV
+?/const
+?/hooks
+?/passed?
+?/has_one
+?/passed
+?/reaction_typesetted
+?/flash
+?/fadeOu
+?/after_update
+?/client_id
+?/sampl
+?/search
+?/after
+?/has_many
+?/client
+?/cli
+?/client_i
+? \<after_update\>
+?/has
+?/update_attribute
+?/validation
+?/puts
+?/changes
+?/change
+?/typesetted
+??\Vdef\_s\+reactions
+?/create_sample
+?/completed
+?/typesetted?
 ?/scope
+?/available
+?/previous
+?/after_up
+?/hook
+?/creator_
+?/test_a
+? \<update_attribute\>
+?/has_o
+? \<previous_changes\>
+?/after_
+?/create_primer
 ?/typesetting
-?/before_
+?/STAT
 ?/status
-?/dblclick
-?/reaction_board_id
-? \<col\>
-?/form
-?/quadrant
-?/outline
-?/reaction_boards
-?/reaction_files
-?/factory
-? sample
-?/max_number
-?/R
-?/render
-?/workflow
-?/workfl
-?/wo
-?/sample_head_procedure
-? \<sample_head_procedure_id\>
-?/next
-?/to_reaction
-?/receipt
-?/print
+?/generate_redo
+?/precheck_code
+?/create
+?/uncompleted
 
 # Expression History (newest to oldest):
 
@@ -127,47 +127,48 @@ $PrimerHead
 # Input Line History (newest to oldest):
 
 # å¯„å­˜å™¨:
-"0	LINE	0
-	  skip_before_filter :authenticate_user!, :navigation
+""0	CHAR	0
+	RETYPESET_SQL 
 "1	LINE	0
-	      resources :reaction_files
+	        reaction.save
 "2	LINE	0
-	  resources :reaction_files, only: [:index, :create]
+	        reaction = create_reaction
+	        reaction.reaction_board_id = @b.id
+	        reaction.hole = '01A'
 "3	LINE	0
-	
-	  # GET
-	  # send the reaction_boards and holes list those should upload reaction files to client
-	  def index
-	  end
-	
-	  # POST
-	  def create
-	  end
-	end
+	          @b.stub(reaction_files: [1])
 "4	LINE	0
-	    if reactions.any?
-	      reactions
-	    else
-	      []
-	    end
+	          reactions = double(:reactions, uncompleted: false)
 "5	LINE	0
-	      ::ReactionBoard.select(:board_number).uniq.where('id IN(?)', reaction_board_ids).map(&:board_number)
+	          reactions.stub()
 "6	LINE	0
-	    if procedure_id
+	          @user = create_admin
 "7	LINE	0
-	
+	          @b.stub(reactions: [1])
 "8	LINE	0
 	
 "9	LINE	0
-	
-"a	BLOCK	23
-	{style: 'width: 100px;'}
-"b	BLOCK	23
+	  STATUS = {
+	    :new_created => t('sample_boards.status.new_created'),
+	    :running => t('sample_boards.status.running'),
+	    :completed => t('sample_boards.status.completed')
+	  }
+"a	LINE	0
+	      if ::Rails.env.test?
+	        t.string :remark
+	      else
+	        t.text :remark
+	      end
+"b@	BLOCK	23
 	 NOT NULL AUTO_INCREMENT
 "g	CHAR	0
 	
+"i	CHAR	0
+	347
+<""""i""iquadrantoreaction_board_id = _this.a€kbparn€kbent().attr()i""re€kb€kbireaction_board_I€kbid€k3kkkkkYGpwwwwwwwwwwwCbbbbddkkkkkkkYjVkyjGpzzjwwwwwwwwvf]sp[€kb€kb[]i""hireaction_board=€kb_id=lli  i++i  ireaction_board_idllllla[]iquadrna€kb€kbant=""i  i++i  iquadrant€k3€k3€k3€k3€k3€ı,€ı.€k3€k3€k3€k3€k3€k3€k3€ı,€ı.veee
 "k	CHAR	0
-	j
+	2698
+<jh:Rsp	 mo	sample/comlet€kb€kb€kbplete!jjjjjjjjkkekkkkoprecheck = o€kbdouble()iprecheck'xbi:oprecheck.stub()ipassed: true€k3zzjjjkkojjjjjkkwkkkkkkjI@#€kbjjjjjkkkko@s.stub()iprecheck: @precheckjjjjjkzzbo@s.passed.should be_niljjbo@s.passed.should eq()i@precheck.passedo@s.ddjjjjjwjjzzo@s.passed.should be_nilkkkkkkkkkkkkkk€k3bbbb€ıL€ıL€ıL€ıLgthjjjjkzzjjkkkkkkkkkkkkkkkkkjjjjjjjjjjjjjjjjjjk%%kwzzkkwwwcacwvalidatebcwvalid?€k3lhjjj%%kwoit '' doendkllitypesetted?biif ela can not be dewt€kb€kbstroyedljjzzkkkkkkkjjbjjkCcomplete!kVkdjjjjjgthkjlkkkkkkkkkkkjjjjkkkoreturn false unless p€kbself.precheckbbbbcwifbbbveeebhxjjjoendkVkk>€k3jjjjjjjjjjjbgtebzhjjjhjjjjkkkouVjdkkkkkkkwO@p.sam;pl€kb€kb€kble.shoulsample.should_re()i:complete!jjjjjjoit '' doendklliif typesetted?zza €kb, can not be destroyedlkkkkkwwwwww@##nnnnnho@p.sample.typesetted?lbbvelxnnbbvexxnn/delegateeeea, :typesetted?€k3hbcistub :A = €kb> truelnkkkwwwww#ho@p.savekddpo@p.s€kbdestroyo@p.should_not be_destroyedjzzoit '' doendklllhiafter destroy ,€kb€kb, sample should e€kbunl€kbcop€kbmplete!o@p.saveo@p.det€kbstt€kbroyko@p.sample.typesestub t€kb:typesetted? => falsejozz€kb€kbddzzkwO@p.sample.should_rec :uncom!€k3ljjjjzzjjjzzbzzjjkzzhjjjddjk%%ocontext '' doendkwatest scopeszzobefor €kbe :each doendko@p.savezzjoit '' doendklliwhen passed, €kb€kbzzo@€kb::Precheck.passed.should be_inc€kbn€kbl()i@pko@p.s€kbpassed.should be_truejzzo::Precheck.unpassed.should_no be_inc€kb()i@pjzzoit' ' €kb€kb€kb€kb '' doendklliwhen unpassedo@p.precheck_code.stub()i:passed: €kb€kb:bhxela falsas€kbezzo@p.s€kbddkwkonew_recor€kb€kb€kb€kb€kbcode = create_precheck_code passed: falsejbbbbbbbCupdate_attribute precheck-cod€kb_code_id: new_code.ido@p.validatelkkkkkkkkkkkkkkkkkkkkhkeasjljjjjjjzzjjjjzzhbcwpassed.should be_falseokkkukkkkkkVkdujjjjjjjpjfuvlxkP€k3ljjjjzzhzzGoukoit '' doendkllitest show methodzzo@p.show €kb.should eq()lkwvf"yhPbbbbbbbbbcw@pwwwww.€k3ljjjzzjwwcwcode€k3€k3€k3€k3hjoit '' doendklliself.test to_s methodo@p.to_s.should eq()i@p.codde€kb€kbe€k3ljjjggGkkkkjjwkkkkggkjk:Rmo	 hea	h:Rsp	 sp	msp	mmo	heheat	jjjwCbefore :each doendko::@h = ::Fac.cu€kb€kbbuild :heat_cy, reaction_board_id: reactcreate_reaction_board.id€k3:Rfix	 heat	jjjwocreate€kbor_id `€kb12€kboremark ''irrrrr€k3lhoquadrant ''ixxxx€k3ljjjjjjjjjjjjkkwh:Rmi	 create_heat	joit '' doendkllihas theset €kb€kb attributes can mass-assign€k3lgghkkoit'' €kb€kb€kb '' doendklliis boardo::Heat.€kb::BOar€kb€kb.should be_true€k3jjjjzzkotest_an€kb ::HeatC€kb, []ljjwwwbv$hyhP€k3zzjjk
 "l	CHAR	0
 	
 "p	LINE	0
@@ -196,134 +197,143 @@ $PrimerHead
 	
 	æ²¡æœ‰åŒ¹é…çš„è‡ªåŠ¨å‘½ä»¤
 	æ²¡æœ‰åŒ¹é…çš„è‡ªåŠ¨å‘½ä»¤	
+"q	CHAR	0
+	2232
+<auence€k3€kul:Rlhggl:Rlo	 primernto€kb€kboti	kkkkkex€k3€k3€k3€k3€k3€k3€k3€ı,€ı.€ıL€ıL€ı,€ı.€ı,€ı.a{}iborder: 1€k3€ı,€ı.€ıK€ıK€ı,€ı.x€k3€k3€k3€k3€ı,€ı.€ı,€ı.€ı,€ı.veeesstyle: ''iborder: 1px, €kb€kb sok€kblid;€k3€ıL€ıK€ıK€ı,€ı.€ıL€ı,€ı.€ıL€ıL€ıL€ı,€ı.€ı,€ı.€ıL€ıL€ıK€ı,€ı.€ı,€ı.€ı,€ı.€ü €ı,€ü €ı.€ı,€ı.€ı,€ı.€ı,€ı.€ü €ı,€ü €ı.€ı,€ı.€ü €ı,€ü €ı.€ı,€ı.€ü €ı,€ü €ı.€ı,€ı.€ıK€ı,€ı.:Rlo	 pi€kbrimers	ggjjjjjjjjjjjwkwhkkkkkkj$bbcwcreated_datejjjjjjjkjjbbbCcreated_date€k3jjjjjjkYjjkkhjjjljjjjjjjjjjjkkkkkkkkkkkkkkkkkkkkkkkkkkkGh€ıK€ıK€ıK€ıK€ı,€ı.a €kb, border: 1€k3€k3€ıK€ıK€ı,€ı.jo:cssotd{}iborder: 1px, so€kb€kb€kb€kb sok€kblid;€k3jjjjjjjjjjkkbbbbbbDjjzzjwwla{}iwistyle: ''iwit€kbdth: 5ema;ll%%yjPjPjzzkjP€k3€k3€k3€k3€k3€k3€k3€ıK€ıK€ıK€ıK€ıK€ı,€ı.ea, th€k3jjjjjjjjjjjjjjjjjjjjjjkkkkkkkkkkkkkjkkkj€k3€k3€k3€k3€k3€k3€k3€k3€k3€k3€ı,€ı.ves20%kkka{}istyle: ''iwidth: 100%;€k3€k3€k3€k3€k3€k3hhjjjjkljves20a%jjkbves30a%jbves30%€k3kkkkjhhr3jjjjkr2€k3€k3€k3€k3€k3€k3jjjkjjjjjjjkkkkkkkkkkkkkkkkkkkkjjj€k3€k3€k3€ıK€ıK€ı,€ı.€ı,€ı.Vjdjjjjjjjjjjjjjkkkkkkwwwwwwwwwwwbhhhxs8llllli, border: 1, cellspacing: 0jjjbbbbbbbr2jjr2€k3€k3€ı,€ı.at€kb text-align: cr€kbenter;€k3€k3€k3l:Rtask	 prim	kjzzxjjjjjjjjjjkkkkbjbjjjxkx€k3jjjjjjjjjjggx€k3€ıL€ıL€ıL€ıL€ıL€ıL€ıL€ıK€ıK€ıK€ıK€ıK€ıK€ıK€ıL€ıL€ıLggu€k3€ıL€ıL€ıL€ıL€ıL€ıL€ıL€ıK€ıKe€ıK€ıK€ıKbbggjh:e cRenvggljjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjkkkwggGkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkjjjjjjjjjjjjjjj€ı,€ı.€ıL€ıL€ıL€ı,€ı.:Rlo	 prijersprimers	kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkjjjjjwjkkkkkkkkkkkkkkjjkkkjjjhjjjjjjjkzzbYpwwwwwwwwwwwwwwwwwwcwp€kbover_datejjjjjjjjjjkkYp$bcwor€kbver_datekkkkkkkkkkkkkkjjjhhhjjjjkkkkjjkjjknjkjkkkk€k3uuuuu€k3€k3€k3€ı,€ı.b€ıL€ıL€ı,€ı.b€ı,€ı.v%%%xj.j.j.j.€k3ljjjjjjjjjjjjjjjjjkkkkkkjI#€k3€k3€k3jjjjjjjkh:Rtsa€kb€kbask	 or	jjjjjjjjkklgg:Rvi	 order	no	s€kbsen			n			sen		hjjjjjjjjjjjjjjjjjjjjjjjjjjj:Rmai	 	kGkw%jjjjjjjjjjjjjjjjjjjkkkkkkkkkkkkkkkkkl:Rs€kbtask	 or	hklkkkjwwwwwwhvex€k3hwwwwbC_mail€k3€k3€k3€k3€k3€k3€k3€k3€k3€k3jbiore€kbder_mail.bbbbbiorder_mail.€k3jkkoorder = order_mail.orderjbbbdwx€k3jjjjjjjjjjjjjjjjjjjkkkkkkkkkkkkkjjjjjjjjjjjwwex€k3€k3€k3:Rzz
+"s	CHAR	0
+	552
+<,hi,llxxepwxxxsuuf}xexepwxxxwewwxepwxxxwwllDjjwwxxewbea_tagea, params[]iswwxepwxxxwwwwwwxepwxxxwwxepwxxxjjkkjjj^wxxea_g€kbtagwwwwwxepwxxx€k3€ı,€ı.xepwxxxjjkwwwwwwwwwxepwxxxwwwwwwxepwxxxwwxepwxxxwjbbbbbbbbxepwxxx€k3€k3€ı,€ı.:Rvi	 quality_co	_ta	jkVjdljkggjjkwpVj>.jwveehxwwr xu$xbbbbbbbxepwxxx€k3hdd€k3l:Rvi	 €ı,€ı.€ıL€ıK€ıL€ı,€ı.€ı,€ı.$ibcwtruebbbbbwi, params[]i:result€k3:Rmo	 qual	Gkgg:_c	Gkwkkkwji#€k3€k3€k3€k3u€k3h:Rcon	 qua	jjjjjjjjjjjjjjjjjjjjjjjjjjjj:€kb€kb€kby_co	a, :desc€k3l:Rmo	 sample_he	G/searchgg:R
 "v	CHAR	0
 	389
 <jkV%>wveesself€k3€ıK€ıK€ıK€ıL€ıL€ıK€ıL€ıL€ı,€ı-€ı-€ı-€ı-€ı-€ı-€ı-€ı-€ı-€ı.sselfwwwwblveesself€k3gt:gtjjV%ddd€k3hjjbbbbluuwC€ı,€ı.€ı,€ı.bcwbcwc€kbmoduleA F€kb€kbFac€k3hjjjjjjbbbbveelx€k3€k3€k3€k3€k3€ı,€ı.cw::Filewwww.€k3€ı,€ı.xkjjI#€k3kY:Rfix	 hr€kbtcon	jjjjj:Rfix 	htRfix	 ht_smaple-re	€kb€kb€kb_r	:€kb€kb€kb€kb€kb€kb€kbamp		jkpdkddljjV%ddd€k3h€k3jjl€k3h
 "w	CHAR	0
-	851
-<wwwwwb.€k3€ıL€ıL€ıL€ıL€ıLwYpwwveeehhxeeeeuu/coljdwxxwwwwwwwwwwwwcwcolwwwwwves_this.attr()i""icol€k3€k3€k3€k3€k3€k3€k3€k3Ypnnnncwrownnn.€k3€ıK€ıK€ıL€ıL€ıK€ıK€ıL€ıL€ı,€ı.jjjkkkkkjji+j.j.jjk€k3€ı,€ı.ggjjeeeelli:length:€kb, €k3€ı,€ı-€ı-€ı-€ı-€ı-€ı-€ı-€ı-€ı-€ı-€ı.€ı,€ı.gth:Rvi	 sample_boards	_show	Gkkkh%jddkP<<jww%i, sample_id: samplesuko- sample = samples.first€k3www%i, sample_€kb.€kb_id: sample.id€k3jbhhDjxxxxxxx€k3kjddkPup<<jkJxxxu€k3€ı,€ı.bi9€kb(eeea)i if sample€k3ko- if samplej>>o€kb€kb- elsekjkYjpjddkPwwwwhDbbbbbbbbbbbxeeelvf)x€k3€ı,€ı-€ı-€ı-€ı-€ı-€ı-€ı-€ı-€ı-€ı-€ı-€ı.x€k3€k3€k3€k3€k3€k3€ı,€ı.€ı,€ı-€ı-€ı-€ı-€ı.xx€k3j>>€k3€k3€k3€k3€k3kJx€k3€ıK€ıK€ıK€ıL€ıKgg:Rvi	 orders	_for	/wellnggjjwwwwwbb€ıL€ıK€ıK€ıL€ıL€ıL€ıK€ı,€ı.o= s.f.submit€k3l:Rvi	 samples	_fo	hbcwbutton :submit, class: ''ihidden€k3€k3€ı,€ı.
-""-	CHAR	0
-	private
+	506
+<V%yjwpjjkw$bbCnil€k3jVkkd€k3lbbbbwveeesif: ::Proc.new{}i|r| r.reaction_board && r.buuuuuhCtrue€k3€k3€k3€k3€k3€k3€k3€k3€k3€k3€k3€k3€k3hu€k3€ı,€ı.:Rmo	 heat	h:Rsp	 mo	heat	ljjwhjjwjjjjjjjkkjjjzzljjjjkzzhjjjjjjjjjjjjjjjjjljjjjkjzzhljwwwwCquadran: true€k3€k3€k3€k3hjjjjjjjjkkkwwwwwwllwwC7€k3h:Rmi	 heat	k$hC7€k3:Rfix	 heat	jjjjjjwwwwbcw1,2,3,4€k3€k2€k3€k3€k3:Rmi	 alc	jjjjkkkkklkjh:Rmi	 alc	jjkkl:Rmo	 alc	h:Rsp	 mo	aalc	lggjjwhjjjjjjjjwzzkkkkkjjjjjjjjjzzjjzz
+"-	CHAR	0
+	each
 
 # å…¨å±€å˜é‡:
 
 # æ–‡ä»¶æ ‡è®°:
-'0  183  8  /var/www/genetest/app/controllers/orders_controller.rb
-'1  185  29  /var/www/genetest/app/controllers/orders_controller.rb
-'2  17  58  /var/www/sino_project/.git/COMMIT_EDITMSG
-'3  57  23  /var/www/superwf/superwf_scaffold/lib/helpers/application_helper.rb
-'4  95  4  /var/www/superwf/superwf_scaffold/lib/superwf_scaffold.rb
-'5  1  0  /var/www/lims/init_test
-'6  1  0  /var/www/lims/Gemfile.lock
-'7  6  4  /var/www/lims/app/controllers/api/v1/api_controller.rb
-'8  10  8  /var/www/lims/app/views/reaction_boards/scope.html.haml
-'9  302  108  /var/www/2011/lims/app/models/sample_board.rb
+'0  109  8  /var/www/genetest/app/controllers/orders_controller.rb
+'1  77  10  /var/www/superwf/superwf_scaffold/lib/superwf_scaffold.rb
+'2  24  49  /var/www/lims/app/models/sample.rb
+'3  128  34  /var/www/lims/spec/models/precheck_spec.rb
+'4  51  10  /var/www/superwf/superwf_audited/lib/superwf_audited.rb
+'5  183  15  /var/www/sino_project/app/assets/javascripts/superwf.js.coffee
+'6  149  34  /var/www/genetest/app/models/pdf.rb
+'7  431  4  /var/www/genetest/lib/clinic_report.rb
+'8  1  0  /var/www/sino_project/app/assets/javascripts/superwf.js.coffee
+'9  8  6  /var/www/sino_project/app/views/layouts/_show_cols.html.haml
 
 # è·³è½¬åˆ—è¡¨ (ä»æ–°åˆ°æ—§):
--'  183  8  /var/www/genetest/app/controllers/orders_controller.rb
--'  185  29  /var/www/genetest/app/controllers/orders_controller.rb
--'  24  2  /var/www/genetest/app/controllers/orders_controller.rb
--'  14  2  /var/www/genetest/app/controllers/orders_controller.rb
+-'  109  8  /var/www/genetest/app/controllers/orders_controller.rb
+-'  3  26  /var/www/genetest/app/controllers/orders_controller.rb
 -'  1  0  /var/www/genetest/app/controllers/orders_controller.rb
--'  12  2  /var/www/genetest/app/controllers/orders_controller.rb
--'  7  0  /var/www/genetest/app/controllers/orders_controller.rb
--'  17  58  /var/www/sino_project/.git/COMMIT_EDITMSG
--'  1  0  /var/www/sino_project/.git/COMMIT_EDITMSG
--'  57  23  /var/www/superwf/superwf_scaffold/lib/helpers/application_helper.rb
--'  58  15  /var/www/superwf/superwf_scaffold/lib/helpers/application_helper.rb
--'  61  19  /var/www/superwf/superwf_scaffold/lib/helpers/application_helper.rb
--'  1  0  /var/www/superwf/superwf_scaffold/lib/helpers/application_helper.rb
--'  95  4  /var/www/superwf/superwf_scaffold/lib/superwf_scaffold.rb
--'  97  8  /var/www/superwf/superwf_scaffold/lib/superwf_scaffold.rb
--'  14  2  /var/www/superwf/superwf_scaffold/lib/superwf_scaffold.rb
--'  1  0  /var/www/superwf/superwf_scaffold/lib/superwf_scaffold.rb
--'  1  0  /var/www/lims/init_test
--'  1  0  /var/www/lims/Gemfile.lock
--'  27  4  /var/www/lims/Gemfile.lock
--'  12  8  /var/www/lims/Gemfile.lock
--'  6  4  /var/www/lims/app/controllers/api/v1/api_controller.rb
--'  4  4  /var/www/lims/app/controllers/api/v1/api_controller.rb
--'  1  0  /var/www/lims/app/controllers/api/v1/api_controller.rb
--'  1  0  /var/www/lims/app/controllers/api/v1/reaction_files_controller.rb
--'  3  4  /var/www/lims/app/controllers/api/v1/api_controller.rb
--'  10  8  /var/www/lims/app/views/reaction_boards/scope.html.haml
--'  11  34  /var/www/lims/app/controllers/primers_controller.rb
--'  6  32  /var/www/lims/app/controllers/orders_controller.rb
--'  6  35  /var/www/lims/app/controllers/prechecks_controller.rb
--'  6  36  /var/www/lims/app/controllers/reactions_controller.rb
--'  7  4  /var/www/lims/app/controllers/prechecks_controller.rb
--'  13  32  /var/www/lims/app/controllers/prechecks_controller.rb
--'  6  6  /var/www/lims/app/controllers/application_controller.rb
--'  11  79  /var/www/lims/app/controllers/application_controller.rb
--'  10  6  /var/www/lims/app/controllers/application_controller.rb
--'  4  2  /var/www/lims/app/controllers/application_controller.rb
--'  24  6  /var/www/lims/app/controllers/prechecks_controller.rb
--'  12  126  /var/www/lims/app/controllers/sample_board_templates_controller.rb
--'  13  6  /var/www/lims/app/controllers/sample_board_templates_controller.rb
--'  1  0  /var/www/lims/app/controllers/sample_board_templates_controller.rb
--'  1  0  /var/www/lims/app/controllers/prechecks_controller.rb
--'  14  50  /var/www/lims/app/views/prechecks/_form.html.haml
--'  1  2  /var/www/lims/config/locales/prechecks.cn.yml
--'  14  84  /var/www/lims/config/locales/prechecks.cn.yml
--'  12  99  /var/www/lims/config/locales/prechecks.cn.yml
--'  12  40  /var/www/lims/app/views/prechecks/_form.html.haml
--'  8  6  /var/www/lims/app/views/prechecks/_form.html.haml
--'  5  28  /var/www/lims/app/views/prechecks/_form.html.haml
--'  2  81  /var/www/lims/app/views/prechecks/new.html.haml
--'  1  0  /var/www/lims/app/views/prechecks/new.html.haml
--'  62  16  /var/www/lims/app/models/sample.rb
--'  47  66  /var/www/lims/app/models/sample.rb
--'  10  69  /var/www/lims/app/views/prechecks/_form.html.haml
--'  3  14  /var/www/lims/app/views/prechecks/new.html.haml
--'  8  0  /var/www/lims/app/controllers/reactions_controller.rb
--'  19  8  /var/www/lims/app/controllers/reactions_controller.rb
--'  101  38  /var/www/lims/app/models/sample_board.rb
--'  102  5  /var/www/lims/app/models/sample_board.rb
--'  3  73  /var/www/lims/app/models/sample_board.rb
--'  67  19  /var/www/lims/app/models/sample_board.rb
--'  59  19  /var/www/lims/app/models/sample_board.rb
--'  6  37  /var/www/lims/app/models/sample_board.rb
--'  7  33  /var/www/lims/app/models/sample_board.rb
--'  8  35  /var/www/lims/app/models/sample_board.rb
--'  11  19  /var/www/lims/app/models/sample_board.rb
--'  97  2  /var/www/lims/app/models/sample_board.rb
--'  44  11  /var/www/lims/app/models/sample_board.rb
--'  17  25  /var/www/lims/app/controllers/reactions_controller.rb
--'  16  8  /var/www/lims/app/controllers/reactions_controller.rb
--'  22  41  /var/www/lims/app/controllers/reactions_controller.rb
--'  14  4  /var/www/lims/app/controllers/reactions_controller.rb
--'  23  25  /var/www/lims/app/controllers/reactions_controller.rb
--'  27  0  /var/www/user_passport/config/routes.rb
--'  1  0  /var/www/user_passport/config/routes.rb
--'  4  4  /var/www/sino_project/app/models/remote_client.rb
--'  64  0  /var/www/sino_project/app/models/client.rb
--'  2  2  /var/www/sino_project/app/models/client.rb
--'  1  0  /var/www/sino_project/app/models/client.rb
--'  3  0  /var/www/lims_upload/Gemfile
--'  2  0  /var/www/lims_upload/Gemfile
--'  4  0  /var/www/lims_upload/Gemfile
--'  184  29  /var/www/genetest/app/controllers/orders_controller.rb
--'  57  23  /var/www/superwf/superwf_scaffold/lib/helpers/application_helper.rb
--'  58  15  /var/www/superwf/superwf_scaffold/lib/helpers/application_helper.rb
--'  61  19  /var/www/superwf/superwf_scaffold/lib/helpers/application_helper.rb
--'  1  0  /var/www/superwf/superwf_scaffold/lib/helpers/application_helper.rb
--'  95  4  /var/www/superwf/superwf_scaffold/lib/superwf_scaffold.rb
--'  97  8  /var/www/superwf/superwf_scaffold/lib/superwf_scaffold.rb
--'  14  2  /var/www/superwf/superwf_scaffold/lib/superwf_scaffold.rb
--'  1  0  /var/www/superwf/superwf_scaffold/lib/superwf_scaffold.rb
+-'  85  2  /var/www/genetest/app/models/order.rb
+-'  60  19  /var/www/genetest/app/models/order.rb
+-'  61  2  /var/www/genetest/app/models/order.rb
+-'  1  0  /var/www/genetest/app/models/order.rb
+-'  77  10  /var/www/superwf/superwf_scaffold/lib/superwf_scaffold.rb
+-'  24  49  /var/www/lims/app/models/sample.rb
+-'  58  11  /var/www/lims/app/models/sample.rb
+-'  76  63  /var/www/lims/app/models/sample.rb
+-'  1  0  /var/www/lims/app/models/sample.rb
+-'  129  0  /var/www/lims/app/models/sample.rb
+-'  8  27  /var/www/lims/app/controllers/orders_controller.rb
+-'  1  0  /var/www/lims/app/views/orders/_ajax_search.html.haml
+-'  32  30  /var/www/lims/app/controllers/orders_controller.rb
+-'  6  4  /var/www/lims/app/views/samples/_ajax_search.html.haml
+-'  1  0  /var/www/lims/app/views/samples/_ajax_search.html.haml
+-'  6  14  /var/www/lims/app/controllers/samples_controller.rb
+-'  38  37  /var/www/lims/app/controllers/samples_controller.rb
+-'  1  0  /var/www/lims/app/models/primer.rb
+-'  76  18  /var/www/lims/app/models/primer.rb
+-'  113  5  /var/www/lims/app/assets/javascripts/superwf.js.coffee
+-'  199  6  /var/www/lims/app/assets/javascripts/superwf.js.coffee
+-'  198  6  /var/www/lims/app/assets/javascripts/superwf.js.coffee
+-'  177  23  /var/www/lims/app/assets/javascripts/superwf.js.coffee
+-'  51  4  /var/www/lims/app/models/precheck.rb
+-'  33  36  /var/www/lims/app/models/precheck.rb
+-'  65  4  /var/www/lims/app/models/order.rb
+-'  11  12  /var/www/lims/app/models/reaction.rb
+-'  8  18  /var/www/lims/app/models/reaction.rb
+-'  68  2  /var/www/lims/app/models/order.rb
+-'  63  2  /var/www/lims/app/models/order.rb
+-'  44  2  /var/www/lims/app/models/order.rb
+-'  42  2  /var/www/lims/app/models/order.rb
+-'  35  2  /var/www/lims/app/models/order.rb
+-'  11  0  /var/www/lims/app/models/order.rb
+-'  252  26  /var/www/lims/app/models/order.rb
+-'  24  19  /var/www/lims/app/models/reaction.rb
+-'  29  4  /var/www/lims/app/models/reaction.rb
+-'  50  36  /var/www/lims/app/models/reaction.rb
+-'  19  12  /var/www/lims/app/models/client.rb
+-'  18  12  /var/www/lims/app/models/client.rb
+-'  112  2  /var/www/lims/app/models/sample.rb
+-'  118  34  /var/www/lims/spec/spec_helper.rb
+-'  117  4  /var/www/lims/spec/spec_helper.rb
+-'  109  4  /var/www/lims/spec/spec_helper.rb
+-'  100  68  /var/www/lims/spec/spec_helper.rb
+-'  99  67  /var/www/lims/spec/spec_helper.rb
+-'  98  69  /var/www/lims/spec/spec_helper.rb
+-'  97  75  /var/www/lims/spec/spec_helper.rb
+-'  96  16  /var/www/lims/spec/spec_helper.rb
+-'  162  21  /var/www/lims/spec/spec_helper.rb
+-'  49  38  /var/www/lims/app/models/reaction.rb
+-'  136  4  /var/www/lims/app/models/reaction.rb
+-'  29  2  /var/www/lims/lib/code.rb
+-'  25  0  /var/www/lims/app/models/precheck_code.rb
+-'  3  42  /var/www/lims/app/models/precheck_code.rb
+-'  9  12  /var/www/lims/app/models/precheck_code.rb
+-'  49  8  /var/www/lims/app/models/precheck.rb
+-'  10  25  /var/www/lims/app/models/precheck.rb
+-'  22  4  /var/www/lims/app/models/client.rb
+-'  75  2  /var/www/lims/app/models/primer.rb
+-'  78  4  /var/www/lims/app/models/primer.rb
+-'  77  6  /var/www/lims/app/models/primer.rb
+-'  65  2  /var/www/lims/app/models/primer.rb
+-'  58  6  /var/www/lims/app/models/primer.rb
+-'  24  49  /var/www/lims/app/models/sample.rb
+-'  58  11  /var/www/lims/app/models/sample.rb
+-'  76  63  /var/www/lims/app/models/sample.rb
+-'  1  0  /var/www/lims/app/models/sample.rb
+-'  129  0  /var/www/lims/app/models/sample.rb
+-'  8  27  /var/www/lims/app/controllers/orders_controller.rb
+-'  1  0  /var/www/lims/app/views/orders/_ajax_search.html.haml
+-'  32  30  /var/www/lims/app/controllers/orders_controller.rb
+-'  6  4  /var/www/lims/app/views/samples/_ajax_search.html.haml
+-'  1  0  /var/www/lims/app/views/samples/_ajax_search.html.haml
+-'  6  14  /var/www/lims/app/controllers/samples_controller.rb
+-'  38  37  /var/www/lims/app/controllers/samples_controller.rb
+-'  1  0  /var/www/lims/app/models/primer.rb
+-'  76  18  /var/www/lims/app/models/primer.rb
+-'  113  5  /var/www/lims/app/assets/javascripts/superwf.js.coffee
+-'  199  6  /var/www/lims/app/assets/javascripts/superwf.js.coffee
+-'  198  6  /var/www/lims/app/assets/javascripts/superwf.js.coffee
+-'  177  23  /var/www/lims/app/assets/javascripts/superwf.js.coffee
+-'  51  4  /var/www/lims/app/models/precheck.rb
+-'  33  36  /var/www/lims/app/models/precheck.rb
+-'  65  4  /var/www/lims/app/models/order.rb
+-'  11  12  /var/www/lims/app/models/reaction.rb
+-'  8  18  /var/www/lims/app/models/reaction.rb
+-'  68  2  /var/www/lims/app/models/order.rb
+-'  63  2  /var/www/lims/app/models/order.rb
+-'  44  2  /var/www/lims/app/models/order.rb
+-'  42  2  /var/www/lims/app/models/order.rb
+-'  35  2  /var/www/lims/app/models/order.rb
+-'  11  0  /var/www/lims/app/models/order.rb
+-'  252  26  /var/www/lims/app/models/order.rb
 
 # ç¼“å†²åŒºåˆ—è¡¨:
-%/var/www/genetest/app/controllers/orders_controller.rb	183	8
-%/var/www/sino_project/.git/COMMIT_EDITMSG	17	58
+%/var/www/genetest/app/models/order.rb	85	2
+%/var/www/superwf/superwf_scaffold/lib/superwf_scaffold.rb	77	10
+%/var/www/genetest/app/controllers/orders_controller.rb	109	8
 
 # æ–‡ä»¶å†…çš„æ ‡è®°å†å²è®°å½• (ä»æ–°åˆ°æ—§):
 
+> /var/www/genetest/app/models/order.rb
+	"	85	2
+
 > /var/www/genetest/app/controllers/orders_controller.rb
-	"	183	8
-	^	183	9
-	.	183	8
-	+	182	10
-	+	186	0
-	+	185	29
-	+	182	14
-	+	183	8
+	"	109	8

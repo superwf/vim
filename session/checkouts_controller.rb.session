@@ -24,12 +24,13 @@ let &cpo=s:cpo_save
 unlet s:cpo_save
 set backspace=indent,eol,start
 set expandtab
-set fileencodings=utf-8,ucs-bom,euc-jp,gb18030,gbk,gb2312,cp936
+set fileencodings=utf-8,gbk,ucs-bom,gb18030,euc-jp,gb2312,cp936
 set helplang=cn
 set history=50
 set hlsearch
 set incsearch
 set isident=@,48-57,_,192-255,$
+set iskeyword=@,48-57,_,192-255,$
 set nomodeline
 set mouse=a
 set printoptions=paper:a4
@@ -40,6 +41,7 @@ set showcmd
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
 set tabstop=2
 set viminfo='200,%,!,<50,s10,h,rA,rB,/50,:50
+set window=26
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
@@ -48,32 +50,45 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +0 app/controllers/checkouts_controller.rb
-badd +2 /var/www/lims/app/views/samples/redo_typeset.html.haml
-badd +7 /var/www/client_base/.gitignore
-badd +5 /var/www/lims/config/initializers/devise.rb
-badd +1 /var/www/lims/Gemfile
-badd +1 /var/www/lims/config/locales/samples.cn.yml
-badd +31 /var/www/lims/db/migrate/20130118024219_create_reactions.rb
-badd +1 /var/www/lims/app/models/reaction.rb
-badd +17 /var/www/lims/config/locales/reactions.cn.yml
-badd +3 /var/www/lims/app/views/orders/edit.html.haml
-badd +25 /var/www/lims/app/views/orders/_form.html.haml
-badd +8 /var/www/lims/app/controllers/samples_controller.rb
-badd +64 /var/www/lims/app/models/sample_head.rb
-badd +1 /var/www/lims/app/controllers/orders_controller.rb
-badd +7 /var/www/lims/app/views/orders/new.html.haml
-badd +6 /var/www/lims/app/views/orders/new_redo.html.haml
-badd +14 /var/www/lims/app/controllers/sample_boards_controller.rb
-badd +1 /var/www/lims/app/views/sample_boards/select.js.erb
-badd +14 /var/www/lims/app/assets/javascripts/orders.js.coffee
-badd +5 /var/www/lims/app/assets/javascripts/redo_typeset.js.coffee
-badd +20 /var/www/lims/app/assets/stylesheets/superwf.css.scss
-badd +4 /var/www/lims/app/views/clients/_search.html.haml
-badd +1 /var/www/lims/app/views/sample_boards/_table.html.haml
-badd +3 /var/www/lims/app/views/sample_boards/_show.html.haml
+badd +1 /var/www/primer_synthesis/app/controllers/checkout_orders_controller.rb
+badd +27 /var/www/gene_bank/app/controllers/api/v1/samples_controller.rb
+badd +28 /var/www/dna/duizhang/new/submit.php
+badd +46 /var/www/gene_bank/Gemfile
+badd +8 /var/www/gene_bank/app/controllers/api/v1/blast_cache_controller.rb
+badd +7 /var/www/gene_bank/config/routes.rb
+badd +3 /var/www/gene_bank/app/models/blast_cache.rb
+badd +28 /var/www/gene_bank/app/controllers/api/v1/blast_caches_controller.rb
+badd +11 /var/www/gene_bank/db/migrate/20130606062418_create_blast_caches.rb
+badd +1 /var/www/gene_bank/app/controllers/sample_boards_controller.rb
+badd +17 /var/www/gene_bank/app/controllers/samples_controller.rb
+badd +1 /var/www/gene_bank/config/or
+badd +88 /var/www/gene_bank/lib/ncbi.rb
+badd +26 /var/www/gene_bank/db/migrate/20130520075131_create_samples.rb
+badd +48 /var/www/gene_bank/app/models/sample.rb
+badd +12 /var/www/gene_bank/app/controllers/blast_caches_controller.rb
+badd +3 /var/www/gene_bank/app/controllers/api/v1/api_controller.rb
+badd +10 /var/www/gene_bank/app/views/samples/_form.html.haml
+badd +1 /var/www/gene_bank/db/migrate/20130520075216_create_sample_boards.rb
+badd +7 /var/www/gene_bank/db/migrate/20130618024704_create_vectors.rb
+badd +3 /var/www/gene_bank/app/models/vector.rb
+badd +1 /var/www/gene_bank/spec/models/vector_spec.rb
+badd +6 /var/www/gene_bank/spec/factories/vectors.rb
+badd +5 /var/www/gene_bank/spec/factories/blast_caches.rb
+badd +1 /var/www/gene_bank/spec/factories/sample_boards.rb
+badd +4 /var/www/gene_bank/spec/factories/samples.rb
+badd +9 /var/www/gene_bank/spec/models/blast_cache_spec.rb
+badd +7 /var/www/gene_bank/app/views/samples/_search.html.haml
+badd +2 /var/www/gene_bank/app/controllers/vectors_controller.rb
+badd +1 /var/www/gene_bank/app/views/vectors/index.js.erb
+badd +2 /var/www/gene_bank/spec/factories/sample_heads.rb
+badd +4 /var/www/gene_bank/spec/fixtures/sample_heads.yml
+badd +56 /var/www/primer_synthesis/app/controllers/checkouts_controller.rb
+badd +1 Gemfile
+badd +4 app/views/checkouts/new.html.haml
+badd +1 app/views/checkouts/_search.html.haml
+badd +10 app/views/checkouts/_search_orders.html.haml
 silent! argdel *
-edit app/controllers/checkouts_controller.rb
+edit /var/www/primer_synthesis/app/controllers/checkouts_controller.rb
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -164,13 +179,8 @@ set number
 setlocal number
 setlocal numberwidth=4
 setlocal omnifunc=rubycomplete#Complete
-setlocal path=.,/var/www/primer_synthesis,/var/www/primer_synthesis/app,/var/www/primer_synthesis/app/models,/var/www/primer_synthesis/app/controllers,/var/www/primer_synthesis/app/helpers,/var/www/primer_synthesis/config,/var/www/primer_synthesis/lib,/var/www/primer_synthesis/app/views,/var/www/primer_synthesis/app/views/checkouts,/var/www/primer_synthesis/public,/var/www/primer_synthesis/spec,/var/www/primer_synthesis/spec/models,/var/www/primer_synthesis/spec/controllers,/var/www/primer_synthesis/spec/helpers,/var/www/primer_synthesis/spec/views,/var/www/primer_synthesis/spec/lib,/var/www/primer_synthesis/spec/requests,/var/www/primer_synthesis/spec/integration,/var/www/primer_synthesis/app/*,/var/www/primer_synthesis/vendor,/var/www/primer_synthesis/vendor/plugins/*/lib,/var/www/primer_synthesis/vendor/plugins/*/test,/var/www/primer_synthesis/vendor/rails/*/lib,/var/www/primer_synthesis/vendor/rails/*/test,NOTE:\\\ Gem.all_load_paths\\\ is\\\ deprecated\\\ with\\\ no\\\ replacement.\\\ It\\\ will\\\ be\\\ removed\\\ on\\\ or\\\ after\\\ 2011-10-01.\
-Gem.all_load_paths\\\ called\\\ from\\\ -e:1.\
-NOTE:\\\ Gem.all_partials\\\ is\\\ deprecated\\\ with\\\ no\\\ replacement.\\\ It\\\ will\\\ be\\\ removed\\\ on\\\ or\\\ after\\\ 2011-10-01.\
-Gem.all_partials\\\ called\\\ from\\\ /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/site_ruby/1.9.1/rubygems.rb:261.\
-NOTE:\\\ Gem.all_partials\\\ is\\\ deprecated\\\ with\\\ no\\\ replacement.\\\ It\\\ will\\\ be\\\ removed\\\ on\\\ or\\\ after\\\ 2011-10-01.\
-Gem.all_partials\\\ called\\\ from\\\ /usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/site_ruby/1.9.1/rubygems.rb:261.\
-/usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/site_ruby/1.9.1,/usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/site_ruby/1.9.1/x86_64-linux,/usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/site_ruby,/usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/vendor_ruby/1.9.1,/usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/vendor_ruby/1.9.1/x86_64-linux,/usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/vendor_ruby,/usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1,/usr/local/rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/x86_64-linux,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/Ascii85-1.0.1/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/Ascii85-1.0.2/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/ZenTest-4.8.2/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/ZenTest-4.8.3/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionmailer-3.1.1/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionmailer-3.1.3/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionmailer-3.2.10/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionmailer-3.2.11/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionmailer-3.2.12/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionmailer-3.2.3/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionmailer-3.2.8/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.1.1/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.1.3/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.10/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.11/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.12/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/activemodel-3.1.1/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/activemodel-3.1.3/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/activemodel-3.2.10/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/activemodel-3.2.11/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/activemodel-3.2.12/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/activemodel-3.2.3/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/activemodel-3.2.8/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/activerecord-3.1.1/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/activerecord-3.1.3/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/activerecord-3.2.10/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/activerecord-3.2.11/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/activerecord-3.2.12/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/activerecord-3.2.3/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/gems/activerecord-3.2.8/lib,/usr/local/rvm/gems/ruby-1.9.3-p194/ge
+setlocal path=.,lib,vendor,app/models/concerns,app/controllers/concerns,app/controllers,app/helpers,app/mailers,app/models,app/*,app/views,app/views/checkouts,public,spec,spec/controllers,spec/helpers,spec/mailers,spec/models,spec/views,spec/lib,spec/features,spec/requests,spec/integration,vendor/plugins/*/lib,vendor/plugins/*/test,vendor/rails/*/lib,vendor/rails/*/test,/var/www/primer_synthesis,-e:1:in\\\ `<main>':\\\ undefined\\\ method\\\ `all_load_paths'\\\ for\\\ Gem:Module\\\ (NoMethodError)\
+
 setlocal nopreserveindent
 setlocal nopreviewwindow
 setlocal quoteescape=\\
@@ -182,7 +192,7 @@ setlocal noscrollbind
 setlocal shiftwidth=2
 setlocal noshortname
 setlocal nosmartindent
-setlocal softtabstop=2
+setlocal softtabstop=0
 setlocal nospell
 setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
 setlocal spellfile=
@@ -195,7 +205,7 @@ if &syntax != 'ruby'
 setlocal syntax=ruby
 endif
 setlocal tabstop=2
-setlocal tags=/var/www/primer_synthesis/tmp/tags,./tags,./TAGS,tags,TAGS,/var/www/primer_synthesis/tags
+setlocal tags=/var/www/primer_synthesis/tags,/var/www/primer_synthesis/tmp/tags,./tags,./TAGS,tags,TAGS
 setlocal textwidth=0
 setlocal thesaurus=
 setlocal noundofile
@@ -204,12 +214,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 12 - ((2 * winheight(0) + 8) / 17)
+let s:l = 6 - ((5 * winheight(0) + 13) / 26)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-12
-normal! 080l
+6
+normal! 02l
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf

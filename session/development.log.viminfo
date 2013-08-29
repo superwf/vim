@@ -8,117 +8,117 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/aaaaaaaaaaaaaaaaaaaa
+~Msle0~/\<plot4\>
 
 # Last Substitute Search Pattern:
-~MSle0&@sample
+~MSle0&"
 
 # Last Substitute String:
-$@s
+$'
 
 # Command Line History (newest to oldest):
 :q
-:Rview _search.html.haml
-:Rview _flow_ht.html.haml
-:Rview projects/running_ht.html.haml
-:Rmodel sample_board
-:Rspec models/sample_board
-:e spec/spec_helper.rb
-:Rspec controllers/abi_records_controller
-:Rview samples/_search.html.haml
-:e 
-:Rmigration create_samples
-:Rfixtures samples.rb
-:%s/@sample/@s/g
-:Rmodel primer_board
-:Rfixtures primers.rb
-:vsplit Gemfile
-:Rspec models/primer
-:tabedit Gemfile
-:Rmodel sample
-:Rspec models/sample
-:Rlocale samples.cn.yml
-:Rview samples/redo_typeset.html.haml
-:Rcontroller orders
-:Rview sample_boards/select.js.erb
-:Rview sample
-:Rjavascript redo_typeset
-:Rview prepayments/edit.html.haml
-:Rmodel prepayment
-:Rview prepayment_records/destroy.js.erb
-:Rcontroller prepayment_records
+:Rfixtures sample_heads.rb
+:Rmodel invoice
+:R
+:Rinitializer date
+:Rinitializer 
+:e lib/deliver.rb
+:e lib/date.rb
+:Rlocale invoices.cn.yml
+:Rview projects/money_count_statistic.html.haml
+:Rview invoices/get_money_proportion.html.haml
+:Rmodel 
+:Rview projects/conv_statistic.html.haml
+:Rcontroller invoices
+:Rview invoices/statistic.html.haml
 :e config/routes.rb
-:Rview prepayment_records/_ajax_table.html.haml
-:Rview prepayment_records/index.js.erb
-:Rview prepayment_records/_table.html.haml
-:Rlocale prepayment_records.cn.yml
-:Rmodel prepayment_record
-:Rspec models/client
-:Rmigration create_checkouts
-:Rmigration create_checkout_orders
-:Rmodel client
-:Rmodel checkout_order
-:Rview _go.html.haml
-:Rview checkouts/scope.html.haml
-:Rview new.html.haml
-:Rmigration create_prepayment_records
-:Rview _form.html.haml
-:Rview new.js.erb
-:Rmodel checkout
-:Rview prepayment_records/new.html.haml
-:Rview checkouts/_form.html.haml
+:Rlocale projects.cn.yml
+:Rview pie_chart.html.haml
+:Rview project_complete_status.html.haml
+:Rcontroller project_types
+:Rview project_count_month.html.haml
+:Rview project_types/project_complete_status.html.haml
+:Rcontroller projects
+:Rview project
+:Rview projects/conv.html.haml
+:Rview project_types/pie_chart.html.haml
+:Rmodel project
+:Rmodel projecgt
+:Rlocale project
+:vs Gemfile
+:e app/views/project_types/project_completed_status.html.haml
+:Rview project_types/
+:Rm
+:Renvironment development
+:tabedit Gemfile
+:Rview index.html.haml
+:Rview projects/ht.js.erb
+:Rview clients/_search.html.haml
+:vsplit Gemfile
+:Rview contracts/_search.html.haml
+:Rmodel contract
+:Rview money_count_statistic.html.haml
+:vs
+:Rcontroller project_checks
+:'<,'>s/"/'/g
+:e sino_passport
+:vs lims
+:e lims
+:e project
+:vs sino_passport
 
 # Search String History (newest to oldest):
-?/aaaaaaaaaaaaaaaaaaaa
-?/aaaaaa
-?/aaaaaaa
-?/debug
+? \<plot4\>
+?/date_f
+?/=>
+?/today
+?/invoices
+?/title
+?/statistic
+?/month
+?/comp
+?/c
+?/pie
+?/COM
+?/project_types
 ?/search
-?/workflow
-?/rescue
-?/expect
-?/typesetting
-?/create_sample_board
-? \<create_sample_board\>
-?/hole
-?/hook
-? @sample
-? \<reactions\>
-?/create_sample
-? \<prepare_sample_head\>
-?/create_order
-?/ceate_p
-?/pdf
-?/alert
-?/head
-?/sele
-? \<transfer\>
-?/prepayment_records
-?/h
-?/prim
-?/prepayment
-? \<prepayment_records\>
-?/flow
-?/checkouts
-?/head_number
-?/validation
-? \<conditions\>
-?/current_max_number
-?/test order_number
-?/validate
-? \<check_running\>
-?/unique
-?/:head
-?/sample_head
-?/select
-? \<create_sample_head\>
-?/over_date
-?/create_primer
-? \<record_regenerator\>
-?/www-data
-?/fsfdsf
-?/mem
-? '
+?/ht
+?/sear
+?/project_nam
+? "
+?/api
+? \<authenticate_user\>
+?/anima
+? \<start_date\>
+? \<@start_date\>
+?/@today
+?/conv_statis
+?/money_p
+? \<pointLabels\>
+?/lims
+?/autoload
+?/client
+?/model_name
+?/create
+?/notice
+?/ht_samples
+?/update
+?/conv
+?/log_for
+?/home
+?/wangfan
+?/def projects
+?/projects
+?/completed_conv
+?/ntop
+?/super
+? \<generate_sn\>
+?/before_
+?/before_save
+?/nto
+?/before_cre
+?/before_s=
 
 # Expression History (newest to oldest):
 
@@ -128,37 +128,41 @@ $@s
 
 # å¯„å­˜å™¨:
 "0	CHAR	0
-	ActiveRecord::DeleteRestrictionError
+	invoices.statistic.get_money_proportion
 "1	LINE	0
-	      when :run
+	            formatString: '%d'
 "2	LINE	0
-	        self.orders.uniq.each do |o|
-	          o.run! if o.new_created?
-	        end
+	      animateReplot: true,
 "3	LINE	0
-	  record.destroy
+	          pad: 1.2,
 "4	LINE	0
-	rescue ActiveRecord::DeleteRestrictionError
-	  record.should_not be_destroyed
+	    if(count.length == 0) {
+	      alert("#{tl(:blank, :data)}")
+	      return
+	    }
 "5	LINE	0
-	
+	= render 'layouts/notice', text: 
 "6	LINE	0
-	      []
+	/= javascript_include_tag 'jqplot_plugins/jqplot.highlighter.min'
 "7	LINE	0
-	    context '' do
-	    end
+	/= javascript_include_tag 'jqplot'
 "8	LINE	0
-	    samples = samples.where(name: params[:name]) unless params[:name].blank?
-"9	LINE	0
 	
-"a	BLOCK	23
-	{style: 'width: 100px;'}
+"9	LINE	0
+	    @year_begin = ::Date.today.at_beginning_of_year
 "b	BLOCK	23
 	 NOT NULL AUTO_INCREMENT
+"c	CHAR	0
+	267
+<wcbcwcreated_datewwwwbwwcwcreated_date_from€k3gtggjjjjjjjjjjkjkkwwwwwwwwwwwwwwwwwcwcreated_date_to€k3€ıL€ıL€ı,€ı.i@jjkfdi@jk;;i@jkkkkkkj/datanni@nni@nnnnnni@nni@nni@nni@#xnnI@uunni#€kb@nni@nni@nni@nni@nni@nni@nni@nni@nni@nni@nni@nni@nn
 "g	CHAR	0
 	
+"i	CHAR	0
+	347
+<""""i""iquadrantoreaction_board_id = _this.a€kbparn€kbent().attr()i""re€kb€kbireaction_board_I€kbid€k3kkkkkYGpwwwwwwwwwwwCbbbbddkkkkkkkYjVkyjGpzzjwwwwwwwwvf]sp[€kb€kb[]i""hireaction_board=€kb_id=lli  i++i  ireaction_board_idllllla[]iquadrna€kb€kbant=""i  i++i  iquadrant€k3€k3€k3€k3€k3€ı,€ı.€k3€k3€k3€k3€k3€k3€k3€ı,€ı.veee
 "k	CHAR	0
-	j
+	2698
+<jh:Rsp	 mo	sample/comlet€kb€kb€kbplete!jjjjjjjjkkekkkkoprecheck = o€kbdouble()iprecheck'xbi:oprecheck.stub()ipassed: true€k3zzjjjkkojjjjjkkwkkkkkkjI@#€kbjjjjjkkkko@s.stub()iprecheck: @precheckjjjjjkzzbo@s.passed.should be_niljjbo@s.passed.should eq()i@precheck.passedo@s.ddjjjjjwjjzzo@s.passed.should be_nilkkkkkkkkkkkkkk€k3bbbb€ıL€ıL€ıL€ıLgthjjjjkzzjjkkkkkkkkkkkkkkkkkjjjjjjjjjjjjjjjjjjk%%kwzzkkwwwcacwvalidatebcwvalid?€k3lhjjj%%kwoit '' doendkllitypesetted?biif ela can not be dewt€kb€kbstroyedljjzzkkkkkkkjjbjjkCcomplete!kVkdjjjjjgthkjlkkkkkkkkkkkjjjjkkkoreturn false unless p€kbself.precheckbbbbcwifbbbveeebhxjjjoendkVkk>€k3jjjjjjjjjjjbgtebzhjjjhjjjjkkkouVjdkkkkkkkwO@p.sam;pl€kb€kb€kble.shoulsample.should_re()i:complete!jjjjjjoit '' doendklliif typesetted?zza €kb, can not be destroyedlkkkkkwwwwww@##nnnnnho@p.sample.typesetted?lbbvelxnnbbvexxnn/delegateeeea, :typesetted?€k3hbcistub :A = €kb> truelnkkkwwwww#ho@p.savekddpo@p.s€kbdestroyo@p.should_not be_destroyedjzzoit '' doendklllhiafter destroy ,€kb€kb, sample should e€kbunl€kbcop€kbmplete!o@p.saveo@p.det€kbstt€kbroyko@p.sample.typesestub t€kb:typesetted? => falsejozz€kb€kbddzzkwO@p.sample.should_rec :uncom!€k3ljjjjzzjjjzzbzzjjkzzhjjjddjk%%ocontext '' doendkwatest scopeszzobefor €kbe :each doendko@p.savezzjoit '' doendklliwhen passed, €kb€kbzzo@€kb::Precheck.passed.should be_inc€kbn€kbl()i@pko@p.s€kbpassed.should be_truejzzo::Precheck.unpassed.should_no be_inc€kb()i@pjzzoit' ' €kb€kb€kb€kb '' doendklliwhen unpassedo@p.precheck_code.stub()i:passed: €kb€kb:bhxela falsas€kbezzo@p.s€kbddkwkonew_recor€kb€kb€kb€kb€kbcode = create_precheck_code passed: falsejbbbbbbbCupdate_attribute precheck-cod€kb_code_id: new_code.ido@p.validatelkkkkkkkkkkkkkkkkkkkkhkeasjljjjjjjzzjjjjzzhbcwpassed.should be_falseokkkukkkkkkVkdujjjjjjjpjfuvlxkP€k3ljjjjzzhzzGoukoit '' doendkllitest show methodzzo@p.show €kb.should eq()lkwvf"yhPbbbbbbbbbcw@pwwwww.€k3ljjjzzjwwcwcode€k3€k3€k3€k3hjoit '' doendklliself.test to_s methodo@p.to_s.should eq()i@p.codde€kb€kbe€k3ljjjggGkkkkjjwkkkkggkjk:Rmo	 hea	h:Rsp	 sp	msp	mmo	heheat	jjjwCbefore :each doendko::@h = ::Fac.cu€kb€kbbuild :heat_cy, reaction_board_id: reactcreate_reaction_board.id€k3:Rfix	 heat	jjjwocreate€kbor_id `€kb12€kboremark ''irrrrr€k3lhoquadrant ''ixxxx€k3ljjjjjjjjjjjjkkwh:Rmi	 create_heat	joit '' doendkllihas theset €kb€kb attributes can mass-assign€k3lgghkkoit'' €kb€kb€kb '' doendklliis boardo::Heat.€kb::BOar€kb€kb.should be_true€k3jjjjzzkotest_an€kb ::HeatC€kb, []ljjwwwbv$hyhP€k3zzjjk
 "l	CHAR	0
 	
 "p	LINE	0
@@ -187,133 +191,121 @@ $@s
 	
 	æ²¡æœ‰åŒ¹é…çš„è‡ªåŠ¨å‘½ä»¤
 	æ²¡æœ‰åŒ¹é…çš„è‡ªåŠ¨å‘½ä»¤	
+"q	CHAR	0
+	2232
+<auence€k3€kul:Rlhggl:Rlo	 primernto€kb€kboti	kkkkkex€k3€k3€k3€k3€k3€k3€k3€ı,€ı.€ıL€ıL€ı,€ı.€ı,€ı.a{}iborder: 1€k3€ı,€ı.€ıK€ıK€ı,€ı.x€k3€k3€k3€k3€ı,€ı.€ı,€ı.€ı,€ı.veeesstyle: ''iborder: 1px, €kb€kb sok€kblid;€k3€ıL€ıK€ıK€ı,€ı.€ıL€ı,€ı.€ıL€ıL€ıL€ı,€ı.€ı,€ı.€ıL€ıL€ıK€ı,€ı.€ı,€ı.€ı,€ı.€ü €ı,€ü €ı.€ı,€ı.€ı,€ı.€ı,€ı.€ü €ı,€ü €ı.€ı,€ı.€ü €ı,€ü €ı.€ı,€ı.€ü €ı,€ü €ı.€ı,€ı.€ıK€ı,€ı.:Rlo	 pi€kbrimers	ggjjjjjjjjjjjwkwhkkkkkkj$bbcwcreated_datejjjjjjjkjjbbbCcreated_date€k3jjjjjjkYjjkkhjjjljjjjjjjjjjjkkkkkkkkkkkkkkkkkkkkkkkkkkkGh€ıK€ıK€ıK€ıK€ı,€ı.a €kb, border: 1€k3€k3€ıK€ıK€ı,€ı.jo:cssotd{}iborder: 1px, so€kb€kb€kb€kb sok€kblid;€k3jjjjjjjjjjkkbbbbbbDjjzzjwwla{}iwistyle: ''iwit€kbdth: 5ema;ll%%yjPjPjzzkjP€k3€k3€k3€k3€k3€k3€k3€ıK€ıK€ıK€ıK€ıK€ı,€ı.ea, th€k3jjjjjjjjjjjjjjjjjjjjjjkkkkkkkkkkkkkjkkkj€k3€k3€k3€k3€k3€k3€k3€k3€k3€k3€ı,€ı.ves20%kkka{}istyle: ''iwidth: 100%;€k3€k3€k3€k3€k3€k3hhjjjjkljves20a%jjkbves30a%jbves30%€k3kkkkjhhr3jjjjkr2€k3€k3€k3€k3€k3€k3jjjkjjjjjjjkkkkkkkkkkkkkkkkkkkkjjj€k3€k3€k3€ıK€ıK€ı,€ı.€ı,€ı.Vjdjjjjjjjjjjjjjkkkkkkwwwwwwwwwwwbhhhxs8llllli, border: 1, cellspacing: 0jjjbbbbbbbr2jjr2€k3€k3€ı,€ı.at€kb text-align: cr€kbenter;€k3€k3€k3l:Rtask	 prim	kjzzxjjjjjjjjjjkkkkbjbjjjxkx€k3jjjjjjjjjjggx€k3€ıL€ıL€ıL€ıL€ıL€ıL€ıL€ıK€ıK€ıK€ıK€ıK€ıK€ıK€ıL€ıL€ıLggu€k3€ıL€ıL€ıL€ıL€ıL€ıL€ıL€ıK€ıKe€ıK€ıK€ıKbbggjh:e cRenvggljjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjkkkwggGkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkjjjjjjjjjjjjjjj€ı,€ı.€ıL€ıL€ıL€ı,€ı.:Rlo	 prijersprimers	kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkjjjjjwjkkkkkkkkkkkkkkjjkkkjjjhjjjjjjjkzzbYpwwwwwwwwwwwwwwwwwwcwp€kbover_datejjjjjjjjjjkkYp$bcwor€kbver_datekkkkkkkkkkkkkkjjjhhhjjjjkkkkjjkjjknjkjkkkk€k3uuuuu€k3€k3€k3€ı,€ı.b€ıL€ıL€ı,€ı.b€ı,€ı.v%%%xj.j.j.j.€k3ljjjjjjjjjjjjjjjjjkkkkkkjI#€k3€k3€k3jjjjjjjkh:Rtsa€kb€kbask	 or	jjjjjjjjkklgg:Rvi	 order	no	s€kbsen			n			sen		hjjjjjjjjjjjjjjjjjjjjjjjjjjj:Rmai	 	kGkw%jjjjjjjjjjjjjjjjjjjkkkkkkkkkkkkkkkkkl:Rs€kbtask	 or	hklkkkjwwwwwwhvex€k3hwwwwbC_mail€k3€k3€k3€k3€k3€k3€k3€k3€k3€k3jbiore€kbder_mail.bbbbbiorder_mail.€k3jkkoorder = order_mail.orderjbbbdwx€k3jjjjjjjjjjjjjjjjjjjkkkkkkkkkkkkkjjjjjjjjjjjwwex€k3€k3€k3:Rzz
+"s	CHAR	0
+	552
+<,hi,llxxepwxxxsuuf}xexepwxxxwewwxepwxxxwwllDjjwwxxewbea_tagea, params[]iswwxepwxxxwwwwwwxepwxxxwwxepwxxxjjkkjjj^wxxea_g€kbtagwwwwwxepwxxx€k3€ı,€ı.xepwxxxjjkwwwwwwwwwxepwxxxwwwwwwxepwxxxwwxepwxxxwjbbbbbbbbxepwxxx€k3€k3€ı,€ı.:Rvi	 quality_co	_ta	jkVjdljkggjjkwpVj>.jwveehxwwr xu$xbbbbbbbxepwxxx€k3hdd€k3l:Rvi	 €ı,€ı.€ıL€ıK€ıL€ı,€ı.€ı,€ı.$ibcwtruebbbbbwi, params[]i:result€k3:Rmo	 qual	Gkgg:_c	Gkwkkkwji#€k3€k3€k3€k3u€k3h:Rcon	 qua	jjjjjjjjjjjjjjjjjjjjjjjjjjjj:€kb€kb€kby_co	a, :desc€k3l:Rmo	 sample_he	G/searchgg:R
 "v	CHAR	0
 	389
 <jkV%>wveesself€k3€ıK€ıK€ıK€ıL€ıL€ıK€ıL€ıL€ı,€ı-€ı-€ı-€ı-€ı-€ı-€ı-€ı-€ı-€ı.sselfwwwwblveesself€k3gt:gtjjV%ddd€k3hjjbbbbluuwC€ı,€ı.€ı,€ı.bcwbcwc€kbmoduleA F€kb€kbFac€k3hjjjjjjbbbbveelx€k3€k3€k3€k3€k3€ı,€ı.cw::Filewwww.€k3€ı,€ı.xkjjI#€k3kY:Rfix	 hr€kbtcon	jjjjj:Rfix 	htRfix	 ht_smaple-re	€kb€kb€kb_r	:€kb€kb€kb€kb€kb€kb€kbamp		jkpdkddljjV%ddd€k3h€k3jjl€k3h
 "w	CHAR	0
-	1312
-<wwwwwwxwwbxxxxx€k3kkkjbbbbcwwhildse€k3jjjA & €kb& ntxtnext_td.html() == ''€k3bbbbbbbxxxiif k$xjs!ocontinue€k3oelsejVG>€k3jobreak€k3€k3€k3kkkkkkkkbbbblC++€k3€k3€k3€k3€ıL€ıKkkkkkjddkPkkjddpkoif td.html()a == ''jVG>kkjjjjjjjwjjjjjjjjjwkkkkkkkkkkkkkkkkjjjjo$()i""ddOtd.append()i""i<>h:Rja	 orders	/appendlibutton class=''ibtnlla<>i/bo€kbuttonbblli""i++i  isample_namekkkkkkkkjjjjjjkjosample_name = $()ithisA.find()i""itd.sampleA.html()€k3jjla bbbbellla €k3wwwwwbil€kblli<>iinputllhi /lli<>iinput /hhhhhhhhhhliname='' hisamples[]i""i€kbi++hi lla hi  isample_id€k3lllllli[]iholella value=""i++€kb€kb  i++i  itd.attr()i""ihole€k3lllllllllllllllllbbbbbbbbbbbbbbbbbbbbbbbbbbbbbwwwwwwwwwwwbbbbbiy€kbtype=""€kb€kb'' hihiddenjbbbbbbbbbbbbbwtyitype='' hihiddenla name=''isamples[]i""i  i++i  isample_idllllla[]isample-boa€kb€kb€kb€kb_board_idlala value=""hxs''i""€ı,€ı.i'llllllllllllllllllllllla'€k3€ı,€ı.hi"€kb  i++i  isample_board_id€k3kkjjkwwwwwwwwllla sample_id=''i""i  i++i  isample_id€k3€k3€k3€k3€k3o$()ithisA.hide()€k3€k3€k3€k3€k3€k3€ıLbbbbC)i""a.€kbitr[]idata-id=""i  i++i  isample_idA.hide()€k3Go€kb€kb€kb€kb€kb€kb# middle typesetd sample to reset it €kb€k3o€kb€kb	$()i""i#ta€kb€kbsample_bor€kbard_table
+	506
+<V%yjwpjjkw$bbCnil€k3jVkkd€k3lbbbbwveeesif: ::Proc.new{}i|r| r.reaction_board && r.buuuuuhCtrue€k3€k3€k3€k3€k3€k3€k3€k3€k3€k3€k3€k3€k3hu€k3€ı,€ı.:Rmo	 heat	h:Rsp	 mo	heat	ljjwhjjwjjjjjjjkkjjjzzljjjjkzzhjjjjjjjjjjjjjjjjjljjjjkjzzhljwwwwCquadran: true€k3€k3€k3€k3hjjjjjjjjkkkwwwwwwllwwC7€k3h:Rmi	 heat	k$hC7€k3:Rfix	 heat	jjjjjjwwwwbcw1,2,3,4€k3€k2€k3€k3€k3:Rmi	 alc	jjjjkkkkklkjh:Rmi	 alc	jjkkl:Rmo	 alc	h:Rsp	 mo	aalc	lggjjwhjjjjjjjjwzzkkkkkjjjjjjjjjzzjjzz
 ""-	CHAR	0
-	double(:order)
+	, got_money
 
 # å…¨å±€å˜é‡:
 
 # æ–‡ä»¶æ ‡è®°:
-'0  1263  0  /var/www/lims/log/development.log
-'1  23  46  /var/www/lims/log/development.log
-'2  2296  0  /var/www/lims/log/development.log
-'3  19  0  /var/www/lims/log/development.log
-'4  2  0  /var/www/sino_project/app/views/projects/_search.html.haml
-'5  71  8  /var/www/lims/spec/controllers/abi_records_controller_spec.rb
-'6  230  2  /var/www/lims/spec/models/sample_board_spec.rb
-'7  8  6  /var/www/sino_project/app/views/layouts/_show_cols.html.haml
-'8  20  57  /var/www/superwf/superwf_scaffold/lib/views/scaffolds/index.js.erb
-'9  6  41  /var/www/sino_project/app/models/remote_client.rb
+'0  4805  0  /var/www/gene_library/log/development.log
+'1  5  4  /var/www/lims/spec/factories/sample_heads.rb
+'2  79  6  /var/www/sino_project/app/models/invoice.rb
+'3  42  10  /var/www/sino_project/app/views/projects/money_count_statistic.html.haml
+'4  2  16  /var/www/superwf/lims_utils/lib/lims_utils/version.rb
+'5  23  0  /var/www/superwf/lims_utils/lims_utils.gemspec
+'6  1  0  /var/www/superwf/superwf_scaffold/lib/generators/superwf_scaffold/templates/_search.html.haml
+'7  14  10  /var/www/superwf/superwf_scaffold/lib/generators/superwf_scaffold/templates/show.html.haml
+'8  1  0  /var/www/superwf/superwf_scaffold/lib/generators/superwf_scaffold/templates/_subnav.html.haml
+'9  1  0  /var/www/superwf/superwf_scaffold/lib/generators/superwf_scaffold/templates/index.js.erb
 
 # è·³è½¬åˆ—è¡¨ (ä»æ–°åˆ°æ—§):
--'  1263  0  /var/www/lims/log/development.log
--'  89  0  /var/www/lims/log/development.log
--'  79  0  /var/www/lims/log/development.log
--'  69  0  /var/www/lims/log/development.log
--'  59  0  /var/www/lims/log/development.log
--'  49  0  /var/www/lims/log/development.log
--'  39  0  /var/www/lims/log/development.log
--'  29  0  /var/www/lims/log/development.log
--'  19  0  /var/www/lims/log/development.log
--'  2406  0  /var/www/lims/log/development.log
--'  23  46  /var/www/lims/log/development.log
--'  1162  0  /var/www/lims/log/development.log
--'  2296  0  /var/www/lims/log/development.log
--'  1048  0  /var/www/lims/log/development.log
--'  1083  0  /var/www/lims/log/development.log
--'  1093  0  /var/www/lims/log/development.log
--'  2  0  /var/www/sino_project/app/views/projects/_search.html.haml
--'  7  10  /var/www/sino_project/app/views/projects/_flow_ht.html.haml
--'  1  0  /var/www/sino_project/app/views/projects/_flow_ht.html.haml
--'  1  0  /var/www/sino_project/app/views/projects/running_ht.html.haml
--'  71  8  /var/www/lims/spec/controllers/abi_records_controller_spec.rb
--'  18  10  /var/www/lims/spec/controllers/abi_records_controller_spec.rb
--'  16  20  /var/www/lims/spec/controllers/abi_records_controller_spec.rb
--'  152  6  /var/www/lims/spec/controllers/abi_records_controller_spec.rb
--'  113  38  /var/www/lims/spec/controllers/abi_records_controller_spec.rb
--'  9  0  /var/www/lims/app/views/samples/_search.html.haml
--'  99  108  /var/www/lims/spec/spec_helper.rb
--'  63  42  /var/www/lims/spec/spec_helper.rb
--'  9  4  /var/www/lims/spec/factories/samples.rb
--'  32  6  /var/www/lims/db/migrate/20130118092212_create_samples.rb
--'  9  18  /var/www/lims/spec/spec_helper.rb
--'  1  0  /var/www/lims/spec/spec_helper.rb
--'  57  0  /var/www/lims/spec/spec_helper.rb
--'  34  2  /var/www/lims/spec/spec_helper.rb
--'  153  0  /var/www/lims/spec/spec_helper.rb
--'  116  67  /var/www/lims/spec/spec_helper.rb
--'  115  0  /var/www/lims/spec/spec_helper.rb
--'  113  0  /var/www/lims/spec/spec_helper.rb
--'  117  0  /var/www/lims/spec/spec_helper.rb
--'  112  89  /var/www/lims/spec/spec_helper.rb
--'  120  99  /var/www/lims/spec/spec_helper.rb
--'  13  10  /var/www/lims/spec/factories/primers.rb
--'  1  0  /var/www/lims/Gemfile
--'  1  32  /var/www/lims/app/models/sample.rb
--'  28  2  /var/www/lims/app/models/sample.rb
--'  177  2  /var/www/lims/app/models/sample_board.rb
--'  166  2  /var/www/lims/app/models/sample_board.rb
--'  160  6  /var/www/lims/app/models/sample_board.rb
--'  176  4  /var/www/lims/app/models/sample_board.rb
--'  182  2  /var/www/lims/app/models/sample_board.rb
--'  180  2  /var/www/lims/app/models/sample_board.rb
--'  192  2  /var/www/lims/app/models/sample_board.rb
--'  191  4  /var/www/lims/app/models/sample_board.rb
--'  185  2  /var/www/lims/app/models/sample_board.rb
--'  202  2  /var/www/lims/app/models/sample_board.rb
--'  195  2  /var/www/lims/app/models/sample_board.rb
--'  163  4  /var/www/lims/app/models/sample_board.rb
--'  164  4  /var/www/lims/app/models/sample_board.rb
--'  153  10  /var/www/lims/app/models/sample_board.rb
--'  142  2  /var/www/lims/app/models/sample_board.rb
--'  230  2  /var/www/lims/spec/models/sample_board_spec.rb
--'  3  21  /var/www/lims/spec/models/sample_board_spec.rb
--'  262  0  /var/www/lims/spec/models/sample_board_spec.rb
--'  238  6  /var/www/lims/spec/models/sample_board_spec.rb
--'  225  2  /var/www/lims/spec/models/sample_board_spec.rb
--'  220  8  /var/www/lims/spec/models/sample_board_spec.rb
--'  174  24  /var/www/lims/spec/models/sample_board_spec.rb
--'  223  2  /var/www/lims/spec/models/sample_board_spec.rb
--'  219  6  /var/www/lims/spec/models/sample_board_spec.rb
--'  2  0  /var/www/sino_project/app/views/projects/_search.html.haml
--'  7  10  /var/www/sino_project/app/views/projects/_flow_ht.html.haml
--'  1  0  /var/www/sino_project/app/views/projects/_flow_ht.html.haml
--'  1  0  /var/www/sino_project/app/views/projects/running_ht.html.haml
--'  71  8  /var/www/lims/spec/controllers/abi_records_controller_spec.rb
--'  18  10  /var/www/lims/spec/controllers/abi_records_controller_spec.rb
--'  16  20  /var/www/lims/spec/controllers/abi_records_controller_spec.rb
--'  152  6  /var/www/lims/spec/controllers/abi_records_controller_spec.rb
--'  113  38  /var/www/lims/spec/controllers/abi_records_controller_spec.rb
--'  9  0  /var/www/lims/app/views/samples/_search.html.haml
--'  99  108  /var/www/lims/spec/spec_helper.rb
--'  63  42  /var/www/lims/spec/spec_helper.rb
--'  9  4  /var/www/lims/spec/factories/samples.rb
--'  32  6  /var/www/lims/db/migrate/20130118092212_create_samples.rb
--'  9  18  /var/www/lims/spec/spec_helper.rb
--'  1  0  /var/www/lims/spec/spec_helper.rb
--'  57  0  /var/www/lims/spec/spec_helper.rb
--'  34  2  /var/www/lims/spec/spec_helper.rb
--'  153  0  /var/www/lims/spec/spec_helper.rb
--'  116  67  /var/www/lims/spec/spec_helper.rb
--'  115  0  /var/www/lims/spec/spec_helper.rb
--'  113  0  /var/www/lims/spec/spec_helper.rb
--'  117  0  /var/www/lims/spec/spec_helper.rb
--'  112  89  /var/www/lims/spec/spec_helper.rb
--'  120  99  /var/www/lims/spec/spec_helper.rb
--'  13  10  /var/www/lims/spec/factories/primers.rb
--'  1  0  /var/www/lims/Gemfile
--'  1  32  /var/www/lims/app/models/sample.rb
--'  28  2  /var/www/lims/app/models/sample.rb
+-'  4805  0  /var/www/gene_library/log/development.log
+-'  4941  0  /var/www/gene_library/log/development.log
+-'  5  4  /var/www/lims/spec/factories/sample_heads.rb
+-'  1  0  /var/www/lims/spec/factories/sample_heads.rb
+-'  79  6  /var/www/sino_project/app/models/invoice.rb
+-'  16  18  /var/www/sino_project/config/initializers/date.rb
+-'  43  48  /var/www/sino_project/app/views/invoices/statistic.html.haml
+-'  38  2  /var/www/sino_project/app/views/invoices/statistic.html.haml
+-'  10  0  /var/www/sino_project/config/initializers/date.rb
+-'  1  0  /var/www/sino_project/lib/date.rb
+-'  11  6  /var/www/sino_project/lib/date.rb
+-'  37  0  /var/www/sino_project/app/views/invoices/statistic.html.haml
+-'  27  4  /var/www/sino_project/app/views/invoices/statistic.html.haml
+-'  44  30  /var/www/sino_project/app/views/invoices/statistic.html.haml
+-'  34  57  /var/www/sino_project/app/views/invoices/statistic.html.haml
+-'  33  59  /var/www/sino_project/app/views/invoices/statistic.html.haml
+-'  30  50  /var/www/sino_project/app/views/invoices/statistic.html.haml
+-'  1  0  /var/www/sino_project/app/views/invoices/statistic.html.haml
+-'  19  35  /var/www/sino_project/config/routes.rb
+-'  104  37  /var/www/sino_project/config/routes.rb
+-'  117  6  /var/www/sino_project/config/locales/projects.cn.yml
+-'  23  6  /var/www/sino_project/app/views/projects/money_count_statistic.html.haml
+-'  3  0  /var/www/sino_project/app/views/projects/money_count_statistic.html.haml
+-'  42  10  /var/www/sino_project/app/views/projects/money_count_statistic.html.haml
+-'  293  27  /var/www/sino_project/app/controllers/projects_controller.rb
+-'  68  36  /var/www/sino_project/app/controllers/project_types_controller.rb
+-'  70  2  /var/www/sino_project/app/controllers/project_types_controller.rb
+-'  63  2  /var/www/sino_project/app/controllers/project_types_controller.rb
+-'  1  0  /var/www/sino_project/app/controllers/project_types_controller.rb
+-'  36  27  /var/www/sino_project/config/environments/development.rb
+-'  78  0  /var/www/sino_project/Gemfile
+-'  13  2  /var/www/sino_project/app/views/projects/ht.js.erb
+-'  5  76  /var/www/sino_project/app/views/clients/_search.html.haml
+-'  4  6  /var/www/sino_project/app/views/contracts/_search.html.haml
+-'  5  0  /var/www/sino_project/app/views/contracts/_search.html.haml
+-'  23  4  /var/www/sino_project/app/models/contract.rb
+-'  1  0  /var/www/sino_project/app/models/contract.rb
+-'  292  139  /var/www/sino_project/app/controllers/projects_controller.rb
+-'  291  10  /var/www/sino_project/app/controllers/projects_controller.rb
+-'  280  6  /var/www/sino_project/app/controllers/projects_controller.rb
+-'  287  18  /var/www/sino_project/app/controllers/projects_controller.rb
+-'  5  4  /var/www/lims/spec/factories/sample_heads.rb
+-'  1  0  /var/www/lims/spec/factories/sample_heads.rb
+-'  79  6  /var/www/sino_project/app/models/invoice.rb
+-'  16  18  /var/www/sino_project/config/initializers/date.rb
+-'  43  48  /var/www/sino_project/app/views/invoices/statistic.html.haml
+-'  38  2  /var/www/sino_project/app/views/invoices/statistic.html.haml
+-'  10  0  /var/www/sino_project/config/initializers/date.rb
+-'  1  0  /var/www/sino_project/lib/date.rb
+-'  11  6  /var/www/sino_project/lib/date.rb
+-'  37  0  /var/www/sino_project/app/views/invoices/statistic.html.haml
+-'  27  4  /var/www/sino_project/app/views/invoices/statistic.html.haml
+-'  44  30  /var/www/sino_project/app/views/invoices/statistic.html.haml
+-'  34  57  /var/www/sino_project/app/views/invoices/statistic.html.haml
+-'  33  59  /var/www/sino_project/app/views/invoices/statistic.html.haml
+-'  30  50  /var/www/sino_project/app/views/invoices/statistic.html.haml
+-'  1  0  /var/www/sino_project/app/views/invoices/statistic.html.haml
+-'  19  35  /var/www/sino_project/config/routes.rb
+-'  104  37  /var/www/sino_project/config/routes.rb
+-'  117  6  /var/www/sino_project/config/locales/projects.cn.yml
+-'  23  6  /var/www/sino_project/app/views/projects/money_count_statistic.html.haml
+-'  3  0  /var/www/sino_project/app/views/projects/money_count_statistic.html.haml
+-'  42  10  /var/www/sino_project/app/views/projects/money_count_statistic.html.haml
+-'  293  27  /var/www/sino_project/app/controllers/projects_controller.rb
+-'  68  36  /var/www/sino_project/app/controllers/project_types_controller.rb
+-'  70  2  /var/www/sino_project/app/controllers/project_types_controller.rb
+-'  63  2  /var/www/sino_project/app/controllers/project_types_controller.rb
+-'  1  0  /var/www/sino_project/app/controllers/project_types_controller.rb
+-'  36  27  /var/www/sino_project/config/environments/development.rb
+-'  78  0  /var/www/sino_project/Gemfile
+-'  13  2  /var/www/sino_project/app/views/projects/ht.js.erb
+-'  5  76  /var/www/sino_project/app/views/clients/_search.html.haml
+-'  4  6  /var/www/sino_project/app/views/contracts/_search.html.haml
+-'  5  0  /var/www/sino_project/app/views/contracts/_search.html.haml
+-'  23  4  /var/www/sino_project/app/models/contract.rb
+-'  1  0  /var/www/sino_project/app/models/contract.rb
+-'  292  139  /var/www/sino_project/app/controllers/projects_controller.rb
+-'  291  10  /var/www/sino_project/app/controllers/projects_controller.rb
+-'  280  6  /var/www/sino_project/app/controllers/projects_controller.rb
+-'  287  18  /var/www/sino_project/app/controllers/projects_controller.rb
 
 # ç¼“å†²åŒºåˆ—è¡¨:
-%/var/www/lims/log/development.log	1263	0
+%/var/www/gene_library/log/development.log	4805	0
 
 # æ–‡ä»¶å†…çš„æ ‡è®°å†å²è®°å½• (ä»æ–°åˆ°æ—§):
 
-> /var/www/lims/log/development.log
-	"	1263	0
+> /var/www/gene_library/log/development.log
+	"	4805	0

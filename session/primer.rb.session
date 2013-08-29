@@ -14,7 +14,7 @@ nnoremap <silent> <Plug>NetrwBrowseX :call netrw#NetrwBrowseX(expand("<cWORD>")
 nmap <silent> <Plug>VLToggle :let g:VeryLiteral = !g:VeryLiteral| echo "VeryLiteral " . (g:VeryLiteral ? "On" : "Off")
 vmap <kMultiply> *
 map <F4> "*p
-map <F2> :up
+map <F2> :NERDTree:set number
 map <F3> :up
 imap <silent>  <Plug>VimIM
 imap <silent>  <Plug>VimimOneKey
@@ -24,15 +24,18 @@ let &cpo=s:cpo_save
 unlet s:cpo_save
 set backspace=indent,eol,start
 set expandtab
-set fileencodings=utf-8,ucs-bom,euc-jp,gb18030,gbk,gb2312,cp936
+set fileencodings=utf-8,gbk,ucs-bom,gb18030,euc-jp,gb2312,cp936
 set helplang=cn
 set history=50
 set hlsearch
 set incsearch
 set isident=@,48-57,_,192-255,$
+set iskeyword=@,48-57,_,192-255,$
 set nomodeline
 set mouse=a
+set omnifunc=rubycomplete#Complete
 set printoptions=paper:a4
+set pumheight=10
 set ruler
 set runtimepath=~/.vim,/var/lib/vim/addons,/usr/share/vim/vimfiles,/usr/share/vim/vim73,/usr/share/vim/vimfiles/after,/var/lib/vim/addons/after,~/.vim/after
 set shiftwidth=2
@@ -40,87 +43,143 @@ set showcmd
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
 set tabstop=2
 set viminfo='200,%,!,<50,s10,h,rA,rB,/50,:50
+set window=18
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd /var/www/primer_synthesis
+cd /var/www/lims
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +0 app/models/primer.rb
-badd +44 /var/www/sino_project/app/views/projects/ht.html.haml
-badd +8 /var/www/lims/spec/models/primer_spec.rb
-badd +1 /var/www/sino_project/app/views/projects/index.html.haml
-badd +20 /var/www/superwf/superwf_scaffold/lib/views/scaffolds/index.js.erb
-badd +1 /var/www/sino_project/app/views/projects/_table.html.haml
-badd +3 /var/www/sino_project/app/views/invoices/index.html.haml
-badd +3 /var/www/sino_project/app/views/invoices/_table.html.haml
-badd +8 /var/www/sino_project/app/views/layouts/_show_cols.html.haml
-badd +1 /var/www/lims/Gemfile
-badd +1 /var/www/lims/app/models/primer.rb
-badd +7 /var/www/lims/app/models/client.rb
-badd +9 /var/www/lims/spec/factories/companies.rb
-badd +6 /var/www/lims/spec/factories/clients.rb
-badd +109 /var/www/lims/spec/spec_helper.rb
-badd +6 /var/www/lims/spec/factories/primer_heads.rb
-badd +1 /var/www/lims/spec/fixtures/primer_heads.yml
-badd +184 /var/www/lims/app/models/sample_board.rb
-badd +226 /var/www/lims/spec/models/sample_board_spec.rb
-badd +1 /var/www/lims/app/models/sample.rb
-badd +1 /var/www/lims/spec/factories/samples.rb
-badd +15 /var/www/lims/db/migrate/20130118092212_create_samples.rb
-badd +10 /var/www/lims/spec/models/sample_spec.rb
-badd +93 /var/www/lims/app/models/order.rb
-badd +113 /var/www/lims/spec/controllers/abi_records_controller_spec.rb
-badd +13 /var/www/lims/spec/factories/orders.rb
-badd +135 /var/www/lims/spec/models/order_spec.rb
-badd +19 /var/www/lims/app/views/orders/_form.html.haml
-badd +13 /var/www/lims/config/locales/orders.cn.yml
-badd +12 /var/www/lims/app/assets/javascripts/orders.js.coffee
+badd +173 /var/www/lims/app/models/checkout.rb
+badd +8 /var/www/superwf/lib/superwf/recordor/creator.rb
+badd +13 /var/www/lims/app/controllers/statistic_controller.rb
+badd +13 lib/statistic.rb
+badd +1 app/views/statistic/sample_head.html.haml
+badd +297 /var/www/lims/app/models/reaction.rb
+badd +15 db/migrate/20130301043447_create_checkouts.rb
+badd +15 /var/www/lims/app/controllers/checkouts_controller.rb
+badd +3 app/views/checkouts/_go.html.haml
+badd +8 /var/www/lims/app/models/checkout_record.rb
+badd +10 db/migrate/20130819051207_create_checkout_records.rb
+badd +2 app/views/checkout_records/_checkout_sign.html.haml
+badd +1 app/views/checkout_records/_bad_debt.html.haml
+badd +7 app/views/checkout_records/new.html.haml
+badd +2 app/views/checkout_records/_get_payment.html.haml
+badd +37 /var/www/lims/app/controllers/checkout_records_controller.rb
+badd +4 app/views/checkout_records/_invoice.html.haml
+badd +2 app/views/checkout_records/_invoice_sign.html.haml
+badd +1 app/views/checkouts/edit.html.haml
+badd +3 app/views/checkouts/_form.html.haml
+badd +1 app/views/checkouts/_orders.html.haml
+badd +1 app/views/checkout_records/_show.html.haml
+badd +17 app/views/checkouts/_records.html.haml
+badd +3 app/views/checkouts/new.html.haml
+badd +15 config/locales/checkouts.cn.yml
+badd +1 app/assets/javascripts/checkout_signs.js.coffee
+badd +1 /var/www/lims/app/controllers/checkout_signs_controller.rb
+badd +1 /var/www/lims/app/models/checkout_sign.rb
+badd +45 config/routes.rb
+badd +14 /var/www/lims/config/initializers/inflections.rb
+badd +111 /var/www/lims/app/models/sample_board.rb
+badd +1 /var/www/lims/app/models/reaction_board.rb
+badd +14 /var/www/lims/app/models/board_record.rb
+badd +15 /var/www/lims/app/models/abi_machine.rb
+badd +1 app/assets/javascripts/abi_records.js.coffee
+badd +1 /var/www/lims/app/controllers/heat_cycles_controller.rb
+badd +1 app/assets/javascripts/board_records.js
+badd +1 /var/www/lims/app/controllers/abi_machines_controller.rb
+badd +1 /var/www/lims/app/controllers/abi_records_controller.rb
+badd +1 /var/www/lims/app/models/abi_record.rb
+badd +32 /var/www/lims/app/models/sample_head.rb
+badd +1 /var/www/lims/app/models/sample_flow.rb
+badd +1 /var/www/lims/app/controllers/reaction_flows_controller.rb
+badd +1 /var/www/lims/app/models/reaction_procedure.rb
+badd +5 /var/www/lims/app/models/procedure.rb
+badd +1 /var/www/lims/app/models/sample_procedure.rb
+badd +15 /var/www/lims/app/controllers/reaction_files_controller.rb
+badd +122 /var/www/lims/app/models/reaction_file.rb
+badd +1 /var/www/lims/app/models/precheck.rb
+badd +1 app/assets/javascripts/prechecks.js.coffee
+badd +39 app/assets/javascripts/precheck_codes.js.coffee
+badd +16 app/assets/stylesheets/precheck_codes.css.scss
+badd +0 app/assets/stylesheets/prechecks.css.scss
+badd +1 /var/www/lims/app/models/quality.rb
+badd +17 /var/www/lims/app/controllers/qualities_controller.rb
+badd +7 /var/www/lims/spec/models/abi_machine_spec.rb
+badd +86 /var/www/lims/app/controllers/orders_controller.rb
+badd +2 app/views/checkout_records/edit.js.erb
+badd +5 app/views/checkout_records/_form.html.haml
+badd +17 app/views/checkouts/_table.html.haml
+badd +2 app/views/checkouts/_go_back.html.haml
+badd +1 app/views/checkout_records/update.js.erb
+badd +83 config/locales/menus.cn.yml
+badd +4 config/locales/prepayment_records.cn.yml
 badd +1 /var/www/lims/app/controllers/sample_boards_controller.rb
-badd +1 /var/www/lims/app/views/sample_boards/select.js.erb
-badd +17 /var/www/lims/app/controllers/orders_controller.rb
-badd +22 /var/www/lims/db/migrate/20130111012728_create_orders.rb
-badd +5 /var/www/lims/app/views/orders/_search.html.haml
-badd +5 /var/www/lims/lib/board.rb
-badd +19 /var/www/lims/db/migrate/20130118021310_create_sample_boards.rb
-badd +19 /var/www/lims/app/models/sample_procedure.rb
-badd +5 /var/www/lims/app/views/clients/_search.html.haml
-badd +117 /var/www/lims/spec/models/client_spec.rb
-badd +6 /var/www/lims/app/models/checkout.rb
-badd +1 /var/www/lims/app/views/checkout_signs/_form.html.haml
-badd +8 /var/www/lims/config/routes.rb
-badd +39 /var/www/lims/app/controllers/checkouts_controller.rb
-badd +8 /var/www/lims/app/views/checkouts/flow.html.haml
-badd +3 /var/www/lims/app/views/checkout_signs/_input.html.haml
-badd +3 /var/www/lims/app/views/prepayment_records/_table.html.haml
-badd +10 /var/www/lims/app/views/checkouts/_form.html.haml
-badd +1 /var/www/lims/app/views/prepayment_records/new.html.haml
-badd +7 /var/www/lims/app/controllers/prepayment_records_controller.rb
-badd +1 /var/www/lims/app/views/prepayment_records/new.js.erb
-badd +9 /var/www/lims/app/views/prepayment_records/_form.html.haml
-badd +8 /var/www/lims/db/migrate/20130301063930_create_prepayment_records.rb
-badd +25 /var/www/lims/app/views/checkouts/scope.html.haml
-badd +8 /var/www/lims/app/views/checkouts/_go.html.haml
-badd +1 /var/www/lims/app/models/checkout_order.rb
-badd +7 /var/www/lims/db/migrate/20130301050229_create_checkout_orders.rb
-badd +12 /var/www/lims/db/migrate/20130301043447_create_checkouts.rb
-badd +1 /var/www/lims/app/models/prepayment.rb
-badd +14 /var/www/lims/config/locales/prepayment_records.cn.yml
-badd +1 /var/www/lims/app/models/prepayment_record.rb
-badd +1 /var/www/lims/app/views/prepayment_records/index.js.erb
-badd +1 /var/www/lims/app/views/prepayment_records/_ajax_table.html.haml
-badd +3 /var/www/lims/app/views/prepayment_records/destroy.js.erb
-badd +1 /var/www/lims/app/views/prepayments/edit.html.haml
-badd +2 /var/www/lims/app/views/samples/redo_typeset.html.haml
-badd +38 /var/www/lims/app/assets/javascripts/redo_typeset.js.coffee
-badd +39 /var/www/lims/config/locales/samples.cn.yml
-badd +49 /var/www/sino_project/app/views/projects/conv.html.haml
-badd +24 /var/www/sino_project/lib/init_pdf.rb
-badd +17 /var/www/sino_project/app/controllers/deliveries_controller.rb
+badd +1 config/locales/sample_board_primers.cn.yml
+badd +1 config/locales/sample_boards.cn.yml
+badd +25 /var/www/lims/app/controllers/samples_controller.rb
+badd +21 app/views/samples/_typesetting_tbody.html.haml
+badd +5 app/views/samples/typesetting.html.haml
+badd +49 app/assets/javascripts/sample_typesetting.js.coffee
+badd +136 /var/www/lims/app/models/sample.rb
+badd +6 app/views/orders/new.html.haml
+badd +2 app/views/samples/typesetting.js.erb
+badd +13 app/views/sample_boards/select.js.erb
+badd +1 app/views/sample_boards/_select_success.js.erb
+badd +1 app/views/sample_boards/_show.html.haml
+badd +69 app/views/orders/_table.html.haml
+badd +205 /var/www/lims/app/models/order.rb
+badd +52 config/locales/samples.cn.yml
+badd +10 /var/www/lims/app/models/order_mail.rb
+badd +1 app/views/orders/_reaction.html.haml
+badd +8 db/migrate/20130118021310_create_sample_boards.rb
+badd +20 config/locales/procedures.cn.yml
+badd +7 app/views/orders/index.html.haml
+badd +1 app/views/layouts/_show_col.html.haml
+badd +8 app/views/orders/_reactions.html.haml
+badd +1 Gemfile
+badd +1 config/locales/orders.cn.yml
+badd +51 config/locales/reactions.cn.yml
+badd +1 app/views/reactions/_get_species.html.haml
+badd +1 app/assets/stylesheets/inspecting.css.scss
+badd +1 app/views/quality_codes/index.html.haml
+badd +27 app/views/quality_codes/_table.html.haml
+badd +1 app/views/precheck_codes/index.html.haml
+badd +1 app/views/precheck_codes/_search.html.haml
+badd +1 app/views/precheck_codes/_table.html.haml
+badd +14 config/locales/precheck_codes.cn.yml
+badd +9 /var/www/lims/app/controllers/order_mails_controller.rb
+badd +9 app/assets/javascripts/order_index.js.coffee
+badd +15 app/assets/javascripts/order_mails.js.coffee
+badd +1 app/views/order_mails/index.html.haml
+badd +15 app/views/order_mails/_table.html.haml
+badd +2 app/views/order_mails/new.html.haml
+badd +26 app/views/order_mails/_form.html.haml
+badd +1 app/views/order_mails/reactions.js.erb
+badd +3 app/views/orders/reactions.js.erb
+badd +1 app/views/order_mails/_reaction.html.haml
+badd +2 app/views/order_mails/_tr.html.haml
+badd +1 app/views/orders/_tr.html.haml
+badd +16 app/views/orders/_no_reaction.html.haml
+badd +17 config/locales/order_mails.cn.yml
+badd +11 config/locales/primer_mails.cn.yml
+badd +12 app/views/primers/_form.html.haml
+badd +21 /var/www/lims/app/controllers/primers_controller.rb
+badd +1 app/assets/javascripts/application.js
+badd +11 db/migrate/20130110091708_create_primers.rb
+badd +1 /var/www/lims/app/models/primer_head.rb
+badd +1 /var/www/lims/app/models/primer.rb
+badd +6 /var/www/lims/lib/tasks/order.rake
+badd +6 /var/www/lims/lib/tasks/primer.rake
+badd +25 db/migrate/20130118024219_create_reactions.rb
+badd +1 /var/www/lims/app/controllers/flows_controller.rb
+badd +22 app/views/sample_heads/_table.html.haml
+badd +18 app/views/reaction_heads/_table.html.haml
+badd +9 app/views/clients/_search.html.haml
 silent! argdel *
-edit app/models/primer.rb
+edit /var/www/lims/app/models/primer.rb
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -211,13 +270,8 @@ set number
 setlocal number
 setlocal numberwidth=4
 setlocal omnifunc=rubycomplete#Complete
-setlocal path=.,/var/www/primer_synthesis,/var/www/primer_synthesis/app,/var/www/primer_synthesis/app/models,/var/www/primer_synthesis/app/controllers,/var/www/primer_synthesis/app/helpers,/var/www/primer_synthesis/config,/var/www/primer_synthesis/lib,/var/www/primer_synthesis/app/views,/var/www/primer_synthesis/spec,/var/www/primer_synthesis/spec/models,/var/www/primer_synthesis/spec/controllers,/var/www/primer_synthesis/spec/helpers,/var/www/primer_synthesis/spec/views,/var/www/primer_synthesis/spec/lib,/var/www/primer_synthesis/spec/requests,/var/www/primer_synthesis/spec/integration,/var/www/primer_synthesis/app/*,/var/www/primer_synthesis/vendor,/var/www/primer_synthesis/vendor/plugins/*/lib,/var/www/primer_synthesis/vendor/plugins/*/test,/var/www/primer_synthesis/vendor/rails/*/lib,/var/www/primer_synthesis/vendor/rails/*/test,NOTE:\\\ Gem.all_load_paths\\\ is\\\ deprecated\\\ with\\\ no\\\ replacement.\\\ It\\\ will\\\ be\\\ removed\\\ on\\\ or\\\ after\\\ 2011-10-01.\
-Gem.all_load_paths\\\ called\\\ from\\\ -e:1.\
-NOTE:\\\ Gem.all_partials\\\ is\\\ deprecated\\\ with\\\ no\\\ replacement.\\\ It\\\ will\\\ be\\\ removed\\\ on\\\ or\\\ after\\\ 2011-10-01.\
-Gem.all_partials\\\ called\\\ from\\\ /usr/local/rvm/rubies/ruby-2.0.0-p0/lib/ruby/site_ruby/2.0.0/rubygems.rb:261.\
-NOTE:\\\ Gem.all_partials\\\ is\\\ deprecated\\\ with\\\ no\\\ replacement.\\\ It\\\ will\\\ be\\\ removed\\\ on\\\ or\\\ after\\\ 2011-10-01.\
-Gem.all_partials\\\ called\\\ from\\\ /usr/local/rvm/rubies/ruby-2.0.0-p0/lib/ruby/site_ruby/2.0.0/rubygems.rb:261.\
-/usr/local/rvm/rubies/ruby-2.0.0-p0/lib/ruby/site_ruby/2.0.0,/usr/local/rvm/rubies/ruby-2.0.0-p0/lib/ruby/site_ruby/2.0.0/x86_64-linux,/usr/local/rvm/rubies/ruby-2.0.0-p0/lib/ruby/site_ruby,/usr/local/rvm/rubies/ruby-2.0.0-p0/lib/ruby/vendor_ruby/2.0.0,/usr/local/rvm/rubies/ruby-2.0.0-p0/lib/ruby/vendor_ruby/2.0.0/x86_64-linux,/usr/local/rvm/rubies/ruby-2.0.0-p0/lib/ruby/vendor_ruby,/usr/local/rvm/rubies/ruby-2.0.0-p0/lib/ruby/2.0.0,/usr/local/rvm/rubies/ruby-2.0.0-p0/lib/ruby/2.0.0/x86_64-linux,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/Ascii85-1.0.2/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/ZenTest-4.8.3/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/actionmailer-3.2.10/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/actionmailer-3.2.11/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/actionmailer-3.2.12/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/actionmailer-3.2.8/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/actionpack-3.2.10/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/actionpack-3.2.11/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/actionpack-3.2.12/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/actionpack-3.2.8/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/activemodel-3.2.10/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/activemodel-3.2.11/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/activemodel-3.2.12/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/activemodel-3.2.8/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/activerecord-3.2.10/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/activerecord-3.2.11/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/activerecord-3.2.12/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/activerecord-3.2.8/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/activeresource-3.2.10/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/activeresource-3.2.11/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/activeresource-3.2.12/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/activeresource-3.2.8/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/activesupport-3.2.10/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/activesupport-3.2.11/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/activesupport-3.2.12/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/activesupport-3.2.8/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/acts_as_tree-1.2.0/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/afm-0.2.0/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/arel-3.0.2/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/autotest-4.4.6/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/bcrypt-ruby-3.0.1/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/bootstrap-sass-2.3.0.1/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/bson-1.8.3/lib,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/bson_ext-1.8.3/ext/bson_ext,/usr/local/rvm/gems/ruby-2.0.0-p0/gems/builder-3.0.0/lib,/usr
+setlocal path=.,lib,vendor,app/models/concerns,app/controllers/concerns,app/controllers,app/helpers,app/mailers,app/models,app/*,app/views,test,test/unit,test/functional,test/integration,test/controllers,test/helpers,test/mailers,test/models,spec,spec/controllers,spec/helpers,spec/mailers,spec/models,spec/views,spec/lib,spec/features,spec/requests,spec/integration,vendor/plugins/*/lib,vendor/plugins/*/test,vendor/rails/*/lib,vendor/rails/*/test,/var/www/lims,-e:1:in\\\ `<main>':\\\ undefined\\\ method\\\ `all_load_paths'\\\ for\\\ Gem:Module\\\ (NoMethodError)\
+
 setlocal nopreserveindent
 setlocal nopreviewwindow
 setlocal quoteescape=\\
@@ -229,7 +283,7 @@ setlocal noscrollbind
 setlocal shiftwidth=2
 setlocal noshortname
 setlocal nosmartindent
-setlocal softtabstop=2
+setlocal softtabstop=0
 setlocal nospell
 setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
 setlocal spellfile=
@@ -242,7 +296,7 @@ if &syntax != 'ruby'
 setlocal syntax=ruby
 endif
 setlocal tabstop=2
-setlocal tags=/var/www/primer_synthesis/tmp/tags,./tags,./TAGS,tags,TAGS,/var/www/primer_synthesis/tags
+setlocal tags=/var/www/lims/tags,/var/www/lims/tmp/tags,./tags,./TAGS,tags,TAGS
 setlocal textwidth=0
 setlocal thesaurus=
 setlocal noundofile
@@ -251,12 +305,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 64 - ((12 * winheight(0) + 8) / 17)
+let s:l = 28 - ((17 * winheight(0) + 9) / 18)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-64
-normal! 036l
+28
+normal! 02l
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf

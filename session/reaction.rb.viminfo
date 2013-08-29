@@ -8,117 +8,117 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/typeset
+~MSle0~/sendmail
 
 # Last Substitute Search Pattern:
-~MSle0&available
+~MSle0&plasmid_code
 
 # Last Substitute String:
-$statistic
+$client
 
 # Command Line History (newest to oldest):
-:Rlocale reactions.cn.yml
-:Rlocale reaction_boards.cn.yml
-:Rlocale reaction
-:Rview redo_typeset.html.haml
-:Rlocale menus.cn.yml
+:Rlocale samples.cn.yml
+:Rview view_bacteria.html.haml
+:Rmodel 
 :Rcontroller samples
+:Rmodel sample
+:Rview _table.html.haml
+:Rview samples/view_bacteria.html.haml
+:Rmo
+:Rcontroller order_mails
+:Rmodel order
+:Rcontroller order
+:Rview _abi_record.html.haml
+:Rvi
+:e config/routes.rb
+:Rview board_records/new.html.haml
+:w
+:w\
+:Rmodel quality_code
+:Rspec models/order
+:Rview reactions/update.js.erb
+:Rview reactions/_table.html.haml
+:Rlocale reactions.cn.yml
+:Rview reactions/index.html.haml
 :Rmodel reaction
 :Rcontroller reactions
-:Rview new_redo.html.haml
-:Rview orders/new.html.haml
-:Rview reactions/new_redo.js.erb
-:Rview reactions/create_redo.js.erb
-:Rv
-:Rmodel sample
-:Rmodel order
-:Rmodel 
-:Rjavascript new_redo_orders
 :Rview orders/new_redo.html.haml
-:Rm
-:Rview orders/
-:Rmodel sample_head
-:e config/routes.rb
-:Rview reactions/_new_redo.html.haml
-:Rview 
-:Rcontroller 
-:Rjavascript 
-:Rlocale sample_heads.cn.yml
-:Rmodel sample_board
 :Rlocale orders.cn.yml
-:Rlocale orders
-:Rlocale order_mails.cn.yml
-:Rmigration create_primers
-:Rmodel primer
-:Rcontroller primers
-:Rcontroller sample_cancel_logs
-:Rview _table.html.haml
-:Rview primers/index.html.haml
-:Rview samples/_table.html.haml
-:Rjavascript primers
-:Rjavascript samples
-:Rview samples/index.html.haml
-:Rcontroller prechecks
-:Rc
-:Rmodel ordewr
-:Rmo
-:Robserver sample_flow_go
-:Rmodel precheck
-:Robserver order_status
-:e config/application.rb
-:Robserver order
+:Rlocale sample_heads.cn.yml
+:Rmodel sample_head
+:Rmodel or
+:Rcontroller rea
+:Rcontroller reaction
+:Rmodel reaction 
+:Rview reactions/downloading.html.haml
+:Rmodel order_mail
+:R
+:Rview _form.html.haml
+:Rview order_mails/new.html.haml
+:Rview order_mails/_form.html.haml
+:Rview reactions/inspecting.html.haml
+:Rlocale sample
+:Rmigration create_samples
+:Rmigration create_orders
+:Rlocale procedures.cn.yml
+:Rview new.html.haml
+:Rcontroller procedures
+:vsplit Capfile
+:Rview procedures/_form.html.haml
+:tabedit Capfile
+:Rspec routing/resources_routing
 
 # Search String History (newest to oldest):
-?/typeset
-?/redo_typ
-?/validate
-?/hidden_field
-? \<TYPE\>
-?/hidden
-?/scope
-?/hook
-? \<type\>
-?/status
-?/un
-?/selectable
-?/before_
-?/update
-?/after_
-? \<after_save\>
+?/sendmail
+? \<generate_redo\>
+?/board_records
+?/generea
+?/generate_redo
+?/create_redo
+?/form
+?/new_redo
+?/reinspect
+?/def 
+? \<order_ids\>
+?/re
+? \<sendmail\>
 ?/workflow
-? \<uncomplete\>
-?/flow
-?/elect
-?/primer_id
-? \<hidden_field_tag\>
-? \<current_max_number\>
-?/TY
-?/type
-?/T
-? \<def\>
-?/reactions
-?/qualities
-?/reaction_files
-?/after
-?/before
-?/hooks
-?/before_save
-?/search
-? \<STATUS\>
-?/manage
-? \<manage_qualities\>
-?/ma
-?/reaction_cancel_log
-?/searchG
-?/quality
 ?/send_mail
-?/send
-?/reaction
-?/reaction_file
-?/primer_dilution_log
-?/inspector
-?/submit
-?/has_many
+?/scope
+?/scop
+?/rein
+?/def inspect
+?/i
+?/form_
+?/a
+?/:Rvi
+?/precheck
+? \<modification_logs\>
+?/modifica
+?/modif
+?/board_record
+?/procedures
+?/reaction_files
+?/qualit
+?/quality
+?/h
+?/rea
+?/flow
+?/samples
+?/confirm_
+?/select
+?/transfer
+?/dialog
+?/dialo
+?/c
+?/validates
+?/head
+? \<batch_delete_form\>
+?/batch_delete
+?/gener
+?/create_re
+?/create_
+?/render
 
 # Expression History (newest to oldest):
 
@@ -127,58 +127,111 @@ $statistic
 # Input Line History (newest to oldest):
 
 # å¯„å­˜å™¨:
-"0	LINE	0
-	          %th= tm(:sample_head)
-""1	LINE	0
-	          - unless xhr?
-	            %th= tl(:operation)
-"2	LINE	0
-	          %th= ta(:sample, :canceled)
-"3	LINE	0
-	          - @attributes.each do |c|
+"0	CHAR	0
+	::Order.generate_redo self.order, p
+"1	LINE	0
+	    creator_id = p[:current_user].to_param
+"2	BLOCK	0
+	#
+	#
+	#
+	#
+	#
+	 
+	#
+	#
+	#
+	 
+	#
+	#
+	#
+	#
+	 
+	#
+	#
+	#
+	#
+	#
+	#
+	 
+	#
+	#
+	#
+	#
+	 
+	#
+	#
+	#
+	#
+	 
+	#
+	#
+	#
+	#
+	#
+	 
+	#
+	#
+	#
+	#
+	#
+	#
+	 
+	#
+	#
+	#
+	#
+	 
+"3	BLOCK	0
+	#
+	#
+	#
+	#
+	#
+	#
+	#
+	#
 "4	LINE	0
-	    = hidden_field_tag :remark, '', id: :sample_cancel_log_remark
+	      #puts redo_sample.inspect
 "5	LINE	0
-	if("")
-"6	BLOCK	0
-	#
-	#
-	#
-	#
-	#
-	#
-"7	BLOCK	0
-	,
-	,
-"8	BLOCK	1
-	:p
-	:q
+	      #puts @o.children.first.inspect
+"6	LINE	0
+	      #puts @o.reactions.first.quality_code.inspect
+"7	LINE	0
+	      puts redo_head.inspect
+"8	LINE	0
+	      puts redo_head.inspect
 "9	LINE	0
-	      #redo_sample = @reaction.sample.generate_redo redo_order, remark: params[:remark], creator_id: current_user.to_param, sample_head_id: @reaction.sample_head_id
-"a	BLOCK	23
-	{style: 'width: 100px;'}
+	      redo_order.save!
 "b	BLOCK	23
 	 NOT NULL AUTO_INCREMENT
+"c	CHAR	0
+	278
+<wcbcwcreated_datewwwwbwwcwcreated_date_from??k3gtggjjjjjjjjjjkjkkwwwwwwwwwwwwwwwwwcwcreated_date_to??k3??é½ƒ??é½ƒ????,????.i@jjkfdi@jk;;i@jkkkkkkj/datanni@nni@nnnnnni@nni@nni@nni@#xnnI@uunni#??kb@nni@nni@nni@nni@nni@nni@nni@nni@nni@nni@nni@nni@nn
 "g	CHAR	0
 	
+"i	CHAR	0
+	378
+<""""i""iquadrantoreaction_board_id = _this.a??kbparn??kbent().attr()i""re??kb??kbireaction_board_I??kbid??k3kkkkkYGpwwwwwwwwwwwCbbbbddkkkkkkkYjVkyjGpzzjwwwwwwwwvf]sp[??kb??kb[]i""hireaction_board=??kb_id=lli  i++i  ireaction_board_idllllla[]iquadrna??kb??kbant=""i  i++i  iquadrant??k3??k3??k3??k3??k3????,????.??k3??k3??k3??k3??k3??k3??k3????,????.veee
 "k	CHAR	0
-	j
+	266
+<jkkjbvVkkkdjwVjjjjjjjdVkkkd€k3l:e c	r	/abi_re€kb€kb€kbm€kb_machinesabi_nddnnddddbblD€k3€k3€k3jdd€k3jjjjjjjjjjjjjjkkkkkkjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjh:Rdcon	 orders:Rcon	 orders/max_numbernkkkkkkkkkkkkkjhlgg:Rvi	 checkouts	_go	
 "l	CHAR	0
-	
+	lD€k3€k3€k3€k3€k3€k3gkjkjgtlgt:Rmo	 blas	:vs ap	mo	sam	/before_sam€kbvenzzjjjjkkkwjlkkkkkkkkkjjkkYhp€k3€k3€k3kwwwwwwwwllajkddkpuPjjoendkVk>€k3:Rmi cRmi	 creatrecreate_se	:Rmi	 	w
 "p	LINE	0
 	
 	
 	::::::::::::::::::::::::
-	æ—¥æœŸï¼šå…¬å…ƒ2013å¹´1æœˆ10æ—¥ã€€æ˜ŸæœŸå›› 
-	é›»è…¦ï¼šunix  0.008533 seconds 
-	ç‰ˆæœ¬ï¼švi=703 
-	ç·¨ç¢¼ï¼šutf-8ã€€utf-8,ucs-bom,euc-jp,gb18030,gbk,gb2312,cp936 
-	ç’°å¢ƒï¼šzh_CN.UTF-8 
-	è©åº«ï¼šæ‹¼éŸ³è©åº«ï¼š/home/wangfan/.vim/plugin/vimim.pinyin_quote_sogou.txt 
-	è©åº«ï¼šé›²è©åº«ï¼šç™¾åº¦é›²ã€€3é›²ã€€æœç‹—é›²ã€€ï¼±ï¼±é›²ã€€ 
-	è¯ç¶²ï¼šPython2 Interface to Vim 
-	è¼¸å…¥ï¼šVimIMã€€ã€€å°é¶´é›™æ‹¼ã€€ 
-	é¸é …ï¼švimimrc 
+	éƒãƒ¦æ¹¡é”›æ°¬å•é??2013éª??1éˆ??10éƒãƒ£????é„ç†¸æ¹¡é¥?? 
+	é—†æ˜å‡é”›æ­¶nix  0.008533 seconds 
+	é—å Ÿæ¹°é”›æ­·i=703 
+	ç»¶ã„§â’“é”›æ­¶tf-8éŠ†??utf-8,ucs-bom,euc-jp,gb18030,gbk,gb2312,cp936 
+	é æ¿??å†¿ç´°zh_CN.UTF-8 
+	ç‘­ç‚²éŸ©é”›æ°­å«¾é—Šå® ??ç‚²éŸ©é”›??/home/wangfan/.vim/plugin/vimim.pinyin_quote_sogou.txt 
+	ç‘­ç‚²éŸ©é”›æ°¶æ´¸ç‘­ç‚²éŸ©é”›æ°±æ«¨æ´ï¹‚æ´¸éŠ†??3é—†å±‚????é¼æ»…å«é—†å±‚????é”›æ†‹æ€¥é—†å±‚???? 
+	é‘±??ç¼è¯§ç´°Python2 Interface to Vim 
+	æ“ç¨¿å†é”›æ­imIMéŠ†??éŠ†??çå¿›æ´é—†æ¬å«¾éŠ†?? 
+	é–¬æçˆ¡é”›æ­·imimrc 
 	    :let g:vimim_cloud = 'baidu,3'  
 	    :let g:vimim_map = 'c-bslash'  
 	    :let g:vimim_mycloud = 0  
@@ -189,1546 +242,1026 @@ $statistic
 	  " :let g:vimim_toggle = 'pinyin,baidu,3,sogou,qq' 
 	::::::::::::::::::::::::
 	
-	æ²¡æœ‰åŒ¹é…çš„è‡ªåŠ¨å‘½ä»¤
-	æ²¡æœ‰åŒ¹é…çš„è‡ªåŠ¨å‘½ä»¤	
+	å¨Œâ„ƒæ¹é–å½’å¤é¨å‹®åšœé”ã„¥æ‡¡æµ ??
+	1963
+<å¨Œâ„ƒæ¹é–å½’å¤é¨å‹®åšœé”ã„¥æ‡¡æµ ??	PhkkkwVkVjjylPwwwwxxxscreator€k3€k3€k3€k3€k3€k3jjkkjjkjbcwrecord_type€k3jjjjjjjjjjkkkkkkkkkkkkhebe:Rm€kbmo	 sample/sample_cancelnI#€k3€k3€k3€k3€k3€k3€k3lkjbebjbjjjkebebjjjjllwwwbbbbbbwvestr€kbextwwwwbveeex€k3D€k3h:RMo	 Rmo	 cance	jkobelongs_to :sample, poli€kby: true€k3€k3€k3€k3A, as: :record€k3€k3€k3€k3€k3€k3xukkkkbukkkkbCuuebvestable_name€k3€ı,€ı.be€ıL€ıL€ıK€ıKklu€k3€k3€k3€k3€k3€k3€k3€ı,€ı.€ıK€ıLYpwwwbcwreactionzzo#h€kb hooks€kb€kbb€kbafter_create doendkoself.record.destroy€k3:gth:Rcon	 sample_can	jjkjjkl:Rcon	 s€kbcancel	ukVjjjjd€k3hV%kkdlphkddlkpwwwbxxxxxxxxsrecord_typewwwwh:€k3:Rmi	 create_cancel	jjjwlbwwwekoinclude ::Superwf:S€kb:Sc€kb€kbRecordor::Creator€k3jhjj:Rmi	 create_sample_cancel	jjjkkkYjjjjjpjjkkbeeeeeeela, data:€kbbi:eexbbA, search: []i:c€kbcreator_id€k3bbbbbDjjjjjjjk€k3h:Rcon	 Rmo	 cancel	jklggjddhP€k3l€k3€k3€k3€k3€k3€k3h:Rvi	 samples	in	jjbbbbbbbbwllllhhhhvlllllllllllllllldicancel_€kbed_data€k3:e c	r	/cancel_€kbed/sample_cancelnnnOresources :canceled_datas, only: []i:index, :create€k3jebebI#€k3€k3€k3€k3€k3€k3Lhjjjjjwl:Rvi	 sample_cance	samples	in	jjkO= hindd€kb€kb€kbdden_field_tag :sampdata_ta€kbypebxxxsrecordA, ''isampleb~€k3bebebhveebcwrecordwwvees::€kb€kbeval()iparams[]i:record_type€k3wwwwvesidkbbwcwidjjbbbvesrecordwwlllllllbveebbescanceled_data€k3€k3€k3bicreate_€k3gt:Rmo	 samplejbbbbxwwvllbCcanceled_data€k3€k3€k3€k3€k3gtl:Rmi	 create_sc€kb€kbcanc	jjkggjjjwhjkeeeeeeeeeeeea, data: record.to_swwbwcwrecordbbhDjj€k3bbbbljjkkkjjjkhkkeeeeeeebbbbbbbbbirecord:€kb_id: id, record_type: u€k3€k3€k3€k3€k3€ü€ı,€ü€ı-€ü€ı-€ü€ı-€ü€ı-€ü€ı-€ü€ı.:Rmo	 prepay	ggjjjjjjjjjjjjjjjgg:Rmo	 cancel	jkkkkkkwwwDbbbbbcwrecordjdd€k3€k3€k3€k3€k3:Rmo	 clientjjkkh:Rmo	 c€kbsampleggjjjjjwwA, as: :record€k3€k3€k3l€ı,€ı.€ı,€ı.€ı,€ı.€ıK€ıK:Rmo	 s€kbcancel	
+"q	CHAR	0
+	483
+<Vkkk<wlvt"screate prepaymentsjbbbwcwpostkop = ::Fac.build :€kb€kb()i:prepaymentA.attributes€k3ja, preap€kb€kbpayment: p€k3jbbbwwcw302€k3k€k3€k3€k3€k3€k3€k3€k3kop.deleteko[]bC%w{}icreated_at d€kbupdated_at d€kbcreator_idjkA.each do |a|joendk>>A a€k3€k3€k3€k3jjlkkkkkkkkkk:Rsp	 sp	req	res	hkkjop €kb[]i''icompanycompanyrecord_idA = create_company.id€k3:Rfic€kbx	 prepaym	n€kb€kb€kb€kb€kb€kb€kb€kb€kbs	l:Rmo	 prepam	€kb	jjjjjjjjjjjjjjjjjjjjjweb
+"s	CHAR	0
+	594
+<,hi,llxxepwxxxsuuf}xexepwxxxwewwxepwxxxwwllDjjwwxxewbea_tagea, params[]iswwxepwxxxwwwwwwxepwxxxwwxepwxxxjjkkjjj^wxxea_g??kbtagwwwwwxepwxxx??k3????,????.xepwxxxjjkwwwwwwwwwxepwxxxwwwwwwxepwxxxwwxepwxxxwjbbbbbbbbxepwxxx??k3??k3????,????.:Rvi	 quality_co	_ta	jkVjdljkggjjkwpVj>.jwveehxwwr xu$xbbbbbbbxepwxxx??k3hdd??k3l:Rvi	 ????,????.??é½ƒ??é½‚??é½ƒ????,????.????,????.$ibcwtruebbbbbwi, params[]i:result??k3:Rmo	 qual	Gkgg:_c	Gkwkkkwji#??k3??k3??k3??k3u??k3h:Rcon	 qua	jjjjjjjjjjjjjjjjjjjjjjjjjjjj:??kb??kb??kby_co	a, :desc??k3l:Rmo	 sample_he	G/searchgg:R
 "v	CHAR	0
-	389
-<jkV%>wveesself€k3€ıK€ıK€ıK€ıL€ıL€ıK€ıL€ıL€ı,€ı-€ı-€ı-€ı-€ı-€ı-€ı-€ı-€ı-€ı.sselfwwwwblveesself€k3gt:gtjjV%ddd€k3hjjbbbbluuwC€ı,€ı.€ı,€ı.bcwbcwc€kbmoduleA F€kb€kbFac€k3hjjjjjjbbbbveelx€k3€k3€k3€k3€k3€ı,€ı.cw::Filewwww.€k3€ı,€ı.xkjjI#€k3kY:Rfix	 hr€kbtcon	jjjjj:Rfix 	htRfix	 ht_smaple-re	€kb€kb€kb_r	:€kb€kb€kb€kb€kb€kb€kbamp		jkpdkddljjV%ddd€k3h€k3jjl€k3h
+	471
+<jkV%>wveesself??k3??é½‚??é½‚??é½‚??é½ƒ??é½ƒ??é½‚??é½ƒ??é½ƒ????,????-????-????-????-????-????-????-????-????-????.sselfwwwwblveesself??k3gt:gtjjV%ddd??k3hjjbbbbluuwC????,????.????,????.bcwbcwc??kbmoduleA F??kb??kbFac??k3hjjjjjjbbbbveelx??k3??k3??k3??k3??k3????,????.cw::Filewwww.??k3????,????.xkjjI#??k3kY:Rfix	 hr??kbtcon	jjjjj:Rfix 	htRfix	 ht_smaple-re	??kb??kb??kb_r	:??kb??kb??kb??kb??kb??kb??kbamp		jkpdkddljjV%ddd??k3h??k3jjl??k3h
 "w	CHAR	0
-	
-"-	CHAR	0
-	sample_head
+	537
+<V%yjwpjjkw$bbCnil??k3jVkkd??k3lbbbbwveeesif: ::Proc.new{}i|r| r.reaction_board && r.buuuuuhCtrue??k3??k3??k3??k3??k3??k3??k3??k3??k3??k3??k3??k3??k3hu??k3????,????.:Rmo	 heat	h:Rsp	 mo	heat	ljjwhjjwjjjjjjjkkjjjzzljjjjkzzhjjjjjjjjjjjjjjjjjljjjjkjzzhljwwwwCquadran: true??k3??k3??k3??k3hjjjjjjjjkkkwwwwwwllwwC7??k3h:Rmi	 heat	k$hC7??k3:Rfix	 heat	jjjjjjwwwwbcw1,2,3,4??k3??k2??k3??k3??k3:Rmi	 alc	jjjjkkkkklkjh:Rmi	 alc	jjkkl:Rmo	 alc	h:Rsp	 mo	aalc	lggjjwhjjjjjjjjwzzkkkkkjjjjjjjjjzzjjzz
+""-	CHAR	0
+	ä¸º
 
 # å…¨å±€å˜é‡:
 
 # æ–‡ä»¶æ ‡è®°:
-'0  58  2  /var/www/lims/app/models/reaction.rb
-'1  1  0  /var/www/lims/app/assets/javascripts/reaction_cancel_logs.js.coffee
-'2  53  2  /var/www/lims/app/models/sample.rb
-'3  32  4  /var/www/superwf/superwf_scaffold/lib/superwf_scaffold.rb
-'4  23  4  /var/www/primer_synthesis/app/mailers/notifier.rb
-'5  10  6  /var/www/primer_synthesis/app/mailers/notifier.rb
-'6  1  0  /var/www/primer_synthesis/app/views/notifier/sendpasswd.html.haml
-'7  5  0  /var/www/lims/unicornctl
-'8  53  0  /var/www/superwf/superwf_audited/lib/superwf_audited.rb
-'9  25  4  /var/www/sino_project/app/views/projects/_search.html.haml
+'0  158  6  /var/www/lims/app/models/reaction.rb
+'1  13  2  /var/www/lims/app/models/board_record.rb
+'2  87  10  /var/www/lims/app/models/client.rb
+'3  14  0  /var/www/lims/app/models/board_record.rb
+'4  28  2  /var/www/lims/app/models/primer.rb
+'5  8  6  /var/www/superwf/lib/superwf/recordor/creator.rb
+'6  15  0  /var/www/superwf/lib/superwf.rb
+'7  1  0  /var/www/superwf/lib/superwf/recordor.rb
+'8  3  2  /var/www/sino_project/app/views/invoices/_table.html.haml
+'9  6  6  /var/www/lims/config/locales/checkout_records.cn.yml
 
 # è·³è½¬åˆ—è¡¨ (ä»æ–°åˆ°æ—§):
--'  58  2  /var/www/lims/app/models/reaction.rb
--'  31  80  /var/www/lims/app/models/sample.rb
--'  29  2  /var/www/lims/app/models/sample.rb
--'  50  40  /var/www/lims/app/models/sample.rb
--'  104  58  /var/www/lims/app/models/sample.rb
--'  113  4  /var/www/lims/app/models/sample.rb
--'  114  4  /var/www/lims/app/models/sample.rb
--'  105  6  /var/www/lims/app/models/sample.rb
--'  103  2  /var/www/lims/app/models/sample.rb
--'  7  11  /var/www/lims/app/models/sample.rb
--'  1  0  /var/www/lims/app/models/order.rb
--'  23  42  /var/www/lims/app/models/order.rb
--'  172  48  /var/www/lims/app/models/order.rb
--'  164  4  /var/www/lims/app/models/order.rb
--'  2  45  /var/www/lims/app/models/order.rb
--'  2  87  /var/www/lims/app/models/reaction.rb
--'  2  170  /var/www/lims/app/models/sample.rb
--'  124  30  /var/www/lims/app/models/reaction.rb
--'  108  11  /var/www/lims/app/models/sample.rb
--'  173  4  /var/www/lims/app/models/order.rb
--'  162  2  /var/www/lims/app/models/order.rb
--'  112  27  /var/www/lims/app/models/sample.rb
--'  102  2  /var/www/lims/app/models/sample.rb
--'  1  0  /var/www/lims/app/models/sample.rb
--'  67  0  /var/www/lims/app/models/sample_head.rb
--'  11  4  /var/www/lims/app/models/sample_head.rb
--'  168  52  /var/www/lims/app/models/order.rb
--'  163  20  /var/www/lims/app/models/order.rb
--'  18  3  /var/www/lims/app/models/order.rb
+-'  158  6  /var/www/lims/app/models/reaction.rb
+-'  171  2  /var/www/lims/app/models/reaction.rb
+-'  159  4  /var/www/lims/app/models/reaction.rb
+-'  150  2  /var/www/lims/app/models/reaction.rb
+-'  167  45  /var/www/lims/app/models/reaction.rb
+-'  118  32  /var/www/lims/app/models/sample.rb
+-'  104  18  /var/www/lims/app/models/sample.rb
+-'  162  8  /var/www/lims/app/models/reaction.rb
+-'  99  6  /var/www/lims/app/models/reaction.rb
+-'  167  10  /var/www/lims/app/controllers/reactions_controller.rb
+-'  73  18  /var/www/lims/config/routes.rb
+-'  8  0  /var/www/lims/config/routes.rb
+-'  51  188  /var/www/lims/config/locales/orders.cn.yml
+-'  1  0  /var/www/lims/config/locales/orders.cn.yml
+-'  166  5  /var/www/lims/app/controllers/reactions_controller.rb
+-'  1  0  /var/www/lims/config/locales/sample_heads.cn.yml
+-'  15  4  /var/www/lims/config/locales/sample_heads.cn.yml
+-'  161  28  /var/www/lims/app/controllers/reactions_controller.rb
+-'  101  4  /var/www/lims/app/models/reaction.rb
+-'  163  12  /var/www/lims/app/controllers/reactions_controller.rb
+-'  153  6  /var/www/lims/app/controllers/reactions_controller.rb
+-'  157  0  /var/www/lims/app/controllers/reactions_controller.rb
+-'  164  14  /var/www/lims/app/controllers/reactions_controller.rb
+-'  168  26  /var/www/lims/app/controllers/reactions_controller.rb
+-'  154  26  /var/www/lims/app/controllers/reactions_controller.rb
+-'  175  11  /var/www/lims/app/models/order.rb
+-'  169  6  /var/www/lims/app/models/order.rb
+-'  177  17  /var/www/lims/app/models/order.rb
+-'  181  4  /var/www/lims/app/models/order.rb
+-'  172  8  /var/www/lims/app/models/order.rb
+-'  180  6  /var/www/lims/app/models/order.rb
+-'  179  6  /var/www/lims/app/models/order.rb
+-'  156  8  /var/www/lims/app/models/order.rb
+-'  5  86  /var/www/lims/app/views/order_mails/_form.html.haml
+-'  6  81  /var/www/lims/app/views/order_mails/_form.html.haml
+-'  34  27  /var/www/lims/app/views/order_mails/_form.html.haml
+-'  106  5  /var/www/lims/app/models/sample.rb
 
 # ç¼“å†²åŒºåˆ—è¡¨:
-%/var/www/lims/app/views/order_mails/new.html.haml	9	0
-%/var/www/lims/app/models/sample_head.rb	67	0
-%/var/www/superwf/superwf_scaffold/lib/superwf_scaffold.rb	32	4
-%/var/www/lims/Gemfile	51	0
-%/var/www/lims/app/views/quality_codes/new.html.haml	2	85
-%/var/www/lims/app/views/quality_codes/edit.html.haml	1	85
-%/var/www/lims/app/views/precheck_codes/new.html.haml	2	41
-%/var/www/lims/app/views/precheck_codes/edit.html.haml	1	0
-%/var/www/lims/app/views/vectors/new.html.haml	2	41
-%/var/www/lims/app/views/vectors/edit.html.haml	1	0
-%/var/www/lims/spec/fixtures/menus.yml.erb	333	8
-%/var/www/lims/config/locales/menus.cn.yml	46	2
-%/var/www/lims/config/routes.rb	95	49
-%/var/www/lims/app/controllers/orders_controller.rb	17	28
-%/var/www/lims/app/views/orders/new_redo.html.haml	63	61
-%/var/www/lims/app/views/orders/_search.html.haml	1	0
-%/var/www/lims/config/locales/orders.cn.yml	28	125
-%/var/www/lims/app/views/orders/_table.html.haml	1	0
-%/var/www/lims/config/locales/qualities.cn.yml	10	8
+%/var/www/lims/app/views/companies/index.html.haml	10	4
+%/var/www/lims/app/models/checkout.rb	126	6
+%/var/www/superwf/lib/superwf/recordor/creator.rb	8	6
+%/var/www/lims/app/controllers/statistic_controller.rb	18	119
+%/var/www/lims/lib/statistic.rb	13	24
+%/var/www/lims/app/views/statistic/sample_head.html.haml	1	0
+%/var/www/lims/app/models/reaction.rb	158	6
+%/var/www/lims/db/migrate/20130301043447_create_checkouts.rb	9	6
+%/var/www/lims/app/controllers/checkouts_controller.rb	12	38
+%/var/www/lims/app/views/checkouts/_go.html.haml	3	37
+%/var/www/lims/app/models/checkout_record.rb	8	50
+%/var/www/lims/db/migrate/20130819051207_create_checkout_records.rb	10	52
+%/var/www/lims/app/views/checkout_records/_checkout_sign.html.haml	2	176
+%/var/www/lims/app/views/checkout_records/_bad_debt.html.haml	1	91
+%/var/www/lims/app/views/checkout_records/new.html.haml	7	8
+%/var/www/lims/app/views/checkout_records/_get_payment.html.haml	2	179
+%/var/www/lims/app/controllers/checkout_records_controller.rb	37	9
+%/var/www/lims/app/views/checkout_records/_invoice.html.haml	4	111
+%/var/www/lims/app/views/checkout_records/_invoice_sign.html.haml	2	175
+%/var/www/lims/app/views/checkouts/edit.html.haml	1	0
+%/var/www/lims/app/views/checkouts/_form.html.haml	3	4
+%/var/www/lims/app/views/checkouts/_orders.html.haml	1	0
+%/var/www/lims/app/views/checkout_records/_show.html.haml	1	0
+%/var/www/lims/app/views/checkouts/_records.html.haml	17	88
+%/var/www/lims/app/views/checkouts/new.html.haml	3	104
+%/var/www/lims/config/locales/checkouts.cn.yml	32	6
+%/var/www/lims/app/assets/javascripts/checkout_signs.js.coffee	1	0
+%/var/www/lims/app/controllers/checkout_signs_controller.rb	1	0
+%/var/www/lims/app/models/checkout_sign.rb	1	0
+%/var/www/lims/config/routes.rb	4	7
+%/var/www/lims/config/initializers/inflections.rb	14	0
+%/var/www/lims/app/models/sample_board.rb	163	8
+%/var/www/lims/app/models/reaction_board.rb	215	80
+%/var/www/lims/app/models/board_record.rb	13	2
+%/var/www/lims/app/models/abi_machine.rb	10	59
+%/var/www/lims/app/assets/javascripts/abi_records.js.coffee	1	0
+%/var/www/lims/app/controllers/heat_cycles_controller.rb	1	0
+%/var/www/lims/app/assets/javascripts/board_records.js	1	0
+%/var/www/lims/app/controllers/abi_machines_controller.rb	1	0
+%/var/www/lims/app/controllers/abi_records_controller.rb	1	0
+%/var/www/lims/app/models/abi_record.rb	1	0
+%/var/www/lims/app/models/sample_head.rb	22	22
+%/var/www/lims/app/models/sample_flow.rb	1	0
+%/var/www/lims/app/controllers/reaction_flows_controller.rb	1	0
+%/var/www/lims/app/models/reaction_procedure.rb	1	0
+%/var/www/lims/app/models/procedure.rb	11	2
+%/var/www/lims/app/models/sample_procedure.rb	1	0
+%/var/www/lims/app/controllers/reaction_files_controller.rb	15	2
+%/var/www/lims/app/models/reaction_file.rb	122	2
 %/var/www/lims/app/models/precheck.rb	1	0
-%/var/www/lims/app/views/primer_dilution_logs/index.html.haml	1	0
-%/var/www/lims/app/views/primer_dilutions/index.html.haml	2	0
-%/var/www/lims/app/views/primer_dilutions/_table.html.haml	1	0
-%/var/www/lims/app/views/primer_dilutions/new.html.haml	44	16
+%/var/www/lims/app/assets/javascripts/prechecks.js.coffee	1	0
+%/var/www/lims/app/assets/javascripts/precheck_codes.js.coffee	39	6
+%/var/www/lims/app/assets/stylesheets/precheck_codes.css.scss	16	4
 %/var/www/lims/app/assets/stylesheets/prechecks.css.scss	1	0
-%/var/www/lims/app/views/precheck_codes/show.html.haml	1	0
-%/var/www/lims/app/assets/stylesheets/precheck_codes.css.scss	1	0
-%/var/www/lims/app/views/reactions/_new_redo.html.haml	7	0
-%/var/www/lims/app/views/reactions/new_redo.js.erb	2	142
-%/var/www/lims/app/controllers/reactions_controller.rb	43	58
-%/var/www/lims/app/views/reactions/_form.html.haml	3	21
-%/var/www/lims/app/models/order.rb	1	0
-%/var/www/lims/config/locales/reaction_boards.cn.yml	32	8
-%/var/www/lims/config/locales/reactions.cn.yml	23	6
-%/var/www/lims/spec/factories/sample_heads.rb	1	0
-%/var/www/lims/spec/fixtures/sample_heads.yml	87	0
-%/var/www/lims/db/migrate/20130118024219_create_reactions.rb	9	62
-%/var/www/lims/app/models/reaction.rb	58	2
-%/var/www/lims/app/views/reactions/index.js.erb	1	0
-%/var/www/lims/app/views/reactions/_ajax_table.html.haml	9	15
-%/var/www/lims/app/views/samples/_table.html.haml	23	16
-%/var/www/lims/app/controllers/samples_controller.rb	6	39
-%/var/www/lims/config/locales/samples.cn.yml	18	0
-%/var/www/lims/app/views/sample_boards/_td_bacterium.html.haml	5	29
-%/var/www/lims/app/views/bacteria/_form.html.haml	4	44
-%/var/www/lims/app/assets/javascripts/new_redo_orders.js.coffee	5	44
-%/var/www/lims/db/migrate/20130118092212_create_samples.rb	4	12
-%/var/www/lims/app/models/sample.rb	31	80
-%/var/www/lims/config/locales/sample_heads.cn.yml	19	84
-%/var/www/lims/app/views/sample_heads/_form.html.haml	1	0
-%/var/www/lims/app/views/primers/_table.html.haml	6	0
-%/var/www/lims/app/views/primers/index.html.haml	10	46
-%/var/www/lims/config/locales/primers.cn.yml	57	200
-%/var/www/lims/app/helpers/application_helper.rb	8	6
-%/var/www/lims/app/assets/javascripts/primers.js.coffee	28	2
-%/var/www/lims/app/views/primer_boards/_show.html.haml	1	0
-%/var/www/lims/app/controllers/primers_controller.rb	43	8
-%/var/www/lims/app/models/primer.rb	12	4
-%/var/www/lims/app/assets/stylesheets/primers.css.scss	17	21
-%/var/www/lims/app/controllers/primer_dilutions_controller.rb	15	17
-%/var/www/lims/config/locales/primer_dilutions.cn.yml	1	0
-%/var/www/lims/app/models/primer_dilution.rb	1	0
-%/var/www/lims/app/models/precheck_code.rb	26	0
-%/var/www/lims/app/models/quality_code.rb	13	2
-%/var/www/lims/app/assets/javascripts/prechecks.js.coffee	22	4
-%/var/www/lims/app/controllers/abi_records_controller.rb	7	63
-%/var/www/lims/app/views/abi_records/_form.html.haml	13	35
-%/var/www/lims/app/views/order_mails/_form.html.haml	15	31
-%/var/www/lims/db/migrate/20130305052828_create_reaction_cancel_logs.rb	1	0
-%/var/www/lims/app/controllers/reaction_cancel_logs_controller.rb	2	30
-%/var/www/lims/app/views/reaction_cancel_logs/new.html.haml	2	0
-%/var/www/lims/app/views/reaction_cancel_logs/_form.html.haml	1	0
+%/var/www/lims/app/models/quality.rb	1	0
+%/var/www/lims/app/controllers/qualities_controller.rb	17	0
+%/var/www/lims/spec/models/abi_machine_spec.rb	17	21
+%/var/www/lims/app/controllers/orders_controller.rb	72	2
+%/var/www/lims/app/views/checkout_records/edit.js.erb	2	61
+%/var/www/lims/app/views/checkout_records/_form.html.haml	5	44
+%/var/www/lims/app/views/checkouts/_table.html.haml	17	14
+%/var/www/lims/app/views/checkouts/_go_back.html.haml	2	0
+%/var/www/lims/app/views/checkout_records/update.js.erb	1	41
+%/var/www/lims/config/locales/menus.cn.yml	85	0
+%/var/www/lims/config/locales/prepayment_records.cn.yml	4	37
+%/var/www/lims/app/controllers/sample_boards_controller.rb	1	0
+%/var/www/lims/config/locales/sample_board_primers.cn.yml	1	0
+%/var/www/lims/config/locales/sample_boards.cn.yml	10	6
+%/var/www/lims/app/controllers/samples_controller.rb	39	125
+%/var/www/lims/app/views/samples/_typesetting_tbody.html.haml	21	6
+%/var/www/lims/app/views/samples/typesetting.html.haml	14	30
+%/var/www/lims/app/assets/javascripts/sample_typesetting.js.coffee	71	58
+%/var/www/lims/app/models/sample.rb	118	6
+%/var/www/lims/app/views/orders/new.html.haml	6	0
+%/var/www/lims/app/views/samples/typesetting.js.erb	2	15
+%/var/www/lims/app/views/sample_boards/select.js.erb	10	0
+%/var/www/lims/app/views/sample_boards/_select_success.js.erb	3	0
+%/var/www/lims/app/views/sample_boards/_show.html.haml	1	0
+%/var/www/lims/app/views/orders/_table.html.haml	69	12
+%/var/www/lims/app/models/order.rb	171	4
+%/var/www/lims/config/locales/samples.cn.yml	55	17
+%/var/www/lims/app/models/order_mail.rb	1	2
+%/var/www/lims/app/views/orders/_reaction.html.haml	1	0
+%/var/www/lims/db/migrate/20130118021310_create_sample_boards.rb	8	6
+%/var/www/lims/config/locales/procedures.cn.yml	24	11
+%/var/www/lims/app/views/orders/index.html.haml	7	12
+%/var/www/lims/app/views/layouts/_show_col.html.haml	1	0
+%/var/www/lims/app/views/orders/_reactions.html.haml	8	8
+%/var/www/lims/Gemfile	1	0
+%/var/www/lims/config/locales/orders.cn.yml	51	188
+%/var/www/lims/config/locales/reactions.cn.yml	15	22
+%/var/www/lims/app/views/reactions/_get_species.html.haml	1	0
+%/var/www/lims/app/assets/stylesheets/inspecting.css.scss	1	0
+%/var/www/lims/app/views/quality_codes/index.html.haml	1	0
+%/var/www/lims/app/views/quality_codes/_table.html.haml	27	4
+%/var/www/lims/app/views/precheck_codes/index.html.haml	1	36
+%/var/www/lims/app/views/precheck_codes/_search.html.haml	1	0
+%/var/www/lims/app/views/precheck_codes/_table.html.haml	1	0
+%/var/www/lims/config/locales/precheck_codes.cn.yml	14	21
+%/var/www/lims/app/controllers/order_mails_controller.rb	20	28
+%/var/www/lims/app/assets/javascripts/order_index.js.coffee	9	16
+%/var/www/lims/app/assets/javascripts/order_mails.js.coffee	15	8
+%/var/www/lims/app/views/order_mails/index.html.haml	1	0
+%/var/www/lims/app/views/order_mails/_table.html.haml	15	75
+%/var/www/lims/app/views/order_mails/new.html.haml	2	0
+%/var/www/lims/app/views/order_mails/_form.html.haml	6	28
+%/var/www/lims/app/views/order_mails/reactions.js.erb	1	0
+%/var/www/lims/app/views/orders/reactions.js.erb	3	64
+%/var/www/lims/app/views/order_mails/_reaction.html.haml	1	0
+%/var/www/lims/app/views/order_mails/_tr.html.haml	2	5
+%/var/www/lims/app/views/orders/_tr.html.haml	1	0
+%/var/www/lims/app/views/orders/_no_reaction.html.haml	16	0
+%/var/www/lims/config/locales/order_mails.cn.yml	17	18
+%/var/www/lims/config/locales/primer_mails.cn.yml	11	8
+%/var/www/lims/app/views/primers/_form.html.haml	9	32
+%/var/www/lims/app/controllers/primers_controller.rb	21	52
+%/var/www/lims/app/assets/javascripts/application.js	1	0
+%/var/www/lims/db/migrate/20130110091708_create_primers.rb	8	8
+%/var/www/lims/app/models/primer_head.rb	1	0
+%/var/www/lims/app/models/primer.rb	32	15
+%/var/www/lims/lib/tasks/order.rake	6	8
+%/var/www/lims/lib/tasks/primer.rake	6	0
+%/var/www/lims/db/migrate/20130118024219_create_reactions.rb	25	22
+%/var/www/lims/app/controllers/flows_controller.rb	1	0
+%/var/www/lims/app/views/sample_heads/_table.html.haml	22	70
+%/var/www/lims/app/views/reaction_heads/_table.html.haml	18	76
+%/var/www/lims/app/views/clients/_search.html.haml	9	6
+%/var/www/lims/app/views/companies/_tr.html.haml	1	0
+%/var/www/lims/app/views/companies/_tree.html.haml	14	0
+%/var/www/lims/app/views/companies/_subtree.html.haml	1	0
+%/var/www/lims/Capfile	1	0
+%/var/www/lims/app/models/client.rb	87	10
+%/var/www/lims/spec/models/client_spec.rb	20	8
+%/var/www/lims/spec/spec_helper.rb	126	2
+%/var/www/lims/db/migrate/20130815053214_create_procedures.rb	1	0
+%/var/www/lims/db/migrate/20130815054447_create_flows.rb	4	6
+%/var/www/lims/spec/factories/flows.rb	8	2
+%/var/www/lims/spec/models/attachment_spec.rb	5	4
+%/var/www/lims/spec/models/order_spec.rb	8	2
+%/var/www/lims/app/models/attachment.rb	4	37
+%/var/www/lims/db/migrate/20130815014427_create_attachments.rb	1	0
+%/var/www/lims/spec/models/vector_spec.rb	29	4
+%/var/www/lims/spec/factories/samples.rb	10	4
+%/var/www/lims/spec/factories/sample_boards.rb	9	4
+%/var/www/lims/app/models/checkout_order.rb	22	31
+%/var/www/lims/spec/models/checkout_order_spec.rb	55	6
+%/var/www/lims/db/migrate/20130118092212_create_samples.rb	9	6
+%/var/www/lims/db/migrate/20130121093238_create_sample_heads.rb	5	6
+%/var/www/lims/db/migrate/20130111012728_create_orders.rb	1	0
+%/var/www/lims/spec/models/order_mail_spec.rb	29	23
+%/var/www/lims/app/models/plasmid_code.rb	5	0
+%/var/www/lims/spec/models/plasmid_code_spec.rb	16	25
+%/var/www/lims/app/models/plasmid.rb	1	0
+%/var/www/lims/spec/models/plasmid_spec.rb	1	0
+%/var/www/lims/spec/factories/plasmids.rb	1	0
+%/var/www/lims/app/models/precheck_code.rb	10	65
+%/var/www/lims/spec/models/precheck_code_spec.rb	64	27
+%/var/www/lims/app/models/prepayment.rb	11	2
+%/var/www/lims/spec/models/prepayment_spec.rb	45	4
+%/var/www/lims/app/models/quality_code.rb	22	2
+%/var/www/lims/spec/models/quality_code_spec.rb	98	6
+%/var/www/lims/spec/models/sample_head_spec.rb	112	0
+%/var/www/lims/spec/models/sample_spec.rb	39	6
 %/var/www/lims/spec/factories/precheck_codes.rb	1	0
-%/var/www/lims/spec/fixtures/precheck_codes.yml	2	10
-%/var/www/lims/spec/fixtures/quality_codes.yml	1	0
-%/var/www/lims/app/views/reactions/_table.html.haml	32	64
-%/var/www/lims/app/views/reactions/index.html.haml	4	85
-%/var/www/lims/app/assets/javascripts/reactions.js.coffee	1	0
-%/var/www/lims/app/assets/javascripts/reaction_cancel_logs.js.coffee	1	0
-%/var/www/lims/app/assets/javascripts/primer_dilutions.js.coffee	2	0
-%/var/www/lims/config/locales/reaction_cancel_logs.cn.yml	8	30
-%/var/www/lims/app/views/reactions/_search.html.haml	10	32
-%/var/www/lims/app/views/clients/_search.html.haml	5	4
-%/var/www/lims/app/models/reaction_file.rb	1	0
-%/var/www/lims/app/controllers/reaction_files_controller.rb	59	19
-%/var/www/lims/app/models/reaction_head.rb	15	109
-%/var/www/lims/config/locales/reaction_heads.cn.yml	12	8
-%/var/www/lims/db/seeds.rb	26	0
-%/var/www/lims/app/views/reaction_heads/edit.html.haml	6	27
-%/var/www/lims/app/models/reaction_cancel_log.rb	23	1
-%/var/www/lims/app/models/sample_cancel_log.rb	5	17
-%/var/www/lims/app/views/sample_cancel_logs/index.js.erb	1	0
-%/var/www/lims/spec/fixtures/sample_flows.yml	1	0
-%/var/www/lims/app/views/sample_cancel_logs/_table.html.haml	7	4
-%/var/www/lims/app/controllers/sample_cancel_logs_controller.rb	9	19
-%/var/www/lims/app/views/sample_cancel_logs/index.html.haml	1	16
-%/var/www/lims/app/views/sample_cancel_logs/_search.html.haml	8	14
-%/var/www/lims/config/locales/sample_cancel_logs.cn.yml	9	15
-%/var/www/lims/app/views/reaction_cancel_logs/index.html.haml	1	16
-%/var/www/lims/app/views/reaction_cancel_logs/_table.html.haml	3	4
-%/var/www/lims/app/views/reaction_cancel_logs/_search.html.haml	5	57
-%/var/www/lims/app/views/reaction_files/downloading.html.haml	1	0
-%/var/www/lims/app/views/reaction_files/_table.html.haml	2	50
-%/var/www/lims/config/locales/reaction_files.cn.yml	21	158
-%/var/www/lims/app/assets/javascripts/reaction_files.js.coffee	1	0
-%/var/www/lims/app/views/invoice_signs/update.js.erb	1	0
-%/var/www/lims/app/views/reaction_files/index.html.haml	1	0
-%/var/www/lims/app/views/reaction_files/_search.html.haml	3	106
-%/var/www/lims/db/migrate/20130130032938_create_reaction_files.rb	17	56
-%/var/www/lims/app/models/reaction_flow_go_observer.rb	1	0
-%/var/www/lims/app/models/reaction_board.rb	113	4
-%/var/www/lims/app/views/layouts/_notice.html.haml	1	0
-%/var/www/lims/app/views/qualities/_table.html.haml	1	0
-%/var/www/lims/app/models/sample_flow.rb	9	2
-%/var/www/lims/app/views/modification_logs/_table.html.haml	13	51
-%/var/www/lims/config/locales/modification_logs.cn.yml	4	27
-%/var/www/lims/app/models/order_observer.rb	1	0
-%/var/www/lims/config/application.rb	1	0
-%/var/www/lims/db/migrate/20130109052720_create_precheck_codes.rb	1	0
-%/var/www/lims/db/migrate/20130118024233_create_prechecks.rb	9	17
-%/var/www/lims/db/migrate/20130122022726_create_qualities.rb	9	6
-%/var/www/lims/config/locales/quality_codes.cn.yml	25	107
-%/var/www/lims/app/views/clients/index.html.haml	1	0
-%/var/www/lims/NERD_tree_1	12	0
-%/var/www/lims/app/views/sample_board_templates/_table.html.haml	2	0
-%/var/www/lims/config/locales/abi_machines.cn.yml	1	0
-%/var/www/lims/db/migrate/20130111012728_create_orders.rb	21	28
-%/var/www/lims/db/migrate/20130130014433_create_reaction_boards.rb	1	0
-%/var/www/lims/app/assets/javascripts/submit.js.coffee	1	0
-%/var/www/lims/app/assets/javascripts/superwf.js.coffee	30	36
-%/var/www/lims/lib/tasks/primer.rake	3	0
-%/var/www/lims/spec/factories/orders.rb	8	4
-%/var/www/lims/app/models/primer_board.rb	7	2
-%/var/www/lims/app/views/orders/new.html.haml	8	0
-%/var/www/lims/app/views/orders/_form.html.haml	18	34
-%/var/www/lims/app/assets/javascripts/checkouts.js.coffee	1	0
-%/var/www/lims/app/assets/stylesheets/primer_dilutions.css.scss	1	0
-%/var/www/lims/app/views/sample_boards/_td_precheck.html.haml	3	2
-%/var/www/lims/app/models/sample_flow_go_observer.rb	6	7
-%/var/www/lims/app/controllers/prechecks_controller.rb	21	10
-%/var/www/lims/app/models/sample_board.rb	1	0
-%/var/www/lims/app/models/order_status_observer.rb	14	40
-%/var/www/lims/app/views/samples/index.html.haml	1	0
-%/var/www/lims/app/assets/javascripts/samples.js.coffee	3	2
-%/var/www/lims/db/migrate/20130110091708_create_primers.rb	23	83
-%/var/www/lims/config/locales/order_mails.cn.yml	1	0
-%/var/www/lims/app/views/reactions/create_redo.js.erb	1	0
-%/var/www/lims/app/views/samples/redo_typeset.html.haml	12	6
+%/var/www/lims/lib/hole.rb	1	0
+%/var/www/lims/spec/models/sample_board_spec.rb	140	35
+%/var/www/lims/spec/controllers/abi_machines_controller_spec.rb	113	39
+%/var/www/lims/lib/board.rb	29	6
+%/var/www/lims/config/application.rb	24	26
+%/var/www/lims/spec/factories/board_records.rb	8	0
+%/var/www/lims/db/migrate/20130815012513_create_board_records.rb	6	6
+%/var/www/lims/app/models/company.rb	12	2
+%/var/www/lims/spec/models/company_spec.rb	9	4
+%/var/www/lims/spec/factories/procedures.rb	1	0
+%/var/www/lims/spec/models/reaction_spec.rb	8	2
+%/var/www/lims/spec/models/reaction_board_spec.rb	222	6
+%/var/www/lims/app/views/sample_boards/edit.html.haml	1	0
+%/var/www/lims/app/views/sample_boards/_precheck.html.haml	2	36
+%/var/www/lims/config/locales/reaction_boards.cn.yml	28	6
+%/var/www/lims/spec/factories/reactions.rb	6	0
+%/var/www/lims/db/migrate/20130130014433_create_reaction_boards.rb	9	49
+%/var/www/lims/spec/models/checkout_spec.rb	1	0
+%/var/www/lims/db/migrate/20130301050229_create_checkout_orders.rb	6	16
+%/var/www/lims/app/models/primer_mail.rb	9	0
+%/var/www/lims/spec/models/primer_mail_spec.rb	35	2
+%/var/www/lims/spec/factories/primer_mails.rb	6	4
+%/var/www/lims/spec/models/primer_spec.rb	183	64
+%/var/www/lims/config/locales/primers.cn.yml	59	22
+%/var/www/lims/app/models/reaction_head.rb	14	43
+%/var/www/lims/spec/models/reaction_head_spec.rb	74	2
+%/var/www/lims/lib/head.rb	4	6
+%/var/www/lims/spec/factories/checkouts.rb	5	4
+%/var/www/lims/spec/factories/checkout_orders.rb	1	0
+%/var/www/lims/spec/fixtures/menus.yml.erb	366	0
+%/var/www/lims/app/views/reaction_boards/scope.html.haml	38	2
+%/var/www/lims/app/views/reaction_boards/_go.html.haml	8	61
+%/var/www/lims/app/controllers/reactions_controller.rb	49	6
+%/var/www/lims/config/locales/statistic.cn.yml	31	6
+%/var/www/lims/app/views/checkouts/export.html.haml	1	0
+%/var/www/lims/app/views/statistic/client.html.haml	10	2
+%/var/www/lims/app/views/checkouts/_search.html.haml	8	74
+%/var/www/lims/app/controllers/board_records_controller.rb	20	45
+%/var/www/lims/Gemfile.lock	1	0
+%/var/www/lims/app/views/orders/new_redo.html.haml	6	47
+%/var/www/lims/app/views/reactions/new_redo.js.erb	1	0
+%/var/www/lims/app/views/reactions/_new_redo.html.haml	7	27
+%/var/www/lims/app/views/reactions/create_redo.js.erb	6	0
+%/var/www/lims/config/locales/cn.yml	56	20
+%/var/www/lims/app/views/home/index.html.haml	10	74
+%/var/www/lims/config/initializers/devise.rb	17	1
+%/var/www/lims/spec/routing/resources_routing_spec.rb	20	3
+%/var/www/lims/app/views/procedures/_form.html.haml	10	28
+%/var/www/lims/app/controllers/procedures_controller.rb	2	2
+%/var/www/lims/app/views/procedures/new.html.haml	1	0
+%/var/www/lims/app/views/reactions/inspecting.html.haml	24	6
+%/var/www/lims/app/views/reactions/downloading.html.haml	2	14
+%/var/www/lims/config/locales/sample_heads.cn.yml	1	0
+%/var/www/lims/app/views/reactions/index.html.haml	7	142
+%/var/www/lims/app/views/reactions/_table.html.haml	32	20
+%/var/www/lims/app/views/reactions/update.js.erb	2	90
+%/var/www/lims/\	351	0
+%/var/www/lims/app/views/board_records/new.html.haml	1	43
+%/var/www/lims/app/views/board_records/_abi_record.html.haml	2	170
+%/var/www/lims/app/views/samples/view_bacteria.html.haml	2	0
+%/var/www/lims/app/views/samples/_table.html.haml	10	38
 
 # æ–‡ä»¶å†…çš„æ ‡è®°å†å²è®°å½• (ä»æ–°åˆ°æ—§):
 
-> /var/www/lims/app/models/sample_head.rb
-	"	67	0
-	^	10	45
-	.	10	46
-	+	13	10
-	+	17	0
-	+	14	43
-	+	15	15
-	+	16	39
-	+	4	0
-	+	2	30
-	+	14	27
-	+	16	27
-	+	2	74
-	+	63	18
-	+	63	0
-	+	63	6
-	+	63	0
-	+	63	6
-	+	63	28
-	+	63	0
-	+	63	0
-	+	63	8
-	+	63	0
-	+	63	27
-	+	63	9
-	+	63	0
-	+	63	0
-	+	63	0
-	+	63	34
-	+	63	31
-	+	63	0
+> /var/www/lims/app/models/reaction.rb
+	"	158	6
+	^	152	62
+	.	152	38
+	+	245	0
+	+	245	0
+	+	215	0
+	+	214	0
+	+	215	0
+	+	214	103
+	+	213	6
+	+	98	30
+	+	216	0
+	+	217	0
+	+	220	49
+	+	223	51
+	+	186	0
+	+	73	12
+	+	244	0
+	+	243	0
+	+	241	0
+	+	242	23
+	+	241	0
+	+	236	0
+	+	236	19
+	+	241	0
+	+	237	22
+	+	236	0
+	+	231	0
+	+	236	0
+	+	232	0
+	+	235	0
+	+	235	2
+	+	236	34
+	+	237	0
+	+	240	0
+	+	238	0
+	+	239	57
+	+	235	7
+	+	236	0
+	+	235	7
+	+	236	0
+	+	241	0
+	+	234	8
+	+	233	17
+	+	234	43
 	+	24	0
-	+	24	25
-	+	24	0
-	+	22	0
-	+	19	25
-	+	21	0
-	+	20	19
-	+	24	0
-	+	63	88
-	+	44	0
-	+	34	24
-	+	38	0
-	+	35	104
-	+	37	0
-	+	36	80
-	+	35	0
-	+	63	2
-	+	63	0
-	+	39	20
-	+	43	0
-	+	40	32
-	+	42	0
-	+	40	81
-	+	41	86
-	+	36	54
-	+	19	22
-	+	49	0
-	+	46	16
-	+	48	0
-	+	47	59
-	+	50	0
-	+	62	0
-	+	58	0
-	+	60	10
-	+	5	26
-	+	46	18
-	+	58	18
-	+	63	0
-	+	12	0
-	+	7	29
-	+	11	0
-	+	10	33
-	+	11	0
-	+	10	47
-	+	9	10
-	+	10	16
-	+	9	11
-	+	10	46
-	j	59	18
-
-> /var/www/lims/Gemfile
-	"	51	0
-	^	50	1
-	.	51	0
-	+	4	10
-	+	1	26
-	+	3	19
-	+	13	0
-	+	12	0
-	+	13	0
-	+	12	0
-	+	6	20
 	+	4	0
-	+	4	9
-	+	4	0
-	+	4	7
-	+	6	0
-	+	6	0
-	+	12	0
-	+	13	0
-	+	13	0
-	+	4	0
-	+	6	0
-	+	9	2
-	+	10	0
-	+	9	0
-	+	12	0
-	+	13	0
-	+	14	0
-	+	21	0
-	+	1	26
-	+	63	0
-	+	51	17
-	+	39	27
-	+	3	18
-	+	61	15
-	+	62	18
-	+	1	0
-	+	42	26
-	+	3	18
-	+	51	30
-	+	60	0
-	+	50	0
-	+	51	0
-
-> /var/www/lims/config/locales/menus.cn.yml
-	"	46	2
-	^	67	18
-	.	67	17
-	+	50	0
-	+	58	28
-	+	50	26
-	+	58	0
-	+	50	0
-	+	50	36
-	+	50	33
-	+	50	0
-	+	51	0
-	+	58	0
-	+	63	16
-	+	64	27
+	+	28	0
+	+	135	66
+	+	140	90
+	+	140	0
+	+	132	93
+	+	140	0
+	+	138	0
+	+	140	39
+	+	130	125
+	+	134	116
+	+	184	0
 	+	65	25
-	+	60	0
-	+	26	0
-	+	26	26
-	+	32	25
-	+	27	20
-	+	36	19
-	+	13	10
-	+	14	16
-	+	15	10
-	+	26	0
-	+	63	0
-	+	60	26
-	+	9	14
-	+	17	21
-	+	50	0
-	+	40	0
-	+	49	21
-	+	60	0
-	+	23	0
-	+	57	43
-	+	61	37
-	+	62	17
-	+	64	33
-	+	62	42
-	+	66	31
-	+	65	7
-	+	69	23
-	+	70	30
-	+	72	27
-	+	73	28
-	+	78	0
-	+	71	0
-	+	49	0
-	+	49	0
-	+	48	8
-	+	72	28
-	+	44	0
-	+	46	38
-	+	47	40
-	+	75	0
-	+	76	31
-	+	77	32
-	+	1	0
-	+	25	31
-	+	39	35
-	+	41	0
-	+	48	0
-	+	42	0
-	+	43	46
-	+	39	29
-	+	54	23
-	+	56	34
-	+	55	41
-	+	78	0
-	+	67	17
+	+	66	65
+	+	178	53
+	+	178	41
+	+	179	23
+	+	179	31
+	+	181	31
+	+	178	0
+	+	176	0
+	+	175	33
+	+	179	22
+	+	181	11
+	+	178	40
+	+	165	79
+	+	164	0
+	+	154	12
+	+	155	0
+	+	163	58
+	+	165	44
+	+	165	48
+	+	169	0
+	+	151	0
+	+	97	78
+	+	98	0
+	+	98	0
+	+	98	0
+	+	94	20
+	+	97	83
+	+	95	48
+	+	96	0
+	+	97	0
+	+	96	42
+	+	97	42
+	+	97	34
+	+	98	0
+	+	94	0
+	+	91	0
+	+	98	0
+	+	100	0
+	+	99	6
+	+	167	13
+	+	166	23
+	+	167	0
+	+	166	24
+	+	152	38
 
 > /var/www/lims/config/routes.rb
-	"	95	49
-	^	95	50
-	.	95	49
-	+	3	0
-	+	3	0
-	+	4	0
-	+	4	0
-	+	6	0
-	+	6	0
-	+	7	0
-	+	7	0
-	+	104	0
-	+	103	38
-	+	4	0
-	+	4	51
-	+	5	0
-	+	4	0
-	+	5	0
-	+	4	0
-	+	4	0
-	+	4	0
-	+	5	41
-	+	4	43
-	+	7	0
-	+	4	0
-	+	5	36
-	+	4	51
-	+	5	0
-	+	4	50
-	+	3	0
-	+	4	0
-	+	4	0
-	+	4	0
-	+	3	84
-	+	4	14
-	+	4	0
-	+	3	0
-	+	4	0
-	+	4	0
-	+	5	0
-	+	4	16
-	+	5	0
-	+	4	52
-	+	3	60
-	+	4	0
-	+	4	38
-	+	4	0
-	+	4	0
-	+	3	0
-	+	4	17
-	+	4	0
-	+	13	46
-	+	3	0
-	+	4	0
-	+	4	0
-	+	4	0
-	+	8	17
-	+	10	49
-	+	4	0
-	+	4	0
-	+	4	0
-	+	13	93
-	+	4	0
-	+	4	47
-	+	4	46
-	+	16	53
-	+	13	74
-	+	84	0
-	+	83	38
-	+	4	0
-	+	4	0
-	+	3	48
-	+	97	0
-	+	98	0
-	+	96	0
-	+	96	0
-	+	96	0
-	+	96	47
-	+	3	49
-	+	4	0
-	+	3	39
-	+	30	38
-	+	2	30
-	+	152	0
-	+	150	32
-	+	152	38
-	+	131	27
-	+	30	53
-	+	85	26
-	+	86	21
-	+	119	7
-	+	120	0
-	+	119	21
-	+	94	60
-	+	95	27
-	+	39	0
-	+	43	49
-	+	42	53
-	+	72	38
-	+	94	22
-	+	95	30
-	+	94	35
-	+	95	49
-
-> /var/www/lims/app/controllers/orders_controller.rb
-	"	17	28
-	^	42	31
-	.	17	79
-	+	40	6
-	+	44	0
-	+	43	53
-	+	43	79
-	+	42	30
-	+	17	79
-
-> /var/www/lims/app/views/orders/new_redo.html.haml
-	"	63	61
-	^	58	62
-	.	58	61
-	+	60	37
-	+	60	117
-	+	1	40
-	+	30	36
-	+	1	0
-	+	50	82
-	+	55	82
-	+	60	82
-	+	54	49
-	+	55	0
-	+	59	45
-	+	60	0
-	+	59	35
-	+	54	36
-	+	1	0
-	+	5	96
-	+	5	0
-	+	5	164
-	+	5	0
-	+	5	204
-	+	50	77
-	+	5	271
-	+	5	0
-	+	6	0
-	+	7	11
-	+	12	0
-	+	64	0
-	+	7	81
-	+	9	39
-	+	10	0
-	+	11	0
-	+	10	25
-	+	11	25
-	+	6	74
-	+	6	229
-	+	9	30
-	+	10	30
-	+	11	30
-	+	9	0
-	+	10	48
-	+	11	48
-	+	7	74
-	+	19	12
-	+	34	16
-	+	50	0
-	+	50	189
-	+	55	191
-	+	60	191
-	+	6	93
-	+	6	212
-	+	6	60
-	+	6	269
-	+	9	44
-	+	10	31
-	+	11	44
-	+	10	44
-	+	9	82
-	+	10	81
-	+	11	81
-	+	10	45
-	+	11	45
-	+	6	323
-	+	8	24
-	+	6	323
-	+	9	47
-	+	10	0
-	+	11	47
-	+	6	92
-	+	6	278
-	+	60	26
-	+	60	0
-	+	50	24
-	+	50	169
-	+	51	22
-	+	50	24
-	+	51	0
-	+	50	0
-	+	51	40
-	+	53	21
-	+	52	21
-	+	53	0
-	+	52	26
-	+	53	59
-	+	52	24
-	+	50	213
-	+	59	0
-	+	55	26
-	+	56	42
-	+	58	60
-	+	55	227
-	+	60	26
-	+	61	24
-	+	61	0
-	+	60	228
-	+	61	42
-	+	62	63
-	+	57	0
-	+	62	25
-	+	62	0
-	+	58	61
-
-> /var/www/lims/config/locales/orders.cn.yml
-	"	28	125
-	^	28	152
-	.	28	0
-	+	28	185
-	+	29	26
-	+	41	22
-	+	11	17
-	+	35	0
-	+	44	147
-	+	42	137
-	+	28	50
-	+	28	0
-
-> /var/www/lims/app/models/precheck.rb
-	"	1	0
-	^	30	5
-	.	30	0
-	+	37	0
-	+	52	0
-	+	52	0
-	+	52	29
-	+	48	0
-	+	50	8
-	+	37	0
-	+	31	0
-	+	37	0
-	+	30	23
-	+	31	32
-	+	32	19
-	+	28	0
-	+	27	39
-	+	6	18
-	+	33	0
-	+	29	0
-	+	30	0
-
-> /var/www/lims/app/views/primer_dilutions/new.html.haml
-	"	44	16
-	^	23	22
-	.	23	21
-	+	4	42
-	+	23	21
-
-> /var/www/lims/app/views/reactions/_new_redo.html.haml
-	"	7	0
-	^	6	148
-	.	6	147
-	+	1	0
-	+	14	0
-	+	1	7
-	+	5	7
-	+	7	0
-	+	9	37
-	+	9	0
-	+	3	15
-	+	4	6
-	+	4	0
-	+	6	91
-	+	8	0
-	+	6	37
-	+	6	158
-	+	10	41
-	+	11	115
-	+	10	65
-	+	6	147
-
-> /var/www/lims/app/views/reactions/new_redo.js.erb
-	"	2	142
-	^	2	143
-	.	2	142
-	+	1	50
-	+	2	0
-	+	2	142
-
-> /var/www/lims/app/controllers/reactions_controller.rb
-	"	43	58
-	^	43	59
-	.	43	58
-	+	62	0
-	+	62	0
-	+	6	0
-	+	2	0
-	+	60	0
-	+	41	7
-	+	39	0
-	+	36	11
-	+	38	35
-	+	44	16
-	+	53	0
-	+	47	0
-	+	48	40
-	+	52	38
-	+	56	54
-	+	52	8
-	+	47	7
-	+	45	14
-	+	45	100
-	+	45	0
-	+	47	0
-	+	45	0
-	+	46	46
-	+	48	14
-	+	49	36
-	+	46	16
-	+	38	52
-	+	45	81
-	+	46	55
-	+	45	0
-	+	46	57
-	+	46	148
-	+	46	19
-	+	46	0
-	+	45	0
-	+	46	6
-	+	45	63
-	+	46	0
-	+	52	0
-	+	50	43
-	+	47	18
-	+	51	48
-	+	54	25
-	+	59	6
-	+	56	20
-	+	57	8
-	+	58	0
-	+	55	14
-	+	46	14
-	+	43	58
-
-> /var/www/lims/app/models/order.rb
-	"	1	0
-	^	2	46
-	.	2	45
-	+	129	0
-	+	147	26
-	+	155	37
-	+	155	45
-	+	140	36
-	+	147	28
-	+	147	34
-	+	141	61
-	+	143	0
-	+	147	0
-	+	143	0
-	+	147	0
-	+	142	27
-	+	147	0
-	+	144	44
-	+	141	63
-	+	145	37
-	+	155	29
-	+	145	38
-	+	155	0
-	+	146	104
-	+	147	39
-	+	141	101
-	+	147	25
-	+	153	38
-	+	149	45
-	+	150	52
-	+	152	0
-	+	151	27
-	+	153	44
-	+	148	42
-	+	154	14
-	+	149	0
-	+	15	4
-	+	56	69
-	+	29	71
-	+	32	0
-	+	29	0
-	+	32	21
-	+	173	0
-	+	161	24
-	+	164	46
-	+	166	24
-	+	163	26
-	+	164	40
-	+	166	18
-	+	162	31
-	+	164	56
-	+	167	23
-	+	168	33
-	+	170	21
-	+	171	20
-	+	162	47
-	+	172	20
-	+	165	0
-	+	163	31
-	+	129	0
-	+	127	85
-	+	4	2
+	"	4	7
+	^	10	45
+	.	6	0
 	+	15	0
-	+	18	2
-	+	4	0
-	+	13	0
-	+	53	0
-	+	52	0
-	+	56	0
-	+	46	0
-	+	49	62
-	+	45	58
-	+	28	24
-	+	45	25
-	+	49	77
-	+	37	47
-	+	41	2
-	+	3	37
-	+	2	113
-	+	96	0
-	+	94	9
-	+	96	0
-	+	94	12
-	+	95	28
-	+	55	7
-	+	52	7
+	+	15	12
+	+	14	26
+	+	15	0
+	+	24	47
+	+	19	4
+	+	102	0
+	+	16	0
+	+	59	60
+	+	72	62
+	+	105	37
+	+	11	0
+	+	96	63
+	+	10	50
+	+	11	2
+	+	59	51
+	+	72	0
+	+	59	60
+	+	11	0
+	+	10	36
+	+	10	52
+	+	24	28
+	+	26	4
+	+	25	50
+	+	24	2
+	+	25	59
+	+	26	0
+	+	96	35
+	+	10	50
+	+	10	45
+	+	24	0
+	+	26	0
+	+	79	4
+	+	5	11
+	+	3	57
+	+	5	46
 	+	51	0
-	+	84	0
-	+	85	19
-	+	86	0
-	+	85	0
-	+	86	0
-	+	87	0
+	+	51	41
+	+	6	18
+	+	83	25
+	+	80	0
+	+	82	0
+	+	88	2
+	+	89	0
+	+	89	4
 	+	88	0
-	+	163	4
-	+	164	60
-	+	162	45
-	+	166	35
-	+	162	37
-	+	164	69
-	+	166	44
-	+	172	47
-	+	2	45
-
-> /var/www/lims/config/locales/reaction_boards.cn.yml
-	"	32	8
-
-> /var/www/lims/config/locales/reactions.cn.yml
-	"	23	6
-	^	15	41
-	.	15	38
-	+	11	20
-	+	12	28
-	+	13	30
-	+	14	17
-	+	15	32
-	+	16	21
-	+	15	38
-
-> /var/www/lims/db/migrate/20130118024219_create_reactions.rb
-	"	9	62
-	^	9	63
-	.	9	62
-	+	33	64
-	+	11	61
-	+	10	6
-	+	12	0
-	+	9	62
-
-> /var/www/lims/app/models/reaction.rb
-	"	58	2
-	^	120	5
-	.	120	4
-	+	30	0
-	+	36	0
-	+	34	63
-	+	33	36
-	+	34	39
-	+	36	0
-	+	55	0
-	+	57	0
-	+	65	0
-	+	65	38
-	+	65	0
-	+	65	11
-	+	65	0
-	+	65	23
-	+	4	13
-	+	65	21
-	+	8	0
-	+	8	0
-	+	114	108
-	+	114	91
-	+	114	89
-	+	114	0
-	+	114	0
-	+	114	28
-	+	114	0
-	+	114	100
-	+	114	0
-	+	106	94
-	+	109	0
-	+	106	70
-	+	105	0
-	+	114	0
-	+	108	92
-	+	114	0
-	+	107	9
-	+	108	50
-	+	107	10
-	+	108	68
-	+	114	0
-	+	113	87
-	+	112	86
-	+	106	53
-	+	111	114
-	+	111	0
-	+	110	82
-	+	65	2
-	+	65	0
-	+	56	0
-	+	33	0
-	+	35	0
-	+	34	51
-	+	65	2
-	+	65	18
-	+	65	0
-	+	65	0
-	+	64	0
-	+	61	6
-	+	63	0
-	+	61	40
-	+	59	38
-	+	62	93
-	+	65	0
-	+	61	6
-	+	60	0
-	+	61	10
-	+	127	0
-	+	128	0
-	+	128	25
-	+	128	29
-	+	128	0
-	+	118	0
-	+	116	0
-	+	117	26
-	+	118	29
-	+	126	17
-	+	126	6
-	+	126	19
-	+	118	49
-	+	126	28
-	+	126	82
-	+	126	23
-	+	126	27
-	+	126	24
-	+	126	29
-	+	118	30
-	+	119	0
-	+	118	36
-	+	119	56
-	+	119	61
-	+	118	37
-	+	126	0
-	+	120	25
-	+	125	0
-	+	121	46
-	+	122	49
-	+	123	46
-	+	124	30
-	+	2	87
-	+	121	0
-	+	120	4
-
-> /var/www/lims/app/views/samples/_table.html.haml
-	"	23	16
-	^	23	17
-	.	23	16
-	+	9	13
-	+	12	13
-	+	24	29
-	+	2	0
-	+	24	0
-	+	5	42
-	+	24	0
-	+	23	80
-	+	3	36
+	+	4	47
 	+	5	0
-	+	3	50
-	+	1	102
+	+	3	37
+	+	88	67
+	+	89	0
+	+	88	40
+	+	30	15
+	+	30	15
+	+	30	15
+	+	30	15
+	+	78	69
+	+	30	52
+	+	30	48
+	+	30	63
+	+	30	0
+	+	30	20
 	+	1	0
-	+	1	170
-	+	22	90
-	+	22	0
-	+	10	35
-	+	18	70
-	+	23	105
-	+	15	62
-	+	1	31
-	+	1	109
-	+	1	0
-	+	23	51
-	+	4	64
-	+	1	222
-	+	22	90
-	+	1	95
-	+	23	16
+	+	109	50
+	+	108	159
+	+	51	2
+	+	75	0
+	+	76	0
+	+	77	23
+	+	77	58
+	+	30	0
+	+	66	0
+	+	70	107
+	+	77	0
+	+	18	2
+	+	21	0
+	+	18	0
+	+	89	0
+	+	19	25
+	+	19	0
+	+	22	44
+	+	19	0
+	+	3	0
+	+	20	54
+	+	51	0
+	+	51	0
+	+	50	59
+	+	51	0
+	+	10	33
+	+	20	70
+	+	94	22
+	+	11	0
+	+	44	0
+	+	51	0
+	+	45	0
+	+	44	43
+	+	19	0
+	+	6	44
+	+	10	44
+	+	6	0
+
+> /var/www/lims/app/models/sample_head.rb
+	"	22	22
 
 > /var/www/lims/app/controllers/samples_controller.rb
-	"	6	39
-	^	6	40
-	.	6	39
-	+	2	0
-	+	8	0
-	+	7	53
-	+	16	0
-	+	10	6
-	+	4	6
-	+	13	42
-	+	12	30
-	+	14	6
-	+	13	0
-	+	15	20
-	+	13	0
-	+	15	52
-	+	13	66
-	+	2	55
-	+	8	0
-	+	6	39
-
-> /var/www/lims/app/assets/javascripts/new_redo_orders.js.coffee
-	"	5	44
-	^	5	45
-	.	5	44
-	+	2	23
-	+	3	35
-	+	1	1
-	+	5	71
-	+	14	0
-	+	5	94
-	+	6	6
-	+	6	0
-	+	4	19
-	+	6	14
-	+	7	24
-	+	10	8
-	+	9	70
-	+	8	36
-	+	9	0
-	+	5	42
-	+	6	0
-	+	9	65
-	+	11	14
-	+	12	29
-	+	13	33
-	+	5	44
-
-> /var/www/lims/db/migrate/20130118092212_create_samples.rb
-	"	4	12
-	^	36	17
-	.	36	16
-	+	14	49
-	+	36	55
-	+	13	62
-	+	36	16
+	"	39	125
+	^	39	51
+	.	39	50
+	+	46	26
+	+	24	17
+	+	25	16
+	+	24	21
+	+	25	20
+	+	39	50
 
 > /var/www/lims/app/models/sample.rb
-	"	31	80
-	^	31	81
-	.	31	80
-	+	83	5
-	+	82	41
-	+	71	0
-	+	88	0
-	+	85	16
-	+	86	42
-	+	87	0
-	+	98	0
-	+	90	9
-	+	92	25
-	+	97	10
-	+	93	108
-	+	94	79
-	+	95	75
-	+	96	90
-	+	23	48
-	+	35	67
-	+	37	26
-	+	39	6
-	+	38	0
-	+	2	165
-	+	35	49
-	+	63	0
-	+	63	0
-	+	63	0
-	+	63	0
-	+	63	6
-	+	63	0
-	+	63	28
-	+	63	65
-	+	17	24
-	+	63	0
-	+	63	33
-	+	34	39
-	+	35	39
-	+	2	153
-	+	3	13
-	+	68	18
-	+	11	0
-	+	19	75
-	+	114	0
-	+	100	16
-	+	103	24
-	+	104	70
-	+	103	24
-	+	104	58
-	+	114	0
-	+	104	77
-	+	103	39
-	+	101	41
-	+	102	28
-	+	104	79
-	+	113	0
-	+	108	24
-	+	103	47
-	+	112	19
-	+	109	32
-	+	110	35
-	+	110	22
-	+	103	46
-	+	110	0
-	+	112	20
-	+	113	40
-	+	103	32
-	+	113	33
-	+	59	108
-	+	63	0
-	+	49	0
-	+	58	0
-	+	49	0
-	+	54	0
-	+	49	0
-	+	43	0
-	+	35	2
-	+	44	0
-	+	46	0
-	+	54	0
-	+	55	0
-	+	54	0
-	+	44	26
-	+	103	2
-	+	103	0
-	+	113	0
-	+	112	19
-	+	103	36
-	+	111	36
-	+	112	27
-	+	103	37
-	+	110	27
-	+	111	47
-	+	112	19
-	+	2	170
-	+	2	43
-	+	2	190
-	+	104	58
-	+	104	35
-	+	104	4
-	+	114	0
-	+	104	0
-	+	31	80
-
-> /var/www/lims/config/locales/sample_heads.cn.yml
-	"	19	84
-	^	19	87
-	.	19	84
-	+	8	17
-	+	23	18
-	+	24	18
-	+	12	32
-	+	21	201
-	+	17	127
-	+	18	46
-	+	18	91
-	+	18	0
-	+	21	59
-	+	19	84
-
-> /var/www/lims/app/views/primers/_table.html.haml
-	"	6	0
-	^	30	15
-	.	30	14
-	+	1	0
-	+	11	62
-	+	2	43
-	+	30	73
-	+	24	72
-	+	22	0
-	+	23	78
-	+	19	58
-	+	20	0
-	+	20	63
-	+	8	13
-	+	30	14
-
-> /var/www/lims/app/views/primers/index.html.haml
-	"	10	46
-	^	8	10
-	.	8	9
-	+	3	0
-	+	11	0
-	+	5	0
-	+	6	41
-	+	2	32
-	+	7	12
-	+	9	0
-	+	7	68
-	+	1	29
-	+	4	42
-	+	6	163
-	+	8	9
-
-> /var/www/lims/app/assets/javascripts/primers.js.coffee
-	"	28	2
-	^	27	36
-	.	28	0
-	+	26	19
-	+	2	17
-	+	28	94
-	+	28	0
-	+	28	14
-	+	29	24
-	+	32	8
-	+	30	34
-	+	31	23
-	+	28	32
-	+	33	23
-	+	34	45
+	"	118	6
+	.	118	0
+	+	32	0
+	+	33	0
+	+	33	11
+	+	32	19
+	+	33	0
+	+	30	0
+	+	74	48
+	+	77	0
+	+	74	0
+	+	82	59
+	+	32	68
+	+	31	35
+	+	166	0
+	+	162	0
+	+	160	6
+	+	161	131
+	+	161	58
+	+	2	0
+	+	49	88
+	+	157	26
+	+	132	29
+	+	132	20
+	+	136	69
+	+	132	34
+	+	134	0
+	+	136	10
+	+	136	0
+	+	132	32
+	+	136	0
+	+	133	0
+	+	135	31
+	+	132	0
+	+	129	0
+	+	131	0
+	+	137	0
+	+	132	0
+	+	137	7
+	+	74	0
+	+	83	0
+	+	81	20
+	+	37	46
 	+	27	0
 	+	28	0
-	+	27	68
-	+	28	0
-
-> /var/www/lims/app/controllers/primers_controller.rb
-	"	43	8
-	.	43	0
-	+	18	33
-	+	35	6
-	+	47	0
-	+	37	36
-	+	45	0
-	+	38	14
-	+	40	68
-	+	46	21
-	+	45	34
-	+	40	30
-	+	42	27
-	+	43	16
-	+	38	0
-	+	39	24
-	+	44	8
-	+	40	0
-	+	2	129
-	+	41	32
-	+	37	12
-	+	45	19
-	+	43	14
-	+	44	0
-	+	44	49
-	+	43	0
-
-> /var/www/lims/app/models/primer.rb
-	"	12	4
-	^	69	8
-	.	69	7
-	+	24	59
-	+	72	9
-	+	45	8
-	+	4	9
-	+	97	0
-	+	94	9
-	+	96	65
-	+	95	40
-	+	96	31
-	+	29	21
-	+	96	43
-	+	46	14
-	+	66	0
-	+	65	0
-	+	61	21
-	+	64	7
-	+	2	202
-	+	61	6
-	+	63	0
-	+	62	27
-	+	61	73
-	+	69	7
-
-> /var/www/lims/app/controllers/primer_dilutions_controller.rb
-	"	15	17
-
-> /var/www/lims/app/assets/javascripts/reactions.js.coffee
-	"	1	0
-
-> /var/www/lims/app/assets/javascripts/primer_dilutions.js.coffee
-	"	2	0
-	^	12	21
-	.	2	0
-	+	3	0
-	+	3	2
-	+	3	59
-	+	14	25
-	+	15	29
-	+	16	51
-	+	3	0
-	+	2	49
-	+	3	0
-	+	2	60
-	+	12	0
-	+	2	0
-
-> /var/www/lims/app/models/reaction_file.rb
-	"	1	0
-	^	19	30
-	.	19	29
-	+	104	0
-	+	116	0
-	+	108	76
-	+	109	23
-	+	111	16
-	+	112	0
-	+	114	10
-	+	112	0
-	+	112	84
-	+	113	20
-	+	119	11
-	+	105	45
-	+	111	13
-	+	116	0
-	+	119	0
-	+	119	0
-	+	105	0
-	+	103	115
-	+	103	4
-	+	118	0
-	+	107	27
-	+	115	10
-	+	108	0
-	+	108	0
-	+	110	80
-	+	57	20
-	+	66	0
-	+	81	0
-	+	67	19
-	+	68	11
-	+	80	0
-	+	69	11
-	+	70	66
-	+	110	21
-	+	3	50
-	+	47	47
-	+	49	43
-	+	48	88
-	+	80	0
-	+	70	60
-	+	61	49
-	+	71	18
-	+	72	34
-	+	77	0
-	+	74	32
-	+	28	0
-	+	27	26
-	+	28	0
-	+	86	52
-	+	21	27
-	+	25	0
-	+	24	0
-	+	23	49
-	+	27	21
-	+	78	6
-	+	79	28
-	+	86	0
-	+	65	0
-	+	64	48
-	+	77	16
-	+	72	11
-	+	77	0
 	+	73	0
-	+	72	21
-	+	73	13
-	+	75	22
-	+	77	0
-	+	76	0
-	+	68	0
-	+	17	63
+	+	73	0
+	+	73	51
+	+	73	17
+	+	73	0
+	+	73	0
+	+	73	0
+	+	73	0
+	+	73	0
+	+	73	27
+	+	73	17
+	+	73	45
 	+	3	0
-	+	48	0
-	+	51	38
-	+	17	49
-	+	127	0
-	+	121	9
+	+	26	19
+	+	27	66
+	+	26	99
+	+	73	0
+	+	27	0
+	+	26	21
+	+	27	0
+	+	36	0
+	+	34	0
+	+	27	0
 	+	122	0
+	+	123	0
+	+	104	0
 	+	122	0
-	+	123	32
-	+	126	10
-	+	127	0
-	+	124	96
-	+	125	103
-	+	88	59
-	+	16	27
-	+	17	35
-	+	4	47
-	+	101	17
-	+	99	0
-	+	94	0
-	+	92	57
-	+	97	54
-	+	98	31
-	+	93	101
-	+	93	121
-	+	98	9
-	+	17	11
-	+	17	0
-	+	18	18
-	+	19	29
+	+	104	0
+	+	106	13
+	+	106	0
+	+	106	0
+	+	122	0
+	+	121	39
+	+	104	0
+	+	106	0
+	+	106	41
+	+	106	0
+	+	106	0
+	+	106	0
+	+	107	0
+	+	101	35
+	+	102	61
+	+	118	32
+	+	104	34
+	+	104	0
+	+	103	21
+	+	104	53
+	+	113	25
+	+	114	21
+	+	115	17
+	+	104	0
+	+	113	48
+	+	104	0
+	+	103	36
+	+	104	0
+	+	118	0
+	+	118	0
 
-> /var/www/lims/app/controllers/sample_cancel_logs_controller.rb
-	"	9	19
-	.	9	19
-	+	7	0
-	+	6	12
-	+	9	19
+> /var/www/lims/app/models/order.rb
+	"	171	4
+	^	145	123
+	.	142	0
+	+	128	49
+	+	259	31
+	+	260	30
+	+	261	18
+	+	262	135
+	+	262	0
+	+	264	18
+	+	265	20
+	+	267	20
+	+	276	0
+	+	36	35
+	+	212	45
+	+	198	54
+	+	3	0
+	+	125	62
+	+	135	35
+	+	132	22
+	+	135	109
+	+	129	49
+	+	135	0
+	+	133	0
+	+	133	0
+	+	129	0
+	+	133	112
+	+	133	22
+	+	131	103
+	+	128	0
+	+	126	0
+	+	126	0
+	+	118	141
+	+	126	22
+	+	136	14
+	+	130	0
+	+	133	0
+	+	134	0
+	+	129	44
+	+	134	35
+	+	134	0
+	+	135	6
+	+	134	22
+	+	134	7
+	+	134	0
+	+	145	31
+	+	153	0
+	+	156	30
+	+	164	0
+	+	142	0
+	+	156	19
+	+	153	16
+	+	156	20
+	+	153	0
+	+	164	21
+	+	156	45
+	+	141	2
+	+	139	26
+	+	169	16
+	+	170	10
+	+	172	21
+	+	179	12
+	+	170	18
+	+	178	16
+	+	179	0
+	+	180	0
+	+	179	0
+	+	179	138
+	+	180	0
+	+	179	0
+	+	180	0
+	+	170	0
+	+	180	0
+	+	181	24
+	+	180	0
+	+	180	0
+	+	180	6
+	+	174	0
+	+	178	4
+	+	177	0
+	+	181	0
+	+	175	25
+	+	180	0
+	+	176	0
+	+	180	0
+	+	179	122
+	+	169	10
+	+	172	0
+	+	176	64
+	+	177	0
+	+	145	21
+	+	146	10
+	+	145	0
+	+	148	0
+	+	144	8
+	+	147	8
+	+	145	0
+	+	144	61
+	+	145	89
+	+	155	40
+	+	164	0
+	+	145	122
+	+	142	0
 
-> /var/www/lims/db/migrate/20130130032938_create_reaction_files.rb
-	"	17	56
-	^	17	57
-	.	17	56
-	+	6	30
-	+	16	74
-	+	5	23
-	+	17	56
+> /var/www/lims/config/locales/samples.cn.yml
+	"	55	17
+	^	55	20
+	.	55	17
+	+	24	26
+	+	25	26
+	+	55	17
 
-> /var/www/lims/app/models/reaction_flow_go_observer.rb
-	"	1	0
-	^	23	7
-	.	24	0
-	+	2	56
-	+	15	6
-	+	16	0
-	+	24	0
+> /var/www/lims/app/models/order_mail.rb
+	"	1	2
+	^	12	19
+	.	12	18
+	+	11	68
+	+	13	0
+	+	11	20
+	+	25	18
+	+	27	60
+	+	12	18
 
-> /var/www/lims/app/models/order_observer.rb
-	"	1	0
-	.	2	0
-	+	2	64
-	+	2	5
-	+	2	0
-	+	2	0
-	+	2	0
-	+	2	25
-	+	2	26
-	+	2	0
-	+	2	0
-	+	2	0
-	+	2	0
-	+	2	0
-	+	2	0
-	+	2	0
+> /var/www/lims/config/locales/procedures.cn.yml
+	"	24	11
+	^	10	42
+	.	10	39
+	+	11	29
+	+	10	39
 
-> /var/www/lims/config/application.rb
-	"	1	0
-	^	38	104
-	.	38	103
-	+	38	103
+> /var/www/lims/config/locales/orders.cn.yml
+	"	51	188
+	^	51	191
+	.	51	188
+	+	51	188
 
-> /var/www/lims/db/migrate/20130109052720_create_precheck_codes.rb
-	"	1	0
+> /var/www/lims/config/locales/reactions.cn.yml
+	"	15	22
+	^	15	25
+	.	15	22
+	+	15	22
 
-> /var/www/lims/db/migrate/20130118024233_create_prechecks.rb
-	"	9	17
-	^	13	52
-	.	13	51
-	+	7	0
+> /var/www/lims/app/controllers/order_mails_controller.rb
+	"	20	28
+	^	6	69
+	.	20	18
 	+	6	0
-	+	13	51
+	+	20	18
 
-> /var/www/lims/db/migrate/20130122022726_create_qualities.rb
-	"	9	6
-	.	9	0
-	+	5	34
-	+	12	77
-	+	12	6
-	+	12	28
-	+	12	76
-	+	12	37
-	+	12	0
-	+	12	4
-	+	12	71
-	+	4	0
-	+	12	0
-	+	14	65
-	+	9	0
-	+	9	0
-	+	8	50
-	+	7	50
-	+	8	6
-	+	10	0
-	+	9	21
-	+	8	6
-	+	9	0
+> /var/www/lims/app/views/order_mails/new.html.haml
+	"	2	0
 
-> /var/www/lims/config/locales/quality_codes.cn.yml
-	"	25	107
-	^	25	110
-	.	25	107
-	+	25	107
+> /var/www/lims/app/views/order_mails/_form.html.haml
+	"	6	28
+	^	6	29
+	.	6	28
+	+	15	37
+	+	16	56
+	+	17	38
+	+	15	51
+	+	32	55
+	+	30	45
+	+	5	91
+	+	6	91
+	+	5	86
+	+	6	0
+	+	5	23
+	+	6	28
 
-> /var/www/lims/app/views/clients/index.html.haml
+> /var/www/lims/Capfile
 	"	1	0
+	^	6	50
+	.	6	0
+	+	5	0
+	+	7	0
+	+	6	2
+	+	6	6
+	+	6	49
+	+	5	0
+	+	6	0
+
+> /var/www/lims/spec/models/order_spec.rb
+	"	8	2
+	^	337	54
+	.	8	2
+	+	12	0
+	+	8	24
+	+	10	50
+	+	9	51
+	+	11	6
+	+	10	0
+	+	16	0
+	+	14	19
+	+	15	32
+	+	351	0
+	+	70	53
+	+	10	37
+	+	110	0
+	+	155	0
+	+	213	60
+	+	217	43
+	+	218	76
+	+	219	52
+	+	282	0
+	+	300	0
+	+	301	0
+	+	218	17
+	+	235	0
+	+	235	0
+	+	233	41
+	+	234	77
+	+	235	48
+	+	286	0
+	+	234	43
+	+	338	0
+	+	336	27
+	+	338	16
+	+	318	38
+	+	328	0
+	+	327	4
+	+	319	0
+	+	9	0
+	+	345	0
+	+	341	129
+	+	348	16
+	+	348	6
+	+	330	6
+	+	335	30
+	+	331	85
+	+	342	42
+	+	335	6
+	+	342	0
+	+	342	6
+	+	348	6
+	+	343	0
+	+	343	35
+	+	330	6
+	+	343	6
+	+	336	0
+	+	334	41
+	+	337	53
+	+	342	0
+	+	343	0
+	+	348	0
+	+	318	4
+	+	8	2
+
+> /var/www/lims/db/migrate/20130118092212_create_samples.rb
+	"	9	6
+
+> /var/www/lims/db/migrate/20130111012728_create_orders.rb
+	"	1	0
+	^	14	99
+	.	14	98
+	+	14	98
+
+> /var/www/lims/app/models/quality_code.rb
+	"	22	2
+	^	26	40
+	.	26	39
+	+	43	0
+	+	43	0
+	+	18	20
+	+	26	39
+
+> /var/www/lims/app/controllers/reactions_controller.rb
+	"	49	6
+	^	162	15
+	.	56	40
+	+	151	13
+	+	41	4
+	+	48	0
+	+	163	0
+	+	158	10
+	+	163	14
+	+	164	14
+	+	168	0
+	+	165	0
+	+	158	0
+	+	164	0
+	+	157	0
+	+	162	36
+	+	163	14
+	+	166	0
+	+	166	0
+	+	157	0
+	+	160	48
+	+	154	19
+	+	153	0
+	+	163	0
+	+	165	30
+	+	166	28
+	+	161	50
+	+	162	14
+	+	166	0
+	+	166	0
+	+	167	0
+	+	166	0
+	+	165	0
+	+	161	28
+	+	56	40
+
+> /var/www/lims/app/views/orders/new_redo.html.haml
+	"	6	47
+	.	6	0
+	+	7	38
+	+	48	44
+	+	49	83
+	+	53	135
+	+	58	137
+	+	56	43
+	+	61	45
+	+	63	137
+	+	67	44
+	+	66	45
+	+	27	51
+	+	28	51
+	+	7	16
+	+	7	493
+	+	8	0
+	+	6	0
+
+> /var/www/lims/spec/routing/resources_routing_spec.rb
+	"	20	3
+	^	38	28
+	.	38	26
+	+	17	20
+	+	33	0
+	+	17	2
+	+	24	0
+	+	33	0
+	+	31	0
+	+	32	2
+	+	17	0
+	+	5	0
+	+	18	0
+	+	36	0
+	+	38	26
+
+> /var/www/lims/app/views/procedures/_form.html.haml
+	"	10	28
+	^	10	29
+	.	10	28
+	+	6	24
+	+	7	24
+	+	8	57
+	+	6	0
+	+	8	78
+	+	9	23
+	+	10	28
+
+> /var/www/lims/app/controllers/procedures_controller.rb
+	"	2	2
+
+> /var/www/lims/app/views/procedures/new.html.haml
+	"	1	0
+
+> /var/www/lims/app/views/reactions/inspecting.html.haml
+	"	24	6
+
+> /var/www/lims/app/views/reactions/downloading.html.haml
+	"	2	14
+	^	2	15
+	.	2	14
+	+	2	14
+
+> /var/www/lims/config/locales/sample_heads.cn.yml
+	"	1	0
+
+> /var/www/lims/app/views/reactions/index.html.haml
+	"	7	142
+	^	2	49
+	.	2	48
+	+	2	48
+
+> /var/www/lims/app/views/reactions/_table.html.haml
+	"	32	20
+	^	28	83
+	.	28	0
+	+	13	34
+	+	14	44
+	+	11	47
+	+	28	0
+
+> /var/www/lims/app/views/reactions/update.js.erb
+	"	2	90
+	.	2	90
+	+	2	90
 
 > /var/www/lims/NERD_tree_1
-	"	12	0
+	"	4	0
 	.	1	0
 	+	1	0
 	+	1	0
@@ -1742,451 +1275,60 @@ $statistic
 	+	1	0
 	+	1	0
 	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
 
-> /var/www/lims/app/views/sample_board_templates/_table.html.haml
+> /var/www/lims/NERD_tree_2
+	"	4	0
+	.	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+
+> /var/www/lims/\
+	"	351	0
+
+> /var/www/lims/app/views/board_records/new.html.haml
+	"	1	43
+	^	1	44
+	.	1	43
+	+	1	43
+
+> /var/www/lims/app/views/board_records/_abi_record.html.haml
+	"	2	170
+	^	2	171
+	.	2	170
+	+	1	159
+	+	2	170
+
+> /var/www/lims/app/views/samples/view_bacteria.html.haml
 	"	2	0
 
-> /var/www/lims/config/locales/abi_machines.cn.yml
-	"	1	0
-
-> /var/www/lims/db/migrate/20130111012728_create_orders.rb
-	"	21	28
-	^	23	75
-	.	23	74
-	+	20	26
-	+	8	6
-	+	9	0
-	+	7	29
-	+	6	21
-	+	6	23
-	+	6	0
-	+	23	45
-	+	20	41
-	+	23	74
-
-> /var/www/lims/db/migrate/20130130014433_create_reaction_boards.rb
-	"	1	0
-
-> /var/www/lims/app/assets/javascripts/submit.js.coffee
-	"	1	0
-
-> /var/www/lims/app/assets/javascripts/superwf.js.coffee
-	"	30	36
-	^	30	37
-	.	30	36
-	+	185	0
-	+	185	18
-	+	114	20
-	+	125	29
-	+	129	4
-	+	130	4
-	+	110	1
-	+	109	0
-	+	157	0
-	+	158	22
-	+	166	0
-	+	169	0
-	+	167	0
-	+	170	46
-	+	115	22
-	+	128	6
-	+	134	0
-	+	124	0
-	+	124	0
-	+	119	48
-	+	121	27
-	+	122	45
-	+	123	28
-	+	122	51
-	+	19	4
-	+	25	4
-	+	19	0
-	+	3	0
-	+	2	0
-	+	4	0
-	+	139	0
-	+	119	50
-	+	3	2
-	+	138	2
-	+	138	0
-	+	24	0
-	+	166	0
-	+	180	22
-	+	181	14
-	+	185	8
-	+	181	13
-	+	185	0
-	+	185	0
-	+	182	8
-	+	185	10
-	+	182	0
-	+	185	3
-	+	185	2
-	+	182	0
-	+	181	23
-	+	185	0
-	+	182	0
-	+	185	0
-	+	185	0
-	+	183	0
-	+	182	0
-	+	183	23
-	+	185	0
-	+	182	20
-	+	184	0
-	+	185	0
-	+	184	24
-	+	182	24
-	+	181	0
-	+	182	0
-	+	181	0
-	+	181	0
-	+	179	0
-	+	178	0
-	+	177	0
-	+	178	0
-	+	28	26
-	+	41	29
-	+	41	0
-	+	42	0
-	+	38	62
-	+	29	17
-	+	35	39
-	+	36	126
-	+	41	0
-	+	38	0
-	+	41	0
-	+	37	0
-	+	38	0
-	+	39	0
-	+	41	0
-	+	42	8
-	+	35	8
-	+	42	28
-	+	34	22
-	+	35	0
-	+	32	30
-	+	36	94
-	+	32	25
-	+	32	0
-	+	33	30
-	+	32	37
-	+	30	34
-	+	31	17
-	+	30	36
-
-> /var/www/lims/lib/tasks/primer.rake
-	"	3	0
-	^	2	1
-	.	2	0
-	+	4	0
-	+	3	0
-	+	4	0
-	+	5	0
-	+	28	0
-	+	5	0
-	+	28	0
-	+	5	11
-	+	4	92
-	+	27	0
-	+	6	18
-	+	2	51
-	+	22	0
-	+	2	41
-	+	2	0
-	+	3	0
-	+	1	0
-	+	22	29
-	+	2	0
-	+	22	2
-	+	6	33
-	+	12	0
-	+	7	33
-	+	23	11
-	+	27	0
-	+	26	0
-	+	27	0
-	+	26	26
-	+	26	0
-	+	6	38
-	+	10	0
-	+	23	83
-	+	26	0
-	+	24	0
-	+	26	0
-	+	23	0
-	+	24	0
-	+	25	87
-	+	9	30
-	+	6	38
-	+	8	0
-	+	6	64
-	+	7	24
-	+	8	46
-	+	11	6
-	+	8	0
-	+	1	0
-	+	25	34
-	+	23	42
-	+	22	0
-	+	22	0
-	+	12	0
-	+	6	38
-	+	7	0
-	+	12	0
-	+	8	0
-	+	9	42
-	+	12	11
-	+	18	0
-	+	14	5
-	+	17	10
-	+	14	10
-	+	15	15
-	+	18	0
-	+	22	0
-	+	20	0
-	+	21	36
-	+	16	51
-	+	25	117
-	+	2	0
-
-> /var/www/lims/spec/factories/orders.rb
-	"	8	4
-	.	8	0
-	+	8	0
-
-> /var/www/lims/app/models/primer_board.rb
-	"	7	2
-
-> /var/www/lims/app/views/orders/new.html.haml
-	"	8	0
-	.	7	0
-	+	7	30
-	+	7	0
-
-> /var/www/lims/app/views/orders/_form.html.haml
-	"	18	34
-	^	18	35
-	.	18	34
-	+	22	22
-	+	24	233
-	+	18	34
-
-> /var/www/lims/app/assets/javascripts/checkouts.js.coffee
-	"	1	0
-
-> /var/www/lims/app/assets/stylesheets/primer_dilutions.css.scss
-	"	1	0
-
-> /var/www/lims/app/views/sample_boards/_td_precheck.html.haml
-	"	3	2
-
-> /var/www/lims/app/models/sample_flow_go_observer.rb
-	"	6	7
-	^	6	5
-	.	6	0
-	+	6	0
-
-> /var/www/lims/app/controllers/prechecks_controller.rb
-	"	21	10
-	^	21	11
-	.	21	0
-	+	21	0
-
-> /var/www/lims/app/models/sample_board.rb
-	"	1	0
-	^	126	119
-	.	126	0
-	+	110	14
-	+	112	13
-	+	111	45
-	+	113	44
-	+	111	34
-	+	113	34
-	+	111	11
-	+	113	11
-	+	119	47
-	+	166	0
-	+	155	20
-	+	166	0
-	+	165	0
-	+	165	9
-	+	165	19
-	+	165	22
-	+	165	24
-	+	165	19
-	+	165	62
-	+	165	0
-	+	165	5
-	+	165	0
-	+	165	61
-	+	165	15
-	+	165	6
-	+	165	16
-	+	165	15
-	+	165	0
-	+	80	49
-	+	18	0
-	+	19	59
-	+	30	32
-	+	27	0
-	+	28	18
-	+	26	0
-	+	28	19
-	+	25	3
-	+	26	56
-	+	180	0
-	+	174	25
-	+	179	10
-	+	175	99
-	+	176	116
-	+	177	112
-	+	178	105
-	+	102	0
-	+	92	19
-	+	98	19
-	+	101	20
-	+	102	92
-	+	102	0
-	+	102	92
-	+	119	80
-	+	126	90
-	+	20	47
-	+	182	12
-	+	183	0
-	+	183	33
-	+	184	19
-	+	190	0
-	+	184	58
-	+	184	73
-	+	189	0
-	+	184	0
-	+	186	74
-	+	187	0
-	+	188	64
-	+	186	0
-	+	102	95
-	+	156	45
-	+	165	6
-	+	165	0
-	+	156	5
-	+	162	0
-	+	162	56
-	+	99	60
-	+	126	167
-	+	126	0
-	+	125	64
-	+	126	237
-	+	126	92
-	+	127	0
-	+	162	0
-	+	171	0
-	+	171	0
-	+	168	86
-	+	170	35
-	+	169	17
-	+	156	23
-	+	162	0
-	+	163	0
-	+	165	0
-	+	157	0
-	+	161	9
-	+	94	15
-	+	97	0
-	+	96	33
-	+	95	23
-	+	102	89
-	+	126	0
-
-> /var/www/lims/app/models/order_status_observer.rb
-	"	14	40
-	^	14	41
-	.	14	40
-	+	2	0
-	+	14	40
-
-> /var/www/lims/app/views/samples/index.html.haml
-	"	1	0
-
-> /var/www/lims/app/assets/javascripts/samples.js.coffee
-	"	3	2
-	^	2	30
-	.	3	0
-	+	2	29
-	+	2	65
-	+	3	0
-
-> /var/www/lims/db/migrate/20130110091708_create_primers.rb
-	"	23	83
-	^	23	84
-	.	23	83
-	+	23	83
-
-> /var/www/lims/config/locales/order_mails.cn.yml
-	"	1	0
-	^	16	90
-	.	16	87
-	+	9	21
-	+	10	26
-	+	9	0
-	+	11	0
-	+	9	0
-	+	12	116
-	+	12	645
-	+	12	116
-	+	12	267
-	+	12	116
-	+	12	267
-	+	17	0
-	+	12	266
-	+	17	0
-	+	12	239
-	+	12	215
-	+	12	345
-	+	12	12
-	+	13	28
-	+	12	29
-	+	13	0
-	+	14	0
-	+	13	12
-	+	14	12
-	+	12	21
-	+	13	27
-	+	14	27
-	+	12	24
-	+	14	30
-	+	15	57
-	+	16	87
-
-> /var/www/lims/app/views/reactions/create_redo.js.erb
-	"	1	0
-	^	3	179
-	.	3	178
-	+	2	11
-	+	2	0
-	+	1	26
-	+	2	0
-	+	6	6
-	+	4	7
-	+	5	48
-	+	2	0
-	+	5	0
-	+	3	178
-
-> /var/www/lims/app/views/samples/redo_typeset.html.haml
-	"	12	6
-	^	10	25
-	.	11	0
-	+	1	0
-	+	24	0
-	+	3	58
-	+	1	111
-	+	4	0
-	+	7	18
-	+	8	0
-	+	10	0
-	+	8	23
-	+	11	0
-	+	9	31
-	+	10	24
-	+	11	0
+> /var/www/lims/app/views/samples/_table.html.haml
+	"	10	38
+	^	10	39
+	.	10	38
+	+	10	38

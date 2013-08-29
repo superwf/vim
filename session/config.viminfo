@@ -8,117 +8,117 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~Msle0~/\<record_regenerator\>
+~MSle0~/superwf
 
 # Last Substitute Search Pattern:
-~MSle0&available
+~MSle0& 
 
 # Last Substitute String:
-$statistic
+$
 
 # Command Line History (newest to oldest):
 :q
-:Rmodel client
-:Rinitializer devise
-:Rmodel sample_flow
-:R
-:e config/application.rb
-:vs config/locales/home.cn.yml
-:Rview home/index.html.haml
-:tabedit Gemfile
-:e Gemfile
-:Rview home/i
-:Rcontroller users/sessions
-:Rcontroller users/omniauth_callbacks
-:Rinitializer session_store
-:Rmodel remote_client
-:e lib/ap
-:Renvironment development
-:Renvironment production
-:vsplit Gemfile
-:Rview orders/new.html.haml
-:Rstylesheet orders
-:Rstylesheet application
+:aq
+:w!
+:q!
+:.,.+2q
+:Rjavascript socky.min
 :Rjavascript application
-:Rspec models/sample_procedure
-:Rmodel sample_procedure
-:Rfixtures reaction_procedures.yml
-:Rfixtures reaction_procedures.rb
-:Rspec models/reaction_procedure
-:Rmodel reaction_procedure
-:e spec/spec_helper.rb
-:Rmodel reaction_head
-:e lib/head.rb
-:Rmodel sample_head
-:Rspec models/reaction_head
-:Rmigration create_sample_board_templates
-:Rspec models/sample_board_template
-:Rmodel sample_board_template
-:e lib/procedure.rb
-:Rview sample_procedures/_form.html.haml
-:Rcontroller sample_procedures
-:Rfixtures sample_procedures.
-:Rfixtures sample_procedures.rb
-:Rfixtures plasmid_codes.yml
-:Rfixtures precheck_codes.yml
-:Rfixtures precheck_codes.rb
-:Rfixtures quality_codes.yml
-:Rfixtures quality_codes.rb
-:Rmodel user
-:Rlayout application.html.haml
-:Rlocale sample_procedures.cn.yml
+:Rcontroller sockies
+:!q
+:e config/routes.rb
+:vs echo.rb
+:'<,'>s/ /,/g
+:vs em_client.rb
+:vs socket_client.rb
+:e blast.rb
+:vs blast.rb
+:e demo_ncbi_rest.rb
+:tabedit ../../restclient.rb
+:vs ../../restclient.rb
+:vsgg
+:pwd
+:e demo_blast_report.rb
+:vs add_tap
+:%s/;/,/g
+:e .vimrc
+:vimimhelp
+:vimim
+:mycloud __getname
+:mycloud__getname
+:e
+:e dell.sh
+:'<,'>q
+:Rview send_result/attachment.haml
+:Rview send_result/send_order.haml
+:Rview attachment.haml
+:Rmailer send_result
+:'<,'>%s/ /,/g
+:%s/19775/19776/g
+:%s/20120929-C01/20120929-C02/g
+:Rmailer promotion
+:%s/19772/19773/g
+:%s/20120928-C04/20120928-C05/g
+:%s/19771/19772/g
+:%s/20120928-C03/20120928-C04/g
+:%s/20120928-C02/20120928-C03/g
+:%s/19770/19771/g
+:桌面/te/dna_yinwuinfo.sql
+:%s/19768/19770/g
+:%s/20120928-C01/20120928-C02/g
+:%s/ 0px/ #000000 1px solid;/g
 
 # Search String History (newest to oldest):
-? \<record_regenerator\>
-?/www-data
-?/fsfdsf
-?/mem
-? '
-? \<user_omniauth_authorize_path\>
-?/qualities
-?/primers.js
-?/assets
-?/@sp
-?/sp
-?/de
-?/hook
-?/include
-?/precheck
-? \<admin\>
-? \<define_method\>
-?/def
-?/class attr
-?/Sample
-?/show
-? \<double\>
-?/valida
-?/validates
-?/scope
-?/const
-? \<max_amount\>
-?/available
-?/once
-?/locked
-?/before_destroy
-?/destroy
-?/name
-?/toggle
-?/cache
+?/slider
+?/view
 ?/superwf
+?/fix
+? \<runPlugin\>
+?/Run
+? \<@channels\>
+?/WebSocketMain
+?/ch
+?/joining
+?/channel
+?/rjs
+?/script
+?/STK
+?/log
+?/c\.log
+?/c.log
+?/sid
+?/jisuan
+? \<jisuan\>
+?  
+?/pear
+?/splice
+?/phpmyadm
+?/nt
+? \<gbopts\>
+?/START
+?/MAX
+?/TYPE
+? \<blast_factory\>
+? \<wrap\>
+?/fastcgi
+?/REDIRECT
+?/tomcat_new
+? \<main\>
+? \<log_format\>
+? \<proxy_buffering\>
+? \<tomcat_new\>
+?/8180
+?/buffer_size
+?/buff
+? \<jqplotToImageElem\>
+? \<imgelem\>
+?/jqplot-image-button
+?/chgb
+?/tester
+?/debian2
+?/debian1
+? ;
 ?/git
-? \<liver_report_explaination\>
-?/pdf5
-?/search
-?/pas
-?/samples
-? \<sample_cancel_log\>
-?/create
-? \<submit\>
-?/submit
-?/window
-?/transfer
-?/append
-?/which
 
 # Expression History (newest to oldest):
 
@@ -128,224 +128,283 @@ $statistic
 
 # 寄存器:
 "0	LINE	0
-	Host backup
+	Host poweredge
 	 User wangfan
-	 Hostname backup.dna.com
+	 Hostname poweredge.dna.com
 	 PreferredAuthentications publickey
-	 IdentityFile ~/.ssh/backup
+	 IdentityFile ~/.ssh/sino-servers
 	 IdentitiesOnly yes
-""1	LINE	0
-	Host 10.0.0.74
-	 User wangfan
-	 Hostname 10.0.0.74
-	 #PreferredAuthentications publickey
-	 #IdentityFile ~/.ssh/backup
-	 IdentitiesOnly yes
+"1	LINE	0
+	1|zvtpo3Ftll+c0AlGpZRTx28X320=|jHZk4efvuYJE5iSuEuaJRvw7ATo= ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBDEuwL32XSwIKXK7BkWeiVmStEynSO8cbZ+WqXyI3i6lhF6i9dqUyfv9zmMqDIG29tQR0amLlYuG1BSwdukTfNk=
 "2	LINE	0
-	|1|6U/H/uS1K8n6SEViZUoRVueCmKk=|/H6Mf6md18XocTiHkIhTj5vS3ME= ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBHw0Gsz4AyP/+aY5291Jz2gmDQXRUDFZUIN0CCVntyZi0IqQQeFzDW/Dl8S8PUeXMba7QJZw86Ql8AjQ/GDKI18=
+	Host tester
+	 User wangfan
+	 Hostname tester.dna.com
+	 PreferredAuthentications publickey
+	 IdentityFile ~/.ssh/superwf
+	 IdentitiesOnly yes
 "3	LINE	0
-	  DOORKEEPER_APP_URL = 'user.wangfan.com'
+	 IdentityFile ~/.ssh/poweredget110ii
 "4	LINE	0
-	  DOORKEEPER_APP_URL = 'user.sinogenomax.com'
+	        <link href="../css/defaultTheme.css" rel="stylesheet" media="screen" />
 "5	LINE	0
-	  /= request.referer
-	  /= request.referrer
-	  /= request.methods
-	  /%br
-	  /%br
-	  /= request.query_parameters
-	  /- request.query_parameters.merge b: 2
-	  /%br
-	  /%br
-	  /= request.query_string
+	        <link href="css/960.css" rel="stylesheet" media="screen" />
 "6	LINE	0
-	  /%h2 Home
-	  /= request.referer
-	  /= request.referrer
-	  /= request.methods
-	  /%br
-	  /%br
-	  /= request.query_parameters
-	  /- request.query_parameters.merge b: 2
-	  /%br
-	  /%br
+	        <link href="../css/defaultTheme.css" rel="stylesheet" media="screen" />
 "7	LINE	0
-	  = DOORKEEPER_APP_ID
-	  %br
-	  = DOORKEEPER_APP_SECRET
-	  = Rails.env
+	        puts "Error: #{e.message}"
 "8	LINE	0
-	      ::Rails.env.production? ? 'beta.dna.com' : 'lims.wangfan.com'
+	        puts "Error: #{e.message}"
 "9	LINE	0
-	      ::Rails.env.production? ? 'beta.dna.com' : 'lims.wangfan.com'
-"a	BLOCK	23
-	{style: 'width: 100px;'}
-"b	BLOCK	23
-	 NOT NULL AUTO_INCREMENT
-"g	CHAR	0
-	
-"k	CHAR	0
-	j
-"l	CHAR	0
-	
+	        @channel.push "[#{Time.now}]user#{sid} said: #{msg}"
 "p	LINE	0
 	
 	
 	::::::::::::::::::::::::
 	日期：公元2013年1月10日　星期四 
-	電腦：unix  0.008533 seconds 
+	電腦：unix  0.010892 seconds 
 	版本：vi=703 
 	編碼：utf-8　utf-8,ucs-bom,euc-jp,gb18030,gbk,gb2312,cp936 
 	環境：zh_CN.UTF-8 
 	詞庫：拼音詞庫：/home/wangfan/.vim/plugin/vimim.pinyin_quote_sogou.txt 
 	詞庫：雲詞庫：百度雲　3雲　搜狗雲　ＱＱ雲　 
 	聯網：Python2 Interface to Vim 
-	輸入：VimIM　　小鶴雙拼　 
+	輸入：VimIM　拼音　 
 	選項：vimimrc 
 	    :let g:vimim_cloud = 'baidu,3'  
-	    :let g:vimim_map = 'c-bslash'  
-	    :let g:vimim_mycloud = 0  
-	    :let g:vimim_shuangpin = 'flypy'  
-	  " :let g:vimim_mode = 'dynamic'  
+	    :let g:vimim_mode = 'static'  
+	  " :let g:vimim_map = ''  
+	  " :let g:vimim_mycloud = 0  
 	  " :let g:vimim_plugin = '/home/wangfan/.vim/plugin'  
 	  " :let g:vimim_punctuation = 2  
+	  " :let g:vimim_shuangpin = 0  
 	  " :let g:vimim_toggle = 'pinyin,baidu,3,sogou,qq' 
 	::::::::::::::::::::::::
+	-- 插入 ---- 插入 (语言) ---- 插入 ---- 插入 ---- 插入 (语言) --
 	
-	没有匹配的自动命令
-	没有匹配的自动命令	
-"v	CHAR	0
-	389
-<jkV%>wveesself�k3��K��K��K��L��L��K��L��L��,��-��-��-��-��-��-��-��-��-��.sselfwwwwblveesself�k3gt:gtjjV%ddd�k3hjjbbbbluuwC��,��.��,��.bcwbcwc�kbmoduleA F�kb�kbFac�k3hjjjjjjbbbbveelx�k3�k3�k3�k3�k3��,��.cw::Filewwww.�k3��,��.xkjjI#�k3kY:Rfix	 hr�kbtcon	jjjjj:Rfix 	htRfix	 ht_smaple-re	�kb�kb�kb_r	:�kb�kb�kb�kb�kb�kb�kbamp		jkpdkddljjV%ddd�k3h�k3jjl�k3h
+	1 行被去掉；before #1  11 seconds ago-- 插入 --
+	
+	::::::::::::::::::::::::
+	　
+	日期：公元2013年1月10日　星期四 
+	::::::::::::::::::::::::
+	3242
+<-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P) 匹配 1 / 20-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P) 匹配 2 / 20-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P) 匹配 3 / 20-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P) 匹配 4 / 20-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P) 匹配 5 / 20-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P) 匹配 6 / 20-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P) 匹配 7 / 20-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P) 匹配 8 / 20-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P) 匹配 9 / 20-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P) 匹配 10 / 20-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P) 匹配 11 / 20-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P) 匹配 12 / 20-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P) 匹配 13 / 20-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P) 匹配 14 / 20-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P) 匹配 15 / 20-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P) 匹配 16 / 20-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P) 匹配 17 / 20-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P) 匹配 18 / 20-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P) 匹配 19 / 20-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P) 匹配 20 / 20-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P) 回到起点-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P) 匹配 1 / 20-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P) 匹配 2 / 20-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P) 匹配 3 / 20-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P) 匹配 4 / 20-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P) 匹配 5 / 20-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P) 匹配 6 / 20-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P) 匹配 7 / 20-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P) 匹配 8 / 20-- 插入 (语言) ---- 插入 (语言) ---- 插入 (语言) --
+	-- 插入 --
+	
+	1 行发生改变；before #3  2 seconds ago
+	1 行被去掉；before #2  31 seconds ago
+	已位于最旧的改变
+	已位于最旧的改变
 "w	CHAR	0
-	1312
-<wwwwwwxwwbxxxxx�k3kkkjbbbbcwwhildse�k3jjjA & �kb& ntxtnext_td.html() == ''�k3bbbbbbbxxxiif k$xjs!ocontinue�k3oelsejVG>�k3jobreak�k3�k3�k3kkkkkkkkbbbblC++�k3�k3�k3�k3��L��KkkkkkjddkPkkjddpkoif td.html()a == ''jVG>kkjjjjjjjwjjjjjjjjjwkkkkkkkkkkkkkkkkjjjjo$()i""ddOtd.append()i""i<>h:Rja	 orders	/appendlibutton class=''ibtnlla<>i/bo�kbuttonbblli""i++i  isample_namekkkkkkkkjjjjjjkjosample_name = $()ithisA.find()i""itd.sampleA.html()�k3jjla bbbbellla �k3wwwwwbil�kblli<>iinputllhi /lli<>iinput /hhhhhhhhhhliname='' hisamples[]i""i�kbi++hi lla hi  isample_id�k3lllllli[]iholella value=""i++�kb�kb  i++i  itd.attr()i""ihole�k3lllllllllllllllllbbbbbbbbbbbbbbbbbbbbbbbbbbbbbwwwwwwwwwwwbbbbbiy�kbtype=""�kb�kb'' hihiddenjbbbbbbbbbbbbbwtyitype='' hihiddenla name=''isamples[]i""i  i++i  isample_idllllla[]isample-boa�kb�kb�kb�kb_board_idlala value=""hxs''i""��,��.i'llllllllllllllllllllllla'�k3��,��.hi"�kb  i++i  isample_board_id�k3kkjjkwwwwwwwwllla sample_id=''i""i  i++i  isample_id�k3�k3�k3�k3�k3o$()ithisA.hide()�k3�k3�k3�k3�k3�k3��LbbbbC)i""a.�kbitr[]idata-id=""i  i++i  isample_idA.hide()�k3Go�kb�kb�kb�kb�kb�kb# middle typesetd sample to reset it �kb�k3o�kb�kb	$()i""i#ta�kb�kbsample_bor�kbard_table
-"-	CHAR	0
-	backup.dna.com
+	478
+<wblll~kkjjkbbjjjjjjjjjjjjjjjeekbbwicolspan="2ujicolspan="1"�kb�kb2" �k3�k3��c��b��c��b��c��bbeb��c��bbevbveeexhx�k3�k3�k3�k3�k3��c��b��L��c��L��L��L��b��,��.��,��.��,��.~�k3��,��-��-��-��-��-��-��-��-��-��-��.xhxjjlveellxj.j.j.j.j.j.jkhvkkkkkkjjjjjjxkk�k3�k3�k3�k3�k3��c��b��c��b��K�kd�kd�kd�kd�kd�kd�kd�kd�ku�ku�ku�ku�ku�ku�ku�ku�ku�ku�ku�ku�kd�ku�ku�ku�ku�ku�ku�ku�kd�kd�kd�kd�kd�kd�kd�kd�kd�kd�kd�kddd�k3�k3�k3��c��L��L��K��K��K��K��L��L��L��K��L��K��b��,��.�k3	
+""-	CHAR	0
+	poweredge
 
 # 全局变量:
 
 # 文件标记:
-'0  57  0  ~/.ssh/config
-'1  61  1  ~/.ssh/config
-'2  1  0  ~/.ssh/config
-'3  24  0  ~/.ssh/known_hosts
-'4  22  2  /var/www/sino_project/app/models/client.rb
-'5  40  2  /var/www/sino_project/app/models/client.rb
-'6  47  12  /var/www/superwf/superwf_audited/lib/superwf_audited.rb
-'7  34  0  /var/www/lims/unicornctl
-'8  1  0  /var/www/lims/unicornctl
-'9  10  0  /var/www/lims/config/initializers/devise.rb
+'0  106  14  ~/.ssh/config
+'1  1  0  ~/etc/alternatives/php-cgi
+'2  79  0  ~/etc/alternatives/rename
+'3  61  0  ~/desktop/wp-nova-1.1/wp-nova-1.1/nova/nova/header.php
+'4  25  0  ~/desktop/wp-nova-11/wp-nova-1.1/nova (2)/nova/index.php
+'5  83  12  ~/desktop/jquery.jqplot/examples/example.js
+'6  61  0  ~/desktop/jquery.jqplot/examples/area.html
+'7  33  16  ~/.ssh/config
+'8  4  9  ~/bash_script/test
+'9  18  0  ~/.ssh/known_hosts
 
 # 跳转列表 (从新到旧):
--'  57  0  ~/.ssh/config
--'  24  11  ~/.ssh/config
--'  22  1  ~/.ssh/config
--'  61  1  ~/.ssh/config
--'  49  0  ~/.ssh/config
--'  1  0  ~/.ssh/config
--'  54  1  ~/.ssh/config
--'  24  0  ~/.ssh/known_hosts
--'  1  0  ~/.ssh/known_hosts
--'  22  2  /var/www/sino_project/app/models/client.rb
--'  40  2  /var/www/sino_project/app/models/client.rb
--'  1  0  /var/www/sino_project/app/models/client.rb
--'  47  12  /var/www/superwf/superwf_audited/lib/superwf_audited.rb
--'  20  24  /var/www/superwf/superwf_audited/lib/superwf_audited.rb
--'  1  0  /var/www/superwf/superwf_audited/lib/superwf_audited.rb
--'  34  0  /var/www/lims/unicornctl
--'  1  0  /var/www/lims/unicornctl
--'  32  0  /var/www/lims/unicornctl
--'  8  0  /var/www/lims/unicornctl
--'  10  0  /var/www/lims/config/initializers/devise.rb
--'  15  153  /var/www/lims/app/models/sample_flow.rb
--'  1  0  /var/www/lims/app/models/sample_flow.rb
--'  1  0  /var/www/lims/app/views/home/index.html.haml
--'  2  10  /var/www/lims/app/views/home/index.html.haml
--'  3  0  /var/www/lims/app/views/home/index.html.haml
--'  22  32  /var/www/lims/config/application.rb
--'  8  90  /var/www/lims/config/initializers/devise.rb
--'  7  23  /var/www/lims/config/initializers/devise.rb
--'  1  0  /var/www/sino_project/config/initializers/devise.rb
--'  23  0  /var/www/lims/config/application.rb
--'  32  26  /var/www/lims/config/initializers/devise.rb
--'  4  3  /var/www/lims/config/initializers/devise.rb
--'  6  3  /var/www/lims/config/initializers/devise.rb
--'  1  0  /var/www/lims/app/controllers/users/sessions_controller.rb
--'  7  12  /var/www/lims/app/controllers/users/sessions_controller.rb
--'  4  16  /var/www/lims/app/controllers/users/sessions_controller.rb
--'  10  2  /var/www/lims/app/controllers/users/omniauth_callbacks_controller.rb
--'  1  0  /var/www/lims/config/initializers/session_store.rb
--'  6  31  /var/www/lims/app/models/remote_client.rb
--'  1  0  /var/www/lims/app/models/remote_client.rb
--'  1  0  /var/www/lims/app/assets/stylesheets/orders.css.scss
--'  5  0  /var/www/lims/app/views/orders/new.html.haml
--'  7  131  /var/www/lims/app/views/orders/new.html.haml
--'  42  27  /var/www/lims/Gemfile
--'  16  0  /var/www/lims/app/assets/stylesheets/application.css
--'  73  107  /var/www/lims/config/application.rb
--'  1  0  /var/www/lims/app/assets/javascripts/application.js
--'  9  31  /var/www/lims/config/application.rb
--'  8  21  /var/www/lims/config/application.rb
--'  7  33  /var/www/lims/config/application.rb
--'  6  22  /var/www/lims/config/application.rb
--'  72  11  /var/www/lims/config/application.rb
--'  71  73  /var/www/lims/config/application.rb
--'  69  11  /var/www/lims/config/application.rb
--'  59  0  /var/www/lims/config/application.rb
--'  1  0  /var/www/lims/config/application.rb
--'  6  7  /var/www/lims/app/models/reaction_procedure.rb
--'  13  0  /var/www/lims/app/models/reaction_procedure.rb
--'  11  47  /var/www/lims/app/models/sample_procedure.rb
--'  14  0  /var/www/lims/app/models/reaction_procedure.rb
--'  15  30  /var/www/lims/app/models/reaction_procedure.rb
--'  84  2  /var/www/lims/spec/models/reaction_head_spec.rb
--'  25  4  /var/www/lims/spec/models/reaction_head_spec.rb
--'  86  4  /var/www/lims/spec/models/reaction_head_spec.rb
--'  2  2  /var/www/lims/lib/head.rb
--'  65  23  /var/www/lims/spec/models/reaction_head_spec.rb
--'  4  0  /var/www/lims/spec/models/reaction_head_spec.rb
--'  1  0  /var/www/lims/spec/models/sample_procedure_spec.rb
--'  98  0  /var/www/lims/spec/models/sample_procedure_spec.rb
--'  95  29  /var/www/lims/spec/models/sample_procedure_spec.rb
--'  94  19  /var/www/lims/spec/models/sample_procedure_spec.rb
--'  84  11  /var/www/lims/spec/models/sample_procedure_spec.rb
--'  10  43  /var/www/lims/lib/procedure.rb
--'  88  4  /var/www/lims/spec/models/sample_procedure_spec.rb
--'  1  0  /var/www/lims/spec/factories/precheck_codes.rb
--'  28  10  /var/www/lims/spec/fixtures/plasmid_codes.yml
--'  67  2  /var/www/lims/spec/fixtures/precheck_codes.yml
--'  18  14  /var/www/lims/app/views/layouts/application.html.haml
--'  395  2  /var/www/lims/spec/fixtures/quality_codes.yml
--'  55  2  /var/www/lims/spec/fixtures/quality_codes.yml
--'  3  0  /var/www/lims/spec/fixtures/quality_codes.yml
--'  1  0  /var/www/lims/spec/factories/quality_codes.rb
--'  17  19  /var/www/lims/app/views/layouts/application.html.haml
--'  19  4  /var/www/lims/app/views/layouts/application.html.haml
--'  6  19  /var/www/lims/app/views/sample_boards/_td_typesetting.html.haml
--'  6  6  /var/www/lims/db/migrate/20130121093238_create_sample_heads.rb
--'  1  0  /var/www/lims/app/views/sample_boards/_td_typesetting.html.haml
--'  4  0  /var/www/lims/db/migrate/20130109054130_create_quality_codes.rb
--'  10  6  /var/www/lims/db/migrate/20130109054130_create_quality_codes.rb
--'  34  2  /var/www/lims/app/models/user.rb
--'  28  2  /var/www/lims/app/models/user.rb
--'  22  11  /var/www/lims/app/models/user.rb
--'  23  0  /var/www/lims/app/models/role.rb
--'  14  2  /var/www/lims/app/models/permission.rb
--'  41  29  /var/www/lims/Gemfile
--'  1  0  /var/www/lims/app/models/menu.rb
--'  11  0  /var/www/lims/app/models/menu.rb
--'  5  44  /var/www/lims/db/migrate/20130108084532_create_menus.rb
+-'  106  14  ~/.ssh/config
+-'  103  14  ~/.ssh/config
+-'  95  0  ~/.ssh/config
+-'  37  11  ~/.ssh/config
+-'  33  16  ~/.ssh/config
+-'  1  0  ~/etc/alternatives/php-cgi
+-'  79  0  ~/etc/alternatives/rename
+-'  1  0  ~/etc/alternatives/rename
+-'  61  0  ~/desktop/wp-nova-1.1/wp-nova-1.1/nova/nova/header.php
+-'  1  0  ~/desktop/wp-nova-1.1/wp-nova-1.1/nova/nova/header.php
+-'  25  0  ~/desktop/wp-nova-11/wp-nova-1.1/nova (2)/nova/index.php
+-'  1  0  ~/desktop/wp-nova-11/wp-nova-1.1/nova (2)/nova/index.php
+-'  83  12  ~/desktop/jquery.jqplot/examples/example.js
+-'  62  35  ~/desktop/jquery.jqplot/examples/example.js
+-'  107  9  ~/desktop/jquery.jqplot/examples/example.js
+-'  61  32  ~/desktop/jquery.jqplot/examples/example.js
+-'  61  0  ~/desktop/jquery.jqplot/examples/area.html
+-'  1  0  ~/desktop/jquery.jqplot/examples/area.html
+-'  4  9  ~/bash_script/test
+-'  18  0  ~/.ssh/known_hosts
+-'  3  0  ~/.ssh/known_hosts
+-'  67  0  ~/.ssh/config
+-'  100  1  ~/.ssh/config
+-'  107  10  ~/.ssh/config
+-'  77  21  ~/.ssh/config
+-'  41  21  ~/.ssh/config
+-'  7  10  ~/.ssh/config
+-'  11  32  ~/.ssh/config
+-'  13  5  ~/.ssh/config
+-'  40  0  ~/ruby_script/cap-recipes/examples/simple/deploy.rb
+-'  8  0  ~/ruby_script/cap-recipes/examples/simple/deploy.rb
+-'  16  0  ~/ruby_script/cap-recipes/examples/simple/deploy.rb
+-'  6  2  /var/www/.ssh/config
+-'  7  0  /var/www/.ssh/config
+-'  1  0  /var/www/.ssh/config
+-'  39  5  ~/ruby_script/cap-recipes/examples/advanced/deploy.rb
+-'  1  0  ~/ruby_script/cap-recipes/examples/advanced/deploy.rb
+-'  1  0  ~/ruby_script/cap-recipes/examples/advanced/NERD_tree_2
+-'  6  0  ~/ruby_script/cap-recipes/examples/advanced/NERD_tree_2
+-'  6  0  ~/ruby_script/cap-recipes/examples/advanced/NERD_tree_1
+-'  1  0  ~/ruby_script/cap-recipes/examples/advanced/NERD_tree_1
+-'  22  0  ~/ruby_script/cap-recipes/examples/simple/deploy.rb
+-'  1  0  ~/ruby_script/cap-recipes/examples/simple/deploy.rb
+-'  95  0  ~/desktop/a.htm
+-'  55  0  ~/mbox
+-'  13  0  ~/mbox
+-'  5  8  /var/www/Fixed-Header-Table/demo/demo.html
+-'  6  8  /var/www/Fixed-Header-Table/demo/demo.html
+-'  1  0  /var/www/Fixed-Header-Table/demo/demo.js
+-'  1  0  /var/www/Fixed-Header-Table/demo/demo.html
+-'  50  14  /var/www/Fixed-Header-Table/demo/demo.html
+-'  1  0  ~/ruby_script/bioruby/sample/biofetch.rb
+-'  1  0  ~/ruby_script/em-websocket/examples/echo.rb
+-'  10  29  ~/ruby_script/em-websocket/examples/echo.rb
+-'  1  0  ~/ruby_script/s1.seq
+-'  1  0  ~/ruby_script/restclient.rb
+-'  104  2  ~/ruby_script/restclient.rb
+-'  2  13  /usr/share/phpmyadmin/test.php
+-'  1  0  /usr/share/phpmyadmin/test.php
+-'  1  0  /usr/share/phpmyadmin/phpinfo.php
+-'  12  0  ~/ruby_script/bioruby/sample/demo_blast_report.rb
+-'  59  19  ~/ruby_script/bioruby/sample/demo_blast_report.rb
+-'  77  19  ~/ruby_script/bioruby/sample/demo_blast_report.rb
+-'  7  0  ~/ruby_script/bioruby/sample/blast.rb
+-'  1  0  ~/ruby_script/bioruby/sample/blast.rb
+-'  247  0  ~/ruby_script/bioruby/sample/biofetch.rb
+-'  429  0  ~/ruby_script/bioruby/sample/biofetch.rb
+-'  572  0  ~/ruby_script/bioruby/sample/biofetch.rb
+-'  7  22  ~/ruby_script/socket_server.rb
+-'  5  22  ~/ruby_script/socket_server.rb
+-'  13  0  ~/ruby_script/em.rb
+-'  9  6  ~/ruby_script/em-websocket/examples/echo.rb
+-'  35  57  ~/ruby_script/em-websocket/examples/echo.rb
+-'  31  48  ~/ruby_script/em-websocket/examples/echo.rb
+-'  26  0  ~/ruby_script/em-websocket/examples/echo.rb
+-'  5  5  ~/ruby_script/em-websocket/examples/echo.rb
+-'  20  6  ~/ruby_script/em-websocket/examples/echo.rb
+-'  13  6  ~/ruby_script/em-websocket/examples/echo.rb
+-'  17  6  ~/ruby_script/em-websocket/examples/echo.rb
+-'  8  40  ~/ruby_script/em-websocket/examples/echo.rb
+-'  18  18  ~/ruby_script/em-websocket/examples/echo.rb
+-'  1  0  ~/ruby_script/em.rb
+-'  4  13  ~/ruby_script/test1.rb
+-'  14  0  ~/ruby_script/config.ru
+-'  1  0  ~/ruby_script/config.ru
+-'  40  251  ~/ruby_script/socky-example/public/javascripts/socky.min.js
+-'  1  0  ~/ruby_script/socky-example/public/javascripts/socky.min.js
+-'  26  46  ~/ruby_script/socky-example/public/javascripts/application.js
+-'  1  0  ~/ruby_script/socky-example/public/javascripts/application.js
+-'  1  20  ~/ruby_script/socky-example1/public/javascripts/application.js
+-'  23  44  ~/ruby_script/socky-example1/public/javascripts/application.js
+-'  45  36  ~/ruby_script/socky-example1/public/javascripts/application.js
+-'  28  36  ~/ruby_script/socky-example1/public/javascripts/application.js
+-'  83  12  ~/desktop/jquery.jqplot/examples/example.js
+-'  62  35  ~/desktop/jquery.jqplot/examples/example.js
+-'  107  9  ~/desktop/jquery.jqplot/examples/example.js
+-'  61  32  ~/desktop/jquery.jqplot/examples/example.js
+-'  61  0  ~/desktop/jquery.jqplot/examples/area.html
 
 # 缓冲区列表:
-%~/.ssh/config	57	0
+%~/.ssh/config	106	14
 
 # 文件内的标记历史记录 (从新到旧):
 
 > ~/.ssh/config
-	"	57	0
-	.	55	0
-	+	61	13
-	+	61	16
-	+	61	0
-	+	55	0
+	"	106	14
+	^	103	15
+	.	103	14
+	+	55	10
+	+	57	15
+	+	59	1
+	+	58	1
+	+	59	26
+	+	61	11
+	+	62	12
+	+	63	18
+	+	64	1
+	+	65	1
+	+	67	13
+	+	69	16
+	+	73	8
+	+	75	13
+	+	77	1
+	+	76	1
+	+	77	24
+	+	79	12
+	+	80	12
+	+	81	17
+	+	85	14
+	+	86	8
+	+	87	19
+	+	91	13
+	+	93	18
+	+	92	14
+	+	94	0
+	+	95	13
+	+	96	12
+	+	97	18
+	+	95	13
+	+	97	18
+	+	98	1
+	+	100	35
+	+	97	26
+	+	100	0
+	+	3	21
+	+	96	0
+	+	95	0
+	+	100	1
+	+	98	1
+	+	9	18
+	+	11	0
+	+	10	1
+	+	11	1
+	+	9	22
+	+	11	1
+	+	10	1
+	+	17	0
+	+	16	1
+	+	13	11
+	+	15	10
+	+	17	27
+	+	107	10
+	+	107	15
+	+	107	0
+	+	107	1
+	+	107	1
+	+	31	7
+	+	33	10
+	+	35	21
+	+	15	21
+	+	13	10
+	+	13	0
+	+	13	0
+	+	13	8
+	+	11	32
+	+	7	0
+	+	99	0
+	+	100	0
+	+	35	32
+	+	41	0
+	+	17	32
+	+	47	32
+	+	59	32
+	+	77	0
+	+	107	0
+	+	31	11
+	+	33	16
+	+	31	11
+	+	33	10
+	+	101	9
+	+	103	14

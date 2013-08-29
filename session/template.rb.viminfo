@@ -8,101 +8,117 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/home
+~MSle0~/ntop
 
 # Last Substitute Search Pattern:
-~MSle0& 
+~MSle0&params
 
 # Last Substitute String:
-$
+$board
 
 # Command Line History (newest to oldest):
 :q
-:e .vimrc
-:q!
-:vimimhelp
-:vimim
-:mycloud __getname
-:mycloud__getname
-:e
-:e dell.sh
-:'<,'>q
-:vs add_tap
-:Rview send_result/attachment.haml
-:Rview send_result/send_order.haml
-:Rview attachment.haml
-:Rmailer send_result
-:'<,'>s/ /,/g
-:'<,'>%s/ /,/g
-:%s/19775/19776/g
-:%s/20120929-C01/20120929-C02/g
-:Rmailer promotion
-:%s/19772/19773/g
-:%s/20120928-C04/20120928-C05/g
-:%s/19771/19772/g
-:%s/20120928-C03/20120928-C04/g
-:%s/20120928-C02/20120928-C03/g
-:%s/19770/19771/g
-:æ¡Œé¢/te/dna_yinwuinfo.sql
-:%s/19768/19770/g
-:%s/20120928-C01/20120928-C02/g
-:%s/ 0px/ #000000 1px solid;/g
-:%s/0px/ #000000 1px solid;/g
-:%s/-WIDTH//g
-:%s/BORDER-RIGHT-WIDTH/BORDER-RIGHT/g
-:%s/0px/black 1px solid/g
-:w
-:%s/0px/1px/g
+:Rtask replace_reaction_file
+:Rtask primer
+:Renvironment development
+:Rmodel project
+:Rmigration create_projects
+:Rview projects/conv.html.haml
+:Rview invoices/mine.html.haml
+:Rview invoices/_table.html.haml
+:vsplit Gemfile
+:Rview _flow_table.html.haml
+:Rview invoices/relating.html.haml
+:Rmodel checkout
+:Rview _updated_in_days.html.haml
+:Rview my_ht.html.haml
+:R
+:tabedit Gemfile
+:Rmodel user
+:Rmodel 
+:Rcontroller projects
+:vsplit 
+:Rview projects/my_conv.html.haml
+:!q
+:Renvironment production
+:Rmodel company
+:Rmodel primer
+:vs Gemfile
+:Rcontroller syntheses
+:Rmodel aminolysis
+:vs /var/www/lims/Gemfile
+:e Gemfile
+:e lib/statistic.rb
+:e config/data.yml
+:l:R
+:Rlocale menus.cn.yml
+:Rfixtures menus.yml.erb
+:Rspec models/get_payment
+:Rfixtures get_payments.rb
+:Rspec models/checkout
+:Rlocale get_payments.cn.yml
+:Rmodel get_payment
+:Rmigration create_get_payments
+:Rspec models/vector
+:Rmodel vector
+:Rmodel primer_board
+:Rjavascript statistic_sample_head
+:Rview home/index.html.haml
+:e config/routes.rb
+:Rcontroller home
+:Rjavascript home
 
 # Search String History (newest to oldest):
-?/home/vimim/svn/mycloud/server/
-?/dscj
-?/doorkeeper
-?/permissions_roles
-?/menus_roles
-?/a18
-?/a1
-?/id
-?/75
-?/m
-?/config
-?/B06
-?/B04
-?/B02
-?/git
-?  
-? 19775
-? 20120929-C01
-? 19772
-? 20120928-C04
-? 19771
-? 20120928-C03
-? 20120928-C02
-? 19770
-? 19768
-? 20120928-C01
-?/img
-?  0px
-?/ 0px
-?/0px
-?/éƒ¨é—¨ä¸»ç®¡
-? 0px
-? -WIDTH
-?/-WIDTH
-? BORDER-RIGHT-WIDTH
-?/å¤‡æ³¨
-?/BORDER-RIGHT-WIDTH
-??\VBORDER-RIGHT-WIDTH
-? \<RIGHT\>
-? \<BORDER\>
-? \<1px\>
-? \<solid\>
-?/è´¢åŠ¡ç»ç†
-?/%s/0px/1px/g
-?/setup
-?/ap
-?/2477277
-?/
+?/ntop
+?/super
+? \<generate_sn\>
+?/before_
+?/before_save
+?/nto
+?/before_cre
+?/before_s=
+?/hoo
+?/sn
+?/s
+?/balance
+?/area_id
+?/projects
+?/def conv
+?/compi
+?/has_
+?/scope
+?/lab
+?/zip
+?/prawn
+?/mini
+?/carri
+?/simple-na
+?/haml-
+?/compass
+?/temppath
+?/hook
+?/sample
+?/title
+?/home
+?/=>
+?/resources :primers
+?/primers
+?/new_primers
+?/checkout
+?/validation
+?/TYP
+? \<prepayment_company_id\>
+? \<prepayment_client_id\>
+?/record
+?/to_s
+?/owner
+?/validate
+?/create_quality
+?/after_des
+?/h
+?/destroy
+?/primer_dilutions
+? \<primer_dilution_logs\>
 
 # Expression History (newest to oldest):
 
@@ -112,285 +128,203 @@ $
 
 # å¯„å­˜å™¨:
 "0	LINE	0
-	Host 10.0.0.100
-	 User clh
-	 Hostname 10.0.0.100
-	 #PreferredAuthentications publickey
-	 #IdentityFile ~/.ssh/lenovo
-	 IdentitiesOnly yes
+	    self.sn = "#{self.year}-09-#{self.project_type.code}-#{self.year_sn}"
 ""1	LINE	0
-	 #PreferredAuthentications publickey
-	 #IdentityFile ~/.ssh/lenovo
+	
 "2	LINE	0
-		<meta name="Keywords" content="YES!B/S!,webæ ‡å‡†,æ¨æ­£ç¥,åšå®¢å›­,å®ä¾‹ä»£ç " />
+	
 "3	LINE	0
-		<meta name="Description" content="è¿™æ˜¯ä¸€ä¸ªç®€å•YES!B/S!æ–‡ç« ç¤ºä¾‹é¡µé¢,æ¥è‡ªæ¨æ­£ç¥çš„åšå®¢,http://justinyoung.cnblogs.com/" />
+	  auth_basic "nagois auth";
+	  auth_basic_user_file /etc/nagios3/htpasswd.users;
 "4	LINE	0
 	
 "5	LINE	0
-	
+	  #log_format nagios '$document_root $http_referer [$time_local]';
 "6	LINE	0
-	cd /home/vimim/svn/mycloud/server/
-	file_in  = 'pinyin.txt'
-	file_out = 'vimim.gbk.bsddb'
-	import bsddb
-	db = bsddb.btopen(file_out,'n')
-	for line in sorted(open(file_in).readlines()):
-	    key, sep, value = line.strip().partition(" ")
-	    if key in db:
-	        if len(value.split()[0]) > len(db[key].split()[0]):
-	            value = db[key] + " " + value
-	        else:
-	            value = value + " " + db[key]
-	    db[key] = value
-	 #  db[key] = unicode(value,'utf8').encode('gb18030')
-	db.close()
-	
-	let bsddb = 'vimim.gbk.bsddb'
-	if has("python")
-	    :python import vim, bsddb
-	    :python  db =  bsddb.btopen(vim.eval('bsddb'),'r')
-	  " :python  db =   anydbm.open(vim.eval('bsddb'),'r')
-	  " :python3 db = dbm.dumb.open(vim.eval('bsddb'),'r')
-	endif
-	
-	function! g:vimim_get_database()
-	:sil!python << EOF
-	import vim, urllib
-	url = 'http://vimim.googlecode.com/svn/trunk/plugin/vimim.gbk.bsddb'
-	filename = vim.eval('s:path') + 'vimim.gbk.bsddb'
-	urllib.urlretrieve(url, filename)
-	EOF
-	endfunction
+	      logger.info 'a' * 20
 "7	LINE	0
-	
-"8	BLOCK	3
-	>>> 
-	>>> 
-	>>> 
-	>>> 
-	>>> 
-	>>> 
-	>>> 
-	>>> 
-	>>> 
-	>>> 
-	>>> 
-	>>> 
-	>>> 
-	>>> 
-	>>> 
-	>>>
-	>>> 
-	>>> 
-	>>> 
-	>>> 
-	>>> 
-	>>> 
-	>>> 
-	>>>
-	>>> 
-	>>> 
-	>>> 
-	>>> 
-	>>> 
-	>>> 
-	>>> 
-	>>> 
-"9	BLOCK	2
-	>>>
-	>>>
-	>>>
-	>>>
-	>>>
-	>>>
-	>>>
-	>>>
-	>>>
-	>>>
-	>>>
-	>>>
-	>>>
-	>>>
-	>>>
-	>>>
-	>>>
-	>>>
-	>>>
-	>>>
-	>>>
-	>>>
-	>>>
-	>>>
-	>>>
-	>>>
-	>>>
-	>>>
-	>>>
-	>>>
-	>>>
-	>>>
+	      logger.info 'a' * 20
+"8	LINE	0
+	    if self.class.where(sn: self.sn).count > 1
+	      self.generate_sn
+	    end
+"9	LINE	0
+	    - else
+"b	BLOCK	23
+	 NOT NULL AUTO_INCREMENT
+"c	CHAR	0
+	267
+<wcbcwcreated_datewwwwbwwcwcreated_date_from€k3gtggjjjjjjjjjjkjkkwwwwwwwwwwwwwwwwwcwcreated_date_to€k3€ıL€ıL€ı,€ı.i@jjkfdi@jk;;i@jkkkkkkj/datanni@nni@nnnnnni@nni@nni@nni@#xnnI@uunni#€kb@nni@nni@nni@nni@nni@nni@nni@nni@nni@nni@nni@nni@nn
+"g	CHAR	0
+	
+"i	CHAR	0
+	347
+<""""i""iquadrantoreaction_board_id = _this.a€kbparn€kbent().attr()i""re€kb€kbireaction_board_I€kbid€k3kkkkkYGpwwwwwwwwwwwCbbbbddkkkkkkkYjVkyjGpzzjwwwwwwwwvf]sp[€kb€kb[]i""hireaction_board=€kb_id=lli  i++i  ireaction_board_idllllla[]iquadrna€kb€kbant=""i  i++i  iquadrant€k3€k3€k3€k3€k3€ı,€ı.€k3€k3€k3€k3€k3€k3€k3€ı,€ı.veee
+"k	CHAR	0
+	2698
+<jh:Rsp	 mo	sample/comlet€kb€kb€kbplete!jjjjjjjjkkekkkkoprecheck = o€kbdouble()iprecheck'xbi:oprecheck.stub()ipassed: true€k3zzjjjkkojjjjjkkwkkkkkkjI@#€kbjjjjjkkkko@s.stub()iprecheck: @precheckjjjjjkzzbo@s.passed.should be_niljjbo@s.passed.should eq()i@precheck.passedo@s.ddjjjjjwjjzzo@s.passed.should be_nilkkkkkkkkkkkkkk€k3bbbb€ıL€ıL€ıL€ıLgthjjjjkzzjjkkkkkkkkkkkkkkkkkjjjjjjjjjjjjjjjjjjk%%kwzzkkwwwcacwvalidatebcwvalid?€k3lhjjj%%kwoit '' doendkllitypesetted?biif ela can not be dewt€kb€kbstroyedljjzzkkkkkkkjjbjjkCcomplete!kVkdjjjjjgthkjlkkkkkkkkkkkjjjjkkkoreturn false unless p€kbself.precheckbbbbcwifbbbveeebhxjjjoendkVkk>€k3jjjjjjjjjjjbgtebzhjjjhjjjjkkkouVjdkkkkkkkwO@p.sam;pl€kb€kb€kble.shoulsample.should_re()i:complete!jjjjjjoit '' doendklliif typesetted?zza €kb, can not be destroyedlkkkkkwwwwww@##nnnnnho@p.sample.typesetted?lbbvelxnnbbvexxnn/delegateeeea, :typesetted?€k3hbcistub :A = €kb> truelnkkkwwwww#ho@p.savekddpo@p.s€kbdestroyo@p.should_not be_destroyedjzzoit '' doendklllhiafter destroy ,€kb€kb, sample should e€kbunl€kbcop€kbmplete!o@p.saveo@p.det€kbstt€kbroyko@p.sample.typesestub t€kb:typesetted? => falsejozz€kb€kbddzzkwO@p.sample.should_rec :uncom!€k3ljjjjzzjjjzzbzzjjkzzhjjjddjk%%ocontext '' doendkwatest scopeszzobefor €kbe :each doendko@p.savezzjoit '' doendklliwhen passed, €kb€kbzzo@€kb::Precheck.passed.should be_inc€kbn€kbl()i@pko@p.s€kbpassed.should be_truejzzo::Precheck.unpassed.should_no be_inc€kb()i@pjzzoit' ' €kb€kb€kb€kb '' doendklliwhen unpassedo@p.precheck_code.stub()i:passed: €kb€kb:bhxela falsas€kbezzo@p.s€kbddkwkonew_recor€kb€kb€kb€kb€kbcode = create_precheck_code passed: falsejbbbbbbbCupdate_attribute precheck-cod€kb_code_id: new_code.ido@p.validatelkkkkkkkkkkkkkkkkkkkkhkeasjljjjjjjzzjjjjzzhbcwpassed.should be_falseokkkukkkkkkVkdujjjjjjjpjfuvlxkP€k3ljjjjzzhzzGoukoit '' doendkllitest show methodzzo@p.show €kb.should eq()lkwvf"yhPbbbbbbbbbcw@pwwwww.€k3ljjjzzjwwcwcode€k3€k3€k3€k3hjoit '' doendklliself.test to_s methodo@p.to_s.should eq()i@p.codde€kb€kbe€k3ljjjggGkkkkjjwkkkkggkjk:Rmo	 hea	h:Rsp	 sp	msp	mmo	heheat	jjjwCbefore :each doendko::@h = ::Fac.cu€kb€kbbuild :heat_cy, reaction_board_id: reactcreate_reaction_board.id€k3:Rfix	 heat	jjjwocreate€kbor_id `€kb12€kboremark ''irrrrr€k3lhoquadrant ''ixxxx€k3ljjjjjjjjjjjjkkwh:Rmi	 create_heat	joit '' doendkllihas theset €kb€kb attributes can mass-assign€k3lgghkkoit'' €kb€kb€kb '' doendklliis boardo::Heat.€kb::BOar€kb€kb.should be_true€k3jjjjzzkotest_an€kb ::HeatC€kb, []ljjwwwbv$hyhP€k3zzjjk
+"l	CHAR	0
+	
 "p	LINE	0
 	
 	
 	::::::::::::::::::::::::
 	æ—¥æœŸï¼šå…¬å…ƒ2013å¹´1æœˆ10æ—¥ã€€æ˜ŸæœŸå›› 
-	é›»è…¦ï¼šunix  0.010892 seconds 
+	é›»è…¦ï¼šunix  0.008533 seconds 
 	ç‰ˆæœ¬ï¼švi=703 
 	ç·¨ç¢¼ï¼šutf-8ã€€utf-8,ucs-bom,euc-jp,gb18030,gbk,gb2312,cp936 
 	ç’°å¢ƒï¼šzh_CN.UTF-8 
 	è©åº«ï¼šæ‹¼éŸ³è©åº«ï¼š/home/wangfan/.vim/plugin/vimim.pinyin_quote_sogou.txt 
 	è©åº«ï¼šé›²è©åº«ï¼šç™¾åº¦é›²ã€€3é›²ã€€æœç‹—é›²ã€€ï¼±ï¼±é›²ã€€ 
 	è¯ç¶²ï¼šPython2 Interface to Vim 
-	è¼¸å…¥ï¼šVimIMã€€æ‹¼éŸ³ã€€ 
+	è¼¸å…¥ï¼šVimIMã€€ã€€å°é¶´é›™æ‹¼ã€€ 
 	é¸é …ï¼švimimrc 
 	    :let g:vimim_cloud = 'baidu,3'  
-	    :let g:vimim_mode = 'static'  
-	  " :let g:vimim_map = ''  
-	  " :let g:vimim_mycloud = 0  
+	    :let g:vimim_map = 'c-bslash'  
+	    :let g:vimim_mycloud = 0  
+	    :let g:vimim_shuangpin = 'flypy'  
+	  " :let g:vimim_mode = 'dynamic'  
 	  " :let g:vimim_plugin = '/home/wangfan/.vim/plugin'  
 	  " :let g:vimim_punctuation = 2  
-	  " :let g:vimim_shuangpin = 0  
 	  " :let g:vimim_toggle = 'pinyin,baidu,3,sogou,qq' 
 	::::::::::::::::::::::::
-	-- æ’å…¥ ---- æ’å…¥ (è¯­è¨€) ---- æ’å…¥ ---- æ’å…¥ ---- æ’å…¥ (è¯­è¨€) --
 	
-	1 è¡Œè¢«å»æ‰ï¼›before #1  11 seconds ago-- æ’å…¥ --
-	
-	::::::::::::::::::::::::
-	ã€€
-	æ—¥æœŸï¼šå…¬å…ƒ2013å¹´1æœˆ10æ—¥ã€€æ˜ŸæœŸå›› 
-	::::::::::::::::::::::::
-	3242
-<-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P) åŒ¹é… 1 / 20-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P) åŒ¹é… 2 / 20-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P) åŒ¹é… 3 / 20-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P) åŒ¹é… 4 / 20-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P) åŒ¹é… 5 / 20-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P) åŒ¹é… 6 / 20-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P) åŒ¹é… 7 / 20-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P) åŒ¹é… 8 / 20-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P) åŒ¹é… 9 / 20-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P) åŒ¹é… 10 / 20-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P) åŒ¹é… 11 / 20-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P) åŒ¹é… 12 / 20-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P) åŒ¹é… 13 / 20-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P) åŒ¹é… 14 / 20-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P) åŒ¹é… 15 / 20-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P) åŒ¹é… 16 / 20-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P) åŒ¹é… 17 / 20-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P) åŒ¹é… 18 / 20-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P) åŒ¹é… 19 / 20-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P) åŒ¹é… 20 / 20-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P) å›åˆ°èµ·ç‚¹-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P) åŒ¹é… 1 / 20-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P) åŒ¹é… 2 / 20-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P) åŒ¹é… 3 / 20-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P) åŒ¹é… 4 / 20-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P) åŒ¹é… 5 / 20-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P) åŒ¹é… 6 / 20-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P) åŒ¹é… 7 / 20-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P)-- å…¨èƒ½è¡¥å…¨ (^O^N^P) åŒ¹é… 8 / 20-- æ’å…¥ (è¯­è¨€) ---- æ’å…¥ (è¯­è¨€) ---- æ’å…¥ (è¯­è¨€) --
-	-- æ’å…¥ --
-	
-	1 è¡Œå‘ç”Ÿæ”¹å˜ï¼›before #3  2 seconds ago
-	1 è¡Œè¢«å»æ‰ï¼›before #2  31 seconds ago
-	å·²ä½äºæœ€æ—§çš„æ”¹å˜
-	å·²ä½äºæœ€æ—§çš„æ”¹å˜
+	æ²¡æœ‰åŒ¹é…çš„è‡ªåŠ¨å‘½ä»¤
+	æ²¡æœ‰åŒ¹é…çš„è‡ªåŠ¨å‘½ä»¤	
+"q	CHAR	0
+	2232
+<auence€k3€kul:Rlhggl:Rlo	 primernto€kb€kboti	kkkkkex€k3€k3€k3€k3€k3€k3€k3€ı,€ı.€ıL€ıL€ı,€ı.€ı,€ı.a{}iborder: 1€k3€ı,€ı.€ıK€ıK€ı,€ı.x€k3€k3€k3€k3€ı,€ı.€ı,€ı.€ı,€ı.veeesstyle: ''iborder: 1px, €kb€kb sok€kblid;€k3€ıL€ıK€ıK€ı,€ı.€ıL€ı,€ı.€ıL€ıL€ıL€ı,€ı.€ı,€ı.€ıL€ıL€ıK€ı,€ı.€ı,€ı.€ı,€ı.€ü €ı,€ü €ı.€ı,€ı.€ı,€ı.€ı,€ı.€ü €ı,€ü €ı.€ı,€ı.€ü €ı,€ü €ı.€ı,€ı.€ü €ı,€ü €ı.€ı,€ı.€ıK€ı,€ı.:Rlo	 pi€kbrimers	ggjjjjjjjjjjjwkwhkkkkkkj$bbcwcreated_datejjjjjjjkjjbbbCcreated_date€k3jjjjjjkYjjkkhjjjljjjjjjjjjjjkkkkkkkkkkkkkkkkkkkkkkkkkkkGh€ıK€ıK€ıK€ıK€ı,€ı.a €kb, border: 1€k3€k3€ıK€ıK€ı,€ı.jo:cssotd{}iborder: 1px, so€kb€kb€kb€kb sok€kblid;€k3jjjjjjjjjjkkbbbbbbDjjzzjwwla{}iwistyle: ''iwit€kbdth: 5ema;ll%%yjPjPjzzkjP€k3€k3€k3€k3€k3€k3€k3€ıK€ıK€ıK€ıK€ıK€ı,€ı.ea, th€k3jjjjjjjjjjjjjjjjjjjjjjkkkkkkkkkkkkkjkkkj€k3€k3€k3€k3€k3€k3€k3€k3€k3€k3€ı,€ı.ves20%kkka{}istyle: ''iwidth: 100%;€k3€k3€k3€k3€k3€k3hhjjjjkljves20a%jjkbves30a%jbves30%€k3kkkkjhhr3jjjjkr2€k3€k3€k3€k3€k3€k3jjjkjjjjjjjkkkkkkkkkkkkkkkkkkkkjjj€k3€k3€k3€ıK€ıK€ı,€ı.€ı,€ı.Vjdjjjjjjjjjjjjjkkkkkkwwwwwwwwwwwbhhhxs8llllli, border: 1, cellspacing: 0jjjbbbbbbbr2jjr2€k3€k3€ı,€ı.at€kb text-align: cr€kbenter;€k3€k3€k3l:Rtask	 prim	kjzzxjjjjjjjjjjkkkkbjbjjjxkx€k3jjjjjjjjjjggx€k3€ıL€ıL€ıL€ıL€ıL€ıL€ıL€ıK€ıK€ıK€ıK€ıK€ıK€ıK€ıL€ıL€ıLggu€k3€ıL€ıL€ıL€ıL€ıL€ıL€ıL€ıK€ıKe€ıK€ıK€ıKbbggjh:e cRenvggljjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjkkkwggGkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkjjjjjjjjjjjjjjj€ı,€ı.€ıL€ıL€ıL€ı,€ı.:Rlo	 prijersprimers	kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkjjjjjwjkkkkkkkkkkkkkkjjkkkjjjhjjjjjjjkzzbYpwwwwwwwwwwwwwwwwwwcwp€kbover_datejjjjjjjjjjkkYp$bcwor€kbver_datekkkkkkkkkkkkkkjjjhhhjjjjkkkkjjkjjknjkjkkkk€k3uuuuu€k3€k3€k3€ı,€ı.b€ıL€ıL€ı,€ı.b€ı,€ı.v%%%xj.j.j.j.€k3ljjjjjjjjjjjjjjjjjkkkkkkjI#€k3€k3€k3jjjjjjjkh:Rtsa€kb€kbask	 or	jjjjjjjjkklgg:Rvi	 order	no	s€kbsen			n			sen		hjjjjjjjjjjjjjjjjjjjjjjjjjjj:Rmai	 	kGkw%jjjjjjjjjjjjjjjjjjjkkkkkkkkkkkkkkkkkl:Rs€kbtask	 or	hklkkkjwwwwwwhvex€k3hwwwwbC_mail€k3€k3€k3€k3€k3€k3€k3€k3€k3€k3jbiore€kbder_mail.bbbbbiorder_mail.€k3jkkoorder = order_mail.orderjbbbdwx€k3jjjjjjjjjjjjjjjjjjjkkkkkkkkkkkkkjjjjjjjjjjjwwex€k3€k3€k3:Rzz
+"s	CHAR	0
+	552
+<,hi,llxxepwxxxsuuf}xexepwxxxwewwxepwxxxwwllDjjwwxxewbea_tagea, params[]iswwxepwxxxwwwwwwxepwxxxwwxepwxxxjjkkjjj^wxxea_g€kbtagwwwwwxepwxxx€k3€ı,€ı.xepwxxxjjkwwwwwwwwwxepwxxxwwwwwwxepwxxxwwxepwxxxwjbbbbbbbbxepwxxx€k3€k3€ı,€ı.:Rvi	 quality_co	_ta	jkVjdljkggjjkwpVj>.jwveehxwwr xu$xbbbbbbbxepwxxx€k3hdd€k3l:Rvi	 €ı,€ı.€ıL€ıK€ıL€ı,€ı.€ı,€ı.$ibcwtruebbbbbwi, params[]i:result€k3:Rmo	 qual	Gkgg:_c	Gkwkkkwji#€k3€k3€k3€k3u€k3h:Rcon	 qua	jjjjjjjjjjjjjjjjjjjjjjjjjjjj:€kb€kb€kby_co	a, :desc€k3l:Rmo	 sample_he	G/searchgg:R
+"v	CHAR	0
+	389
+<jkV%>wveesself€k3€ıK€ıK€ıK€ıL€ıL€ıK€ıL€ıL€ı,€ı-€ı-€ı-€ı-€ı-€ı-€ı-€ı-€ı-€ı.sselfwwwwblveesself€k3gt:gtjjV%ddd€k3hjjbbbbluuwC€ı,€ı.€ı,€ı.bcwbcwc€kbmoduleA F€kb€kbFac€k3hjjjjjjbbbbveelx€k3€k3€k3€k3€k3€ı,€ı.cw::Filewwww.€k3€ı,€ı.xkjjI#€k3kY:Rfix	 hr€kbtcon	jjjjj:Rfix 	htRfix	 ht_smaple-re	€kb€kb€kb_r	:€kb€kb€kb€kb€kb€kb€kbamp		jkpdkddljjV%ddd€k3h€k3jjl€k3h
+"w	CHAR	0
+	506
+<V%yjwpjjkw$bbCnil€k3jVkkd€k3lbbbbwveeesif: ::Proc.new{}i|r| r.reaction_board && r.buuuuuhCtrue€k3€k3€k3€k3€k3€k3€k3€k3€k3€k3€k3€k3€k3hu€k3€ı,€ı.:Rmo	 heat	h:Rsp	 mo	heat	ljjwhjjwjjjjjjjkkjjjzzljjjjkzzhjjjjjjjjjjjjjjjjjljjjjkjzzhljwwwwCquadran: true€k3€k3€k3€k3hjjjjjjjjkkkwwwwwwllwwC7€k3h:Rmi	 heat	k$hC7€k3:Rfix	 heat	jjjjjjwwwwbcw1,2,3,4€k3€k2€k3€k3€k3:Rmi	 alc	jjjjkkkkklkjh:Rmi	 alc	jjkkl:Rmo	 alc	h:Rsp	 mo	aalc	lggjjwhjjjjjjjjwzzkkkkkjjjjjjjjjzzjjzz
 "-	CHAR	0
-	clh
+	nagios
 
 # å…¨å±€å˜é‡:
 
 # æ–‡ä»¶æ ‡è®°:
-'0  1  0  ~/ruby_script/template.rb
-'1  1  0  ~/ruby_script/reg.rb
-'2  1  0  ~/ruby_script/my_lib.rb
-'3  1  0  ~/ruby_script/emails
-'4  1  0  ~/ruby_script/clients_helper.rb
-'5  13  0  ~/mbox
-'6  1  0  ~/desktop/æ¯æœˆæ€»æ•°æ®ç»Ÿè®¡2013-01-01_2013-02-28.csv
-'7  94  0  ~/.ssh/config
-'8  1  0  ~/desktop/invoice2013-01-01-2013-01-31.csv
-'9  13  0  ~/desktop/invoice2013-01-01-2013-01-31.csv
+'0  1  0  /home/wangfan/ruby_script/template.rb
+'1  35  0  /home/wangfan/ruby_script/send_to_gmail.rb
+'2  14  0  /home/wangfan/ruby_script/reg.rb
+'3  1  0  /home/wangfan/ruby_script/reg
+'4  1  0  /home/wangfan/ruby_script/my_lib.rb
+'5  16  8  /home/wangfan/ruby_script/clients_helper.rb
+'6  6  34  /etc/nginx/sites-enabled/awstats
+'7  1  0  /etc/awstats/awstats.conf.local
+'8  122  0  /etc/awstats/awstats.conf
+'9  17  0  /etc/hosts
 
 # è·³è½¬åˆ—è¡¨ (ä»æ–°åˆ°æ—§):
--'  1  0  ~/ruby_script/template.rb
--'  1  0  ~/ruby_script/reg.rb
--'  1  0  ~/ruby_script/my_lib.rb
--'  1  0  ~/ruby_script/emails
--'  1  0  ~/ruby_script/clients_helper.rb
--'  13  0  ~/mbox
--'  1  0  ~/mbox
--'  1  0  ~/desktop/æ¯æœˆæ€»æ•°æ®ç»Ÿè®¡2013-01-01_2013-02-28.csv
--'  94  0  ~/.ssh/config
--'  85  0  ~/.ssh/config
--'  87  10  ~/.ssh/config
--'  1  0  ~/desktop/invoice2013-01-01-2013-01-31.csv
--'  13  0  ~/desktop/invoice2013-01-01-2013-01-31.csv
--'  90  18  ~/.ssh/config
--'  79  0  ~/.ssh/config
--'  84  17  ~/.ssh/config
--'  29  0  ~/desktop/service_types.sql
--'  1  0  ~/desktop/service_types.sql
--'  1  0  ~/ä¸‹è½½/sale_project.csv
--'  1  0  ~/desktop/template.csv
--'  67  13  ~/.ssh/config
--'  77  24  ~/.ssh/config
--'  35  299  ~/desktop/2013-01-15.csv
--'  1  0  ~/desktop/2013-01-15.csv
--'  1  0  ~/desktop/2013-01-14 (1).csv
--'  1  0  ~/desktop/2013-01-11.csv
--'  19  9  ~/desktop/gchartExample001/articleExample001.html
--'  1  0  ~/desktop/gchartExample001/articleExample001.html
--'  109  0  ~/.vimrc
--'  113  0  ~/.vimrc
--'  114  6  ~/.vimrc
--'  22  0  ~/.vimrc
--'  111  20  ~/.vimrc
--'  112  35  ~/.vimrc
--'  110  0  ~/.vimrc
--'  1  0  ~/.vimrc
--'  56  4  /var/www/user_passport/Gemfile.lock
--'  1  0  /var/www/user_passport/Gemfile.lock
--'  97  0  /var/www/sino_project/app/assets/javascripts/jquery_countdown.js
--'  1  0  /var/www/sino_project/app/assets/javascripts/jquery_countdown.js
--'  1  0  ~/desktop/jquery.countdown.js
--'  76  1  ~/.ssh/config
--'  1  0  ~/.ssh/mysql.pub
--'  1  0  ~/.ssh/ibm2.pub
--'  1  0  ~/.ssh/ibm2
--'  55  0  ~/.ssh/config
--'  17  18  ~/.ssh/config
--'  38  130  ~/kvm/debian.sh
--'  1  0  ~/kvm/debian.sh
--'  1  0  ~/kvm/dell.sh
--'  36  24  ~/kvm/dell.sh
--'  38  125  ~/kvm/dell.sh
--'  72  18  ~/.ssh/config
--'  1666  0  ~/desktop/sino_project_development.sql
--'  1175  0  ~/desktop/sino_project_development.sql
--'  324  0  ~/desktop/sino_project_development.sql
--'  1  0  ~/desktop/sino_project_development.sql
--'  1  0  /tmp/gi_screen.png
--'  1  0  /tmp/libvimim.so
--'  38  119  ~/kvm/add_tap
--'  27  0  ~/kvm/add_tap
--'  1  0  ~/kvm/dell.
--'  2  0  ~/kvm/DELL.iso
--'  1  0  ~/kvm/DELL.iso
--'  1  0  ~/desktop/a2.html
--'  151  5  ~/desktop/a2.html
--'  165  4  ~/desktop/a2.html
--'  15  19  ~/desktop/a2.html
--'  14  4  ~/desktop/a2.html
--'  9  31  ~/desktop/a2.html
--'  164  13  ~/desktop/a2.html
--'  7  14  ~/desktop/a2.html
--'  125  25  ~/desktop/a2.html
--'  114  43  ~/desktop/a2.html
--'  71  43  ~/desktop/a2.html
--'  6  0  ~/desktop/aaaaaa.html
--'  112  6  ~/desktop/aaaaaa.html
--'  46  0  ~/desktop/aaaaaa.html
--'  1  0  ~/desktop/aaaaaa.html
--'  61  0  ~/.ssh/config
--'  11  0  ~/.ssh/config
--'  20  0  ~/.ssh/known_hosts
--'  7  0  ~/.ssh/known_hosts
--'  5  0  ~/bash_script/route
--'  1  0  ~/bash_script/route
--'  7  0  ~/.ssh/config
--'  1  0  ~/.ssh/known_hosts
--'  23  1  ~/.ssh/config
--'  65  1  ~/.ssh/config
--'  1  8  ~/desktop/wangchengyanqq
--'  16  0  ~/desktop/å·¥ä½œ/V
--'  1  0  ~/desktop/å·¥ä½œ/V
--'  52  0  ~/desktop/mysql
--'  31  0  ~/desktop/mysql
--'  19  35  ~/desktop/ZendGuardLoader-php-5.3-linux-glibc23-x86_64/README.txt
--'  1  0  ~/desktop/ZendGuardLoader-php-5.3-linux-glibc23-x86_64/README.txt
--'  38  50  ~/kvm/hp.sh
--'  1  0  ~/kvm/hp.sh
--'  1  0  ~/kvm/hp.
+-'  1  0  /home/wangfan/ruby_script/template.rb
+-'  35  0  /home/wangfan/ruby_script/send_to_gmail.rb
+-'  1  0  /home/wangfan/ruby_script/send_to_gmail.rb
+-'  14  0  /home/wangfan/ruby_script/reg.rb
+-'  1  0  /home/wangfan/ruby_script/reg.rb
+-'  1  0  /home/wangfan/ruby_script/reg
+-'  1  0  /home/wangfan/ruby_script/my_lib.rb
+-'  16  8  /home/wangfan/ruby_script/clients_helper.rb
+-'  1  0  /home/wangfan/ruby_script/clients_helper.rb
+-'  6  34  /etc/nginx/sites-enabled/awstats
+-'  1  0  /etc/nginx/sites-enabled/awstats
+-'  1  0  /etc/awstats/awstats.conf.local
+-'  122  0  /etc/awstats/awstats.conf
+-'  1  0  /etc/awstats/awstats.conf
+-'  17  0  /etc/hosts
+-'  27  21  /etc/hosts
+-'  6  2  /var/www/lims/lib/tasks/replace_reaction_file.rake
+-'  13  18  /var/www/lims/lib/tasks/replace_reaction_file.rake
+-'  1  0  /var/www/lims/lib/tasks/primer.rake
+-'  4  20  /var/www/sino_project/app/models/project.rb
+-'  67  6  /var/www/sino_project/app/models/project.rb
+-'  167  11  /var/www/sino_project/app/models/project.rb
+-'  64  6  /var/www/sino_project/app/models/project.rb
+-'  115  4  /var/www/sino_project/app/models/project.rb
+-'  168  4  /var/www/sino_project/app/models/project.rb
+-'  103  6  /var/www/sino_project/app/models/project.rb
+-'  59  17  /var/www/sino_project/app/models/project.rb
+-'  68  4  /var/www/sino_project/app/models/project.rb
+-'  89  24  /var/www/sino_project/app/models/project.rb
+-'  171  4  /var/www/sino_project/app/models/project.rb
+-'  66  24  /var/www/sino_project/app/models/project.rb
+-'  36  28  /var/www/sino_project/config/environments/development.rb
+-'  1  0  /var/www/sino_project/config/environments/development.rb
+-'  73  2  /var/www/sino_project/app/models/project.rb
+-'  57  2  /var/www/sino_project/app/models/project.rb
+-'  170  7  /var/www/sino_project/app/models/project.rb
+-'  88  11  /var/www/sino_project/app/models/project.rb
+-'  81  0  /var/www/sino_project/app/models/project.rb
+-'  162  2  /var/www/sino_project/app/models/project.rb
+-'  161  4  /var/www/sino_project/app/models/project.rb
+-'  111  4  /var/www/sino_project/app/models/project.rb
+-'  264  2  /var/www/sino_project/app/models/project.rb
+-'  173  2  /var/www/sino_project/app/models/project.rb
+-'  176  4  /var/www/sino_project/app/models/project.rb
+-'  65  4  /var/www/sino_project/app/models/project.rb
+-'  1  0  /var/www/sino_project/app/models/project.rb
+-'  1  0  /etc/hosts
+-'  11  4  /etc/nginx/sites-enabled/proxy
+-'  1  0  /etc/nginx/sites-enabled/proxy
+-'  71  32  /var/www/sino_project/app/models/project.rb
+-'  58  0  /var/www/sino_project/app/models/project.rb
+-'  386  4  /var/www/sino_project/app/models/project.rb
+-'  34  36  /var/www/sino_project/db/migrate/20121019062603_create_projects.rb
+-'  11  16  /var/www/sino_project/db/migrate/20121019062603_create_projects.rb
+-'  4  82  /var/www/sino_project/db/migrate/20121019062603_create_projects.rb
+-'  28  6  /var/www/sino_project/db/migrate/20121019062603_create_projects.rb
+-'  11  6  /var/www/sino_project/app/views/projects/conv.html.haml
+-'  4  90  /var/www/sino_project/app/views/invoices/_table.html.haml
+-'  1  0  /var/www/sino_project/app/views/invoices/_table.html.haml
+-'  78  0  /var/www/sino_project/Gemfile
+-'  1  0  /var/www/sino_project/app/views/invoices/_flow_table.html.haml
+-'  1  0  /var/www/sino_project/app/views/invoices/relating.html.haml
+-'  3  2  /var/www/sino_project/app/models/checkout.rb
+-'  10  2  /var/www/sino_project/app/models/checkout.rb
+-'  3  0  /var/www/sino_project/app/models/project.rb
+-'  15  146  /var/www/sino_project/app/views/projects/_updated_in_days.html.haml
+-'  7  25  /var/www/sino_project/app/views/projects/_updated_in_days.html.haml
+-'  4  3  /var/www/sino_project/app/views/projects/_updated_in_days.html.haml
+-'  7  0  /var/www/sino_project/app/views/projects/conv.html.haml
+-'  118  4  /var/www/sino_project/app/controllers/projects_controller.rb
+-'  252  28  /var/www/sino_project/app/controllers/projects_controller.rb
+-'  1  0  /var/www/sino_project/app/views/projects/my_conv.html.haml
+-'  17  27  ~/.ssh/config
+-'  1  0  ~/.ssh/config
+-'  21  4  /usr/share/torrentflux/www/index.php
+-'  11  4  /etc/nginx/sites-enabled/proxy
+-'  1  0  /etc/nginx/sites-enabled/proxy
+-'  34  36  /var/www/sino_project/db/migrate/20121019062603_create_projects.rb
+-'  11  16  /var/www/sino_project/db/migrate/20121019062603_create_projects.rb
+-'  4  82  /var/www/sino_project/db/migrate/20121019062603_create_projects.rb
+-'  28  6  /var/www/sino_project/db/migrate/20121019062603_create_projects.rb
+-'  6  2  /var/www/lims/lib/tasks/replace_reaction_file.rake
+-'  13  18  /var/www/lims/lib/tasks/replace_reaction_file.rake
+-'  1  0  /var/www/lims/lib/tasks/primer.rake
+-'  4  20  /var/www/sino_project/app/models/project.rb
+-'  67  6  /var/www/sino_project/app/models/project.rb
+-'  167  11  /var/www/sino_project/app/models/project.rb
+-'  64  6  /var/www/sino_project/app/models/project.rb
+-'  115  4  /var/www/sino_project/app/models/project.rb
+-'  168  4  /var/www/sino_project/app/models/project.rb
+-'  103  6  /var/www/sino_project/app/models/project.rb
+-'  59  17  /var/www/sino_project/app/models/project.rb
+-'  68  4  /var/www/sino_project/app/models/project.rb
+-'  89  24  /var/www/sino_project/app/models/project.rb
+-'  171  4  /var/www/sino_project/app/models/project.rb
+-'  66  24  /var/www/sino_project/app/models/project.rb
+-'  36  28  /var/www/sino_project/config/environments/development.rb
+-'  1  0  /var/www/sino_project/config/environments/development.rb
+-'  73  2  /var/www/sino_project/app/models/project.rb
 
 # ç¼“å†²åŒºåˆ—è¡¨:
-%~/ruby_script/template.rb	1	0
+%/home/wangfan/ruby_script/template.rb	1	0
 
 # æ–‡ä»¶å†…çš„æ ‡è®°å†å²è®°å½• (ä»æ–°åˆ°æ—§):
 
-> ~/ruby_script/template.rb
+> /home/wangfan/ruby_script/template.rb
 	"	1	0
