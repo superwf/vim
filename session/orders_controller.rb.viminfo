@@ -8,117 +8,117 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/csv
+~MSle0~/edit
 
 # Last Substitute Search Pattern:
-~MSle0&params
+~MSle0&plasmid_code
 
 # Last Substitute String:
-$board
+$
 
 # Command Line History (newest to oldest):
 :q
-:Rcontroller orders
-:Rmodel order
-:Rmigration create_reaction_boards
-:Rmodel sample
-:Rview sample_boards/_td_typesetting.html.haml
-:e lib/hole.rb
-:Rspec models/reaction_board
-:Rmodel reaction_board
-:Rmodel sample_flow_go_observer
-:Rfixtures order_mails.rb
-:Rmigration create_order_mails
-:Rspec models/order_mail
-:Rmodel order_mail
-:Rview orders/_ajax_search.html.haml
-:Rview samples/_ajax_search.html.haml
-:Rcontroller samples
-:Rview samp
-:Rview _
-:Rview samples/_search.html.haml
-:Rspec models/sample_cancel_log
-:Rmigration create_sample_cancel_logs
-:Rmodel sample_cancel_log
-:Rfixtures sample_cancel_logs.rb
-:Rjavascript superwf
-:Rmodel primer
-:Rmodel client
-:Rmodel precheck
-:Rspec models/order
-:Rmigration create_samples
-:Rmodel reaction
-:Rview orders/_table.html.haml
-:Rmigration create_qualities
-:Rmigration create_reactions
-:Rspec models/sample
-:w
-:Rmigration create_prechecks
-:e spec/spec_helper.rb
-:Rfixtures precheck_codes.rb
-:Rlocale precheck_codes.cn.yml
-:R
-:e lib/code.rb
-:Rmodel precheck_code
-:Rspec models/precheck
-:Rmigration plasmids
-:Rfixtures plasmids.rb
-:Rmigration create_plasmids
-:Rspec models/plasmid
-:Rmodel plasmid
+:Rview orders/_search.html.slim
+:Rview checkouts/_search.html.slim
+:Rlocale checkouts.cn.yml
+:Rview primers/index.js.erb
 :Rcontroller primers
+:Rview 
+:Rview orders/edit.html.slim
+:Rview orders/_form.html.slim
+:Rcontroller orders
+:Rmodel 
+:Rmodel order
+:e lib/init_pdf.rb
+:Rview primers/scope.html.slim
+:Rjavascript orders
+:Rview orders/_primers_form.html.slim
+:vsplit Capfile
+:tabedit Capfile
+:Rview index.html.slim
+:Rview _form.html.slim
+:Rview orders/new.html.slim
+:Rview orders/index.html.slim
+:Rmodel primer
+:R
+:vsplit lib/init_pdf.rb
+:Rmigration create_menus
+:Rlocale menus.cn.yml
+:e db/seeds.rb
+:Rfixtures menus.yml.erb
+:Rfixtures menus.rb
+:Rview pr
+:Rview home/profile.html.slim
+:Rview edit.html.slim
+:Rview devise/shared/_links.html.slim
+:Rview devise/passwords/new.html.slim
+:Rview doorkeeper/authorizations/new.html.slim
+:Rview devise/confirmations/new.html.slim
+:e mig_from_uc.rb
+:Rview _subtree.html.slim
+:Rview _tree.html.slim
+:Rview companies/_tr.html.slim
+:Rview companies/index.html.slim
+::
+:Rview clients/_search.html.slim
+:Rmodel client
+:Rlocale clients.cn.yml
+:Rview clients/
+:e Gemfile
+:Rmigration create_simple_captcha_data
+:Rmigration create_users
 
 # Search String History (newest to oldest):
-?/csv
-?/CSV
-?/const
-?/hooks
-?/passed?
-?/has_one
-?/passed
-?/reaction_typesetted
-?/flash
-?/fadeOu
-?/after_update
-?/client_id
-?/sampl
+?/edit
+? \<to_envelop\>
+?/self.to_report
+?/self.pdf
+? \<_report\>
+?/report
+?/def flow
+?/to_signpaper
+?/pdf
+?/signpaper
+? \<signpaper\>
+?/render
+?/sign
+?/sin
+?/PAGE
+?/table
+?/emn
+? \<fixed\>
 ?/search
-?/after
-?/has_many
+?/def tm
+?/simple
 ?/client
-?/cli
-?/client_i
-? \<after_update\>
-?/has
-?/update_attribute
-?/validation
-?/puts
-?/changes
-?/change
-?/typesetted
-??\Vdef\_s\+reactions
-?/create_sample
-?/completed
-?/typesetted?
-?/scope
-?/available
-?/previous
-?/after_up
-?/hook
-?/creator_
-?/test_a
-? \<update_attribute\>
-?/has_o
-? \<previous_changes\>
-?/after_
-?/create_primer
-?/typesetting
-?/STAT
+? \<clients\>
+?/update_price
+?/udpate_
+? \<passwd\>
+?/p
+?/home
+?/users
+?/csv
+? \<child\>
+? \<generate_free_order\>
+?/form
+?/new
+?/parent
+?/validate
 ?/status
-?/generate_redo
-?/precheck_code
-?/create
-?/uncompleted
+?/workflow
+?/checked
+?/hook
+?/collec
+?/create_client_base
+?/post
+?/upload
+?/2M
+?/is_splic
+?/scope
+?/bootstra
+? \<TRUNCATE\>
+? '
 
 # Expression History (newest to oldest):
 
@@ -127,64 +127,57 @@ $board
 # Input Line History (newest to oldest):
 
 # å¯„å­˜å™¨:
-""0	CHAR	0
-	RETYPESET_SQL 
-"1	LINE	0
-	        reaction.save
+"0	LINE	0
+	      $("#primer_table tbody").append(tr)
+""1	LINE	0
+	/= text_field_tag 'order[company_code]', params[:order][:company_code], placeholder: ta(:company, :code), class: 'search-query input-small'
 "2	LINE	0
-	        reaction = create_reaction
-	        reaction.reaction_board_id = @b.id
-	        reaction.hole = '01A'
+	= f.input :sn
 "3	LINE	0
-	          @b.stub(reaction_files: [1])
+	          next if order.primers.blank?
 "4	LINE	0
-	          reactions = double(:reactions, uncompleted: false)
+	        normal: "#{::Rails.root}/lib/fonts/simfang.ttf",
 "5	LINE	0
-	          reactions.stub()
+	  = hidden_field_tag :format, :pdf
 "6	LINE	0
-	          @user = create_admin
+	          #  table.cells.borders = []
+	          #  table.cells.padding = [2, 0]
+	          #end
 "7	LINE	0
-	          @b.stub(reactions: [1])
+	            table.width = 500
 "8	LINE	0
-	
+	      .form-actions
 "9	LINE	0
-	  STATUS = {
-	    :new_created => t('sample_boards.status.new_created'),
-	    :running => t('sample_boards.status.running'),
-	    :completed => t('sample_boards.status.completed')
-	  }
-"a	LINE	0
-	      if ::Rails.env.test?
-	        t.string :remark
-	      else
-	        t.text :remark
-	      end
-"b@	BLOCK	23
+	      .form-actions
+"b	BLOCK	23
 	 NOT NULL AUTO_INCREMENT
+"c	CHAR	0
+	278
+<wcbcwcreated_datewwwwbwwcwcreated_date_from??k3gtggjjjjjjjjjjkjkkwwwwwwwwwwwwwwwwwcwcreated_date_to??k3??é½ƒ??é½ƒ????,????.i@jjkfdi@jk;;i@jkkkkkkj/datanni@nni@nnnnnni@nni@nni@nni@#xnnI@uunni#??kb@nni@nni@nni@nni@nni@nni@nni@nni@nni@nni@nni@nni@nn
 "g	CHAR	0
 	
 "i	CHAR	0
-	347
-<""""i""iquadrantoreaction_board_id = _this.a€kbparn€kbent().attr()i""re€kb€kbireaction_board_I€kbid€k3kkkkkYGpwwwwwwwwwwwCbbbbddkkkkkkkYjVkyjGpzzjwwwwwwwwvf]sp[€kb€kb[]i""hireaction_board=€kb_id=lli  i++i  ireaction_board_idllllla[]iquadrna€kb€kbant=""i  i++i  iquadrant€k3€k3€k3€k3€k3€ı,€ı.€k3€k3€k3€k3€k3€k3€k3€ı,€ı.veee
+	378
+<""""i""iquadrantoreaction_board_id = _this.a??kbparn??kbent().attr()i""re??kb??kbireaction_board_I??kbid??k3kkkkkYGpwwwwwwwwwwwCbbbbddkkkkkkkYjVkyjGpzzjwwwwwwwwvf]sp[??kb??kb[]i""hireaction_board=??kb_id=lli  i++i  ireaction_board_idllllla[]iquadrna??kb??kbant=""i  i++i  iquadrant??k3??k3??k3??k3??k3????,????.??k3??k3??k3??k3??k3??k3??k3????,????.veee
 "k	CHAR	0
-	2698
-<jh:Rsp	 mo	sample/comlet€kb€kb€kbplete!jjjjjjjjkkekkkkoprecheck = o€kbdouble()iprecheck'xbi:oprecheck.stub()ipassed: true€k3zzjjjkkojjjjjkkwkkkkkkjI@#€kbjjjjjkkkko@s.stub()iprecheck: @precheckjjjjjkzzbo@s.passed.should be_niljjbo@s.passed.should eq()i@precheck.passedo@s.ddjjjjjwjjzzo@s.passed.should be_nilkkkkkkkkkkkkkk€k3bbbb€ıL€ıL€ıL€ıLgthjjjjkzzjjkkkkkkkkkkkkkkkkkjjjjjjjjjjjjjjjjjjk%%kwzzkkwwwcacwvalidatebcwvalid?€k3lhjjj%%kwoit '' doendkllitypesetted?biif ela can not be dewt€kb€kbstroyedljjzzkkkkkkkjjbjjkCcomplete!kVkdjjjjjgthkjlkkkkkkkkkkkjjjjkkkoreturn false unless p€kbself.precheckbbbbcwifbbbveeebhxjjjoendkVkk>€k3jjjjjjjjjjjbgtebzhjjjhjjjjkkkouVjdkkkkkkkwO@p.sam;pl€kb€kb€kble.shoulsample.should_re()i:complete!jjjjjjoit '' doendklliif typesetted?zza €kb, can not be destroyedlkkkkkwwwwww@##nnnnnho@p.sample.typesetted?lbbvelxnnbbvexxnn/delegateeeea, :typesetted?€k3hbcistub :A = €kb> truelnkkkwwwww#ho@p.savekddpo@p.s€kbdestroyo@p.should_not be_destroyedjzzoit '' doendklllhiafter destroy ,€kb€kb, sample should e€kbunl€kbcop€kbmplete!o@p.saveo@p.det€kbstt€kbroyko@p.sample.typesestub t€kb:typesetted? => falsejozz€kb€kbddzzkwO@p.sample.should_rec :uncom!€k3ljjjjzzjjjzzbzzjjkzzhjjjddjk%%ocontext '' doendkwatest scopeszzobefor €kbe :each doendko@p.savezzjoit '' doendklliwhen passed, €kb€kbzzo@€kb::Precheck.passed.should be_inc€kbn€kbl()i@pko@p.s€kbpassed.should be_truejzzo::Precheck.unpassed.should_no be_inc€kb()i@pjzzoit' ' €kb€kb€kb€kb '' doendklliwhen unpassedo@p.precheck_code.stub()i:passed: €kb€kb:bhxela falsas€kbezzo@p.s€kbddkwkonew_recor€kb€kb€kb€kb€kbcode = create_precheck_code passed: falsejbbbbbbbCupdate_attribute precheck-cod€kb_code_id: new_code.ido@p.validatelkkkkkkkkkkkkkkkkkkkkhkeasjljjjjjjzzjjjjzzhbcwpassed.should be_falseokkkukkkkkkVkdujjjjjjjpjfuvlxkP€k3ljjjjzzhzzGoukoit '' doendkllitest show methodzzo@p.show €kb.should eq()lkwvf"yhPbbbbbbbbbcw@pwwwww.€k3ljjjzzjwwcwcode€k3€k3€k3€k3hjoit '' doendklliself.test to_s methodo@p.to_s.should eq()i@p.codde€kb€kbe€k3ljjjggGkkkkjjwkkkkggkjk:Rmo	 hea	h:Rsp	 sp	msp	mmo	heheat	jjjwCbefore :each doendko::@h = ::Fac.cu€kb€kbbuild :heat_cy, reaction_board_id: reactcreate_reaction_board.id€k3:Rfix	 heat	jjjwocreate€kbor_id `€kb12€kboremark ''irrrrr€k3lhoquadrant ''ixxxx€k3ljjjjjjjjjjjjkkwh:Rmi	 create_heat	joit '' doendkllihas theset €kb€kb attributes can mass-assign€k3lgghkkoit'' €kb€kb€kb '' doendklliis boardo::Heat.€kb::BOar€kb€kb.should be_true€k3jjjjzzkotest_an€kb ::HeatC€kb, []ljjwwwbv$hyhP€k3zzjjk
+	448
+<oukounless xhr?ujddujddoendk>>osession[]i:referear hla = referer if redererreferer.present?€k3kkkkkkkkkjjjjod€kbbefore_action :set_se, only: []i:new, :c€kbedit€k3€ı,€ı.x€k3€ıK€ıK€ıK€ıK€ıL€ıL€ıL€ıL€ı,€ı.xxxxxxxxkkwlllllxxxxxxxx€k3€k3€k3€k3€k3€k3bbbbwjjjjjjjI#€k3€k3€k3€k3€k3kkodef newend€k3kosession[]i:red€kbfererl:Rvi	 ho	i	hlla = ''hCroot_path€k3korender text: 'abc'€k3bddpwwwCsession[]i:refeer€kb€kbrer€k3€k5€k5
 "l	CHAR	0
-	
+	lD€k3€k3€k3€k3€k3€k3gkjkjgtlgt:Rmo	 blas	:vs ap	mo	sam	/before_sam€kbvenzzjjjjkkkwjlkkkkkkkkkjjkkYhp€k3€k3€k3kwwwwwwwwllajkddkpuPjjoendkVk>€k3:Rmi cRmi	 creatrecreate_se	:Rmi	 	w
 "p	LINE	0
 	
 	
 	::::::::::::::::::::::::
-	æ—¥æœŸï¼šå…¬å…ƒ2013å¹´1æœˆ10æ—¥ã€€æ˜ŸæœŸå›› 
-	é›»è…¦ï¼šunix  0.008533 seconds 
-	ç‰ˆæœ¬ï¼švi=703 
-	ç·¨ç¢¼ï¼šutf-8ã€€utf-8,ucs-bom,euc-jp,gb18030,gbk,gb2312,cp936 
-	ç’°å¢ƒï¼šzh_CN.UTF-8 
-	è©åº«ï¼šæ‹¼éŸ³è©åº«ï¼š/home/wangfan/.vim/plugin/vimim.pinyin_quote_sogou.txt 
-	è©åº«ï¼šé›²è©åº«ï¼šç™¾åº¦é›²ã€€3é›²ã€€æœç‹—é›²ã€€ï¼±ï¼±é›²ã€€ 
-	è¯ç¶²ï¼šPython2 Interface to Vim 
-	è¼¸å…¥ï¼šVimIMã€€ã€€å°é¶´é›™æ‹¼ã€€ 
-	é¸é …ï¼švimimrc 
+	éƒãƒ¦æ¹¡é”›æ°¬å•é??2013éª??1éˆ??10éƒãƒ£????é„ç†¸æ¹¡é¥?? 
+	é—†æ˜å‡é”›æ­¶nix  0.008533 seconds 
+	é—å Ÿæ¹°é”›æ­·i=703 
+	ç»¶ã„§â’“é”›æ­¶tf-8éŠ†??utf-8,ucs-bom,euc-jp,gb18030,gbk,gb2312,cp936 
+	é æ¿??å†¿ç´°zh_CN.UTF-8 
+	ç‘­ç‚²éŸ©é”›æ°­å«¾é—Šå® ??ç‚²éŸ©é”›??/home/wangfan/.vim/plugin/vimim.pinyin_quote_sogou.txt 
+	ç‘­ç‚²éŸ©é”›æ°¶æ´¸ç‘­ç‚²éŸ©é”›æ°±æ«¨æ´ï¹‚æ´¸éŠ†??3é—†å±‚????é¼æ»…å«é—†å±‚????é”›æ†‹æ€¥é—†å±‚???? 
+	é‘±??ç¼è¯§ç´°Python2 Interface to Vim 
+	æ“ç¨¿å†é”›æ­imIMéŠ†??éŠ†??çå¿›æ´é—†æ¬å«¾éŠ†?? 
+	é–¬æçˆ¡é”›æ­·imimrc 
 	    :let g:vimim_cloud = 'baidu,3'  
 	    :let g:vimim_map = 'c-bslash'  
 	    :let g:vimim_mycloud = 0  
@@ -195,145 +188,536 @@ $board
 	  " :let g:vimim_toggle = 'pinyin,baidu,3,sogou,qq' 
 	::::::::::::::::::::::::
 	
-	æ²¡æœ‰åŒ¹é…çš„è‡ªåŠ¨å‘½ä»¤
-	æ²¡æœ‰åŒ¹é…çš„è‡ªåŠ¨å‘½ä»¤	
+	å¨Œâ„ƒæ¹é–å½’å¤é¨å‹®åšœé”ã„¥æ‡¡æµ ??
+	1963
+<å¨Œâ„ƒæ¹é–å½’å¤é¨å‹®åšœé”ã„¥æ‡¡æµ ??	PhkkkwVkVjjylPwwwwxxxscreator€k3€k3€k3€k3€k3€k3jjkkjjkjbcwrecord_type€k3jjjjjjjjjjkkkkkkkkkkkkhebe:Rm€kbmo	 sample/sample_cancelnI#€k3€k3€k3€k3€k3€k3€k3lkjbebjbjjjkebebjjjjllwwwbbbbbbwvestr€kbextwwwwbveeex€k3D€k3h:RMo	 Rmo	 cance	jkobelongs_to :sample, poli€kby: true€k3€k3€k3€k3A, as: :record€k3€k3€k3€k3€k3€k3xukkkkbukkkkbCuuebvestable_name€k3€ı,€ı.be€ıL€ıL€ıK€ıKklu€k3€k3€k3€k3€k3€k3€k3€ı,€ı.€ıK€ıLYpwwwbcwreactionzzo#h€kb hooks€kb€kbb€kbafter_create doendkoself.record.destroy€k3:gth:Rcon	 sample_can	jjkjjkl:Rcon	 s€kbcancel	ukVjjjjd€k3hV%kkdlphkddlkpwwwbxxxxxxxxsrecord_typewwwwh:€k3:Rmi	 create_cancel	jjjwlbwwwekoinclude ::Superwf:S€kb:Sc€kb€kbRecordor::Creator€k3jhjj:Rmi	 create_sample_cancel	jjjkkkYjjjjjpjjkkbeeeeeeela, data:€kbbi:eexbbA, search: []i:c€kbcreator_id€k3bbbbbDjjjjjjjk€k3h:Rcon	 Rmo	 cancel	jklggjddhP€k3l€k3€k3€k3€k3€k3€k3h:Rvi	 samples	in	jjbbbbbbbbwllllhhhhvlllllllllllllllldicancel_€kbed_data€k3:e c	r	/cancel_€kbed/sample_cancelnnnOresources :canceled_datas, only: []i:index, :create€k3jebebI#€k3€k3€k3€k3€k3€k3Lhjjjjjwl:Rvi	 sample_cance	samples	in	jjkO= hindd€kb€kb€kbdden_field_tag :sampdata_ta€kbypebxxxsrecordA, ''isampleb~€k3bebebhveebcwrecordwwvees::€kb€kbeval()iparams[]i:record_type€k3wwwwvesidkbbwcwidjjbbbvesrecordwwlllllllbveebbescanceled_data€k3€k3€k3bicreate_€k3gt:Rmo	 samplejbbbbxwwvllbCcanceled_data€k3€k3€k3€k3€k3gtl:Rmi	 create_sc€kb€kbcanc	jjkggjjjwhjkeeeeeeeeeeeea, data: record.to_swwbwcwrecordbbhDjj€k3bbbbljjkkkjjjkhkkeeeeeeebbbbbbbbbirecord:€kb_id: id, record_type: u€k3€k3€k3€k3€k3€ü€ı,€ü€ı-€ü€ı-€ü€ı-€ü€ı-€ü€ı-€ü€ı.:Rmo	 prepay	ggjjjjjjjjjjjjjjjgg:Rmo	 cancel	jkkkkkkwwwDbbbbbcwrecordjdd€k3€k3€k3€k3€k3:Rmo	 clientjjkkh:Rmo	 c€kbsampleggjjjjjwwA, as: :record€k3€k3€k3l€ı,€ı.€ı,€ı.€ı,€ı.€ıK€ıK:Rmo	 s€kbcancel	
 "q	CHAR	0
-	2232
-<auence€k3€kul:Rlhggl:Rlo	 primernto€kb€kboti	kkkkkex€k3€k3€k3€k3€k3€k3€k3€ı,€ı.€ıL€ıL€ı,€ı.€ı,€ı.a{}iborder: 1€k3€ı,€ı.€ıK€ıK€ı,€ı.x€k3€k3€k3€k3€ı,€ı.€ı,€ı.€ı,€ı.veeesstyle: ''iborder: 1px, €kb€kb sok€kblid;€k3€ıL€ıK€ıK€ı,€ı.€ıL€ı,€ı.€ıL€ıL€ıL€ı,€ı.€ı,€ı.€ıL€ıL€ıK€ı,€ı.€ı,€ı.€ı,€ı.€ü €ı,€ü €ı.€ı,€ı.€ı,€ı.€ı,€ı.€ü €ı,€ü €ı.€ı,€ı.€ü €ı,€ü €ı.€ı,€ı.€ü €ı,€ü €ı.€ı,€ı.€ıK€ı,€ı.:Rlo	 pi€kbrimers	ggjjjjjjjjjjjwkwhkkkkkkj$bbcwcreated_datejjjjjjjkjjbbbCcreated_date€k3jjjjjjkYjjkkhjjjljjjjjjjjjjjkkkkkkkkkkkkkkkkkkkkkkkkkkkGh€ıK€ıK€ıK€ıK€ı,€ı.a €kb, border: 1€k3€k3€ıK€ıK€ı,€ı.jo:cssotd{}iborder: 1px, so€kb€kb€kb€kb sok€kblid;€k3jjjjjjjjjjkkbbbbbbDjjzzjwwla{}iwistyle: ''iwit€kbdth: 5ema;ll%%yjPjPjzzkjP€k3€k3€k3€k3€k3€k3€k3€ıK€ıK€ıK€ıK€ıK€ı,€ı.ea, th€k3jjjjjjjjjjjjjjjjjjjjjjkkkkkkkkkkkkkjkkkj€k3€k3€k3€k3€k3€k3€k3€k3€k3€k3€ı,€ı.ves20%kkka{}istyle: ''iwidth: 100%;€k3€k3€k3€k3€k3€k3hhjjjjkljves20a%jjkbves30a%jbves30%€k3kkkkjhhr3jjjjkr2€k3€k3€k3€k3€k3€k3jjjkjjjjjjjkkkkkkkkkkkkkkkkkkkkjjj€k3€k3€k3€ıK€ıK€ı,€ı.€ı,€ı.Vjdjjjjjjjjjjjjjkkkkkkwwwwwwwwwwwbhhhxs8llllli, border: 1, cellspacing: 0jjjbbbbbbbr2jjr2€k3€k3€ı,€ı.at€kb text-align: cr€kbenter;€k3€k3€k3l:Rtask	 prim	kjzzxjjjjjjjjjjkkkkbjbjjjxkx€k3jjjjjjjjjjggx€k3€ıL€ıL€ıL€ıL€ıL€ıL€ıL€ıK€ıK€ıK€ıK€ıK€ıK€ıK€ıL€ıL€ıLggu€k3€ıL€ıL€ıL€ıL€ıL€ıL€ıL€ıK€ıKe€ıK€ıK€ıKbbggjh:e cRenvggljjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjkkkwggGkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkjjjjjjjjjjjjjjj€ı,€ı.€ıL€ıL€ıL€ı,€ı.:Rlo	 prijersprimers	kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkjjjjjwjkkkkkkkkkkkkkkjjkkkjjjhjjjjjjjkzzbYpwwwwwwwwwwwwwwwwwwcwp€kbover_datejjjjjjjjjjkkYp$bcwor€kbver_datekkkkkkkkkkkkkkjjjhhhjjjjkkkkjjkjjknjkjkkkk€k3uuuuu€k3€k3€k3€ı,€ı.b€ıL€ıL€ı,€ı.b€ı,€ı.v%%%xj.j.j.j.€k3ljjjjjjjjjjjjjjjjjkkkkkkjI#€k3€k3€k3jjjjjjjkh:Rtsa€kb€kbask	 or	jjjjjjjjkklgg:Rvi	 order	no	s€kbsen			n			sen		hjjjjjjjjjjjjjjjjjjjjjjjjjjj:Rmai	 	kGkw%jjjjjjjjjjjjjjjjjjjkkkkkkkkkkkkkkkkkl:Rs€kbtask	 or	hklkkkjwwwwwwhvex€k3hwwwwbC_mail€k3€k3€k3€k3€k3€k3€k3€k3€k3€k3jbiore€kbder_mail.bbbbbiorder_mail.€k3jkkoorder = order_mail.orderjbbbdwx€k3jjjjjjjjjjjjjjjjjjjkkkkkkkkkkkkkjjjjjjjjjjjwwex€k3€k3€k3:Rzz
+	483
+<Vkkk<wlvt"screate prepaymentsjbbbwcwpostkop = ::Fac.build :€kb€kb()i:prepaymentA.attributes€k3ja, preap€kb€kbpayment: p€k3jbbbwwcw302€k3k€k3€k3€k3€k3€k3€k3€k3kop.deleteko[]bC%w{}icreated_at d€kbupdated_at d€kbcreator_idjkA.each do |a|joendk>>A a€k3€k3€k3€k3jjlkkkkkkkkkk:Rsp	 sp	req	res	hkkjop €kb[]i''icompanycompanyrecord_idA = create_company.id€k3:Rfic€kbx	 prepaym	n€kb€kb€kb€kb€kb€kb€kb€kb€kbs	l:Rmo	 prepam	€kb	jjjjjjjjjjjjjjjjjjjjjweb
 "s	CHAR	0
-	552
-<,hi,llxxepwxxxsuuf}xexepwxxxwewwxepwxxxwwllDjjwwxxewbea_tagea, params[]iswwxepwxxxwwwwwwxepwxxxwwxepwxxxjjkkjjj^wxxea_g€kbtagwwwwwxepwxxx€k3€ı,€ı.xepwxxxjjkwwwwwwwwwxepwxxxwwwwwwxepwxxxwwxepwxxxwjbbbbbbbbxepwxxx€k3€k3€ı,€ı.:Rvi	 quality_co	_ta	jkVjdljkggjjkwpVj>.jwveehxwwr xu$xbbbbbbbxepwxxx€k3hdd€k3l:Rvi	 €ı,€ı.€ıL€ıK€ıL€ı,€ı.€ı,€ı.$ibcwtruebbbbbwi, params[]i:result€k3:Rmo	 qual	Gkgg:_c	Gkwkkkwji#€k3€k3€k3€k3u€k3h:Rcon	 qua	jjjjjjjjjjjjjjjjjjjjjjjjjjjj:€kb€kb€kby_co	a, :desc€k3l:Rmo	 sample_he	G/searchgg:R
+	594
+<,hi,llxxepwxxxsuuf}xexepwxxxwewwxepwxxxwwllDjjwwxxewbea_tagea, params[]iswwxepwxxxwwwwwwxepwxxxwwxepwxxxjjkkjjj^wxxea_g??kbtagwwwwwxepwxxx??k3????,????.xepwxxxjjkwwwwwwwwwxepwxxxwwwwwwxepwxxxwwxepwxxxwjbbbbbbbbxepwxxx??k3??k3????,????.:Rvi	 quality_co	_ta	jkVjdljkggjjkwpVj>.jwveehxwwr xu$xbbbbbbbxepwxxx??k3hdd??k3l:Rvi	 ????,????.??é½ƒ??é½‚??é½ƒ????,????.????,????.$ibcwtruebbbbbwi, params[]i:result??k3:Rmo	 qual	Gkgg:_c	Gkwkkkwji#??k3??k3??k3??k3u??k3h:Rcon	 qua	jjjjjjjjjjjjjjjjjjjjjjjjjjjj:??kb??kb??kby_co	a, :desc??k3l:Rmo	 sample_he	G/searchgg:R
 "v	CHAR	0
-	389
-<jkV%>wveesself€k3€ıK€ıK€ıK€ıL€ıL€ıK€ıL€ıL€ı,€ı-€ı-€ı-€ı-€ı-€ı-€ı-€ı-€ı-€ı.sselfwwwwblveesself€k3gt:gtjjV%ddd€k3hjjbbbbluuwC€ı,€ı.€ı,€ı.bcwbcwc€kbmoduleA F€kb€kbFac€k3hjjjjjjbbbbveelx€k3€k3€k3€k3€k3€ı,€ı.cw::Filewwww.€k3€ı,€ı.xkjjI#€k3kY:Rfix	 hr€kbtcon	jjjjj:Rfix 	htRfix	 ht_smaple-re	€kb€kb€kb_r	:€kb€kb€kb€kb€kb€kb€kbamp		jkpdkddljjV%ddd€k3h€k3jjl€k3h
+	473
+<jkV%>wveesself??k3??é½‚??é½‚??é½‚??é½ƒ??é½ƒ??é½‚??é½ƒ??é½ƒ????,????-????-????-????-????-????-????-????-????-????.sselfwwwwblveesself??k3gt:gtjjV%ddd??k3hjjbbbbluuwC????,????.????,????.bcwbcwc??kbmoduleA F??kb??kbFac??k3hjjjjjjbbbbveelx??k3??k3??k3??k3??k3????,????.cw::Filewwww.??k3????,????.xkjjI#??k3kY:Rfix	 hr??kbtcon	jjjjj:Rfix 	htRfix	 ht_smaple-re	??kb??kb??kb_r	:??kb??kb??kb??kb??kb??kb??kbamp		jkpdkddljjV%ddd??k3h??k3jjl??k3h
 "w	CHAR	0
-	506
-<V%yjwpjjkw$bbCnil€k3jVkkd€k3lbbbbwveeesif: ::Proc.new{}i|r| r.reaction_board && r.buuuuuhCtrue€k3€k3€k3€k3€k3€k3€k3€k3€k3€k3€k3€k3€k3hu€k3€ı,€ı.:Rmo	 heat	h:Rsp	 mo	heat	ljjwhjjwjjjjjjjkkjjjzzljjjjkzzhjjjjjjjjjjjjjjjjjljjjjkjzzhljwwwwCquadran: true€k3€k3€k3€k3hjjjjjjjjkkkwwwwwwllwwC7€k3h:Rmi	 heat	k$hC7€k3:Rfix	 heat	jjjjjjwwwwbcw1,2,3,4€k3€k2€k3€k3€k3:Rmi	 alc	jjjjkkkkklkjh:Rmi	 alc	jjkkl:Rmo	 alc	h:Rsp	 mo	aalc	lggjjwhjjjjjjjjwzzkkkkkjjjjjjjjjzzjjzz
+	wwwww.€k3lbxxxxxsvector€k3hjjA, w€kb€kb{}istyle: ''iwdi
+"x	CHAR	0
+	"
 "-	CHAR	0
-	each
+	index.js.erb
 
 # å…¨å±€å˜é‡:
 
 # æ–‡ä»¶æ ‡è®°:
-'0  109  8  /var/www/genetest/app/controllers/orders_controller.rb
-'1  77  10  /var/www/superwf/superwf_scaffold/lib/superwf_scaffold.rb
-'2  24  49  /var/www/lims/app/models/sample.rb
-'3  128  34  /var/www/lims/spec/models/precheck_spec.rb
-'4  51  10  /var/www/superwf/superwf_audited/lib/superwf_audited.rb
-'5  183  15  /var/www/sino_project/app/assets/javascripts/superwf.js.coffee
-'6  149  34  /var/www/genetest/app/models/pdf.rb
-'7  431  4  /var/www/genetest/lib/clinic_report.rb
-'8  1  0  /var/www/sino_project/app/assets/javascripts/superwf.js.coffee
-'9  8  6  /var/www/sino_project/app/views/layouts/_show_cols.html.haml
+'0  16  24  /var/www/sino_primer/app/controllers/orders_controller.rb
+'1  65  1  /var/www/sino_primer/db/seeds.rb
+'2  66  5  /var/www/sino_sequencing/db/seeds.rb
+'3  2  88  /var/www/user_passport/app/views/devise/shared/_links.html.slim
+'4  4  2  /var/www/sino_sequencing/app/views/companies/index.html.slim
+'5  1  0  /var/www/sino_sequencing/app/models/client.rb
+'6  6  17  /var/www/sino_primer/db/migrate/20110721045643_create_checkout_orders.rb
+'7  4  0  /var/www/user_passport/app/controllers/home_controller.rb
+'8  251  8  /var/www/sino_primer/app/models/primer.rb
+'9  153  6  /var/www/sino_project/app/models/ht_sample.rb
 
 # è·³è½¬åˆ—è¡¨ (ä»æ–°åˆ°æ—§):
--'  109  8  /var/www/genetest/app/controllers/orders_controller.rb
--'  3  26  /var/www/genetest/app/controllers/orders_controller.rb
--'  1  0  /var/www/genetest/app/controllers/orders_controller.rb
--'  85  2  /var/www/genetest/app/models/order.rb
--'  60  19  /var/www/genetest/app/models/order.rb
--'  61  2  /var/www/genetest/app/models/order.rb
--'  1  0  /var/www/genetest/app/models/order.rb
--'  77  10  /var/www/superwf/superwf_scaffold/lib/superwf_scaffold.rb
--'  24  49  /var/www/lims/app/models/sample.rb
--'  58  11  /var/www/lims/app/models/sample.rb
--'  76  63  /var/www/lims/app/models/sample.rb
--'  1  0  /var/www/lims/app/models/sample.rb
--'  129  0  /var/www/lims/app/models/sample.rb
--'  8  27  /var/www/lims/app/controllers/orders_controller.rb
--'  1  0  /var/www/lims/app/views/orders/_ajax_search.html.haml
--'  32  30  /var/www/lims/app/controllers/orders_controller.rb
--'  6  4  /var/www/lims/app/views/samples/_ajax_search.html.haml
--'  1  0  /var/www/lims/app/views/samples/_ajax_search.html.haml
--'  6  14  /var/www/lims/app/controllers/samples_controller.rb
--'  38  37  /var/www/lims/app/controllers/samples_controller.rb
--'  1  0  /var/www/lims/app/models/primer.rb
--'  76  18  /var/www/lims/app/models/primer.rb
--'  113  5  /var/www/lims/app/assets/javascripts/superwf.js.coffee
--'  199  6  /var/www/lims/app/assets/javascripts/superwf.js.coffee
--'  198  6  /var/www/lims/app/assets/javascripts/superwf.js.coffee
--'  177  23  /var/www/lims/app/assets/javascripts/superwf.js.coffee
--'  51  4  /var/www/lims/app/models/precheck.rb
--'  33  36  /var/www/lims/app/models/precheck.rb
--'  65  4  /var/www/lims/app/models/order.rb
--'  11  12  /var/www/lims/app/models/reaction.rb
--'  8  18  /var/www/lims/app/models/reaction.rb
--'  68  2  /var/www/lims/app/models/order.rb
--'  63  2  /var/www/lims/app/models/order.rb
--'  44  2  /var/www/lims/app/models/order.rb
--'  42  2  /var/www/lims/app/models/order.rb
--'  35  2  /var/www/lims/app/models/order.rb
--'  11  0  /var/www/lims/app/models/order.rb
--'  252  26  /var/www/lims/app/models/order.rb
--'  24  19  /var/www/lims/app/models/reaction.rb
--'  29  4  /var/www/lims/app/models/reaction.rb
--'  50  36  /var/www/lims/app/models/reaction.rb
--'  19  12  /var/www/lims/app/models/client.rb
--'  18  12  /var/www/lims/app/models/client.rb
--'  112  2  /var/www/lims/app/models/sample.rb
--'  118  34  /var/www/lims/spec/spec_helper.rb
--'  117  4  /var/www/lims/spec/spec_helper.rb
--'  109  4  /var/www/lims/spec/spec_helper.rb
--'  100  68  /var/www/lims/spec/spec_helper.rb
--'  99  67  /var/www/lims/spec/spec_helper.rb
--'  98  69  /var/www/lims/spec/spec_helper.rb
--'  97  75  /var/www/lims/spec/spec_helper.rb
--'  96  16  /var/www/lims/spec/spec_helper.rb
--'  162  21  /var/www/lims/spec/spec_helper.rb
--'  49  38  /var/www/lims/app/models/reaction.rb
--'  136  4  /var/www/lims/app/models/reaction.rb
--'  29  2  /var/www/lims/lib/code.rb
--'  25  0  /var/www/lims/app/models/precheck_code.rb
--'  3  42  /var/www/lims/app/models/precheck_code.rb
--'  9  12  /var/www/lims/app/models/precheck_code.rb
--'  49  8  /var/www/lims/app/models/precheck.rb
--'  10  25  /var/www/lims/app/models/precheck.rb
--'  22  4  /var/www/lims/app/models/client.rb
--'  75  2  /var/www/lims/app/models/primer.rb
--'  78  4  /var/www/lims/app/models/primer.rb
--'  77  6  /var/www/lims/app/models/primer.rb
--'  65  2  /var/www/lims/app/models/primer.rb
--'  58  6  /var/www/lims/app/models/primer.rb
--'  24  49  /var/www/lims/app/models/sample.rb
--'  58  11  /var/www/lims/app/models/sample.rb
--'  76  63  /var/www/lims/app/models/sample.rb
--'  1  0  /var/www/lims/app/models/sample.rb
--'  129  0  /var/www/lims/app/models/sample.rb
--'  8  27  /var/www/lims/app/controllers/orders_controller.rb
--'  1  0  /var/www/lims/app/views/orders/_ajax_search.html.haml
--'  32  30  /var/www/lims/app/controllers/orders_controller.rb
--'  6  4  /var/www/lims/app/views/samples/_ajax_search.html.haml
--'  1  0  /var/www/lims/app/views/samples/_ajax_search.html.haml
--'  6  14  /var/www/lims/app/controllers/samples_controller.rb
--'  38  37  /var/www/lims/app/controllers/samples_controller.rb
--'  1  0  /var/www/lims/app/models/primer.rb
--'  76  18  /var/www/lims/app/models/primer.rb
--'  113  5  /var/www/lims/app/assets/javascripts/superwf.js.coffee
--'  199  6  /var/www/lims/app/assets/javascripts/superwf.js.coffee
--'  198  6  /var/www/lims/app/assets/javascripts/superwf.js.coffee
--'  177  23  /var/www/lims/app/assets/javascripts/superwf.js.coffee
--'  51  4  /var/www/lims/app/models/precheck.rb
--'  33  36  /var/www/lims/app/models/precheck.rb
--'  65  4  /var/www/lims/app/models/order.rb
--'  11  12  /var/www/lims/app/models/reaction.rb
--'  8  18  /var/www/lims/app/models/reaction.rb
--'  68  2  /var/www/lims/app/models/order.rb
--'  63  2  /var/www/lims/app/models/order.rb
--'  44  2  /var/www/lims/app/models/order.rb
--'  42  2  /var/www/lims/app/models/order.rb
--'  35  2  /var/www/lims/app/models/order.rb
--'  11  0  /var/www/lims/app/models/order.rb
--'  252  26  /var/www/lims/app/models/order.rb
+-'  16  24  /var/www/sino_primer/app/controllers/orders_controller.rb
+-'  1  0  /var/www/sino_primer/app/controllers/orders_controller.rb
+-'  1  0  /var/www/sino_primer/Capfile
+-'  1  0  /var/www/sino_primer/app/assets/javascripts/orders.js.coffee
+-'  24  39  /var/www/sino_primer/app/assets/javascripts/orders.js.coffee
+-'  1  0  /var/www/sino_primer/app/views/orders/index.html.slim
+-'  21  44  /var/www/sino_primer/app/controllers/orders_controller.rb
+-'  25  39  /var/www/sino_primer/app/controllers/orders_controller.rb
+-'  4  20  /var/www/sino_primer/app/models/primer.rb
+-'  128  43  /var/www/sino_primer/app/models/primer.rb
+-'  40  49  /var/www/sino_primer/app/controllers/orders_controller.rb
+-'  1  0  /var/www/sino_primer/app/models/order.rb
+-'  102  8  /var/www/sino_primer/app/models/order.rb
+-'  339  26  /var/www/sino_primer/app/models/order.rb
+-'  65  1  /var/www/sino_primer/db/seeds.rb
+-'  44  49  /var/www/sino_primer/db/seeds.rb
+-'  37  0  /var/www/sino_primer/db/seeds.rb
+-'  63  0  /var/www/sino_primer/db/seeds.rb
+-'  50  2  /var/www/sino_primer/db/seeds.rb
+-'  68  0  /var/www/sino_primer/db/seeds.rb
+-'  35  2  /var/www/sino_primer/db/seeds.rb
+-'  1  0  /var/www/sino_primer/db/seeds.rb
+-'  66  5  /var/www/sino_sequencing/db/seeds.rb
+-'  1  0  /var/www/sino_sequencing/spec/fixtures/menus.yml.erb
+-'  1  0  /var/www/sino_sequencing/spec/factories/menus.rb
+-'  2  88  /var/www/user_passport/app/views/devise/shared/_links.html.slim
+-'  14  0  /var/www/user_passport/app/views/devise/shared/_links.html.slim
+-'  9  10  /var/www/user_passport/app/views/devise/confirmations/new.html.slim
+-'  1  0  /var/www/user_passport/app/views/devise/confirmations/new.html.slim
+-'  4  2  /var/www/sino_sequencing/app/views/companies/index.html.slim
+-'  3  14  /var/www/sino_sequencing/app/views/companies/index.html.slim
+-'  11  12  /var/www/sino_sequencing/app/views/companies/index.html.slim
+-'  2  3  /var/www/sino_sequencing/app/views/companies/index.html.slim
+-'  25  0  /var/www/sino_sequencing/app/views/companies/index.html.slim
+-'  1  0  /var/www/sino_sequencing/app/views/companies/index.html.slim
+-'  1  0  /var/www/sino_sequencing/app/models/client.rb
+-'  73  60  /var/www/sino_sequencing/app/models/client.rb
+-'  64  6  /var/www/sino_sequencing/app/models/client.rb
+-'  72  8  /var/www/sino_sequencing/app/models/client.rb
+-'  74  0  /var/www/sino_sequencing/app/models/client.rb
+-'  57  4  /var/www/sino_sequencing/app/models/client.rb
+-'  34  2  /var/www/sino_sequencing/app/models/client.rb
+-'  21  2  /var/www/sino_sequencing/app/models/client.rb
+-'  25  4  /var/www/sino_sequencing/app/models/client.rb
+-'  7  60  /var/www/sino_sequencing/app/views/clients/_search.html.slim
+-'  1  0  /var/www/sino_sequencing/app/views/clients/_search.html.slim
+-'  6  17  /var/www/sino_primer/db/migrate/20110721045643_create_checkout_orders.rb
+-'  22  7  /var/www/sino_primer/config/routes.rb
+-'  6  6  /var/www/sino_primer/db/migrate/20130923030329_create_client_infos.rb
+-'  23  25  /var/www/sino_primer/config/routes.rb
+-'  25  14  /var/www/sino_primer/config/routes.rb
+-'  1  0  /var/www/sino_primer/app/views/clients/_table.html.slim
+-'  19  14  /var/www/sino_primer/app/views/clients/_table.html.slim
+-'  4  2  /var/www/sino_primer/app/views/clients/index.html.slim
+-'  1  0  /var/www/sino_primer/app/views/clients/index.html.slim
+-'  4  0  /var/www/user_passport/app/controllers/home_controller.rb
+-'  62  12  /var/www/user_passport/config/routes.rb
+-'  24  7  /var/www/user_passport/config/routes.rb
+-'  23  7  /var/www/user_passport/config/routes.rb
+-'  12  17  /var/www/user_passport/config/routes.rb
+-'  27  0  /var/www/user_passport/Capfile
+-'  3  2  /var/www/user_passport/app/controllers/users_controller.rb
+-'  45  0  /var/www/user_passport/app/controllers/users_controller.rb
+-'  46  0  /var/www/user_passport/app/controllers/users_controller.rb
+-'  5  14  /var/www/user_passport/config/routes.rb
+-'  4  2  /var/www/user_passport/app/controllers/application_controller.rb
+-'  2  33  /var/www/user_passport/app/controllers/home_controller.rb
+-'  1  0  /var/www/user_passport/app/controllers/home_controller.rb
+-'  251  8  /var/www/sino_primer/app/models/primer.rb
+-'  158  8  /var/www/sino_primer/app/models/primer.rb
+-'  198  4  /var/www/sino_primer/app/models/order.rb
+-'  195  6  /var/www/sino_primer/app/models/order.rb
+-'  190  4  /var/www/sino_primer/app/models/order.rb
+-'  197  6  /var/www/sino_primer/app/models/order.rb
+-'  193  6  /var/www/sino_primer/app/models/order.rb
+-'  188  0  /var/www/sino_primer/app/models/order.rb
+-'  158  10  /var/www/sino_primer/app/models/order.rb
+-'  89  79  /var/www/sino_primer/app/models/order.rb
+-'  328  51  /var/www/sino_primer/app/models/order.rb
+-'  1  0  /var/www/sino_primer/config/locales/orders.cn.yml
+-'  12  20  /var/www/sino_primer/config/locales/orders.cn.yml
+-'  25  216  /var/www/sino_primer/config/locales/orders.cn.yml
+-'  156  61  /var/www/sino_primer/app/models/primer.rb
+-'  152  4  /var/www/sino_primer/app/models/primer.rb
+-'  249  6  /var/www/sino_primer/app/models/primer.rb
+-'  27  20  /var/www/sino_primer/config/locales/primers.cn.yml
+-'  55  33  /var/www/sino_primer/config/locales/primers.cn.yml
+-'  45  67  /var/www/sino_primer/app/assets/javascripts/orders.js.coffee
+-'  33  6  /var/www/sino_primer/app/assets/javascripts/orders.js.coffee
+-'  36  5  /var/www/sino_primer/app/assets/javascripts/orders.js.coffee
+-'  43  27  /var/www/sino_primer/app/assets/javascripts/orders.js.coffee
+-'  20  4  /var/www/sino_primer/app/assets/javascripts/orders.js.coffee
+-'  30  0  /var/www/sino_primer/app/assets/javascripts/orders.js.coffee
 
 # ç¼“å†²åŒºåˆ—è¡¨:
-%/var/www/genetest/app/models/order.rb	85	2
-%/var/www/superwf/superwf_scaffold/lib/superwf_scaffold.rb	77	10
-%/var/www/genetest/app/controllers/orders_controller.rb	109	8
+%/var/www/sino_primer/db/seeds.rb	65	1
+%/var/www/sino_sequencing/spec/factories/menus.rb	1	0
+%/var/www/user_passport/app/views/devise/confirmations/new.html.slim	9	10
+%/var/www/sino_sequencing/app/views/companies/index.html.slim	4	2
+%/var/www/sino_sequencing/app/views/clients/_search.html.slim	1	0
+%/var/www/sino_primer/app/views/clients/index.html.slim	4	2
+%/var/www/user_passport/app/controllers/home_controller.rb	4	0
+%/var/www/sino_primer/app/models/order.rb	283	6
+%/var/www/sino_project/app/views/ht_samples/checked.html.haml	41	117
+%/var/www/sino_project/app/models/ht_sample.rb	153	6
+%/var/www/sino_project/app/models/client.rb	43	43
+%/etc/nginx/sites-enabled/phpmyadmin	6	30
+%/var/www/sino_project/Capfile	1	0
+%/var/www/sino_project/app/models/remote_client.rb	5	12
+%/var/www/sino_project/app/controllers/clients_controller.rb	15	4
+%/var/www/sino_project/config/initializers/hash.rb	12	13
+%/var/www/sino_project/app/models/ht_library.rb	89	0
+%/var/www/sino_project/app/controllers/ht_samples_controller.rb	76	4
+%/var/www/sino_project/app/views/ht_samples/index.html.haml	1	0
+%/var/www/sino_project/app/views/ht_samples/_table.html.haml	48	16
+%/var/www/sino_project/app/helpers/ht_samples_helper.rb	19	6
+%/var/www/sino_primer/Capfile	1	0
+%/var/www/sino_primer/app/controllers/primers_controller.rb	14	22
+%/var/www/sino_primer/app/controllers/orders_controller.rb	16	24
+%/var/www/sino_primer/config/routes.rb	22	7
+%/var/www/sino_primer/app/views/primers/index.html.slim	14	17
+%/var/www/sino_primer/app/assets/javascripts/primers.js.coffee	28	23
+%/var/www/sino_primer/Gemfile	36	5
+%/var/www/sino_primer/app/models/primer.rb	4	20
+%/var/www/sino_primer/app/views/orders/new.html.slim	4	2
+%/var/www/sino_primer/app/assets/javascripts/orders.js.coffee	46	8
+%/var/www/sino_primer/app/views/orders/_for_sequence.html.slim	4	2
+%/var/www/sino_primer/app/views/orders/_form.html.slim	9	4
+%/var/www/sino_primer/app/views/orders/_primers_form.html.slim	1	0
+%/var/www/sino_primer/config/locales/orders.cn.yml	1	0
+%/var/www/sino_primer/app/views/orders/store_issue_tag.html.haml	6	14
+%/var/www/sino_primer/app/views/primers/_search.html.slim	15	27
+%/var/www/sino_primer/config/locales/primers.cn.yml	27	20
+%/var/www/sino_primer/app/views/orders/_search.html.slim	6	0
+%/var/www/sino_primer/db/migrate/20110704062443_create_orders.rb	1	0
+%/var/www/sino_primer/config/deploy/production.rb	1	0
+%/var/www/user_passport/Capfile	14	0
+%/var/www/user_passport/app/controllers/application_controller.rb	4	2
+%/var/www/user_passport/config/routes.rb	62	12
+%/var/www/user_passport/app/views/home/profile.html.slim	1	0
+%/var/www/user_passport/app/controllers/users_controller.rb	1	0
+%/var/www/user_passport/config/deploy.rb	2	0
+%/var/www/user_passport/config/deploy/production.rb	1	0
+%/var/www/sino_primer/config/deploy.rb	13	0
+%/var/www/user_passport/lib/capistrano/tasks/go.cap	1	0
+%/var/www/sino_primer/app/views/clients/_table.html.slim	1	0
+%/var/www/sino_primer/app/models/client_info.rb	13	0
+%/var/www/sino_primer/app/controllers/clients_controller.rb	39	4
+%/var/www/sino_primer/db/migrate/20130923030329_create_client_infos.rb	6	6
+%/var/www/sino_primer/mig_form_primer_synthesis.rb	11	0
+%/var/www/sino_primer/db/migrate/20110721045643_create_checkout_orders.rb	6	17
+%/var/www/sino_primer/db/migrate/20110811050855_create_checkout_primers.rb	1	0
+%/var/www/sino_primer/db/migrate/20130913083952_create_checkout_records.rb	1	0
+%/var/www/sino_primer/db/migrate/20110720072942_create_checkouts.rb	1	0
+%/var/www/sino_primer/db/migrate/20130108084532_create_menus.rb	1	0
+%/var/www/sino_primer/db/migrate/20130108084517_create_permissions.rb	1	0
+%/var/www/sino_primer/db/migrate/20110804051145_create_prices.rb	8	6
+%/var/www/sino_primer/db/migrate/20130913083930_create_primer_records.rb	6	6
+%/var/www/sino_primer/db/migrate/20110705052601_create_primers.rb	1	0
+%/var/www/sino_primer/db/migrate/20130108084519_create_roles.rb	4	6
+%/var/www/sino_primer/db/migrate/20130916052155_create_users.rb	15	0
+%/var/www/sino_primer/db/migrate/20110810154630_create_simple_captcha_data.rb	1	0
+%/var/www/sino_sequencing/Capfile	26	0
+%/var/www/sino_sequencing/app/views/clients/unpaid.js.erb	1	0
+%/var/www/sino_sequencing/config/locales/clients.cn.yml	12	32
+%/var/www/sino_sequencing/app/models/client.rb	1	0
+%/var/www/sino_sequencing/app/views/companies/_tr.html.slim	1	0
+%/var/www/sino_sequencing/app/views/companies/_tree.html.slim	12	4
+%/var/www/sino_sequencing/app/views/companies/_subtree.html.slim	7	35
+%/var/www/sino_sequencing/mig_from_uc.rb	9	68
+%/var/www/user_passport/app/views/doorkeeper/authorizations/new.html.slim	1	0
+%/var/www/user_passport/app/views/devise/passwords/new.html.slim	2	76
+%/var/www/user_passport/app/views/devise/shared/_links.html.slim	2	88
+%/var/www/user_passport/app/views/devise/passwords/edit.html.slim	13	75
+%/var/www/sino_sequencing/spec/fixtures/menus.yml.erb	1	0
+%/var/www/sino_sequencing/db/seeds.rb	66	5
+%/var/www/sino_primer/config/locales/menus.cn.yml	11	2
+%/var/www/sino_primer/lib/init_pdf.rb	12	46
+%/var/www/sino_primer/app/views/orders/index.html.slim	7	10
+%/var/www/sino_primer/app/views/primers/scope.html.slim	12	4
+%/var/www/sino_primer/app/views/orders/edit.html.slim	2	0
+%/var/www/sino_primer/app/views/primers/index.js.erb	1	55
+%/var/www/sino_primer/config/locales/checkouts.cn.yml	17	20
+%/var/www/sino_primer/app/views/checkouts/_search.html.slim	6	0
 
 # æ–‡ä»¶å†…çš„æ ‡è®°å†å²è®°å½• (ä»æ–°åˆ°æ—§):
 
-> /var/www/genetest/app/models/order.rb
-	"	85	2
+> /var/www/sino_primer/app/models/order.rb
+	"	283	6
+	^	123	28
+	.	123	27
+	+	36	25
+	+	42	6
+	+	37	0
+	+	40	0
+	+	41	35
+	+	346	0
+	+	345	0
+	+	344	0
+	+	329	41
+	+	342	0
+	+	343	9
+	+	329	24
+	+	330	27
+	+	341	6
+	+	332	0
+	+	340	0
+	+	332	28
+	+	331	35
+	+	334	28
+	+	32	0
+	+	37	30
+	+	336	44
+	+	337	41
+	+	338	10
+	+	340	0
+	+	339	33
+	+	336	25
+	+	326	0
+	+	336	36
+	+	22	26
+	+	44	0
+	+	16	0
+	+	5	13
+	+	327	0
+	+	328	0
+	+	329	16
+	+	188	0
+	+	192	29
+	+	198	0
+	+	194	45
+	+	198	0
+	+	193	30
+	+	197	8
+	+	194	0
+	+	195	10
+	+	196	46
+	+	328	25
+	+	16	0
+	+	16	0
+	+	328	34
+	+	104	35
+	+	105	10
+	+	105	0
+	+	104	24
+	+	102	156
+	+	104	81
+	+	105	0
+	+	102	40
+	+	104	103
+	+	102	0
+	+	104	0
+	+	104	83
+	+	101	101
+	+	104	103
+	+	272	0
+	+	123	31
+	+	243	0
+	+	246	63
+	+	229	15
+	+	230	30
+	+	232	0
+	+	231	40
+	+	246	126
+	+	246	35
+	+	231	36
+	+	123	8
+	+	130	10
+	+	124	0
+	+	123	27
 
-> /var/www/genetest/app/controllers/orders_controller.rb
-	"	109	8
+> /var/www/sino_primer/Capfile
+	"	1	0
+	^	1	0
+
+> /var/www/sino_primer/app/controllers/primers_controller.rb
+	"	14	22
+	^	14	23
+	.	14	22
+	+	46	28
+	+	47	18
+	+	50	30
+	+	51	21
+	+	45	0
+	+	51	64
+	+	73	0
+	+	68	0
+	+	67	0
+	+	70	63
+	+	19	68
+	+	3	0
+	+	14	22
+
+> /var/www/sino_primer/app/controllers/orders_controller.rb
+	"	16	24
+	^	122	7
+	.	122	6
+	+	126	0
+	+	126	7
+	+	126	14
+	+	126	43
+	+	126	0
+	+	126	66
+	+	126	0
+	+	126	53
+	+	126	0
+	+	40	81
+	+	64	0
+	+	63	0
+	+	68	30
+	+	70	6
+	+	68	6
+	+	69	6
+	+	70	6
+	+	64	0
+	+	124	0
+	+	122	6
+
+> /var/www/sino_primer/app/models/primer.rb
+	"	4	20
+	^	128	44
+	.	128	43
+	+	214	46
+	+	239	25
+	+	205	51
+	+	210	0
+	+	216	0
+	+	221	0
+	+	226	0
+	+	231	0
+	+	127	17
+	+	128	6
+	+	131	66
+	+	255	0
+	+	247	28
+	+	248	0
+	+	248	0
+	+	247	10
+	+	248	21
+	+	254	7
+	+	254	0
+	+	254	0
+	+	249	13
+	+	254	0
+	+	254	0
+	+	254	0
+	+	249	7
+	+	252	11
+	+	249	0
+	+	248	0
+	+	156	0
+	+	154	9
+	+	160	6
+	+	156	46
+	+	155	18
+	+	159	8
+	+	157	9
+	+	156	0
+	+	159	0
+	+	155	24
+	+	156	58
+	+	158	0
+	+	159	0
+	+	158	56
+	+	249	19
+	+	249	0
+	+	250	29
+	+	250	0
+	+	251	0
+	+	253	8
+	+	251	0
+	+	185	48
+	+	128	43
+
+> /var/www/sino_primer/app/views/orders/new.html.slim
+	"	4	2
+
+> /var/www/sino_primer/app/assets/javascripts/orders.js.coffee
+	"	46	8
+	^	46	9
+	.	46	8
+	+	22	0
+	+	22	19
+	+	22	19
+	+	25	0
+	+	22	58
+	+	47	0
+	+	23	17
+	+	22	64
+	+	30	0
+	+	43	0
+	+	38	26
+	+	43	0
+	+	40	21
+	+	43	33
+	+	42	20
+	+	41	19
+	+	42	47
+	+	43	23
+	+	44	8
+	+	45	63
+	+	32	20
+	+	36	19
+	+	33	4
+	+	36	0
+	+	33	5
+	+	36	0
+	+	33	0
+	+	34	23
+	+	35	19
+	+	36	31
+	+	37	8
+	+	45	0
+	+	47	0
+	+	24	39
+	+	39	8
+	+	45	52
+	+	46	8
+
+> /var/www/sino_primer/app/views/orders/_form.html.slim
+	"	9	4
+
+> /var/www/sino_primer/app/views/orders/_primers_form.html.slim
+	"	1	0
+	^	10	33
+	.	10	0
+	+	11	11
+	+	8	22
+	+	10	35
+	+	10	26
+	+	10	10
+	+	11	13
+	+	12	0
+	+	10	0
+	+	10	36
+	+	10	0
+	+	10	0
+	+	10	36
+	+	10	0
+	+	10	0
+
+> /var/www/sino_primer/app/views/orders/_search.html.slim
+	"	6	0
+	.	7	0
+	+	5	0
+	+	1	0
+	+	6	0
+	+	7	0
+
+> /var/www/sino_primer/lib/init_pdf.rb
+	"	12	46
+	^	11	47
+	.	11	46
+	+	9	35
+	+	15	19
+	+	12	0
+	+	10	46
+	+	11	46
+
+> /var/www/sino_primer/app/views/orders/index.html.slim
+	"	7	10
+	^	3	35
+	.	3	34
+	+	4	0
+	+	3	34
+
+> /var/www/sino_primer/app/views/primers/scope.html.slim
+	"	12	4
+	^	17	11
+	.	17	10
+	+	16	2
+	+	18	0
+	+	16	2
+	+	18	0
+	+	20	0
+	+	18	0
+	+	16	5
+	+	18	0
+	+	19	0
+	+	20	0
+	+	17	10
+
+> /var/www/sino_primer/app/views/orders/edit.html.slim
+	"	2	0
+
+> /var/www/sino_primer/app/views/primers/index.js.erb
+	"	1	55
+	^	1	56
+	.	1	55
+	+	1	55
+
+> /var/www/sino_primer/config/locales/checkouts.cn.yml
+	"	17	20
+	^	17	23
+	.	17	20
+	+	17	20
+
+> /var/www/sino_primer/app/views/checkouts/_search.html.slim
+	"	6	0

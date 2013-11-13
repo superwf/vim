@@ -13,8 +13,9 @@ noremap <silent> n :call g:vimim_search_next()n
 nnoremap <silent> <Plug>NetrwBrowseX :call netrw#NetrwBrowseX(expand("<cWORD>"),0)
 nmap <silent> <Plug>VLToggle :let g:VeryLiteral = !g:VeryLiteral| echo "VeryLiteral " . (g:VeryLiteral ? "On" : "Off")
 vmap <kMultiply> *
+map <F7> :make
 map <F4> "*p
-map <F2> :up
+map <F2> :NERDTree:set number
 map <F3> :up
 imap <silent>  <Plug>VimIM
 imap <silent>  <Plug>VimimOneKey
@@ -24,13 +25,12 @@ let &cpo=s:cpo_save
 unlet s:cpo_save
 set backspace=indent,eol,start
 set expandtab
-set fileencodings=utf-8,ucs-bom,euc-jp,gb18030,gbk,gb2312,cp936
+set fileencodings=utf-8,gbk,ucs-bom,gb18030,euc-jp,gb2312,cp936
 set helplang=cn
 set history=50
 set hlsearch
 set incsearch
 set isident=@,48-57,_,192-255,$
-set iskeyword=@,48-57,_,192-255,$
 set nomodeline
 set mouse=a
 set printoptions=paper:a4
@@ -41,28 +41,34 @@ set showcmd
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
 set tabstop=2
 set viminfo='200,%,!,<50,s10,h,rA,rB,/50,:50
-set window=14
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd /var/www/user_passport
+cd /var/www/sino_passport
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +12 /var/www/user_passport/app/controllers/api/v1/credentials_controller.rb
-badd +7 db/migrate/20120620055748_create_users.rb
-badd +65 /var/www/lims/Gemfile
-badd +5 app/models/user.rb
-badd +12 app/views/users/_form.html.haml
-badd +3 app/controllers/gridfs_controller.rb
-badd +2 /var/www/lims/app/controllers/gridfs_controller.rb
-badd +1 Gemfile
-badd +0 /var/www/user_passport/app/controllers/api/v1/users_controller.rb
-badd +24 app/views/users/_table.html.haml
-badd +1 app/views/users/edit.html.haml
+badd +16 app/models/user.rb
+badd +10 /var/www/user_passport/db/migrate/20120620055748_create_users.rb
+badd +1 /var/www/sino_primer/app/views/primers/show.html.slim
+badd +8 /var/www/hello.c
+badd +1 /var/www/sino_primer/app/views/primers/show.js.erb
+badd +1 /var/www/sino_primer/Capfile
+badd +1 /var/www/sino_primer/app/views/primers/_show.html.slim
+badd +2 /var/www/sino_primer/app/models/order.rb
+badd +1 /var/www/user_passport/Capfile
+badd +5 /var/www/user_passport/db/migrate/20120620055802_add_devise_to_users.rb
+badd +1 /var/www/user_passport/app/models/user.rb
+badd +26 /var/www/user_passport/config/initializers/devise.rb
+badd +7 /var/www/user_passport/app/views/devise/mailer/reset_password_instructions.html.slim
+badd +4 /var/www/user_passport/app/controllers/api/v1/users_controller.rb
+badd +4 /var/www/user_passport/app/views/devise/sessions/new.html.slim
+badd +1 Capfile
+badd +15 app/controllers/api/v1/users_controller.rb
+badd +2 /var/www/user_passport/app/controllers/api/v1/api_controller.rb
 silent! argdel *
-edit /var/www/user_passport/app/controllers/api/v1/users_controller.rb
+edit app/controllers/api/v1/users_controller.rb
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -153,7 +159,7 @@ set number
 setlocal number
 setlocal numberwidth=4
 setlocal omnifunc=rubycomplete#Complete
-setlocal path=.,lib,vendor,app/models/concerns,app/controllers/concerns,app/controllers,app/helpers,app/mailers,app/models,app/*,app/views,app/views/api/v1/users,public,spec,spec/controllers,spec/helpers,spec/mailers,spec/models,spec/views,spec/lib,spec/features,spec/requests,spec/integration,vendor/plugins/*/lib,vendor/plugins/*/test,vendor/rails/*/lib,vendor/rails/*/test,/var/www/user_passport,-e:1:in\\\ `<main>':\\\ undefined\\\ method\\\ `all_load_paths'\\\ for\\\ Gem:Module\\\ (NoMethodError)\
+setlocal path=.,lib,vendor,app/models/concerns,app/controllers/concerns,app/controllers,app/helpers,app/mailers,app/models,app/*,app/views,app/views/api/v1/users,public,spec,spec/controllers,spec/helpers,spec/mailers,spec/models,spec/views,spec/lib,spec/features,spec/requests,spec/integration,vendor/plugins/*/lib,vendor/plugins/*/test,vendor/rails/*/lib,vendor/rails/*/test,/var/www/sino_passport,-e:1:in\\\ `<main>':\\\ undefined\\\ method\\\ `all_load_paths'\\\ for\\\ Gem:Module\\\ (NoMethodError)\
 
 setlocal nopreserveindent
 setlocal nopreviewwindow
@@ -179,7 +185,7 @@ if &syntax != 'ruby'
 setlocal syntax=ruby
 endif
 setlocal tabstop=2
-setlocal tags=/var/www/user_passport/tags,/var/www/user_passport/tmp/tags,./tags,./TAGS,tags,TAGS
+setlocal tags=/var/www/sino_passport/tags,/var/www/sino_passport/tmp/tags,./tags,./TAGS,tags,TAGS
 setlocal textwidth=0
 setlocal thesaurus=
 setlocal noundofile
@@ -188,12 +194,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 14 - ((11 * winheight(0) + 7) / 14)
+let s:l = 8 - ((5 * winheight(0) + 6) / 13)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-14
-normal! 04l
+8
+normal! 097l
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf

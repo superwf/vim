@@ -8,117 +8,117 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~Msle0~/\<haml\>
+~MSle0~/dept_code
 
 # Last Substitute Search Pattern:
 ~MSle0&plasmid_code
 
 # Last Substitute String:
-$client
+$
 
 # Command Line History (newest to oldest):
 :q
-:e _table.html.haml
-:e index.html.slim
-:qq
-:Rlayout 
-:Rlayout _search_date.html.haml
-:Rkjjk
-:Rlayout _flash.html.slim
-:Rlayout application.html.slim
-:Rlayout _navigation.html.slim
-:Rlayout _nav_bar_top.html.slim
-:vsplit 
-:e Gemfile
-:Rcontroller roles
-:e config/routes.rb
-:Rm
-:Rcontroller application
-:Rcontroller api/v1/api
-:Rcontroller home
-:e lib/ro
-:Rcontroller api/v1/primers
-:Rview primers/_table.html.haml
-:Rview primers/_search.html.haml
+:e do_index.php
+:vsplit sendmail.php
+:e sendmail_chgb.php
+:Rview primers/_search.html.slim
+:Rlocale simple_form.yml
+:vsplit app/views/scaffolds/dialog.js.erb
+:e app/views/modification_logs/index.html.slim
+:e app/controllers/modification_logs_controller.rb
+:tabedit app/views/scaffolds/_search_form.html.slim
+:e app/controllers/roles_controller.rb
+:e app/views/roles/index.html.slim
+:e app/views/scaffolds/_model_form.html.slim
+:e app/views/scaffolds/_form.html.slim
+:e lib/superwf/scaffold.rb
+:vsplit app/views/scaffolds/_search_input.html.slim
+:vsplit app/views/scaffolds/_search.html.slim
+:e lib/capistrano/tasks/go.cap
+:e config/deploy/production.rb
+:vsplit config/deploy.rb
+:Rview primers/index.html.slim
+:Rview primers/index.html.haml
+:Rview checkouts/new.html.slim
+:Rview orders/new.html.slim
+:Rview orders/_form.html.slim
+:Rview orders/_for_sequence.html.slim
+:e config/database.yml
+:Rcontroller checkout_records
+:Rcontroller checkouts
+:Rlocale prices.cn.yml
+:Rcontroller prices
+:Rview prices/_search.html.slim
+:Rcontroller clients
+:Rview clients/
+:Rview prices/index.html.slim
+:Rview prices/_ta
+:Rview prices/_form.html.slim
+:Rview prices/new.html.haml
+:Rcontroller prim
+:Rview prices/_form.html.haml
 :Rmigration create_primers
-:Rmodel gene_bank/sample
-:Rmodel remote_client
-:vsplit Capfile
-:e lib/gene_bank_api.rb
-:Rview statistic/client.html.haml
-:Rinitializer devise
-:Rview home/index.html.haml
-:Rcontroller reactions
-:Rjavascript sample_typesetting
-:R
-:Rview orders/new_redo.html.haml
-:Rlocale cn.yml
-:Rview _select_success.js.erb
-:Rview sample_boards/select.js.erb
-:Rview samples/typesetting.html.haml
-:Rlocale primers.cn.yml
-:Rview primers/_form.html.haml
-:Rmodel primer
+:Rmigration create_prices
 :Rview 
-:Rcontroller samples
-:Rview reactions/create_redo.js.erb
-:Rmodel order
-:Rmodel sample
-:Rmodel reaction
-:Rcontroller reac
-:Rview _new_redo.html.haml
+:Rview orders/_search.html.slim
+:tabedit Gemfile
+:Rview checkouts/_go.html.slim
+:vsplit 
+:Rview checkouts/_table.html.slim
+:Rview checkouts/scope.html.slim
+:Rmo
 
 # Search String History (newest to oldest):
-? \<haml\>
-???k3kkkkkYGpwwwwwwwwwwwC
-?/roles
-?/devise
-?/head
-?/ori
-?/haml
-?/resource
-??\VÈáçÊëá
-?/samples
-?/confirm_
-?/select
-?/transfer
-?/dialog
-?/dialo
-?/c
-?/validates
-? \<batch_delete_form\>
-?/batch_delete
-?/gener
-?/generate_redo
-?/create_re
-?/create_redo
-?/create_
+?/dept_code
+? \<Âçï‰Ωç\>
+?/bool
+?/def new
+?/delete
 ?/render
-?/new_redo
-?/new_reco
-?/get_quadrant
+?/modal
+?/layouts
+? \<primer_synthesis\>
+?/totalod
+?/model_name
+? \<controller_name\>
+?/rescue
+?/dialog
+?/button
+?/search_
+?/to_signpaper
+?/def index
+?/def indesx
+?/gsub
+?/to_envelop
+?/jquery-ui-rails
+?/create
 ?/search
-?/csv
-?/to_csv
-?/export
-?/checkout
-?/view_chargeable
-?/new_client
-?/new_c
-?/checkouts
-?/checkout_rec
-?/pdf
+? \<new_record\>
+?/clients
+?/order
+?/bootst
+?/twitter
+?/twi
+?/simple_form
+?/superwf
+?/suerperwf
+?/col-lg
+? \<search\>
+? \<def\>
+?/seatr
+?/interval
+?/title
+?/overview
+?/header
+?/board_number
+?/location
 ?/to_s
-?/create_checkout
-?/checkout_sign
-?/workflow
-?/inspecting
-?/r
-?/price
-?/scope
-?/primer_head_id
-?/reaction_flows
-?/reaction_procedures
+?/current_user
+?/md
+?/succ
+?/input_cl
+?/form-contr
+?/form-group
 
 # Expression History (newest to oldest):
 
@@ -128,42 +128,37 @@ $client
 
 # ÂØÑÂ≠òÂô®:
 "0	LINE	0
-	  it "ajax get /" do
-	    get root_path
-	    response.status.should eq(200)
+	
+	  # GET
+	  def index
+	    @create = false
+	    super
 	  end
-"1	BLOCK	0
-	 
-	 
-"2	BLOCK	0
-	>
-	>
-"3	BLOCK	1
-	' 
-	' 
-"4	BLOCK	0
-	%
-	%
-"5	BLOCK	0
-	%
-	%
-	%
+"1	LINE	0
+	= f.button :submit, class: 'btn-success'
+"2	LINE	0
+	  = btn(:back, sample_board_templates_path, class: 'btn-primary')
+"3	LINE	0
+	  .offset2.span6
+"4	LINE	0
+	  .span3
+"5	LINE	0
+	= simple_form_for @sample_board_template do |f|
+	  .span5.offset1
 "6	LINE	0
-	    get root_path
+	    - if model_name
+	      = label_tag "#{model_name}_#{name}", ta(model_name, name)
+	      = check_box_tag "#{model_name}[#{name}]"
+	    - else
+	      = label_tag name, label_text
+	      = check_box_tag name, value
 "7	LINE	0
-	    get root_path, format: :js
+	      else
+	        @record = @model_class.new
 "8	LINE	0
-	  body
-	    == render 'layouts/flash', flash: flash
-	    - if current_user
-	      - cache current_user.email do
-	        == render 'layouts/nav_bar_top'
-	    .container
-	      == yield
-	      hr
-	      == render 'layouts/footer'
+	        @permit.delete_if{|a| !a.in?(@model_class.attribute_names)} unless request.get?
 "9	LINE	0
-	    render text: @permit.inspect
+	  - when select
 "b	BLOCK	23
 	 NOT NULL AUTO_INCREMENT
 "c	CHAR	0
@@ -175,8 +170,8 @@ $client
 	378
 <""""i""iquadrantoreaction_board_id = _this.a??kbparn??kbent().attr()i""re??kb??kbireaction_board_I??kbid??k3kkkkkYGpwwwwwwwwwwwCbbbbddkkkkkkkYjVkyjGpzzjwwwwwwwwvf]sp[??kb??kb[]i""hireaction_board=??kb_id=lli  i++i  ireaction_board_idllllla[]iquadrna??kb??kbant=""i  i++i  iquadrant??k3??k3??k3??k3??k3????,????.??k3??k3??k3??k3??k3??k3??k3????,????.veee
 "k	CHAR	0
-	266
-<jkkjbvVkkkdjwVjjjjjjjdVkkkdÄk3l:e c	r	/abi_reÄkbÄkbÄkbmÄkb_machinesabi_nddnnddddbblDÄk3Äk3Äk3jddÄk3jjjjjjjjjjjjjjkkkkkkjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjh:Rdcon	 orders:Rcon	 orders/max_numbernkkkkkkkkkkkkkjhlgg:Rvi	 checkouts	_go	
+	448
+<oukounless xhr?ujddujddoendk>>osession[]i:referear hla = referer if redererreferer.present?Äk3kkkkkkkkkjjjjodÄkbbefore_action :set_se, only: []i:new, :cÄkbeditÄk3Ä˝,Ä˝.xÄk3Ä˝KÄ˝KÄ˝KÄ˝KÄ˝LÄ˝LÄ˝LÄ˝LÄ˝,Ä˝.xxxxxxxxkkwlllllxxxxxxxxÄk3Äk3Äk3Äk3Äk3Äk3bbbbwjjjjjjjI#Äk3Äk3Äk3Äk3Äk3kkodef newendÄk3kosession[]i:redÄkbfererl:Rvi	 ho	i	hlla = ''hCroot_pathÄk3korender text: 'abc'Äk3bddpwwwCsession[]i:refeerÄkbÄkbrerÄk3Äk5Äk5
 "l	CHAR	0
 	lDÄk3Äk3Äk3Äk3Äk3Äk3gkjkjgtlgt:Rmo	 blas	:vs ap	mo	sam	/before_samÄkbvenzzjjjjkkkwjlkkkkkkkkkjjkkYhpÄk3Äk3Äk3kwwwwwwwwllajkddkpuPjjoendkVk>Äk3:Rmi cRmi	 creatrecreate_se	:Rmi	 	w
 "p	LINE	0
@@ -213,133 +208,134 @@ $client
 	594
 <,hi,llxxepwxxxsuuf}xexepwxxxwewwxepwxxxwwllDjjwwxxewbea_tagea, params[]iswwxepwxxxwwwwwwxepwxxxwwxepwxxxjjkkjjj^wxxea_g??kbtagwwwwwxepwxxx??k3????,????.xepwxxxjjkwwwwwwwwwxepwxxxwwwwwwxepwxxxwwxepwxxxwjbbbbbbbbxepwxxx??k3??k3????,????.:Rvi	 quality_co	_ta	jkVjdljkggjjkwpVj>.jwveehxwwr xu$xbbbbbbbxepwxxx??k3hdd??k3l:Rvi	 ????,????.??ÈΩÉ??ÈΩÇ??ÈΩÉ????,????.????,????.$ibcwtruebbbbbwi, params[]i:result??k3:Rmo	 qual	Gkgg:_c	Gkwkkkwji#??k3??k3??k3??k3u??k3h:Rcon	 qua	jjjjjjjjjjjjjjjjjjjjjjjjjjjj:??kb??kb??kby_co	a, :desc??k3l:Rmo	 sample_he	G/searchgg:R
 "v	CHAR	0
-	471
-<jkV%>wveesself??k3??ÈΩÇ??ÈΩÇ??ÈΩÇ??ÈΩÉ??ÈΩÉ??ÈΩÇ??ÈΩÉ??ÈΩÉ????,????-????-????-????-????-????-????-????-????-????.sselfwwwwblveesself??k3gt:gtjjV%ddd??k3hjjbbbbluuwC????,????.????,????.bcwbcwc??kbmoduleA F??kb??kbFac??k3hjjjjjjbbbbveelx??k3??k3??k3??k3??k3????,????.cw::Filewwww.??k3????,????.xkjjI#??k3kY:Rfix	 hr??kbtcon	jjjjj:Rfix 	htRfix	 ht_smaple-re	??kb??kb??kb_r	:??kb??kb??kb??kb??kb??kb??kbamp		jkpdkddljjV%ddd??k3h??k3jjl??k3h
+	473
+<jkV%>wveesself??k3??ÈΩÇ??ÈΩÇ??ÈΩÇ??ÈΩÉ??ÈΩÉ??ÈΩÇ??ÈΩÉ??ÈΩÉ????,????-????-????-????-????-????-????-????-????-????.sselfwwwwblveesself??k3gt:gtjjV%ddd??k3hjjbbbbluuwC????,????.????,????.bcwbcwc??kbmoduleA F??kb??kbFac??k3hjjjjjjbbbbveelx??k3??k3??k3??k3??k3????,????.cw::Filewwww.??k3????,????.xkjjI#??k3kY:Rfix	 hr??kbtcon	jjjjj:Rfix 	htRfix	 ht_smaple-re	??kb??kb??kb_r	:??kb??kb??kb??kb??kb??kb??kbamp		jkpdkddljjV%ddd??k3h??k3jjl??k3h
 "w	CHAR	0
-	537
-<V%yjwpjjkw$bbCnil??k3jVkkd??k3lbbbbwveeesif: ::Proc.new{}i|r| r.reaction_board && r.buuuuuhCtrue??k3??k3??k3??k3??k3??k3??k3??k3??k3??k3??k3??k3??k3hu??k3????,????.:Rmo	 heat	h:Rsp	 mo	heat	ljjwhjjwjjjjjjjkkjjjzzljjjjkzzhjjjjjjjjjjjjjjjjjljjjjkjzzhljwwwwCquadran: true??k3??k3??k3??k3hjjjjjjjjkkkwwwwwwllwwC7??k3h:Rmi	 heat	k$hC7??k3:Rfix	 heat	jjjjjjwwwwbcw1,2,3,4??k3??k2??k3??k3??k3:Rmi	 alc	jjjjkkkkklkjh:Rmi	 alc	jjkkl:Rmo	 alc	h:Rsp	 mo	aalc	lggjjwhjjjjjjjjwzzkkkkkjjjjjjjjjzzjjzz
+	wwwww.Äk3lbxxxxxsvectorÄk3hjjA, wÄkbÄkb{}istyle: ''iwdi
+"x	CHAR	0
+	"
 ""-	CHAR	0
-	 
+	bool
 
 # ÂÖ®Â±ÄÂèòÈáè:
 
 # Êñá‰ª∂Ê†áËÆ∞:
-'0  1  0  /var/www/superwf/app/views/menus/index.js.erb
-'1  1  0  /var/www/superwf/app/views/menus/index.
-'2  1  7  /var/www/superwf/app/views/menus/_table.html.slim
-'3  1  0  /var/www/superwf/app/views/menus/_pagination.html.haml
-'4  10  35  /var/www/superwf/app/views/menus/_form.html.slim
-'5  1  0  /var/www/superwf/app/views/menus/_subnav.html.haml
-'6  17  21  /var/www/superwf/app/controllers/roles_controller.rb
-'7  1  3  /var/www/superwf/app/views/roles/_form.html.slim
-'8  15  35  /var/www/superwf/app/views/roles/_form.html.slim
-'9  1  0  /var/www/superwf/app/views/roles/show.html.haml
+'0  1  0  /var/www/sino_sequencing/app/views/checkouts/index.js.erb
+'1  44  6  /var/www/dna/duizhang/log/do_index.php
+'2  1  0  /var/www/dna/info/sendmailtest/sendmail_chgb.php
+'3  1  0  /var/www/sino_sequencing/app/views/plasmids/_form.html.slim
+'4  1  0  /var/www/sino_sequencing/app/views/plasmids/edit.html.slim
+'5  12  82  /var/www/sino_primer/app/views/primers/_search.html.slim
+'6  12  132  /var/www/sino_sequencing/app/views/sample_board_templates/_table.html.slim
+'7  5  0  /var/www/sino_sequencing/app/views/sample_board_templates/_form.html.slim
+'8  1  0  /var/www/sino_sequencing/app/views/sample_board_templates/new.html.slim
+'9  1  0  /var/www/sino_sequencing/app/views/sample_board_templates/edit.html.slim
 
 # Ë∑≥ËΩ¨ÂàóË°® (‰ªéÊñ∞Âà∞Êóß):
--'  1  0  /var/www/superwf/app/views/menus/index.js.erb
--'  1  0  /var/www/superwf/app/views/menus/index.
--'  1  7  /var/www/superwf/app/views/menus/_table.html.slim
--'  1  0  /var/www/superwf/app/views/menus/_pagination.html.haml
--'  10  35  /var/www/superwf/app/views/menus/_form.html.slim
--'  6  0  /var/www/superwf/app/views/menus/_form.html.slim
--'  1  0  /var/www/superwf/app/views/menus/_form.html.slim
--'  1  0  /var/www/superwf/app/views/menus/_subnav.html.haml
--'  17  21  /var/www/superwf/app/controllers/roles_controller.rb
--'  16  47  /var/www/superwf/app/controllers/roles_controller.rb
--'  7  2  /var/www/superwf/app/controllers/roles_controller.rb
--'  1  3  /var/www/superwf/app/views/roles/_form.html.slim
--'  12  72  /var/www/superwf/app/views/roles/_form.html.slim
--'  14  18  /var/www/superwf/app/views/roles/_form.html.slim
--'  15  35  /var/www/superwf/app/views/roles/_form.html.slim
--'  1  0  /var/www/superwf/app/views/roles/show.html.haml
--'  1  0  /var/www/superwf/app/views/roles/_pagination.html.haml
--'  1  0  /var/www/superwf/app/views/roles/_table.html.slim
--'  2  54  /var/www/superwf/app/views/roles/_table.html.slim
--'  1  0  /var/www/superwf/app/views/roles/_table.html.haml
--'  1  0  /var/www/superwf/app/views/roles/index.html.slim
--'  1  0  /var/www/superwf/app/views/roles/index.
--'  1  0  /var/www/superwf/app/views/roles/_subnav.html.haml
--'  1  0  /var/www/superwf/app/views/roles/_search.html.slim
--'  1  105  /var/www/superwf/app/views/roles/new.html.slim
--'  1  0  /var/www/superwf/app/views/roles/edit.html.slim
--'  9  30  /var/www/lims/spec/requests/home_spec.rb
--'  5  17  /var/www/lims/spec/requests/home_spec.rb
--'  6  13  /var/www/lims/spec/requests/home_spec.rb
--'  1  0  /var/www/lims/spec/requests/home_spec.rb
--'  3  2  /var/www/lims/app/views/home/_auto_logout_js.html.slim
--'  1  0  /var/www/lims/app/views/home/_auto_logout_js.html.slim
--'  14  4  /var/www/lims/app/views/home/index.html.slim
--'  3  4  /var/www/lims/app/views/home/index.html.slim
--'  1  0  /var/www/lims/app/views/home/index.html.slim
--'  6  6  /var/www/superwf/app/views/menus/_search.html.slim
--'  1  0  /var/www/superwf/app/views/menus/_search.html.slim
--'  1  107  /var/www/superwf/app/views/menus/new.html.slim
--'  3  0  /var/www/superwf/app/views/menus/index.html.slim
--'  1  0  /var/www/superwf/app/views/menus/index.html.slim
--'  1  107  /var/www/superwf/app/views/menus/edit.html.slim
--'  1  0  /var/www/superwf/app/views/menus/edit.html.haml
--'  9  8  /var/www/lims/app/views/layouts/_show_cols.html.slim
--'  1  0  /var/www/lims/app/views/layouts/_show_cols.html.slim
--'  1  0  /var/www/lims/app/views/layouts/_show_col.html.slim
--'  1  0  /var/www/lims/app/views/layouts/_search_date.html.haml
--'  3  33  /var/www/lims/app/views/layouts/_flash.html.slim
--'  8  4  /var/www/lims/app/views/layouts/application.html.slim
--'  15  4  /var/www/lims/app/views/layouts/application.html.slim
--'  13  4  /var/www/lims/app/views/layouts/application.html.slim
--'  23  2  /var/www/lims/app/views/layouts/application.html.slim
--'  1  0  /var/www/lims/app/views/layouts/application.html.slim
--'  36  5  /var/www/lims/Gemfile
--'  117  5  /var/www/lims/config/routes.rb
--'  113  24  /var/www/lims/config/routes.rb
--'  118  4  /var/www/lims/config/routes.rb
--'  2  0  /var/www/lims/app/controllers/application_controller.rb
--'  6  2  /var/www/lims/app/controllers/application_controller.rb
--'  4  4  /var/www/lims/app/controllers/api/v1/api_controller.rb
--'  19  6  /var/www/lims/app/views/primers/_table.html.haml
--'  3  6  /var/www/lims/app/views/primers/_table.html.haml
--'  4  6  /var/www/lims/app/views/primers/_table.html.haml
--'  1  0  /var/www/lims/app/views/primers/_table.html.haml
--'  4  4  /var/www/lims/app/models/gene_bank/sample.rb
--'  1  0  /var/www/lims/lib/gene_bank_api.rb
--'  8  6  /var/www/lims/lib/gene_bank_api.rb
--'  278  0  /var/www/dna/kehu/chongjiase/index.php
--'  310  34  /var/www/dna/kehu/chongjiase/index.php
--'  345  11  /var/www/dna/kehu/chongjiase/index.php
--'  10  7  /var/www/dna/kehu/chongjiase/index.php
--'  1  0  /var/www/dna/kehu/chongjiase/index.php
--'  13  2  /var/www/lims/app/models/board_record.rb
--'  1  0  /var/www/lims/Gemfile.lock
--'  13  2  /var/www/lims/app/controllers/board_records_controller.rb
--'  6  2  /var/www/lims/app/controllers/board_records_controller.rb
--'  1  0  /var/www/lims/app/controllers/board_records_controller.rb
--'  4  6  /var/www/lims/db/migrate/20130815054447_create_flows.rb
--'  1  0  /var/www/lims/Capfile
--'  262  70  /var/www/lims/spec/models/reaction_spec.rb
--'  259  6  /var/www/lims/spec/models/reaction_spec.rb
--'  23  2  /var/www/lims/spec/models/reaction_spec.rb
--'  271  23  /var/www/lims/spec/models/reaction_spec.rb
--'  277  6  /var/www/lims/spec/models/reaction_spec.rb
--'  6  49  /var/www/lims/Capfile
--'  201  4  /var/www/lims/app/models/reaction.rb
--'  87  10  /var/www/lims/app/models/client.rb
--'  1  0  /var/www/lims/app/models/client.rb
--'  19  2  /var/www/lims/config/routes.rb
--'  44  43  /var/www/lims/config/routes.rb
--'  130  2  /var/www/lims/app/models/checkout.rb
--'  96  2  /var/www/lims/app/models/checkout.rb
--'  85  10  /var/www/lims/app/models/checkout.rb
--'  72  2  /var/www/lims/app/models/checkout.rb
--'  41  0  /var/www/lims/app/models/checkout.rb
--'  20  12  /var/www/lims/app/models/checkout.rb
--'  75  4  /var/www/lims/config/locales/menus.cn.yml
--'  4  0  /var/www/lims/app/models/checkout_order.rb
--'  10  2  /var/www/lims/app/models/checkout_order.rb
--'  77  50  /var/www/lims/app/models/checkout.rb
+-'  1  0  /var/www/sino_sequencing/app/views/checkouts/index.js.erb
+-'  44  6  /var/www/dna/duizhang/log/do_index.php
+-'  1  0  /var/www/dna/duizhang/log/do_index.php
+-'  112  0  /var/www/dna/duizhang/log/index.php
+-'  1  3  /var/www/dna/duizhang/log/index.php
+-'  14  2  /var/www/dna/duizhang/log/index.php
+-'  1  0  /var/www/dna/info/sendmailtest/sendmail_chgb.php
+-'  22  0  /var/www/dna/info/sendmailtest/sendmail_chgb.php
+-'  17  0  /var/www/dna/info/sendmailtest/action.php
+-'  1  0  /var/www/dna/info/sendmailtest/action.php
+-'  1  0  /var/www/sino_sequencing/app/views/plasmids/_form.html.slim
+-'  1  0  /var/www/sino_sequencing/app/views/plasmids/edit.html.slim
+-'  12  82  /var/www/sino_primer/app/views/primers/_search.html.slim
+-'  5  0  /var/www/sino_primer/app/views/primers/_search.html.slim
+-'  1  0  /var/www/sino_primer/app/views/primers/_search.html.slim
+-'  12  132  /var/www/sino_sequencing/app/views/sample_board_templates/_table.html.slim
+-'  1  0  /var/www/sino_sequencing/app/views/sample_board_templates/_table.html.slim
+-'  5  0  /var/www/sino_sequencing/app/views/sample_board_templates/_form.html.slim
+-'  6  20  /var/www/sino_sequencing/app/views/sample_board_templates/_form.html.slim
+-'  2  0  /var/www/sino_sequencing/app/views/sample_board_templates/_form.html.slim
+-'  1  0  /var/www/sino_sequencing/app/views/sample_board_templates/new.html.slim
+-'  1  0  /var/www/sino_sequencing/app/views/sample_board_templates/edit.html.slim
+-'  1  0  /var/www/sino_sequencing/app/views/sample_board_templates/_search.html.slim
+-'  1  0  /var/www/sino_sequencing/app/views/sample_board_templates/index.js.erb
+-'  1  0  /var/www/sino_sequencing/app/views/sample_board_templates/index.html.slim
+-'  1  0  /var/www/sino_sequencing/app/views/companies/_table.html.slim
+-'  11  0  /var/www/sino_sequencing/app/views/companies/_table.html.slim
+-'  1  0  /var/www/sino_sequencing/app/views/companies/new.html.slim
+-'  1  0  /var/www/sino_sequencing/app/views/plasmid_codes/edit.html.slim
+-'  1  0  /var/www/sino_sequencing/app/views/plasmid_codes/new.html.slim
+-'  1  0  /var/www/sino_sequencing/app/views/reaction_heads/edit.html.slim
+-'  1  0  /var/www/sino_sequencing/app/views/reaction_heads/new.html.slim
+-'  12  6  /var/www/fixed_asset/config/locales/simple_form.yml
+-'  1  0  /var/www/fixed_asset/config/locales/simple_form.yml
+-'  12  6  /var/www/superwf/app/views/scaffolds/_search_form.html.slim
+-'  1  33  /var/www/superwf/app/views/roles/index.html.slim
+-'  1  0  /var/www/superwf/lib/superwf/scaffold.rb
+-'  62  4  /var/www/superwf/lib/superwf/scaffold.rb
+-'  140  33  /var/www/superwf/lib/superwf/scaffold.rb
+-'  139  9  /var/www/superwf/lib/superwf/scaffold.rb
+-'  141  6  /var/www/superwf/lib/superwf/scaffold.rb
+-'  135  47  /var/www/superwf/lib/superwf/scaffold.rb
+-'  130  52  /var/www/superwf/lib/superwf/scaffold.rb
+-'  111  34  /var/www/superwf/lib/superwf/scaffold.rb
+-'  137  16  /var/www/superwf/lib/superwf/scaffold.rb
+-'  154  2  /var/www/superwf/lib/superwf/scaffold.rb
+-'  14  6  /var/www/superwf/app/views/scaffolds/_search_form.html.slim
+-'  1  0  /var/www/superwf/app/views/scaffolds/_search_form.html.slim
+-'  3  4  /var/www/superwf/lib/capistrano/tasks/go.cap
+-'  159  15  /var/www/superwf/app/assets/stylesheets/superwf.css.scss
+-'  66  8  /var/www/superwf/app/assets/stylesheets/superwf.css.scss
+-'  52  10  /var/www/superwf/app/assets/stylesheets/superwf.css.scss
+-'  1  0  /var/www/superwf/app/assets/stylesheets/ap
+-'  17  0  /var/www/fixed_asset/config/deploy/production.rb
+-'  18  0  /var/www/fixed_asset/config/deploy/production.rb
+-'  1  0  /var/www/fixed_asset/config/deploy/production.rb
+-'  36  0  /var/www/fixed_asset/config/deploy/production.rb
+-'  25  0  /var/www/fixed_asset/config/deploy/production.rb
+-'  1  0  /var/www/fixed_asset/config/deploy.rb
+-'  35  4  /var/www/fixed_asset/config/deploy.rb
+-'  15  0  /var/www/fixed_asset/Capfile
+-'  1  0  /var/www/fixed_asset/Capfile
+-'  5  0  /var/www/fixed_asset/Capfile
+-'  13  1  /var/www/sino_primer/app/views/primers/index.html.slim
+-'  1  0  /var/www/sino_primer/app/views/primers/index.html.slim
+-'  1  0  /var/www/sino_primer/app/views/primers/index.html.haml
+-'  2  19  /var/www/sino_primer/app/views/checkouts/new.html.slim
+-'  1  0  /var/www/sino_primer/app/views/checkouts/new.html.slim
+-'  4  21  /var/www/sino_primer/app/views/orders/new.html.slim
+-'  5  21  /var/www/sino_primer/app/views/orders/_form.html.slim
+-'  1  0  /var/www/sino_primer/app/views/orders/_for_sequence.html.slim
+-'  15  0  /var/www/sino_primer/config/database.yml
+-'  7  9  /var/www/sino_primer/Rakefile
+-'  1  0  /var/www/sino_primer/Rakefile
+-'  1  19  /etc/nginx/sites-enabled/sino_primer
+-'  2  34  /etc/nginx/sites-enabled/sino_primer
+-'  11  38  /etc/nginx/sites-enabled/sino_primer
+-'  13  26  /etc/nginx/sites-enabled/sino_primer
+-'  35  34  /etc/nginx/sites-enabled/sino_primer
+-'  13  4  /var/www/primer_synthesis/Gemfile
+-'  24  21  /var/www/primer_synthesis/config/locales/simple_form.yml
+-'  1  0  /var/www/primer_synthesis/config/locales/simple_form.yml
+-'  4  85  /var/www/primer_synthesis/app/views/checkouts/_search.html.slim
+-'  1  0  /var/www/primer_synthesis/app/views/checkouts/_table.html.slim
+-'  1  0  /var/www/primer_synthesis/app/controllers/checkouts_controller.rb
+-'  8  18  /var/www/primer_synthesis/app/controllers/checkouts_controller.rb
+-'  1  32  /var/www/primer_synthesis/app/views/clients/_ajax_search.html.slim
+-'  1  0  /var/www/primer_synthesis/app/views/checkouts/new.html.slim
+-'  1  32  /var/www/primer_synthesis/app/views/clients/index.html.slim
+-'  4  0  /var/www/primer_synthesis/app/views/clients/index.html.slim
+-'  5  0  /var/www/primer_synthesis/app/views/clients/index.html.slim
+-'  15  6  /var/www/primer_synthesis/app/controllers/clients_controller.rb
+-'  1  0  /var/www/primer_synthesis/app/controllers/clients_controller.rb
+-'  124  7  /var/www/superwf/lib/superwf/scaffold.rb
+-'  94  48  /var/www/superwf/lib/superwf/scaffold.rb
+-'  77  48  /var/www/superwf/lib/superwf/scaffold.rb
+-'  42  58  /var/www/superwf/lib/superwf/scaffold.rb
+-'  40  69  /var/www/superwf/lib/superwf/scaffold.rb
+-'  44  6  /var/www/dna/duizhang/log/do_index.php
 
 # ÁºìÂÜ≤Âå∫ÂàóË°®:
-%/var/www/superwf/app/views/menus/index.js.erb	1	0
+%/var/www/sino_sequencing/app/views/checkouts/index.js.erb	1	0
 
 # Êñá‰ª∂ÂÜÖÁöÑÊ†áËÆ∞ÂéÜÂè≤ËÆ∞ÂΩï (‰ªéÊñ∞Âà∞Êóß):
 
-> /var/www/superwf/app/views/menus/index.js.erb
+> /var/www/sino_sequencing/app/views/checkouts/index.js.erb
 	"	1	0

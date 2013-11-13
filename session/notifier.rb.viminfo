@@ -8,117 +8,117 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/before_save
+~MSle0~/pdf
 
 # Last Substitute Search Pattern:
-~MSle0&province
+~MSle0&plasmid_code
 
 # Last Substitute String:
-$area
+$
 
 # Command Line History (newest to oldest):
 :q
-:Rmailer notifier
-:e _table.html.haml
-:qall:q
-:e new.html.haml
-:Rmodel project
-:Rcontroller projects
-:e config/routes.rb
-:Rcontroller ht_libraries
-:Rcontroller sale_projects
-:Rcontroller prepayments
-:Rcontroller samples
-:Rcontroller ht_sample_checks
-:Rcontroller ht_samples
-:Rcontroller bioinfo_records
-:.,.+3Rc
-:Rcontroller reports
-:Rcontroller contracts
-:.,.+3Rcontroller 
-:Rcontroller ht_library_results
-:Rcontroller deliver_samples
-:Rcontroller lanes
-:Rcontroller deliver_bills
-:Rcontroller project_records
-:Rcontroller runs
-:Rcontroller ht_sample_reports
-:Rview index.html.haml
-:Rview invoices/_accordion.html.haml
-:Rview invoices/
-:e /var/www/lims/app/views/orders/_table.html.haml
-:Rview invoices/mine.html.haml
-:Rcontroller invoices
-:Rmigration create_samples
+:Rmodel order
 :vsplit Gemfile
-:Rmodel sample
-:e Gemfile
-:tabedit 
-:Rjavascript superwf
-:Rview layouts/_show_cols.html.haml
-:Rview ht.html.haml
-:Rview projects/conv.html.haml
-:Rview conv.html.haml
-:Rview projects/new_created_conv.html.haml
-:Rlocale menus.cn.yml
-:Rview 
-:Rview invoices/index.html.haml
-:Rlocale invoices.cn.yml
+:Rmailer notifier
+:e config/database.yml
+:Rinitializer devise
+:vsplit config/routes.rb
+:vsplit config/application.rb
+:R
+:Rinitializer doorkeeper
+:Rview roles/index.html.slim
+:tabedit config/database.yml
+:Rview index.html.slim
+:Rcontroller departments
+:Rview _subtree.html.slim
+:Rview _tree.html.slim
+:Rview departments/tree.html.slim
+:vsplit Capfile
+:gg
+:Rview departments/index.html.slim
+:e config/locales/checkout_records.cn.yml
+:vs app/views/checkout_records/_get_payment.html.slim
+:Rinitializer wi
+:Rmodel client
+:vs db/seeds.rb
+:e fetch_email.rb
+:e init_db
+:e mig_form_primer_synthesis.rb
+:Rmigration modification_logs
+:Rlocale checkouts.cn.yml
+:Rcontroller checkouts
+:Renvironment development
+:tabedit Gemfile
+:Rview checkouts/_orders.html.slim
+:.,.+8o
+:Rview _form.html.slim
+:Rview checkouts/edit.html.slim
+:Rmigration create_checkout_records
 :Rmodel checkout
-:Rview projects/_ht_flow_table.html.haml
-:Rview _conv_flow_table.html.haml
+:Rmodel checkout_record
+:e config/routes.rb
+:e 
+:Rcontroller checkout_records
+:e Gemfile
+:Rmodel check
+:e lib/superwf.rb
+:e lib/superwf/engine.rb
+:Rmodel report
+:vsplit 
+:Rview _updated_in_days.html.haml
 
 # Search String History (newest to oldest):
-?/before_save
-?/workflow
-?/go
-?/projects
-?/cre
-?/def create
-?/create
-?/search
-?/subnav
-?/client
-?/conv
-?/print
-?/select_parent
 ?/pdf
-?/project_statistic
-?/conv_
-?/conv_statis
-?/select_p
-?/s
-?/def ht
-?/sear
-?/my_ht
-?/ru
-?/record_name
-??\V<%=\_s\+@record_name%>
-?/title
-?/new_created_ht
-?/nnn
+?/to_pdf
+?/render
+?/next_flow
+?/checkouts
+?/checkout_records
+?/superwf
+?/to_csv
 ?/def conv
-?/my_conv
-?/completed_conv
-?/running_conv
-??\V@record_name
-?/\V<%=\_s\+@record_name%>
-?/can_relate
-?/new_
-?/date_picker
-?/ui-da
-?/date
-?/datepicker
-?/data-id
-?/delegate
-? \<search_select_parent\>
-?/index
-?/status
-?/client_ty
-?/select_par
-?//rec
-? province
-? company
+?/prepare_
+?/search
+?/params
+? \<type\>
+?/adfasdf
+?/type
+?/aty
+??\Vnav-pills
+?/b
+? \<checkout\>
+?/layout
+?/layouts
+?/success
+?/notice
+?/fix
+?/batch
+?/select
+?/invert
+? \<@create\>
+?/view_bac
+?/precheck
+?/prechecks
+?/ty
+?/urgent
+?/is_tes
+? \<reaction_order_id\>
+?/reaciton
+?/def index
+?/new_redo
+?/area
+?/bool
+?/boo
+? \<new_record\>
+?/primer_board_table
+?/create_dialog
+?/btn
+? \<minus\>
+?/plus
+? \<fixed\>
+??f
+?/layou
 
 # Expression History (newest to oldest):
 
@@ -128,64 +128,77 @@ $area
 
 # å¯„å­˜å™¨:
 "0	LINE	0
-	= render 'scaffolds/subnav', links: [btn(:back, class: 'btn-primary')]
-"1	LINE	0
-	- if defined? @<%= @controller_name %>
-"2	LINE	0
-	= render 'scaffolds/subnav', links: [btn(:back, eval("#{@model_name.to_s.pluralize}_path"), class: 'btn-primary')]
-"3	LINE	0
-	    @ht_sample = ::HtSample.new params[:ht_sample]
-"4	LINE	0
-	    @report = ::Report.new params[:report]
-	    @report.creator_id = current_user.to_param
-"5	LINE	0
-	    @contract = ::Contract.new params[:contract]
-	    @contract.creator_id = current_user.to_param
-"6	LINE	0
-	= render 'search'
-"7	LINE	0
+	  db.execute "UPDATE #{tb} SET creator_id = 74 WHERE creator_id = 58"
+""1	LINE	0
 	
+"2	LINE	0
+	    @client = order.client
+	    #@content_type = 'text/html'
+	    attachments["#{order.sn}.pdf"] = {mime_type: 'application/pdf', content: order.to_pdf.render, :content_type => 'application/pdf'}
+	    mail(:to => @client.client_emails.map(&:email), :subject => "#{@client.name}æ‚¨å¥½ï¼Œæ‚¨çš„è®¢å•å·#{order.sn}çš„å¼•ç‰©æŠ¥å‘Šå•")
+	  end
+"3	LINE	0
+	  # å‘é€æŠ¥å‘Šå•
+	  def sendreport order
+"4	LINE	0
+	  # user_id ä¸ºè®°å½•å‘é€äºº
+"5	LINE	0
+	  
+"6	LINE	0
+	  # å‘é€ç™»å½•IDå’Œå¯†ç 
+	  # user_id ä¸ºè®°å½•å‘é€äºº
+	  def sendpasswd client_email
+	    @client = client_email.client
+	    @content_type = 'text/html'
+	    mail :to => client_email.email, :subject => 'è¯ºèµ›åŸºå› å¼•ç‰©åˆæˆå®¢æˆ·æŸ¥è¯¢ç³»ç»Ÿç™»å½•ä¿¡æ¯'
+	  end
+"7	LINE	0
+	# coding: utf-8
+	# ç»™å®¢æˆ·å‘é€ç™»å½•ä¿¡æ¯é‚®ä»¶
 "8	LINE	0
-	#accordion.accordion
-	  .accordion-group
-	    .accordion-heading
-	      %a.accordion-toggle.btn.btn-primary{'data-toggle' => "collapse", 'data-parent' => "#accordion", href: "#search_content"}= tl :search
-	    #search_content.accordion-body.collapse
-	      .accordion-inner
-	        = render 'search', except: [:area]
-"9	LINE	0
-	    %span.caret
-	  %ul.dropdown-menu
-	    %li
-"a	LINE	0
-	      if ::Rails.env.test?
-	        t.string :remark
-	      else
-	        t.text :remark
-	      end
-"b@	BLOCK	23
+	user_center:
+	  adapter: mysql2
+	  encoding: utf8
+	  reconnect: false
+	  database: user_center_development
+	  pool: 5
+	  username: root
+	  password: '1'
+	  socket: /var/run/mysqld/mysqld.sock
+"9	CHAR	0
+	ter_filter :expire_tree, only: [:update, :create, :destroy]
+	  private
+	  # delete the tree cache in the index action
+	  
+"b	BLOCK	23
 	 NOT NULL AUTO_INCREMENT
+"c	CHAR	0
+	278
+<wcbcwcreated_datewwwwbwwcwcreated_date_from??k3gtggjjjjjjjjjjkjkkwwwwwwwwwwwwwwwwwcwcreated_date_to??k3??é½ƒ??é½ƒ????,????.i@jjkfdi@jk;;i@jkkkkkkj/datanni@nni@nnnnnni@nni@nni@nni@#xnnI@uunni#??kb@nni@nni@nni@nni@nni@nni@nni@nni@nni@nni@nni@nni@nn
 "g	CHAR	0
 	
+"i	CHAR	0
+	378
+<""""i""iquadrantoreaction_board_id = _this.a??kbparn??kbent().attr()i""re??kb??kbireaction_board_I??kbid??k3kkkkkYGpwwwwwwwwwwwCbbbbddkkkkkkkYjVkyjGpzzjwwwwwwwwvf]sp[??kb??kb[]i""hireaction_board=??kb_id=lli  i++i  ireaction_board_idllllla[]iquadrna??kb??kbant=""i  i++i  iquadrant??k3??k3??k3??k3??k3????,????.??k3??k3??k3??k3??k3??k3??k3????,????.veee
 "k	CHAR	0
-	2698
-<jh:Rsp	 mo	sample/comlet€kb€kb€kbplete!jjjjjjjjkkekkkkoprecheck = o€kbdouble()iprecheck'xbi:oprecheck.stub()ipassed: true€k3zzjjjkkojjjjjkkwkkkkkkjI@#€kbjjjjjkkkko@s.stub()iprecheck: @precheckjjjjjkzzbo@s.passed.should be_niljjbo@s.passed.should eq()i@precheck.passedo@s.ddjjjjjwjjzzo@s.passed.should be_nilkkkkkkkkkkkkkk€k3bbbb€ıL€ıL€ıL€ıLgthjjjjkzzjjkkkkkkkkkkkkkkkkkjjjjjjjjjjjjjjjjjjk%%kwzzkkwwwcacwvalidatebcwvalid?€k3lhjjj%%kwoit '' doendkllitypesetted?biif ela can not be dewt€kb€kbstroyedljjzzkkkkkkkjjbjjkCcomplete!kVkdjjjjjgthkjlkkkkkkkkkkkjjjjkkkoreturn false unless p€kbself.precheckbbbbcwifbbbveeebhxjjjoendkVkk>€k3jjjjjjjjjjjbgtebzhjjjhjjjjkkkouVjdkkkkkkkwO@p.sam;pl€kb€kb€kble.shoulsample.should_re()i:complete!jjjjjjoit '' doendklliif typesetted?zza €kb, can not be destroyedlkkkkkwwwwww@##nnnnnho@p.sample.typesetted?lbbvelxnnbbvexxnn/delegateeeea, :typesetted?€k3hbcistub :A = €kb> truelnkkkwwwww#ho@p.savekddpo@p.s€kbdestroyo@p.should_not be_destroyedjzzoit '' doendklllhiafter destroy ,€kb€kb, sample should e€kbunl€kbcop€kbmplete!o@p.saveo@p.det€kbstt€kbroyko@p.sample.typesestub t€kb:typesetted? => falsejozz€kb€kbddzzkwO@p.sample.should_rec :uncom!€k3ljjjjzzjjjzzbzzjjkzzhjjjddjk%%ocontext '' doendkwatest scopeszzobefor €kbe :each doendko@p.savezzjoit '' doendklliwhen passed, €kb€kbzzo@€kb::Precheck.passed.should be_inc€kbn€kbl()i@pko@p.s€kbpassed.should be_truejzzo::Precheck.unpassed.should_no be_inc€kb()i@pjzzoit' ' €kb€kb€kb€kb '' doendklliwhen unpassedo@p.precheck_code.stub()i:passed: €kb€kb:bhxela falsas€kbezzo@p.s€kbddkwkonew_recor€kb€kb€kb€kb€kbcode = create_precheck_code passed: falsejbbbbbbbCupdate_attribute precheck-cod€kb_code_id: new_code.ido@p.validatelkkkkkkkkkkkkkkkkkkkkhkeasjljjjjjjzzjjjjzzhbcwpassed.should be_falseokkkukkkkkkVkdujjjjjjjpjfuvlxkP€k3ljjjjzzhzzGoukoit '' doendkllitest show methodzzo@p.show €kb.should eq()lkwvf"yhPbbbbbbbbbcw@pwwwww.€k3ljjjzzjwwcwcode€k3€k3€k3€k3hjoit '' doendklliself.test to_s methodo@p.to_s.should eq()i@p.codde€kb€kbe€k3ljjjggGkkkkjjwkkkkggkjk:Rmo	 hea	h:Rsp	 sp	msp	mmo	heheat	jjjwCbefore :each doendko::@h = ::Fac.cu€kb€kbbuild :heat_cy, reaction_board_id: reactcreate_reaction_board.id€k3:Rfix	 heat	jjjwocreate€kbor_id `€kb12€kboremark ''irrrrr€k3lhoquadrant ''ixxxx€k3ljjjjjjjjjjjjkkwh:Rmi	 create_heat	joit '' doendkllihas theset €kb€kb attributes can mass-assign€k3lgghkkoit'' €kb€kb€kb '' doendklliis boardo::Heat.€kb::BOar€kb€kb.should be_true€k3jjjjzzkotest_an€kb ::HeatC€kb, []ljjwwwbv$hyhP€k3zzjjk
+	448
+<oukounless xhr?ujddujddoendk>>osession[]i:referear hla = referer if redererreferer.present?€k3kkkkkkkkkjjjjod€kbbefore_action :set_se, only: []i:new, :c€kbedit€k3€ı,€ı.x€k3€ıK€ıK€ıK€ıK€ıL€ıL€ıL€ıL€ı,€ı.xxxxxxxxkkwlllllxxxxxxxx€k3€k3€k3€k3€k3€k3bbbbwjjjjjjjI#€k3€k3€k3€k3€k3kkodef newend€k3kosession[]i:red€kbfererl:Rvi	 ho	i	hlla = ''hCroot_path€k3korender text: 'abc'€k3bddpwwwCsession[]i:refeer€kb€kbrer€k3€k5€k5
 "l	CHAR	0
-	
+	lD€k3€k3€k3€k3€k3€k3gkjkjgtlgt:Rmo	 blas	:vs ap	mo	sam	/before_sam€kbvenzzjjjjkkkwjlkkkkkkkkkjjkkYhp€k3€k3€k3kwwwwwwwwllajkddkpuPjjoendkVk>€k3:Rmi cRmi	 creatrecreate_se	:Rmi	 	w
 "p	LINE	0
 	
 	
 	::::::::::::::::::::::::
-	æ—¥æœŸï¼šå…¬å…ƒ2013å¹´1æœˆ10æ—¥ã€€æ˜ŸæœŸå›› 
-	é›»è…¦ï¼šunix  0.008533 seconds 
-	ç‰ˆæœ¬ï¼švi=703 
-	ç·¨ç¢¼ï¼šutf-8ã€€utf-8,ucs-bom,euc-jp,gb18030,gbk,gb2312,cp936 
-	ç’°å¢ƒï¼šzh_CN.UTF-8 
-	è©åº«ï¼šæ‹¼éŸ³è©åº«ï¼š/home/wangfan/.vim/plugin/vimim.pinyin_quote_sogou.txt 
-	è©åº«ï¼šé›²è©åº«ï¼šç™¾åº¦é›²ã€€3é›²ã€€æœç‹—é›²ã€€ï¼±ï¼±é›²ã€€ 
-	è¯ç¶²ï¼šPython2 Interface to Vim 
-	è¼¸å…¥ï¼šVimIMã€€ã€€å°é¶´é›™æ‹¼ã€€ 
-	é¸é …ï¼švimimrc 
+	éƒãƒ¦æ¹¡é”›æ°¬å•é??2013éª??1éˆ??10éƒãƒ£????é„ç†¸æ¹¡é¥?? 
+	é—†æ˜å‡é”›æ­¶nix  0.008533 seconds 
+	é—å Ÿæ¹°é”›æ­·i=703 
+	ç»¶ã„§â’“é”›æ­¶tf-8éŠ†??utf-8,ucs-bom,euc-jp,gb18030,gbk,gb2312,cp936 
+	é æ¿??å†¿ç´°zh_CN.UTF-8 
+	ç‘­ç‚²éŸ©é”›æ°­å«¾é—Šå® ??ç‚²éŸ©é”›??/home/wangfan/.vim/plugin/vimim.pinyin_quote_sogou.txt 
+	ç‘­ç‚²éŸ©é”›æ°¶æ´¸ç‘­ç‚²éŸ©é”›æ°±æ«¨æ´ï¹‚æ´¸éŠ†??3é—†å±‚????é¼æ»…å«é—†å±‚????é”›æ†‹æ€¥é—†å±‚???? 
+	é‘±??ç¼è¯§ç´°Python2 Interface to Vim 
+	æ“ç¨¿å†é”›æ­imIMéŠ†??éŠ†??çå¿›æ´é—†æ¬å«¾éŠ†?? 
+	é–¬æçˆ¡é”›æ­·imimrc 
 	    :let g:vimim_cloud = 'baidu,3'  
 	    :let g:vimim_map = 'c-bslash'  
 	    :let g:vimim_mycloud = 0  
@@ -196,136 +209,239 @@ $area
 	  " :let g:vimim_toggle = 'pinyin,baidu,3,sogou,qq' 
 	::::::::::::::::::::::::
 	
-	æ²¡æœ‰åŒ¹é…çš„è‡ªåŠ¨å‘½ä»¤
-	æ²¡æœ‰åŒ¹é…çš„è‡ªåŠ¨å‘½ä»¤	
+	å¨Œâ„ƒæ¹é–å½’å¤é¨å‹®åšœé”ã„¥æ‡¡æµ ??
+	1963
+<å¨Œâ„ƒæ¹é–å½’å¤é¨å‹®åšœé”ã„¥æ‡¡æµ ??	PhkkkwVkVjjylPwwwwxxxscreator€k3€k3€k3€k3€k3€k3jjkkjjkjbcwrecord_type€k3jjjjjjjjjjkkkkkkkkkkkkhebe:Rm€kbmo	 sample/sample_cancelnI#€k3€k3€k3€k3€k3€k3€k3lkjbebjbjjjkebebjjjjllwwwbbbbbbwvestr€kbextwwwwbveeex€k3D€k3h:RMo	 Rmo	 cance	jkobelongs_to :sample, poli€kby: true€k3€k3€k3€k3A, as: :record€k3€k3€k3€k3€k3€k3xukkkkbukkkkbCuuebvestable_name€k3€ı,€ı.be€ıL€ıL€ıK€ıKklu€k3€k3€k3€k3€k3€k3€k3€ı,€ı.€ıK€ıLYpwwwbcwreactionzzo#h€kb hooks€kb€kbb€kbafter_create doendkoself.record.destroy€k3:gth:Rcon	 sample_can	jjkjjkl:Rcon	 s€kbcancel	ukVjjjjd€k3hV%kkdlphkddlkpwwwbxxxxxxxxsrecord_typewwwwh:€k3:Rmi	 create_cancel	jjjwlbwwwekoinclude ::Superwf:S€kb:Sc€kb€kbRecordor::Creator€k3jhjj:Rmi	 create_sample_cancel	jjjkkkYjjjjjpjjkkbeeeeeeela, data:€kbbi:eexbbA, search: []i:c€kbcreator_id€k3bbbbbDjjjjjjjk€k3h:Rcon	 Rmo	 cancel	jklggjddhP€k3l€k3€k3€k3€k3€k3€k3h:Rvi	 samples	in	jjbbbbbbbbwllllhhhhvlllllllllllllllldicancel_€kbed_data€k3:e c	r	/cancel_€kbed/sample_cancelnnnOresources :canceled_datas, only: []i:index, :create€k3jebebI#€k3€k3€k3€k3€k3€k3Lhjjjjjwl:Rvi	 sample_cance	samples	in	jjkO= hindd€kb€kb€kbdden_field_tag :sampdata_ta€kbypebxxxsrecordA, ''isampleb~€k3bebebhveebcwrecordwwvees::€kb€kbeval()iparams[]i:record_type€k3wwwwvesidkbbwcwidjjbbbvesrecordwwlllllllbveebbescanceled_data€k3€k3€k3bicreate_€k3gt:Rmo	 samplejbbbbxwwvllbCcanceled_data€k3€k3€k3€k3€k3gtl:Rmi	 create_sc€kb€kbcanc	jjkggjjjwhjkeeeeeeeeeeeea, data: record.to_swwbwcwrecordbbhDjj€k3bbbbljjkkkjjjkhkkeeeeeeebbbbbbbbbirecord:€kb_id: id, record_type: u€k3€k3€k3€k3€k3€ü€ı,€ü€ı-€ü€ı-€ü€ı-€ü€ı-€ü€ı-€ü€ı.:Rmo	 prepay	ggjjjjjjjjjjjjjjjgg:Rmo	 cancel	jkkkkkkwwwDbbbbbcwrecordjdd€k3€k3€k3€k3€k3:Rmo	 clientjjkkh:Rmo	 c€kbsampleggjjjjjwwA, as: :record€k3€k3€k3l€ı,€ı.€ı,€ı.€ı,€ı.€ıK€ıK:Rmo	 s€kbcancel	
+"q	CHAR	0
+	483
+<Vkkk<wlvt"screate prepaymentsjbbbwcwpostkop = ::Fac.build :€kb€kb()i:prepaymentA.attributes€k3ja, preap€kb€kbpayment: p€k3jbbbwwcw302€k3k€k3€k3€k3€k3€k3€k3€k3kop.deleteko[]bC%w{}icreated_at d€kbupdated_at d€kbcreator_idjkA.each do |a|joendk>>A a€k3€k3€k3€k3jjlkkkkkkkkkk:Rsp	 sp	req	res	hkkjop €kb[]i''icompanycompanyrecord_idA = create_company.id€k3:Rfic€kbx	 prepaym	n€kb€kb€kb€kb€kb€kb€kb€kb€kbs	l:Rmo	 prepam	€kb	jjjjjjjjjjjjjjjjjjjjjweb
+"s	CHAR	0
+	594
+<,hi,llxxepwxxxsuuf}xexepwxxxwewwxepwxxxwwllDjjwwxxewbea_tagea, params[]iswwxepwxxxwwwwwwxepwxxxwwxepwxxxjjkkjjj^wxxea_g??kbtagwwwwwxepwxxx??k3????,????.xepwxxxjjkwwwwwwwwwxepwxxxwwwwwwxepwxxxwwxepwxxxwjbbbbbbbbxepwxxx??k3??k3????,????.:Rvi	 quality_co	_ta	jkVjdljkggjjkwpVj>.jwveehxwwr xu$xbbbbbbbxepwxxx??k3hdd??k3l:Rvi	 ????,????.??é½ƒ??é½‚??é½ƒ????,????.????,????.$ibcwtruebbbbbwi, params[]i:result??k3:Rmo	 qual	Gkgg:_c	Gkwkkkwji#??k3??k3??k3??k3u??k3h:Rcon	 qua	jjjjjjjjjjjjjjjjjjjjjjjjjjjj:??kb??kb??kby_co	a, :desc??k3l:Rmo	 sample_he	G/searchgg:R
 "v	CHAR	0
-	389
-<jkV%>wveesself€k3€ıK€ıK€ıK€ıL€ıL€ıK€ıL€ıL€ı,€ı-€ı-€ı-€ı-€ı-€ı-€ı-€ı-€ı-€ı.sselfwwwwblveesself€k3gt:gtjjV%ddd€k3hjjbbbbluuwC€ı,€ı.€ı,€ı.bcwbcwc€kbmoduleA F€kb€kbFac€k3hjjjjjjbbbbveelx€k3€k3€k3€k3€k3€ı,€ı.cw::Filewwww.€k3€ı,€ı.xkjjI#€k3kY:Rfix	 hr€kbtcon	jjjjj:Rfix 	htRfix	 ht_smaple-re	€kb€kb€kb_r	:€kb€kb€kb€kb€kb€kb€kbamp		jkpdkddljjV%ddd€k3h€k3jjl€k3h
+	473
+<jkV%>wveesself??k3??é½‚??é½‚??é½‚??é½ƒ??é½ƒ??é½‚??é½ƒ??é½ƒ????,????-????-????-????-????-????-????-????-????-????.sselfwwwwblveesself??k3gt:gtjjV%ddd??k3hjjbbbbluuwC????,????.????,????.bcwbcwc??kbmoduleA F??kb??kbFac??k3hjjjjjjbbbbveelx??k3??k3??k3??k3??k3????,????.cw::Filewwww.??k3????,????.xkjjI#??k3kY:Rfix	 hr??kbtcon	jjjjj:Rfix 	htRfix	 ht_smaple-re	??kb??kb??kb_r	:??kb??kb??kb??kb??kb??kb??kbamp		jkpdkddljjV%ddd??k3h??k3jjl??k3h
 "w	CHAR	0
-	299
-<wwwwwxepwxxx€k3€ı,€ı.€ı,€ı.D€ı,€ı.d€ı,€ı.D€k3€ı,€ı.lgg:Rvi	 samples	un	h:Rvi	 Rcon	 samples	jjjjzzlgg:Rvi	 unrel	jjwho@title = lwwwDhplVkd€k3h€k3:Rcon	 projects	/can_relatekjjbO@title = ''€k3bCtm()i:project€k3:Rvi	 can_re€kb€kbrel	G/titlenwwwwwhve#@bbukkkkjnnnhhhhvf>#:
-""-	CHAR	0
-	@<%= @controller_name %>
+	wwwww.€k3lbxxxxxsvector€k3hjjA, w€kb€kb{}istyle: ''iwdi
+"x	CHAR	0
+	"
+"-	CHAR	0
+	 
 
 # å…¨å±€å˜é‡:
 
 # æ–‡ä»¶æ ‡è®°:
-'0  21  4  /var/www/primer_synthesis/app/mailers/notifier.rb
-'1  1  0  /var/www/lims/.git/COMMIT_EDITMSG
-'2  6  0  /var/www/superwf/superwf_scaffold/lib/views/scaffolds/index.html.haml
-'3  22  8  /var/www/superwf/superwf_scaffold/lib/generators/superwf_scaffold/templates/_table.html.haml
-'4  1  0  /var/www/superwf/superwf_scaffold/lib/generators/superwf_scaffold/templates/layouts/_pagination.html.haml
-'5  2  50  /var/www/superwf/superwf_scaffold/lib/generators/superwf_scaffold/templates/layouts/_nav_bar_bottom.html.haml
-'6  1  0  /var/www/superwf/superwf_scaffold/lib/generators/superwf_scaffold/templates/layouts/_nav_bar_bottom.html.haml
-'7  1  0  /var/www/superwf/superwf_scaffold/lib/generators/superwf_scaffold/templates/layouts/_nav_bar_
-'8  3  17  /var/www/superwf/superwf_scaffold/lib/generators/superwf_scaffold/templates/index.html.haml
-'9  2  35  /var/www/superwf/superwf_scaffold/lib/generators/superwf_scaffold/templates/_nav_bar_bottom.html.haml
+'0  2  0  /var/www/sino_primer/app/mailers/notifier.rb
+'1  1  0  /var/www/sino_primer/config/database.yml
+'2  1  0  /var/www/user_passport/config/initializers/devise.rb
+'3  69  0  /var/www/sino_primer/mig_form_primer_synthesis.rb
+'4  4  4  /var/www/user_passport/app/controllers/departments_controller.rb
+'5  65  17  /var/www/sino_primer/mig_form_primer_synthesis.rb
+'6  4  115  /var/www/checkout_flow/app/views/checkout_records/_get_payment.html.slim
+'7  1  0  /var/www/superwf/lib/superwf/scaffold.rb
+'8  5  16  /var/www/sino_project/app/models/client.rb
+'9  21  0  /var/www/sino_primer/config/environments/development.rb
 
 # è·³è½¬åˆ—è¡¨ (ä»æ–°åˆ°æ—§):
--'  21  4  /var/www/primer_synthesis/app/mailers/notifier.rb
--'  1  0  /var/www/primer_synthesis/app/mailers/notifier.rb
--'  1  0  /var/www/lims/.git/COMMIT_EDITMSG
--'  166  0  /var/www/lims/.git/COMMIT_EDITMSG
--'  6  0  /var/www/superwf/superwf_scaffold/lib/views/scaffolds/index.html.haml
--'  5  0  /var/www/superwf/superwf_scaffold/lib/views/scaffolds/index.html.haml
--'  1  0  /var/www/superwf/superwf_scaffold/lib/views/scaffolds/index.html.haml
--'  22  8  /var/www/superwf/superwf_scaffold/lib/generators/superwf_scaffold/templates/_table.html.haml
--'  1  0  /var/www/superwf/superwf_scaffold/lib/generators/superwf_scaffold/templates/_table.html.haml
--'  3  17  /var/www/superwf/superwf_scaffold/lib/generators/superwf_scaffold/templates/index.html.haml
--'  1  0  /var/www/superwf/superwf_scaffold/lib/generators/superwf_scaffold/templates/layouts/_pagination.html.haml
--'  2  50  /var/www/superwf/superwf_scaffold/lib/generators/superwf_scaffold/templates/layouts/_nav_bar_bottom.html.haml
--'  1  2  /var/www/superwf/superwf_scaffold/lib/generators/superwf_scaffold/templates/layouts/_nav_bar_bottom.html.haml
--'  1  0  /var/www/superwf/superwf_scaffold/lib/generators/superwf_scaffold/templates/layouts/_nav_bar_
--'  1  0  /var/www/superwf/superwf_scaffold/lib/generators/superwf_scaffold/templates/index.html.haml
--'  2  35  /var/www/superwf/superwf_scaffold/lib/generators/superwf_scaffold/templates/_nav_bar_bottom.html.haml
--'  1  0  /var/www/superwf/superwf_scaffold/lib/generators/superwf_scaffold/templates/_nav_bar_bottom.html.haml
--'  1  0  /var/www/superwf/superwf_scaffold/lib/generators/superwf_scaffold/templates/index.
--'  1  38  /var/www/superwf/superwf_scaffold/lib/generators/superwf_scaffold/templates/new.html.haml
--'  1  38  /var/www/superwf/superwf_scaffold/lib/generators/superwf_scaffold/templates/edit.html.haml
--'  2  0  /var/www/superwf/superwf_scaffold/lib/views/scaffolds/new.html.haml
--'  1  0  /var/www/superwf/superwf_scaffold/lib/views/scaffolds/edit.html.haml
--'  132  7  /var/www/sino_project/app/models/project.rb
--'  162  2  /var/www/sino_project/app/models/project.rb
--'  119  12  /var/www/sino_project/app/models/project.rb
--'  141  6  /var/www/sino_project/app/controllers/projects_controller.rb
--'  132  6  /var/www/sino_project/app/controllers/projects_controller.rb
--'  116  12  /var/www/sino_project/app/models/project.rb
--'  16  33  /var/www/sino_project/app/models/project.rb
--'  15  34  /var/www/sino_project/app/models/project.rb
--'  14  33  /var/www/sino_project/app/models/project.rb
--'  13  34  /var/www/sino_project/app/models/project.rb
--'  12  32  /var/www/sino_project/app/models/project.rb
--'  11  36  /var/www/sino_project/app/models/project.rb
--'  186  23  /var/www/sino_project/app/models/project.rb
--'  153  4  /var/www/sino_project/app/controllers/projects_controller.rb
--'  21  46  /var/www/sino_project/app/controllers/projects_controller.rb
--'  88  8  /var/www/sino_project/config/routes.rb
--'  1  0  /var/www/sino_project/config/routes.rb
--'  43  2  /var/www/sino_project/app/controllers/ht_libraries_controller.rb
--'  1  0  /var/www/sino_project/app/controllers/ht_libraries_controller.rb
--'  41  2  /var/www/sino_project/app/controllers/sale_projects_controller.rb
--'  1  0  /var/www/sino_project/app/controllers/sale_projects_controller.rb
--'  17  2  /var/www/sino_project/app/controllers/samples_controller.rb
--'  5  0  /var/www/sino_project/app/controllers/samples_controller.rb
--'  14  2  /var/www/sino_project/app/controllers/ht_sample_checks_controller.rb
--'  1  0  /var/www/sino_project/app/controllers/ht_sample_checks_controller.rb
--'  47  58  /var/www/sino_project/app/controllers/ht_samples_controller.rb
--'  46  4  /var/www/sino_project/app/controllers/ht_samples_controller.rb
--'  1  0  /var/www/sino_project/app/controllers/ht_samples_controller.rb
--'  6  0  /var/www/sino_project/app/controllers/bioinfo_records_controller.rb
--'  22  4  /var/www/sino_project/app/controllers/reports_controller.rb
--'  21  4  /var/www/sino_project/app/controllers/contracts_controller.rb
--'  22  47  /var/www/sino_project/app/controllers/contracts_controller.rb
--'  13  2  /var/www/sino_project/app/controllers/ht_library_results_controller.rb
--'  1  0  /var/www/sino_project/app/controllers/ht_library_results_controller.rb
--'  31  2  /var/www/sino_project/app/controllers/deliver_samples_controller.rb
--'  11  62  /var/www/sino_project/app/controllers/deliver_samples_controller.rb
--'  20  61  /var/www/sino_project/app/controllers/lanes_controller.rb
--'  1  0  /var/www/sino_project/app/controllers/lanes_controller.rb
--'  16  4  /var/www/sino_project/app/controllers/deliver_bills_controller.rb
--'  17  3  /var/www/sino_project/app/controllers/deliver_bills_controller.rb
--'  11  65  /var/www/sino_project/app/controllers/deliver_bills_controller.rb
--'  5  4  /var/www/sino_project/app/controllers/project_records_controller.rb
--'  44  54  /var/www/sino_project/app/controllers/runs_controller.rb
--'  47  58  /var/www/sino_project/app/controllers/runs_controller.rb
--'  37  6  /var/www/sino_project/app/controllers/runs_controller.rb
--'  12  33  /var/www/sino_project/app/controllers/runs_controller.rb
--'  10  10  /var/www/sino_project/app/controllers/runs_controller.rb
--'  1  0  /var/www/sino_project/app/controllers/runs_controller.rb
--'  1  0  /var/www/sino_project/app/controllers/ht_sample_reports_controller.rb
--'  12  55  /var/www/sino_project/app/controllers/ht_sample_reports_controller.rb
--'  1  0  /var/www/sino_project/app/controllers/reports_controller.rb
--'  1  0  /var/www/sino_project/app/controllers/contracts_controller.rb
--'  247  32  /var/www/sino_project/app/controllers/projects_controller.rb
--'  1  0  /var/www/sino_project/app/controllers/projects_controller.rb
--'  3  19  /var/www/lims/Gemfile
--'  1  0  /var/www/lims/Gemfile
--'  140  13  /var/www/sino_project/app/assets/javascripts/superwf.js.coffee
--'  141  6  /var/www/sino_project/app/assets/javascripts/superwf.js.coffee
--'  138  13  /var/www/sino_project/app/assets/javascripts/superwf.js.coffee
--'  116  57  /var/www/sino_project/app/assets/javascripts/superwf.js.coffee
--'  8  11  /var/www/sino_project/app/views/layouts/_show_cols.html.haml
--'  1  0  /var/www/sino_project/app/views/projects/conv.html.haml
--'  62  12  /var/www/sino_project/app/views/projects/conv.html.haml
--'  1  0  /var/www/sino_project/app/models/sale_project.rb
--'  80  67  /var/www/sino_project/app/models/sale_project.rb
--'  75  63  /var/www/sino_project/app/models/sale_project.rb
--'  224  0  /var/www/sino_project/app/models/sale_project.rb
+-'  2  0  /var/www/sino_primer/app/mailers/notifier.rb
+-'  75  2  /var/www/sino_primer/mig_form_primer_synthesis.rb
+-'  99  0  /var/www/sino_primer/mig_form_primer_synthesis.rb
+-'  84  2  /var/www/sino_primer/mig_form_primer_synthesis.rb
+-'  71  58  /var/www/sino_primer/mig_form_primer_synthesis.rb
+-'  1  0  /var/www/sino_primer/mig_form_primer_synthesis.rb
+-'  52  38  /var/www/sino_primer/mig_form_primer_synthesis.rb
+-'  65  0  /var/www/sino_primer/mig_form_primer_synthesis.rb
+-'  66  0  /var/www/sino_primer/mig_form_primer_synthesis.rb
+-'  69  0  /var/www/sino_primer/mig_form_primer_synthesis.rb
+-'  1  0  /var/www/sino_primer/config/database.yml
+-'  31  0  /var/www/sino_primer/config/database.yml
+-'  32  2  /var/www/sino_primer/config/database.yml
+-'  256  0  /var/www/sino_primer/config/initializers/devise.rb
+-'  4  76  /var/www/sino_primer/config/initializers/devise.rb
+-'  1  0  /var/www/sino_primer/config/initializers/devise.rb
+-'  1  0  /var/www/user_passport/config/initializers/devise.rb
+-'  233  0  /var/www/user_passport/config/initializers/devise.rb
+-'  1  0  /var/www/user_passport/config/initializers/doorkeeper.rb
+-'  43  0  /var/www/user_passport/config/initializers/doorkeeper.rb
+-'  1  0  /var/www/user_passport/app/views/roles/index.html.slim
+-'  86  45  /var/www/sino_primer/mig_form_primer_synthesis.rb
+-'  72  11  /var/www/sino_primer/mig_form_primer_synthesis.rb
+-'  4  4  /var/www/user_passport/app/controllers/departments_controller.rb
+-'  1  0  /var/www/user_passport/app/views/departments/index.html.slim
+-'  5  4  /var/www/user_passport/app/views/departments/index.html.slim
+-'  67  139  /var/www/sino_primer/mig_form_primer_synthesis.rb
+-'  4  115  /var/www/checkout_flow/app/views/checkout_records/_get_payment.html.slim
+-'  10  2  /var/www/checkout_flow/app/models/checkout_record.rb
+-'  1  0  /var/www/checkout_flow/app/models/checkout_record.rb
+-'  1  0  /var/www/superwf/lib/superwf/scaffold.rb
+-'  5  4  /var/www/superwf/lib/superwf/scaffold.rb
+-'  147  6  /var/www/superwf/lib/superwf/scaffold.rb
+-'  5  16  /var/www/sino_project/app/models/client.rb
+-'  15  0  /var/www/sino_project/app/models/client.rb
 -'  1  0  /var/www/sino_project/app/models/client.rb
--'  48  4  /var/www/sino_project/app/models/client.rb
--'  55  12  /var/www/sino_project/app/models/client.rb
--'  28  0  /var/www/sino_project/app/models/project_type.rb
--'  1  0  /var/www/sino_project/app/models/project_type.rb
--'  64  0  /var/www/sino_project/app/models/client.rb
--'  23  73  /var/www/sino_project/app/models/company.rb
--'  11  16  /var/www/sino_project/app/views/areas/index.js.erb
--'  2  25  /var/www/sino_project/app/views/areas/index.js.erb
+-'  21  0  /var/www/sino_primer/config/environments/development.rb
+-'  1  0  /var/www/sino_primer/config/environments/development.rb
+-'  1  0  /var/www/sino_primer/Gemfile
+-'  3  11  /var/www/sino_primer/app/views/checkouts/_form.html.slim
+-'  1  0  /var/www/sino_primer/app/views/checkouts/_orders.html.slim
+-'  7  0  /var/www/sino_primer/app/views/checkouts/edit.html.slim
+-'  1  0  /var/www/sino_primer/app/models/checkout.rb
+-'  88  6  /var/www/sino_primer/app/models/checkout.rb
+-'  5  6  /var/www/sino_primer/db/migrate/20130913083952_create_checkout_records.rb
+-'  109  4  /var/www/sino_primer/app/models/checkout.rb
+-'  14  0  /var/www/sino_primer/app/models/checkout.rb
+-'  1  0  /var/www/sino_primer/app/models/checkout_record.rb
+-'  13  10  /var/www/sino_primer/app/views/checkout_records/new.html.slim
+-'  1  0  /var/www/sino_primer/app/views/checkout_records/new.html.slim
+-'  31  43  /var/www/sino_primer/config/routes.rb
+-'  28  37  /var/www/sino_primer/config/routes.rb
+-'  9  2  /var/www/sino_primer/config/routes.rb
+-'  1  0  /var/www/sino_primer/config/routes.rb
+-'  2  0  /var/www/sino_primer/Gemfile
+-'  39  22  /var/www/sino_primer/Gemfile
+-'  4  0  /var/www/sino_primer/app/models/checkout.rb
+-'  21  2  /var/www/checkout_flow/checkout_flow.gemspec
+-'  1  0  /var/www/checkout_flow/checkout_flow.gemspec
+-'  23  0  /var/www/checkout_flow/checkout_flow.gemspec
+-'  14  27  /var/www/checkout_flow/checkout_flow.gemspec
+-'  11  22  /var/www/checkout_flow/checkout_flow.gemspec
+-'  14  4  /var/www/superwf/lib/superwf.rb
+-'  1  0  /var/www/superwf/lib/superwf.rb
+-'  2  0  /var/www/superwf/lib/superwf/engine.rb
+-'  22  2  /var/www/superwf/lib/superwf.rb
+-'  19  2  /var/www/sino_project/app/models/report.rb
+-'  1  0  /var/www/sino_project/Capfile
 
 # ç¼“å†²åŒºåˆ—è¡¨:
-%/var/www/primer_synthesis/app/mailers/notifier.rb	21	4
-%/var/www/lims/.git/COMMIT_EDITMSG	1	0
+%/var/www/sino_primer/mig_form_primer_synthesis.rb	75	2
+%/var/www/sino_primer/app/mailers/notifier.rb	2	0
+%/var/www/sino_primer/Gemfile	1	0
+%/var/www/sino_primer/app/models/order.rb	83	8
 
 # æ–‡ä»¶å†…çš„æ ‡è®°å†å²è®°å½• (ä»æ–°åˆ°æ—§):
 
-> /var/www/primer_synthesis/app/mailers/notifier.rb
-	"	21	4
+> /var/www/sino_primer/mig_form_primer_synthesis.rb
+	"	75	2
+	^	86	46
+	.	98	66
+	+	24	0
+	+	25	0
+	+	24	155
+	+	24	82
+	+	27	0
+	+	28	0
+	+	27	175
+	+	27	68
+	+	30	0
+	+	31	0
+	+	30	147
+	+	30	67
+	+	33	0
+	+	33	145
+	+	33	71
+	+	17	0
+	+	35	19
+	+	37	109
+	+	38	80
+	+	100	0
+	+	36	36
+	+	40	17
+	+	41	0
+	+	42	134
+	+	43	107
+	+	45	11
+	+	100	0
+	+	46	0
+	+	47	121
+	+	48	182
+	+	37	0
+	+	38	0
+	+	42	0
+	+	47	0
+	+	51	18
+	+	52	36
+	+	53	102
+	+	55	67
+	+	53	17
+	+	55	0
+	+	56	2
+	+	55	145
+	+	57	0
+	+	59	154
+	+	53	0
+	+	53	0
+	+	49	0
+	+	49	121
+	+	49	110
+	+	49	0
+	+	59	203
+	+	100	0
+	+	58	0
+	+	100	27
+	+	100	208
+	+	100	0
+	+	61	0
+	+	63	160
+	+	63	27
+	+	65	0
+	+	62	0
+	+	67	31
+	+	67	151
+	+	67	107
+	+	67	0
+	+	67	139
+	+	66	0
+	+	71	64
+	+	99	0
+	+	99	0
+	+	70	19
+	+	72	24
+	+	71	63
+	+	72	66
+	+	73	66
+	+	74	66
+	+	75	66
+	+	76	66
+	+	77	66
+	+	78	66
+	+	79	66
+	+	80	67
+	+	81	66
+	+	82	66
+	+	83	66
+	+	84	66
+	+	85	66
+	+	86	66
+	+	87	66
+	+	88	66
+	+	89	66
+	+	90	66
+	+	91	66
+	+	92	66
+	+	93	66
+	+	94	66
+	+	95	66
+	+	96	66
+	+	97	66
+	+	98	66
+	e	37	47
+
+> /var/www/sino_primer/app/mailers/notifier.rb
+	"	2	0
+	.	5	0
+	+	2	16
+	+	1	0
+	+	2	23
+	+	5	0
+	+	5	0
+	+	5	77
+	+	5	0
+
+> /var/www/sino_primer/Gemfile
+	"	1	0
+	^	39	18
+	.	39	22
+	+	39	22
+
+> /var/www/sino_primer/app/models/order.rb
+	"	83	8

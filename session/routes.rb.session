@@ -13,6 +13,7 @@ noremap <silent> n :call g:vimim_search_next()n
 nnoremap <silent> <Plug>NetrwBrowseX :call netrw#NetrwBrowseX(expand("<cWORD>"),0)
 nmap <silent> <Plug>VLToggle :let g:VeryLiteral = !g:VeryLiteral| echo "VeryLiteral " . (g:VeryLiteral ? "On" : "Off")
 vmap <kMultiply> *
+map <F7> :make
 map <F4> "*p
 map <F2> :NERDTree:set number
 map <F3> :up
@@ -30,12 +31,9 @@ set history=50
 set hlsearch
 set incsearch
 set isident=@,48-57,_,192-255,$
-set iskeyword=@,48-57,_,192-255,$
 set nomodeline
 set mouse=a
-set omnifunc=rubycomplete#Complete
 set printoptions=paper:a4
-set pumheight=10
 set ruler
 set runtimepath=~/.vim,/var/lib/vim/addons,/usr/share/vim/vimfiles,/usr/share/vim/vim73,/usr/share/vim/vimfiles/after,/var/lib/vim/addons/after,~/.vim/after
 set shiftwidth=2
@@ -46,92 +44,13 @@ set viminfo='200,%,!,<50,s10,h,rA,rB,/50,:50
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd /var/www/user_passport
+cd /var/www/sino_passport
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +23 Gemfile
-badd +30 ../lims/Gemfile
-badd +4 /var/www/user_passport/app/controllers/api/v1/api_controller.rb
-badd +1 /var/www/user_passport/app/controllers/application_controller.rb
-badd +7 /var/www/lims/app/controllers/application_controller.rb
-badd +0 /var/www/lims/app/models/remote_user.rb
-badd +1 /var/www/user_passport/app/models/user.rb
-badd +1 app/uploaders/file_uploader.rb
-badd +1 /var/www/user_passport/app/models/ability.rb
-badd +3 /var/www/user_passport/app/controllers/gridfs_controller.rb
-badd +1 /var/www/user_passport/app/controllers/sessions_controller.rb
-badd +0 /var/www/lims/config/initializers/session_store.rb
-badd +5 /var/www/user_passport/config/initializers/session_store.rb
-badd +30 /var/www/user_passport/config/environments/development.rb
-badd +18 /var/www/user_passport/config/environments/production.rb
-badd +1 /var/www/user_passport/app/models/department.rb
-badd +5 /var/www/user_passport/app/models/menu.rb
-badd +6 /var/www/user_passport/app/models/permission.rb
-badd +3 /var/www/user_passport/app/models/role.rb
-badd +1 config/application.rb
-badd +1 /var/www/user_passport/config/environments/test.rb
-badd +1 db/migrate/20120620055802_add_devise_to_users.rb
-badd +0 /var/www/user_passport/app/helpers/doorkeeper/applications_helper.rb
-badd +1 /var/www/user_passport/config/initializers/doorkeeper.rb
-badd +1 /var/www/user_passport/config/initializers/devise.rb
-badd +13 /var/www/user_passport/app/controllers/home_controller.rb
-badd +15 app/assets/javascripts/application.js
-badd +16 app/assets/stylesheets/application.css.scss
-badd +2 /var/www/user_passport/app/controllers/departments_controller.rb
-badd +2 /var/www/user_passport/app/controllers/roles_controller.rb
-badd +12 /var/www/user_passport/app/controllers/users_controller.rb
-badd +4 app/views/users/_search.html.haml
-badd +72 /var/www/user_passport/spec/models/user_spec.rb
-badd +12 spec/factories/users.rb
-badd +4 db/migrate/20120620055748_create_users.rb
-badd +2 app/views/users/_form.html.haml
-badd +3 /var/www/user_passport/app/controllers/api/v1/credentials_controller.rb
-badd +2 config/routes.rb
-badd +1 /var/www/user_passport/app/controllers/api/v1/roles_controller.rb
-badd +6 app/views/roles/_form.html.haml
-badd +1 app/views/roles/edit.html.haml
-badd +1 app/views/roles/new.html.haml
-badd +10 app/views/doorkeeper/authorized_applications/index.html.haml
-badd +0 app/views/users/index.html.haml
-badd +12 app/views/departments/_table.html.slim
-badd +4 app/views/roles/_form.html.slim
-badd +13 db/migrate/20120629030731_create_departments.rb
-badd +1 spec/fixtures/departments.yml
-badd +11 spec/factories/departments.rb
-badd +4 /var/www/user_passport/spec/models/department_spec.rb
-badd +57 spec/spec_helper.rb
-badd +43 /var/www/lims/spec/spec_helper.rb
-badd +8 db/migrate/20120620084059_create_roles.rb
-badd +4 spec/factories/roles.rb
-badd +15 /var/www/user_passport/spec/models/role_spec.rb
-badd +12 db/migrate/20120626065822_create_menus.rb
-badd +9 spec/factories/menus.rb
-badd +23 /var/www/user_passport/spec/models/menu_spec.rb
-badd +1 app/views/departments/index.html.slimn
-badd +5 app/views/departments/index.html.slim
-badd +4 app/views/departments/_search.html.slim
-badd +5 app/views/departments/_form.html.slim
-badd +1 app/views/roles/index.html.slimn
-badd +4 app/views/roles/index.html.slim
-badd +4 app/views/roles/_search.html.slim
-badd +5 app/views/roles/_table.html.slim
-badd +7 app/views/users/_search.html.slim
-badd +2 app/views/users/_table.html.slim
-badd +21 config/locales/users.cn.yml
-badd +3 app/views/users/index.html.slim
-badd +3 app/assets/javascripts/users.js.coffee
-badd +2 app/views/users/_active.html.slim
-badd +1 app/views/users/update.js.erb
-badd +4 app/views/home/index.html.slim
-badd +3 db/migrate/20120713065524_create_doorkeeper_tables.rb
-badd +1 app/views/users/new.html.slim
-badd +2 app/views/users/_form.html.slim
-badd +10 app/views/devise/sessions/new.html.slim
-badd +18 app/views/doorkeeper/applications/index.html.slim
-badd +2 app/views/doorkeeper/authorized_applications/index.html.slim
-badd +1 /var/www/user_passport/app/controllers/api/v1/users_controller.rb
+badd +49 Gemfile
+badd +0 config/routes.rb
 args Gemfile
 edit config/routes.rb
 set splitbelow splitright
@@ -140,20 +59,20 @@ set nosplitright
 wincmd t
 set winheight=1 winwidth=1
 argglobal
+let s:cpo_save=&cpo
+set cpo&vim
+nmap <buffer> gf <Plug>RailsTabFind
+nmap <buffer> f <Plug>RailsSplitFind
 nnoremap <buffer> <silent> g} :exe        "ptjump =RubyCursorIdentifier()"
 nnoremap <buffer> <silent> } :exe          "ptag =RubyCursorIdentifier()"
 nnoremap <buffer> <silent> g] :exe      "stselect =RubyCursorIdentifier()"
 nnoremap <buffer> <silent> g :exe        "stjump =RubyCursorIdentifier()"
 nnoremap <buffer> <silent>  :exe v:count1."stag =RubyCursorIdentifier()"
 nnoremap <buffer> <silent> ] :exe v:count1."stag =RubyCursorIdentifier()"
-let s:cpo_save=&cpo
-set cpo&vim
-nmap <buffer> gf <Plug>RailsTabFind
-nmap <buffer> f <Plug>RailsSplitFind
 nnoremap <buffer> <silent>  :exe  v:count1."tag =RubyCursorIdentifier()"
+nmap <buffer> gf <Plug>RailsFind
 nnoremap <buffer> <silent> g] :exe       "tselect =RubyCursorIdentifier()"
 nnoremap <buffer> <silent> g :exe         "tjump =RubyCursorIdentifier()"
-nmap <buffer> gf <Plug>RailsFind
 let &cpo=s:cpo_save
 unlet s:cpo_save
 setlocal keymap=
@@ -224,7 +143,7 @@ set number
 setlocal number
 setlocal numberwidth=4
 setlocal omnifunc=rubycomplete#Complete
-setlocal path=.,lib,vendor,app/models/concerns,app/controllers/concerns,app/controllers,app/helpers,app/mailers,app/models,app/*,app/views,spec,spec/controllers,spec/helpers,spec/mailers,spec/models,spec/views,spec/lib,spec/features,spec/requests,spec/integration,vendor/plugins/*/lib,vendor/plugins/*/test,vendor/rails/*/lib,vendor/rails/*/test,/var/www/user_passport,-e:1:in\\\ `<main>':\\\ undefined\\\ method\\\ `all_load_paths'\\\ for\\\ Gem:Module\\\ (NoMethodError)\
+setlocal path=.,lib,vendor,app/models/concerns,app/controllers/concerns,app/controllers,app/helpers,app/mailers,app/models,app/*,app/views,spec,spec/controllers,spec/helpers,spec/mailers,spec/models,spec/views,spec/lib,spec/features,spec/requests,spec/integration,vendor/plugins/*/lib,vendor/plugins/*/test,vendor/rails/*/lib,vendor/rails/*/test,/var/www/sino_passport,-e:1:in\\\ `<main>':\\\ undefined\\\ method\\\ `all_load_paths'\\\ for\\\ Gem:Module\\\ (NoMethodError)\
 
 setlocal nopreserveindent
 setlocal nopreviewwindow
@@ -250,7 +169,7 @@ if &syntax != 'ruby'
 setlocal syntax=ruby
 endif
 setlocal tabstop=2
-setlocal tags=/var/www/user_passport/tags,/var/www/user_passport/tmp/tags,./tags,./TAGS,tags,TAGS
+setlocal tags=/var/www/sino_passport/tags,/var/www/sino_passport/tmp/tags,./tags,./TAGS,tags,TAGS
 setlocal textwidth=0
 setlocal thesaurus=
 setlocal noundofile
@@ -259,12 +178,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 14 - ((6 * winheight(0) + 7) / 14)
+let s:l = 13 - ((1 * winheight(0) + 7) / 14)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-14
-normal! 037l
+13
+normal! 06l
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf

@@ -8,117 +8,117 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/running_flow
+~MSle0~/scope
 
 # Last Substitute Search Pattern:
 ~MSle0&plasmid_code
 
 # Last Substitute String:
-$client
+$
 
 # Command Line History (newest to oldest):
-:Rview board_records/new.html.haml
-:Rmodel board_record
-:Rcontroller board_records
-:Rview board_records/_form.html.haml
-:Rview sample_boards/_go.html.haml
-:e config/routes.rb
-:Rmi
-:R
-:Rview sample_boards/flow.html.haml
-:Rview electrophoresis/_form.html.haml
-:Rmodel sample_board
-:Rmodel flow
-:Rmodel sample
-:Rmigration create_board_records
-:Rmigration create_samples
-:Rcontroller sample_boards
-:Rmodel client
-:Rlocale procedures.cn.yml
-:Rview _go.html.haml
-:Rview sample_boards/scope.html.haml
-:Rmigration create_reactions
-:Rmodel procedure
-:Rfix procedures.yml
-:Rfixtures flows.yml
-:e db/seeds.rb
-:Rmigration create_sample_boards
-:Rview _form.html.haml
-:Rview reaction_heads/edit.html.haml
-:Rlocale reaction_heads.cn.yml
-:Rview reaction_heads/_table.html.haml
-:Rlocale sample_heads.cn.yml
-:Rview sample_heads/_table.html.haml
-:e lib/head.rb
-:Rmodel sample_head
-:Rfixtures procedures.yml
-:Rfixtures flows.rb
-:Rmigration create_procedures
-:Rfixtures abi_machines.rb
-:Rfixtures procedures.
-:Rfixtures procedures.rb
-:Rview _tr.html.haml
-:Rview flows/_table.html.haml
-:Rview edit.html.haml
-:Rview sample_heads/_form.html.haml
-:Rview reaction_heads/_form.html.haml
+:Rjavascript sample_boards
+:Rstylesheet reaction_boards
+:Rstylesheet sample_boards
+:Rstylesheet sample_board_templates
+:Rview sample_boards/
+:Rview sample_boards/show.html.slim
+:Rjavascript reaction_boards
+:Rview reaction_boards/primer_map.html.slim
+:Rview reaction_boards/_go.html.slim
+:Rview reaction_boards/scope.html.slim
+:Rview reactions/typesetting.html.slim
+:Rlocale sample_boards.cn.yml
+:Rlocale sample_boards
+:Rmodel reaction
+:Rstylesheet reactions
+:Rlo
+:Rlocale reactions.cn.yml
+:Rmigration create_primer_dilutions
+:Rmigration create_primers
+:Rspec models/sample_board
 :Rmodel 
-:Rmodel reaction_procedure
-:Rmodel reaction_head
-:Rcontroller procedures
-:Rview _search.html.haml
+:R
+:Rmodel primer
+:Rmodel sample_board
+:Rlocale primers.cn.yml
+:Rlocale primer
+:Rview sample_boards/_info.html.slim
+:Rview sample_boards/_precheck.html.slim
+:Rview sample_boards/_plasmid.html.slim
+:Rview _form.html.slim
+:Rview board_records/new.html.slim
+:Rstylesheet precheck_codes
+:Rview sample_boards/_td_precheck.html.slim
+:Rview sample_boards/_code_buttons.html.slim
+:Rview _precheck.html.slim
+:Rview sample_boards/edit.html.slim
+:Rview samp
+:Rspec models/reaction
+:Rview orders/_ajax_search.html.slim
+:Rview orders/scope.js.erb
+:Rcontroller orders
+:Rview orders/index.js.erb
+:Rview orders/index.html.slim
+:Rview primers/_search.html.slim
+:Rview primers/_ajax_search.html.slim
+:Rspec models/primer
+:Rcontroller primers
+:Rcontroller 
+:Rlocale orders.cn.yml
+:Rview orders/new.html.slim
 
 # Search String History (newest to oldest):
-?/board_recor
-?/running_flow
-?/plasmid
-?/has_many :board_
 ?/scope
-? \<can_go_back\>
-?/procedure
-?/has_one
-?/def 
-?/def flow
-?/sample_boards
-?/sample_procedures
-?/fe
-?/sample_procedure
-?/flow
-?/def scope
-?/abi_machine
-??\Vprocedure_id:\_s\+4
-? \<has_samples_running\>
-?/precheck
-?/reaction_f
-?/reaction_fl
-?/reaction_procedure
-?/reaction_file?
-?/reaction_
-?/reaction_flows
-?/reaction_head
-?/sample_head
-?/precheck?
-?/sample_flows
-?/after
-?/sample_flow
-?/proce
-?/fs
-?/sample_heads
-?/sample_flo
-? \<estimate_reaction_file_at\>
-?/params
-?/typeset!
-?/typesetting
-?/redo
-?/untypesetted
-?/typesetted
-?/reaction_typesetted
-?/sample_type
-?/type
+?/info
+?/notice
+?/primer_dilution
+? \<primer_dilution\>
+?/relation
+?/cl
+?/client
 ?/search
-?/def self.dilute
-?/rc.first
-?/Super
+?/primer_client_id
+?/must_reaction
+? \<must_reaction_text\>
+? \<insert_primer\>
+?/render
+?/is_throu
+?/reactions
+?/params
+?/primer_board
+?/splice_status
+?/to_i
+?/doorkeeper_
+?/quality_code
+?/sample_type
+?/is_test
+?/company_co
+?/urgent
+?/created_date_from
+?/company_id
+?/s
+?/creat
+? \<prepare_attr\>
+?/creator_id
+?/hook
+?/sear
+? \<checkout\>
+?/layout
+?/layouts
+?/success
+?/fix
+?/batch
+?/select
+?/invert
+? \<@create\>
+?/view_bac
+?/precheck
+?/prechecks
+?/ty
+?/is_tes
+? \<reaction_order_id\>
+?/reaciton
 
 # Expression History (newest to oldest):
 
@@ -128,48 +128,27 @@ $client
 
 # å¯„å­˜å™¨:
 "0	LINE	0
-	    @board_record.board_type = params[:type]
+	      @b.should respond_to(:primers)
 "1	LINE	0
-	- @sample_board = @electrophoresis.sample_board
+	- if params[:scope] == 'new_created'
 "2	LINE	0
-	%table
+	== render 'scaffolds/notice', text: t('.notice')
 "3	LINE	0
-	          self.go_back!
-	        end
+	
 "4	LINE	0
-	        prev_flow = self.running_flow(:prev)
-	        if prev_flow
-	          self.update_attribute :flow_id, prev_flow.id
-	        else
+	  scope :no_dilution -> {joins(:)}
 "5	LINE	0
-	        prev_flow = self.running_flow(:prev)
-	        if prev_flow
-	          self.update_attribute :flow_id, prev_flow.id
-	        else
-	          self.go_back!
-	        end
+	
 "6	LINE	0
-	        if prev_flow
-	          self.update_attribute :flow_id, prev_flow.id
-	        else
-	          self.go_back!
-	        end
+	    it '' do
+	    end
+	
 "7	LINE	0
-	        self.go_back!
+	  scope :not_receive, -> {where(status: :not_receive)}
 "8	LINE	0
-	        prev_flow = self.running_flow(:prev)
-	        if prev_flow
-	          self.update_attribute :flow_id, prev_flow.id
-	        else
-	          self.go_back!
-	        end
+	if @procedure_name == 'precheck'
 "9	LINE	0
-	        prev_flow = self.running_flow(:prev)
-	        if prev_flow
-	          self.update_attribute :flow_id, prev_flow.id
-	        else
-	          self.go_back!
-	        end
+	= btn(tl(:update) + tm(:plasmid) + tl(:data), '', class: 'btn-success', id: 'submit')
 "b	BLOCK	23
 	 NOT NULL AUTO_INCREMENT
 "c	CHAR	0
@@ -181,8 +160,8 @@ $client
 	378
 <""""i""iquadrantoreaction_board_id = _this.a??kbparn??kbent().attr()i""re??kb??kbireaction_board_I??kbid??k3kkkkkYGpwwwwwwwwwwwCbbbbddkkkkkkkYjVkyjGpzzjwwwwwwwwvf]sp[??kb??kb[]i""hireaction_board=??kb_id=lli  i++i  ireaction_board_idllllla[]iquadrna??kb??kbant=""i  i++i  iquadrant??k3??k3??k3??k3??k3????,????.??k3??k3??k3??k3??k3??k3??k3????,????.veee
 "k	CHAR	0
-	2789
-<jh:Rsp	 mo	sample/comlet??kb??kb??kbplete!jjjjjjjjkkekkkkoprecheck = o??kbdouble()iprecheck'xbi:oprecheck.stub()ipassed: true??k3zzjjjkkojjjjjkkwkkkkkkjI@#??kbjjjjjkkkko@s.stub()iprecheck: @precheckjjjjjkzzbo@s.passed.should be_niljjbo@s.passed.should eq()i@precheck.passedo@s.ddjjjjjwjjzzo@s.passed.should be_nilkkkkkkkkkkkkkk??k3bbbb??é½ƒ??é½ƒ??é½ƒ??é½ƒgthjjjjkzzjjkkkkkkkkkkkkkkkkkjjjjjjjjjjjjjjjjjjk%%kwzzkkwwwcacwvalidatebcwvalid???k3lhjjj%%kwoit '' doendkllitypesetted?biif ela can not be dewt??kb??kbstroyedljjzzkkkkkkkjjbjjkCcomplete!kVkdjjjjjgthkjlkkkkkkkkkkkjjjjkkkoreturn false unless p??kbself.precheckbbbbcwifbbbveeebhxjjjoendkVkk>??k3jjjjjjjjjjjbgtebzhjjjhjjjjkkkouVjdkkkkkkkwO@p.sam;pl??kb??kb??kble.shoulsample.should_re()i:complete!jjjjjjoit '' doendklliif typesetted?zza ??kb, can not be destroyedlkkkkkwwwwww@##nnnnnho@p.sample.typesetted?lbbvelxnnbbvexxnn/delegateeeea, :typesetted???k3hbcistub :A = ??kb> truelnkkkwwwww#ho@p.savekddpo@p.s??kbdestroyo@p.should_not be_destroyedjzzoit '' doendklllhiafter destroy ,??kb??kb, sample should e??kbunl??kbcop??kbmplete!o@p.saveo@p.det??kbstt??kbroyko@p.sample.typesestub t??kb:typesetted? => falsejozz??kb??kbddzzkwO@p.sample.should_rec :uncom!??k3ljjjjzzjjjzzbzzjjkzzhjjjddjk%%ocontext '' doendkwatest scopeszzobefor ??kbe :each doendko@p.savezzjoit '' doendklliwhen passed, ??kb??kbzzo@??kb::Precheck.passed.should be_inc??kbn??kbl()i@pko@p.s??kbpassed.should be_truejzzo::Precheck.unpassed.should_no be_inc??kb()i@pjzzoit' ' ??kb??kb??kb??kb '' doendklliwhen unpassedo@p.precheck_code.stub()i:passed: ??kb??kb:bhxela falsas??kbezzo@p.s??kbddkwkonew_recor??kb??kb??kb??kb??kbcode = create_precheck_code passed: falsejbbbbbbbCupdate_attribute precheck-cod??kb_code_id: new_code.ido@p.validatelkkkkkkkkkkkkkkkkkkkkhkeasjljjjjjjzzjjjjzzhbcwpassed.should be_falseokkkukkkkkkVkdujjjjjjjpjfuvlxkP??k3ljjjjzzhzzGoukoit '' doendkllitest show methodzzo@p.show ??kb.should eq()lkwvf"yhPbbbbbbbbbcw@pwwwww.??k3ljjjzzjwwcwcode??k3??k3??k3??k3hjoit '' doendklliself.test to_s methodo@p.to_s.should eq()i@p.codde??kb??kbe??k3ljjjggGkkkkjjwkkkkggkjk:Rmo	 hea	h:Rsp	 sp	msp	mmo	heheat	jjjwCbefore :each doendko::@h = ::Fac.cu??kb??kbbuild :heat_cy, reaction_board_id: reactcreate_reaction_board.id??k3:Rfix	 heat	jjjwocreate??kbor_id `??kb12??kboremark ''irrrrr??k3lhoquadrant ''ixxxx??k3ljjjjjjjjjjjjkkwh:Rmi	 create_heat	joit '' doendkllihas theset ??kb??kb attributes can mass-assign??k3lgghkkoit'' ??kb??kb??kb '' doendklliis boardo::Heat.??kb::BOar??kb??kb.should be_true??k3jjjjzzkotest_an??kb ::HeatC??kb, []ljjwwwbv$hyhP??k3zzjjk
+	448
+<oukounless xhr?ujddujddoendk>>osession[]i:referear hla = referer if redererreferer.present?€k3kkkkkkkkkjjjjod€kbbefore_action :set_se, only: []i:new, :c€kbedit€k3€ý,€ý.x€k3€ýK€ýK€ýK€ýK€ýL€ýL€ýL€ýL€ý,€ý.xxxxxxxxkkwlllllxxxxxxxx€k3€k3€k3€k3€k3€k3bbbbwjjjjjjjI#€k3€k3€k3€k3€k3kkodef newend€k3kosession[]i:red€kbfererl:Rvi	 ho	i	hlla = ''hCroot_path€k3korender text: 'abc'€k3bddpwwwCsession[]i:refeer€kb€kbrer€k3€k5€k5
 "l	CHAR	0
 	lD€k3€k3€k3€k3€k3€k3gkjkjgtlgt:Rmo	 blas	:vs ap	mo	sam	/before_sam€kbvenzzjjjjkkkwjlkkkkkkkkkjjkkYhp€k3€k3€k3kwwwwwwwwllajkddkpuPjjoendkVk>€k3:Rmi cRmi	 creatrecreate_se	:Rmi	 	w
 "p	LINE	0
@@ -219,1750 +198,2033 @@ $client
 	594
 <,hi,llxxepwxxxsuuf}xexepwxxxwewwxepwxxxwwllDjjwwxxewbea_tagea, params[]iswwxepwxxxwwwwwwxepwxxxwwxepwxxxjjkkjjj^wxxea_g??kbtagwwwwwxepwxxx??k3????,????.xepwxxxjjkwwwwwwwwwxepwxxxwwwwwwxepwxxxwwxepwxxxwjbbbbbbbbxepwxxx??k3??k3????,????.:Rvi	 quality_co	_ta	jkVjdljkggjjkwpVj>.jwveehxwwr xu$xbbbbbbbxepwxxx??k3hdd??k3l:Rvi	 ????,????.??é½ƒ??é½‚??é½ƒ????,????.????,????.$ibcwtruebbbbbwi, params[]i:result??k3:Rmo	 qual	Gkgg:_c	Gkwkkkwji#??k3??k3??k3??k3u??k3h:Rcon	 qua	jjjjjjjjjjjjjjjjjjjjjjjjjjjj:??kb??kb??kby_co	a, :desc??k3l:Rmo	 sample_he	G/searchgg:R
 "v	CHAR	0
-	471
-<jkV%>wveesself??k3??é½‚??é½‚??é½‚??é½ƒ??é½ƒ??é½‚??é½ƒ??é½ƒ????,????-????-????-????-????-????-????-????-????-????.sselfwwwwblveesself??k3gt:gtjjV%ddd??k3hjjbbbbluuwC????,????.????,????.bcwbcwc??kbmoduleA F??kb??kbFac??k3hjjjjjjbbbbveelx??k3??k3??k3??k3??k3????,????.cw::Filewwww.??k3????,????.xkjjI#??k3kY:Rfix	 hr??kbtcon	jjjjj:Rfix 	htRfix	 ht_smaple-re	??kb??kb??kb_r	:??kb??kb??kb??kb??kb??kb??kbamp		jkpdkddljjV%ddd??k3h??k3jjl??k3h
+	473
+<jkV%>wveesself??k3??é½‚??é½‚??é½‚??é½ƒ??é½ƒ??é½‚??é½ƒ??é½ƒ????,????-????-????-????-????-????-????-????-????-????.sselfwwwwblveesself??k3gt:gtjjV%ddd??k3hjjbbbbluuwC????,????.????,????.bcwbcwc??kbmoduleA F??kb??kbFac??k3hjjjjjjbbbbveelx??k3??k3??k3??k3??k3????,????.cw::Filewwww.??k3????,????.xkjjI#??k3kY:Rfix	 hr??kbtcon	jjjjj:Rfix 	htRfix	 ht_smaple-re	??kb??kb??kb_r	:??kb??kb??kb??kb??kb??kb??kbamp		jkpdkddljjV%ddd??k3h??k3jjl??k3h
 "w	CHAR	0
-	537
-<V%yjwpjjkw$bbCnil??k3jVkkd??k3lbbbbwveeesif: ::Proc.new{}i|r| r.reaction_board && r.buuuuuhCtrue??k3??k3??k3??k3??k3??k3??k3??k3??k3??k3??k3??k3??k3hu??k3????,????.:Rmo	 heat	h:Rsp	 mo	heat	ljjwhjjwjjjjjjjkkjjjzzljjjjkzzhjjjjjjjjjjjjjjjjjljjjjkjzzhljwwwwCquadran: true??k3??k3??k3??k3hjjjjjjjjkkkwwwwwwllwwC7??k3h:Rmi	 heat	k$hC7??k3:Rfix	 heat	jjjjjjwwwwbcw1,2,3,4??k3??k2??k3??k3??k3:Rmi	 alc	jjjjkkkkklkjh:Rmi	 alc	jjkkl:Rmo	 alc	h:Rsp	 mo	aalc	lggjjwhjjjjjjjjwzzkkkkkjjjjjjjjjzzjjzz
+	wwwww.€k3lbxxxxxsvector€k3hjjA, w€kb€kb{}istyle: ''iwdi
+"x	CHAR	0
+	"
 ""-	CHAR	0
-	, remote: xhr?)
+	}
 
 # å…¨å±€å˜é‡:
 
 # æ–‡ä»¶æ ‡è®°:
-'0  133  12  /var/www/lims/app/models/sample_board.rb
-'1  4  6  /var/www/lims/config/locales/prechecks.cn.yml
-'2  8  9  /var/www/lims/app/models/checkout_order.rb
-'3  372  6  /var/www/dna/baogao/cedu/index.php
-'4  1  80  /var/www/dna/cexu/384/notice.php
-'5  33  23  /var/www/dna/include/db_config.php
-'6  34  33  /var/www/dna/kehu/yangpin/do_fdnapcr.php
-'7  5  0  /var/www/dna/cexu/384/index.php
-'8  1  0  /var/www/dna/cexu/index.php
-'9  66  2  /var/www/lims/app/controllers/reactions_controller.rb
+'0  15  39  /var/www/sino_sequencing/app/models/sample_board.rb
+'1  6  0  /var/www/sino_sequencing/app/controllers/samples_controller.rb
+'2  12  6  /var/www/fixed_asset/config/locales/simple_form.yml
+'3  12  6  /var/www/superwf/app/views/scaffolds/_search_form.html.slim
+'4  3  4  /var/www/superwf/lib/capistrano/tasks/go.cap
+'5  1  0  /var/www/superwf/app/assets/stylesheets/ap
+'6  17  0  /var/www/fixed_asset/config/deploy/production.rb
+'7  1  0  /var/www/fixed_asset/Capfile
+'8  13  1  /var/www/sino_primer/app/views/primers/index.html.slim
+'9  1  19  /etc/nginx/sites-enabled/sino_primer
 
 # è·³è½¬åˆ—è¡¨ (ä»Žæ–°åˆ°æ—§):
--'  133  12  /var/www/lims/app/models/sample_board.rb
--'  181  25  /var/www/lims/app/models/sample_board.rb
--'  149  4  /var/www/lims/app/models/sample_board.rb
--'  7  58  /var/www/lims/db/migrate/20130815012513_create_board_records.rb
--'  33  11  /var/www/lims/app/models/sample.rb
--'  6  69  /var/www/lims/app/models/sample.rb
--'  84  59  /var/www/lims/app/models/sample.rb
--'  6  19  /var/www/lims/db/migrate/20130815012513_create_board_records.rb
--'  75  4  /var/www/lims/app/models/sample.rb
--'  42  32  /var/www/lims/app/models/sample.rb
--'  1  0  /var/www/lims/app/models/sample.rb
--'  94  4  /var/www/lims/app/models/sample.rb
--'  40  4  /var/www/lims/app/models/sample_head.rb
--'  7  2  /var/www/lims/app/controllers/sample_boards_controller.rb
--'  37  0  /var/www/lims/app/models/sample_head.rb
--'  23  4  /var/www/lims/app/models/client.rb
--'  6  37  /var/www/lims/app/models/board_record.rb
--'  41  57  /var/www/lims/app/models/sample_head.rb
--'  33  2  /var/www/lims/app/models/sample_head.rb
--'  1  0  /var/www/lims/app/views/procedures/_table.html.haml
--'  13  4  /var/www/lims/app/models/procedure.rb
--'  12  46  /var/www/lims/app/views/procedures/_table.html.haml
--'  15  60  /var/www/lims/app/views/procedures/_table.html.haml
--'  12  2  /var/www/lims/db/migrate/20130815053214_create_procedures.rb
--'  7  6  /var/www/lims/db/migrate/20130815053214_create_procedures.rb
--'  9  17  /var/www/lims/config/locales/procedures.cn.yml
--'  2  0  /var/www/lims/app/controllers/sample_procedures_controller.rb
--'  6  25  /var/www/lims/app/views/flows/_form.html.haml
--'  5  5  /var/www/lims/app/controllers/flows_controller.rb
--'  2  19  /var/www/lims/app/controllers/flows_controller.rb
--'  4  16  /var/www/lims/app/views/flows/_form.html.haml
--'  2  21  /var/www/lims/app/views/flows/_form.html.haml
--'  2  41  /var/www/lims/app/views/flows/_tr.html.haml
--'  3  54  /var/www/lims/app/views/flows/_tr.html.haml
--'  5  29  /var/www/lims/app/views/flows/_table.html.haml
--'  9  29  /var/www/lims/app/views/flows/_table.html.haml
--'  1  17  /var/www/lims/app/views/flows/new.js.erb
--'  1  0  /var/www/lims/app/views/flows/new.html.haml
--'  2  31  /var/www/lims/app/views/flows/destroy.js.erb
--'  1  7  /var/www/lims/app/views/flows/destroy.js.erb
--'  4  19  /var/www/lims/app/views/flows/create.js.erb
--'  3  6  /var/www/lims/app/views/flows/create.js.erb
--'  2  53  /var/www/lims/app/views/flows/create.js.erb
--'  1  7  /var/www/lims/app/views/flows/create.js.erb
--'  4  57  /var/www/lims/app/views/flows/_search.html.haml
--'  1  0  /var/www/lims/app/views/flows/_search.html.haml
--'  1  0  /var/www/lims/app/views/flows/_form.html.haml
--'  1  17  /var/www/lims/app/views/flows/_tr.html.haml
--'  8  24  /var/www/lims/app/views/flows/_table.html.haml
--'  2  9  /var/www/lims/app/views/flows/_table.html.haml
--'  72  15  /var/www/lims/config/routes.rb
--'  50  17  /var/www/lims/config/routes.rb
--'  1  0  /var/www/lims/config/routes.rb
--'  11  4  /var/www/lims/app/models/sample_procedure.rb
--'  10  2  /var/www/lims/app/models/sample_procedure.rb
--'  118  2  /var/www/lims/spec/fixtures/flows.yml
--'  30  6  /var/www/lims/spec/fixtures/procedures.yml
--'  33  2  /var/www/lims/spec/fixtures/procedures.yml
--'  6  0  /var/www/lims/spec/fixtures/procedures.yml
--'  1  7  /var/www/lims/spec/fixtures/procedures.yml
--'  39  2  /var/www/lims/spec/fixtures/procedures.yml
--'  21  19  /var/www/lims/spec/fixtures/procedures.yml
--'  22  0  /var/www/lims/spec/fixtures/procedures.yml
--'  2  0  /var/www/lims/app/models/sample_flow.rb
--'  1  0  /var/www/lims/spec/factories/procedures.rb
+-'  15  39  /var/www/sino_sequencing/app/models/sample_board.rb
+-'  4  36  /var/www/sino_sequencing/app/views/primers/_ajax_search.html.slim
+-'  7  65  /var/www/sino_sequencing/app/views/primers/_search.html.slim
+-'  80  80  /var/www/sino_sequencing/app/models/primer.rb
+-'  8  14  /var/www/sino_sequencing/app/models/primer.rb
+-'  9  30  /var/www/sino_sequencing/app/models/primer.rb
+-'  78  31  /var/www/sino_sequencing/app/models/primer.rb
+-'  76  86  /var/www/sino_sequencing/app/models/primer.rb
+-'  74  11  /var/www/sino_sequencing/app/models/primer.rb
+-'  68  80  /var/www/sino_sequencing/app/models/primer.rb
+-'  65  86  /var/www/sino_sequencing/app/models/primer.rb
+-'  13  30  /var/www/sino_sequencing/app/controllers/primers_controller.rb
+-'  2  47  /var/www/sino_sequencing/app/views/orders/new.html.slim
+-'  45  84  /var/www/sino_sequencing/config/locales/orders.cn.yml
+-'  43  24  /var/www/sino_sequencing/config/locales/orders.cn.yml
+-'  10  3  /var/www/sino_sequencing/app/views/orders/new.html.slim
+-'  1  0  /var/www/sino_sequencing/app/views/orders/_insert_sample_primer.html.slim
+-'  33  45  /var/www/sino_sequencing/app/views/orders/_insert_sample_primer.html.slim
+-'  10  0  /var/www/sino_sequencing/app/views/orders/_insert_sample_primer.html.slim
+-'  28  4  /var/www/sino_sequencing/app/views/orders/_form.html.slim
+-'  26  11  /var/www/sino_sequencing/app/views/orders/_form.html.slim
+-'  1  0  /var/www/sino_sequencing/app/views/orders/_form.html.slim
+-'  8  0  /var/www/sino_sequencing/app/views/orders/new.html.slim
+-'  12  27  /var/www/sino_sequencing/db/migrate/20130118092212_create_samples.rb
+-'  1  0  /var/www/sino_sequencing/app/views/orders/_search.html.slim
+-'  10  177  /var/www/sino_sequencing/app/views/orders/_search.html.slim
+-'  32  10  /var/www/sino_sequencing/app/views/orders/_table.html.slim
+-'  69  51  /var/www/sino_sequencing/app/views/orders/_table.html.slim
+-'  54  27  /var/www/sino_sequencing/app/views/orders/_table.html.slim
+-'  49  10  /var/www/sino_sequencing/app/views/orders/_table.html.slim
+-'  61  18  /var/www/sino_sequencing/app/views/orders/_table.html.slim
+-'  8  44  /var/www/sino_sequencing/app/views/orders/_table.html.slim
+-'  73  2  /var/www/sino_sequencing/app/views/orders/_table.html.slim
+-'  4  20  /var/www/sino_sequencing/app/views/orders/index.html.slim
+-'  5  0  /var/www/sino_sequencing/app/views/orders/index.html.slim
+-'  2  40  /var/www/sino_sequencing/app/views/reactions/_search.html.slim
+-'  1  0  /var/www/sino_sequencing/app/views/reaction_boards/_search.html.slim
+-'  231  73  /var/www/sino_sequencing/spec/models/primer_spec.rb
+-'  1  0  /var/www/sino_sequencing/spec/models/primer_spec.rb
+-'  5  16  /var/www/sino_sequencing/app/assets/javascripts/primers.js.coffee
+-'  7  6  /var/www/sino_sequencing/db/migrate/20130111004652_create_primer_boards.rb
+-'  23  23  /var/www/sino_sequencing/config/locales/primers.cn.yml
+-'  12  31  /var/www/sino_sequencing/config/locales/plasmids.cn.yml
+-'  122  0  /var/www/sino_sequencing/app/models/order.rb
+-'  108  169  /var/www/sino_sequencing/app/models/order.rb
+-'  98  49  /var/www/sino_sequencing/app/models/order.rb
+-'  92  4  /var/www/sino_sequencing/app/models/order.rb
+-'  23  0  /var/www/sino_sequencing/app/models/order.rb
+-'  27  4  /var/www/sino_sequencing/app/models/order_mail.rb
+-'  32  4  /var/www/sino_sequencing/app/models/order_mail.rb
+-'  60  60  /var/www/sino_sequencing/app/models/client.rb
+-'  64  29  /var/www/sino_sequencing/app/models/client.rb
+-'  59  6  /var/www/sino_sequencing/app/models/client.rb
+-'  63  29  /var/www/sino_sequencing/app/models/client.rb
+-'  122  4  /var/www/sino_sequencing/app/models/client.rb
+-'  1  0  /var/www/sino_sequencing/app/models/client.rb
+-'  1  0  /var/www/sino_sequencing/app/models/checkout.rb
+-'  60  6  /var/www/sino_sequencing/app/models/checkout.rb
+-'  59  31  /var/www/sino_sequencing/app/models/checkout.rb
+-'  53  4  /var/www/sino_sequencing/app/models/checkout.rb
+-'  57  31  /var/www/sino_sequencing/app/models/checkout.rb
 
 # ç¼“å†²åŒºåˆ—è¡¨:
-%/var/www/lims/app/models/electrophoresis.rb	4	17
-%/var/www/lims/config/routes.rb	8	22
-%/var/www/dna/baogao/cedu/index.php	372	6
-%/var/www/lims/Capfile	6	49
-%/var/www/lims/app/controllers/primer_dilutions_controller.rb	32	6
-%/var/www/lims/app/models/primer_dilution.rb	115	26
-%/var/www/lims/app/views/primer_dilutions/new.html.haml	32	14
-%/var/www/lims/app/assets/javascripts/primer_dilutions.js.coffee	7	58
-%/var/www/lims/app/models/reaction.rb	37	6
-%/var/www/lims/app/controllers/reactions_controller.rb	35	2
-%/var/www/lims/app/models/sample_board.rb	133	12
-%/var/www/lims/db/migrate/20130118024219_create_reactions.rb	20	18
-%/var/www/lims/db/migrate/20130118092212_create_samples.rb	18	10
-%/var/www/lims/app/controllers/reaction_boards_controller.rb	33	6
-%/var/www/lims/app/models/reaction_file.rb	38	1
-%/var/www/lims/app/models/reaction_board.rb	141	92
-%/var/www/lims/app/models/precheck.rb	1	0
-%/var/www/lims/app/models/primer.rb	32	0
-%/var/www/lims/app/models/sample.rb	33	11
-%/var/www/lims/app/controllers/samples_controller.rb	11	6
-%/var/www/lims/app/controllers/electrophoresis_controller.rb	12	76
-%/var/www/lims/app/controllers/prechecks_controller.rb	1	0
-%/var/www/lims/spec/routing/resources_routing_spec.rb	53	40
-%/var/www/lims/app/views/sample_boards/_info.html.haml	7	3
-%/var/www/lims/app/views/reaction_boards/_td_typesetting.html.haml	1	38
-%/var/www/lims/app/views/reaction_boards/_td.html.haml	1	39
-%/var/www/lims/app/views/reaction_boards/_td_sample_map.html.haml	1	39
-%/var/www/lims/app/views/reaction_boards/_td_primer_map.html.haml	1	0
-%/var/www/lims/spec/factories/menus.rb	5	0
-%/var/www/lims/spec/fixtures/menus.yml.erb	40	18
-%/var/www/lims/app/views/primer_dilutions/today.html.haml	6	35
-%/var/www/lims/app/assets/javascripts/canceled_datas.js	2	2
-%/var/www/lims/app/assets/javascripts/canceled_datas.js.coffee	1	0
-%/var/www/lims/app/models/canceled_data.rb	2	0
-%/var/www/lims/app/controllers/canceled_datas_controller.rb	1	0
-%/var/www/lims/spec/models/canceled_data_spec.rb	6	4
-%/var/www/lims/spec/factories/canceled_data.rb	7	2
-%/var/www/lims/db/migrate/20130813052645_create_canceled_data.rb	1	0
-%/var/www/lims/db/migrate/20130814054542_create_canceled_records.rb	10	19
-%/var/www/lims/app/models/canceled_record.rb	7	8
-%/var/www/lims/app/controllers/canceled_records_controller.rb	13	123
-%/var/www/lims/app/views/samples/index.html.haml	5	183
-%/var/www/lims/app/assets/javascripts/samples.js.coffee	1	0
-%/var/www/lims/app/assets/javascripts/canceled_records.js.coffee	2	29
-%/var/www/lims/app/views/reactions/index.html.haml	1	0
-%/var/www/lims/config/locales/canceled_records.cn.yml	12	23
-%/var/www/lims/app/views/primer_dilutions/index.html.haml	6	2
-%/var/www/lims/app/controllers/primer_dilution_logs_controller.rb	1	0
-%/var/www/lims/app/models/primer_dilution_log.rb	8	18
-%/var/www/lims/config/locales/primer_dilutions.cn.yml	27	17
-%/var/www/lims/config/locales/menus.cn.yml	23	24
-%/var/www/lims/app/views/canceled_records/index.html.haml	1	16
-%/var/www/lims/app/views/canceled_records/_search.html.haml	6	51
-%/var/www/lims/app/views/canceled_records/_table.html.haml	1	0
-%/var/www/lims/app/views/primers/_search.html.haml	7	4
-%/var/www/lims/app/views/primers/_table.html.haml	8	13
-%/var/www/lims/spec/models/canceled_record_spec.rb	9	69
-%/var/www/lims/db/migrate/20130118024233_create_prechecks.rb	10	4
-%/var/www/lims/db/migrate/20130109052720_create_precheck_codes.rb	5	6
-%/var/www/lims/app/controllers/api/v1/reaction_boards_controller.rb	9	8
-%/var/www/lims/app/models/checkout.rb	234	66
-%/var/www/lims/app/models/order_mail.rb	7	0
-%/var/www/lims/app/models/quality.rb	28	2
-%/var/www/lims/app/models/checkout_order.rb	8	9
-%/var/www/lims/spec/models/reaction_spec.rb	1	0
-%/var/www/lims/spec/models/primer_dilution_spec.rb	37	43
-%/var/www/lims/spec/factories/samples.rb	11	2
-%/var/www/lims/spec/factories/reactions.rb	2	0
-%/var/www/lims/app/controllers/prepayment_records_controller.rb	2	0
-%/var/www/lims/app/views/prepayment_records/index.js.erb	1	0
-%/var/www/lims/spec/requests/resources_spec.rb	30	2
-%/var/www/lims/spec/requests/abi_records_spec.rb	5	4
-%/var/www/lims/spec/spec_helper.rb	136	2
-%/var/www/lims/spec/factories/reaction_heads.rb	6	15
-%/var/www/lims/spec/requests/prepayments_spec.rb	9	29
-%/var/www/lims/spec/factories/prepayments.rb	8	23
-%/var/www/lims/db/migrate/20130301053852_create_prepayments.rb	14	65
-%/var/www/lims/app/controllers/checkouts_controller.rb	105	79
-%/var/www/lims/app/models/order.rb	95	4
-%/var/www/lims/spec/models/sample_spec.rb	106	10
-%/var/www/lims/db/migrate/20130110091708_create_primers.rb	1	0
-%/var/www/lims/spec/models/primer_spec.rb	29	19
-%/var/www/lims/app/models/client.rb	23	4
-%/var/www/lims/db/migrate/20130111012728_create_orders.rb	5	6
-%/var/www/lims/app/models/company.rb	7	18
-%/var/www/lims/db/migrate/20130301050229_create_checkout_orders.rb	5	6
-%/var/www/lims/db/migrate/20130301043447_create_checkouts.rb	7	72
-%/var/www/lims/app/models/primer_mail.rb	20	2
-%/var/www/lims/db/migrate/20130305083825_create_primer_mails.rb	1	0
-%/var/www/lims/spec/models/client_spec.rb	119	0
-%/var/www/lims/spec/factories/checkout_orders.rb	5	4
-%/var/www/lims/spec/models/bad_debt_spec.rb	5	4
-%/var/www/lims/spec/factories/bad_debts.rb	5	4
-%/var/www/lims/spec/models/checkout_order_spec.rb	6	4
-%/var/www/lims/app/models/bacterium.rb	1	0
-%/var/www/lims/db/migrate/20130218064044_create_order_mails.rb	14	2
-%/var/www/lims/app/controllers/sample_boards_controller.rb	76	2
-%/var/www/lims/db/migrate/20130815011823_create_sample_board_records.rb	4	0
-%/var/www/lims/db/migrate/20130218055055_create_abi_machines.rb	8	13
-%/var/www/lims/db/migrate/20130815012231_create_sample_records.rb	4	6
-%/var/www/lims/db/migrate/20130815012513_create_board_records.rb	7	58
-%/var/www/lims/db/migrate/20130122022726_create_qualities.rb	8	29
-%/var/www/lims/app/models/board_record.rb	2	19
-%/var/www/lims/db/migrate/20130108084604_create_modification_logs.rb	11	8
-%/var/www/lims/app/controllers/clients_controller.rb	12	2
-%/var/www/lims/app/models/remote_client.rb	1	19
-%/var/www/lims/db/migrate/20130815014427_create_attachments.rb	4	25
-%/var/www/lims/db/migrate/20130118032121_create_electrophoresis.rb	4	6
-%/var/www/lims/app/models/attachment.rb	2	41
-%/var/www/lims/app/uploaders/file_uploader.rb	1	0
-%/var/www/lims/db/migrate/20130130032938_create_reaction_files.rb	11	7
-%/var/www/lims/config/locales/qualities.cn.yml	17	6
-%/var/www/lims/config/locales/reaction_files.cn.yml	28	6
-%/var/www/lims/app/models/order_status_observer.rb	12	7
-%/var/www/lims/config/application.rb	65	48
-%/var/www/lims/config/locales/samples.cn.yml	24	8
-%/var/www/lims/db/migrate/20130118021310_create_sample_boards.rb	5	42
-%/var/www/lims/spec/models/sample_board_spec.rb	109	4
-%/var/www/lims/app/models/sample_head.rb	40	4
-%/var/www/lims/app/models/precheck_code.rb	5	18
-%/var/www/lims/config/locales/cn.yml	3	0
-%/var/www/lims/app/models/reaction_head.rb	8	78
-%/var/www/lims/config/locales/sample_procedures.cn.yml	18	6
-%/var/www/lims/config/locales/electrophoresis.cn.yml	4	6
-%/var/www/lims/config/locales/bacteria.cn.yml	4	6
-%/var/www/lims/config/locales/plasmids.cn.yml	1	0
-%/var/www/lims/config/locales/precheck_codes.cn.yml	1	0
-%/var/www/lims/config/locales/prechecks.cn.yml	4	6
-%/var/www/lims/db/migrate/20130122021033_create_sample_procedures.rb	5	2
-%/var/www/lims/spec/factories/sample_procedures.rb	9	19
-%/var/www/lims/app/controllers/sample_procedures_controller.rb	2	0
-%/var/www/lims/app/models/sample_procedure.rb	11	4
-%/var/www/lims/spec/fixtures/sample_procedures.yml	14	2
-%/var/www/lims/lib/procedure.rb	3	0
-%/var/www/lims/app/models/sample_flow_go_observer.rb	1	2
-%/var/www/lims/lib/init_pdf.rb	45	0
-%/var/www/lims/db/migrate/20130122021055_create_reaction_procedures.rb	1	0
-%/var/www/lims/db/migrate/20130815053214_create_procedures.rb	4	6
-%/var/www/lims/app/models/procedure.rb	10	49
-%/var/www/lims/db/migrate/20130121093238_create_sample_heads.rb	6	6
-%/var/www/lims/db/migrate/20130130015038_create_reaction_heads.rb	7	6
-%/var/www/lims/app/models/sample_flow.rb	2	0
-%/var/www/lims/app/models/flow.rb	5	24
-%/var/www/lims/db/migrate/20130815054447_create_flows.rb	10	56
-%/var/www/lims/db/migrate/20130122030911_create_sample_flows.rb	9	4
-%/var/www/lims/lib/head.rb	14	2
-%/var/www/lims/app/models/prepayment.rb	11	2
-%/var/www/lims/app/models/reaction_procedure.rb	2	0
-%/var/www/lims/db/seeds.rb	56	116
-%/var/www/lims/spec/factories/procedures.rb	10	13
-%/var/www/lims/spec/fixtures/procedures.yml	1	0
-%/var/www/lims/spec/fixtures/flows.yml	1	0
-%/var/www/lims/app/views/sample_heads/_table.html.haml	25	31
-%/var/www/lims/app/views/sample_heads/_form.html.haml	14	19
-%/var/www/lims/app/views/sample_heads/edit.html.haml	5	4
-%/var/www/lims/app/views/flows/_table.html.haml	9	8
-%/var/www/lims/app/views/flows/_tr.html.haml	3	68
-%/var/www/lims/app/views/flows/_form.html.haml	1	0
-%/var/www/lims/app/views/flows/_search.html.haml	4	57
-%/var/www/lims/app/views/flows/create.js.erb	4	19
-%/var/www/lims/app/views/flows/destroy.js.erb	2	31
-%/var/www/lims/app/views/flows/new.html.haml	1	0
-%/var/www/lims/app/views/flows/new.js.erb	1	17
-%/var/www/lims/app/controllers/sample_flows_controller.rb	5	17
-%/var/www/lims/app/controllers/flows_controller.rb	6	38
-%/var/www/lims/app/controllers/procedures_controller.rb	6	53
-%/var/www/lims/config/locales/procedures.cn.yml	16	18
-%/var/www/lims/app/views/procedures/_table.html.haml	12	10
-%/var/www/lims/app/views/procedures/_search.html.haml	6	94
-%/var/www/lims/app/views/procedures/index.html.haml	4	4
-%/var/www/lims/app/views/procedures/index.js.erb	1	0
-%/var/www/lims/db/migrate/20130118094148_create_sample_board_primers.rb	1	0
-%/var/www/lims/app/controllers/sample_heads_controller.rb	3	0
-%/var/www/lims/app/views/procedures/new.html.haml	1	0
-%/var/www/lims/app/views/procedures/edit.html.haml	1	0
-%/var/www/lims/app/views/procedures/_form.html.haml	6	23
-%/var/www/lims/app/views/reaction_heads/_table.html.haml	20	2
-%/var/www/lims/app/views/reaction_heads/_form.html.haml	3	41
-%/var/www/lims/app/views/reaction_heads/edit.html.haml	5	14
-%/var/www/lims/spec/factories/abi_machines.rb	5	0
-%/var/www/lims/config/locales/sample_heads.cn.yml	22	202
-%/var/www/lims/spec/factories/flows.rb	6	25
-%/var/www/lims/config/locales/reaction_heads.cn.yml	17	6
-%/var/www/lims/app/views/sample_boards/scope.html.haml	25	14
-%/var/www/lims/app/views/sample_boards/_go.html.haml	10	18
-%/var/www/lims/app/views/sample_boards/flow.html.haml	6	19
-%/var/www/lims/app/views/electrophoresis/_form.html.haml	3	0
-%/var/www/lims/app/controllers/board_records_controller.rb	7	23
-%/var/www/lims/app/views/board_records/_form.html.haml	4	21
-%/var/www/lims/app/views/board_records/new.html.haml	1	13
+%/var/www/sino_sequencing/app/views/sample_heads/edit.html.slim	5	32
+%/var/www/fixed_asset/config/locales/simple_form.yml	12	6
+%/var/www/superwf/app/views/scaffolds/_search_form.html.slim	12	6
+%/var/www/superwf/app/views/scaffolds/_search.html.slim	1	0
+%/var/www/superwf/app/views/scaffolds/_search_input.html.slim	1	0
+%/var/www/superwf/lib/superwf/scaffold.rb	1	0
+%/var/www/superwf/app/views/scaffolds/_form.html.slim	1	0
+%/var/www/superwf/app/views/scaffolds/_model_form.html.slim	2	18
+%/var/www/superwf/app/views/roles/index.html.slim	1	0
+%/var/www/superwf/app/controllers/roles_controller.rb	4	0
+%/var/www/superwf/app/controllers/modification_logs_controller.rb	3	0
+%/var/www/superwf/app/views/modification_logs/index.html.slim	1	0
+%/var/www/superwf/app/views/scaffolds/dialog.js.erb	1	0
+%/var/www/sino_sequencing/_for	1	0
+%/var/www/sino_sequencing/Capfile	1	0
+%/var/www/sino_sequencing/app/views/sample_heads/_form.html.slim	1	0
+%/var/www/sino_sequencing/app/views/flows/new.js.erb	1	0
+%/var/www/sino_sequencing/app/views/flows/_form.html.slim	1	0
+%/var/www/sino_sequencing/app/views/reaction_heads/index.html.slim	1	0
+%/var/www/sino_sequencing/app/views/reaction_heads/index.js.erb	1	0
+%/var/www/sino_sequencing/app/views/reaction_heads/_form.html.slim	1	0
+%/var/www/sino_sequencing/app/views/reaction_heads/_table.html.slim	4	7
+%/var/www/sino_sequencing/app/controllers/reaction_heads_controller.rb	5	4
+%/var/www/sino_sequencing/app/views/reaction_heads/_search.html.slim	1	0
+%/var/www/sino_sequencing/config/locales/simple_form.cn.yml	42	31
+%/var/www/sino_sequencing/app/views/reaction_heads/edit.html.slim	1	0
+%/var/www/sino_sequencing/Gemfile	37	25
+%/var/www/sino_sequencing/app/controllers/sample_heads_controller.rb	4	6
+%/var/www/sino_sequencing/app/views/plasmid_codes/index.html.slim	1	0
+%/var/www/sino_sequencing/app/views/plasmid_codes/index.js.erb	1	0
+%/var/www/sino_sequencing/app/views/plasmid_codes/_table.html.slim	1	0
+%/var/www/sino_sequencing/app/views/plasmid_codes/_search.html.slim	2	4
+%/var/www/sino_sequencing/app/views/plasmid_codes/_form.html.slim	3	0
+%/var/www/sino_sequencing/app/controllers/plasmid_codes_controller.rb	1	0
+%/var/www/sino_sequencing/app/views/precheck_codes/index.html.slim	1	0
+%/var/www/sino_sequencing/app/controllers/precheck_codes_controller.rb	11	40
+%/var/www/sino_sequencing/app/views/precheck_codes/_index.html.haml	2	2
+%/var/www/sino_sequencing/app/views/precheck_codes/index.js.erb	1	0
+%/var/www/sino_sequencing/app/views/precheck_codes/_search.html.slim	2	0
+%/var/www/sino_sequencing/app/views/precheck_codes/_form.html.slim	5	12
+%/var/www/sino_sequencing/app/views/precheck_codes/new.html.slim	1	0
+%/var/www/sino_sequencing/app/views/precheck_codes/edit.html.slim	1	0
+%/var/www/sino_sequencing/app/views/precheck_codes/_ajax_table.html.slim	1	0
+%/var/www/sino_sequencing/app/views/precheck_codes/_table.html.slim	1	0
+%/var/www/sino_sequencing/app/views/quality_codes/index.html.slim	1	0
+%/var/www/sino_sequencing/app/views/quality_codes/_search.html.slim	3	0
+%/var/www/sino_sequencing/app/views/quality_codes/index.js.erb	1	0
+%/var/www/sino_sequencing/app/views/quality_codes/_form.html.slim	1	0
+%/var/www/sino_sequencing/app/controllers/quality_codes_controller.rb	2	75
+%/var/www/sino_sequencing/app/controllers/canceled_records_controller.rb	4	6
+%/var/www/sino_sequencing/app/views/canceled_records/index.html.slim	1	0
+%/var/www/sino_sequencing/app/views/canceled_records/index.js.erb	1	0
+%/var/www/sino_sequencing/app/views/canceled_records/_search.html.slim	1	0
+%/var/www/sino_sequencing/db/migrate/20130814054542_create_canceled_records.rb	1	0
+%/var/www/sino_sequencing/app/models/canceled_record.rb	21	6
+%/var/www/sino_sequencing/app/controllers/companies_controller.rb	2	0
+%/var/www/sino_sequencing/app/views/companies/index.html.slim	12	11
+%/var/www/sino_sequencing/app/views/companies/_search.html.slim	1	0
+%/var/www/sino_sequencing/app/views/companies/_tr.html.slim	1	0
+%/var/www/sino_sequencing/app/views/companies/_tree.html.slim	5	72
+%/var/www/sino_sequencing/app/views/companies/_subtree.html.slim	1	0
+%/var/www/sino_sequencing/app/views/companies/_form.html.slim	7	4
+%/var/www/sino_sequencing/app/views/clients/index.html.slim	1	0
+%/var/www/sino_sequencing/app/views/clients/_search.html.slim	7	2
+%/var/www/sino_sequencing/app/views/clients/index.js.erb	1	0
+%/var/www/sino_sequencing/app/controllers/clients_controller.rb	1	0
+%/var/www/sino_sequencing/app/models/client.rb	60	60
+%/var/www/sino_sequencing/config/locales/clients.cn.yml	11	31
+%/var/www/sino_sequencing/db/migrate/20130109080710_create_clients.rb	1	0
+%/var/www/sino_sequencing/app/views/clients/blacklist.html.slim	13	27
+%/var/www/sino_sequencing/app/views/clients/_form.html.slim	1	0
+%/var/www/sino_sequencing/app/views/companies/index.js.erb	1	0
+%/var/www/sino_sequencing/app/views/primers/index.html.slim	1	0
+%/var/www/sino_sequencing/app/views/primers/_search.html.slim	7	65
+%/var/www/sino_sequencing/app/models/primer.rb	113	2
+%/var/www/sino_sequencing/config/locales/primers.cn.yml	53	19
+%/var/www/sino_sequencing/app/controllers/primers_controller.rb	13	30
+%/var/www/sino_sequencing/app/controllers/primer_heads_controller.rb	2	75
+%/var/www/sino_sequencing/app/views/primer_heads/index.html.slim	1	0
+%/var/www/sino_sequencing/app/views/primer_heads/index.js.erb	1	0
+%/var/www/sino_sequencing/app/views/primer_heads/_search.html.slim	3	4
+%/var/www/sino_sequencing/app/views/notifier/tendaysover_primers.html.slim	1	0
+%/var/www/sino_sequencing/app/views/primer_heads/new.html.slim	1	0
+%/var/www/sino_sequencing/app/views/primer_heads/edit.html.slim	1	0
+%/var/www/sino_sequencing/app/views/primer_heads/_form.html.slim	1	0
+%/var/www/sino_sequencing/app/views/primer_heads/_table.html.slim	1	0
+%/var/www/sino_sequencing/app/views/primer_heads/_ajax_table.html.slim	1	0
+%/var/www/sino_sequencing/app/views/vectors/_search.html.slim	2	0
+%/var/www/sino_sequencing/app/views/vectors/_table.html.slim	1	0
+%/var/www/sino_sequencing/app/views/vectors/_form.html.slim	1	0
+%/var/www/sino_sequencing/app/views/primers/index.js.erb	1	0
+%/var/www/sino_sequencing/app/views/primers/_ajax_search.html.slim	4	36
+%/var/www/sino_sequencing/app/controllers/primer_boards_controller.rb	8	23
+%/var/www/sino_sequencing/app/views/primer_boards/index.html.slim	1	0
+%/var/www/sino_sequencing/app/views/primer_boards/_search.html.slim	2	39
+%/var/www/sino_sequencing/app/views/primer_boards/index.js.erb	1	3
+%/var/www/sino_sequencing/app/views/primer_boards/_ajax_table.html.slim	1	0
+%/var/www/sino_sequencing/config/locales/primer_boards.cn.yml	1	0
+%/var/www/sino_sequencing/app/views/primer_boards/show.js.erb	1	14
+%/var/www/sino_sequencing/app/views/primer_boards/_show.html.slim	15	48
+%/var/www/sino_sequencing/app/views/primers/new.html.slim	1	0
+%/var/www/sino_sequencing/app/views/primers/_form.html.slim	1	0
+%/var/www/sino_sequencing/app/controllers/orders_controller.rb	8	8
+%/var/www/sino_sequencing/app/views/orders/new.html.slim	2	47
+%/var/www/sino_sequencing/app/views/orders/_form.html.slim	28	4
+%/var/www/sino_sequencing/app/views/clients/_ajax_search.html.slim	1	0
+%/var/www/sino_sequencing/app/assets/javascripts/orders.js.coffee	139	77
+%/var/www/sino_sequencing/app/assets/javascripts/order_index.js.coffee	1	0
+%/var/www/sino_sequencing/app/views/orders/_insert_sample_primer.html.slim	1	0
+%/var/www/sino_sequencing/app/controllers/sample_board_templates_controller.rb	19	6
+%/var/www/sino_sequencing/app/views/sample_board_templates/_form.html.slim	1	0
+%/var/www/sino_sequencing/app/views/sample_board_templates/_show.html.slim	1	0
+%/var/www/sino_sequencing/app/views/sample_board_templates/edit.html.slim	1	0
+%/var/www/sino_sequencing/app/assets/javascripts/application.js	15	21
+%/var/www/sino_sequencing/app/views/sample_board_templates/_table.html.slim	1	0
+%/var/www/sino_sequencing/app/assets/javascripts/sample_board_templates.js.coffee	1	0
+%/var/www/sino_sequencing/app/assets/stylesheets/orders.css.scss	26	0
+%/var/www/sino_sequencing/app/assets/javascripts/primers.js.coffee	5	16
+%/var/www/sino_sequencing/app/assets/stylesheets/primers.css.scss	6	11
+%/var/www/sino_sequencing/app/views/orders/index.html.slim	4	20
+%/var/www/sino_sequencing/app/views/orders/_search.html.slim	1	0
+%/var/www/sino_sequencing/config/locales/orders.cn.yml	45	84
+%/var/www/sino_sequencing/db/migrate/20130121093238_create_sample_heads.rb	5	6
+%/var/www/sino_sequencing/app/models/order.rb	112	101
+%/var/www/sino_sequencing/app/views/orders/_table.html.slim	32	10
+%/var/www/sino_sequencing/app/views/orders/_reaction.html.slim	1	0
+%/var/www/sino_sequencing/app/views/orders/new_redo.html.slim	1	0
+%/var/www/sino_sequencing/app/controllers/sample_boards_controller.rb	1	0
+%/var/www/sino_sequencing/app/views/sample_boards/_search.html.slim	1	0
+%/var/www/sino_sequencing/config/locales/sample_boards.cn.yml	31	8
+%/var/www/sino_sequencing/app/views/sample_boards/index.html.slim	1	0
+%/var/www/sino_sequencing/app/views/sample_boards/new.html.slim	1	0
+%/var/www/sino_sequencing/app/views/sample_boards/edit.html.slim	1	0
+%/var/www/sino_sequencing/app/views/sample_boards/_form.html.slim	1	0
+%/var/www/sino_sequencing/app/views/samples/index.html.slim	6	21
+%/var/www/sino_sequencing/app/views/samples/_search.html.slim	1	0
+%/var/www/sino_sequencing/app/controllers/samples_controller.rb	6	0
+%/var/www/sino_sequencing/config/locales/samples.cn.yml	16	8
+%/var/www/sino_sequencing/app/views/reactions/index.js.erb	1	0
+%/var/www/sino_sequencing/app/controllers/reactions_controller.rb	15	0
+%/var/www/sino_sequencing/app/views/reactions/index.html.slim	7	21
+%/var/www/sino_sequencing/app/models/reaction.rb	1	0
+%/var/www/sino_sequencing/app/views/samples/_form.html.slim	1	0
+%/var/www/sino_sequencing/db/migrate/20130118092212_create_samples.rb	12	27
+%/var/www/sino_sequencing/app/views/samples/_typesetting_tbody.html.slim	1	0
+%/var/www/sino_sequencing/app/views/sample_boards/_td_typesetting.html.slim	1	0
+%/var/www/sino_sequencing/app/views/samples/typesetting.html.slim	9	168
+%/var/www/sino_sequencing/app/views/sample_boards/scope.html.slim	20	19
+%/var/www/sino_sequencing/app/views/sample_boards/show.js.erb	3	17
+%/var/www/sino_sequencing/app/views/sample_boards/_show.html.slim	2	27
+%/var/www/sino_sequencing/app/views/sample_boards/_go.html.slim	1	0
+%/var/www/sino_sequencing/spec/factories/menus.rb	1	0
+%/var/www/sino_sequencing/spec/fixtures/menus.yml.erb	216	9
+%/var/www/sino_sequencing/config/locales/menus.cn.yml	1	0
+%/var/www/sino_sequencing/db/migrate/20130118024246_create_plasmids.rb	4	2
+%/var/www/sino_sequencing/app/views/samples/_table.html.slim	27	8
+%/var/www/sino_sequencing/app/views/samples/view_bacteria.html.slim	2	19
+%/var/www/sino_sequencing/app/controllers/plasmids_controller.rb	1	0
+%/var/www/sino_sequencing/app/views/plasmids/index.html.slim	1	0
+%/var/www/sino_sequencing/app/views/plasmids/_search.html.slim	3	54
+%/var/www/sino_sequencing/app/views/samples/index.js.erb	1	0
+%/var/www/sino_sequencing/app/views/plasmids/index.js.erb	1	0
+%/var/www/sino_sequencing/app/views/plasmids/new.html.slim	1	0
+%/var/www/sino_sequencing/app/views/plasmids/_form.html.slim	7	2
+%/var/www/sino_sequencing/app/views/plasmids/edit.html.slim	1	0
+%/var/www/sino_sequencing/config/locales/plasmids.cn.yml	12	31
+%/var/www/sino_sequencing/app/views/primer_dilutions/new.html.slim	1	0
+%/var/www/sino_sequencing/app/controllers/primer_dilutions_controller.rb	1	0
+%/var/www/sino_sequencing/app/views/primer_dilutions/index.js.erb	1	0
+%/var/www/sino_sequencing/app/views/primer_dilutions/today.html.slim	1	0
+%/var/www/sino_sequencing/app/views/primer_dilutions/index.html.slim	3	31
+%/var/www/sino_sequencing/app/views/primer_dilutions/_search.html.slim	1	0
+%/var/www/sino_sequencing/app/views/primer_dilutions/_table.html.slim	1	0
+%/var/www/sino_sequencing/app/views/reactions/typesetting.html.slim	1	0
+%/var/www/sino_sequencing/app/assets/javascripts/reactions.js.coffee	1	0
+%/var/www/sino_sequencing/app/views/sample_boards/_info.html.slim	1	0
+%/var/www/sino_sequencing/app/views/reactions/update.js.erb	1	0
+%/var/www/sino_sequencing/app/assets/stylesheets/reactions.css.scss	1	0
+%/var/www/sino_sequencing/app/assets/stylesheets/reaction_boards.css.scss	27	11
+%/var/www/sino_sequencing/app/views/reactions/_search.html.slim	2	40
+%/var/www/sino_sequencing/config/locales/reactions.cn.yml	47	6
+%/var/www/sino_sequencing/app/controllers/reaction_boards_controller.rb	4	43
+%/var/www/sino_sequencing/app/views/reaction_boards/index.html.slim	1	0
+%/var/www/sino_sequencing/app/views/reaction_boards/index.js.erb	1	0
+%/var/www/sino_sequencing/app/views/reaction_boards/_table.html.slim	15	0
+%/var/www/sino_sequencing/app/views/reaction_boards/_search.html.slim	1	0
+%/var/www/sino_sequencing/app/controllers/abi_machines_controller.rb	2	2
+%/var/www/sino_sequencing/app/views/orders/search.html.slim	5	23
+%/var/www/sino_sequencing/app/views/checkouts/_search.html.slim	4	0
+%/var/www/sino_sequencing/app/views/checkouts/new.html.slim	1	0
+%/var/www/sino_sequencing/app/views/statistic/client.html.slim	1	0
+%/var/www/sino_sequencing/app/views/statistic/sample_head.html.slim	9	21
+%/var/www/sino_sequencing/app/views/sample_boards/_precheck.html.slim	3	0
+%/var/www/sino_sequencing/app/views/sample_boards/show.html.slim	25	16
+%/var/www/sino_sequencing/app/views/prepayments/_form.html.slim	2	19
+%/var/www/sino_sequencing/app/views/prepayments/_search.html.slim	10	0
+%/var/www/sino_sequencing/app/views/reactions/downloading.html.slim	1	0
+%/var/www/sino_sequencing/app/views/reactions/inspecting.html.slim	2	21
+%/var/www/sino_sequencing/app/views/procedures/_form.html.slim	1	19
+%/var/www/sino_sequencing/app/models/procedure.rb	14	0
+%/var/www/sino_sequencing/app/views/checkouts/index.html.slim	1	0
+%/var/www/sino_sequencing/app/controllers/checkouts_controller.rb	1	0
+%/var/www/sino_sequencing/app/views/checkouts/_form.html.slim	7	63
+%/var/www/sino_sequencing/app/views/checkouts/scope.html.slim	12	4
+%/var/www/sino_sequencing/config/locales/checkouts.cn.yml	1	0
+%/var/www/sino_sequencing/app/views/checkouts/_go.html.slim	1	0
+%/var/www/sino_sequencing/app/controllers/prepayments_controller.rb	2	2
+%/var/www/sino_sequencing/app/views/prepayments/index.html.slim	5	4
+%/var/www/sino_sequencing/app/controllers/prepayment_records_controller.rb	4	10
+%/var/www/sino_sequencing/app/views/prepayment_records/index.js.erb	1	0
+%/var/www/sino_sequencing/app/controllers/order_mails_controller.rb	3	43
+%/var/www/sino_sequencing/app/views/order_mails/index.html.slim	1	0
+%/var/www/sino_sequencing/app/views/order_mails/index.js.erb	1	0
+%/var/www/sino_sequencing/app/views/order_mails/_search.html.slim	3	0
+%/var/www/sino_sequencing/app/views/order_mails/_form.html.slim	10	10
+%/var/www/sino_sequencing/app/views/order_mails/_table.html.slim	9	0
+%/var/www/sino_sequencing/app/models/order_mail.rb	27	4
+%/var/www/sino_sequencing/config/locales/order_mails.cn.yml	9	30
+%/var/www/sino_sequencing/app/views/primer_mails/index.html.slim	3	23
+%/var/www/sino_sequencing/app/controllers/primer_mails_controller.rb	4	43
+%/var/www/sino_sequencing/app/views/primer_mails/index.js.erb	1	0
+%/var/www/sino_sequencing/app/views/primer_mails/_search.html.slim	1	0
+%/var/www/sino_sequencing/config/locales/primer_mails.cn.yml	10	30
+%/var/www/sino_sequencing/app/models/primer_mail.rb	18	4
+%/var/www/sino_sequencing/app/models/abi_machine.rb	1	0
+%/var/www/sino_sequencing/spec/models/abi_machine_spec.rb	77	4
+%/var/www/sino_sequencing/app/models/company.rb	22	2
+%/var/www/sino_sequencing/spec/models/company_spec.rb	106	0
+%/var/www/sino_sequencing/app/models/attachment.rb	1	0
+%/var/www/sino_sequencing/app/models/board_record.rb	1	0
+%/var/www/sino_sequencing/app/controllers/board_records_controller.rb	1	0
+%/var/www/sino_sequencing/spec/models/board_record_spec.rb	4	2
+%/var/www/sino_sequencing/app/models/checkout_order.rb	56	4
+%/var/www/sino_sequencing/app/views/checkout_orders/_search.html.slim	1	0
+%/var/www/sino_sequencing/app/views/checkout_orders/index.html.slim	1	0
+%/var/www/sino_sequencing/app/views/checkout_orders/index.js.erb	1	0
+%/var/www/sino_sequencing/app/models/checkout.rb	1	0
+%/var/www/sino_sequencing/spec/models/checkout_spec.rb	102	27
+%/var/www/sino_sequencing/spec/spec_helper.rb	1	0
+%/var/www/sino_sequencing/spec/factories/procedures.rb	11	2
+%/var/www/sino_sequencing/spec/factories/flows.rb	8	2
+%/var/www/sino_sequencing/db/migrate/20130815053214_create_procedures.rb	1	0
+%/var/www/sino_sequencing/config/environments/test.rb	31	2
+%/var/www/sino_sequencing/db/seeds.rb	23	58
+%/var/www/sino_sequencing/spec/models/checkout	1	0
+%/var/www/sino_sequencing/spec/models/checkout_record_spec.rb	1	0
+%/var/www/sino_sequencing/app/views/checkouts/_table.html.slim	12	8
+%/var/www/sino_sequencing/spec/models/client_spec.rb	128	28
+%/var/www/sino_sequencing/spec/models/order_mail_spec.rb	1	0
+%/var/www/sino_sequencing/spec/models/order_spec.rb	225	8
+%/var/www/sino_sequencing/app/models/plasmid_code.rb	1	0
+%/var/www/sino_sequencing/app/models/plasmid.rb	30	122
+%/var/www/sino_sequencing/spec/models/plasmid_spec.rb	1	0
+%/var/www/sino_sequencing/app/models/prepayment.rb	51	29
+%/var/www/sino_sequencing/config/locales/prepayments.cn.yml	1	0
+%/var/www/sino_sequencing/db/migrate/20130301053852_create_prepayments.rb	5	6
+%/var/www/sino_sequencing/spec/models/prepayment_spec.rb	1	0
+%/var/www/sino_sequencing/app/views/prepayment_records/_search.html.slim	1	0
+%/var/www/sino_sequencing/app/models/primer_board.rb	42	128
+%/var/www/sino_sequencing/spec/models/primer_board_spec.rb	138	8
+%/var/www/sino_sequencing/db/migrate/20130111004652_create_primer_boards.rb	7	6
+%/var/www/sino_sequencing/app/models/primer_dilution.rb	34	51
+%/var/www/sino_sequencing/spec/models/primer_dilution_spec.rb	102	45
+%/var/www/sino_sequencing/app/models/primer_head.rb	3	0
+%/var/www/sino_sequencing/spec/models/primer_mail_spec.rb	86	47
+%/var/www/sino_sequencing/spec/models/primer_spec.rb	223	30
+%/var/www/sino_sequencing/app/models/reaction_board.rb	205	4
+%/var/www/sino_sequencing/db/migrate/20130118024219_create_reactions.rb	6	60
+%/var/www/sino_sequencing/app/views/orders/index.js.erb	1	0
+%/var/www/sino_sequencing/app/views/orders/scope.js.erb	1	0
+%/var/www/sino_sequencing/app/views/orders/_ajax_search.html.slim	1	0
+%/var/www/sino_sequencing/spec/models/reaction_spec.rb	1	0
+%/var/www/sino_sequencing/app/views/board_records/new.html.slim	1	0
+%/var/www/sino_sequencing/app/views/board_records/_form.html.slim	1	0
+%/var/www/sino_sequencing/app/views/sample_boards/_code_buttons.html.slim	2	40
+%/var/www/sino_sequencing/app/views/sample_boards/_td_precheck.html.slim	1	0
+%/var/www/sino_sequencing/app/assets/stylesheets/precheck_codes.css.scss	1	0
+%/var/www/sino_sequencing/app/views/sample_boards/_plasmid.html.slim	1	0
+%/var/www/sino_sequencing/app/models/sample_board.rb	15	39
+%/var/www/sino_sequencing/spec/models/sample_board_spec.rb	43	4
+%/var/www/sino_sequencing/db/migrate/20130110091708_create_primers.rb	1	6
+%/var/www/sino_sequencing/db/migrate/20130217025243_create_primer_dilutions.rb	1	0
+%/var/www/sino_sequencing/app/views/reaction_boards/scope.html.slim	1	0
+%/var/www/sino_sequencing/app/views/reaction_boards/_go.html.slim	3	8
+%/var/www/sino_sequencing/app/views/reaction_boards/primer_map.html.slim	1	0
+%/var/www/sino_sequencing/app/assets/javascripts/reaction_boards.js.coffee	8	4
+%/var/www/sino_sequencing/app/assets/javascripts/sample_boards.js.coffee	13	61
+%/var/www/sino_sequencing/app/views/sample_boards/typesetting.js.erb	1	0
+%/var/www/sino_sequencing/app/assets/stylesheets/sample_board_templates.css.scss	1	0
 
 # æ–‡ä»¶å†…çš„æ ‡è®°åŽ†å²è®°å½• (ä»Žæ–°åˆ°æ—§):
 
-> /var/www/lims/config/routes.rb
-	"	8	22
-	^	4	38
-	.	4	37
-	+	80	22
-	+	16	53
-	+	13	39
-	+	121	39
-	+	119	194
-	+	121	0
-	+	64	0
-	+	65	0
-	+	120	27
-	+	119	134
-	+	120	60
-	+	3	12
-	+	8	0
-	+	8	0
-	+	120	42
-	+	23	16
-	+	23	5
-	+	23	0
-	+	24	0
-	+	23	0
-	+	26	0
-	+	62	63
-	+	63	0
-	+	100	30
-	+	100	39
-	+	100	42
-	+	100	50
-	+	100	53
-	+	101	0
-	+	100	53
-	+	1	0
-	+	30	2
-	+	60	0
-	+	34	0
-	+	31	43
-	+	30	0
-	+	65	20
-	+	65	0
-	+	65	48
-	+	10	22
-	+	30	42
-	+	89	0
-	+	88	46
-	+	112	0
-	+	98	0
-	+	88	24
-	+	12	0
-	+	61	37
-	+	16	63
-	+	17	12
-	+	16	23
-	+	17	0
-	+	17	12
-	+	16	26
-	+	17	0
-	+	30	47
-	+	23	4
-	+	117	0
-	+	18	0
-	+	80	60
-	+	88	62
-	+	120	37
-	+	12	0
-	+	111	63
-	+	11	50
-	+	12	2
-	+	80	51
-	+	88	0
-	+	80	60
-	+	12	0
-	+	11	36
-	+	11	52
-	+	30	28
-	+	32	4
-	+	31	50
-	+	30	2
-	+	31	59
-	+	32	0
-	+	111	35
-	+	11	50
-	+	11	45
-	+	30	0
-	+	32	0
-	+	93	4
-	+	6	11
-	+	3	57
-	+	6	46
-	+	72	0
-	+	71	41
-	+	7	18
-	+	97	25
-	+	94	0
-	+	96	0
-	+	102	2
-	+	105	0
-	+	103	4
-	+	102	0
-	+	5	47
-	+	6	0
-	+	4	37
-	r	12	13
-
-> /var/www/lims/Capfile
-	"	6	49
-	^	5	7
-	.	5	0
-	+	5	0
-	+	7	0
-	+	6	2
-	+	6	6
-	+	6	49
-	+	5	0
-
-> /var/www/lims/app/models/reaction.rb
-	"	37	6
-	^	55	62
-	.	55	6
-	+	45	0
-	+	44	73
-	+	46	133
-	+	74	0
-	+	48	0
-	+	48	0
-	+	32	0
-	+	2	36
-	+	32	0
-	+	123	0
-	+	115	0
-	+	55	64
-	+	32	0
-	+	7	42
-	+	10	0
-	+	12	33
-	+	17	19
-	+	2	25
-	+	32	0
-	+	12	40
-	+	13	21
-	+	50	39
-	+	51	38
-	+	7	47
-	+	12	0
-	+	33	0
-	+	32	39
-	+	2	36
-	+	46	45
-	+	20	0
-	+	10	0
-	+	11	0
-	+	56	0
-	+	54	32
-	+	74	0
-	+	70	0
-	+	63	62
-	+	71	0
-	+	63	64
-	+	63	0
-	+	64	5
-	+	66	0
-	+	70	0
-	+	66	0
-	+	64	0
-	+	66	0
-	+	64	4
-	+	62	8
-	+	63	43
-	+	62	9
-	+	63	44
-	+	66	33
-	+	64	24
-	+	66	7
-	+	67	7
-	+	68	7
-	+	69	7
-	+	68	49
-	+	65	14
-	+	66	19
-	+	64	0
-	+	75	18
-	+	77	29
-	+	81	127
-	+	79	57
-	+	82	62
-	+	83	78
-	+	84	57
-	+	85	60
-	+	86	74
-	+	87	86
-	+	88	0
-	+	87	118
-	+	88	68
-	+	90	84
-	+	91	77
-	+	92	90
-	+	94	169
-	+	95	108
-	+	96	11
-	+	97	92
-	+	98	65
-	+	105	71
-	+	106	52
-	+	107	23
-	+	110	47
-	+	114	23
-	+	116	19
-	+	120	23
-	+	122	23
-	+	123	19
-	+	61	20
-	+	62	0
-	+	148	17
-	+	187	75
-	+	53	2
-	+	53	0
-	+	54	31
-	+	56	4
-	+	55	6
-
-> /var/www/lims/app/models/sample_board.rb
-	"	133	12
-	^	189	11
-	.	184	0
-	+	149	6
-	+	146	0
-	+	145	18
-	+	147	0
-	+	148	21
-	+	55	0
-	+	54	7
-	+	1	0
-	+	131	0
-	+	135	0
-	+	150	0
-	+	144	33
-	+	142	59
-	+	154	5
-	+	190	31
-	+	190	31
-	+	22	14
-	+	24	35
-	+	25	12
-	+	53	36
-	+	124	11
-	+	126	11
-	+	128	11
-	+	131	39
-	+	135	39
-	+	24	12
-	+	24	12
-	+	190	36
-	+	53	76
-	+	121	13
-	+	122	14
-	+	23	35
-	+	24	2
-	+	24	2
-	+	24	0
-	+	26	15
-	+	26	0
-	+	27	0
-	+	26	0
-	+	31	37
-	+	122	0
-	+	125	0
-	+	129	0
-	+	130	12
-	+	132	8
-	+	131	0
-	+	134	12
-	+	138	8
-	+	135	0
-	+	136	0
-	+	137	0
-	+	190	30
-	+	185	0
-	+	190	0
-	+	179	0
-	+	185	0
-	+	181	66
-	+	182	0
-	+	182	77
-	+	179	0
-	+	190	0
-	+	181	30
-	+	31	42
-	+	179	29
-	+	182	8
-	+	182	0
-	+	182	9
-	+	182	78
-	+	190	0
-	+	190	0
-	+	181	0
-	+	190	0
-	+	181	0
-	+	183	0
-	+	185	0
-	+	190	0
-	+	181	0
-	+	181	11
-	+	181	0
-	+	181	0
-	+	181	0
-	+	181	0
-	+	182	0
-	+	181	0
-	+	182	0
-	+	179	0
-	+	181	0
-	+	182	0
-	+	180	0
-	+	181	0
-	+	183	0
-	+	190	0
-	+	184	0
-	+	184	0
-	+	184	0
-	+	184	0
-	+	186	0
-	+	189	10
-	+	186	0
-	+	184	0
-
-> /var/www/lims/db/migrate/20130118024219_create_reactions.rb
-	"	20	18
-	^	19	63
-	.	20	18
-	+	8	0
-	+	8	0
-	+	28	0
-	+	22	6
-	+	8	0
-	+	25	28
-	+	7	0
-	+	5	0
-	+	22	0
-	+	7	0
-	+	25	28
-	+	28	67
-	+	19	0
-	+	20	0
-	+	19	49
-	+	20	18
-
-> /var/www/lims/db/migrate/20130118092212_create_samples.rb
-	"	18	10
-	^	23	26
-	.	22	51
-	+	8	0
-	+	32	0
-	+	35	0
-	+	8	0
-	+	1	0
-	+	25	0
-	+	24	0
-	+	25	0
-	+	24	0
-	+	35	63
-	+	12	6
-	+	32	38
-	+	12	0
-	+	13	0
-	+	22	0
-	+	23	48
-	+	22	51
-
-> /var/www/lims/app/models/sample.rb
-	"	33	11
-	^	84	60
-	.	84	59
-	+	13	42
-	+	34	0
-	+	33	37
-	+	34	38
-	+	75	0
-	+	137	0
-	+	141	0
-	+	140	4
-	+	75	93
-	+	75	78
-	+	75	0
-	+	75	0
-	+	75	0
-	+	75	6
-	+	75	0
-	+	75	7
-	+	75	9
-	+	75	0
-	+	75	46
-	+	26	33
-	+	95	57
-	+	71	0
-	+	3	24
-	+	41	33
-	+	42	0
-	+	41	41
-	+	36	36
-	+	75	0
-	+	155	0
-	+	154	4
-	+	27	23
-	+	76	0
-	+	76	26
-	+	77	27
-	+	78	21
-	+	79	22
-	+	80	23
-	+	80	23
-	+	81	22
-	+	76	0
-	+	76	0
-	+	36	25
-	+	78	58
-	+	79	60
-	+	81	36
-	+	80	51
-	+	74	0
-	+	74	0
-	+	72	0
-	+	82	40
-	+	83	44
-	+	82	74
-	+	83	76
-	+	28	0
-	+	34	0
-	+	34	2
-	+	34	0
-	+	35	0
-	+	36	0
-	+	36	11
-	+	35	19
-	+	36	0
-	+	34	0
-	+	76	48
-	+	80	0
-	+	77	0
-	+	84	59
-
-> /var/www/lims/spec/fixtures/menus.yml.erb
-	"	40	18
-	^	40	19
-	.	40	18
-	+	138	0
-	+	168	0
-	+	420	0
-	+	423	23
-	+	424	24
-	+	250	38
-	+	334	31
-	+	300	0
-	+	234	0
-	+	364	0
-	+	369	8
-	+	369	0
-	+	372	0
-	+	375	8
-	+	376	18
-	+	140	23
-	+	234	0
-	+	42	0
-	+	47	25
-	+	234	0
-	+	54	0
-	+	59	25
-	+	216	0
-	+	60	0
-	+	65	25
-	+	348	0
-	+	66	0
-	+	71	25
-	+	300	0
-	+	72	0
-	+	72	25
-	+	222	29
-	+	294	31
-	+	252	33
-	+	252	38
-	+	258	0
-	+	252	0
-	+	255	14
-	+	256	30
-	+	294	23
-	+	222	0
-	+	294	0
-	+	252	0
-	+	72	0
-	+	77	25
-	+	76	23
-	+	75	22
-	+	72	0
-	+	48	0
-	+	36	0
-	+	39	16
-	+	40	18
-
-> /var/www/lims/config/locales/menus.cn.yml
-	"	23	24
-	^	23	27
-	.	23	24
-	+	72	22
-	+	72	27
-	+	72	25
-	+	72	0
-	+	59	16
-	+	59	21
-	+	59	17
-	+	59	0
-	+	84	25
-	+	85	31
-	+	86	18
-	+	68	0
-	+	70	53
-	+	69	28
-	+	54	0
-	+	55	0
-	+	70	0
-	+	17	30
-	+	59	0
-	+	18	0
-	+	72	0
-	+	21	0
-	+	23	24
-
-> /var/www/lims/db/migrate/20130301053852_create_prepayments.rb
-	"	14	65
-	^	14	51
-	.	14	65
-	+	14	65
-
-> /var/www/lims/app/models/client.rb
-	"	23	4
-	^	8	45
-	.	5	20
-	+	93	24
-	+	102	0
-	+	102	8
-	+	80	132
-	+	102	0
-	+	80	251
-	+	64	8
-	+	63	87
-	+	63	0
-	+	81	108
-	+	125	0
-	+	125	10
-	+	125	43
-	+	125	15
-	+	125	0
-	+	125	0
-	+	125	34
-	+	63	34
-	+	80	105
-	+	80	211
-	+	75	60
-	+	75	25
-	+	94	0
-	+	85	112
-	+	85	61
-	+	94	24
-	+	62	16
-	+	75	0
-	+	80	22
-	+	80	0
-	+	80	0
-	+	80	15
-	+	74	0
-	+	80	16
-	+	80	0
-	+	80	67
-	+	80	0
-	+	62	0
-	+	76	23
-	+	79	8
-	+	76	23
-	+	77	14
-	+	75	0
-	+	77	15
-	+	79	0
-	+	78	0
-	+	77	66
-	+	78	15
-	+	75	0
-	+	78	16
-	+	79	0
-	+	74	49
-	+	100	0
-	+	95	0
-	+	98	0
-	+	95	0
-	+	85	0
-	+	96	17
-	+	94	0
-	+	97	18
-	+	94	0
-	+	93	24
-	+	85	14
-	+	99	19
-	+	96	14
-	+	97	14
-	+	125	0
-	+	61	16
-	+	125	0
-	+	113	0
-	+	105	36
-	+	123	0
-	+	115	24
-	+	106	0
-	+	112	0
-	+	116	0
-	+	108	0
-	+	118	0
-	+	107	8
-	+	117	8
-	+	109	90
-	+	112	0
-	+	81	112
-	+	118	0
-	+	110	0
-	+	109	183
-	+	111	18
-	+	119	34
-	+	119	124
-	+	117	6
-	+	107	6
-	+	13	0
-	+	19	0
-	+	19	0
-	+	5	2
-	+	5	54
-	+	6	0
-	+	5	37
-	+	8	44
-	+	5	20
-
-> /var/www/lims/app/controllers/sample_boards_controller.rb
-	"	76	2
-	^	31	22
-	.	31	22
-	+	26	79
-	+	4	6
-	+	7	0
-	+	6	77
-	+	22	0
-	+	32	0
-	+	29	6
-	+	31	22
-
-> /var/www/lims/db/migrate/20130815012513_create_board_records.rb
-	"	7	58
-	^	6	20
-	.	6	19
-	+	9	0
-	+	4	24
-	+	5	13
-	+	6	19
-
-> /var/www/lims/app/models/board_record.rb
-	"	2	19
-	^	4	36
-	.	2	37
-	+	2	57
-	+	3	27
-	+	6	37
-	+	3	0
-	+	3	0
-	+	4	35
-	+	2	14
-	+	3	0
-	+	2	37
-
-> /var/www/lims/NERD_tree_1
-	"	4	0
-	.	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-
-> /var/www/lims/db/migrate/20130118021310_create_sample_boards.rb
-	"	5	42
-	.	5	42
-	+	5	0
-	+	14	52
-	+	5	16
-	+	12	0
-	+	14	38
-	+	5	42
-
-> /var/www/lims/app/models/sample_head.rb
-	"	40	4
-	^	41	26
-	.	41	25
-	+	31	18
-	+	32	78
-	+	33	34
-	+	13	0
-	+	2	0
-	+	4	2
-	+	41	32
-	+	41	54
-	+	41	0
-	+	41	73
-	+	41	75
-	+	41	43
-	+	41	82
-	+	41	0
-	+	41	23
-	+	41	0
-	+	41	0
-	+	41	7
-	+	41	0
-	+	41	44
-	+	41	0
-	+	41	0
-	+	50	0
-	+	48	44
-	+	49	7
-	+	38	0
-	+	41	25
-
-> /var/www/lims/app/models/reaction_head.rb
-	"	8	78
-	^	8	79
-	.	8	78
-	+	8	30
-	+	9	43
-	+	14	0
-	+	14	0
-	+	9	12
-	+	14	55
-	+	8	78
-
-> /var/www/lims/db/migrate/20130122021033_create_sample_procedures.rb
-	"	5	2
-	^	7	88
-	.	5	0
-	+	6	0
-	+	6	20
-	+	7	25
-	+	6	82
-	+	7	87
-	+	8	0
-	+	5	22
-	+	11	0
-	+	5	0
-
-> /var/www/lims/app/controllers/sample_procedures_controller.rb
-	"	2	0
-
-> /var/www/lims/app/models/sample_procedure.rb
-	"	11	4
-	^	3	3
-	.	3	2
-	+	2	21
-	+	3	2
-
-> /var/www/lims/lib/procedure.rb
-	"	3	0
-	.	3	0
-	+	3	0
-
-> /var/www/lims/db/migrate/20130122021055_create_reaction_procedures.rb
+> /var/www/sino_sequencing/Capfile
 	"	1	0
 
-> /var/www/lims/db/migrate/20130815053214_create_procedures.rb
+> /var/www/sino_sequencing/config/locales/simple_form.cn.yml
+	"	42	31
+	^	42	34
+	.	42	31
+	+	72	0
+	+	15	26
+	+	13	15
+	+	17	23
+	+	19	29
+	+	21	23
+	+	23	23
+	+	25	23
+	+	26	17
+	+	29	23
+	+	28	23
+	+	29	0
+	+	31	23
+	+	32	13
+	+	34	23
+	+	35	17
+	+	37	29
+	+	39	23
+	+	41	21
+	+	44	18
+	+	46	21
+	+	58	0
+	+	59	0
+	+	48	23
+	+	50	21
+	+	52	21
+	+	53	23
+	+	55	26
+	+	56	14
+	+	57	21
+	+	42	31
+
+> /var/www/sino_sequencing/app/controllers/plasmid_codes_controller.rb
+	"	1	0
+	.	6	0
+	+	6	0
+
+> /var/www/sino_sequencing/app/controllers/canceled_records_controller.rb
 	"	4	6
-	^	6	12
-	.	5	20
-	+	4	0
-	+	12	0
-	+	6	32
-	+	9	0
-	+	5	22
-	+	4	30
-	+	10	0
-	+	6	11
-	+	5	20
-
-> /var/www/lims/app/models/procedure.rb
-	"	10	49
-	^	10	51
-	.	10	49
-	+	2	28
-	+	4	12
-	+	5	12
-	+	5	0
-	+	5	2
-	+	4	49
-	+	5	0
-	+	8	52
-	+	15	0
-	+	10	16
-	+	7	26
-	+	10	49
-	+	7	0
-	+	9	16
-	+	3	0
-	+	15	0
-	+	15	10
-	+	15	20
-	+	15	0
-	+	10	55
-	+	15	0
-	+	15	0
-	+	15	52
-	+	13	0
-	+	12	29
-	+	11	17
-	+	15	52
-	+	15	0
-	+	10	49
-
-> /var/www/lims/db/migrate/20130121093238_create_sample_heads.rb
-	"	6	6
-
-> /var/www/lims/db/migrate/20130130015038_create_reaction_heads.rb
-	"	7	6
-	.	7	0
-	+	6	0
-	+	7	0
-
-> /var/www/lims/app/models/sample_flow.rb
-	"	2	0
-	.	2	0
-	+	10	0
-	+	9	13
-	+	2	0
-
-> /var/www/lims/app/models/flow.rb
-	"	5	24
-	^	6	25
-	.	6	24
-	+	2	0
-	+	3	36
-	+	4	14
-	+	19	74
-	+	27	119
-	+	19	48
-	+	20	32
-	+	27	93
-	+	9	13
-	+	16	0
-	+	17	0
-	+	14	63
-	+	15	0
-	+	27	110
-	+	19	81
-	+	6	24
-
-> /var/www/lims/db/migrate/20130815054447_create_flows.rb
-	"	10	56
-	^	10	43
-	.	10	56
-	+	4	0
-	+	10	0
-	+	4	16
-	+	6	16
-	+	5	37
+	^	6	19
+	.	6	18
 	+	8	0
-	+	10	56
+	+	4	3
+	+	7	8
+	+	6	18
 
-> /var/www/lims/db/migrate/20130122030911_create_sample_flows.rb
-	"	9	4
-
-> /var/www/lims/lib/head.rb
-	"	14	2
-	.	14	0
-	+	12	0
-	+	14	0
-
-> /var/www/lims/app/models/prepayment.rb
-	"	11	2
-	.	58	0
-	+	10	2
-	+	4	0
-	+	12	2
-	+	13	0
-	+	11	37
-	+	18	2
-	+	5	4
-	+	6	4
-	+	18	18
-	+	20	33
-	+	21	0
-	+	32	64
-	+	34	0
-	+	36	16
-	+	55	18
-	+	55	0
-	+	57	0
-	+	55	69
-	+	57	0
-	+	57	0
-	+	57	74
-	+	37	0
-	+	32	15
-	+	5	0
-	+	54	6
-	+	55	58
-	+	54	30
-	+	57	84
-	+	54	31
-	+	57	0
-	+	56	6
-	+	55	78
-	+	54	56
-	+	55	90
-	+	57	0
-	+	57	0
-	+	58	6
-	+	58	0
-	+	58	0
-	+	57	0
-	+	57	0
-	+	58	0
-	+	57	0
-	+	58	0
-	+	57	0
-	+	57	58
-	+	58	0
-	+	58	33
-	+	58	0
-	+	58	17
-	+	58	41
-	+	58	0
-	+	58	17
-	+	58	0
-	+	58	4
-	+	58	0
-	+	58	0
-	+	58	0
-	+	58	0
-
-> /var/www/lims/app/models/reaction_procedure.rb
-	"	2	0
-	.	2	0
-	+	4	12
-	+	5	54
-	+	4	0
-	+	2	0
-
-> /var/www/lims/db/seeds.rb
-	"	56	116
-	^	56	117
-	.	56	116
-	+	56	111
-	+	90	0
-	+	89	10
-	+	90	12
-	+	89	11
-	+	90	13
-	+	56	116
-
-> /var/www/lims/spec/factories/procedures.rb
-	"	10	13
-	^	10	14
-	.	10	13
-	+	11	0
-	+	5	0
-	+	8	13
-	+	9	8
-	+	10	9
-	+	9	15
-	+	10	13
-
-> /var/www/lims/spec/fixtures/procedures.yml
+> /var/www/sino_sequencing/app/views/canceled_records/_search.html.slim
 	"	1	0
-	^	17	1
-	.	35	15
-	+	22	0
-	+	22	0
-	+	21	19
-	+	1	7
-	+	26	0
-	+	27	0
-	+	31	0
-	+	36	0
-	+	5	14
-	+	11	0
-	+	16	0
-	+	20	0
-	+	25	16
-	+	30	0
-	+	35	0
-	+	40	0
-	+	38	10
-	+	38	0
-	+	18	0
-	+	5	13
-	+	11	13
-	+	16	8
-	+	25	15
-	+	30	15
-	+	35	15
-
-> /var/www/lims/spec/fixtures/flows.yml
-	"	1	0
-	^	96	22
-	.	118	0
-	+	2	0
-	+	93	0
-	+	93	14
-	+	94	0
-	+	94	0
-	+	95	2
-	+	97	16
-	+	101	16
-	+	105	16
-	+	97	16
-	+	101	16
-	+	105	16
-	+	106	16
-	+	109	16
-	+	113	16
-	+	117	16
-	+	118	16
-	+	3	23
-	+	5	0
-	+	7	0
-	+	9	0
-	+	11	0
-	+	13	0
-	+	15	0
-	+	17	0
-	+	19	0
-	+	21	0
-	+	23	0
-	+	25	0
-	+	27	0
-	+	29	0
-	+	31	0
-	+	33	0
-	+	35	0
-	+	37	0
-	+	39	0
-	+	41	0
-	+	43	0
-	+	45	0
-	+	47	0
-	+	49	0
-	+	51	0
-	+	53	0
-	+	55	0
-	+	53	0
-	+	59	0
-	+	61	0
-	+	63	0
-	+	67	0
-	+	69	0
-	+	71	0
-	+	75	0
-	+	77	0
-	+	79	0
-	+	83	0
-	+	85	0
-	+	87	0
-	+	91	0
-	+	93	0
-	+	93	0
-	+	93	0
-	+	93	0
-	+	93	0
-	+	93	0
-	+	96	21
-	+	100	0
-	+	104	0
-	+	106	0
-	+	108	0
-	+	112	0
-	+	116	0
-	+	118	0
-	+	5	0
-	+	93	0
-	+	85	0
-	+	77	0
-	+	69	0
-	+	61	0
-	+	53	0
-	+	49	0
-	+	45	0
-	+	41	0
-	+	37	0
-	+	33	0
-	+	29	0
-	+	25	0
-	+	21	0
-	+	17	0
-	+	13	0
-	+	9	0
-	+	97	16
-	+	101	16
-	+	105	16
-	+	106	0
-	+	109	16
-	+	113	16
-	+	117	16
-	+	118	0
-
-> /var/www/lims/app/views/sample_heads/_table.html.haml
-	"	25	31
-	^	25	32
-	.	25	31
-	+	11	23
-	+	23	30
-	+	24	26
-	+	25	31
-
-> /var/www/lims/app/views/sample_heads/_form.html.haml
-	"	14	19
-	^	14	20
-	.	14	19
-	+	4	0
-	+	15	0
-	+	14	0
-	+	15	0
-	+	14	19
-
-> /var/www/lims/app/views/sample_heads/edit.html.haml
-	"	5	4
-	.	5	0
-	+	5	40
-	+	5	28
-	+	6	14
-	+	5	99
-	+	5	0
-
-> /var/www/lims/app/views/flows/_table.html.haml
-	"	9	8
-	^	5	30
-	.	5	30
-	+	8	9
-	+	9	49
-	+	2	9
-	+	5	23
-	+	8	24
-	+	9	29
-	+	5	30
-
-> /var/www/lims/app/views/flows/_tr.html.haml
-	"	3	68
-	^	3	88
+	^	2	83
 	.	3	0
-	+	1	17
-	+	2	44
-	+	3	54
-	+	2	34
+	+	3	22
+	+	3	0
+	+	4	0
+	+	3	0
+	+	3	0
+	+	1	105
+	+	3	0
+	+	2	64
+	+	3	0
+	+	3	59
+	+	2	82
 	+	3	0
 
-> /var/www/lims/app/views/flows/_form.html.haml
-	"	1	0
-	^	4	123
-	.	4	122
-	+	2	21
-	+	4	17
-	+	6	17
-	+	5	0
-	+	6	25
-	+	4	94
-	+	4	47
-	+	4	122
+> /var/www/sino_sequencing/app/models/canceled_record.rb
+	"	21	6
 
-> /var/www/lims/app/views/flows/_search.html.haml
-	"	4	57
-	.	4	57
-	+	4	57
-
-> /var/www/lims/app/views/flows/create.js.erb
-	"	4	19
-	.	4	19
-	+	1	7
-	+	2	53
-	+	3	6
-	+	4	19
-
-> /var/www/lims/app/views/flows/destroy.js.erb
-	"	2	31
-	.	2	31
-	+	1	7
-	+	2	31
-
-> /var/www/lims/app/views/flows/new.html.haml
-	"	1	0
-
-> /var/www/lims/app/views/flows/new.js.erb
-	"	1	17
-	.	1	17
-	+	1	17
-
-> /var/www/lims/app/controllers/sample_flows_controller.rb
-	"	5	17
-	.	5	0
-	+	5	17
-	+	6	0
-	+	5	0
-
-> /var/www/lims/app/controllers/flows_controller.rb
-	"	6	38
-	^	6	39
-	.	6	38
-	+	2	0
-	+	9	0
-	+	8	0
-	+	2	37
-	+	5	28
-	+	6	38
-
-> /var/www/lims/app/controllers/procedures_controller.rb
-	"	6	53
-	^	6	54
-	.	6	53
-	+	9	0
-	+	2	58
-	+	8	0
+> /var/www/sino_sequencing/app/controllers/companies_controller.rb
+	"	2	0
+	^	6	15
+	.	6	14
+	+	7	0
 	+	4	6
-	+	8	8
+	+	6	68
+	+	6	0
 	+	8	0
+	+	8	6
 	+	8	0
-	+	8	0
-	+	8	14
 	+	8	25
 	+	8	0
-	+	8	0
-	+	8	0
-	+	6	0
 	+	8	24
-	+	6	0
-	+	7	14
+	+	8	14
+	+	9	0
 	+	8	0
-	+	2	74
-	+	6	53
+	+	8	0
+	+	6	14
 
-> /var/www/lims/config/locales/procedures.cn.yml
-	"	16	18
-	^	16	21
-	.	16	18
-	+	4	17
-	+	6	6
-	+	7	17
-	+	12	2
-	+	20	0
-	+	9	17
-	+	19	212
-	+	18	0
-	+	14	26
-	+	15	19
-	+	17	19
-	+	18	0
-	+	16	18
+> /var/www/sino_sequencing/app/views/companies/_subtree.html.slim
+	"	1	0
+	^	11	35
+	.	11	34
+	+	7	40
+	+	11	0
+	+	12	0
+	+	11	34
 
-> /var/www/lims/app/views/procedures/_table.html.haml
-	"	12	10
-	^	15	61
-	.	15	60
+> /var/www/sino_sequencing/app/views/clients/_search.html.slim
+	"	7	2
+	^	4	55
+	.	8	0
 	+	1	0
-	+	12	50
-	+	13	0
-	+	14	0
-	+	15	0
-	+	13	50
-	+	14	54
-	+	15	55
-	+	16	70
-	+	15	60
+	+	5	0
+	+	2	16
+	+	1	0
+	+	3	54
+	+	5	0
+	+	8	0
+	+	8	0
+	+	6	48
+	+	8	2
+	+	7	48
+	+	8	2
+	+	6	34
+	+	7	34
+	+	4	54
+	+	8	0
 
-> /var/www/lims/app/views/procedures/_search.html.haml
-	"	6	94
+> /var/www/sino_sequencing/app/models/client.rb
+	"	60	60
+	^	66	109
+	.	66	108
+	+	64	0
+	+	63	116
+	+	60	61
+	+	62	0
+	+	61	39
+	+	63	23
+	+	64	23
+	+	65	137
+	+	66	47
+	+	65	55
+	+	66	108
 
-> /var/www/lims/app/views/procedures/index.html.haml
-	"	4	4
-
-> /var/www/lims/app/views/procedures/index.js.erb
+> /var/www/sino_sequencing/app/views/primers/index.html.slim
 	"	1	0
-
-> /var/www/lims/db/migrate/20130118094148_create_sample_board_primers.rb
-	"	1	0
-
-> /var/www/lims/app/controllers/sample_heads_controller.rb
-	"	3	0
-
-> /var/www/lims/app/views/procedures/new.html.haml
-	"	1	0
+	^	1	22
 	.	2	0
-	+	1	0
+	+	6	21
+	+	10	134
+	+	8	2
+	+	7	2
+	+	10	2
+	+	8	9
+	+	9	0
+	+	5	0
+	+	4	32
+	+	1	21
 	+	2	0
 
-> /var/www/lims/app/views/procedures/edit.html.haml
+> /var/www/sino_sequencing/app/views/primers/_search.html.slim
+	"	7	65
+	^	7	66
+	.	7	65
+	+	10	23
+	+	1	0
+	+	2	12
+	+	6	0
+	+	5	71
+	+	6	0
+	+	6	53
+	+	10	62
+	+	10	0
+	+	11	63
+	+	11	50
+	+	11	133
+	+	11	0
+	+	11	0
+	+	11	64
+	+	11	54
+	+	11	64
+	+	11	0
+	+	8	0
+	+	8	0
+	+	5	68
+	+	3	36
+	+	10	83
+	+	11	0
+	+	8	0
+	+	6	0
+	+	4	14
+	+	8	0
+	+	11	0
+	+	5	36
+	+	7	65
+
+> /var/www/sino_sequencing/app/models/primer.rb
+	"	113	2
+	.	113	0
+	+	64	33
+	+	66	0
+	+	62	0
+	+	64	75
+	+	61	18
+	+	64	92
+	+	64	0
+	+	64	90
+	+	64	0
+	+	66	0
+	+	66	0
+	+	67	83
+	+	71	29
+	+	73	69
+	+	73	100
+	+	73	113
+	+	81	101
+	+	64	102
+	+	66	67
+	+	66	80
+	+	67	50
+	+	66	0
+	+	63	0
+	+	65	128
+	+	73	0
+	+	73	57
+	+	73	0
+	+	73	0
+	+	73	0
+	+	73	0
+	+	74	0
+	+	75	37
+	+	81	0
+	+	81	0
+	+	78	0
+	+	74	61
+	+	78	0
+	+	74	63
+	+	76	64
+	+	77	95
+	+	78	24
+	+	70	32
+	+	68	80
+	+	80	80
+	+	109	0
+	+	108	0
+	+	115	0
+	+	114	31
+	+	113	0
+
+> /var/www/sino_sequencing/config/locales/primers.cn.yml
+	"	53	19
+	^	23	24
+	.	23	23
+	+	11	30
+	+	20	22
+	+	19	28
+	+	20	28
+	+	23	23
+
+> /var/www/sino_sequencing/app/controllers/primers_controller.rb
+	"	13	30
+	^	13	31
+	.	13	30
+	+	2	207
+	+	12	37
+	+	13	26
+	+	29	22
+	+	2	223
+	+	6	18
+	+	13	30
+	o	13	26
+
+> /var/www/sino_sequencing/app/views/primers/_ajax_search.html.slim
+	"	4	36
+	^	4	36
+	.	4	35
+	+	1	0
+	+	2	0
+	+	4	0
+	+	3	0
+	+	4	0
+	+	5	0
+	+	4	35
+
+> /var/www/sino_sequencing/app/views/primer_boards/_search.html.slim
+	"	2	39
+	^	2	40
+	.	2	39
+	+	1	12
+	+	3	58
+	+	4	0
+	+	2	39
+
+> /var/www/sino_sequencing/app/controllers/orders_controller.rb
+	"	8	8
+	^	10	9
+	.	10	8
+	+	7	2
+	+	8	18
+	+	9	52
+	+	74	18
+	+	2	171
+	+	9	4
+	+	10	8
+
+> /var/www/sino_sequencing/app/views/orders/new.html.slim
+	"	2	47
+	^	2	52
+	.	2	47
+	+	7	0
+	+	6	23
+	+	7	12
+	+	9	4
+	+	8	0
+	+	9	0
+	+	9	88
+	+	2	47
+
+> /var/www/sino_sequencing/app/views/orders/_form.html.slim
+	"	28	4
+	.	26	0
+	+	23	48
+	+	1	0
+	+	2	0
+	+	3	0
+	+	3	0
+	+	2	0
+	+	9	15
+	+	23	28
+	+	23	28
+	+	2	38
+	+	4	0
+	+	4	0
+	+	5	152
+	+	7	24
+	+	2	60
+	+	4	0
+	+	14	46
+	+	15	23
+	+	16	23
+	+	19	104
+	+	20	202
+	+	19	135
+	+	20	233
+	+	19	0
+	+	18	0
+	+	25	231
+	+	23	25
+	+	20	0
+	+	22	89
+	+	23	17
+	+	23	0
+	+	25	8
+	+	25	0
+	+	26	0
+
+> /var/www/sino_sequencing/app/assets/javascripts/orders.js.coffee
+	"	139	77
+	^	139	78
+	.	139	77
+	+	152	19
+	+	153	15
+	+	104	52
+	+	129	51
+	+	60	0
+	+	102	0
+	+	76	0
+	+	103	31
+	+	46	31
+	+	139	77
+
+> /var/www/sino_sequencing/app/views/orders/_insert_sample_primer.html.slim
+	"	1	0
+	^	33	46
+	.	33	45
+	+	6	56
+	+	8	55
+	+	10	56
+	+	12	51
+	+	14	55
+	+	5	10
+	+	6	0
+	+	7	0
+	+	8	0
+	+	9	0
+	+	10	0
+	+	11	0
+	+	12	0
+	+	13	0
+	+	14	0
+	+	3	0
+	+	4	0
+	+	3	9
+	+	7	9
+	+	5	9
+	+	9	9
+	+	11	9
+	+	13	9
+	+	15	0
+	+	16	0
+	+	17	0
+	+	17	0
+	+	17	0
+	+	18	0
+	+	20	0
+	+	21	0
+	+	23	0
+	+	24	0
+	+	1	27
+	+	26	0
+	+	27	0
+	+	26	9
+	+	28	0
+	+	29	0
+	+	30	0
+	+	31	0
+	+	38	0
+	+	39	0
+	+	1	31
+	+	17	9
+	+	20	9
+	+	17	9
+	+	1	27
+	+	2	5
+	+	3	0
+	+	25	5
+	+	26	0
+	+	16	164
+	+	17	0
+	+	32	0
+	+	33	45
+
+> /var/www/sino_sequencing/app/assets/javascripts/primers.js.coffee
+	"	5	16
+	^	5	17
+	.	5	16
+	+	15	42
+	+	17	43
+	+	18	36
+	+	22	30
+	+	4	35
+	+	5	16
+
+> /var/www/sino_sequencing/app/views/orders/index.html.slim
+	"	4	20
+	^	5	20
+	.	5	0
+	+	4	30
+	+	1	21
+	+	2	0
+	+	5	64
+	+	5	46
+	+	5	0
+	+	5	0
+
+> /var/www/sino_sequencing/app/views/orders/_search.html.slim
+	"	1	0
+	^	8	56
+	.	11	0
+	+	4	0
+	+	4	0
+	+	20	0
+	+	4	0
+	+	1	12
+	+	4	0
+	+	2	53
+	+	3	54
+	+	4	18
+	+	20	0
+	+	20	0
+	+	5	61
+	+	20	0
+	+	20	0
+	+	20	0
+	+	20	0
+	+	6	49
+	+	20	0
+	+	7	51
+	+	7	52
+	+	20	0
+	+	10	78
+	+	20	52
+	+	10	79
+	+	20	0
+	+	10	85
+	+	20	59
+	+	10	86
+	+	20	0
+	+	12	88
+	+	20	57
+	+	12	89
+	+	20	0
+	+	13	0
+	+	13	110
+	+	20	0
+	+	13	155
+	+	14	57
+	+	20	0
+	+	15	53
+	+	20	0
+	+	16	55
+	+	20	0
+	+	18	59
+	+	20	0
+	+	19	55
+	+	20	0
+	+	20	54
+	+	20	0
+	+	5	62
+	+	6	63
+	+	7	65
+	+	7	66
+	+	2	73
+	+	3	74
+	+	5	82
+	+	6	83
+	+	7	85
+	+	7	86
+	+	10	150
+	+	10	177
+	+	12	171
+	+	13	176
+	+	14	77
+	+	15	73
+	+	16	75
+	+	18	79
+	+	19	75
+	+	20	0
+	+	17	0
+	+	10	0
+	+	5	0
+	+	7	0
+	+	9	0
+	+	8	55
+	+	5	0
+	+	11	0
+
+> /var/www/sino_sequencing/config/locales/orders.cn.yml
+	"	45	84
+	^	43	27
+	.	43	21
+	+	8	30
+	+	9	22
+	+	28	22
+	+	29	32
+	+	30	23
+	+	20	21
+	+	19	35
+	+	22	34
+	+	33	30
+	+	34	32
+	+	35	36
+	+	36	32
+	+	37	31
+	+	11	31
+	+	12	19
+	+	31	32
+	+	43	21
+
+> /var/www/sino_sequencing/app/models/order.rb
+	"	112	101
+	^	112	99
+	.	112	98
+	+	94	24
+	+	107	20
+	+	107	20
+	+	94	0
+	+	94	0
+	+	107	0
+	+	103	107
+	+	105	0
+	+	97	0
+	+	98	57
+	+	102	0
+	+	99	35
+	+	103	20
+	+	103	0
+	+	100	0
+	+	118	0
+	+	108	133
+	+	118	0
+	+	119	0
+	+	117	120
+	+	125	114
+	+	24	44
+	+	123	0
+	+	98	49
+	+	108	169
+	+	108	0
+	+	123	0
+	+	108	198
+	+	111	0
+	+	112	98
+
+> /var/www/sino_sequencing/app/views/orders/_table.html.slim
+	"	32	10
+	^	34	34
+	.	34	79
+	+	34	79
+
+> /var/www/sino_sequencing/config/locales/sample_boards.cn.yml
+	"	31	8
+	^	29	12
+	.	29	12
+	+	11	30
+	+	29	37
+	+	30	37
+	+	29	12
+
+> /var/www/sino_sequencing/app/views/sample_boards/edit.html.slim
+	"	1	0
+
+> /var/www/sino_sequencing/config/locales/samples.cn.yml
+	"	16	8
+	^	15	27
+	.	16	0
+	+	17	34
+	+	28	38
+	+	8	30
+	+	15	24
+	+	16	0
+
+> /var/www/sino_sequencing/app/models/reaction.rb
+	"	1	0
+	^	70	59
+	.	70	58
+	+	118	4
+	+	118	0
+	+	118	86
+	+	119	60
+	+	123	6
+	+	125	0
+	+	121	0
+	+	120	42
+	+	121	96
+	+	149	0
+	+	122	97
+	+	124	111
+	+	149	98
+	+	149	58
+	+	149	138
+	+	118	0
+	+	125	4
+	+	125	50
+	+	149	0
+	+	125	0
+	+	128	14
+	+	148	0
+	+	129	18
+	+	131	42
+	+	130	22
+	+	137	8
+	+	131	0
+	+	130	71
+	+	147	96
+	+	148	0
+	+	132	100
+	+	133	103
+	+	134	0
+	+	133	104
+	+	142	68
+	+	146	0
+	+	143	43
+	+	144	114
+	+	145	108
+	+	135	111
+	+	136	91
+	+	130	0
+	+	138	130
+	+	139	126
+	+	140	75
+	+	141	87
+	+	127	28
+	+	70	58
+
+> /var/www/sino_sequencing/db/migrate/20130118092212_create_samples.rb
+	"	12	27
+	.	24	0
+	+	24	0
+
+> /var/www/sino_sequencing/app/views/plasmids/_search.html.slim
+	"	3	54
+	^	3	55
+	.	3	54
+	+	4	0
+	+	4	0
+	+	1	53
+	+	2	57
+	+	4	0
+	+	3	54
+
+> /var/www/sino_sequencing/config/locales/plasmids.cn.yml
+	"	12	31
+	^	10	37
+	.	10	34
+	+	8	30
+	+	10	34
+
+> /var/www/sino_sequencing/app/views/primer_dilutions/_search.html.slim
+	"	1	0
+	^	2	19
+	.	2	18
+	+	2	0
+	+	1	53
+	+	2	0
+	+	3	78
+	+	4	59
+	+	3	79
+	+	4	0
+	+	2	18
+
+> /var/www/sino_sequencing/app/views/reactions/typesetting.html.slim
+	"	1	0
+	^	26	32
+	.	36	0
+	+	2	29
+	+	20	28
+	+	4	23
+	+	5	0
+	+	8	0
+	+	11	0
+	+	18	188
+	+	20	0
+	+	1	0
+	+	12	0
+	+	12	9
+	+	12	0
+	+	38	21
+	+	12	0
+	+	2	2
+	+	26	31
+	+	1	0
+	+	36	0
+
+> /var/www/sino_sequencing/app/views/sample_boards/_info.html.slim
+	"	1	0
+	^	12	14
+	.	12	13
+	+	2	1
+	+	4	1
+	+	6	1
+	+	7	0
+	+	8	1
+	+	10	1
+	+	2	2
+	+	4	2
+	+	6	2
+	+	8	2
+	+	10	2
+	+	11	9
+	+	16	32
+	+	17	45
+	+	12	28
+	+	13	31
+	+	14	31
+	+	15	47
+	+	18	27
+	+	12	21
+	+	13	38
+	+	19	33
+	+	13	3
+	+	19	3
+	+	11	19
+	+	6	13
+	+	8	6
+	+	6	6
+	+	13	40
+	+	12	13
+
+> /var/www/sino_sequencing/app/assets/stylesheets/reactions.css.scss
+	"	1	0
+
+> /var/www/sino_sequencing/app/assets/stylesheets/reaction_boards.css.scss
+	"	27	11
+	^	27	12
+	.	27	11
+	+	21	8
+	+	22	6
+	+	25	2
+	+	24	13
+	+	27	11
+	+	29	14
+	+	27	11
+
+> /var/www/sino_sequencing/app/views/reactions/_search.html.slim
+	"	2	40
+	^	7	51
+	.	8	0
+	+	8	0
+	+	1	12
+	+	8	0
+	+	2	50
+	+	8	0
+	+	3	53
+	+	8	0
+	+	4	53
+	+	8	0
+	+	8	0
+	+	5	57
+	+	8	0
+	+	6	59
+	+	8	0
+	+	8	0
+	+	7	50
+	+	8	0
+
+> /var/www/sino_sequencing/config/locales/reactions.cn.yml
+	"	47	6
+	^	19	39
+	.	14	0
+	+	9	30
+	+	10	24
+	+	12	30
+	+	17	34
+	+	19	36
+	+	14	0
+
+> /var/www/sino_sequencing/app/views/reaction_boards/_search.html.slim
+	"	1	0
+	^	3	19
+	.	3	18
+	+	1	0
+	+	3	0
+	+	2	16
+	+	3	0
+	+	1	0
+	+	4	0
+	+	3	18
+
+> /var/www/sino_sequencing/app/views/checkouts/_search.html.slim
+	"	4	0
+	^	6	55
+	.	6	54
+	+	2	22
+	+	2	0
+	+	1	12
+	+	2	0
+	+	3	63
+	+	9	56
+	+	3	160
+	+	9	0
+	+	5	53
+	+	9	0
+	+	7	54
+	+	9	0
+	+	9	0
+	+	8	84
+	+	9	0
+	+	8	97
+	+	8	0
+	+	8	122
+	+	9	0
+	+	3	116
+	+	4	50
+	+	6	54
+
+> /var/www/sino_sequencing/app/views/statistic/client.html.slim
+	"	1	0
+	^	13	19
+	.	13	18
+	+	6	21
+	+	13	2
+	+	8	128
+	+	7	11
+	+	8	0
+	+	12	9
+	+	7	5
+	+	9	5
+	+	11	0
+	+	6	0
+	+	6	70
+	+	6	72
+	+	7	0
+	+	6	72
+	+	5	5
+	+	6	0
+	+	10	13
+	+	11	0
+	+	13	18
+
+> /var/www/sino_sequencing/app/views/sample_boards/_precheck.html.slim
+	"	3	0
+	^	3	22
+	.	3	0
+	+	2	18
+	+	7	11
+	+	9	11
+	+	11	0
+	+	12	6
+	+	12	7
+	+	12	12
+	+	13	0
+	+	12	78
+	+	2	103
+	+	4	0
+	+	1	1
+	+	3	21
+	+	4	0
+	+	3	0
+	+	2	0
+	+	3	0
+
+> /var/www/sino_sequencing/app/views/sample_boards/show.html.slim
+	"	25	16
+	^	15	15
+	.	15	16
+	+	6	21
+	+	1	21
+	+	2	0
+	+	14	13
+	+	15	16
+
+> /var/www/sino_sequencing/app/views/prepayments/_search.html.slim
+	"	10	0
+	^	8	9
+	.	9	0
+	+	10	23
+	+	11	23
+	+	12	23
+	+	4	0
+	+	9	0
+	+	5	12
+	+	9	0
+	+	6	64
+	+	9	58
+	+	6	135
+	+	9	0
+	+	7	0
+	+	10	0
+	+	11	0
+	+	12	0
+	+	13	0
+	+	6	51
+	+	8	8
+	+	9	0
+
+> /var/www/sino_sequencing/app/models/procedure.rb
+	"	14	0
+	.	14	0
+	+	14	0
+
+> /var/www/sino_sequencing/app/controllers/checkouts_controller.rb
+	"	1	0
+	^	4	50
+	.	4	49
+	+	4	41
+	+	10	12
+	+	4	49
+
+> /var/www/sino_sequencing/config/locales/checkouts.cn.yml
+	"	1	0
+	^	16	34
+	.	16	31
+	+	18	23
+	+	9	24
+	+	16	31
+
+> /var/www/sino_sequencing/app/controllers/prepayments_controller.rb
+	"	2	2
+
+> /var/www/sino_sequencing/app/views/order_mails/_search.html.slim
+	"	3	0
+	^	2	54
+	.	2	53
+	+	2	53
+
+> /var/www/sino_sequencing/app/models/order_mail.rb
+	"	27	4
+	^	10	33
+	.	10	0
+	+	30	109
+	+	11	0
+	+	10	0
+
+> /var/www/sino_sequencing/config/locales/order_mails.cn.yml
+	"	9	30
+	^	9	33
+	.	9	30
+	+	9	30
+
+> /var/www/sino_sequencing/app/views/primer_mails/_search.html.slim
+	"	1	0
+
+> /var/www/sino_sequencing/app/models/primer_mail.rb
+	"	18	4
+	.	18	0
+	+	16	103
+	+	16	72
+	+	17	34
+	+	18	0
+
+> /var/www/sino_sequencing/app/models/abi_machine.rb
+	"	1	0
+
+> /var/www/sino_sequencing/spec/models/abi_machine_spec.rb
+	"	77	4
+
+> /var/www/sino_sequencing/app/models/company.rb
+	"	22	2
+
+> /var/www/sino_sequencing/spec/models/company_spec.rb
+	"	106	0
+
+> /var/www/sino_sequencing/app/models/attachment.rb
+	"	1	0
+
+> /var/www/sino_sequencing/app/models/board_record.rb
+	"	1	0
+
+> /var/www/sino_sequencing/app/controllers/board_records_controller.rb
+	"	1	0
+
+> /var/www/sino_sequencing/spec/models/board_record_spec.rb
+	"	4	2
+
+> /var/www/sino_sequencing/app/models/checkout_order.rb
+	"	56	4
+
+> /var/www/sino_sequencing/app/views/checkout_orders/_search.html.slim
+	"	1	0
+
+> /var/www/sino_sequencing/app/views/checkout_orders/index.html.slim
+	"	1	0
+
+> /var/www/sino_sequencing/app/views/checkout_orders/index.js.erb
+	"	1	0
+
+> /var/www/sino_sequencing/app/models/checkout.rb
+	"	1	0
+	^	61	7
+	.	61	0
+	+	53	0
+	+	57	0
+	+	53	61
+	+	57	39
+	+	14	39
+	+	59	93
+	+	54	80
+	+	56	0
+	+	55	43
+	+	57	25
+	+	59	26
+	+	60	99
+	+	58	90
+	+	54	109
+	+	54	84
+	+	58	49
+	+	59	51
+	+	60	51
+	+	49	7
+	+	50	0
+	+	61	0
+
+> /var/www/sino_sequencing/spec/models/checkout_spec.rb
+	"	102	27
+	^	98	19
+	.	98	18
+	+	157	0
+	+	83	21
+	+	121	0
+	+	88	29
+	+	121	0
+	+	87	0
+	+	85	12
+	+	91	0
+	+	90	26
+	+	86	12
+	+	90	49
+	+	91	0
+	+	95	0
+	+	93	45
+	+	94	53
+	+	95	0
+	+	99	0
+	+	97	43
+	+	98	51
+	+	14	64
+	+	104	0
+	+	101	32
+	+	102	56
+	+	103	18
+	+	102	0
+	+	103	13
+	+	108	0
+	+	106	36
+	+	107	41
+	+	112	0
+	+	110	39
+	+	111	47
+	+	116	0
+	+	114	40
+	+	115	50
+	+	120	0
+	+	118	40
+	+	119	50
+	+	123	0
+	+	122	0
+	+	123	19
+	+	125	39
+	+	128	38
+	+	129	47
+	+	133	45
+	+	132	38
+	+	138	40
+	+	142	29
+	+	136	38
+	+	141	38
+	+	145	38
+	+	146	53
+	+	149	38
+	+	150	56
+	+	153	17
+	+	154	57
+	+	129	18
+	+	133	18
+	+	94	18
+	+	98	18
+
+> /var/www/sino_sequencing/spec/spec_helper.rb
+	"	1	0
+	.	182	0
+	+	182	5
+	+	182	0
+	+	182	0
+	+	182	50
+	+	182	0
+	+	182	27
+	+	182	8
+	+	182	28
+	+	182	10
+	+	182	0
+	+	182	13
+	+	182	0
+	+	182	0
+	+	182	10
+	+	182	0
+	+	182	14
+	+	182	0
+	+	182	0
+	+	182	0
+	+	182	0
+	+	182	0
+
+> /var/www/sino_sequencing/spec/factories/procedures.rb
+	"	11	2
+	.	11	0
+	+	11	0
+
+> /var/www/sino_sequencing/spec/factories/flows.rb
+	"	8	2
+	.	8	0
+	+	8	0
+
+> /var/www/sino_sequencing/db/migrate/20130815053214_create_procedures.rb
+	"	1	0
+
+> /var/www/sino_sequencing/config/environments/test.rb
+	"	31	2
+
+> /var/www/sino_sequencing/db/seeds.rb
+	"	23	58
+	^	24	101
+	.	24	100
+	+	23	8
+	+	25	0
+	+	24	83
+	+	24	0
+	+	24	100
+
+> /var/www/sino_sequencing/spec/models/checkout
+	"	1	0
+
+> /var/www/sino_sequencing/spec/models/checkout_record_spec.rb
+	"	1	0
+
+> /var/www/sino_sequencing/app/views/checkouts/_table.html.slim
+	"	12	8
+	^	17	88
+	.	17	87
+	+	16	114
+	+	16	17
+	+	17	87
+
+> /var/www/sino_sequencing/spec/models/client_spec.rb
+	"	128	28
+	^	128	29
+	.	128	28
+	+	103	0
+	+	102	0
+	+	99	40
+	+	100	47
+	+	109	0
+	+	107	55
+	+	108	76
+	+	113	0
+	+	111	45
+	+	112	56
+	+	134	0
+	+	135	38
+	+	136	74
+	+	140	54
+	+	139	17
+	+	127	0
+	+	127	0
+	+	126	0
+	+	127	50
+	+	128	28
+
+> /var/www/sino_sequencing/spec/models/order_mail_spec.rb
+	"	1	0
+	^	133	38
+	.	134	49
+	+	95	0
+	+	94	0
+	+	95	36
+	+	96	24
+	+	105	0
+	+	103	43
+	+	104	58
+	+	109	0
+	+	107	41
+	+	108	49
+	+	24	0
+	+	22	21
+	+	23	34
+	+	101	0
+	+	99	39
+	+	100	46
+	+	121	0
+	+	120	0
+	+	121	38
+	+	122	46
+	+	125	38
+	+	126	52
+	+	129	38
+	+	130	51
+	+	133	37
+	+	134	49
+
+> /var/www/sino_sequencing/spec/models/order_spec.rb
+	"	225	8
+	^	224	64
+	.	224	63
+	+	199	0
+	+	198	0
+	+	200	45
+	+	294	0
+	+	291	39
+	+	295	38
+	+	296	51
+	+	199	39
+	+	203	40
+	+	204	0
+	+	299	39
+	+	300	53
+	+	299	50
+	+	359	38
+	+	209	0
+	+	207	34
+	+	208	40
+	+	302	0
+	+	303	37
+	+	304	38
+	+	307	0
+	+	306	0
+	+	307	45
+	+	308	23
+	+	232	0
+	+	211	35
+	+	212	37
+	+	217	0
+	+	215	46
+	+	216	60
+	+	310	0
+	+	311	38
+	+	312	30
+	+	308	29
+	+	304	28
+	+	308	0
+	+	312	58
+	+	318	0
+	+	319	57
+	+	320	59
+	+	218	0
+	+	219	47
+	+	220	26
+	+	226	0
+	+	227	50
+	+	228	63
+	+	314	0
+	+	315	60
+	+	316	36
+	+	332	65
+	+	242	0
+	+	242	0
+	+	242	41
+	+	242	60
+	+	339	0
+	+	339	0
+	+	340	52
+	+	342	51
+	+	354	51
+	+	356	54
+	+	262	52
+	+	259	41
+	+	262	29
+	+	283	50
+	+	187	40
+	+	208	35
+	+	212	37
+	+	216	55
+	+	220	57
+	+	304	38
+	+	308	40
+	+	312	58
+	+	320	60
+	+	242	0
+	+	243	42
+	+	246	51
+	+	323	60
+	+	324	65
+	+	221	0
+	+	222	0
+	+	223	50
+	+	224	63
+
+> /var/www/sino_sequencing/app/models/plasmid_code.rb
+	"	1	0
+
+> /var/www/sino_sequencing/app/models/plasmid.rb
+	"	30	122
+	^	30	123
+	.	30	122
+	+	29	0
+	+	28	109
+	+	27	37
+	+	28	22
+	+	29	97
+	+	30	122
+
+> /var/www/sino_sequencing/spec/models/plasmid_spec.rb
+	"	1	0
+	^	91	55
+	.	91	54
+	+	68	39
+	+	69	43
+	+	72	43
+	+	73	60
+	+	78	0
+	+	76	40
+	+	77	52
+	+	86	49
+	+	87	48
+	+	90	53
+	+	91	65
+	+	96	0
+	+	94	50
+	+	95	55
+	+	87	27
+	+	91	54
+
+> /var/www/sino_sequencing/app/models/prepayment.rb
+	"	51	29
+	^	44	30
+	.	44	29
+	+	44	29
+	+	45	69
+	+	44	29
+
+> /var/www/sino_sequencing/config/locales/prepayments.cn.yml
+	"	1	0
+
+> /var/www/sino_sequencing/db/migrate/20130301053852_create_prepayments.rb
+	"	5	6
+
+> /var/www/sino_sequencing/spec/models/prepayment_spec.rb
+	"	1	0
+	.	135	17
+	+	95	17
+	+	96	17
+	+	134	17
+	+	135	17
+
+> /var/www/sino_sequencing/app/views/prepayment_records/_search.html.slim
+	"	1	0
+
+> /var/www/sino_sequencing/app/models/primer_board.rb
+	"	42	128
+	^	42	129
+	.	42	128
+	+	40	10
+	+	42	91
+	+	38	18
+	+	40	29
+	+	40	59
+	+	41	81
+	+	40	0
+	+	42	128
+
+> /var/www/sino_sequencing/spec/models/primer_board_spec.rb
+	"	138	8
+	.	137	0
+	+	114	11
+	+	130	11
+	+	122	0
+	+	120	44
+	+	121	55
+	+	135	0
+	+	136	38
+	+	137	60
+	+	126	0
+	+	9	0
+	+	124	0
+	+	115	0
+	+	119	0
+	+	119	30
+	+	119	8
+	+	119	17
+	+	111	8
+	+	121	0
+	+	119	0
+	+	137	0
+
+> /var/www/sino_sequencing/db/migrate/20130111004652_create_primer_boards.rb
+	"	7	6
+
+> /var/www/sino_sequencing/app/models/primer_dilution.rb
+	"	34	51
+	^	34	52
+	.	34	51
+	+	34	51
+
+> /var/www/sino_sequencing/spec/models/primer_dilution_spec.rb
+	"	102	45
+	^	102	50
+	.	102	45
+	+	76	39
+	+	77	46
+	+	101	49
+	+	102	49
+	+	77	42
+	+	102	45
+
+> /var/www/sino_sequencing/app/models/primer_head.rb
+	"	3	0
+
+> /var/www/sino_sequencing/spec/models/primer_mail_spec.rb
+	"	86	47
+	^	86	48
+	.	86	47
+	+	89	0
+	+	48	21
+	+	52	0
+	+	50	13
+	+	51	12
+	+	70	0
+	+	54	24
+	+	57	0
+	+	56	52
+	+	61	0
+	+	59	37
+	+	60	37
+	+	65	0
+	+	63	39
+	+	64	41
+	+	69	0
+	+	67	39
+	+	68	41
+	+	72	0
+	+	71	0
+	+	74	41
+	+	77	37
+	+	78	41
+	+	81	38
+	+	82	47
+	+	85	38
+	+	86	47
+
+> /var/www/sino_sequencing/spec/models/primer_spec.rb
+	"	223	30
+	^	223	49
+	.	223	30
+	+	176	7
+	+	184	0
+	+	182	39
+	+	176	21
+	+	183	45
+	+	192	0
+	+	190	43
+	+	191	51
+	+	194	44
+	+	195	68
+	+	212	21
+	+	217	0
+	+	218	38
+	+	219	50
+	+	226	37
+	+	227	58
+	+	230	38
+	+	231	73
+	+	222	47
+	+	223	25
+	+	185	0
+	+	186	37
+	+	187	25
+	+	223	30
+
+> /var/www/sino_sequencing/app/models/reaction_board.rb
+	"	205	4
+
+> /var/www/sino_sequencing/db/migrate/20130118024219_create_reactions.rb
+	"	6	60
+	.	6	0
+	+	28	0
+	+	6	0
+
+> /var/www/sino_sequencing/app/views/orders/index.js.erb
+	"	1	0
+
+> /var/www/sino_sequencing/app/views/orders/scope.js.erb
+	"	1	0
+	^	1	48
+	.	1	47
+	+	1	47
+
+> /var/www/sino_sequencing/app/views/orders/_ajax_search.html.slim
+	"	1	0
+	^	1	13
+	.	2	0
+	+	2	0
+	+	1	12
+	+	2	0
+	+	2	0
+	+	2	0
+
+> /var/www/sino_sequencing/spec/models/reaction_spec.rb
+	"	1	0
+
+> /var/www/sino_sequencing/app/views/board_records/new.html.slim
+	"	1	0
+
+> /var/www/sino_sequencing/app/views/board_records/_form.html.slim
+	"	1	0
+	^	14	50
+	.	14	49
+	+	4	0
+	+	5	0
+	+	14	49
+
+> /var/www/sino_sequencing/app/views/sample_boards/_code_buttons.html.slim
+	"	2	40
+	^	2	175
+	.	2	174
+	+	2	174
+	+	2	0
+	+	2	174
+
+> /var/www/sino_sequencing/app/views/sample_boards/_td_precheck.html.slim
+	"	1	0
+	^	7	126
+	.	7	125
+	+	2	114
+	+	2	0
+	+	2	114
+	+	7	125
+
+> /var/www/sino_sequencing/app/assets/stylesheets/precheck_codes.css.scss
+	"	1	0
+	.	21	11
+	+	21	11
+
+> /var/www/sino_sequencing/app/views/sample_boards/_plasmid.html.slim
 	"	1	0
 	.	1	0
 	+	1	0
-	+	2	0
+
+> /var/www/sino_sequencing/app/models/sample_board.rb
+	"	15	39
+	^	15	40
+	.	15	39
+	+	15	39
+
+> /var/www/sino_sequencing/spec/models/sample_board_spec.rb
+	"	43	4
+	^	42	37
+	.	42	36
 	+	1	0
+	+	30	0
+	+	30	0
+	+	40	0
+	+	44	0
+	+	39	0
+	+	40	23
+	+	41	34
+	+	42	36
 
-> /var/www/lims/app/views/procedures/_form.html.haml
-	"	6	23
-	^	1	43
-	.	1	42
-	+	2	0
-	+	3	0
-	+	1	42
+> /var/www/sino_sequencing/db/migrate/20130110091708_create_primers.rb
+	"	1	6
 
-> /var/www/lims/app/views/reaction_heads/_table.html.haml
-	"	20	2
-	^	18	12
-	.	18	0
-	+	8	23
-	+	17	56
-	+	22	78
-	+	23	72
-	+	25	44
-	+	19	0
-	+	18	0
+> /var/www/sino_sequencing/db/migrate/20130217025243_create_primer_dilutions.rb
+	"	1	0
 
-> /var/www/lims/app/views/reaction_heads/_form.html.haml
-	"	3	41
-	^	3	40
-	.	3	41
-	+	13	128
-	+	3	41
-
-> /var/www/lims/app/views/reaction_heads/edit.html.haml
-	"	5	14
-	.	5	14
-	+	4	30
-	+	5	14
-
-> /var/www/lims/spec/factories/abi_machines.rb
-	"	5	0
-
-> /var/www/lims/config/locales/sample_heads.cn.yml
-	"	22	202
-	^	22	205
-	.	22	202
-	+	19	0
-	+	21	0
-	+	22	101
-	+	16	30
-	+	22	202
-
-> /var/www/lims/spec/factories/flows.rb
-	"	6	25
-	^	6	26
-	.	6	25
-	+	5	4
-	+	7	4
-	+	6	25
-
-> /var/www/lims/config/locales/reaction_heads.cn.yml
-	"	17	6
-	.	17	6
-	+	13	0
-	+	12	9
-	+	13	52
-	+	17	93
-	+	16	8
-	+	18	0
-	+	17	6
-
-> /var/www/lims/app/views/sample_boards/scope.html.haml
-	"	25	14
-	.	17	0
-	+	21	15
-	+	22	15
-	+	23	15
-	+	20	15
-	+	17	15
-	+	17	0
-
-> /var/www/lims/app/views/sample_boards/_go.html.haml
-	"	10	18
-	^	11	157
-	.	10	18
-	+	3	116
-	+	7	4
-	+	9	19
-	+	7	7
-	+	8	10
-	+	9	0
-	+	11	147
-	+	17	34
-	+	14	8
-	+	15	0
-	+	14	7
-	+	15	85
-	+	17	83
-	+	11	91
-	+	10	24
-	+	11	0
-	+	12	0
-	+	13	0
-	+	13	93
-	+	11	156
-	+	10	18
-
-> /var/www/lims/app/views/sample_boards/flow.html.haml
-	"	6	19
-	^	4	35
-	.	4	21
-	+	1	5
-	+	1	0
-	+	2	0
-	+	4	21
-
-> /var/www/lims/app/views/electrophoresis/_form.html.haml
-	"	3	0
-
-> /var/www/lims/app/controllers/board_records_controller.rb
-	"	7	23
-	^	7	24
-	.	7	23
-	+	2	23
-	+	9	0
-	+	4	6
-	+	8	25
-	+	6	39
-	+	7	44
-	+	6	23
-	+	7	23
-
-> /var/www/lims/app/views/board_records/_form.html.haml
-	"	4	21
-	^	4	35
-	.	4	0
-	+	1	0
-	+	6	19
-	+	7	41
-	+	9	6
-	+	1	0
+> /var/www/sino_sequencing/app/views/reaction_boards/scope.html.slim
+	"	1	0
+	^	37	168
+	.	37	167
+	+	3	33
 	+	4	0
+	+	1	0
+	+	3	0
+	+	3	0
+	+	2	23
+	+	3	0
+	+	22	37
+	+	23	28
+	+	26	0
+	+	27	22
+	+	37	167
 
-> /var/www/lims/app/views/board_records/new.html.haml
-	"	1	13
-	^	1	14
-	.	1	13
-	+	1	13
+> /var/www/sino_sequencing/app/views/reaction_boards/_go.html.slim
+	"	3	8
+	^	3	9
+	.	3	8
+	+	3	8
+
+> /var/www/sino_sequencing/app/views/reaction_boards/primer_map.html.slim
+	"	1	0
+	^	5	11
+	.	5	10
+	+	1	21
+	+	2	0
+	+	7	128
+	+	5	10
+
+> /var/www/sino_sequencing/app/assets/javascripts/reaction_boards.js.coffee
+	"	8	4
+
+> /var/www/sino_sequencing/app/assets/javascripts/sample_boards.js.coffee
+	"	13	61
+	^	13	62
+	.	13	61
+	+	12	46
+	+	13	61
+
+> /var/www/sino_sequencing/NERD_tree_1
+	"	32	0
+	.	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+
+> /var/www/sino_sequencing/app/views/sample_boards/typesetting.js.erb
+	"	1	0
+
+> /var/www/sino_sequencing/app/assets/stylesheets/sample_board_templates.css.scss
+	"	1	0

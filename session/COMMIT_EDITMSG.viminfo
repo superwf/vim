@@ -8,117 +8,117 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~Msle0~/\<primer_head_id\>
+~MSle0~/95525
 
 # Last Substitute Search Pattern:
 ~MSle0&plasmid_code
 
 # Last Substitute String:
-$client
+$
 
 # Command Line History (newest to oldest):
 :q
-:Rcontroller api/v1/api
-:Rmodel primer
-:Rmigration create_primers
-:Rspec models/checkout_order
-:Rmodel checkout_order
-:e spec/spec_helper.rb
-:Rspec models/bad_debt
-:Rspec mailers/bad
-:Rfixtures bad_debts.rb
-:Rfixtures checkout_orders.rb
-:Rspec models/client
-:Rmigration create_primer_mails
-:Rmodel primer_mail
-:Rmodel primer_mails
-:Rmodel order
-:Rmigration create_checkouts
-:Rmigration create_checkout_orders
-:Rmigration create_orders
-:Rmodel company
-:R
+:Rmodel ht_sample
+:Rmodel ht_samples
+:vsplit Capfile
+:Rview ht_samples/checked.html.haml
+:e Capfile
+:Rhelper ht_samples
+:Rview _table.html.haml
+:Rview ht_samples/index.html.haml
+:Rcontroller ht_samples
+:tabedit Capfile
+:Rmodel ht_library
+:e config/initializers/hash.rb
+:Rmodel remote_client
+:Rcontroller clients
 :Rmodel client
-:Rspec models/primer
-:Rmigration create_primiers
-:Rmigration create_reactions
-:Rmodel 
-:Rmodel reaction
-:Rspec models/reaction
-:Rmigration create_samples
-:Rspec models/sample
+:Rlocale notifiers.cn.yml
+:Rview notifier/send_order_mail.html.slim
+:Rmodel order
 :Rmodel sample
-:Rview primer_dilutions/new.html.haml
-:Rcontroller primer_dilutions
-:Rmodel quality
-:Rmodel sample_board
-:Rcontroller reactions
-:Rmodel checkout
-:Rcontroller checkouts
-:Rmigration create_prepayments
-:Rfixtures prepayments.rb
-:Rspec requests/prepayments
-:Rfixtures reaction_heads.rb
-:Rspec requests/abi_records
-:Rspec requests/primer_dilutions
-:Rspec requests/resources
-:e config/routes.rb
-:Rspec routing/resources_routing
-:Rspec routing/prepayment_records_routing
-:Rview 
-:Rview prepayment_records/index.js.erb
+:vs
+:Rinitializer devise
+:e config/deploy/production.rb
+:vs ../sino_primer/config/deploy.rb
+:vsplit ../sino_primer/Capfile
+:e 
+:vsplit config/deploy.rb
+:vi lib/capistrano/tasks/go.cap
+:e ../sino_primer/config/deploy.rb
+:e config/deploy.rb
+:e lib/capistrano/tasks/go.cap
+:e ../sino_primer/Capfile
+:e Gemfile
+:Rstylesheet application
+:vsplit 
+:Rjavascript application
+:Rcontroller api/v1/blast_caches
+:e mig_form_primer_synthesis.rb
+:Renvironment production
+:Renvironment development
+:Rmodel primer
+:R
+:e lib/seq_order_api.rb
+:e lib/gene_bank_api.rb
+:Rmigration create_clients
+:Rmodel company
+:Rcontroller api/v1/companies
+:Rmodel sino
+:e app
+:Rview primers/_show.html.slim
 
 # Search String History (newest to oldest):
-? \<primer_head_id\>
-?/before_
-? \<create_checkout\>
-?/create_bad_debt
-?/HAS_MANY
-?/company
-?/primer
-? \<company_id\>
-? \<HAS_MANY\>
-?/com
-?/diluting
-?/dilutiong
-?/after_destroy
-?/client
-?/hooks
-??\V@primers
-?/sample_board
-?/order_ids
+?/95525
+?/status
+?/workflow
+?/checked
+?/hook
+?/collec
+?/create_client_base
+?/post
+?/upload
+?/2M
+?/is_splic
 ?/scope
-?/order_id
-?/before_create
-?/sample_he
-?/has_many
-? \<sample_head_id\>
-? \<sample_board_id\>
-?/sample_head_id
-?/urgent
-?/after_update
-?/def self.export
-?/create_reaction_board
-? \<prepare_reaction_head\>
-?/primer_dilution
-?/cancel
-?/prepayment_records
-?/pr
-?/cancel_log
-?/canceled
-?/complete
-?/quality.destroy
-?/complete!
-?/complet
-?/completed
-?/simulate
-?/p
-?/reactions
-?/uncompleted
-?/precheck
-?/self.completed
-?/STAT
-?/passed
+?/bootstra
+? \<TRUNCATE\>
+? '
+?/checkouts
+?/eager
+?/def flow
+?/go_button
+?/render
+?/go_
+?/remem
+?/rem
+?/title
+?/superwf
+? \<secret_key\>
+?/auto_ex
+?/white
+?/haml
+?/dal
+?/redis
+?/pdf
+?/to_pdf
+?/next_flow
+?/checkout_records
+?/to_csv
+?/def conv
+?/prepare_
+?/search
+?/params
+? \<type\>
+?/adfasdf
+?/type
+?/aty
+??\Vnav-pills
+?/b
+? \<checkout\>
+?/layout
+?/layouts
+?/success
 
 # Expression History (newest to oldest):
 
@@ -127,43 +127,66 @@ $client
 # Input Line History (newest to oldest):
 
 # å¯„å­˜å™¨:
-"0	CHAR	0
-	[:primers, :orders, :primer_mails]
-"1	LINE	0
-	    it 'those children models should also update company_id when client updated' do
-	      @c.save
-	      new_company = create_company
-	      [:orders, :primers, :checkout_orders].each do |c|
-	        @c.send(c).should_receive(:update_all).with(company_id: new_company.id)
-	      end
-	      @c.update_attributes company_id: new_company.id
-	    end
-"2	LINE	0
-	    add_index :primer_mails, :client_id, name: :client_id
+"0	LINE	0
+	  scope :prechecked, -> {where('precheck_code_id IS NOT NULL')}
+"1	CHAR	0
+	{
+	      email: email,
+	      name: name,
+	      remark: remark}
+"2	BLOCK	0
+	#
+	#
+	#
 "3	LINE	0
-	      t.column :client_id, 'INT(11) UNSIGNED', null: false
-"4	LINE	0
-	  # hooks
-"5	LINE	0
-	  before_create do
-	    self.client_id = self.primer.client_id
-	    true
-	  end
-"6	LINE	0
-	  belongs_to :client
-"7	LINE	0
-	    self.client_id = self.order.client_id
-	    self.company_id = self.order.company_id
-"8	LINE	0
 	
+	# set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
+	# Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
+	
+	role :web, 'lenovo.dna.com'
+	role :app, 'lenovo.dna.com'
+	#role :db, 'poweredge.dna.com'
+	
+	# if you want to clean up old releases on each deploy uncomment this:
+	after 'deploy:restart', 'deploy:cleanup'
+	
+	# if you're still using the script/reaper helper you will need
+	# these http://github.com/rails/irs_process_scripts
+	
+	# If you are using Passenger mod_rails uncomment this:
+	# namespace :deploy do
+	#   task :start do ; end
+	#   task :stop do ; end
+	#   task :restart, :roles => :app, :except => { :no_release => true } do
+	#     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
+	#   end
+	# end
+"4	LINE	0
+	set :use_sudo, false
+	set :branch, 'master'
+	set :user, 'www-data'
+	set :default_shell, '/bin/bash'
+	set :ssh_options, {forward_agent: true, keys: ::File.join(ENV['HOME'], '.ssh/cap-key')}
+	set :deploy_via, :remote_cache
+	set :git_shallow_clone, 1
+	set :deploy_to, '/var/www/sino_sequencing'
+"5	LINE	0
+	set :repository,  'git@git:sino_sequencing.git'
+"6	LINE	0
+	set :scm, :git
+"7	LINE	0
+	
+"8	LINE	0
+	load 'deploy'
+	# Uncomment if you are using Rails' asset pipeline
+	#load 'deploy/assets'
+	load 'config/deploy' # remove this line to skip loading any of the default tasks
+	task :go do
+	  `git commit -am 'fix'; git push origin master`
+	  run ". /etc/profile && cd #{fetch(:application)} && git pull origin master && rvmsudo unictl restart production"
+	end
 "9	LINE	0
-	  after_update do
-	    if self.changed.include? 'company_id'
-	      [:orders, :primers, :checkout_orders].each do |c|
-	        self.send(c).update_all company_id: self.company_id
-	      end
-	    end
-	  end
+	
 "b	BLOCK	23
 	 NOT NULL AUTO_INCREMENT
 "c	CHAR	0
@@ -175,8 +198,8 @@ $client
 	378
 <""""i""iquadrantoreaction_board_id = _this.a??kbparn??kbent().attr()i""re??kb??kbireaction_board_I??kbid??k3kkkkkYGpwwwwwwwwwwwCbbbbddkkkkkkkYjVkyjGpzzjwwwwwwwwvf]sp[??kb??kb[]i""hireaction_board=??kb_id=lli  i++i  ireaction_board_idllllla[]iquadrna??kb??kbant=""i  i++i  iquadrant??k3??k3??k3??k3??k3????,????.??k3??k3??k3??k3??k3??k3??k3????,????.veee
 "k	CHAR	0
-	2789
-<jh:Rsp	 mo	sample/comlet??kb??kb??kbplete!jjjjjjjjkkekkkkoprecheck = o??kbdouble()iprecheck'xbi:oprecheck.stub()ipassed: true??k3zzjjjkkojjjjjkkwkkkkkkjI@#??kbjjjjjkkkko@s.stub()iprecheck: @precheckjjjjjkzzbo@s.passed.should be_niljjbo@s.passed.should eq()i@precheck.passedo@s.ddjjjjjwjjzzo@s.passed.should be_nilkkkkkkkkkkkkkk??k3bbbb??é½ƒ??é½ƒ??é½ƒ??é½ƒgthjjjjkzzjjkkkkkkkkkkkkkkkkkjjjjjjjjjjjjjjjjjjk%%kwzzkkwwwcacwvalidatebcwvalid???k3lhjjj%%kwoit '' doendkllitypesetted?biif ela can not be dewt??kb??kbstroyedljjzzkkkkkkkjjbjjkCcomplete!kVkdjjjjjgthkjlkkkkkkkkkkkjjjjkkkoreturn false unless p??kbself.precheckbbbbcwifbbbveeebhxjjjoendkVkk>??k3jjjjjjjjjjjbgtebzhjjjhjjjjkkkouVjdkkkkkkkwO@p.sam;pl??kb??kb??kble.shoulsample.should_re()i:complete!jjjjjjoit '' doendklliif typesetted?zza ??kb, can not be destroyedlkkkkkwwwwww@##nnnnnho@p.sample.typesetted?lbbvelxnnbbvexxnn/delegateeeea, :typesetted???k3hbcistub :A = ??kb> truelnkkkwwwww#ho@p.savekddpo@p.s??kbdestroyo@p.should_not be_destroyedjzzoit '' doendklllhiafter destroy ,??kb??kb, sample should e??kbunl??kbcop??kbmplete!o@p.saveo@p.det??kbstt??kbroyko@p.sample.typesestub t??kb:typesetted? => falsejozz??kb??kbddzzkwO@p.sample.should_rec :uncom!??k3ljjjjzzjjjzzbzzjjkzzhjjjddjk%%ocontext '' doendkwatest scopeszzobefor ??kbe :each doendko@p.savezzjoit '' doendklliwhen passed, ??kb??kbzzo@??kb::Precheck.passed.should be_inc??kbn??kbl()i@pko@p.s??kbpassed.should be_truejzzo::Precheck.unpassed.should_no be_inc??kb()i@pjzzoit' ' ??kb??kb??kb??kb '' doendklliwhen unpassedo@p.precheck_code.stub()i:passed: ??kb??kb:bhxela falsas??kbezzo@p.s??kbddkwkonew_recor??kb??kb??kb??kb??kbcode = create_precheck_code passed: falsejbbbbbbbCupdate_attribute precheck-cod??kb_code_id: new_code.ido@p.validatelkkkkkkkkkkkkkkkkkkkkhkeasjljjjjjjzzjjjjzzhbcwpassed.should be_falseokkkukkkkkkVkdujjjjjjjpjfuvlxkP??k3ljjjjzzhzzGoukoit '' doendkllitest show methodzzo@p.show ??kb.should eq()lkwvf"yhPbbbbbbbbbcw@pwwwww.??k3ljjjzzjwwcwcode??k3??k3??k3??k3hjoit '' doendklliself.test to_s methodo@p.to_s.should eq()i@p.codde??kb??kbe??k3ljjjggGkkkkjjwkkkkggkjk:Rmo	 hea	h:Rsp	 sp	msp	mmo	heheat	jjjwCbefore :each doendko::@h = ::Fac.cu??kb??kbbuild :heat_cy, reaction_board_id: reactcreate_reaction_board.id??k3:Rfix	 heat	jjjwocreate??kbor_id `??kb12??kboremark ''irrrrr??k3lhoquadrant ''ixxxx??k3ljjjjjjjjjjjjkkwh:Rmi	 create_heat	joit '' doendkllihas theset ??kb??kb attributes can mass-assign??k3lgghkkoit'' ??kb??kb??kb '' doendklliis boardo::Heat.??kb::BOar??kb??kb.should be_true??k3jjjjzzkotest_an??kb ::HeatC??kb, []ljjwwwbv$hyhP??k3zzjjk
+	448
+<oukounless xhr?ujddujddoendk>>osession[]i:referear hla = referer if redererreferer.present?€k3kkkkkkkkkjjjjod€kbbefore_action :set_se, only: []i:new, :c€kbedit€k3€ý,€ý.x€k3€ýK€ýK€ýK€ýK€ýL€ýL€ýL€ýL€ý,€ý.xxxxxxxxkkwlllllxxxxxxxx€k3€k3€k3€k3€k3€k3bbbbwjjjjjjjI#€k3€k3€k3€k3€k3kkodef newend€k3kosession[]i:red€kbfererl:Rvi	 ho	i	hlla = ''hCroot_path€k3korender text: 'abc'€k3bddpwwwCsession[]i:refeer€kb€kbrer€k3€k5€k5
 "l	CHAR	0
 	lD€k3€k3€k3€k3€k3€k3gkjkjgtlgt:Rmo	 blas	:vs ap	mo	sam	/before_sam€kbvenzzjjjjkkkwjlkkkkkkkkkjjkkYhp€k3€k3€k3kwwwwwwwwllajkddkpuPjjoendkVk>€k3:Rmi cRmi	 creatrecreate_se	:Rmi	 	w
 "p	LINE	0
@@ -213,133 +236,134 @@ $client
 	594
 <,hi,llxxepwxxxsuuf}xexepwxxxwewwxepwxxxwwllDjjwwxxewbea_tagea, params[]iswwxepwxxxwwwwwwxepwxxxwwxepwxxxjjkkjjj^wxxea_g??kbtagwwwwwxepwxxx??k3????,????.xepwxxxjjkwwwwwwwwwxepwxxxwwwwwwxepwxxxwwxepwxxxwjbbbbbbbbxepwxxx??k3??k3????,????.:Rvi	 quality_co	_ta	jkVjdljkggjjkwpVj>.jwveehxwwr xu$xbbbbbbbxepwxxx??k3hdd??k3l:Rvi	 ????,????.??é½ƒ??é½‚??é½ƒ????,????.????,????.$ibcwtruebbbbbwi, params[]i:result??k3:Rmo	 qual	Gkgg:_c	Gkwkkkwji#??k3??k3??k3??k3u??k3h:Rcon	 qua	jjjjjjjjjjjjjjjjjjjjjjjjjjjj:??kb??kb??kby_co	a, :desc??k3l:Rmo	 sample_he	G/searchgg:R
 "v	CHAR	0
-	471
-<jkV%>wveesself??k3??é½‚??é½‚??é½‚??é½ƒ??é½ƒ??é½‚??é½ƒ??é½ƒ????,????-????-????-????-????-????-????-????-????-????.sselfwwwwblveesself??k3gt:gtjjV%ddd??k3hjjbbbbluuwC????,????.????,????.bcwbcwc??kbmoduleA F??kb??kbFac??k3hjjjjjjbbbbveelx??k3??k3??k3??k3??k3????,????.cw::Filewwww.??k3????,????.xkjjI#??k3kY:Rfix	 hr??kbtcon	jjjjj:Rfix 	htRfix	 ht_smaple-re	??kb??kb??kb_r	:??kb??kb??kb??kb??kb??kb??kbamp		jkpdkddljjV%ddd??k3h??k3jjl??k3h
+	473
+<jkV%>wveesself??k3??é½‚??é½‚??é½‚??é½ƒ??é½ƒ??é½‚??é½ƒ??é½ƒ????,????-????-????-????-????-????-????-????-????-????.sselfwwwwblveesself??k3gt:gtjjV%ddd??k3hjjbbbbluuwC????,????.????,????.bcwbcwc??kbmoduleA F??kb??kbFac??k3hjjjjjjbbbbveelx??k3??k3??k3??k3??k3????,????.cw::Filewwww.??k3????,????.xkjjI#??k3kY:Rfix	 hr??kbtcon	jjjjj:Rfix 	htRfix	 ht_smaple-re	??kb??kb??kb_r	:??kb??kb??kb??kb??kb??kb??kbamp		jkpdkddljjV%ddd??k3h??k3jjl??k3h
 "w	CHAR	0
-	537
-<V%yjwpjjkw$bbCnil??k3jVkkd??k3lbbbbwveeesif: ::Proc.new{}i|r| r.reaction_board && r.buuuuuhCtrue??k3??k3??k3??k3??k3??k3??k3??k3??k3??k3??k3??k3??k3hu??k3????,????.:Rmo	 heat	h:Rsp	 mo	heat	ljjwhjjwjjjjjjjkkjjjzzljjjjkzzhjjjjjjjjjjjjjjjjjljjjjkjzzhljwwwwCquadran: true??k3??k3??k3??k3hjjjjjjjjkkkwwwwwwllwwC7??k3h:Rmi	 heat	k$hC7??k3:Rfix	 heat	jjjjjjwwwwbcw1,2,3,4??k3??k2??k3??k3??k3:Rmi	 alc	jjjjkkkkklkjh:Rmi	 alc	jjkkl:Rmo	 alc	h:Rsp	 mo	aalc	lggjjwhjjjjjjjjwzzkkkkkjjjjjjjjjzzjjzz
+	wwwww.€k3lbxxxxxsvector€k3hjjA, w€kb€kb{}istyle: ''iwdi
+"x	CHAR	0
+	"
 ""-	CHAR	0
-	dp
+	 
 
 # å…¨å±€å˜é‡:
 
 # æ–‡ä»¶æ ‡è®°:
-'0  32  0  /var/www/lims/.git/COMMIT_EDITMSG
-'1  3  4  /var/www/client_base/app/controllers/api/v1/api_controller.rb
-'2  1  0  /var/www/superwf/lib/superwf/api.rb
-'3  5  7  /var/www/sino_project/Capfile
-'4  8  9  /var/www/lims/app/models/checkout_order.rb
-'5  372  6  /var/www/dna/baogao/cedu/index.php
-'6  1  80  /var/www/dna/cexu/384/notice.php
-'7  33  23  /var/www/dna/include/db_config.php
-'8  34  33  /var/www/dna/kehu/yangpin/do_fdnapcr.php
-'9  5  0  /var/www/dna/cexu/384/index.php
+'0  15  0  /var/www/sino_primer/.git/COMMIT_EDITMSG
+'1  5  109  /var/www/sino_primer/log/development.log
+'2  153  6  /var/www/sino_project/app/models/ht_sample.rb
+'3  76  4  /var/www/sino_project/app/controllers/ht_samples_controller.rb
+'4  43  43  /var/www/sino_project/app/models/client.rb
+'5  5  12  /var/www/sino_project/app/models/remote_client.rb
+'6  6  30  /etc/nginx/sites-enabled/phpmyadmin
+'7  674  18  /etc/php5/fpm/php.ini
+'8  13  105  /var/www/sino_sequencing/config/locales/notifiers.cn.yml
+'9  25  2  /var/www/sino_primer/config/initializers/devise.rb
 
 # è·³è½¬åˆ—è¡¨ (ä»Žæ–°åˆ°æ—§):
--'  32  0  /var/www/lims/.git/COMMIT_EDITMSG
--'  1  0  /var/www/lims/.git/COMMIT_EDITMSG
--'  3  4  /var/www/client_base/app/controllers/api/v1/api_controller.rb
--'  1  0  /var/www/client_base/app/controllers/api/v1/api_controller.rb
--'  1  0  /var/www/superwf/lib/superwf/api.rb
--'  5  7  /var/www/sino_project/Capfile
+-'  15  0  /var/www/sino_primer/.git/COMMIT_EDITMSG
+-'  12  0  /var/www/sino_primer/.git/COMMIT_EDITMSG
+-'  5  109  /var/www/sino_primer/log/development.log
+-'  12  146  /var/www/sino_primer/log/development.log
+-'  7  95  /var/www/sino_primer/log/development.log
+-'  85  0  /var/www/sino_primer/log/development.log
+-'  153  6  /var/www/sino_project/app/models/ht_sample.rb
 -'  1  0  /var/www/sino_project/Capfile
--'  8  9  /var/www/lims/app/models/checkout_order.rb
--'  136  60  /var/www/lims/spec/spec_helper.rb
--'  141  51  /var/www/lims/spec/spec_helper.rb
--'  145  46  /var/www/lims/spec/spec_helper.rb
--'  149  52  /var/www/lims/spec/spec_helper.rb
--'  153  50  /var/www/lims/spec/spec_helper.rb
--'  157  47  /var/www/lims/spec/spec_helper.rb
--'  213  4  /var/www/lims/spec/spec_helper.rb
--'  5  4  /var/www/lims/spec/models/bad_debt_spec.rb
--'  5  4  /var/www/lims/spec/factories/checkout_orders.rb
--'  5  20  /var/www/lims/app/models/client.rb
--'  1  0  /var/www/lims/app/models/client.rb
--'  20  21  /var/www/lims/app/models/client.rb
--'  19  0  /var/www/lims/app/models/client.rb
--'  18  0  /var/www/lims/app/models/client.rb
--'  17  0  /var/www/lims/app/models/client.rb
--'  13  23  /var/www/lims/app/models/client.rb
--'  1  0  /var/www/lims/app/models/primer.rb
--'  2  2  /var/www/lims/app/models/primer.rb
--'  21  11  /var/www/lims/app/models/primer.rb
--'  107  52  /var/www/lims/app/models/primer.rb
--'  137  32  /var/www/lims/app/models/primer.rb
--'  69  4  /var/www/lims/app/models/primer.rb
--'  22  2  /var/www/lims/app/models/primer.rb
--'  7  4  /var/www/lims/app/models/primer.rb
--'  45  9  /var/www/lims/app/models/reaction.rb
--'  187  44  /var/www/lims/app/models/reaction.rb
--'  41  2  /var/www/lims/app/models/reaction.rb
--'  12  2  /var/www/lims/app/models/reaction.rb
--'  32  39  /var/www/lims/app/models/reaction.rb
--'  7  4  /var/www/lims/app/models/reaction.rb
--'  1  0  /var/www/lims/app/models/reaction.rb
--'  10  2  /var/www/lims/app/models/reaction.rb
--'  32  14  /var/www/lims/app/views/primer_dilutions/new.html.haml
--'  19  28  /var/www/lims/db/migrate/20130118092212_create_samples.rb
--'  1  9  /var/www/lims/app/views/primer_dilutions/new.html.haml
--'  29  34  /var/www/lims/app/views/primer_dilutions/new.html.haml
--'  13  21  /var/www/lims/app/views/primer_dilutions/new.html.haml
--'  31  23  /var/www/lims/app/views/primer_dilutions/new.html.haml
--'  30  24  /var/www/lims/app/views/primer_dilutions/new.html.haml
--'  36  65  /var/www/lims/app/views/primer_dilutions/new.html.haml
--'  8  9  /var/www/lims/app/models/checkout_order.rb
--'  136  60  /var/www/lims/spec/spec_helper.rb
--'  141  51  /var/www/lims/spec/spec_helper.rb
--'  145  46  /var/www/lims/spec/spec_helper.rb
--'  149  52  /var/www/lims/spec/spec_helper.rb
--'  153  50  /var/www/lims/spec/spec_helper.rb
--'  157  47  /var/www/lims/spec/spec_helper.rb
--'  213  4  /var/www/lims/spec/spec_helper.rb
--'  5  4  /var/www/lims/spec/models/bad_debt_spec.rb
--'  5  4  /var/www/lims/spec/factories/checkout_orders.rb
--'  5  20  /var/www/lims/app/models/client.rb
--'  1  0  /var/www/lims/app/models/client.rb
--'  20  21  /var/www/lims/app/models/client.rb
--'  19  0  /var/www/lims/app/models/client.rb
--'  18  0  /var/www/lims/app/models/client.rb
--'  17  0  /var/www/lims/app/models/client.rb
--'  13  23  /var/www/lims/app/models/client.rb
--'  1  0  /var/www/lims/app/models/primer.rb
--'  2  2  /var/www/lims/app/models/primer.rb
--'  21  11  /var/www/lims/app/models/primer.rb
--'  107  52  /var/www/lims/app/models/primer.rb
--'  137  32  /var/www/lims/app/models/primer.rb
--'  69  4  /var/www/lims/app/models/primer.rb
--'  22  2  /var/www/lims/app/models/primer.rb
--'  7  4  /var/www/lims/app/models/primer.rb
--'  45  9  /var/www/lims/app/models/reaction.rb
--'  187  44  /var/www/lims/app/models/reaction.rb
--'  41  2  /var/www/lims/app/models/reaction.rb
--'  12  2  /var/www/lims/app/models/reaction.rb
--'  32  39  /var/www/lims/app/models/reaction.rb
--'  7  4  /var/www/lims/app/models/reaction.rb
--'  1  0  /var/www/lims/app/models/reaction.rb
--'  10  2  /var/www/lims/app/models/reaction.rb
--'  32  14  /var/www/lims/app/views/primer_dilutions/new.html.haml
--'  19  28  /var/www/lims/db/migrate/20130118092212_create_samples.rb
--'  1  9  /var/www/lims/app/views/primer_dilutions/new.html.haml
--'  29  34  /var/www/lims/app/views/primer_dilutions/new.html.haml
--'  13  21  /var/www/lims/app/views/primer_dilutions/new.html.haml
--'  31  23  /var/www/lims/app/views/primer_dilutions/new.html.haml
--'  30  24  /var/www/lims/app/views/primer_dilutions/new.html.haml
--'  36  65  /var/www/lims/app/views/primer_dilutions/new.html.haml
--'  5  7  /var/www/sino_project/Capfile
--'  1  0  /var/www/sino_project/Capfile
--'  8  9  /var/www/lims/app/models/checkout_order.rb
--'  136  60  /var/www/lims/spec/spec_helper.rb
--'  141  51  /var/www/lims/spec/spec_helper.rb
--'  145  46  /var/www/lims/spec/spec_helper.rb
--'  149  52  /var/www/lims/spec/spec_helper.rb
--'  153  50  /var/www/lims/spec/spec_helper.rb
--'  157  47  /var/www/lims/spec/spec_helper.rb
--'  213  4  /var/www/lims/spec/spec_helper.rb
+-'  41  75  /var/www/sino_project/app/views/ht_samples/checked.html.haml
+-'  1  0  /var/www/sino_project/app/views/ht_samples/checked.html.haml
+-'  76  4  /var/www/sino_project/app/controllers/ht_samples_controller.rb
+-'  30  62  /var/www/sino_project/app/controllers/ht_samples_controller.rb
+-'  1  0  /var/www/sino_project/app/controllers/ht_samples_controller.rb
+-'  91  66  /var/www/sino_project/app/models/ht_sample.rb
+-'  1  0  /var/www/sino_project/app/models/ht_sample.rb
+-'  43  43  /var/www/sino_project/app/models/client.rb
+-'  44  4  /var/www/sino_project/app/models/client.rb
+-'  46  21  /var/www/sino_project/app/models/client.rb
+-'  38  0  /var/www/sino_project/app/models/client.rb
+-'  5  12  /var/www/sino_project/app/models/remote_client.rb
+-'  42  11  /var/www/sino_project/app/models/client.rb
+-'  5  16  /var/www/sino_project/app/models/client.rb
+-'  1  0  /var/www/sino_project/app/models/client.rb
+-'  6  30  /etc/nginx/sites-enabled/phpmyadmin
+-'  4  2  /etc/nginx/sites-enabled/phpmyadmin
+-'  674  18  /etc/php5/fpm/php.ini
+-'  1226  38  /etc/php5/fpm/php.ini
+-'  805  26  /etc/php5/fpm/php.ini
+-'  803  24  /etc/php5/fpm/php.ini
+-'  802  17  /etc/php5/fpm/php.ini
+-'  801  27  /etc/php5/fpm/php.ini
+-'  799  1  /etc/php5/fpm/php.ini
+-'  798  17  /etc/php5/fpm/php.ini
+-'  796  31  /etc/php5/fpm/php.ini
+-'  794  5  /etc/php5/fpm/php.ini
+-'  793  22  /etc/php5/fpm/php.ini
+-'  792  29  /etc/php5/fpm/php.ini
+-'  29  0  /etc/php5/fpm/php.ini
+-'  1  0  /etc/php5/fpm/php.ini
+-'  13  105  /var/www/sino_sequencing/config/locales/notifiers.cn.yml
+-'  1  0  /var/www/sino_sequencing/config/locales/notifiers.cn.yml
+-'  72  43  /var/www/sino_sequencing/app/models/sample.rb
+-'  29  32  /var/www/sino_sequencing/app/models/sample.rb
+-'  1  0  /var/www/sino_sequencing/app/models/sample.rb
+-'  25  2  /var/www/sino_primer/config/initializers/devise.rb
+-'  1  0  /var/www/sino_primer/config/initializers/devise.rb
+-'  250  2  /var/www/sino_sequencing/config/initializers/devise.rb
+-'  1  0  /var/www/sino_sequencing/config/initializers/devise.rb
+-'  39  0  /var/www/sino_sequencing/config/deploy/production.rb
+-'  1  0  /var/www/sino_sequencing/config/deploy.rb
+-'  2  0  /var/www/sino_sequencing/config/deploy.rb
+-'  3  0  /var/www/sino_sequencing/config/deploy.rb
+-'  26  0  /var/www/sino_sequencing/Capfile
+-'  1  0  /var/www/sino_sequencing/Capfile
+-'  27  0  /var/www/sino_sequencing/Capfile
+-'  1  0  /var/www/sino_sequencing/lib/capistrano/tasks/go.cap
+-'  8  23  /var/www/sino_passport/config/deploy/production.rb
+-'  2  0  /var/www/sino_passport/config/deploy/production.rb
+-'  4  4  /var/www/sino_passport/lib/capistrano/tasks/go.cap
+-'  22  2  /var/www/sino_primer/config/deploy.rb
+-'  5  0  /var/www/sino_passport/lib/capistrano/tasks/go.cap
+-'  1  0  /var/www/sino_passport/app/assets/javascripts/application.js
+-'  1  1  /var/www/sino_primer/Capfile
+-'  2  1  /var/www/sino_primer/Capfile
+-'  16  19  /var/www/sino_passport/app/assets/javascripts/application.js
+-'  11  0  /var/www/sino_passport/app/assets/javascripts/application.js
+-'  28  8  /var/www/gene_bank/app/controllers/api/v1/blast_caches_controller.rb
+-'  1  0  /var/www/gene_bank/app/controllers/api/v1/blast_caches_controller.rb
+-'  4  0  /var/www/sino_sequencing/mig_from_uc.rb
+-'  15  0  /var/www/sino_sequencing/mig_from_uc.rb
+-'  9  11  /var/www/sino_primer/config/environments/development.rb
+-'  21  0  /var/www/sino_primer/config/environments/development.rb
+-'  33  55  /var/www/sino_primer/mig_form_primer_synthesis.rb
+-'  10  0  /var/www/sino_primer/mig_form_primer_synthesis.rb
+-'  7  0  /var/www/sino_primer/mig_form_primer_synthesis.rb
+-'  111  138  /var/www/sino_primer/app/models/primer.rb
+-'  1  0  /var/www/sino_primer/app/models/primer.rb
+-'  1  0  /var/www/sino_sequencing/mig_from_uc.rb
+-'  18  43  /var/www/sino_sequencing/db/migrate/20130109080710_create_clients.rb
+-'  24  63  /var/www/sino_sequencing/app/models/client.rb
+-'  6  44  /var/www/sino_sequencing/app/controllers/api/v1/companies_controller.rb
+-'  1  0  /var/www/sino_sequencing/app/models/company.rb
+-'  18  2  /var/www/sino_sequencing/app/models/company.rb
+-'  23  19  /var/www/sino_sequencing/app/models/client.rb
+-'  25  47  /var/www/sino_sequencing/app/models/client.rb
+-'  13  2  /var/www/sino_sequencing/mig_form_primer_synthesis.rb
+-'  15  0  /var/www/sino_sequencing/mig_form_primer_synthesis.rb
+-'  14  7  /var/www/sino_sequencing/mig_form_primer_synthesis.rb
+-'  2  2  /var/www/sino_primer/app/models/order.rb
+-'  83  8  /var/www/sino_primer/app/models/order.rb
+-'  1  38  /var/www/sino_primer/app/views/primers/show.js.erb
+-'  1  0  /var/www/sino_primer/app/views/primers/show.html.slim
+-'  8  2  /var/www/hello.c
+-'  674  18  /etc/php5/fpm/php.ini
+-'  1226  38  /etc/php5/fpm/php.ini
+-'  805  26  /etc/php5/fpm/php.ini
+-'  803  24  /etc/php5/fpm/php.ini
+-'  802  17  /etc/php5/fpm/php.ini
+-'  801  27  /etc/php5/fpm/php.ini
 
 # ç¼“å†²åŒºåˆ—è¡¨:
-%/var/www/lims/.git/COMMIT_EDITMSG	32	0
+%/var/www/sino_primer/.git/COMMIT_EDITMSG	15	0
 
 # æ–‡ä»¶å†…çš„æ ‡è®°åŽ†å²è®°å½• (ä»Žæ–°åˆ°æ—§):
 
-> /var/www/lims/.git/COMMIT_EDITMSG
-	"	32	0
+> /var/www/sino_primer/.git/COMMIT_EDITMSG
+	"	15	0

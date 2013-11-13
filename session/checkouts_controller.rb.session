@@ -14,7 +14,7 @@ nnoremap <silent> <Plug>NetrwBrowseX :call netrw#NetrwBrowseX(expand("<cWORD>")
 nmap <silent> <Plug>VLToggle :let g:VeryLiteral = !g:VeryLiteral| echo "VeryLiteral " . (g:VeryLiteral ? "On" : "Off")
 vmap <kMultiply> *
 map <F4> "*p
-map <F2> :up
+map <F2> :NERDTree:set number
 map <F3> :up
 imap <silent>  <Plug>VimIM
 imap <silent>  <Plug>VimimOneKey
@@ -30,7 +30,6 @@ set history=50
 set hlsearch
 set incsearch
 set isident=@,48-57,_,192-255,$
-set iskeyword=@,48-57,_,192-255,$
 set nomodeline
 set mouse=a
 set printoptions=paper:a4
@@ -41,54 +40,19 @@ set showcmd
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
 set tabstop=2
 set viminfo='200,%,!,<50,s10,h,rA,rB,/50,:50
-set window=26
+set window=15
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd /var/www/primer_synthesis
+cd /var/www/sino_sequencing
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +1 /var/www/primer_synthesis/app/controllers/checkout_orders_controller.rb
-badd +27 /var/www/gene_bank/app/controllers/api/v1/samples_controller.rb
-badd +28 /var/www/dna/duizhang/new/submit.php
-badd +46 /var/www/gene_bank/Gemfile
-badd +8 /var/www/gene_bank/app/controllers/api/v1/blast_cache_controller.rb
-badd +7 /var/www/gene_bank/config/routes.rb
-badd +3 /var/www/gene_bank/app/models/blast_cache.rb
-badd +28 /var/www/gene_bank/app/controllers/api/v1/blast_caches_controller.rb
-badd +11 /var/www/gene_bank/db/migrate/20130606062418_create_blast_caches.rb
-badd +1 /var/www/gene_bank/app/controllers/sample_boards_controller.rb
-badd +17 /var/www/gene_bank/app/controllers/samples_controller.rb
-badd +1 /var/www/gene_bank/config/or
-badd +88 /var/www/gene_bank/lib/ncbi.rb
-badd +26 /var/www/gene_bank/db/migrate/20130520075131_create_samples.rb
-badd +48 /var/www/gene_bank/app/models/sample.rb
-badd +12 /var/www/gene_bank/app/controllers/blast_caches_controller.rb
-badd +3 /var/www/gene_bank/app/controllers/api/v1/api_controller.rb
-badd +10 /var/www/gene_bank/app/views/samples/_form.html.haml
-badd +1 /var/www/gene_bank/db/migrate/20130520075216_create_sample_boards.rb
-badd +7 /var/www/gene_bank/db/migrate/20130618024704_create_vectors.rb
-badd +3 /var/www/gene_bank/app/models/vector.rb
-badd +1 /var/www/gene_bank/spec/models/vector_spec.rb
-badd +6 /var/www/gene_bank/spec/factories/vectors.rb
-badd +5 /var/www/gene_bank/spec/factories/blast_caches.rb
-badd +1 /var/www/gene_bank/spec/factories/sample_boards.rb
-badd +4 /var/www/gene_bank/spec/factories/samples.rb
-badd +9 /var/www/gene_bank/spec/models/blast_cache_spec.rb
-badd +7 /var/www/gene_bank/app/views/samples/_search.html.haml
-badd +2 /var/www/gene_bank/app/controllers/vectors_controller.rb
-badd +1 /var/www/gene_bank/app/views/vectors/index.js.erb
-badd +2 /var/www/gene_bank/spec/factories/sample_heads.rb
-badd +4 /var/www/gene_bank/spec/fixtures/sample_heads.yml
-badd +56 /var/www/primer_synthesis/app/controllers/checkouts_controller.rb
-badd +1 Gemfile
-badd +4 app/views/checkouts/new.html.haml
-badd +1 app/views/checkouts/_search.html.haml
-badd +10 app/views/checkouts/_search_orders.html.haml
+badd +0 /var/www/sino_sequencing/app/controllers/checkouts_controller.rb
+badd +258 /var/www/superwf/app/assets/javascripts/superwf.js.coffee
 silent! argdel *
-edit /var/www/primer_synthesis/app/controllers/checkouts_controller.rb
+edit /var/www/sino_sequencing/app/controllers/checkouts_controller.rb
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -179,7 +143,7 @@ set number
 setlocal number
 setlocal numberwidth=4
 setlocal omnifunc=rubycomplete#Complete
-setlocal path=.,lib,vendor,app/models/concerns,app/controllers/concerns,app/controllers,app/helpers,app/mailers,app/models,app/*,app/views,app/views/checkouts,public,spec,spec/controllers,spec/helpers,spec/mailers,spec/models,spec/views,spec/lib,spec/features,spec/requests,spec/integration,vendor/plugins/*/lib,vendor/plugins/*/test,vendor/rails/*/lib,vendor/rails/*/test,/var/www/primer_synthesis,-e:1:in\\\ `<main>':\\\ undefined\\\ method\\\ `all_load_paths'\\\ for\\\ Gem:Module\\\ (NoMethodError)\
+setlocal path=.,lib,vendor,app/models/concerns,app/controllers/concerns,app/controllers,app/helpers,app/mailers,app/models,app/*,app/views,app/views/checkouts,public,test,test/unit,test/functional,test/integration,test/controllers,test/helpers,test/mailers,test/models,spec,spec/controllers,spec/helpers,spec/mailers,spec/models,spec/views,spec/lib,spec/features,spec/requests,spec/integration,vendor/plugins/*/lib,vendor/plugins/*/test,vendor/rails/*/lib,vendor/rails/*/test,/var/www/sino_sequencing,-e:1:in\\\ `<main>':\\\ undefined\\\ method\\\ `all_load_paths'\\\ for\\\ Gem:Module\\\ (NoMethodError)\
 
 setlocal nopreserveindent
 setlocal nopreviewwindow
@@ -205,7 +169,7 @@ if &syntax != 'ruby'
 setlocal syntax=ruby
 endif
 setlocal tabstop=2
-setlocal tags=/var/www/primer_synthesis/tags,/var/www/primer_synthesis/tmp/tags,./tags,./TAGS,tags,TAGS
+setlocal tags=/var/www/sino_sequencing/tags,/var/www/sino_sequencing/tmp/tags,./tags,./TAGS,tags,TAGS
 setlocal textwidth=0
 setlocal thesaurus=
 setlocal noundofile
@@ -214,11 +178,11 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 6 - ((5 * winheight(0) + 13) / 26)
+let s:l = 109 - ((1 * winheight(0) + 7) / 15)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-6
+109
 normal! 02l
 tabnext 1
 if exists('s:wipebuf')

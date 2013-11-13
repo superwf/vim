@@ -42,227 +42,326 @@ set showcmd
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
 set tabstop=2
 set viminfo='200,%,!,<50,s10,h,rA,rB,/50,:50
-set window=16
+set window=17
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd /var/www/lims
+cd /var/www/sino_sequencing
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +4 app/models/electrophoresis.rb
-badd +8 config/routes.rb
-badd +372 /var/www/dna/baogao/cedu/index.php
-badd +6 Capfile
-badd +32 app/controllers/primer_dilutions_controller.rb
-badd +115 app/models/primer_dilution.rb
-badd +32 app/views/primer_dilutions/new.html.haml
-badd +7 app/assets/javascripts/primer_dilutions.js.coffee
-badd +37 app/models/reaction.rb
-badd +35 app/controllers/reactions_controller.rb
-badd +184 app/models/sample_board.rb
-badd +20 db/migrate/20130118024219_create_reactions.rb
-badd +18 db/migrate/20130118092212_create_samples.rb
-badd +33 app/controllers/reaction_boards_controller.rb
-badd +38 app/models/reaction_file.rb
-badd +141 app/models/reaction_board.rb
-badd +1 app/models/precheck.rb
-badd +32 app/models/primer.rb
-badd +33 app/models/sample.rb
-badd +11 app/controllers/samples_controller.rb
-badd +12 app/controllers/electrophoresis_controller.rb
-badd +1 app/controllers/prechecks_controller.rb
-badd +53 spec/routing/resources_routing_spec.rb
-badd +7 app/views/sample_boards/_info.html.haml
-badd +1 app/views/reaction_boards/_td_typesetting.html.haml
-badd +1 app/views/reaction_boards/_td.html.haml
-badd +1 app/views/reaction_boards/_td_sample_map.html.haml
-badd +1 app/views/reaction_boards/_td_primer_map.html.haml
-badd +5 spec/factories/menus.rb
-badd +40 spec/fixtures/menus.yml.erb
-badd +6 app/views/primer_dilutions/today.html.haml
-badd +2 app/assets/javascripts/canceled_datas.js
-badd +1 app/assets/javascripts/canceled_datas.js.coffee
-badd +2 app/models/canceled_data.rb
-badd +1 app/controllers/canceled_datas_controller.rb
-badd +6 spec/models/canceled_data_spec.rb
-badd +7 spec/factories/canceled_data.rb
-badd +1 db/migrate/20130813052645_create_canceled_data.rb
-badd +10 db/migrate/20130814054542_create_canceled_records.rb
-badd +7 app/models/canceled_record.rb
-badd +13 app/controllers/canceled_records_controller.rb
-badd +5 app/views/samples/index.html.haml
-badd +1 app/assets/javascripts/samples.js.coffee
-badd +2 app/assets/javascripts/canceled_records.js.coffee
-badd +1 app/views/reactions/index.html.haml
-badd +12 config/locales/canceled_records.cn.yml
-badd +6 app/views/primer_dilutions/index.html.haml
-badd +1 app/controllers/primer_dilution_logs_controller.rb
-badd +8 app/models/primer_dilution_log.rb
-badd +27 config/locales/primer_dilutions.cn.yml
-badd +23 config/locales/menus.cn.yml
-badd +1 app/views/canceled_records/index.html.haml
-badd +6 app/views/canceled_records/_search.html.haml
-badd +1 app/views/canceled_records/_table.html.haml
-badd +7 app/views/primers/_search.html.haml
-badd +8 app/views/primers/_table.html.haml
-badd +9 spec/models/canceled_record_spec.rb
-badd +10 db/migrate/20130118024233_create_prechecks.rb
-badd +5 db/migrate/20130109052720_create_precheck_codes.rb
-badd +9 app/controllers/api/v1/reaction_boards_controller.rb
-badd +234 app/models/checkout.rb
-badd +7 app/models/order_mail.rb
-badd +28 app/models/quality.rb
-badd +8 app/models/checkout_order.rb
-badd +1 spec/models/reaction_spec.rb
-badd +37 spec/models/primer_dilution_spec.rb
-badd +11 spec/factories/samples.rb
-badd +2 spec/factories/reactions.rb
-badd +2 app/controllers/prepayment_records_controller.rb
-badd +1 app/views/prepayment_records/index.js.erb
-badd +30 spec/requests/resources_spec.rb
-badd +5 spec/requests/abi_records_spec.rb
-badd +136 spec/spec_helper.rb
-badd +6 spec/factories/reaction_heads.rb
-badd +9 spec/requests/prepayments_spec.rb
-badd +8 spec/factories/prepayments.rb
-badd +14 db/migrate/20130301053852_create_prepayments.rb
-badd +105 app/controllers/checkouts_controller.rb
-badd +95 app/models/order.rb
-badd +106 spec/models/sample_spec.rb
-badd +1 db/migrate/20130110091708_create_primers.rb
-badd +29 spec/models/primer_spec.rb
-badd +23 app/models/client.rb
-badd +5 db/migrate/20130111012728_create_orders.rb
-badd +7 app/models/company.rb
-badd +5 db/migrate/20130301050229_create_checkout_orders.rb
-badd +7 db/migrate/20130301043447_create_checkouts.rb
-badd +20 app/models/primer_mail.rb
-badd +1 db/migrate/20130305083825_create_primer_mails.rb
-badd +119 spec/models/client_spec.rb
-badd +5 spec/factories/checkout_orders.rb
-badd +5 spec/models/bad_debt_spec.rb
-badd +5 spec/factories/bad_debts.rb
-badd +6 spec/models/checkout_order_spec.rb
-badd +1 app/models/bacterium.rb
-badd +14 db/migrate/20130218064044_create_order_mails.rb
-badd +76 app/controllers/sample_boards_controller.rb
-badd +4 db/migrate/20130815011823_create_sample_board_records.rb
-badd +8 db/migrate/20130218055055_create_abi_machines.rb
-badd +4 db/migrate/20130815012231_create_sample_records.rb
-badd +7 db/migrate/20130815012513_create_board_records.rb
-badd +8 db/migrate/20130122022726_create_qualities.rb
-badd +2 app/models/board_record.rb
-badd +11 db/migrate/20130108084604_create_modification_logs.rb
-badd +12 app/controllers/clients_controller.rb
-badd +1 app/models/remote_client.rb
-badd +4 db/migrate/20130815014427_create_attachments.rb
-badd +4 db/migrate/20130118032121_create_electrophoresis.rb
-badd +2 app/models/attachment.rb
-badd +1 app/uploaders/file_uploader.rb
-badd +11 db/migrate/20130130032938_create_reaction_files.rb
-badd +17 config/locales/qualities.cn.yml
-badd +28 config/locales/reaction_files.cn.yml
-badd +12 app/models/order_status_observer.rb
-badd +65 config/application.rb
-badd +24 config/locales/samples.cn.yml
-badd +5 db/migrate/20130118021310_create_sample_boards.rb
-badd +109 spec/models/sample_board_spec.rb
-badd +40 app/models/sample_head.rb
-badd +5 app/models/precheck_code.rb
-badd +3 config/locales/cn.yml
-badd +8 app/models/reaction_head.rb
-badd +18 config/locales/sample_procedures.cn.yml
-badd +4 config/locales/electrophoresis.cn.yml
-badd +4 config/locales/bacteria.cn.yml
-badd +1 config/locales/plasmids.cn.yml
-badd +1 config/locales/precheck_codes.cn.yml
-badd +4 config/locales/prechecks.cn.yml
-badd +5 db/migrate/20130122021033_create_sample_procedures.rb
-badd +9 spec/factories/sample_procedures.rb
-badd +2 app/controllers/sample_procedures_controller.rb
-badd +11 app/models/sample_procedure.rb
-badd +14 spec/fixtures/sample_procedures.yml
-badd +3 lib/procedure.rb
-badd +1 app/models/sample_flow_go_observer.rb
-badd +45 lib/init_pdf.rb
-badd +1 db/migrate/20130122021055_create_reaction_procedures.rb
-badd +4 db/migrate/20130815053214_create_procedures.rb
-badd +10 /var/www/lims/app/models/procedure.rb
-badd +6 db/migrate/20130121093238_create_sample_heads.rb
-badd +7 db/migrate/20130130015038_create_reaction_heads.rb
-badd +2 /var/www/lims/app/models/sample_flow.rb
-badd +5 /var/www/lims/app/models/flow.rb
-badd +10 db/migrate/20130815054447_create_flows.rb
-badd +9 db/migrate/20130122030911_create_sample_flows.rb
-badd +14 lib/head.rb
-badd +11 /var/www/lims/app/models/prepayment.rb
-badd +2 /var/www/lims/app/models/reaction_procedure.rb
-badd +56 db/seeds.rb
-badd +10 spec/factories/procedures.rb
-badd +1 spec/fixtures/procedures.yml
-badd +1 spec/fixtures/flows.yml
-badd +25 app/views/sample_heads/_table.html.haml
-badd +14 app/views/sample_heads/_form.html.haml
-badd +5 app/views/sample_heads/edit.html.haml
-badd +9 app/views/flows/_table.html.haml
-badd +3 app/views/flows/_tr.html.haml
-badd +1 app/views/flows/_form.html.haml
-badd +4 app/views/flows/_search.html.haml
-badd +4 app/views/flows/create.js.erb
-badd +2 app/views/flows/destroy.js.erb
-badd +1 app/views/flows/new.html.haml
+badd +5 app/views/sample_heads/edit.html.slim
+badd +12 /var/www/fixed_asset/config/locales/simple_form.yml
+badd +12 /var/www/superwf/app/views/scaffolds/_search_form.html.slim
+badd +1 /var/www/superwf/app/views/scaffolds/_search.html.slim
+badd +1 /var/www/superwf/app/views/scaffolds/_search_input.html.slim
+badd +1 /var/www/superwf/lib/superwf/scaffold.rb
+badd +1 /var/www/superwf/app/views/scaffolds/_form.html.slim
+badd +2 /var/www/superwf/app/views/scaffolds/_model_form.html.slim
+badd +1 /var/www/superwf/app/views/roles/index.html.slim
+badd +4 /var/www/superwf/app/controllers/roles_controller.rb
+badd +3 /var/www/superwf/app/controllers/modification_logs_controller.rb
+badd +1 /var/www/superwf/app/views/modification_logs/index.html.slim
+badd +1 /var/www/superwf/app/views/scaffolds/dialog.js.erb
+badd +1 _for
+badd +1 Capfile
+badd +1 app/views/sample_heads/_form.html.slim
 badd +1 app/views/flows/new.js.erb
-badd +5 /var/www/lims/app/controllers/sample_flows_controller.rb
-badd +6 /var/www/lims/app/controllers/flows_controller.rb
-badd +6 /var/www/lims/app/controllers/procedures_controller.rb
-badd +16 config/locales/procedures.cn.yml
-badd +12 app/views/procedures/_table.html.haml
-badd +6 app/views/procedures/_search.html.haml
-badd +4 app/views/procedures/index.html.haml
-badd +1 app/views/procedures/index.js.erb
-badd +1 db/migrate/20130118094148_create_sample_board_primers.rb
-badd +3 /var/www/lims/app/controllers/sample_heads_controller.rb
-badd +1 app/views/procedures/new.html.haml
-badd +1 app/views/procedures/edit.html.haml
-badd +6 app/views/procedures/_form.html.haml
-badd +20 app/views/reaction_heads/_table.html.haml
-badd +3 app/views/reaction_heads/_form.html.haml
-badd +5 app/views/reaction_heads/edit.html.haml
-badd +5 spec/factories/abi_machines.rb
-badd +22 config/locales/sample_heads.cn.yml
-badd +6 spec/factories/flows.rb
-badd +17 config/locales/reaction_heads.cn.yml
-badd +25 app/views/sample_boards/scope.html.haml
-badd +10 app/views/sample_boards/_go.html.haml
-badd +6 app/views/sample_boards/flow.html.haml
-badd +3 app/views/electrophoresis/_form.html.haml
-badd +7 /var/www/lims/app/controllers/board_records_controller.rb
-badd +4 app/views/board_records/_form.html.haml
-badd +1 app/views/board_records/new.html.haml
+badd +1 app/views/flows/_form.html.slim
+badd +1 app/views/reaction_heads/index.html.slim
+badd +1 app/views/reaction_heads/index.js.erb
+badd +1 app/views/reaction_heads/_form.html.slim
+badd +4 app/views/reaction_heads/_table.html.slim
+badd +5 app/controllers/reaction_heads_controller.rb
+badd +1 app/views/reaction_heads/_search.html.slim
+badd +42 config/locales/simple_form.cn.yml
+badd +1 app/views/reaction_heads/edit.html.slim
+badd +37 Gemfile
+badd +4 app/controllers/sample_heads_controller.rb
+badd +1 app/views/plasmid_codes/index.html.slim
+badd +1 app/views/plasmid_codes/index.js.erb
+badd +1 app/views/plasmid_codes/_table.html.slim
+badd +2 app/views/plasmid_codes/_search.html.slim
+badd +3 app/views/plasmid_codes/_form.html.slim
+badd +1 app/controllers/plasmid_codes_controller.rb
+badd +1 app/views/precheck_codes/index.html.slim
+badd +11 app/controllers/precheck_codes_controller.rb
+badd +2 app/views/precheck_codes/_index.html.haml
+badd +1 app/views/precheck_codes/index.js.erb
+badd +2 app/views/precheck_codes/_search.html.slim
+badd +5 app/views/precheck_codes/_form.html.slim
+badd +1 app/views/precheck_codes/new.html.slim
+badd +1 app/views/precheck_codes/edit.html.slim
+badd +1 app/views/precheck_codes/_ajax_table.html.slim
+badd +1 app/views/precheck_codes/_table.html.slim
+badd +1 app/views/quality_codes/index.html.slim
+badd +3 app/views/quality_codes/_search.html.slim
+badd +1 app/views/quality_codes/index.js.erb
+badd +1 app/views/quality_codes/_form.html.slim
+badd +2 app/controllers/quality_codes_controller.rb
+badd +4 app/controllers/canceled_records_controller.rb
+badd +1 app/views/canceled_records/index.html.slim
+badd +1 app/views/canceled_records/index.js.erb
+badd +1 app/views/canceled_records/_search.html.slim
+badd +1 db/migrate/20130814054542_create_canceled_records.rb
+badd +21 app/models/canceled_record.rb
+badd +2 app/controllers/companies_controller.rb
+badd +12 app/views/companies/index.html.slim
+badd +1 app/views/companies/_search.html.slim
+badd +1 app/views/companies/_tr.html.slim
+badd +5 app/views/companies/_tree.html.slim
+badd +1 app/views/companies/_subtree.html.slim
+badd +7 app/views/companies/_form.html.slim
+badd +1 app/views/clients/index.html.slim
+badd +7 app/views/clients/_search.html.slim
+badd +1 app/views/clients/index.js.erb
+badd +1 app/controllers/clients_controller.rb
+badd +60 app/models/client.rb
+badd +11 config/locales/clients.cn.yml
+badd +1 db/migrate/20130109080710_create_clients.rb
+badd +13 app/views/clients/blacklist.html.slim
+badd +1 app/views/clients/_form.html.slim
+badd +1 app/views/companies/index.js.erb
+badd +1 app/views/primers/index.html.slim
+badd +7 app/views/primers/_search.html.slim
+badd +113 app/models/primer.rb
+badd +53 config/locales/primers.cn.yml
+badd +13 app/controllers/primers_controller.rb
+badd +2 app/controllers/primer_heads_controller.rb
+badd +1 app/views/primer_heads/index.html.slim
+badd +1 app/views/primer_heads/index.js.erb
+badd +3 app/views/primer_heads/_search.html.slim
+badd +1 app/views/notifier/tendaysover_primers.html.slim
+badd +1 app/views/primer_heads/new.html.slim
+badd +1 app/views/primer_heads/edit.html.slim
+badd +1 app/views/primer_heads/_form.html.slim
+badd +1 app/views/primer_heads/_table.html.slim
+badd +1 app/views/primer_heads/_ajax_table.html.slim
+badd +2 app/views/vectors/_search.html.slim
+badd +1 app/views/vectors/_table.html.slim
+badd +1 app/views/vectors/_form.html.slim
+badd +1 app/views/primers/index.js.erb
+badd +4 app/views/primers/_ajax_search.html.slim
+badd +8 app/controllers/primer_boards_controller.rb
+badd +1 app/views/primer_boards/index.html.slim
+badd +2 app/views/primer_boards/_search.html.slim
+badd +1 app/views/primer_boards/index.js.erb
+badd +1 app/views/primer_boards/_ajax_table.html.slim
+badd +1 config/locales/primer_boards.cn.yml
+badd +1 app/views/primer_boards/show.js.erb
+badd +15 app/views/primer_boards/_show.html.slim
+badd +1 app/views/primers/new.html.slim
+badd +1 app/views/primers/_form.html.slim
+badd +8 app/controllers/orders_controller.rb
+badd +2 app/views/orders/new.html.slim
+badd +28 app/views/orders/_form.html.slim
+badd +1 app/views/clients/_ajax_search.html.slim
+badd +139 app/assets/javascripts/orders.js.coffee
+badd +1 app/assets/javascripts/order_index.js.coffee
+badd +1 app/views/orders/_insert_sample_primer.html.slim
+badd +19 app/controllers/sample_board_templates_controller.rb
+badd +1 app/views/sample_board_templates/_form.html.slim
+badd +1 app/views/sample_board_templates/_show.html.slim
+badd +1 app/views/sample_board_templates/edit.html.slim
+badd +15 app/assets/javascripts/application.js
+badd +1 app/views/sample_board_templates/_table.html.slim
+badd +1 app/assets/javascripts/sample_board_templates.js.coffee
+badd +26 app/assets/stylesheets/orders.css.scss
+badd +5 app/assets/javascripts/primers.js.coffee
+badd +6 app/assets/stylesheets/primers.css.scss
+badd +4 app/views/orders/index.html.slim
+badd +1 app/views/orders/_search.html.slim
+badd +45 config/locales/orders.cn.yml
+badd +5 db/migrate/20130121093238_create_sample_heads.rb
+badd +112 app/models/order.rb
+badd +32 app/views/orders/_table.html.slim
+badd +1 app/views/orders/_reaction.html.slim
+badd +1 app/views/orders/new_redo.html.slim
+badd +1 app/controllers/sample_boards_controller.rb
+badd +1 app/views/sample_boards/_search.html.slim
+badd +31 config/locales/sample_boards.cn.yml
+badd +1 app/views/sample_boards/index.html.slim
+badd +1 app/views/sample_boards/new.html.slim
+badd +1 app/views/sample_boards/edit.html.slim
+badd +1 app/views/sample_boards/_form.html.slim
+badd +6 app/views/samples/index.html.slim
+badd +1 app/views/samples/_search.html.slim
+badd +6 app/controllers/samples_controller.rb
+badd +16 config/locales/samples.cn.yml
+badd +1 app/views/reactions/index.js.erb
+badd +15 app/controllers/reactions_controller.rb
+badd +7 app/views/reactions/index.html.slim
+badd +1 app/models/reaction.rb
+badd +1 app/views/samples/_form.html.slim
+badd +12 db/migrate/20130118092212_create_samples.rb
+badd +1 app/views/samples/_typesetting_tbody.html.slim
+badd +1 app/views/sample_boards/_td_typesetting.html.slim
+badd +9 app/views/samples/typesetting.html.slim
+badd +20 app/views/sample_boards/scope.html.slim
+badd +3 app/views/sample_boards/show.js.erb
+badd +2 app/views/sample_boards/_show.html.slim
+badd +1 app/views/sample_boards/_go.html.slim
+badd +1 spec/factories/menus.rb
+badd +216 spec/fixtures/menus.yml.erb
+badd +1 config/locales/menus.cn.yml
+badd +4 db/migrate/20130118024246_create_plasmids.rb
+badd +27 app/views/samples/_table.html.slim
+badd +2 app/views/samples/view_bacteria.html.slim
+badd +1 app/controllers/plasmids_controller.rb
+badd +1 app/views/plasmids/index.html.slim
+badd +3 app/views/plasmids/_search.html.slim
+badd +1 app/views/samples/index.js.erb
+badd +1 app/views/plasmids/index.js.erb
+badd +1 app/views/plasmids/new.html.slim
+badd +7 app/views/plasmids/_form.html.slim
+badd +1 app/views/plasmids/edit.html.slim
+badd +12 config/locales/plasmids.cn.yml
+badd +1 app/views/primer_dilutions/new.html.slim
+badd +1 app/controllers/primer_dilutions_controller.rb
+badd +1 app/views/primer_dilutions/index.js.erb
+badd +1 app/views/primer_dilutions/today.html.slim
+badd +3 app/views/primer_dilutions/index.html.slim
+badd +1 app/views/primer_dilutions/_search.html.slim
+badd +1 app/views/primer_dilutions/_table.html.slim
+badd +1 app/views/reactions/typesetting.html.slim
+badd +1 app/assets/javascripts/reactions.js.coffee
+badd +1 app/views/sample_boards/_info.html.slim
+badd +1 app/views/reactions/update.js.erb
+badd +1 app/assets/stylesheets/reactions.css.scss
+badd +27 app/assets/stylesheets/reaction_boards.css.scss
+badd +2 app/views/reactions/_search.html.slim
+badd +47 config/locales/reactions.cn.yml
+badd +4 app/controllers/reaction_boards_controller.rb
+badd +1 app/views/reaction_boards/index.html.slim
+badd +1 app/views/reaction_boards/index.js.erb
+badd +15 app/views/reaction_boards/_table.html.slim
+badd +1 app/views/reaction_boards/_search.html.slim
+badd +2 app/controllers/abi_machines_controller.rb
+badd +5 app/views/orders/search.html.slim
+badd +4 app/views/checkouts/_search.html.slim
+badd +1 app/views/checkouts/new.html.slim
+badd +1 app/views/statistic/client.html.slim
+badd +9 app/views/statistic/sample_head.html.slim
+badd +3 app/views/sample_boards/_precheck.html.slim
+badd +25 app/views/sample_boards/show.html.slim
+badd +2 app/views/prepayments/_form.html.slim
+badd +10 app/views/prepayments/_search.html.slim
+badd +1 app/views/reactions/downloading.html.slim
+badd +2 app/views/reactions/inspecting.html.slim
+badd +1 app/views/procedures/_form.html.slim
+badd +14 app/models/procedure.rb
+badd +1 app/views/checkouts/index.html.slim
+badd +1 app/controllers/checkouts_controller.rb
+badd +7 app/views/checkouts/_form.html.slim
+badd +12 app/views/checkouts/scope.html.slim
+badd +1 config/locales/checkouts.cn.yml
+badd +1 app/views/checkouts/_go.html.slim
+badd +2 app/controllers/prepayments_controller.rb
+badd +5 app/views/prepayments/index.html.slim
+badd +4 app/controllers/prepayment_records_controller.rb
+badd +1 app/views/prepayment_records/index.js.erb
+badd +3 app/controllers/order_mails_controller.rb
+badd +1 app/views/order_mails/index.html.slim
+badd +1 app/views/order_mails/index.js.erb
+badd +3 app/views/order_mails/_search.html.slim
+badd +10 app/views/order_mails/_form.html.slim
+badd +9 app/views/order_mails/_table.html.slim
+badd +27 app/models/order_mail.rb
+badd +9 config/locales/order_mails.cn.yml
+badd +3 app/views/primer_mails/index.html.slim
+badd +4 app/controllers/primer_mails_controller.rb
+badd +1 app/views/primer_mails/index.js.erb
+badd +1 app/views/primer_mails/_search.html.slim
+badd +10 config/locales/primer_mails.cn.yml
+badd +18 app/models/primer_mail.rb
+badd +1 /var/www/sino_sequencing/app/models/abi_machine.rb
+badd +77 /var/www/sino_sequencing/spec/models/abi_machine_spec.rb
+badd +22 /var/www/sino_sequencing/app/models/company.rb
+badd +106 /var/www/sino_sequencing/spec/models/company_spec.rb
+badd +1 /var/www/sino_sequencing/app/models/attachment.rb
+badd +1 /var/www/sino_sequencing/app/models/board_record.rb
+badd +1 /var/www/sino_sequencing/app/controllers/board_records_controller.rb
+badd +4 /var/www/sino_sequencing/spec/models/board_record_spec.rb
+badd +56 /var/www/sino_sequencing/app/models/checkout_order.rb
+badd +1 app/views/checkout_orders/_search.html.slim
+badd +1 app/views/checkout_orders/index.html.slim
+badd +1 app/views/checkout_orders/index.js.erb
+badd +1 /var/www/sino_sequencing/app/models/checkout.rb
+badd +102 /var/www/sino_sequencing/spec/models/checkout_spec.rb
+badd +1 spec/spec_helper.rb
+badd +11 spec/factories/procedures.rb
+badd +8 spec/factories/flows.rb
+badd +1 db/migrate/20130815053214_create_procedures.rb
+badd +31 /var/www/sino_sequencing/config/environments/test.rb
+badd +23 db/seeds.rb
+badd +1 spec/models/checkout
+badd +1 spec/models/checkout_record_spec.rb
+badd +12 app/views/checkouts/_table.html.slim
+badd +128 /var/www/sino_sequencing/spec/models/client_spec.rb
+badd +1 /var/www/sino_sequencing/spec/models/order_mail_spec.rb
+badd +225 /var/www/sino_sequencing/spec/models/order_spec.rb
+badd +1 /var/www/sino_sequencing/app/models/plasmid_code.rb
+badd +30 /var/www/sino_sequencing/app/models/plasmid.rb
+badd +1 /var/www/sino_sequencing/spec/models/plasmid_spec.rb
+badd +51 /var/www/sino_sequencing/app/models/prepayment.rb
+badd +1 config/locales/prepayments.cn.yml
+badd +5 db/migrate/20130301053852_create_prepayments.rb
+badd +1 /var/www/sino_sequencing/spec/models/prepayment_spec.rb
+badd +1 app/views/prepayment_records/_search.html.slim
+badd +42 /var/www/sino_sequencing/app/models/primer_board.rb
+badd +138 /var/www/sino_sequencing/spec/models/primer_board_spec.rb
+badd +7 db/migrate/20130111004652_create_primer_boards.rb
+badd +34 /var/www/sino_sequencing/app/models/primer_dilution.rb
+badd +102 /var/www/sino_sequencing/spec/models/primer_dilution_spec.rb
+badd +3 /var/www/sino_sequencing/app/models/primer_head.rb
+badd +86 /var/www/sino_sequencing/spec/models/primer_mail_spec.rb
+badd +223 /var/www/sino_sequencing/spec/models/primer_spec.rb
+badd +205 /var/www/sino_sequencing/app/models/reaction_board.rb
+badd +6 db/migrate/20130118024219_create_reactions.rb
+badd +1 app/views/orders/index.js.erb
+badd +1 app/views/orders/scope.js.erb
+badd +1 app/views/orders/_ajax_search.html.slim
+badd +1 /var/www/sino_sequencing/spec/models/reaction_spec.rb
+badd +1 app/views/board_records/new.html.slim
+badd +1 app/views/board_records/_form.html.slim
+badd +2 app/views/sample_boards/_code_buttons.html.slim
+badd +1 app/views/sample_boards/_td_precheck.html.slim
+badd +1 app/assets/stylesheets/precheck_codes.css.scss
+badd +1 app/views/sample_boards/_plasmid.html.slim
+badd +0 /var/www/sino_sequencing/app/models/sample_board.rb
+badd +43 /var/www/sino_sequencing/spec/models/sample_board_spec.rb
+badd +1 db/migrate/20130110091708_create_primers.rb
+badd +0 db/migrate/20130217025243_create_primer_dilutions.rb
+badd +1 app/views/reaction_boards/scope.html.slim
+badd +3 app/views/reaction_boards/_go.html.slim
+badd +1 app/views/reaction_boards/primer_map.html.slim
+badd +8 app/assets/javascripts/reaction_boards.js.coffee
+badd +13 app/assets/javascripts/sample_boards.js.coffee
+badd +1 app/views/sample_boards/typesetting.js.erb
+badd +1 app/assets/stylesheets/sample_board_templates.css.scss
 silent! argdel *
-edit app/models/sample_board.rb
+edit /var/www/sino_sequencing/app/models/sample_board.rb
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
 argglobal
+let s:cpo_save=&cpo
+set cpo&vim
+nmap <buffer> gf <Plug>RailsTabFind
+nmap <buffer> f <Plug>RailsSplitFind
 nnoremap <buffer> <silent> g} :exe        "ptjump =RubyCursorIdentifier()"
 nnoremap <buffer> <silent> } :exe          "ptag =RubyCursorIdentifier()"
 nnoremap <buffer> <silent> g] :exe      "stselect =RubyCursorIdentifier()"
 nnoremap <buffer> <silent> g :exe        "stjump =RubyCursorIdentifier()"
 nnoremap <buffer> <silent>  :exe v:count1."stag =RubyCursorIdentifier()"
 nnoremap <buffer> <silent> ] :exe v:count1."stag =RubyCursorIdentifier()"
-let s:cpo_save=&cpo
-set cpo&vim
-nmap <buffer> gf <Plug>RailsTabFind
-nmap <buffer> f <Plug>RailsSplitFind
 nnoremap <buffer> <silent>  :exe  v:count1."tag =RubyCursorIdentifier()"
+nmap <buffer> gf <Plug>RailsFind
 nnoremap <buffer> <silent> g] :exe       "tselect =RubyCursorIdentifier()"
 nnoremap <buffer> <silent> g :exe         "tjump =RubyCursorIdentifier()"
-nmap <buffer> gf <Plug>RailsFind
 let &cpo=s:cpo_save
 unlet s:cpo_save
 setlocal keymap=
@@ -333,7 +432,7 @@ set number
 setlocal number
 setlocal numberwidth=4
 setlocal omnifunc=rubycomplete#Complete
-setlocal path=.,lib,vendor,app/models/concerns,app/controllers/concerns,app/controllers,app/helpers,app/mailers,app/models,app/*,app/views,test,test/unit,test/functional,test/integration,test/controllers,test/helpers,test/mailers,test/models,spec,spec/controllers,spec/helpers,spec/mailers,spec/models,spec/views,spec/lib,spec/features,spec/requests,spec/integration,vendor/plugins/*/lib,vendor/plugins/*/test,vendor/rails/*/lib,vendor/rails/*/test,/var/www/lims,-e:1:in\\\ `<main>':\\\ undefined\\\ method\\\ `all_load_paths'\\\ for\\\ Gem:Module\\\ (NoMethodError)\
+setlocal path=.,lib,vendor,app/models/concerns,app/controllers/concerns,app/controllers,app/helpers,app/mailers,app/models,app/*,app/views,test,test/unit,test/functional,test/integration,test/controllers,test/helpers,test/mailers,test/models,spec,spec/controllers,spec/helpers,spec/mailers,spec/models,spec/views,spec/lib,spec/features,spec/requests,spec/integration,vendor/plugins/*/lib,vendor/plugins/*/test,vendor/rails/*/lib,vendor/rails/*/test,/var/www/sino_sequencing,-e:1:in\\\ `<main>':\\\ undefined\\\ method\\\ `all_load_paths'\\\ for\\\ Gem:Module\\\ (NoMethodError)\
 
 setlocal nopreserveindent
 setlocal nopreviewwindow
@@ -359,7 +458,7 @@ if &syntax != 'ruby'
 setlocal syntax=ruby
 endif
 setlocal tabstop=2
-setlocal tags=/var/www/lims/tags,/var/www/lims/tmp/tags,./tags,./TAGS,tags,TAGS
+setlocal tags=/var/www/sino_sequencing/tags,/var/www/sino_sequencing/tmp/tags,./tags,./TAGS,tags,TAGS
 setlocal textwidth=0
 setlocal thesaurus=
 setlocal noundofile
@@ -368,12 +467,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 133 - ((7 * winheight(0) + 8) / 16)
+let s:l = 15 - ((9 * winheight(0) + 8) / 17)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-133
-normal! 012l
+15
+normal! 039l
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf

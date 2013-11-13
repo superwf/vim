@@ -44,27 +44,75 @@ set viminfo='200,%,!,<50,s10,h,rA,rB,/50,:50
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd /var/www/2012/primer_synthesis
+cd /var/www/sino_project
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +30 /var/www/2012/primer_synthesis/app/controllers/clients_controller.rb
-badd +1 app/views/orders/incomings.html.haml
-badd +18 /var/www/sino_project/config/environments/production.rb
-badd +17 /var/www/lims/config/initializers/devise.rb
-badd +2 /var/www/superwf/app/models/remote_role.rb
-badd +25 app/views/orders/index.html.haml
-badd +12 app/views/orders/_search.html.haml
-badd +1 Gemfile
-badd +262 app/models/order.rb
-badd +1 app/models/client.rb
-badd +1 README
-badd +1 /var/www/2012/primer_synthesis/app/controllers/companies_controller.rb
-badd +315 /var/www/2012/primer_synthesis/app/controllers/orders_controller.rb
-badd +0 app/views/client_sessions/_form.html.haml
+badd +58 app/views/projects/_form.html.haml
+badd +269 /var/www/genetest/app/models/pdf.rb
+badd +12 /var/www/primer_synthesis/app/models/primer.rb
+badd +15 /var/www/primer_synthesis/db/migrate/20130916052155_create_users.rb
+badd +10 /var/www/primer_synthesis/db/migrate/20130913083930_create_primer_records.rb
+badd +1 /var/www/sino_sequencing/db/migrate/20130819051207_create_checkout_records.rb
+badd +29 /var/www/primer_synthesis/config/database.yml
+badd +1 /var/www/sino_sequencing/Capfile
+badd +13 /var/www/sino_sequencing/app/models/checkout.rb
+badd +1 /var/www/sino_sequencing/app/models/client.rb
+badd +13 /var/www/sino_sequencing/app/models/prepayment.rb
+badd +4 /var/www/sino_sequencing/db/migrate/20130301053852_create_prepayments.rb
+badd +1 /var/www/sino_sequencing/db/migrate/20130301063930_create_prepayment_records.rb
+badd +27 /var/www/sino_sequencing/app/models/checkout_record.rb
+badd +1 /var/www/primer_synthesis/unicornctli
+badd +1 /var/www/primer_synthesis/unicornctl
+badd +1 /var/www/primer_synthesis/app/models/checkout.rb
+badd +5 /var/www/primer_synthesis/app/controllers/home_controller.rb
+badd +7 /var/www/primer_synthesis/Gemfile
+badd +4 /var/www/sino_sequencing/app/controllers/home_controller.rb
+badd +1 /var/www/primer_synthesis/config/locales/cn.yml
+badd +12 /var/www/primer_synthesis/app/controllers/application_controller.rb
+badd +1 /var/www/sino_sequencing/app/controllers/application_controller.rb
+badd +1 /var/www/primer_synthesis/app/views/home/index.html.haml
+badd +5 /var/www/primer_synthesis/config/routes.rb
+badd +118 /var/www/sino_sequencing/config/routes.rb
+badd +255 /var/www/sino_sequencing/config/initializers/devise.rb
+badd +1 /var/www/sino_sequencing/config/initializers/session_store.rb
+badd +255 /var/www/primer_synthesis/config/initializers/devise.rb
+badd +11 /var/www/primer_synthesis/app/assets/stylesheets/application.css
+badd +11 /var/www/sino_sequencing/app/assets/stylesheets/application.css.scss
+badd +1 /var/www/primer_synthesis/app/assets/javascripts/application.js
+badd +21 /var/www/sino_sequencing/app/assets/javascripts/application.js
+badd +4 /var/www/sino_sequencing/db/migrate/20130108084518_create_users.rb
+badd +7 /var/www/primer_synthesis/app/views/home/index.html.slim
+badd +31 /var/www/primer_synthesis/spec/fixtures/menus.yml.erb
+badd +17 /var/www/primer_synthesis/config/locales/menus.cn.yml
+badd +18 /var/www/primer_synthesis/db/seeds.rb
+badd +1 /var/www/primer_synthesis/config/receive_email.yml
+badd +1 /var/www/sino_sequencing/config/cn
+badd +30 /var/www/sino_sequencing/config/locales/cn.yml
+badd +6 /var/www/primer_synthesis/app/models/company.rb
+badd +4 /var/www/primer_synthesis/lib/sequence_api_config.rb
+badd +5 /var/www/primer_synthesis/app/controllers/companies_controller.rb
+badd +16 /var/www/primer_synthesis/config/application.rb
+badd +6 /var/www/primer_synthesis/config/locales/companies.cn.yml
+badd +3 /var/www/primer_synthesis/db/migrate/20130916084049_modification_logs.rb
+badd +3 /var/www/sino_sequencing/db/migrate/20130108084604_create_modification_logs.rb
+badd +17 /var/www/primer_synthesis/app/models/client.rb
+badd +2 /var/www/primer_synthesis/app/controllers/clients_controller.rb
+badd +7 /var/www/primer_synthesis/config/locales/clients.cn.yml
+badd +21 /var/www/primer_synthesis/db/migrate/20110705052601_create_primers.rb
+badd +19 /var/www/primer_synthesis/config/locales/primers.cn.yml
+badd +5 /var/www/primer_synthesis/db/migrate/20130917013011_create_client_prices.rb
+badd +6 /var/www/primer_synthesis/db/migrate/20110721045643_create_checkout_orders.rb
+badd +6 /var/www/primer_synthesis/db/migrate/20110804051145_create_prices.rb
+badd +2 /var/www/primer_synthesis/app/helpers/orders_helper.rb
+badd +25 /var/www/primer_synthesis/db/migrate/20110704062443_create_orders.rb
+badd +90 /var/www/genetest/Gemfile.lock
+badd +0 /var/www/sino_project/app/models/project.rb
+badd +1 Capfile
+badd +4 config/locales/projects.cn.yml
 silent! argdel *
-edit app/views/client_sessions/_form.html.haml
+edit app/views/projects/_form.html.haml
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -155,7 +203,7 @@ set number
 setlocal number
 setlocal numberwidth=4
 setlocal omnifunc=rubycomplete#Complete
-setlocal path=.,lib,vendor,app/models/concerns,app/controllers/concerns,app/controllers,app/helpers,app/mailers,app/models,app/*,app/views,app/views/client_sessions,public,spec,spec/controllers,spec/helpers,spec/mailers,spec/models,spec/views,spec/lib,spec/features,spec/requests,spec/integration,vendor/plugins/*/lib,vendor/plugins/*/test,vendor/rails/*/lib,vendor/rails/*/test,/var/www/2012/primer_synthesis,-e:1:in\\\ `<main>':\\\ undefined\\\ method\\\ `all_load_paths'\\\ for\\\ Gem:Module\\\ (NoMethodError)\
+setlocal path=.,lib,vendor,app/models/concerns,app/controllers/concerns,app/controllers,app/helpers,app/mailers,app/models,app/*,app/views,app/views/projects,public,test,test/unit,test/functional,test/integration,test/controllers,test/helpers,test/mailers,test/models,spec,spec/controllers,spec/helpers,spec/mailers,spec/models,spec/views,spec/lib,spec/features,spec/requests,spec/integration,vendor/plugins/*/lib,vendor/plugins/*/test,vendor/rails/*/lib,vendor/rails/*/test,/var/www/sino_project,-e:1:in\\\ `<main>':\\\ undefined\\\ method\\\ `all_load_paths'\\\ for\\\ Gem:Module\\\ (NoMethodError)\
 
 setlocal nopreserveindent
 setlocal nopreviewwindow
@@ -181,7 +229,7 @@ if &syntax != 'haml'
 setlocal syntax=haml
 endif
 setlocal tabstop=2
-setlocal tags=/var/www/2012/primer_synthesis/tags,/var/www/2012/primer_synthesis/tmp/tags,./tags,./TAGS,tags,TAGS
+setlocal tags=/var/www/sino_project/tags,/var/www/sino_project/tmp/tags,./tags,./TAGS,tags,TAGS
 setlocal textwidth=0
 setlocal thesaurus=
 setlocal noundofile
@@ -190,12 +238,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 9) / 18)
+let s:l = 58 - ((7 * winheight(0) + 8) / 16)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-normal! 0
+58
+normal! 06l
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf

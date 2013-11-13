@@ -8,7 +8,7 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/search
+~MSle0~/active
 
 # Last Substitute Search Pattern:
 ~MSle0&plasmid_code
@@ -18,63 +18,100 @@ $client
 
 # Command Line History (newest to oldest):
 :q
-:e views/
-:Rmodel client
-:tabedit Gemfile
-:Rmodel order
-:vsplit Gemfile
-:Rview _search.html.haml
-:Rview orders/index.html.haml
-:Rview orders/incomings.html.haml
-:Renvironment production
-:Rinitializer devise
-:Rview 
-:Rview home/index.html.slim
-:Rmigration create_precheck_codes
-:Rstylesheet application
-:e spec/spec_helper.rb
-:e config/routes.rb
-:Rview clients/index.html.slim
-:Rmodel remote_client
-:Rcontroller api/v1/api
-:vsplit Capfile
-:vsplit /var/www/superwf/app/assets/stylesheets/superwf.css.scss
-:Rstylesheet lims
-:r
-:Rjavascript application
-:Rmigration create_menus
-:Rmigration create_departments
+:Rvi ho
 :Rcontroller application
-:Rview samples/index.html.slim
-:Rview home/
-:Rview typesetting.html.slim
-:Rview _search.html.slim
-:Rview prepayment_records/_table.html.slim
+:e Gemfile.lock
+:e Gemfile
+:e /var/www/user_passport/config/initializers/doorkeeper.rb
+:vs /var/www/sino_passport/config/initializers/doorkeeper.rb
+:Rinitializer doorkeeper
+:vsplit Capfile
+:Rcontroller sessions
+:Rmodel menu
+:Rmodel user
+:R
+:Rcontroller home
+:Rmodel role
+:Rinitializer wrap_parameters
+:Rmi
+:vsplit Gemfile
+:Rjavascript application
+:Rmodel 
+:Rmigration create_users
+:Rmigration create_roles
+:Rmodel ht_sample_report
+:Rmodel ht_sample
+:Rcontroller ht_sample_reports
+:Rview ht_samples/_search.html.haml
+:Rlocale ht_sample_reports.cn.yml
+:Rview _form.html.haml
+:Rview _nav_bar_bottom.html.haml
+:Rview projects/ht.html.haml
+:Rview _table.html.haml
+:Rview new.html.haml
+:Rmodel project
+:Rmodel reaction
+:'<,'>Rmodel
+:Rmodel order
+:qall
+:Rcontroller api/v1/credentials
+:Rcontroller api/v1/api
+:Rcontroller api/v1/clients
+:vs config/deploy.rb
+:Rcontroller users
+:Rview users/
+:Rlocale cn.yml
+:Rview users/index.html.slim
 :Rview _table.html.slim
-:Rview _form.html.slim
-:Rview _ajax_table.html.slim
-:Rview new.html.slim
-:Rview edit.html.slim
-:Rview prepayments/index.html.slim
-:Rview primers/_search.html.slim
-:Rview _abi_record.html.slim
-:Rview board_records/new.html.slim
-:Rview procedures/index.html.slim
-:Rmodel flow
-:Rmodel flows
-:Rlayout _show_cols.html.slim
-:Rlayout _show_col.html.slim
-:Rspec routing/resources_routing
-:Rs
-:Rspec requests/order_mails
+:Rview users/_search.html.slim
+:Rfixtures menus.yml.erb
+:Rfixtures 
+:Rstylesheet application
 
 # Search String History (newest to oldest):
-?/search
-?/body
-?/sign_out
-?/jquery
-?/superwf
+?/doorkee
+?/active
+?/oauth
+?/door
+?/cancan
+?/role
 ?/render
+?/scope
+?/Tempfile
+? \<tempfile\>
+?/client
+?/ActiveSu
+?/www-data
+?/bash
+?/password
+?/fake
+?/api
+?/atomic
+?/uncomp
+?/upl
+?/auto
+?/whin
+?/mass
+?/whi
+?/roles
+?/haml
+?/carr
+? \<mass_assignment_sanitizer\>
+?/eager
+?/asset
+?/users
+?/entry
+?/coffee
+?/rescue_
+? \<key2sym\>
+?/departments
+?/m
+?/jquery
+?/user_id
+?/whiny
+?/whitelist
+?/simple_form
+?/superwf
 ? \<render\>
 ?/flows
 ?/procedures
@@ -82,43 +119,6 @@ $client
 ?/order_mai
 ?/menus
 ? \<haml\>
-???k3kkkkkYGpwwwwwwwwwwwC
-?/roles
-?/devise
-?/head
-?/ori
-?/haml
-?/resource
-??\V重摇
-?/samples
-?/confirm_
-?/select
-?/transfer
-?/dialog
-?/dialo
-?/c
-?/validates
-? \<batch_delete_form\>
-?/batch_delete
-?/gener
-?/generate_redo
-?/create_re
-?/create_redo
-?/create_
-?/new_redo
-?/new_reco
-?/get_quadrant
-?/csv
-?/to_csv
-?/export
-?/checkout
-?/view_chargeable
-?/new_client
-?/new_c
-?/checkouts
-?/checkout_rec
-?/pdf
-?/to_s
 
 # Expression History (newest to oldest):
 
@@ -128,36 +128,35 @@ $client
 
 # 寄存器:
 "0	LINE	0
-	    orders = orders.where("`#{user_center_db}`.`users`.`name` = ?", params[:user_name]) unless params[:user_name].empty?
-"1	LINE	0
-	# coding: utf-8
+	included_patch = <<-EOF
+	  include Superwf::CheckAdmin
+	  before_filter :check_admin
+	EOF
+""1	LINE	0
+	#gem 'cancan'
 "2	LINE	0
-	  self.site = "#{::DK[:protocol]}#{::DK[:host]}/api/v1"
+	require 'superwf/check_admin'
 "3	LINE	0
-	body {padding-top: 45px; padding-bottom: 40px;}
-"4	LINE	0
-	body {padding-top: 45px; padding-bottom: 40px;}
-"5	LINE	0
-	/*
-	.ui-dialog-content {
-	  max-height: 600px;
-	}
-	*/
-"6	LINE	0
-	// request by wangchengyan
-"7	LINE	0
-	td.canceled {
-	  background-color: #EED3D7;
-	}
-"8	LINE	0
 	
+"4	LINE	0
+	
+	::Doorkeeper::ApplicationsController.class_eval included_patch
+	::Doorkeeper::AuthorizedApplicationsController.class_eval included_patch
+"5	LINE	0
+	require 'superwf/check_admin'
+"6	LINE	0
+	  private
+	  def check_admin
+	    if current_user && !current_user.admin?
+	      return redirect_to '/404.html', flash: {error: 'only admin can login'}
+	    end
+	  end
+"7	LINE	0
+	  #skip_before_filter :authenticate_user!
+"8	LINE	0
+	      t.references :role
 "9	LINE	0
-	[is_test=true] {
-	  color: #281EFB;
-	}
-	[urgent=true] {
-	  background-color: #FC49E9;
-	}
+	    users = users.where(role_id: params[:role_id]) unless params[:role_id].blank?
 "b	BLOCK	23
 	 NOT NULL AUTO_INCREMENT
 "c	CHAR	0
@@ -207,134 +206,135 @@ $client
 	594
 <,hi,llxxepwxxxsuuf}xexepwxxxwewwxepwxxxwwllDjjwwxxewbea_tagea, params[]iswwxepwxxxwwwwwwxepwxxxwwxepwxxxjjkkjjj^wxxea_g??kbtagwwwwwxepwxxx??k3????,????.xepwxxxjjkwwwwwwwwwxepwxxxwwwwwwxepwxxxwwxepwxxxwjbbbbbbbbxepwxxx??k3??k3????,????.:Rvi	 quality_co	_ta	jkVjdljkggjjkwpVj>.jwveehxwwr xu$xbbbbbbbxepwxxx??k3hdd??k3l:Rvi	 ????,????.??齃??齂??齃????,????.????,????.$ibcwtruebbbbbwi, params[]i:result??k3:Rmo	 qual	Gkgg:_c	Gkwkkkwji#??k3??k3??k3??k3u??k3h:Rcon	 qua	jjjjjjjjjjjjjjjjjjjjjjjjjjjj:??kb??kb??kby_co	a, :desc??k3l:Rmo	 sample_he	G/searchgg:R
 "v	CHAR	0
-	471
-<jkV%>wveesself??k3??齂??齂??齂??齃??齃??齂??齃??齃????,????-????-????-????-????-????-????-????-????-????.sselfwwwwblveesself??k3gt:gtjjV%ddd??k3hjjbbbbluuwC????,????.????,????.bcwbcwc??kbmoduleA F??kb??kbFac??k3hjjjjjjbbbbveelx??k3??k3??k3??k3??k3????,????.cw::Filewwww.??k3????,????.xkjjI#??k3kY:Rfix	 hr??kbtcon	jjjjj:Rfix 	htRfix	 ht_smaple-re	??kb??kb??kb_r	:??kb??kb??kb??kb??kb??kb??kbamp		jkpdkddljjV%ddd??k3h??k3jjl??k3h
+	473
+<jkV%>wveesself??k3??齂??齂??齂??齃??齃??齂??齃??齃????,????-????-????-????-????-????-????-????-????-????.sselfwwwwblveesself??k3gt:gtjjV%ddd??k3hjjbbbbluuwC????,????.????,????.bcwbcwc??kbmoduleA F??kb??kbFac??k3hjjjjjjbbbbveelx??k3??k3??k3??k3??k3????,????.cw::Filewwww.??k3????,????.xkjjI#??k3kY:Rfix	 hr??kbtcon	jjjjj:Rfix 	htRfix	 ht_smaple-re	??kb??kb??kb_r	:??kb??kb??kb??kb??kb??kb??kbamp		jkpdkddljjV%ddd??k3h??k3jjl??k3h
 "w	CHAR	0
 	537
 <V%yjwpjjkw$bbCnil??k3jVkkd??k3lbbbbwveeesif: ::Proc.new{}i|r| r.reaction_board && r.buuuuuhCtrue??k3??k3??k3??k3??k3??k3??k3??k3??k3??k3??k3??k3??k3hu??k3????,????.:Rmo	 heat	h:Rsp	 mo	heat	ljjwhjjwjjjjjjjkkjjjzzljjjjkzzhjjjjjjjjjjjjjjjjjljjjjkjzzhljwwwwCquadran: true??k3??k3??k3??k3hjjjjjjjjkkkwwwwwwllwwC7??k3h:Rmi	 heat	k$hC7??k3:Rfix	 heat	jjjjjjwwwwbcw1,2,3,4??k3??k2??k3??k3??k3:Rmi	 alc	jjjjkkkkklkjh:Rmi	 alc	jjkkl:Rmo	 alc	h:Rsp	 mo	aalc	lggjjwhjjjjjjjjwzzkkkkkjjjjjjjjjzzjjzz
 "x	CHAR	0
 	s
-""-	CHAR	0
-	user_name
+"-	CHAR	0
+	navigation
 
 # 全局变量:
 
 # 文件标记:
-'0  1  0  /var/www/2011/user_center_helper/lib/views/clients/edit.html.haml
-'1  1  0  /var/www/2011/user_center_helper/lib/controllers/clients_controller.rb
-'2  1  0  /var/www/2012/primer_synthesis/app/models/client.rb
-'3  18  2  /var/www/sino_project/config/environments/production.rb
-'4  17  0  /var/www/lims/config/initializers/devise.rb
-'5  2  74  /var/www/superwf/app/models/remote_role.rb
-'6  5  37  /var/www/superwf/bin/unicornctl
-'7  18  4  /var/www/superwf/lib/superwf.rb
-'8  9  4  /var/www/superwf/lib/superwf/scaffold.rb
-'9  12  0  /var/www/lims/config/environments/production.rb
+'0  1  0  /var/www/lims_order/app/views/orders/edit.html.haml
+'1  1  0  /var/www/superwf/lib/superwf/permission.rb
+'2  12  2  /var/www/lims/app/controllers/application_controller.rb
+'3  15  0  /var/www/sino_passport/Gemfile
+'4  2  2  /var/www/lims/app/controllers/sessions_controller.rb
+'5  10  40  /var/www/user_passport/app/models/menu.rb
+'6  12  2  /var/www/user_passport/app/controllers/home_controller.rb
+'7  1  0  /var/www/sino_passport/Capfile
+'8  135  9  /var/www/sino_project/app/models/ht_sample_report.rb
+'9  202  8  /var/www/lims/app/models/reaction.rb
 
 # 跳转列表 (从新到旧):
--'  1  0  /var/www/2011/user_center_helper/lib/views/clients/edit.html.haml
--'  1  0  /var/www/2011/user_center_helper/lib/controllers/clients_controller.rb
--'  49  0  /var/www/2011/user_center_helper/lib/controllers/clients_controller.rb
--'  1  0  /var/www/2012/primer_synthesis/app/models/client.rb
--'  1  0  /var/www/2012/primer_synthesis/Gemfile
--'  251  34  /var/www/2012/primer_synthesis/app/models/order.rb
--'  263  28  /var/www/2012/primer_synthesis/app/models/order.rb
--'  188  11  /var/www/2012/primer_synthesis/app/models/order.rb
--'  140  95  /var/www/2012/primer_synthesis/app/models/order.rb
--'  257  6  /var/www/2012/primer_synthesis/app/models/order.rb
--'  187  11  /var/www/2012/primer_synthesis/app/models/order.rb
--'  313  2  /var/www/2012/primer_synthesis/app/models/order.rb
--'  333  2  /var/www/2012/primer_synthesis/app/models/order.rb
--'  323  6  /var/www/2012/primer_synthesis/app/models/order.rb
--'  1  0  /var/www/2012/primer_synthesis/app/models/order.rb
--'  12  55  /var/www/2012/primer_synthesis/app/views/orders/_search.html.haml
--'  25  9  /var/www/2012/primer_synthesis/app/views/orders/index.html.haml
--'  1  0  /var/www/2012/primer_synthesis/app/views/orders/incomings.html.haml
--'  18  2  /var/www/sino_project/config/environments/production.rb
--'  1  0  /var/www/sino_project/config/environments/production.rb
--'  17  0  /var/www/lims/config/initializers/devise.rb
--'  1  0  /var/www/lims/config/initializers/devise.rb
--'  2  74  /var/www/superwf/app/models/remote_role.rb
--'  5  37  /var/www/superwf/bin/unicornctl
--'  1  0  /var/www/superwf/bin/unicornctl
--'  18  4  /var/www/superwf/lib/superwf.rb
--'  1  0  /var/www/superwf/lib/superwf.rb
--'  9  4  /var/www/superwf/lib/superwf/scaffold.rb
--'  1  0  /var/www/superwf/lib/superwf/scaffold.rb
--'  12  0  /var/www/lims/config/environments/production.rb
--'  1  0  /var/www/lims/config/environments/production.rb
--'  10  82  /var/www/lims/app/views/home/index.html.slim
--'  9  0  /var/www/lims/app/views/home/index.html.slim
--'  8  6  /var/www/lims/app/views/home/index.html.slim
--'  1  0  /var/www/lims/app/views/home/index.html.slim
--'  1  0  /var/www/superwf/lib/superwf/api.rb
--'  6  6  /var/www/lims/db/migrate/20130109052720_create_precheck_codes.rb
--'  19  0  /var/www/lims/app/assets/stylesheets/application.css.scss
--'  1  0  /var/www/lims/app/assets/stylesheets/application.css.scss
--'  48  19  /var/www/superwf/app/assets/stylesheets/superwf.css.scss
--'  153  0  /var/www/superwf/app/assets/stylesheets/superwf.css.scss
--'  22  1  /var/www/superwf/app/assets/stylesheets/superwf.css.scss
--'  28  0  /var/www/lims/spec/spec_helper.rb
--'  116  2  /var/www/lims/config/routes.rb
--'  3  49  /var/www/lims/config/routes.rb
--'  4  2  /var/www/lims/app/views/clients/index.html.slim
--'  5  0  /var/www/lims/app/controllers/api/v1/api_controller.rb
--'  1  0  /var/www/lims/app/controllers/api/v1/api_controller.rb
--'  1  0  /var/www/lims/app/assets/stylesheets/lims.css.scss
--'  7  0  /var/www/lims/app/assets/stylesheets/lims.css.scss
--'  16  0  /var/www/lims/app/assets/stylesheets/application.css.scss
--'  13  1  /var/www/user_passport/app/assets/stylesheets/application.css.scss
--'  1  0  /var/www/user_passport/app/assets/stylesheets/application.css.scss
--'  10  0  /var/www/user_passport/app/assets/stylesheets/superwf.css.scss
--'  1  0  /var/www/user_passport/app/assets/stylesheets/superwf.css.scss
--'  1  0  /var/www/user_passport/app/assets/stylesheets/sessions.css.scss
--'  1  0  /var/www/user_passport/app/assets/stylesheets/departments.css.scss
--'  2  0  /var/www/user_passport/app/assets/stylesheets/departments.css.scss
--'  9  6  /var/www/user_passport/app/assets/stylesheets/fixed-top.sass
--'  1  0  /var/www/user_passport/app/assets/stylesheets/fixed-top.sass
--'  13  0  /var/www/lims/app/assets/javascripts/application.js
--'  12  5  /var/www/lims/Gemfile
--'  38  5  /var/www/lims/Gemfile
--'  5  6  /var/www/superwf/lib/superwf/simple_form.rb
--'  1  0  /var/www/superwf/lib/superwf/simple_form.rb
--'  1  0  /var/www/user_passport/config/initializers/generators.rb
--'  1  0  /var/www/user_passport/config/initializers/carrierwave.rb
--'  1  0  /var/www/user_passport/db/migrate/20120626065822_create_menus.rb
--'  1  0  /var/www/user_passport/db/migrate/20120629030731_create_departments.rb
--'  4  0  /var/www/lims/app/controllers/application_controller.rb
--'  40  5  /var/www/lims/Gemfile
--'  1  0  /var/www/lims/Gemfile
--'  24  2  /var/www/lims/spec/requests/resources_spec.rb
--'  1  0  /var/www/lims/app/models/flow.rb
--'  16  2  /var/www/lims/app/models/flow.rb
--'  23  73  /var/www/lims/spec/requests/resources_spec.rb
--'  9  2  /var/www/lims/spec/requests/resources_spec.rb
--'  11  2  /var/www/lims/spec/requests/resources_spec.rb
--'  15  2  /var/www/lims/spec/requests/resources_spec.rb
--'  29  36  /var/www/lims/spec/requests/resources_spec.rb
--'  25  3  /var/www/lims/spec/requests/resources_spec.rb
--'  1  0  /var/www/lims/spec/requests/resources_spec.rb
--'  23  68  /var/www/lims/spec/requests/roles_spec.rb
--'  8  37  /var/www/lims/spec/requests/home_spec.rb
--'  9  30  /var/www/lims/spec/requests/home_spec.rb
--'  5  17  /var/www/lims/spec/requests/home_spec.rb
--'  6  13  /var/www/lims/spec/requests/home_spec.rb
--'  1  0  /var/www/lims/spec/requests/home_spec.rb
--'  3  2  /var/www/lims/app/views/home/_auto_logout_js.html.slim
--'  1  0  /var/www/lims/app/views/home/_auto_logout_js.html.slim
--'  14  4  /var/www/lims/app/views/home/index.html.slim
--'  3  4  /var/www/lims/app/views/home/index.html.slim
--'  6  6  /var/www/superwf/app/views/menus/_search.html.slim
--'  1  0  /var/www/2012/primer_synthesis/app/models/client.rb
--'  1  0  /var/www/2012/primer_synthesis/Gemfile
--'  251  34  /var/www/2012/primer_synthesis/app/models/order.rb
--'  263  28  /var/www/2012/primer_synthesis/app/models/order.rb
--'  188  11  /var/www/2012/primer_synthesis/app/models/order.rb
+-'  1  0  /var/www/lims_order/app/views/orders/edit.html.haml
+-'  1  0  /var/www/superwf/lib/superwf/permission.rb
+-'  12  2  /var/www/lims/app/controllers/application_controller.rb
+-'  10  6  /var/www/lims/Gemfile.lock
+-'  1  0  /var/www/lims/Gemfile.lock
+-'  30  5  /var/www/lims/Gemfile
+-'  54  5  /var/www/lims/Gemfile
+-'  46  0  /var/www/lims/Gemfile
+-'  23  23  /var/www/lims/Gemfile
+-'  15  0  /var/www/sino_passport/Gemfile
+-'  20  0  /var/www/sino_passport/Gemfile
+-'  56  5  /var/www/sino_passport/Gemfile
+-'  49  28  /var/www/sino_passport/config/initializers/doorkeeper.rb
+-'  47  0  /var/www/sino_passport/config/initializers/doorkeeper.rb
+-'  46  0  /var/www/sino_passport/config/initializers/doorkeeper.rb
+-'  1  0  /var/www/sino_passport/config/initializers/doorkeeper.rb
+-'  36  0  /var/www/sino_passport/config/initializers/doorkeeper.rb
+-'  1  0  /var/www/sino_passport/Capfile
+-'  3  27  /var/www/sino_passport/app/controllers/application_controller.rb
+-'  6  30  /var/www/sino_passport/app/controllers/application_controller.rb
+-'  9  0  /var/www/sino_passport/app/controllers/application_controller.rb
+-'  1  0  /var/www/sino_passport/app/controllers/application_controller.rb
+-'  2  2  /var/www/lims/app/controllers/sessions_controller.rb
+-'  7  4  /var/www/lims/app/controllers/sessions_controller.rb
+-'  1  0  /var/www/lims/app/controllers/sessions_controller.rb
+-'  10  40  /var/www/user_passport/app/models/menu.rb
+-'  34  0  /var/www/user_passport/app/models/user.rb
+-'  12  2  /var/www/user_passport/app/controllers/home_controller.rb
+-'  33  2  /var/www/user_passport/app/models/user.rb
+-'  1  0  /var/www/user_passport/config/initializers/wrap_parameters.rb
+-'  27  2  /var/www/user_passport/app/controllers/application_controller.rb
+-'  1  0  /var/www/user_passport/Gemfile
+-'  8  7  /var/www/user_passport/app/models/user.rb
+-'  1  0  /var/www/user_passport/app/models/user.rb
+-'  7  0  /var/www/sino_passport/Capfile
+-'  1  0  /var/www/sino_passport/db/migrate/20120903013113_create_roles.rb
+-'  135  9  /var/www/sino_project/app/models/ht_sample_report.rb
+-'  36  2  /var/www/sino_project/app/models/ht_sample_report.rb
+-'  97  4  /var/www/sino_project/app/models/ht_sample.rb
+-'  54  184  /var/www/sino_project/app/models/ht_sample.rb
+-'  28  7  /var/www/sino_project/config/locales/ht_sample_reports.cn.yml
+-'  14  8  /var/www/sino_project/config/locales/ht_sample_reports.cn.yml
+-'  14  50  /var/www/sino_project/app/views/ht_samples/_search.html.haml
+-'  68  68  /var/www/sino_project/app/views/projects/ht.html.haml
+-'  53  22  /var/www/sino_project/app/views/projects/ht.html.haml
+-'  10  48  /var/www/sino_project/app/controllers/ht_sample_reports_controller.rb
+-'  39  2  /var/www/sino_project/app/models/project.rb
+-'  33  2  /var/www/sino_project/app/models/project.rb
+-'  1  0  /var/www/sino_project/app/models/project.rb
+-'  202  8  /var/www/lims/app/models/reaction.rb
+-'  218  17  /var/www/lims/app/models/reaction.rb
+-'  195  17  /var/www/lims/app/models/reaction.rb
+-'  198  32  /var/www/lims/app/models/reaction.rb
+-'  210  4  /var/www/lims/app/models/reaction.rb
+-'  219  32  /var/www/lims/app/models/reaction.rb
+-'  227  4  /var/www/lims/app/models/reaction.rb
+-'  122  6  /var/www/lims/app/models/reaction.rb
+-'  257  4  /var/www/lims/app/models/order.rb
+-'  273  4  /var/www/lims/app/models/order.rb
+-'  258  32  /var/www/lims/app/models/order.rb
+-'  260  32  /var/www/lims/app/models/order.rb
+-'  1  0  /var/www/lims/app/models/order.rb
+-'  14  28  /var/www/superwf/lib/superwf/navigation.rb
+-'  13  31  /var/www/superwf/lib/superwf/navigation.rb
+-'  9  0  /etc/fuse.conf
+-'  4  0  /etc/fuse.conf
+-'  1  0  /etc/fuse.conf
+-'  15  0  /etc/fstab
+-'  1  0  /etc/fstab
+-'  1  0  /etc/mfsmount.cfg.dist
+-'  1  0  /mnt/mfs/backup/70/sqlbackup/get_blastdb.rb
+-'  13  0  /mnt/mfs/backup/70/sqlbackup/index.html
+-'  1  0  /mnt/mfs/backup/70/sqlbackup/index.html
+-'  7  0  /var/www/sino_passport/app/controllers/api/v1/credentials_controller.rb
+-'  35  0  /var/www/sino_passport/app/controllers/api/v1/clients_controller.rb
+-'  3  4  /var/www/sino_passport/app/controllers/api/v1/api_controller.rb
+-'  1  0  /var/www/sino_passport/app/controllers/api/v1/clients_controller.rb
+-'  19  21  /var/www/sino_passport/app/controllers/api/v1/clients_controller.rb
+-'  7  11  /var/www/sino_passport/app/controllers/api/v1/clients_controller.rb
+-'  10  2  /var/www/sino_passport/app/controllers/application_controller.rb
+-'  5  2  /var/www/sino_passport/app/controllers/users_controller.rb
+-'  17  8  /var/www/sino_passport/app/views/users/_table.html.slim
+-'  6  4  /var/www/sino_passport/app/views/users/_search.html.slim
+-'  25  0  /var/www/sino_passport/spec/fixtures/menus.yml.erb
+-'  12  0  /var/www/sino_passport/spec/fixtures/menus.yml.erb
+-'  3  2  /var/www/sino_passport/app/views/home/index.html.slim
+-'  11  8  /var/www/sino_passport/app/views/home/index.html.slim
+-'  1  0  /var/www/sino_passport/app/views/home/index.html.slim
+-'  10  0  /var/www/sino_passport/app/models/user.rb
+-'  8  10  /var/www/sino_passport/app/views/home/index.html.slim
+-'  2  18  /var/www/sino_passport/app/views/home/index.html.slim
+-'  1  0  /var/www/sino_passport/app/models/user.rb
+-'  18  4  /var/www/sino_passport/app/models/user.rb
+-'  2  0  /var/www/sino_passport/app/models/user.rb
+-'  8  0  /var/www/sino_passport/config/routes.rb
+-'  2  14  /var/www/sino_passport/app/controllers/sessions_controller.rb
+-'  11  2  /var/www/sino_passport/config/routes.rb
+-'  6  38  /var/www/sino_passport/config/routes.rb
+-'  7  2  /var/www/sino_passport/app/controllers/sessions_controller.rb
 
 # 缓冲区列表:
-%/var/www/2011/user_center_helper/lib/views/clients/edit.html.haml	1	0
+%/var/www/lims_order/app/views/orders/edit.html.haml	1	0
 
 # 文件内的标记历史记录 (从新到旧):
 
-> /var/www/2011/user_center_helper/lib/views/clients/edit.html.haml
+> /var/www/lims_order/app/views/orders/edit.html.haml
 	"	1	0

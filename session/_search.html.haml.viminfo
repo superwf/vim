@@ -8,7 +8,7 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/zone
+~MSle0~/fake
 
 # Last Substitute Search Pattern:
 ~MSle0&plasmid_code
@@ -18,107 +18,107 @@ $client
 
 # Command Line History (newest to oldest):
 :q
-:e app/views/roles/_search.html.haml
-:e roles.cn.yml
-:Rview _table.html.haml
-:Rview invoices/index.html.haml
-:vs Capfile
-:Rview invoices/mine.html.haml
-:e config/application.rb
+:Rcontroller reaction_boards
+:Rcontroller api/v1/reaction_boards
 :e config/routes.rb
-:Rview _show_button.html.haml
-:Rview reports/_button.html.haml
-:Rview 
-:Rview projects/conv.html.haml
+:Rlocale reaction_boards.cn.yml
+:Rmodel reaction_board
+:Rcontroller api/v1/reactions
+:tabedit Capfile
+:Rcontroller reactions
+:e Gemfile.lock
+:vsplit config/routes.rb
+:Rcontroller api/v1/reaction_files
+:Rmodel reaction
+:Rmodel reaction_boards
+:vsplit 
+:Rtask upload
+:Renvironment test
+:Renvironment development
+:Renvironment production
 :Rmodel reaction_file
-:Rview board_records/new.html.haml
-:Rmodel board_record
-:Rcontroller board_records
-:Rview board_records/_form.html.haml
-:Rview sample_boards/_go.html.haml
-:Rmi
+:e Gemfile
+:Rtask
 :R
-:Rview sample_boards/flow.html.haml
-:Rview electrophoresis/_form.html.haml
-:Rmodel sample_board
-:Rmodel flow
-:Rmodel sample
-:Rmigration create_board_records
-:Rmigration create_samples
-:Rcontroller sample_boards
+:vs deploy.rb
+:vsplit deploy.rb
+:vs .gitignore
+:Rinitializer doorkeeper
+:e config/application.rb
+:Rewnv
+:vs /var/www/lims/config/environments/development.rb
+:vsplit Gemfile
 :Rmodel client
-:Rlocale procedures.cn.yml
-:Rview _go.html.haml
-:Rview sample_boards/scope.html.haml
-:Rmigration create_reactions
-:Rmodel procedure
-:Rfix procedures.yml
-:Rfixtures flows.yml
-:e db/seeds.rb
-:Rmigration create_sample_boards
-:Rview _form.html.haml
-:Rview reaction_heads/edit.html.haml
-:Rlocale reaction_heads.cn.yml
-:Rview reaction_heads/_table.html.haml
-:Rlocale sample_heads.cn.yml
-:Rview sample_heads/_table.html.haml
-:e lib/head.rb
-:Rmodel sample_head
-:Rfixtures procedures.yml
-:Rfixtures flows.rb
-:Rmigration create_procedures
+:e config/database.yml
+:Rfixtures menus.rb
+:Rfixtures menus.yml.erb
+:Rmigration create_roles
+:Rcontroller roles
+:e /var/www/lims/config/routes.rb
+:Rjavascript application
+:e /var/www/lims/app/views/home/index.html.slim
+:Rinitializer devise
+:Rview home/index.html.slim
+:Rview home/index.html.haml
+:Rcontroller application
+:Rcontroller api/v1/api
+:vs Gemfile
+:Rcontroller home
+:Rmodel 
+:Rmodel ro
+:Rmigration create_doorkeeper_tables
 
 # Search String History (newest to oldest):
-?/zone
-?/report
-?/abi_m
-?/templ
-?/button
-?/board_recor
-?/running_flow
-?/plasmid
-?/has_many :board_
+?/fake
+?/api
+?/atomic
 ?/scope
-? \<can_go_back\>
+?/uncomp
+?/upl
+?/auto
+?/whin
+?/mass
+?/whi
+?/role
+?/roles
+?/haml
+?/carr
+?/cancan
+? \<mass_assignment_sanitizer\>
+?/eager
+?/asset
+?/users
+?/entry
+?/coffee
+?/rescue_
+? \<key2sym\>
+?/departments
+?/m
+?/jquery
+?/user_id
+?/whiny
+?/whitelist
+?/simple_form
+?/superwf
+?/render
+? \<render\>
+?/flows
+?/procedures
 ?/procedure
-?/has_one
-?/def 
-?/def flow
-?/sample_boards
-?/sample_procedures
-?/fe
-?/sample_procedure
-?/flow
-?/def scope
-?/abi_machine
-??\Vprocedure_id:\_s\+4
-? \<has_samples_running\>
-?/precheck
-?/reaction_f
-?/reaction_fl
-?/reaction_procedure
-?/reaction_file?
-?/reaction_
-?/reaction_flows
-?/reaction_head
-?/sample_head
-?/precheck?
-?/sample_flows
-?/after
-?/sample_flow
-?/proce
-?/fs
-?/sample_heads
-?/sample_flo
-? \<estimate_reaction_file_at\>
-?/params
-?/typeset!
-?/typesetting
-?/redo
-?/untypesetted
-?/typesetted
-?/reaction_typesetted
-?/sample_type
+?/order_mai
+?/menus
+? \<haml\>
+???k3kkkkkYGpwwwwwwwwwwwC
+?/devise
+?/head
+?/ori
+?/resource
+??\V重摇
+?/samples
+?/confirm_
+?/select
+?/transfer
+?/dialog
 
 # Expression History (newest to oldest):
 
@@ -128,73 +128,38 @@ $client
 
 # 寄存器:
 "0	LINE	0
-	    config.time_zone = 'Beijing'
+	    board_records.joins(:procedure).where('procedures.name = "abi_record"').first
 "1	LINE	0
-	        created_date: 生成日期
-	        checkout_number: 对账单号
-	        money: 金额
-	        status: 状态
-	        checkout_orders: 对账关联订单
-	  checkouts:
-	    orders:
-	      count: 当前搜索条件下订单数为%{order_count}，反应总数为%{reaction_count}。
-	      notice: 如果没有输入搜索条件，当前页面将默认显示超过一个月没有结账的订单。
-	    status:
-	      new_created: 新生成
-	      running: 未完成
-	      finished: 完结
-	    flow:
-	      checkout_sign: 签收对账单
-	      invoice: 开发票
-	      invoice_sign: 签收发票
-	      get_payment: 回款
-	      bad_debt: 坏账
-	    error:
-	      only_new_created_can_destroy: 只有刚生成的对账单可以删除。
-	    export:
-	      order_client: 日期区间内客户与订单信息
-	      view_chargeable_count: 查看收费、已开票或已回款反应数
-	      view_new_reaction_count: 查看送样反应数
-	      export_client: 时间段内客户与订单信息
-	      export_new_client: 导出时间段内新客户
-	      new_client_notice: 新客户即在该时间段内生成其第一笔订单，在该时间区间之前没有生成过订单的客户。
-	      new_count: 新送样品数%{sample_count}，反应数%{reaction_count}（只统计样品板头不为返工的数量）
-	      need_data: 必须输入订单日期区间
-	      chargeable_count_result: 总收费反应数%{total_chargeable_count}，已开票未回款收费反应数%{invoice_chargeable_count}，已回款收费反应数%{get_payment_chargeable_count}，未开票收费反应数%{before_invoice_chargeable_count}
+	  }
 "2	LINE	0
-	        producer: 制造商
-	        resistance: 抗性
-	        copy_number: 拷贝数
-	        length: 长度
-	        forward_primers: 正向引物
-	        reverse_primers: 反向引物
+	
+	  # Log the query plan for queries taking more than this (works
+	  # with SQLite, MySQL, and PostgreSQL)
+	  config.active_record.auto_explain_threshold_in_seconds = 0.5
 "3	LINE	0
-	#I18n.default_locale = :cn
-	LANGUAGES = [
-	  ['English', 'en'],
-	  ['中文', 'cn']
-	]
+	  # Log the query plan for queries taking more than this (works
+	  # with SQLite, MySQL, and PostgreSQL)
 "4	LINE	0
-	# coding: utf-8
+	  # config.active_record.auto_explain_threshold_in_seconds = 0.5
 "5	LINE	0
-	        producer: 制造商
-	        resistance: 抗性
-	        copy_number: 拷贝数
-	        length: 长度
-	        forward_primers: 正向引物
-	        reverse_primers: 反向引物
+	  # Raise exception on mass assignment protection for Active Record models
+	  config.active_record.mass_assignment_sanitizer = :strict
 "6	LINE	0
-	- @sample_board = @electrophoresis.sample_board
+	  # Log error messages when you accidentally call methods on nil
+	  config.whiny_nils = true
+	
 "7	LINE	0
-	%table
+	  # Raise exception on mass assignment protection for Active Record models
+	  config.active_record.mass_assignment_sanitizer = :strict
+	
 "8	LINE	0
-	          self.go_back!
-	        end
+	
+	  # Raise exception on mass assignment protection for Active Record models
+	  config.active_record.mass_assignment_sanitizer = :strict
 "9	LINE	0
-	        prev_flow = self.running_flow(:prev)
-	        if prev_flow
-	          self.update_attribute :flow_id, prev_flow.id
-	        else
+	
+	  # Log error messages when you accidentally call methods on nil.
+	  config.whiny_nils = true
 "b	BLOCK	23
 	 NOT NULL AUTO_INCREMENT
 "c	CHAR	0
@@ -206,8 +171,8 @@ $client
 	378
 <""""i""iquadrantoreaction_board_id = _this.a??kbparn??kbent().attr()i""re??kb??kbireaction_board_I??kbid??k3kkkkkYGpwwwwwwwwwwwCbbbbddkkkkkkkYjVkyjGpzzjwwwwwwwwvf]sp[??kb??kb[]i""hireaction_board=??kb_id=lli  i++i  ireaction_board_idllllla[]iquadrna??kb??kbant=""i  i++i  iquadrant??k3??k3??k3??k3??k3????,????.??k3??k3??k3??k3??k3??k3??k3????,????.veee
 "k	CHAR	0
-	2789
-<jh:Rsp	 mo	sample/comlet??kb??kb??kbplete!jjjjjjjjkkekkkkoprecheck = o??kbdouble()iprecheck'xbi:oprecheck.stub()ipassed: true??k3zzjjjkkojjjjjkkwkkkkkkjI@#??kbjjjjjkkkko@s.stub()iprecheck: @precheckjjjjjkzzbo@s.passed.should be_niljjbo@s.passed.should eq()i@precheck.passedo@s.ddjjjjjwjjzzo@s.passed.should be_nilkkkkkkkkkkkkkk??k3bbbb??齃??齃??齃??齃gthjjjjkzzjjkkkkkkkkkkkkkkkkkjjjjjjjjjjjjjjjjjjk%%kwzzkkwwwcacwvalidatebcwvalid???k3lhjjj%%kwoit '' doendkllitypesetted?biif ela can not be dewt??kb??kbstroyedljjzzkkkkkkkjjbjjkCcomplete!kVkdjjjjjgthkjlkkkkkkkkkkkjjjjkkkoreturn false unless p??kbself.precheckbbbbcwifbbbveeebhxjjjoendkVkk>??k3jjjjjjjjjjjbgtebzhjjjhjjjjkkkouVjdkkkkkkkwO@p.sam;pl??kb??kb??kble.shoulsample.should_re()i:complete!jjjjjjoit '' doendklliif typesetted?zza ??kb, can not be destroyedlkkkkkwwwwww@##nnnnnho@p.sample.typesetted?lbbvelxnnbbvexxnn/delegateeeea, :typesetted???k3hbcistub :A = ??kb> truelnkkkwwwww#ho@p.savekddpo@p.s??kbdestroyo@p.should_not be_destroyedjzzoit '' doendklllhiafter destroy ,??kb??kb, sample should e??kbunl??kbcop??kbmplete!o@p.saveo@p.det??kbstt??kbroyko@p.sample.typesestub t??kb:typesetted? => falsejozz??kb??kbddzzkwO@p.sample.should_rec :uncom!??k3ljjjjzzjjjzzbzzjjkzzhjjjddjk%%ocontext '' doendkwatest scopeszzobefor ??kbe :each doendko@p.savezzjoit '' doendklliwhen passed, ??kb??kbzzo@??kb::Precheck.passed.should be_inc??kbn??kbl()i@pko@p.s??kbpassed.should be_truejzzo::Precheck.unpassed.should_no be_inc??kb()i@pjzzoit' ' ??kb??kb??kb??kb '' doendklliwhen unpassedo@p.precheck_code.stub()i:passed: ??kb??kb:bhxela falsas??kbezzo@p.s??kbddkwkonew_recor??kb??kb??kb??kb??kbcode = create_precheck_code passed: falsejbbbbbbbCupdate_attribute precheck-cod??kb_code_id: new_code.ido@p.validatelkkkkkkkkkkkkkkkkkkkkhkeasjljjjjjjzzjjjjzzhbcwpassed.should be_falseokkkukkkkkkVkdujjjjjjjpjfuvlxkP??k3ljjjjzzhzzGoukoit '' doendkllitest show methodzzo@p.show ??kb.should eq()lkwvf"yhPbbbbbbbbbcw@pwwwww.??k3ljjjzzjwwcwcode??k3??k3??k3??k3hjoit '' doendklliself.test to_s methodo@p.to_s.should eq()i@p.codde??kb??kbe??k3ljjjggGkkkkjjwkkkkggkjk:Rmo	 hea	h:Rsp	 sp	msp	mmo	heheat	jjjwCbefore :each doendko::@h = ::Fac.cu??kb??kbbuild :heat_cy, reaction_board_id: reactcreate_reaction_board.id??k3:Rfix	 heat	jjjwocreate??kbor_id `??kb12??kboremark ''irrrrr??k3lhoquadrant ''ixxxx??k3ljjjjjjjjjjjjkkwh:Rmi	 create_heat	joit '' doendkllihas theset ??kb??kb attributes can mass-assign??k3lgghkkoit'' ??kb??kb??kb '' doendklliis boardo::Heat.??kb::BOar??kb??kb.should be_true??k3jjjjzzkotest_an??kb ::HeatC??kb, []ljjwwwbv$hyhP??k3zzjjk
+	266
+<jkkjbvVkkkdjwVjjjjjjjdVkkkd�k3l:e c	r	/abi_re�kb�kb�kbm�kb_machinesabi_nddnnddddbblD�k3�k3�k3jdd�k3jjjjjjjjjjjjjjkkkkkkjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjh:Rdcon	 orders:Rcon	 orders/max_numbernkkkkkkkkkkkkkjhlgg:Rvi	 checkouts	_go	
 "l	CHAR	0
 	lD�k3�k3�k3�k3�k3�k3gkjkjgtlgt:Rmo	 blas	:vs ap	mo	sam	/before_sam�kbvenzzjjjjkkkwjlkkkkkkkkkjjkkYhp�k3�k3�k3kwwwwwwwwllajkddkpuPjjoendkVk>�k3:Rmi cRmi	 creatrecreate_se	:Rmi	 	w
 "p	LINE	0
@@ -244,137 +209,135 @@ $client
 	594
 <,hi,llxxepwxxxsuuf}xexepwxxxwewwxepwxxxwwllDjjwwxxewbea_tagea, params[]iswwxepwxxxwwwwwwxepwxxxwwxepwxxxjjkkjjj^wxxea_g??kbtagwwwwwxepwxxx??k3????,????.xepwxxxjjkwwwwwwwwwxepwxxxwwwwwwxepwxxxwwxepwxxxwjbbbbbbbbxepwxxx??k3??k3????,????.:Rvi	 quality_co	_ta	jkVjdljkggjjkwpVj>.jwveehxwwr xu$xbbbbbbbxepwxxx??k3hdd??k3l:Rvi	 ????,????.??齃??齂??齃????,????.????,????.$ibcwtruebbbbbwi, params[]i:result??k3:Rmo	 qual	Gkgg:_c	Gkwkkkwji#??k3??k3??k3??k3u??k3h:Rcon	 qua	jjjjjjjjjjjjjjjjjjjjjjjjjjjj:??kb??kb??kby_co	a, :desc??k3l:Rmo	 sample_he	G/searchgg:R
 "v	CHAR	0
-	471
-<jkV%>wveesself??k3??齂??齂??齂??齃??齃??齂??齃??齃????,????-????-????-????-????-????-????-????-????-????.sselfwwwwblveesself??k3gt:gtjjV%ddd??k3hjjbbbbluuwC????,????.????,????.bcwbcwc??kbmoduleA F??kb??kbFac??k3hjjjjjjbbbbveelx??k3??k3??k3??k3??k3????,????.cw::Filewwww.??k3????,????.xkjjI#??k3kY:Rfix	 hr??kbtcon	jjjjj:Rfix 	htRfix	 ht_smaple-re	??kb??kb??kb_r	:??kb??kb??kb??kb??kb??kb??kbamp		jkpdkddljjV%ddd??k3h??k3jjl??k3h
+	473
+<jkV%>wveesself??k3??齂??齂??齂??齃??齃??齂??齃??齃????,????-????-????-????-????-????-????-????-????-????.sselfwwwwblveesself??k3gt:gtjjV%ddd??k3hjjbbbbluuwC????,????.????,????.bcwbcwc??kbmoduleA F??kb??kbFac??k3hjjjjjjbbbbveelx??k3??k3??k3??k3??k3????,????.cw::Filewwww.??k3????,????.xkjjI#??k3kY:Rfix	 hr??kbtcon	jjjjj:Rfix 	htRfix	 ht_smaple-re	??kb??kb??kb_r	:??kb??kb??kb??kb??kb??kb??kbamp		jkpdkddljjV%ddd??k3h??k3jjl??k3h
 "w	CHAR	0
 	537
 <V%yjwpjjkw$bbCnil??k3jVkkd??k3lbbbbwveeesif: ::Proc.new{}i|r| r.reaction_board && r.buuuuuhCtrue??k3??k3??k3??k3??k3??k3??k3??k3??k3??k3??k3??k3??k3hu??k3????,????.:Rmo	 heat	h:Rsp	 mo	heat	ljjwhjjwjjjjjjjkkjjjzzljjjjkzzhjjjjjjjjjjjjjjjjjljjjjkjzzhljwwwwCquadran: true??k3??k3??k3??k3hjjjjjjjjkkkwwwwwwllwwC7??k3h:Rmi	 heat	k$hC7??k3:Rfix	 heat	jjjjjjwwwwbcw1,2,3,4??k3??k2??k3??k3??k3:Rmi	 alc	jjjjkkkkklkjh:Rmi	 alc	jjkkl:Rmo	 alc	h:Rsp	 mo	aalc	lggjjwhjjjjjjjjwzzkkkkkjjjjjjjjjzzjjzz
+"x	CHAR	0
+	s
 ""-	CHAR	0
-	]
+	 
 
 # 全局变量:
 
 # 文件标记:
-'0  4  0  /var/www/superwf/app/views/roles/_search.html.haml
-'1  1  0  /var/www/superwf/app/views/roles/index.
-'2  1  0  /var/www/superwf/config/locales/roles.cn.yml
-'3  1  0  /var/www/superwf/app/views/scaffolds/_pagination.html.haml
-'4  8  6  /var/www/superwf/lib/superwf/recordor/creator.rb
-'5  15  0  /var/www/superwf/lib/superwf.rb
-'6  1  0  /var/www/superwf/lib/superwf/recordor.rb
-'7  3  2  /var/www/sino_project/app/views/invoices/_table.html.haml
-'8  6  6  /var/www/lims/config/locales/checkout_records.cn.yml
-'9  1  0  /var/www/lims/app/views/qualities/update.js.erb
+'0  1  0  /var/www/client_base/app/views/clients/_search.html.haml
+'1  4  45  /var/www/client_base/app/views/clients/index.html.slim
+'2  1  0  /var/www/client_base/app/views/layouts/_messages.html.haml
+'3  15  0  /var/www/lims/app/controllers/api/v1/reactions_controller.rb
+'4  35  25  /var/www/superwf/lib/superwf/simple_form.rb
+'5  7  0  /var/www/lims_upload/lib/tasks/upload.rake
+'6  1  2  /var/www/lims_upload/lib/tasks/upload.rake
+'7  8  2  /var/www/lims_upload/config/environments/production.rb
+'8  3  9  /var/www/lims_upload/Gemfile
+'9  25  16  /var/www/superwf/config/deploy.rb
 
 # 跳转列表 (从新到旧):
--'  4  0  /var/www/superwf/app/views/roles/_search.html.haml
--'  1  0  /var/www/superwf/app/views/roles/index.html.haml
--'  1  0  /var/www/superwf/app/views/roles/index.
--'  1  0  /var/www/superwf/config/locales/roles.cn.yml
--'  1  0  /var/www/superwf/config/locales/permissions.cn.yml
--'  1  0  /var/www/superwf/app/views/scaffolds/_pagination.html.haml
--'  8  6  /var/www/superwf/lib/superwf/recordor/creator.rb
--'  1  0  /var/www/superwf/lib/superwf/recordor/creator.rb
--'  15  0  /var/www/superwf/lib/superwf.rb
--'  1  0  /var/www/superwf/lib/superwf.rb
--'  1  0  /var/www/superwf/lib/superwf/recordor.rb
--'  54  4  /var/www/superwf/lib/superwf/recordor.rb
--'  3  2  /var/www/sino_project/app/views/invoices/_table.html.haml
--'  2  0  /var/www/sino_project/app/views/invoices/index.html.haml
--'  1  0  /var/www/sino_project/Capfile
--'  1  0  /var/www/sino_project/app/views/invoices/mine.html.haml
--'  6  6  /var/www/lims/config/locales/checkout_records.cn.yml
--'  7  20  /var/www/lims/config/locales/checkout_records.cn.yml
--'  4  23  /var/www/lims/config/locales/checkout_records.cn.yml
--'  1  0  /var/www/lims/config/locales/checkout_records.cn.yml
--'  1  0  /var/www/lims/app/views/qualities/update.js.erb
--'  1  0  /var/www/lims/app/views/reactions/update.js.erb
--'  18  49  /var/www/sino_project/config/application.rb
--'  48  15  /var/www/sino_project/config/application.rb
--'  17  16  /var/www/sino_project/config/application.rb
--'  50  18  /var/www/sino_project/config/application.rb
--'  77  0  /var/www/sino_project/Gemfile
--'  79  0  /var/www/sino_project/Gemfile
--'  1  0  /var/www/sino_project/Gemfile
--'  1  0  /var/www/sino_project/config/application.rb
--'  1  0  /var/www/sino_project/config/routes.rb
--'  3  69  /var/www/sino_project/app/views/reports/_show_button.html.haml
--'  2  0  /var/www/sino_project/app/views/reports/_button.html.haml
--'  67  14  /var/www/sino_project/app/views/projects/conv.html.haml
--'  49  10  /var/www/sino_project/app/views/projects/conv.html.haml
--'  1  0  /var/www/sino_project/app/views/projects/conv.html.haml
--'  73  0  /var/www/lims_upload/lib/tasks/upload.rake
--'  20  7  /var/www/lims_upload/lib/tasks/upload.rake
--'  1  43  /var/www/lims_upload/lib/tasks/upload.rake
--'  10  0  /var/www/lims_upload/app/models/reaction_file.rb
+-'  1  0  /var/www/client_base/app/views/clients/_search.html.haml
+-'  4  45  /var/www/client_base/app/views/clients/index.html.slim
+-'  1  0  /var/www/client_base/app/views/clients/index.html.slim
+-'  1  0  /var/www/client_base/app/views/layouts/_messages.html.haml
+-'  15  0  /var/www/lims/app/controllers/api/v1/reactions_controller.rb
+-'  7  8  /var/www/lims/Capfile
+-'  82  6  /var/www/lims/app/controllers/reactions_controller.rb
+-'  1  0  /var/www/lims/app/controllers/reactions_controller.rb
+-'  8  4  /var/www/lims/app/controllers/api/v1/reactions_controller.rb
+-'  17  4  /var/www/lims/app/controllers/api/v1/reaction_boards_controller.rb
+-'  1  0  /var/www/lims/config/routes.rb
+-'  36  14  /var/www/lims/config/routes.rb
+-'  32  13  /var/www/lims/config/routes.rb
+-'  39  6  /var/www/lims/config/routes.rb
+-'  12  38  /var/www/lims/app/controllers/api/v1/reactions_controller.rb
+-'  9  8  /var/www/lims/app/models/reaction_board.rb
+-'  108  2  /var/www/lims/app/models/reaction_board.rb
+-'  23  23  /var/www/lims/Gemfile
+-'  30  11  /var/www/lims/Gemfile
+-'  35  25  /var/www/superwf/lib/superwf/simple_form.rb
+-'  2  0  /var/www/superwf/lib/superwf/simple_form.rb
+-'  1  0  /var/www/superwf/lib/superwf/simple_form.rb
+-'  20  8  /var/www/superwf/lib/superwf/simple_form.rb
+-'  7  0  /var/www/lims_upload/lib/tasks/upload.rake
+-'  32  2  /var/www/lims_upload/config/environments/test.rb
+-'  21  0  /var/www/lims_upload/config/environments/development.rb
+-'  28  2  /var/www/lims_upload/config/environments/development.rb
+-'  64  2  /var/www/lims_upload/config/environments/production.rb
+-'  8  2  /var/www/lims_upload/config/environments/production.rb
+-'  2  20  /var/www/lims_upload/app/models/reaction_file.rb
+-'  2  20  /var/www/lims_upload/app/models/reaction_board.rb
 -'  1  0  /var/www/lims_upload/app/models/reaction_file.rb
--'  1  0  /var/www/superwf/app/views/scaffolds/index.js.erb
--'  7  19  /var/www/lims/config/locales/board_records.cn.yml
--'  8  14  /var/www/lims/config/locales/board_records.cn.yml
--'  1  0  /var/www/lims/config/locales/board_records.cn.yml
--'  11  25  /var/www/lims/app/views/samples/_form.html.haml
--'  1  0  /var/www/lims/app/views/samples/_form.html.haml
--'  8  8  /var/www/lims/app/views/orders/_form.html.haml
--'  1  0  /var/www/lims/app/views/orders/_form.html.haml
--'  49  0  /var/www/superwf/app/models/user.rb
--'  1  0  /var/www/superwf/app/models/user.rb
--'  1  0  /var/www/superwf/config/initializers/i18n.rb
--'  7  8  /var/www/lims/config/locales/attachments.cn.yml
--'  8  16  /var/www/lims/config/locales/attachments.cn.yml
--'  1  0  /var/www/lims/config/locales/attachments.cn.yml
--'  133  12  /var/www/lims/app/models/sample_board.rb
--'  181  25  /var/www/lims/app/models/sample_board.rb
--'  149  4  /var/www/lims/app/models/sample_board.rb
--'  7  58  /var/www/lims/db/migrate/20130815012513_create_board_records.rb
--'  33  11  /var/www/lims/app/models/sample.rb
--'  6  69  /var/www/lims/app/models/sample.rb
--'  84  59  /var/www/lims/app/models/sample.rb
--'  6  19  /var/www/lims/db/migrate/20130815012513_create_board_records.rb
--'  75  4  /var/www/lims/app/models/sample.rb
--'  42  32  /var/www/lims/app/models/sample.rb
--'  1  0  /var/www/lims/app/models/sample.rb
--'  94  4  /var/www/lims/app/models/sample.rb
--'  40  4  /var/www/lims/app/models/sample_head.rb
--'  7  2  /var/www/lims/app/controllers/sample_boards_controller.rb
--'  37  0  /var/www/lims/app/models/sample_head.rb
--'  23  4  /var/www/lims/app/models/client.rb
--'  6  37  /var/www/lims/app/models/board_record.rb
--'  41  57  /var/www/lims/app/models/sample_head.rb
--'  33  2  /var/www/lims/app/models/sample_head.rb
--'  1  0  /var/www/lims/app/views/procedures/_table.html.haml
--'  13  4  /var/www/lims/app/models/procedure.rb
--'  12  46  /var/www/lims/app/views/procedures/_table.html.haml
--'  15  60  /var/www/lims/app/views/procedures/_table.html.haml
--'  12  2  /var/www/lims/db/migrate/20130815053214_create_procedures.rb
--'  7  6  /var/www/lims/db/migrate/20130815053214_create_procedures.rb
--'  9  17  /var/www/lims/config/locales/procedures.cn.yml
--'  2  0  /var/www/lims/app/controllers/sample_procedures_controller.rb
--'  6  25  /var/www/lims/app/views/flows/_form.html.haml
--'  5  5  /var/www/lims/app/controllers/flows_controller.rb
--'  2  19  /var/www/lims/app/controllers/flows_controller.rb
--'  4  16  /var/www/lims/app/views/flows/_form.html.haml
--'  2  21  /var/www/lims/app/views/flows/_form.html.haml
--'  2  41  /var/www/lims/app/views/flows/_tr.html.haml
--'  3  54  /var/www/lims/app/views/flows/_tr.html.haml
--'  5  29  /var/www/lims/app/views/flows/_table.html.haml
--'  9  29  /var/www/lims/app/views/flows/_table.html.haml
--'  1  17  /var/www/lims/app/views/flows/new.js.erb
--'  1  0  /var/www/lims/app/views/flows/new.html.haml
--'  2  31  /var/www/lims/app/views/flows/destroy.js.erb
--'  1  7  /var/www/lims/app/views/flows/destroy.js.erb
--'  4  19  /var/www/lims/app/views/flows/create.js.erb
--'  3  6  /var/www/lims/app/views/flows/create.js.erb
--'  2  53  /var/www/lims/app/views/flows/create.js.erb
--'  1  7  /var/www/lims/app/views/flows/create.js.erb
+-'  6  9  /var/www/lims_upload/Gemfile
+-'  3  9  /var/www/lims_upload/Gemfile
+-'  5  0  /var/www/lims_upload/Rakefile
+-'  1  0  /var/www/lims_upload/Rakefile
+-'  1  2  /var/www/lims_upload/lib/tasks/upload.rake
+-'  55  2  /var/www/lims_upload/config/environments/production.rb
+-'  1  0  /var/www/lims_upload/config/environments/production.rb
+-'  1  0  /var/www/lims_upload/config/environments/development.rb
+-'  33  0  /var/www/lims_upload/config/environments/test.rb
+-'  14  0  /var/www/lims_upload/config/environments/test.rb
+-'  13  0  /var/www/lims_upload/config/environments/test.rb
+-'  1  0  /var/www/lims_upload/config/environments/test.rb
+-'  9  0  /var/www/lims_upload/config/environments/development.rb
+-'  1  0  /var/www/lims_upload/Gemfile
+-'  25  16  /var/www/superwf/config/deploy.rb
+-'  4  0  /var/www/superwf/deploy.rb
+-'  15  22  /var/www/superwf/config/deploy.rb
+-'  1  0  /var/www/superwf/config/deploy.rb
+-'  6  57  /var/www/superwf/Capfile
+-'  4  12  /var/www/superwf/Capfile
+-'  1  0  /var/www/superwf/Capfile
+-'  1  0  /var/www/lims/Capfile
+-'  120  4  /var/www/lims/config/routes.rb
+-'  47  0  /var/www/user_passport/config/initializers/doorkeeper.rb
+-'  1  0  /var/www/user_passport/config/initializers/doorkeeper.rb
+-'  1  0  /var/www/sino_passport/config/application.rb
+-'  1  0  /var/www/sino_passport/config/environments/production.rb
+-'  69  0  /var/www/sino_passport/config/environments/production.rb
+-'  48  29  /var/www/sino_passport/config/environments/production.rb
+-'  78  4  /var/www/sino_passport/config/application.rb
+-'  77  0  /var/www/sino_passport/config/application.rb
+-'  11  2  /var/www/sino_passport/config/environments/production.rb
+-'  8  2  /var/www/sino_passport/config/environments/production.rb
+-'  4  2  /var/www/sino_passport/config/environments/test.rb
+-'  1  0  /var/www/sino_passport/config/environments/test.rb
+-'  4  0  /var/www/sino_passport/config/environments/production.rb
+-'  13  6  /var/www/client_base/Gemfile
+-'  1  0  /var/www/client_base/Capfile
+-'  2  0  /var/www/client_base/app/views/home/index.html.haml
+-'  4  2  /var/www/client_base/app/controllers/application_controller.rb
+-'  1  0  /var/www/client_base/app/controllers/api/v1/api_controller.rb
+-'  35  15  /var/www/client_base/Gemfile
+-'  2  32  /var/www/client_base/app/controllers/home_controller.rb
+-'  1  0  /var/www/client_base/app/controllers/home_controller.rb
+-'  1  0  /var/www/client_base/db/migrate/20120730061438_create_doorkeeper_tables.rb
+-'  15  6  /var/www/client_base/db/migrate/20120730061438_create_doorkeeper_tables.rb
+-'  4  36  /var/www/client_base/db/migrate/20120730061438_create_doorkeeper_tables.rb
+-'  38  36  /var/www/client_base/db/migrate/20120730061438_create_doorkeeper_tables.rb
+-'  29  6  /var/www/client_base/db/migrate/20120730061438_create_doorkeeper_tables.rb
+-'  18  4  /var/www/client_base/spec/fixtures/menus.yml.erb
+-'  17  2  /var/www/client_base/spec/fixtures/menus.yml.erb
+-'  1  0  /var/www/client_base/spec/fixtures/menus.yml.erb
+-'  8  2  /var/www/client_base/config/initializers/devise.rb
+-'  10  78  /var/www/client_base/config/initializers/devise.rb
+-'  2  0  /var/www/client_base/config/initializers/devise.rb
+-'  30  2  /var/www/client_base/config/initializers/devise.rb
+-'  256  4  /var/www/client_base/config/initializers/devise.rb
+-'  255  2  /var/www/client_base/config/initializers/devise.rb
+-'  35  0  /var/www/client_base/config/initializers/devise.rb
+-'  3  87  /var/www/client_base/config/initializers/devise.rb
+-'  13  2  /var/www/client_base/config/initializers/devise.rb
+-'  1  0  /var/www/client_base/config/initializers/doorkeeper.rb
+-'  37  2  /var/www/client_base/config/initializers/doorkeeper.rb
+-'  44  0  /var/www/client_base/config/initializers/doorkeeper.rb
+-'  2  2  /var/www/client_base/app/models/remote_user.rb
+-'  46  0  /var/www/client_base/config/initializers/doorkeeper.rb
+-'  9  4  /var/www/client_base/config/initializers/doorkeeper.rb
 
 # 缓冲区列表:
-%/var/www/superwf/app/views/roles/index.html.haml	1	0
-%/var/www/superwf/app/views/roles/_search.html.haml	4	0
+%/var/www/client_base/app/views/clients/_search.html.haml	1	0
 
 # 文件内的标记历史记录 (从新到旧):
 
-> /var/www/superwf/app/views/roles/index.html.haml
+> /var/www/client_base/app/views/clients/_search.html.haml
 	"	1	0
-
-> /var/www/superwf/app/views/roles/_search.html.haml
-	"	4	0

@@ -47,8 +47,11 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +0 app/models/role.rb
-args app/models/role.rb
+badd +1 app/models/user_passport/role.rb
+badd +4 app/controllers/roles_controller.rb
+badd +19 app/models/role.rb
+badd +0 app/models/user_passport/api_config.rb
+args app/models/user_passport/role.rb
 edit app/models/role.rb
 set splitbelow splitright
 set nosplitbelow
@@ -89,7 +92,7 @@ setlocal cryptmethod=
 setlocal nocursorbind
 setlocal nocursorcolumn
 setlocal nocursorline
-setlocal define=
+setlocal define=^\\s*#\\s*define
 setlocal dictionary=
 setlocal nodiff
 setlocal equalprg=
@@ -168,12 +171,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 19 - ((13 * winheight(0) + 7) / 14)
+let s:l = 1 - ((0 * winheight(0) + 8) / 17)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-19
-normal! 02l
+1
+normal! 0
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf

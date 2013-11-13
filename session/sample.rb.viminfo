@@ -8,117 +8,117 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/loading
+~MSle0~/search
 
 # Last Substitute Search Pattern:
-~MSle0&sample
+~MSle0&plasmid_code
 
 # Last Substitute String:
-$blast_cache
+$
 
 # Command Line History (newest to oldest):
 :q
-:Rmodel order
-:vsplit Gemfile
+:Rmodel client
+:Rmodel reaction
+:vsplit Capfile
 :Rmodel sample
-:e emserver.rb
-:Rmigration create_vectors
-:Rlocale vectors.cn.yml
-:vs Gemfile
-:Rview samples/_search.html.haml
-:Rmodel samples
-:Rcontroller api/v1/blast_caches
-:Rcontroller blast_caches
+:Rmigration create_abi_machines
+:Rmodel order
+:Rcontroller api/v1/companies
+:Rcontroller api/v1/clients
 :e config/routes.rb
-:Rcontroller api/v1/exists
-:Rlocale samples.cn.yml
-:e libew
-:Rjavascript samples
-:vs emserver.rb
-:Rjavascript superwf
-:R
-:Rstylesheet samples
-:Rstylesheet sample_boards
-:Rlayout application.html.haml
-:Rlayout _flash.html.haml
-:Rview samples/index.html.haml
-:Rmigration create_samples
-:Rjavascript s
-:e config/application.rb
-:Rjavascript application
-:e Gemfile
-:tabedit 
-:Rjavascript sample_boards
-:Rcontroller application
-:Rcontroller application\
-:Rview index.html.haml
-:Rview _fetch.html.haml
-:Rview _table.html.haml
-:Rcontroller samples
-:tabedit Gemfile
-:Rview samples/
-:vs config/application.rb
-:Rview samples/_fetch.html.haml
-:Rview samples/fetch_ncbi.js.erb
-:vs
-:Rview samples/index.js.erb
+:Rview orders/_table.html.slim
+:Rview primers/_table.html.slim
+:Rview board_records/_form.html.slim
+:Rview orders/_insert_sample_primer.html.slim
+:Rview new.html.slim
+:Rview _insert_sample_primer.html.slim
+:Rview _form.html.slim
+:Rview orders/new.html.slim
+:pwd
+:Rja
+:e lib/clinic_report.rb
+:Rmodel pdf
+:Rcontroller pdfs
+:Rvi
+:Rview pdfs/select_pdf.html.haml
+:vsplit Gemfile
+:Rview clinic.html.haml
+:'<,'>!
+:vsplit operator.php
+:!q
 :Rview 
-:Rview samples/_form.html.haml
-:l
-:e public/wb.html
-:e lib/ncbi.rb
+:Rview projects/_form.html.haml
+:Rlocale projects.cn.yml
+:Rmodel project
+:vsplit Gemfile.lock
+:Rlocale clients.cn.yml
+:Rlocale primers.cn.yml
+:Rmigration create_primers
+:Rmigration create_orders
+:Rhelper orders
+:Rmigration create_prices
+:Rmigration create_checkout_orders
+:Rmigration create_client_prices
+:Rmodel primer
+:Rcontroller companies
+:Rmodel company
+:Rcontroller 
+:Rcontroller clients
+:e config/application.rb
+:e ../sino_sequencing/db/migrate/20130108084604_create_modification_logs.rb
 
 # Search String History (newest to oldest):
-?/loading
 ?/search
-?/api
-?/I1
-??e
-?/retry times
-?/ws
-? \<data\>
-?/eval
-? \<ws_err\>
-?/alert
-?/log
-? \<if\>
-?/flash
-?/gl
-? \<fetch_species\>
-?/float
-?/full
-?/top.jpg
-?/foot.php
-?/year
-?/nbanhao
-? \<nbanhao\>
-?/2013
-?/test
-?/2012
-?/wait
-?/loop
-?/sample_
-?/vectors
-? \<wait_second\>
-?/NO_
-?/before_save
-?/blast_
-?/Sample
-? sample
-?/sample
-?/samples
-?/dep
-?/dept_
-?/UPDATE
-?/update
-?/Through
-?/Lis
-?/listen
-?/superwf
-?/name=
-?/valid
+?/accept
+?/inverse
+?/status
+?/validate
+?/fields_for
+?/fi
+?/render
+?/re
+?/email
+?/include
+?/stamper
+?/create_clinic
+?/form
+?/user_price
+?/price
+?/dept_id
 ?/action
-?/function check
+?/operation
+?/update
+?/UPDATE
+? \<‰ª∑Ê†º\>
+? \<generate_sn\>
+?/prawn
+? \<user_path\>
+? \<dest_file\>
+? \<@@pdf_label\>
+?/before_create
+?/=>
+?/companies
+?/active
+?/auto
+?/permi
+?/client
+?/producing
+?/Permission
+?/footer
+?/user
+?/as
+?/title
+?/checkout
+?/order
+?/workflow
+?/storage_state
+?/def ne
+?/devise
+? \<Âà∞Ë¥ßÊó∂Èó¥\>
+? \<È™åËØÅÊó∂Èó¥\>
+? \<ÂÆâË£ÖË∞ÉËØïÊÉÖÂÜµ\>
+? \<ÈöèÊú∫Êñá‰ª∂ÁõÆÂΩï\>
 
 # Expression History (newest to oldest):
 
@@ -128,36 +128,36 @@ $blast_cache
 
 # ÂØÑÂ≠òÂô®:
 "0	LINE	0
-	    = text_field_tag :name, params[:name], placeholder: ta(:sample, :name), autofocus: false, class: 'search-query input-small'
+	    # GET
+	    def show
+	      @company = ::Company.find params[:id]
+	      respond_with @company
+	    end
 "1	LINE	0
-	        producer: Âà∂ÈÄ†ÂïÜ
-	        resistance: ÊäóÊÄß
-	        copy_number: Êã∑Ë¥ùÊï∞
-	        length: ÈïøÂ∫¶
-	        forward_primers: Ê≠£ÂêëÂºïÁâ©
-	        reverse_primers: ÂèçÂêëÂºïÁâ©
+	      resources :clients, only: [:index, :show]
 "2	LINE	0
-	        render json: 
+	        = debug @project
 "3	LINE	0
-	      client = ::Client.find_by_email params[:client_email]
-	      if client
-	        result = client.orders.exists?
-	      else
-	        result = false
-	      end
+	        
 "4	LINE	0
-	              #script.gsub!(/\n\s+/, ';')
-	              #script.strip!
+	  ac
 "5	LINE	0
-	#puts ::I18n.t('samples.index.waiting', second: 3)
-"6	LINE	0
-	              puts "submiting"
+	
+"6	BLOCK	4
+	float
+	float
+	float
+	float
 "7	LINE	0
-	              puts "submit use #{time2 - time1} seconds, now is #{Time.now}"
+	    add_index :primers, :client_id
 "8	LINE	0
-	              time1 = Time.now
+	
+	  def save_client
+	    self.client_id = self.order.client_id
+	    true
+	  end
 "9	LINE	0
-	              time2 = Time.now
+	      t.integer :user_id
 "b	BLOCK	23
 	 NOT NULL AUTO_INCREMENT
 "c	CHAR	0
@@ -169,8 +169,8 @@ $blast_cache
 	378
 <""""i""iquadrantoreaction_board_id = _this.a??kbparn??kbent().attr()i""re??kb??kbireaction_board_I??kbid??k3kkkkkYGpwwwwwwwwwwwCbbbbddkkkkkkkYjVkyjGpzzjwwwwwwwwvf]sp[??kb??kb[]i""hireaction_board=??kb_id=lli  i++i  ireaction_board_idllllla[]iquadrna??kb??kbant=""i  i++i  iquadrant??k3??k3??k3??k3??k3????,????.??k3??k3??k3??k3??k3??k3??k3????,????.veee
 "k	CHAR	0
-	2789
-<jh:Rsp	 mo	sample/comlet??kb??kb??kbplete!jjjjjjjjkkekkkkoprecheck = o??kbdouble()iprecheck'xbi:oprecheck.stub()ipassed: true??k3zzjjjkkojjjjjkkwkkkkkkjI@#??kbjjjjjkkkko@s.stub()iprecheck: @precheckjjjjjkzzbo@s.passed.should be_niljjbo@s.passed.should eq()i@precheck.passedo@s.ddjjjjjwjjzzo@s.passed.should be_nilkkkkkkkkkkkkkk??k3bbbb??ÈΩÉ??ÈΩÉ??ÈΩÉ??ÈΩÉgthjjjjkzzjjkkkkkkkkkkkkkkkkkjjjjjjjjjjjjjjjjjjk%%kwzzkkwwwcacwvalidatebcwvalid???k3lhjjj%%kwoit '' doendkllitypesetted?biif ela can not be dewt??kb??kbstroyedljjzzkkkkkkkjjbjjkCcomplete!kVkdjjjjjgthkjlkkkkkkkkkkkjjjjkkkoreturn false unless p??kbself.precheckbbbbcwifbbbveeebhxjjjoendkVkk>??k3jjjjjjjjjjjbgtebzhjjjhjjjjkkkouVjdkkkkkkkwO@p.sam;pl??kb??kb??kble.shoulsample.should_re()i:complete!jjjjjjoit '' doendklliif typesetted?zza ??kb, can not be destroyedlkkkkkwwwwww@##nnnnnho@p.sample.typesetted?lbbvelxnnbbvexxnn/delegateeeea, :typesetted???k3hbcistub :A = ??kb> truelnkkkwwwww#ho@p.savekddpo@p.s??kbdestroyo@p.should_not be_destroyedjzzoit '' doendklllhiafter destroy ,??kb??kb, sample should e??kbunl??kbcop??kbmplete!o@p.saveo@p.det??kbstt??kbroyko@p.sample.typesestub t??kb:typesetted? => falsejozz??kb??kbddzzkwO@p.sample.should_rec :uncom!??k3ljjjjzzjjjzzbzzjjkzzhjjjddjk%%ocontext '' doendkwatest scopeszzobefor ??kbe :each doendko@p.savezzjoit '' doendklliwhen passed, ??kb??kbzzo@??kb::Precheck.passed.should be_inc??kbn??kbl()i@pko@p.s??kbpassed.should be_truejzzo::Precheck.unpassed.should_no be_inc??kb()i@pjzzoit' ' ??kb??kb??kb??kb '' doendklliwhen unpassedo@p.precheck_code.stub()i:passed: ??kb??kb:bhxela falsas??kbezzo@p.s??kbddkwkonew_recor??kb??kb??kb??kb??kbcode = create_precheck_code passed: falsejbbbbbbbCupdate_attribute precheck-cod??kb_code_id: new_code.ido@p.validatelkkkkkkkkkkkkkkkkkkkkhkeasjljjjjjjzzjjjjzzhbcwpassed.should be_falseokkkukkkkkkVkdujjjjjjjpjfuvlxkP??k3ljjjjzzhzzGoukoit '' doendkllitest show methodzzo@p.show ??kb.should eq()lkwvf"yhPbbbbbbbbbcw@pwwwww.??k3ljjjzzjwwcwcode??k3??k3??k3??k3hjoit '' doendklliself.test to_s methodo@p.to_s.should eq()i@p.codde??kb??kbe??k3ljjjggGkkkkjjwkkkkggkjk:Rmo	 hea	h:Rsp	 sp	msp	mmo	heheat	jjjwCbefore :each doendko::@h = ::Fac.cu??kb??kbbuild :heat_cy, reaction_board_id: reactcreate_reaction_board.id??k3:Rfix	 heat	jjjwocreate??kbor_id `??kb12??kboremark ''irrrrr??k3lhoquadrant ''ixxxx??k3ljjjjjjjjjjjjkkwh:Rmi	 create_heat	joit '' doendkllihas theset ??kb??kb attributes can mass-assign??k3lgghkkoit'' ??kb??kb??kb '' doendklliis boardo::Heat.??kb::BOar??kb??kb.should be_true??k3jjjjzzkotest_an??kb ::HeatC??kb, []ljjwwwbv$hyhP??k3zzjjk
+	448
+<oukounless xhr?ujddujddoendk>>osession[]i:referear hla = referer if redererreferer.present?Äk3kkkkkkkkkjjjjodÄkbbefore_action :set_se, only: []i:new, :cÄkbeditÄk3Ä˝,Ä˝.xÄk3Ä˝KÄ˝KÄ˝KÄ˝KÄ˝LÄ˝LÄ˝LÄ˝LÄ˝,Ä˝.xxxxxxxxkkwlllllxxxxxxxxÄk3Äk3Äk3Äk3Äk3Äk3bbbbwjjjjjjjI#Äk3Äk3Äk3Äk3Äk3kkodef newendÄk3kosession[]i:redÄkbfererl:Rvi	 ho	i	hlla = ''hCroot_pathÄk3korender text: 'abc'Äk3bddpwwwCsession[]i:refeerÄkbÄkbrerÄk3Äk5Äk5
 "l	CHAR	0
 	lDÄk3Äk3Äk3Äk3Äk3Äk3gkjkjgtlgt:Rmo	 blas	:vs ap	mo	sam	/before_samÄkbvenzzjjjjkkkwjlkkkkkkkkkjjkkYhpÄk3Äk3Äk3kwwwwwwwwllajkddkpuPjjoendkVk>Äk3:Rmi cRmi	 creatrecreate_se	:Rmi	 	w
 "p	LINE	0
@@ -198,143 +198,187 @@ $blast_cache
 	::::::::::::::::::::::::
 	
 	Â®å‚ÑÉÊπÅÈçñÂΩíÂé§Èê®ÂãÆÂöúÈçî„Ñ•Êá°Êµ†??
-	Â®å‚ÑÉÊπÅÈçñÂΩíÂé§Èê®ÂãÆÂöúÈçî„Ñ•Êá°Êµ†??	
+	1963
+<Â®å‚ÑÉÊπÅÈçñÂΩíÂé§Èê®ÂãÆÂöúÈçî„Ñ•Êá°Êµ†??	PhkkkwVkVjjylPwwwwxxxscreatorÄk3Äk3Äk3Äk3Äk3Äk3jjkkjjkjbcwrecord_typeÄk3jjjjjjjjjjkkkkkkkkkkkkhebe:RmÄkbmo	 sample/sample_cancelnI#Äk3Äk3Äk3Äk3Äk3Äk3Äk3lkjbebjbjjjkebebjjjjllwwwbbbbbbwvestrÄkbextwwwwbveeexÄk3DÄk3h:RMo	 Rmo	 cance	jkobelongs_to :sample, poliÄkby: trueÄk3Äk3Äk3Äk3A, as: :recordÄk3Äk3Äk3Äk3Äk3Äk3xukkkkbukkkkbCuuebvestable_nameÄk3Ä˝,Ä˝.beÄ˝LÄ˝LÄ˝KÄ˝KkluÄk3Äk3Äk3Äk3Äk3Äk3Äk3Ä˝,Ä˝.Ä˝KÄ˝LYpwwwbcwreactionzzo#hÄkb hooksÄkbÄkbbÄkbafter_create doendkoself.record.destroyÄk3:gth:Rcon	 sample_can	jjkjjkl:Rcon	 sÄkbcancel	ukVjjjjdÄk3hV%kkdlphkddlkpwwwbxxxxxxxxsrecord_typewwwwh:Äk3:Rmi	 create_cancel	jjjwlbwwwekoinclude ::Superwf:SÄkb:ScÄkbÄkbRecordor::CreatorÄk3jhjj:Rmi	 create_sample_cancel	jjjkkkYjjjjjpjjkkbeeeeeeela, data:Äkbbi:eexbbA, search: []i:cÄkbcreator_idÄk3bbbbbDjjjjjjjkÄk3h:Rcon	 Rmo	 cancel	jklggjddhPÄk3lÄk3Äk3Äk3Äk3Äk3Äk3h:Rvi	 samples	in	jjbbbbbbbbwllllhhhhvlllllllllllllllldicancel_Äkbed_dataÄk3:e c	r	/cancel_Äkbed/sample_cancelnnnOresources :canceled_datas, only: []i:index, :createÄk3jebebI#Äk3Äk3Äk3Äk3Äk3Äk3Lhjjjjjwl:Rvi	 sample_cance	samples	in	jjkO= hinddÄkbÄkbÄkbdden_field_tag :sampdata_taÄkbypebxxxsrecordA, ''isampleb~Äk3bebebhveebcwrecordwwvees::ÄkbÄkbeval()iparams[]i:record_typeÄk3wwwwvesidkbbwcwidjjbbbvesrecordwwlllllllbveebbescanceled_dataÄk3Äk3Äk3bicreate_Äk3gt:Rmo	 samplejbbbbxwwvllbCcanceled_dataÄk3Äk3Äk3Äk3Äk3gtl:Rmi	 create_scÄkbÄkbcanc	jjkggjjjwhjkeeeeeeeeeeeea, data: record.to_swwbwcwrecordbbhDjjÄk3bbbbljjkkkjjjkhkkeeeeeeebbbbbbbbbirecord:Äkb_id: id, record_type: uÄk3Äk3Äk3Äk3Äk3Ä¸Ä˝,Ä¸Ä˝-Ä¸Ä˝-Ä¸Ä˝-Ä¸Ä˝-Ä¸Ä˝-Ä¸Ä˝.:Rmo	 prepay	ggjjjjjjjjjjjjjjjgg:Rmo	 cancel	jkkkkkkwwwDbbbbbcwrecordjddÄk3Äk3Äk3Äk3Äk3:Rmo	 clientjjkkh:Rmo	 cÄkbsampleggjjjjjwwA, as: :recordÄk3Äk3Äk3lÄ˝,Ä˝.Ä˝,Ä˝.Ä˝,Ä˝.Ä˝KÄ˝K:Rmo	 sÄkbcancel	
 "q	CHAR	0
-	2631
-<auence??k3??kul:Rlhggl:Rlo	 primernto??kb??kboti	kkkkkex??k3??k3??k3??k3??k3??k3??k3????,????.??ÈΩÉ??ÈΩÉ????,????.????,????.a{}iborder: 1??k3????,????.??ÈΩÇ??ÈΩÇ????,????.x??k3??k3??k3??k3????,????.????,????.????,????.veeesstyle: ''iborder: 1px, ??kb??kb sok??kblid;??k3??ÈΩÉ??ÈΩÇ??ÈΩÇ????,????.??ÈΩÉ????,????.??ÈΩÉ??ÈΩÉ??ÈΩÉ????,????.????,????.??ÈΩÉ??ÈΩÉ??ÈΩÇ????,????.????,????.????,????.???? ????,???? ????.????,????.????,????.????,????.???? ????,???? ????.????,????.???? ????,???? ????.????,????.???? ????,???? ????.????,????.??ÈΩÇ????,????.:Rlo	 pi??kbrimers	ggjjjjjjjjjjjwkwhkkkkkkj$bbcwcreated_datejjjjjjjkjjbbbCcreated_date??k3jjjjjjkYjjkkhjjjljjjjjjjjjjjkkkkkkkkkkkkkkkkkkkkkkkkkkkGh??ÈΩÇ??ÈΩÇ??ÈΩÇ??ÈΩÇ????,????.a ??kb, border: 1??k3??k3??ÈΩÇ??ÈΩÇ????,????.jo:cssotd{}iborder: 1px, so??kb??kb??kb??kb sok??kblid;??k3jjjjjjjjjjkkbbbbbbDjjzzjwwla{}iwistyle: ''iwit??kbdth: 5ema;ll%%yjPjPjzzkjP??k3??k3??k3??k3??k3??k3??k3??ÈΩÇ??ÈΩÇ??ÈΩÇ??ÈΩÇ??ÈΩÇ????,????.ea, th??k3jjjjjjjjjjjjjjjjjjjjjjkkkkkkkkkkkkkjkkkj??k3??k3??k3??k3??k3??k3??k3??k3??k3??k3????,????.ves20%kkka{}istyle: ''iwidth: 100%;??k3??k3??k3??k3??k3??k3hhjjjjkljves20a%jjkbves30a%jbves30%??k3kkkkjhhr3jjjjkr2??k3??k3??k3??k3??k3??k3jjjkjjjjjjjkkkkkkkkkkkkkkkkkkkkjjj??k3??k3??k3??ÈΩÇ??ÈΩÇ????,????.????,????.Vjdjjjjjjjjjjjjjkkkkkkwwwwwwwwwwwbhhhxs8llllli, border: 1, cellspacing: 0jjjbbbbbbbr2jjr2??k3??k3????,????.at??kb text-align: cr??kbenter;??k3??k3??k3l:Rtask	 prim	kjzzxjjjjjjjjjjkkkkbjbjjjxkx??k3jjjjjjjjjjggx??k3??ÈΩÉ??ÈΩÉ??ÈΩÉ??ÈΩÉ??ÈΩÉ??ÈΩÉ??ÈΩÉ??ÈΩÇ??ÈΩÇ??ÈΩÇ??ÈΩÇ??ÈΩÇ??ÈΩÇ??ÈΩÇ??ÈΩÉ??ÈΩÉ??ÈΩÉggu??k3??ÈΩÉ??ÈΩÉ??ÈΩÉ??ÈΩÉ??ÈΩÉ??ÈΩÉ??ÈΩÉ??ÈΩÇ??ÈΩÇe??ÈΩÇ??ÈΩÇ??ÈΩÇbbggjh:e cRenvggljjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjkkkwggGkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkjjjjjjjjjjjjjjj????,????.??ÈΩÉ??ÈΩÉ??ÈΩÉ????,????.:Rlo	 prijersprimers	kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkjjjjjwjkkkkkkkkkkkkkkjjkkkjjjhjjjjjjjkzzbYpwwwwwwwwwwwwwwwwwwcwp??kbover_datejjjjjjjjjjkkYp$bcwor??kbver_datekkkkkkkkkkkkkkjjjhhhjjjjkkkkjjkjjknjkjkkkk??k3uuuuu??k3??k3??k3????,????.b??ÈΩÉ??ÈΩÉ????,????.b????,????.v%%%xj.j.j.j.??k3ljjjjjjjjjjjjjjjjjkkkkkkjI#??k3??k3??k3jjjjjjjkh:Rtsa??kb??kbask	 or	jjjjjjjjkklgg:Rvi	 order	no	s??kbsen			n			sen		hjjjjjjjjjjjjjjjjjjjjjjjjjjj:Rmai	 	kGkw%jjjjjjjjjjjjjjjjjjjkkkkkkkkkkkkkkkkkl:Rs??kbtask	 or	hklkkkjwwwwwwhvex??k3hwwwwbC_mail??k3??k3??k3??k3??k3??k3??k3??k3??k3??k3jbiore??kbder_mail.bbbbbiorder_mail.??k3jkkoorder = order_mail.orderjbbbdwx??k3jjjjjjjjjjjjjjjjjjjkkkkkkkkkkkkkjjjjjjjjjjjwwex??k3??k3??k3:Rzz
+	483
+<Vkkk<wlvt"screate prepaymentsjbbbwcwpostkop = ::Fac.build :ÄkbÄkb()i:prepaymentA.attributesÄk3ja, preapÄkbÄkbpayment: pÄk3jbbbwwcw302Äk3kÄk3Äk3Äk3Äk3Äk3Äk3Äk3kop.deleteko[]bC%w{}icreated_at dÄkbupdated_at dÄkbcreator_idjkA.each do |a|joendk>>A aÄk3Äk3Äk3Äk3jjlkkkkkkkkkk:Rsp	 sp	req	res	hkkjop Äkb[]i''icompanycompanyrecord_idA = create_company.idÄk3:RficÄkbx	 prepaym	nÄkbÄkbÄkbÄkbÄkbÄkbÄkbÄkbÄkbs	l:Rmo	 prepam	Äkb	jjjjjjjjjjjjjjjjjjjjjweb
 "s	CHAR	0
 	594
 <,hi,llxxepwxxxsuuf}xexepwxxxwewwxepwxxxwwllDjjwwxxewbea_tagea, params[]iswwxepwxxxwwwwwwxepwxxxwwxepwxxxjjkkjjj^wxxea_g??kbtagwwwwwxepwxxx??k3????,????.xepwxxxjjkwwwwwwwwwxepwxxxwwwwwwxepwxxxwwxepwxxxwjbbbbbbbbxepwxxx??k3??k3????,????.:Rvi	 quality_co	_ta	jkVjdljkggjjkwpVj>.jwveehxwwr xu$xbbbbbbbxepwxxx??k3hdd??k3l:Rvi	 ????,????.??ÈΩÉ??ÈΩÇ??ÈΩÉ????,????.????,????.$ibcwtruebbbbbwi, params[]i:result??k3:Rmo	 qual	Gkgg:_c	Gkwkkkwji#??k3??k3??k3??k3u??k3h:Rcon	 qua	jjjjjjjjjjjjjjjjjjjjjjjjjjjj:??kb??kb??kby_co	a, :desc??k3l:Rmo	 sample_he	G/searchgg:R
 "v	CHAR	0
-	471
-<jkV%>wveesself??k3??ÈΩÇ??ÈΩÇ??ÈΩÇ??ÈΩÉ??ÈΩÉ??ÈΩÇ??ÈΩÉ??ÈΩÉ????,????-????-????-????-????-????-????-????-????-????.sselfwwwwblveesself??k3gt:gtjjV%ddd??k3hjjbbbbluuwC????,????.????,????.bcwbcwc??kbmoduleA F??kb??kbFac??k3hjjjjjjbbbbveelx??k3??k3??k3??k3??k3????,????.cw::Filewwww.??k3????,????.xkjjI#??k3kY:Rfix	 hr??kbtcon	jjjjj:Rfix 	htRfix	 ht_smaple-re	??kb??kb??kb_r	:??kb??kb??kb??kb??kb??kb??kbamp		jkpdkddljjV%ddd??k3h??k3jjl??k3h
+	473
+<jkV%>wveesself??k3??ÈΩÇ??ÈΩÇ??ÈΩÇ??ÈΩÉ??ÈΩÉ??ÈΩÇ??ÈΩÉ??ÈΩÉ????,????-????-????-????-????-????-????-????-????-????.sselfwwwwblveesself??k3gt:gtjjV%ddd??k3hjjbbbbluuwC????,????.????,????.bcwbcwc??kbmoduleA F??kb??kbFac??k3hjjjjjjbbbbveelx??k3??k3??k3??k3??k3????,????.cw::Filewwww.??k3????,????.xkjjI#??k3kY:Rfix	 hr??kbtcon	jjjjj:Rfix 	htRfix	 ht_smaple-re	??kb??kb??kb_r	:??kb??kb??kb??kb??kb??kb??kbamp		jkpdkddljjV%ddd??k3h??k3jjl??k3h
 "w	CHAR	0
-	537
-<V%yjwpjjkw$bbCnil??k3jVkkd??k3lbbbbwveeesif: ::Proc.new{}i|r| r.reaction_board && r.buuuuuhCtrue??k3??k3??k3??k3??k3??k3??k3??k3??k3??k3??k3??k3??k3hu??k3????,????.:Rmo	 heat	h:Rsp	 mo	heat	ljjwhjjwjjjjjjjkkjjjzzljjjjkzzhjjjjjjjjjjjjjjjjjljjjjkjzzhljwwwwCquadran: true??k3??k3??k3??k3hjjjjjjjjkkkwwwwwwllwwC7??k3h:Rmi	 heat	k$hC7??k3:Rfix	 heat	jjjjjjwwwwbcw1,2,3,4??k3??k2??k3??k3??k3:Rmi	 alc	jjjjkkkkklkjh:Rmi	 alc	jjkkl:Rmo	 alc	h:Rsp	 mo	aalc	lggjjwhjjjjjjjjwzzkkkkkjjjjjjjjjzzjjzz
+	wwwww.Äk3lbxxxxxsvectorÄk3hjjA, wÄkbÄkb{}istyle: ''iwdi
+"x	CHAR	0
+	"
 ""-	CHAR	0
-	loading
+	compan
 
 # ÂÖ®Â±ÄÂèòÈáè:
 
 # Êñá‰ª∂Ê†áËÆ∞:
-'0  1  0  /var/www/lims/app/models/sample.rb
-'1  5  115  /var/www/gene_bank/app/views/samples/_search.html.haml
-'2  11  72  /var/www/gene_bank/app/controllers/api/v1/exists_controller.rb
-'3  6  4  /var/www/gene_bank/app/views/layouts/application.html.haml
-'4  28  49  /var/www/gene_bank/config/application.rb
-'5  39  2  /var/www/gene_bank/public/wb.html
-'6  3  49  /etc/apt/sources.list
-'7  1  0  /etc/apt/sources.list.d/deepin.list
-'8  1  0  /etc/apt/sources.list.d/dep
-'9  3  49  /etc/apt/sources.list.d/deepin.list
+'0  28  2  /var/www/sino_sequencing/app/models/sample.rb
+'1  45  19  /var/www/sino_sequencing/config/routes.rb
+'2  73  2  /var/www/sino_sequencing/app/views/orders/_table.html.slim
+'3  28  18  /var/www/sino_sequencing/app/views/orders/_form.html.slim
+'4  76  40  /var/www/superwf/app/assets/javascripts/superwf.js.coffee
+'5  36  0  /var/www/2012/primer_synthesis/app/models/client.rb
+'6  20  0  /var/www/genetest/app/models/client.rb
+'7  34  6  /var/www/superwf/app/assets/javascripts/superwf.js.coffee
+'8  11  73  /var/www/genetest/app/views/pdfs/clinic.html.haml
+'9  101  25  /var/www/dna/custom/edit.php
 
 # Ë∑≥ËΩ¨ÂàóË°® (‰ªéÊñ∞Âà∞Êóß):
--'  1  0  /var/www/lims/app/models/sample.rb
--'  5  115  /var/www/gene_bank/app/views/samples/_search.html.haml
--'  11  72  /var/www/gene_bank/app/controllers/api/v1/exists_controller.rb
--'  2  2  /var/www/gene_bank/app/controllers/api/v1/blast_caches_controller.rb
--'  35  2  /var/www/gene_bank/app/controllers/api/v1/blast_caches_controller.rb
--'  25  8  /var/www/gene_bank/app/controllers/api/v1/blast_caches_controller.rb
--'  1  0  /var/www/gene_bank/app/controllers/api/v1/blast_caches_controller.rb
--'  46  16  /var/www/gene_bank/emserver.rb
--'  61  132  /var/www/gene_bank/emserver.rb
--'  55  8  /var/www/gene_bank/emserver.rb
--'  31  0  /var/www/gene_bank/emserver.rb
--'  60  14  /var/www/gene_bank/emserver.rb
--'  121  8  /var/www/gene_bank/app/assets/javascripts/superwf.js.coffee
--'  128  9  /var/www/gene_bank/app/assets/javascripts/superwf.js.coffee
--'  120  28  /var/www/gene_bank/app/assets/javascripts/superwf.js.coffee
--'  127  11  /var/www/gene_bank/app/assets/javascripts/superwf.js.coffee
--'  110  13  /var/www/gene_bank/app/assets/javascripts/superwf.js.coffee
--'  104  2  /var/www/gene_bank/app/assets/javascripts/superwf.js.coffee
--'  15  8  /var/www/gene_bank/app/assets/javascripts/superwf.js.coffee
--'  27  81  /var/www/gene_bank/app/models/sample.rb
--'  52  40  /var/www/gene_bank/app/models/sample.rb
--'  59  51  /var/www/gene_bank/emserver.rb
--'  2  20  /var/www/gene_bank/app/assets/stylesheets/samples.css.scss
--'  2  0  /var/www/gene_bank/app/views/samples/index.html.haml
--'  3  0  /var/www/gene_bank/app/views/samples/index.html.haml
--'  1  0  /var/www/gene_bank/app/assets/stylesheets/samples.css.scss
--'  1  0  /var/www/gene_bank/app/assets/stylesheets/sample_boards.css.scss
--'  6  0  /var/www/gene_bank/app/views/samples/index.html.haml
--'  1  0  /var/www/gene_bank/app/views/samples/index.html.haml
--'  15  6  /var/www/gene_bank/db/migrate/20130520075131_create_samples.rb
--'  26  6  /var/www/gene_bank/app/assets/javascripts/samples.js.coffee
--'  24  6  /var/www/gene_bank/app/assets/javascripts/samples.js.coffee
--'  22  4  /var/www/gene_bank/app/assets/javascripts/samples.js.coffee
--'  29  61  /var/www/gene_bank/app/assets/javascripts/samples.js.coffee
--'  23  0  /var/www/gene_bank/app/assets/javascripts/samples.js.coffee
--'  1  0  /var/www/gene_bank/Gemfile
--'  113  18  /var/www/gene_bank/app/assets/javascripts/superwf.js.coffee
--'  19  0  /var/www/gene_bank/app/assets/javascripts/superwf.js.coffee
--'  6  4  /var/www/gene_bank/app/views/layouts/application.html.haml
--'  26  6  /var/www/gene_bank/config/application.rb
--'  1  0  /var/www/gene_bank/app/controllers/application_controller.rb
--'  1  0  /var/www/gene_bank/app/views/samples/_table.html.haml
--'  1  0  /var/www/gene_bank/app/views/samples/_fetch.html.haml
--'  21  14  /var/www/gene_bank/app/views/samples/_table.html.haml
--'  28  0  /var/www/gene_bank/app/views/samples/_table.html.haml
--'  1  0  /var/www/gene_bank/app/views/samples/index.js.erb
--'  49  40  /var/www/gene_bank/app/models/sample.rb
--'  12  0  /var/www/dna/kehu/zhuangtai/splice_status.php
--'  1063  5  /var/www/dna/kehu/zhuangtai/index.php
--'  2  0  /var/www/dna/kehu/zhuangtai/index.php
--'  113  8  /var/www/dna/kehu/zhuangtai/index.php
--'  104  8  /var/www/dna/kehu/zhuangtai/index.php
--'  6  0  /var/www/dna/kehu/zhuangtai/index.php
--'  5  0  /var/www/dna/kehu/zhuangtai/index.php
--'  4  0  /var/www/dna/kehu/zhuangtai/index.php
--'  3  0  /var/www/dna/kehu/zhuangtai/index.php
--'  1108  0  /var/www/dna/kehu/zhuangtai/index.php
--'  54  12  /var/www/dna/kehu/zhuangtai/index.php
--'  1056  23  /var/www/dna/kehu/zhuangtai/index.php
--'  1082  0  /var/www/dna/kehu/zhuangtai/index.php
+-'  28  2  /var/www/sino_sequencing/app/models/sample.rb
+-'  29  2  /var/www/sino_sequencing/app/models/sample.rb
+-'  2  0  /var/www/sino_sequencing/db/migrate/20130218055055_create_abi_machines.rb
+-'  12  0  /var/www/sino_sequencing/app/models/order.rb
+-'  73  4  /var/www/sino_sequencing/app/models/order.rb
+-'  121  44  /var/www/sino_sequencing/app/models/order.rb
+-'  92  31  /var/www/sino_sequencing/app/models/order.rb
+-'  77  19  /var/www/sino_sequencing/app/models/order.rb
+-'  68  23  /var/www/sino_sequencing/app/models/order.rb
+-'  55  2  /var/www/sino_sequencing/app/models/order.rb
+-'  37  2  /var/www/sino_sequencing/app/models/sample.rb
+-'  23  2  /var/www/sino_sequencing/app/models/sample.rb
+-'  1  0  /var/www/primer_synthesis/app/models/order.rb
+-'  45  19  /var/www/sino_sequencing/config/routes.rb
+-'  1  0  /var/www/sino_sequencing/config/routes.rb
+-'  73  2  /var/www/sino_sequencing/app/views/orders/_table.html.slim
+-'  1  0  /var/www/sino_sequencing/app/views/orders/_table.html.slim
+-'  28  18  /var/www/sino_sequencing/app/views/orders/_form.html.slim
+-'  7  3  /var/www/sino_sequencing/app/views/orders/new.html.slim
+-'  6  19  /var/www/sino_sequencing/app/views/orders/new.html.slim
+-'  1  0  /var/www/sino_sequencing/app/views/orders/new.html.slim
+-'  31  10  /var/www/sino_sequencing/app/views/orders/_form.html.slim
+-'  25  2  /var/www/sino_sequencing/app/views/orders/_insert_sample_primer.html.slim
+-'  4  0  /var/www/sino_sequencing/app/views/orders/_insert_sample_primer.html.slim
+-'  1  0  /var/www/sino_sequencing/app/views/orders/_form.html.slim
+-'  22  0  /var/www/sino_sequencing/app/models/sample.rb
+-'  1  0  /var/www/sino_sequencing/Capfile
+-'  43  2  /var/www/sino_sequencing/app/models/order.rb
+-'  1  0  /var/www/sino_sequencing/app/models/order.rb
+-'  76  40  /var/www/superwf/app/assets/javascripts/superwf.js.coffee
+-'  34  6  /var/www/superwf/app/assets/javascripts/superwf.js.coffee
+-'  36  0  /var/www/2012/primer_synthesis/app/models/client.rb
+-'  27  14  /var/www/2012/primer_synthesis/app/models/client.rb
+-'  6  27  /var/www/2012/primer_synthesis/app/models/client.rb
+-'  30  15  /var/www/2012/primer_synthesis/app/models/client.rb
+-'  22  42  /var/www/2012/primer_synthesis/app/models/client.rb
+-'  13  12  /var/www/2012/primer_synthesis/app/models/client.rb
+-'  1  0  /var/www/2012/primer_synthesis/app/models/client.rb
+-'  20  0  /var/www/genetest/app/models/client.rb
+-'  1  0  /var/www/genetest/app/models/client.rb
+-'  37  2  /var/www/superwf/app/assets/javascripts/superwf.js.coffee
+-'  1  0  /var/www/superwf/app/assets/javascripts/superwf.js.coffee
+-'  11  73  /var/www/genetest/app/views/pdfs/clinic.html.haml
+-'  106  7  /var/www/genetest/app/models/pdf.rb
+-'  50  27  /var/www/genetest/app/models/pdf.rb
+-'  269  8  /var/www/genetest/app/models/pdf.rb
+-'  1  0  /var/www/genetest/app/views/pdfs/clinic.html.haml
+-'  4  0  /var/www/genetest/app/views/pdfs/clinic.html.haml
+-'  12  0  /var/www/genetest/app/views/pdfs/select_pdf.html.haml
+-'  1  0  /var/www/genetest/app/views/pdfs/select_pdf.html.haml
+-'  101  25  /var/www/dna/custom/edit.php
+-'  108  3  /var/www/dna/custom/edit.php
+-'  114  28  /var/www/dna/custom/edit.php
+-'  105  1  /var/www/dna/custom/edit.php
+-'  1  0  /var/www/dna/custom/edit.php
+-'  71  44  /var/www/dna/custom/edit.php
+-'  104  78  /var/www/dna/custom/edit.php
+-'  92  10  /var/www/dna/custom/edit.php
+-'  10  0  /var/www/dna/custom/edit.php
+-'  216  0  /var/www/dna/custom/edit.php
+-'  217  0  /var/www/dna/custom/edit.php
+-'  99  59  /var/www/dna/custom/edit.php
+-'  77  0  /var/www/dna/custom/edit.php
+-'  58  6  /var/www/sino_project/app/views/projects/_form.html.haml
+-'  4  18  /var/www/sino_project/config/locales/projects.cn.yml
+-'  1  0  /var/www/sino_project/Capfile
+-'  61  0  /var/www/sino_project/app/models/project.rb
+-'  57  8  /var/www/sino_project/app/views/projects/_form.html.haml
+-'  1  0  /var/www/sino_project/app/views/projects/_form.html.haml
+-'  40  6  /var/www/genetest/app/models/pdf.rb
+-'  282  69  /var/www/genetest/app/models/pdf.rb
+-'  39  6  /var/www/genetest/app/models/pdf.rb
+-'  44  7  /var/www/genetest/app/models/pdf.rb
+-'  54  23  /var/www/genetest/app/models/pdf.rb
+-'  150  20  /var/www/genetest/app/models/pdf.rb
+-'  258  22  /var/www/genetest/app/models/pdf.rb
+-'  259  24  /var/www/genetest/app/models/pdf.rb
+-'  266  32  /var/www/genetest/app/models/pdf.rb
+-'  272  97  /var/www/genetest/app/models/pdf.rb
+-'  267  21  /var/www/genetest/app/models/pdf.rb
+-'  108  86  /var/www/genetest/app/models/pdf.rb
+-'  1  0  /var/www/genetest/app/models/pdf.rb
+-'  21  6  /var/www/primer_synthesis/db/migrate/20110705052601_create_primers.rb
+-'  29  2  /var/www/primer_synthesis/db/migrate/20110705052601_create_primers.rb
+-'  7  8  /var/www/primer_synthesis/config/locales/clients.cn.yml
+-'  16  8  /var/www/primer_synthesis/config/locales/clients.cn.yml
+-'  35  2  /var/www/primer_synthesis/db/migrate/20110705052601_create_primers.rb
+-'  6  6  /var/www/primer_synthesis/db/migrate/20110705052601_create_primers.rb
+-'  1  0  /var/www/primer_synthesis/db/migrate/20110705052601_create_primers.rb
+-'  3  4  /var/www/primer_synthesis/db/migrate/20110705052601_create_primers.rb
+-'  25  40  /var/www/primer_synthesis/db/migrate/20110704062443_create_orders.rb
+-'  26  0  /var/www/primer_synthesis/db/migrate/20110704062443_create_orders.rb
+-'  2  2  /var/www/primer_synthesis/app/helpers/orders_helper.rb
+-'  5  71  /var/www/primer_synthesis/db/migrate/20130917013011_create_client_prices.rb
+-'  6  6  /var/www/primer_synthesis/db/migrate/20110721045643_create_checkout_orders.rb
+-'  3  6  /var/www/primer_synthesis/db/migrate/20130917013011_create_client_prices.rb
 
 # ÁºìÂÜ≤Âå∫ÂàóË°®:
-%/var/www/lims/app/models/sample.rb	1	0
-%/var/www/gene_bank/app/views/samples/_table.html.haml	1	0
-%/var/www/gene_bank/public/wb.html	14	0
-%/etc/apt/sources.list	3	49
-%/var/www/gene_bank/Gemfile	1	0
-%/var/www/gene_bank/app/views/samples/_form.html.haml	1	0
-%/var/www/gene_bank/app/models/sample.rb	45	97
-%/var/www/gene_bank/app/views/samples/_search.html.haml	5	115
-%/var/www/gene_bank/app/assets/javascripts/samples.js.coffee	1	0
-%/var/www/gene_bank/app/controllers/samples_controller.rb	14	9
-%/var/www/gene_bank/app/views/samples/update.js.erb	2	60
-%/var/www/gene_bank/app/views/samples/_fetch.html.haml	1	0
-%/var/www/gene_bank/lib/ncbi.rb	88	14
-%/var/www/gene_bank/app/assets/javascripts/application.js	20	0
-%/var/www/gene_bank/app/assets/javascripts/superwf.js.coffee	121	8
-%/var/www/gene_bank/app/assets/javascripts/sample_boards.js.coffee	1	0
-%/var/www/gene_bank/config/application.rb	26	6
-%/var/www/gene_bank/app/views/samples/index.html.haml	2	0
-%/var/www/gene_bank/app/views/samples/fetch_ncbi.js.erb	5	0
-%/var/www/gene_bank/app/views/samples/index.js.erb	1	0
-%/var/www/gene_bank/app/controllers/application_controller.rb	1	0
-%/var/www/gene_bank/app/views/layouts/application.html.haml	8	4
-%/var/www/gene_bank/db/migrate/20130520075131_create_samples.rb	15	6
-%/var/www/gene_bank/app/assets/stylesheets/samples.css.scss	2	20
-%/var/www/gene_bank/app/views/layouts/_flash.html.haml	1	0
-%/var/www/gene_bank/app/assets/stylesheets/sample_boards.css.scss	1	0
-%/var/www/gene_bank/emserver.rb	61	128
-%/var/www/gene_bank/config/locales/samples.cn.yml	20	68
-%/var/www/gene_bank/app/controllers/api/v1/blast_caches_controller.rb	22	6
-%/var/www/gene_bank/app/controllers/api/v1/exists_controller.rb	11	72
-%/var/www/gene_bank/config/routes.rb	21	49
-%/var/www/gene_bank/app/controllers/blast_caches_controller.rb	31	2
-%/var/www/gene_bank/config/locales/vectors.cn.yml	7	8
-%/var/www/gene_bank/db/migrate/20130618024704_create_vectors.rb	7	21
-%/var/www/lims/Gemfile	1	0
-%/var/www/lims/app/models/order.rb	8	48
+%/var/www/primer_synthesis/app/models/order.rb	1	0
+%/var/www/sino_sequencing/config/routes.rb	45	19
+%/var/www/sino_sequencing/app/views/orders/_table.html.slim	73	2
+%/var/www/sino_sequencing/app/models/order.rb	12	0
+%/var/www/superwf/app/assets/javascripts/superwf.js.coffee	76	40
+%/var/www/sino_sequencing/Capfile	1	0
+%/var/www/sino_sequencing/app/models/sample.rb	28	2
+%/var/www/sino_sequencing/app/views/orders/new.html.slim	7	3
+%/var/www/sino_sequencing/app/views/orders/_form.html.slim	28	18
+%/var/www/sino_sequencing/app/views/orders/_insert_sample_primer.html.slim	20	2
+%/var/www/sino_sequencing/app/views/board_records/_form.html.slim	13	21
+%/var/www/sino_sequencing/app/views/primers/_table.html.slim	2	0
+%/var/www/sino_sequencing/app/controllers/api/v1/clients_controller.rb	13	23
+%/var/www/sino_sequencing/app/controllers/api/v1/companies_controller.rb	10	0
+%/var/www/sino_sequencing/db/migrate/20130218055055_create_abi_machines.rb	2	0
+%/var/www/sino_sequencing/app/models/reaction.rb	19	22
+%/var/www/sino_sequencing/app/models/client.rb	54	18
 
 # Êñá‰ª∂ÂÜÖÁöÑÊ†áËÆ∞ÂéÜÂè≤ËÆ∞ÂΩï (‰ªéÊñ∞Âà∞Êóß):
 
-> /var/www/lims/app/models/sample.rb
+> /var/www/sino_sequencing/app/models/order.rb
+	"	12	0
+
+> /var/www/sino_sequencing/Capfile
 	"	1	0
 
-> /var/www/lims/Gemfile
-	"	1	0
+> /var/www/sino_sequencing/app/models/sample.rb
+	"	28	2
 
-> /var/www/lims/app/models/order.rb
-	"	8	48
+> /var/www/sino_sequencing/db/migrate/20130218055055_create_abi_machines.rb
+	"	2	0
+
+> /var/www/sino_sequencing/app/models/reaction.rb
+	"	19	22
+
+> /var/www/sino_sequencing/app/models/client.rb
+	"	54	18
+	^	60	125
+	.	60	124
+	+	56	7
+	+	61	6
+	+	57	0
+	+	61	0
+	+	61	0
+	+	61	10
+	+	57	0
+	+	55	0
+	+	61	0
+	+	61	0
+	+	62	0
+	+	61	0
+	+	62	0
+	+	60	124

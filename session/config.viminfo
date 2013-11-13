@@ -8,16 +8,39 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/superwf
+~MSle0~/73
 
 # Last Substitute Search Pattern:
 ~MSle0& 
 
 # Last Substitute String:
-$
+$,
 
 # Command Line History (newest to oldest):
 :q
+:e send.rb
+:Rmailer promotion
+:Rview promotion/promotion_20130918.html.haml
+:vsplit Gemfile
+:Rview send_notify.html.haml
+:Rmailer send_result
+:e import_clients.rb
+:R
+:e config/application.rb
+:Renvironment test
+:Renvironment production
+:Renvironment 
+:Renvironment development
+:e Gemfile
+:e config/database.yml
+:Rmodel client
+:e app/views/promotion/promotion_20130918.html.haml
+:Rview promotion/send_promotion.html.haml
+:'<,'>s/ /,/g
+:e hello_fn.c
+:vs hello.h
+:vs config.yml
+:'<,'>/ /,/g
 :aq
 :w!
 :q!
@@ -28,7 +51,6 @@ $
 :!q
 :e config/routes.rb
 :vs echo.rb
-:'<,'>s/ /,/g
 :vs em_client.rb
 :vs socket_client.rb
 :e blast.rb
@@ -45,30 +67,16 @@ $
 :vimimhelp
 :vimim
 :mycloud __getname
-:mycloud__getname
-:e
-:e dell.sh
-:'<,'>q
-:Rview send_result/attachment.haml
-:Rview send_result/send_order.haml
-:Rview attachment.haml
-:Rmailer send_result
-:'<,'>%s/ /,/g
-:%s/19775/19776/g
-:%s/20120929-C01/20120929-C02/g
-:Rmailer promotion
-:%s/19772/19773/g
-:%s/20120928-C04/20120928-C05/g
-:%s/19771/19772/g
-:%s/20120928-C03/20120928-C04/g
-:%s/20120928-C02/20120928-C03/g
-:%s/19770/19771/g
-:桌面/te/dna_yinwuinfo.sql
-:%s/19768/19770/g
-:%s/20120928-C01/20120928-C02/g
-:%s/ 0px/ #000000 1px solid;/g
 
 # Search String History (newest to oldest):
+?/73
+?/create_dialog
+?/img
+?/white
+?  
+?/git
+?/id=
+? g
 ?/slider
 ?/view
 ?/superwf
@@ -89,7 +97,6 @@ $
 ?/sid
 ?/jisuan
 ? \<jisuan\>
-?  
 ?/pear
 ?/splice
 ?/phpmyadm
@@ -112,13 +119,6 @@ $
 ?/buff
 ? \<jqplotToImageElem\>
 ? \<imgelem\>
-?/jqplot-image-button
-?/chgb
-?/tester
-?/debian2
-?/debian1
-? ;
-?/git
 
 # Expression History (newest to oldest):
 
@@ -128,35 +128,85 @@ $
 
 # 寄存器:
 "0	LINE	0
-	Host poweredge
-	 User wangfan
-	 Hostname poweredge.dna.com
-	 PreferredAuthentications publickey
-	 IdentityFile ~/.ssh/sino-servers
-	 IdentitiesOnly yes
+	  CHGB = {
+	    address: 'mail.chgb.org.cn',
+	    port: 25,
+	    domain: 'mail.chgb.org.cn',
+	    authentication: :plain,
+	    user_name: 'edm@chgb.org.cn',
+	    password: 'promotion',
+	    enable_starttls_auto: false
+	  }
 "1	LINE	0
-	1|zvtpo3Ftll+c0AlGpZRTx28X320=|jHZk4efvuYJE5iSuEuaJRvw7ATo= ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBDEuwL32XSwIKXK7BkWeiVmStEynSO8cbZ+WqXyI3i6lhF6i9dqUyfv9zmMqDIG29tQR0amLlYuG1BSwdukTfNk=
+	    :css
+	      .one{width:597px; height: auto; margin:auto auto;}
+	      .fontclass{ font-size:12pt; font-family:"宋体"; line-height:22pt;}
+	      .center {text-align: center; margin: 0 auto;}
 "2	LINE	0
-	Host tester
-	 User wangfan
-	 Hostname tester.dna.com
-	 PreferredAuthentications publickey
-	 IdentityFile ~/.ssh/superwf
-	 IdentitiesOnly yes
+	    %h3{style: 'text-indent: 2em;'} 您好!
+	    %h3{style: 'text-indent: 2em;'} 值此中秋节和国庆节双节来临之际，诺赛基因的全体员工祝您节日愉快，阖家欢乐，事业、学业红红火火！
+	378
+<    %h3{style: 'text-indent: 2em;'} 时光就是这样匆匆而过，不知不觉中诺赛基因已经走过了15年的历程，有过辉煌也有过低谷，是各位朋友的支持和帮助载着我们不断成长，一直走到现在，期间的每一个点滴瞬间都足以构成你我心中美好灿烂的回忆。下一个15年，30年...我们共同守候和进步！
+	    %h3{style: 'text-indent: 2em;'}
+	      为了回馈各位客户长久以来的支持，
+	      %font{color: 'red'}
+	        从发送邮件之日起到2013年12月31日
+	      ，诺赛基因针对特色服务
+	      %font{color: 'red'}
+	        “重组腺病毒”
+	      推出大型“促销专场”活动，多种缤纷好礼让您远离科研的枯燥乏味，享受生活的无限美好！
+	    .center
+	      %img{style: 'margin: 0 auto;', src: "#{@base}d.jpg"}
+	    .center
+	      %h2{style: 'text-indent: 2em;'} 促销详情：
+	      %h3{style: 'text-indent: 2em;'}
+	        %pre
+	          满25000元，赠送iPad mini（16G）；
+	          满20000元，赠送名牌数码相机；
+	          满15000元，赠送iPod nano（16G）；
+	          满10000元，赠送移动硬盘（1T）；
+	          满5000元， 赠送价值购物卡（200元）。
+	    .center
+	      %img{style: 'margin: 0 auto;', src: "#{@base}c.jpg"}
+	    .center
+	      %h2 腺病毒业务联系方式：  
+	      %h3
+	        %pre
+	          联系人：郭金海
+	          电话：010-67883332-868/814
+	          传真：010-67873016
+	          E-mail: sino_3@126.com ; erguo918@126.com
+	
+	          此外，诺赛基因推出多种线上平台，随时与您分享属于我们的精彩！
+	          诺赛基因官方网站：
+	          %a{href: 'http://www.sinogenomax.com/', target: '_blank'} http://www.sinogenomax.com/
+	
+	          诺赛基因企业微博：
+	          %a{href: 'http://weibo.com/sinogenomax', target: '_blank'} http://weibo.com/sinogenomax
+	    .center
+	      %img{style: 'margin: 0 auto; width: 15em;', src: "#{@base}a.png"}
+	    .center
+	      %h3{style: 'text-indent: 2em;'} 诺赛基因微信平台:
+	    .center
+	      %img{style: 'margin: 0 auto; width: 15em;', src: "#{@base}b.jpg"}
 "3	LINE	0
-	 IdentityFile ~/.ssh/poweredget110ii
+	# coding: utf-8
 "4	LINE	0
-	        <link href="../css/defaultTheme.css" rel="stylesheet" media="screen" />
+	          %h3
 "5	LINE	0
-	        <link href="css/960.css" rel="stylesheet" media="screen" />
+	          %h2 促销详情：
 "6	LINE	0
-	        <link href="../css/defaultTheme.css" rel="stylesheet" media="screen" />
+	          腺病毒业务联系方式：  
 "7	LINE	0
-	        puts "Error: #{e.message}"
+	    %meta{content: "text/html; charset=gb2312", "http-equiv" => "Content-Type"}/
 "8	LINE	0
-	        puts "Error: #{e.message}"
+	
 "9	LINE	0
-	        @channel.push "[#{Time.now}]user#{sid} said: #{msg}"
+	#::Client.all.each do |client|
+	#  ::Promotion.send_promotion(client).deliver
+	#  puts client.name
+	#  sleep 3
+	#end
 "p	LINE	0
 	
 	
@@ -200,129 +250,127 @@ $
 	478
 <wblll~kkjjkbbjjjjjjjjjjjjjjjeekbbwicolspan="2ujicolspan="1"�kb�kb2" �k3�k3��c��b��c��b��c��bbeb��c��bbevbveeexhx�k3�k3�k3�k3�k3��c��b��L��c��L��L��L��b��,��.��,��.��,��.~�k3��,��-��-��-��-��-��-��-��-��-��-��.xhxjjlveellxj.j.j.j.j.j.jkhvkkkkkkjjjjjjxkk�k3�k3�k3�k3�k3��c��b��c��b��K�kd�kd�kd�kd�kd�kd�kd�kd�ku�ku�ku�ku�ku�ku�ku�ku�ku�ku�ku�ku�kd�ku�ku�ku�ku�ku�ku�ku�kd�kd�kd�kd�kd�kd�kd�kd�kd�kd�kd�kddd�k3�k3�k3��c��L��L��K��K��K��K��L��L��L��K��L��K��b��,��.�k3	
 ""-	CHAR	0
-	poweredge
+	mail
 
 # 全局变量:
 
 # 文件标记:
-'0  106  14  ~/.ssh/config
-'1  1  0  ~/etc/alternatives/php-cgi
-'2  79  0  ~/etc/alternatives/rename
-'3  61  0  ~/desktop/wp-nova-1.1/wp-nova-1.1/nova/nova/header.php
-'4  25  0  ~/desktop/wp-nova-11/wp-nova-1.1/nova (2)/nova/index.php
-'5  83  12  ~/desktop/jquery.jqplot/examples/example.js
-'6  61  0  ~/desktop/jquery.jqplot/examples/area.html
-'7  33  16  ~/.ssh/config
-'8  4  9  ~/bash_script/test
-'9  18  0  ~/.ssh/known_hosts
+'0  23  1  ~/.ssh/config
+'1  14  17  ~/sino_promotion/app/mailers/promotion.rb
+'2  1  0  ~/send_lims_result/app/views/send_result/send_notify.html.haml
+'3  5  15  /usr/local/rvm/gems/ruby-2.0.0-p247/gems/superwf-1.0.0/app/views/scaffolds/index.js.erb
+'4  146  6  /usr/local/rvm/gems/ruby-2.0.0-p247/gems/superwf-1.0.0/app/assets/javascripts/superwf.js.coffee
+'5  64  2  ~/desktop/sal_item.sql
+'6  65  0  ~/desktop/dna_yangpininfo.sql
+'7  69  6  ~/desktop/bootstrap-datetimepicker-master/sample/index.html
+'8  1  0  ~/desktop/synthesis_primers.csv
+'9  1  0  ~/desktop/template.csv
 
 # 跳转列表 (从新到旧):
+-'  23  1  ~/.ssh/config
+-'  14  17  ~/sino_promotion/app/mailers/promotion.rb
+-'  18  22  ~/sino_promotion/app/mailers/promotion.rb
+-'  5  2  ~/sino_promotion/send.rb
+-'  31  2  ~/sino_promotion/app/mailers/promotion.rb
+-'  29  48  ~/sino_promotion/app/mailers/promotion.rb
+-'  1  0  ~/sino_promotion/app/mailers/promotion.rb
+-'  1  0  ~/send_lims_result/app/views/send_result/send_notify.html.haml
+-'  15  0  ~/send_lims_result/app/views/send_result/send_notify.html.haml
+-'  1  0  ~/send_lims_result/app/mailers/send_result.rb
+-'  89  0  ~/send_lims_result/app/mailers/send_result.rb
+-'  5  15  /usr/local/rvm/gems/ruby-2.0.0-p247/gems/superwf-1.0.0/app/views/scaffolds/index.js.erb
+-'  1  0  /usr/local/rvm/gems/ruby-2.0.0-p247/gems/superwf-1.0.0/app/views/scaffolds/index.js.erb
+-'  146  6  /usr/local/rvm/gems/ruby-2.0.0-p247/gems/superwf-1.0.0/app/assets/javascripts/superwf.js.coffee
+-'  25  4  /usr/local/rvm/gems/ruby-2.0.0-p247/gems/superwf-1.0.0/app/assets/javascripts/superwf.js.coffee
+-'  1  0  /usr/local/rvm/gems/ruby-2.0.0-p247/gems/superwf-1.0.0/app/assets/javascripts/superwf.js.coffee
+-'  64  2  ~/desktop/sal_item.sql
+-'  1  0  ~/desktop/sal_item.sql
+-'  65  0  ~/desktop/dna_yangpininfo.sql
+-'  148  0  ~/desktop/dna_yangpininfo.sql
+-'  69  6  ~/desktop/bootstrap-datetimepicker-master/sample/index.html
+-'  1  0  ~/desktop/bootstrap-datetimepicker-master/sample/index.html
+-'  1  0  ~/desktop/synthesis_primers.csv
+-'  1  0  ~/desktop/template.csv
+-'  8  8  ~/sino_promotion/send.rb
+-'  6  2  ~/sino_promotion/send.rb
+-'  17  8  ~/sino_promotion/app/views/promotion/promotion_20130918.html.haml
+-'  3  8  ~/sino_promotion/app/views/promotion/promotion_20130918.html.haml
+-'  4  4  ~/sino_promotion/app/views/promotion/promotion_20130918.html.haml
+-'  1  0  ~/sino_promotion/app/views/promotion/promotion_20130918.html.haml
+-'  28  18  ~/sino_promotion/config/environments/development.rb
+-'  18  0  ~/sino_promotion/Gemfile
+-'  1  0  ~/sino_promotion/Gemfile
+-'  34  2  ~/sino_promotion/Gemfile
+-'  28  23  ~/sino_promotion/app/mailers/promotion.rb
+-'  24  2  ~/sino_promotion/app/mailers/promotion.rb
+-'  9  16  ~/sino_promotion/app/mailers/promotion.rb
+-'  14  4  ~/sino_promotion/app/views/promotion/send_promotion.html.haml
+-'  19  8  ~/sino_promotion/app/views/promotion/send_promotion.html.haml
+-'  13  6  ~/sino_promotion/app/views/promotion/send_promotion.html.haml
+-'  6  16  ~/sino_promotion/app/views/promotion/send_promotion.html.haml
+-'  1  13  ~/sino_promotion/app/views/promotion/send_promotion.html.haml
+-'  3  5  ~/sino_promotion/app/views/promotion/send_promotion.html.haml
+-'  140  4  ~/sino_promotion/app/views/promotion/send_promotion.html.haml
+-'  191  0  ~/sino_promotion/lib/clients.csv
+-'  99  0  ~/sino_promotion/lib/clients.csv
+-'  1  0  ~/sino_promotion/lib/clients.csv
+-'  1  0  /mnt/mfs/www/gene_bank/config/admin_users.yml
+-'  1  0  /var/www/-
+-'  1  0  ~/desktop/工作交接.csv
+-'  1  0  ~/desktop/purl.js
+-'  29  1  ~/desktop/dna_yangpininfo.sql
+-'  1  0  ~/desktop/dna_yangpininfo.sql
+-'  1  0  /tmp/report20130902-13312-1auo8j6-1
+-'  1  0  ~/desktop/abc.pdf
+-'  37  111  ~/desktop/LIMS开发日志
 -'  106  14  ~/.ssh/config
--'  103  14  ~/.ssh/config
--'  95  0  ~/.ssh/config
--'  37  11  ~/.ssh/config
--'  33  16  ~/.ssh/config
--'  1  0  ~/etc/alternatives/php-cgi
--'  79  0  ~/etc/alternatives/rename
--'  1  0  ~/etc/alternatives/rename
--'  61  0  ~/desktop/wp-nova-1.1/wp-nova-1.1/nova/nova/header.php
--'  1  0  ~/desktop/wp-nova-1.1/wp-nova-1.1/nova/nova/header.php
--'  25  0  ~/desktop/wp-nova-11/wp-nova-1.1/nova (2)/nova/index.php
--'  1  0  ~/desktop/wp-nova-11/wp-nova-1.1/nova (2)/nova/index.php
--'  83  12  ~/desktop/jquery.jqplot/examples/example.js
--'  62  35  ~/desktop/jquery.jqplot/examples/example.js
--'  107  9  ~/desktop/jquery.jqplot/examples/example.js
--'  61  32  ~/desktop/jquery.jqplot/examples/example.js
--'  61  0  ~/desktop/jquery.jqplot/examples/area.html
--'  1  0  ~/desktop/jquery.jqplot/examples/area.html
--'  4  9  ~/bash_script/test
--'  18  0  ~/.ssh/known_hosts
--'  3  0  ~/.ssh/known_hosts
--'  67  0  ~/.ssh/config
--'  100  1  ~/.ssh/config
--'  107  10  ~/.ssh/config
--'  77  21  ~/.ssh/config
--'  41  21  ~/.ssh/config
--'  7  10  ~/.ssh/config
--'  11  32  ~/.ssh/config
--'  13  5  ~/.ssh/config
--'  40  0  ~/ruby_script/cap-recipes/examples/simple/deploy.rb
--'  8  0  ~/ruby_script/cap-recipes/examples/simple/deploy.rb
--'  16  0  ~/ruby_script/cap-recipes/examples/simple/deploy.rb
--'  6  2  /var/www/.ssh/config
--'  7  0  /var/www/.ssh/config
--'  1  0  /var/www/.ssh/config
--'  39  5  ~/ruby_script/cap-recipes/examples/advanced/deploy.rb
--'  1  0  ~/ruby_script/cap-recipes/examples/advanced/deploy.rb
--'  1  0  ~/ruby_script/cap-recipes/examples/advanced/NERD_tree_2
--'  6  0  ~/ruby_script/cap-recipes/examples/advanced/NERD_tree_2
--'  6  0  ~/ruby_script/cap-recipes/examples/advanced/NERD_tree_1
--'  1  0  ~/ruby_script/cap-recipes/examples/advanced/NERD_tree_1
--'  22  0  ~/ruby_script/cap-recipes/examples/simple/deploy.rb
--'  1  0  ~/ruby_script/cap-recipes/examples/simple/deploy.rb
--'  95  0  ~/desktop/a.htm
--'  55  0  ~/mbox
--'  13  0  ~/mbox
--'  5  8  /var/www/Fixed-Header-Table/demo/demo.html
--'  6  8  /var/www/Fixed-Header-Table/demo/demo.html
--'  1  0  /var/www/Fixed-Header-Table/demo/demo.js
--'  1  0  /var/www/Fixed-Header-Table/demo/demo.html
--'  50  14  /var/www/Fixed-Header-Table/demo/demo.html
--'  1  0  ~/ruby_script/bioruby/sample/biofetch.rb
--'  1  0  ~/ruby_script/em-websocket/examples/echo.rb
--'  10  29  ~/ruby_script/em-websocket/examples/echo.rb
--'  1  0  ~/ruby_script/s1.seq
--'  1  0  ~/ruby_script/restclient.rb
--'  104  2  ~/ruby_script/restclient.rb
--'  2  13  /usr/share/phpmyadmin/test.php
--'  1  0  /usr/share/phpmyadmin/test.php
--'  1  0  /usr/share/phpmyadmin/phpinfo.php
--'  12  0  ~/ruby_script/bioruby/sample/demo_blast_report.rb
--'  59  19  ~/ruby_script/bioruby/sample/demo_blast_report.rb
--'  77  19  ~/ruby_script/bioruby/sample/demo_blast_report.rb
--'  7  0  ~/ruby_script/bioruby/sample/blast.rb
--'  1  0  ~/ruby_script/bioruby/sample/blast.rb
--'  247  0  ~/ruby_script/bioruby/sample/biofetch.rb
--'  429  0  ~/ruby_script/bioruby/sample/biofetch.rb
--'  572  0  ~/ruby_script/bioruby/sample/biofetch.rb
--'  7  22  ~/ruby_script/socket_server.rb
--'  5  22  ~/ruby_script/socket_server.rb
--'  13  0  ~/ruby_script/em.rb
--'  9  6  ~/ruby_script/em-websocket/examples/echo.rb
--'  35  57  ~/ruby_script/em-websocket/examples/echo.rb
--'  31  48  ~/ruby_script/em-websocket/examples/echo.rb
--'  26  0  ~/ruby_script/em-websocket/examples/echo.rb
--'  5  5  ~/ruby_script/em-websocket/examples/echo.rb
--'  20  6  ~/ruby_script/em-websocket/examples/echo.rb
--'  13  6  ~/ruby_script/em-websocket/examples/echo.rb
--'  17  6  ~/ruby_script/em-websocket/examples/echo.rb
--'  8  40  ~/ruby_script/em-websocket/examples/echo.rb
--'  18  18  ~/ruby_script/em-websocket/examples/echo.rb
--'  1  0  ~/ruby_script/em.rb
--'  4  13  ~/ruby_script/test1.rb
--'  14  0  ~/ruby_script/config.ru
--'  1  0  ~/ruby_script/config.ru
--'  40  251  ~/ruby_script/socky-example/public/javascripts/socky.min.js
--'  1  0  ~/ruby_script/socky-example/public/javascripts/socky.min.js
--'  26  46  ~/ruby_script/socky-example/public/javascripts/application.js
--'  1  0  ~/ruby_script/socky-example/public/javascripts/application.js
--'  1  20  ~/ruby_script/socky-example1/public/javascripts/application.js
--'  23  44  ~/ruby_script/socky-example1/public/javascripts/application.js
--'  45  36  ~/ruby_script/socky-example1/public/javascripts/application.js
--'  28  36  ~/ruby_script/socky-example1/public/javascripts/application.js
--'  83  12  ~/desktop/jquery.jqplot/examples/example.js
--'  62  35  ~/desktop/jquery.jqplot/examples/example.js
--'  107  9  ~/desktop/jquery.jqplot/examples/example.js
--'  61  32  ~/desktop/jquery.jqplot/examples/example.js
--'  61  0  ~/desktop/jquery.jqplot/examples/area.html
+-'  52  0  ~/desktop/Shiny Theme.html
+-'  1  0  ~/desktop/Shiny Theme.html
+-'  9  7  ~/desktop/上传.csv
+-'  1  0  ~/desktop/上传.csv
+-'  31  120  ~/desktop/LIMS开发日志
+-'  2  4  ~/desktop/使用说明.url
+-'  1  0  ~/desktop/使用说明.url
+-'  2  4  ~/desktop/使用说明.url
+-'  7  2  ~/sino_promotion/send.rb
+-'  5  8  ~/sino_promotion/app/views/promotion/promotion_20130918.html.haml
+-'  9  7  ~/sino_promotion/send.rb
+-'  18  20  ~/sino_promotion/app/views/promotion/promotion_20130918.html.haml
+-'  1  0  /mnt/mfs/www/gene_bank/config/admin_users.yml
+-'  1  0  /var/www/-
+-'  1  0  ~/desktop/工作交接.csv
+-'  1  0  ~/desktop/purl.js
+-'  1  0  /tmp/report20130902-13312-1auo8j6-1
+-'  1  0  ~/desktop/abc.pdf
+-'  37  111  ~/desktop/LIMS开发日志
+-'  14  17  ~/sino_promotion/app/mailers/promotion.rb
+-'  18  22  ~/sino_promotion/app/mailers/promotion.rb
+-'  5  2  ~/sino_promotion/send.rb
+-'  31  2  ~/sino_promotion/app/mailers/promotion.rb
+-'  29  48  ~/sino_promotion/app/mailers/promotion.rb
+-'  1  0  ~/sino_promotion/app/mailers/promotion.rb
+-'  1  0  ~/send_lims_result/app/views/send_result/send_notify.html.haml
+-'  15  0  ~/send_lims_result/app/views/send_result/send_notify.html.haml
+-'  1  0  ~/send_lims_result/app/mailers/send_result.rb
+-'  89  0  ~/send_lims_result/app/mailers/send_result.rb
+-'  5  15  /usr/local/rvm/gems/ruby-2.0.0-p247/gems/superwf-1.0.0/app/views/scaffolds/index.js.erb
+-'  1  0  /usr/local/rvm/gems/ruby-2.0.0-p247/gems/superwf-1.0.0/app/views/scaffolds/index.js.erb
+-'  146  6  /usr/local/rvm/gems/ruby-2.0.0-p247/gems/superwf-1.0.0/app/assets/javascripts/superwf.js.coffee
+-'  25  4  /usr/local/rvm/gems/ruby-2.0.0-p247/gems/superwf-1.0.0/app/assets/javascripts/superwf.js.coffee
+-'  1  0  /usr/local/rvm/gems/ruby-2.0.0-p247/gems/superwf-1.0.0/app/assets/javascripts/superwf.js.coffee
+-'  64  2  ~/desktop/sal_item.sql
+-'  1  0  ~/desktop/sal_item.sql
+-'  65  0  ~/desktop/dna_yangpininfo.sql
+-'  148  0  ~/desktop/dna_yangpininfo.sql
+-'  69  6  ~/desktop/bootstrap-datetimepicker-master/sample/index.html
 
 # 缓冲区列表:
-%~/.ssh/config	106	14
+%~/.ssh/config	23	1
 
 # 文件内的标记历史记录 (从新到旧):
 
 > ~/.ssh/config
-	"	106	14
+	"	23	1
 	^	103	15
 	.	103	14
 	+	55	10

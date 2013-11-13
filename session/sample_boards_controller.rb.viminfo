@@ -8,117 +8,117 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/subnav
+~Msle0~/\<search\>
 
 # Last Substitute Search Pattern:
-~MSle0&available
+~MSle0&plasmid_code
 
 # Last Substitute String:
-$statistic
+$
 
 # Command Line History (newest to oldest):
-:Rview sample_boards/_show.html.haml
-:Rview sample_boards/_table.html.haml
-:Rcontroller sample_boards
-:Rview orders/_form.html.haml
-:Rview clients/_search.html.haml
-:R
-:Rstylesheet superwf
-:tabedit Gemfile
-:e app/assets/javascripts/redo_typeset.js.coffee
-:Rview orders/new.html.haml
-:Rview samples/redo_typeset.html.haml
-:Rcontroller samples
-:Rjavascript orders
-:Rview sample_boards/select.js.erb
-:Rview new_redo.html.haml
-:Rcontroller orders
-:Rmodel sample_head
-:Rcontroller smaples
-:Rview edit.html.haml
-:Rview _form.html.haml
-:Rview orders/edit.html.haml
-:Rlocale reactions.cn.yml
-:Rmodel reaction
-:Rmigration create_reactions
-:Rlocale samples.cn.yml
-:vs Gemfile
-:Rinitializer devise
 :q
-:Rlocale reaction_boards.cn.yml
-:Rlocale reaction
-:Rview redo_typeset.html.haml
-:Rlocale menus.cn.yml
-:Rcontroller reactions
-:Rview reactions/new_redo.js.erb
-:Rview reactions/create_redo.js.erb
-:Rv
-:Rmodel sample
-:Rmodel order
-:Rmodel 
-:Rjavascript new_redo_orders
-:Rview orders/new_redo.html.haml
-:Rm
-:Rview orders/
-:e config/routes.rb
-:Rview reactions/_new_redo.html.haml
+:Rcontroller sample_boards
+:tabedit Capfile
+:Rview sample_boards/index.html.slim
+:vsplit Capfile
+:q!
+:e
+:e unicornctl
+:Rview sample_heads/_table.html.slim
+:Rview sample_heads/index.html.slim
+:Rview sample_heads/_form.html.slim
+:Rmodel asset
+:Rcontroller assets
+:Rview departments/index.html.slim
+:Rcontroller departments
+:Rview assets/_search.html.slim
 :Rview 
-:Rcontroller 
-:Rjavascript 
-:Rlocale sample_heads.cn.yml
-:Rmodel sample_board
+:Rview assets/_form.html.slim
+:Rstylesheet application
+:Rview new.html.slim
+:Rmigration create_assets
+:Rmigration create_asset_types
+:Rview assets/index.html.slim
+:Rspec requests/chargers
+:Rspec models/asset
+:Rlocale assets.cn.yml
+:Rlocale simple_form.yml
+:e config/application.rb
+:Rview _table.html.slim
+:Rview departments/_sear
+:Rcontroller asset
+:Rcontroller asset_types
+:Rcontroller dealers
+:R
+:Rcontroller producers
+:Rview producers/_for
+:Rview sto
+:Rview stora
+:Rview chargers/index.html.slim
+:e app/views/chargers/_form.html.slim
+:Rlocale chargers.cn.yml
+:Rview chargers/_form.html.slim
+:Rview chargers/new.html.slim
+:Rview chargers/index.js.erb
+:Rview chargers/_search.html.slim
+:Rcontroller chargers
+:Rcontroller storage_sites
+:Rview departments/_form.html.slim
+:e config/locales/simple_form.yml
+:Rview departments/index.js.erb
 
 # Search String History (newest to oldest):
-?/o
-?/subnav
-?/redo-typ
-?/select_sample_board
-? \<get_client\>
-?/#primer
-?/#
-?/client
-?/select
-?/persisted
-? \<new_record\>
-?/sinogeno
-?/user
-?/typeset
-?/redo_typ
-?/validate
-?/hidden_field
-? \<TYPE\>
-?/hidden
-?/scope
-?/hook
-? \<type\>
-?/status
-?/un
-?/selectable
-?/before_
-?/update
-?/after_
-? \<after_save\>
-?/workflow
-? \<uncomplete\>
-?/flow
-?/elect
-?/primer_id
-? \<hidden_field_tag\>
-? \<current_max_number\>
-?/TY
-?/type
-?/T
+? \<search\>
 ? \<def\>
-?/reactions
-?/qualities
-?/reaction_files
-?/after
-?/before
-?/hooks
-?/before_save
 ?/search
-? \<STATUS\>
-?/manage
+?/seatr
+?/interval
+?/title
+?/superwf
+?/overview
+?/header
+?/simple_form
+?/board_number
+?/location
+?/to_s
+?/current_user
+?/md
+?/create
+?/succ
+?/input_cl
+?/form-contr
+?/form-group
+?/boot
+?/search_date
+?/rescue
+?/keys
+?/referer
+?/index
+?/prepay
+?/invert
+?/puts
+?/checkouts
+?/clients
+?/client_info
+?/price
+?/totalfee
+?/checkout_primer
+?/creator
+?/fee
+?/total
+?/toa
+?/reaction
+?/checkouting
+?/render
+?/to_report
+?/orders
+?/haml
+?/print
+?/def index
+?/signpaper
+?/to_envelop
+?/sign_paper
 
 # Expression History (newest to oldest):
 
@@ -127,54 +127,62 @@ $statistic
 # Input Line History (newest to oldest):
 
 # å¯„å­˜å™¨:
-"0	CHAR	0
-	:class => 'search-query input-small'
+"0	LINE	0
+	br
 "1	LINE	0
 	
 "2	LINE	0
-	= render 'scaffolds/pagination', :records => @samples
+	  def index
+	    @dialog_template = 'dialog'
+	    super
+	  end
 "3	LINE	0
-	= render 'scaffolds/pagination', :records => @samples
+	
 "4	LINE	0
-	#sample_board
+	
+	end
 "5	LINE	0
-	= render 'scaffolds/pagination', :records => @samples
+	  def index
+	    @create_dialog = true
+	    super
+	  end
 "6	LINE	0
-	- if xhr?
+	.col-lg-offset-10
 "7	LINE	0
-	#sample_board
+	.row
 "8	LINE	0
-	    if !$("#order_client_id").val()
-	      $("#order_client").click()
-	      return false
+	  .form-actions
 "9	LINE	0
-	    if !$("#order_client_id").val()
-	      $("#order_client").click()
-	      return false
-"a	BLOCK	23
-	{style: 'width: 100px;'}
+	    .form-inputs
 "b	BLOCK	23
 	 NOT NULL AUTO_INCREMENT
+"c	CHAR	0
+	278
+<wcbcwcreated_datewwwwbwwcwcreated_date_from??k3gtggjjjjjjjjjjkjkkwwwwwwwwwwwwwwwwwcwcreated_date_to??k3??é½ƒ??é½ƒ????,????.i@jjkfdi@jk;;i@jkkkkkkj/datanni@nni@nnnnnni@nni@nni@nni@#xnnI@uunni#??kb@nni@nni@nni@nni@nni@nni@nni@nni@nni@nni@nni@nni@nn
 "g	CHAR	0
 	
+"i	CHAR	0
+	378
+<""""i""iquadrantoreaction_board_id = _this.a??kbparn??kbent().attr()i""re??kb??kbireaction_board_I??kbid??k3kkkkkYGpwwwwwwwwwwwCbbbbddkkkkkkkYjVkyjGpzzjwwwwwwwwvf]sp[??kb??kb[]i""hireaction_board=??kb_id=lli  i++i  ireaction_board_idllllla[]iquadrna??kb??kbant=""i  i++i  iquadrant??k3??k3??k3??k3??k3????,????.??k3??k3??k3??k3??k3??k3??k3????,????.veee
 "k	CHAR	0
-	j
+	448
+<oukounless xhr?ujddujddoendk>>osession[]i:referear hla = referer if redererreferer.present?€k3kkkkkkkkkjjjjod€kbbefore_action :set_se, only: []i:new, :c€kbedit€k3€ı,€ı.x€k3€ıK€ıK€ıK€ıK€ıL€ıL€ıL€ıL€ı,€ı.xxxxxxxxkkwlllllxxxxxxxx€k3€k3€k3€k3€k3€k3bbbbwjjjjjjjI#€k3€k3€k3€k3€k3kkodef newend€k3kosession[]i:red€kbfererl:Rvi	 ho	i	hlla = ''hCroot_path€k3korender text: 'abc'€k3bddpwwwCsession[]i:refeer€kb€kbrer€k3€k5€k5
 "l	CHAR	0
-	
+	lD€k3€k3€k3€k3€k3€k3gkjkjgtlgt:Rmo	 blas	:vs ap	mo	sam	/before_sam€kbvenzzjjjjkkkwjlkkkkkkkkkjjkkYhp€k3€k3€k3kwwwwwwwwllajkddkpuPjjoendkVk>€k3:Rmi cRmi	 creatrecreate_se	:Rmi	 	w
 "p	LINE	0
 	
 	
 	::::::::::::::::::::::::
-	æ—¥æœŸï¼šå…¬å…ƒ2013å¹´1æœˆ10æ—¥ã€€æ˜ŸæœŸå›› 
-	é›»è…¦ï¼šunix  0.008533 seconds 
-	ç‰ˆæœ¬ï¼švi=703 
-	ç·¨ç¢¼ï¼šutf-8ã€€utf-8,ucs-bom,euc-jp,gb18030,gbk,gb2312,cp936 
-	ç’°å¢ƒï¼šzh_CN.UTF-8 
-	è©åº«ï¼šæ‹¼éŸ³è©åº«ï¼š/home/wangfan/.vim/plugin/vimim.pinyin_quote_sogou.txt 
-	è©åº«ï¼šé›²è©åº«ï¼šç™¾åº¦é›²ã€€3é›²ã€€æœç‹—é›²ã€€ï¼±ï¼±é›²ã€€ 
-	è¯ç¶²ï¼šPython2 Interface to Vim 
-	è¼¸å…¥ï¼šVimIMã€€ã€€å°é¶´é›™æ‹¼ã€€ 
-	é¸é …ï¼švimimrc 
+	éƒãƒ¦æ¹¡é”›æ°¬å•é??2013éª??1éˆ??10éƒãƒ£????é„ç†¸æ¹¡é¥?? 
+	é—†æ˜å‡é”›æ­¶nix  0.008533 seconds 
+	é—å Ÿæ¹°é”›æ­·i=703 
+	ç»¶ã„§â’“é”›æ­¶tf-8éŠ†??utf-8,ucs-bom,euc-jp,gb18030,gbk,gb2312,cp936 
+	é æ¿??å†¿ç´°zh_CN.UTF-8 
+	ç‘­ç‚²éŸ©é”›æ°­å«¾é—Šå® ??ç‚²éŸ©é”›??/home/wangfan/.vim/plugin/vimim.pinyin_quote_sogou.txt 
+	ç‘­ç‚²éŸ©é”›æ°¶æ´¸ç‘­ç‚²éŸ©é”›æ°±æ«¨æ´ï¹‚æ´¸éŠ†??3é—†å±‚????é¼æ»…å«é—†å±‚????é”›æ†‹æ€¥é—†å±‚???? 
+	é‘±??ç¼è¯§ç´°Python2 Interface to Vim 
+	æ“ç¨¿å†é”›æ­imIMéŠ†??éŠ†??çå¿›æ´é—†æ¬å«¾éŠ†?? 
+	é–¬æçˆ¡é”›æ­·imimrc 
 	    :let g:vimim_cloud = 'baidu,3'  
 	    :let g:vimim_map = 'c-bslash'  
 	    :let g:vimim_mycloud = 0  
@@ -185,716 +193,219 @@ $statistic
 	  " :let g:vimim_toggle = 'pinyin,baidu,3,sogou,qq' 
 	::::::::::::::::::::::::
 	
-	æ²¡æœ‰åŒ¹é…çš„è‡ªåŠ¨å‘½ä»¤
-	æ²¡æœ‰åŒ¹é…çš„è‡ªåŠ¨å‘½ä»¤	
+	å¨Œâ„ƒæ¹é–å½’å¤é¨å‹®åšœé”ã„¥æ‡¡æµ ??
+	1963
+<å¨Œâ„ƒæ¹é–å½’å¤é¨å‹®åšœé”ã„¥æ‡¡æµ ??	PhkkkwVkVjjylPwwwwxxxscreator€k3€k3€k3€k3€k3€k3jjkkjjkjbcwrecord_type€k3jjjjjjjjjjkkkkkkkkkkkkhebe:Rm€kbmo	 sample/sample_cancelnI#€k3€k3€k3€k3€k3€k3€k3lkjbebjbjjjkebebjjjjllwwwbbbbbbwvestr€kbextwwwwbveeex€k3D€k3h:RMo	 Rmo	 cance	jkobelongs_to :sample, poli€kby: true€k3€k3€k3€k3A, as: :record€k3€k3€k3€k3€k3€k3xukkkkbukkkkbCuuebvestable_name€k3€ı,€ı.be€ıL€ıL€ıK€ıKklu€k3€k3€k3€k3€k3€k3€k3€ı,€ı.€ıK€ıLYpwwwbcwreactionzzo#h€kb hooks€kb€kbb€kbafter_create doendkoself.record.destroy€k3:gth:Rcon	 sample_can	jjkjjkl:Rcon	 s€kbcancel	ukVjjjjd€k3hV%kkdlphkddlkpwwwbxxxxxxxxsrecord_typewwwwh:€k3:Rmi	 create_cancel	jjjwlbwwwekoinclude ::Superwf:S€kb:Sc€kb€kbRecordor::Creator€k3jhjj:Rmi	 create_sample_cancel	jjjkkkYjjjjjpjjkkbeeeeeeela, data:€kbbi:eexbbA, search: []i:c€kbcreator_id€k3bbbbbDjjjjjjjk€k3h:Rcon	 Rmo	 cancel	jklggjddhP€k3l€k3€k3€k3€k3€k3€k3h:Rvi	 samples	in	jjbbbbbbbbwllllhhhhvlllllllllllllllldicancel_€kbed_data€k3:e c	r	/cancel_€kbed/sample_cancelnnnOresources :canceled_datas, only: []i:index, :create€k3jebebI#€k3€k3€k3€k3€k3€k3Lhjjjjjwl:Rvi	 sample_cance	samples	in	jjkO= hindd€kb€kb€kbdden_field_tag :sampdata_ta€kbypebxxxsrecordA, ''isampleb~€k3bebebhveebcwrecordwwvees::€kb€kbeval()iparams[]i:record_type€k3wwwwvesidkbbwcwidjjbbbvesrecordwwlllllllbveebbescanceled_data€k3€k3€k3bicreate_€k3gt:Rmo	 samplejbbbbxwwvllbCcanceled_data€k3€k3€k3€k3€k3gtl:Rmi	 create_sc€kb€kbcanc	jjkggjjjwhjkeeeeeeeeeeeea, data: record.to_swwbwcwrecordbbhDjj€k3bbbbljjkkkjjjkhkkeeeeeeebbbbbbbbbirecord:€kb_id: id, record_type: u€k3€k3€k3€k3€k3€ü€ı,€ü€ı-€ü€ı-€ü€ı-€ü€ı-€ü€ı-€ü€ı.:Rmo	 prepay	ggjjjjjjjjjjjjjjjgg:Rmo	 cancel	jkkkkkkwwwDbbbbbcwrecordjdd€k3€k3€k3€k3€k3:Rmo	 clientjjkkh:Rmo	 c€kbsampleggjjjjjwwA, as: :record€k3€k3€k3l€ı,€ı.€ı,€ı.€ı,€ı.€ıK€ıK:Rmo	 s€kbcancel	
+"q	CHAR	0
+	483
+<Vkkk<wlvt"screate prepaymentsjbbbwcwpostkop = ::Fac.build :€kb€kb()i:prepaymentA.attributes€k3ja, preap€kb€kbpayment: p€k3jbbbwwcw302€k3k€k3€k3€k3€k3€k3€k3€k3kop.deleteko[]bC%w{}icreated_at d€kbupdated_at d€kbcreator_idjkA.each do |a|joendk>>A a€k3€k3€k3€k3jjlkkkkkkkkkk:Rsp	 sp	req	res	hkkjop €kb[]i''icompanycompanyrecord_idA = create_company.id€k3:Rfic€kbx	 prepaym	n€kb€kb€kb€kb€kb€kb€kb€kb€kbs	l:Rmo	 prepam	€kb	jjjjjjjjjjjjjjjjjjjjjweb
+"s	CHAR	0
+	594
+<,hi,llxxepwxxxsuuf}xexepwxxxwewwxepwxxxwwllDjjwwxxewbea_tagea, params[]iswwxepwxxxwwwwwwxepwxxxwwxepwxxxjjkkjjj^wxxea_g??kbtagwwwwwxepwxxx??k3????,????.xepwxxxjjkwwwwwwwwwxepwxxxwwwwwwxepwxxxwwxepwxxxwjbbbbbbbbxepwxxx??k3??k3????,????.:Rvi	 quality_co	_ta	jkVjdljkggjjkwpVj>.jwveehxwwr xu$xbbbbbbbxepwxxx??k3hdd??k3l:Rvi	 ????,????.??é½ƒ??é½‚??é½ƒ????,????.????,????.$ibcwtruebbbbbwi, params[]i:result??k3:Rmo	 qual	Gkgg:_c	Gkwkkkwji#??k3??k3??k3??k3u??k3h:Rcon	 qua	jjjjjjjjjjjjjjjjjjjjjjjjjjjj:??kb??kb??kby_co	a, :desc??k3l:Rmo	 sample_he	G/searchgg:R
 "v	CHAR	0
-	389
-<jkV%>wveesself€k3€ıK€ıK€ıK€ıL€ıL€ıK€ıL€ıL€ı,€ı-€ı-€ı-€ı-€ı-€ı-€ı-€ı-€ı-€ı.sselfwwwwblveesself€k3gt:gtjjV%ddd€k3hjjbbbbluuwC€ı,€ı.€ı,€ı.bcwbcwc€kbmoduleA F€kb€kbFac€k3hjjjjjjbbbbveelx€k3€k3€k3€k3€k3€ı,€ı.cw::Filewwww.€k3€ı,€ı.xkjjI#€k3kY:Rfix	 hr€kbtcon	jjjjj:Rfix 	htRfix	 ht_smaple-re	€kb€kb€kb_r	:€kb€kb€kb€kb€kb€kb€kbamp		jkpdkddljjV%ddd€k3h€k3jjl€k3h
+	473
+<jkV%>wveesself??k3??é½‚??é½‚??é½‚??é½ƒ??é½ƒ??é½‚??é½ƒ??é½ƒ????,????-????-????-????-????-????-????-????-????-????.sselfwwwwblveesself??k3gt:gtjjV%ddd??k3hjjbbbbluuwC????,????.????,????.bcwbcwc??kbmoduleA F??kb??kbFac??k3hjjjjjjbbbbveelx??k3??k3??k3??k3??k3????,????.cw::Filewwww.??k3????,????.xkjjI#??k3kY:Rfix	 hr??kbtcon	jjjjj:Rfix 	htRfix	 ht_smaple-re	??kb??kb??kb_r	:??kb??kb??kb??kb??kb??kb??kbamp		jkpdkddljjV%ddd??k3h??k3jjl??k3h
 "w	CHAR	0
-	
+	wwwww.€k3lbxxxxxsvector€k3hjjA, w€kb€kb{}istyle: ''iwdi
+"x	CHAR	0
+	"
 ""-	CHAR	0
-	.center
+	'
 
 # å…¨å±€å˜é‡:
 
 # æ–‡ä»¶æ ‡è®°:
-'0  14  42  /var/www/lims/app/controllers/sample_boards_controller.rb
-'1  7  0  /var/www/client_base/.gitignore
-'2  8  0  /var/www/client_base/.git/COMMIT_EDITMSG
-'3  7  39  /var/www/client_base/config/initializers/devise.rb
-'4  19  0  /etc/hosts
-'5  58  2  /var/www/lims/app/models/reaction.rb
-'6  1  0  /var/www/lims/app/assets/javascripts/reaction_cancel_logs.js.coffee
-'7  53  2  /var/www/lims/app/models/sample.rb
-'8  32  4  /var/www/superwf/superwf_scaffold/lib/superwf_scaffold.rb
-'9  23  4  /var/www/primer_synthesis/app/mailers/notifier.rb
+'0  5  11  /var/www/gene_bank/app/controllers/sample_boards_controller.rb
+'1  18  29  /var/www/fixed_asset/app/views/assets/_form.html.slim
+'2  34  35  /var/www/fixed_asset/config/locales/simple_form.yml
+'3  1  0  /var/www/gene_bank/app/views/sample_heads/index.html.slim
+'4  7  77  /var/www/superwf/Capfile
+'5  1  0  /var/www/superwf/Gemfile
+'6  6  0  /var/www/superwf/app/assets/stylesheets/superwf.css.scss
+'7  130  13  /var/www/superwf/app/assets/stylesheets/superwf.css.scss
+'8  3  18  /var/www/gene_bank/app/views/home/index.html.slim
+'9  6  88  /var/www/fixed_asset/app/views/home/index.html.slim
 
 # è·³è½¬åˆ—è¡¨ (ä»æ–°åˆ°æ—§):
--'  14  42  /var/www/lims/app/controllers/sample_boards_controller.rb
--'  10  2  /var/www/lims/app/controllers/sample_boards_controller.rb
--'  17  31  /var/www/lims/app/controllers/sample_boards_controller.rb
--'  1  0  /var/www/lims/Gemfile
--'  2  246  /var/www/lims/app/views/samples/redo_typeset.html.haml
--'  8  45  /var/www/lims/app/controllers/samples_controller.rb
--'  7  35  /var/www/lims/app/controllers/samples_controller.rb
--'  20  65  /var/www/lims/app/views/samples/redo_typeset.html.haml
--'  35  0  /var/www/lims/app/views/samples/redo_typeset.html.haml
--'  36  0  /var/www/lims/app/views/samples/redo_typeset.html.haml
--'  34  14  /var/www/lims/app/views/samples/redo_typeset.html.haml
--'  3  0  /var/www/lims/app/views/samples/redo_typeset.html.haml
--'  1  0  /var/www/lims/app/views/sample_boards/select.js.erb
--'  10  0  /var/www/lims/app/views/sample_boards/select.js.erb
--'  1  0  /var/www/lims/app/controllers/orders_controller.rb
--'  1  0  /var/www/lims/app/controllers/sample_boards_controller.rb
--'  19  6  /var/www/lims/app/controllers/sample_boards_controller.rb
--'  44  4  /var/www/lims/app/controllers/orders_controller.rb
--'  17  28  /var/www/lims/app/controllers/orders_controller.rb
--'  14  7  /var/www/lims/app/controllers/samples_controller.rb
--'  7  17  /var/www/lims/app/views/orders/_form.html.haml
--'  6  60  /var/www/lims/app/views/orders/_form.html.haml
--'  3  41  /var/www/lims/app/views/orders/edit.html.haml
--'  12  13  /var/www/lims/app/views/orders/_form.html.haml
--'  22  13  /var/www/lims/app/views/orders/_form.html.haml
--'  26  11  /var/www/lims/app/views/orders/_form.html.haml
--'  1  2  /var/www/lims/app/views/orders/_form.html.haml
--'  11  44  /var/www/lims/app/views/orders/_form.html.haml
--'  2  3  /var/www/lims/app/views/orders/_form.html.haml
--'  27  6  /var/www/lims/app/views/orders/_form.html.haml
--'  23  8  /var/www/lims/app/views/orders/_form.html.haml
--'  21  10  /var/www/lims/app/views/orders/_form.html.haml
--'  1  0  /var/www/lims/app/views/orders/edit.html.haml
+-'  5  11  /var/www/gene_bank/app/controllers/sample_boards_controller.rb
+-'  4  4  /var/www/gene_bank/app/controllers/sample_boards_controller.rb
+-'  1  0  /var/www/gene_bank/Capfile
+-'  2  31  /var/www/gene_bank/app/views/sample_boards/index.html.slim
+-'  5  0  /var/www/gene_bank/unicornctl
+-'  1  0  /var/www/gene_bank/app/views/sample_boards/index.html.slim
+-'  36  0  /var/www/gene_bank/unicornctl
+-'  19  0  /var/www/gene_bank/app/views/sample_heads/_table.html.slim
+-'  1  0  /var/www/gene_bank/app/views/sample_heads/index.html.slim
+-'  1  0  /var/www/gene_bank/app/views/sample_heads/_form.html.slim
+-'  18  29  /var/www/fixed_asset/app/views/assets/_form.html.slim
+-'  17  1  /var/www/fixed_asset/app/assets/stylesheets/application.css.scss
+-'  1  0  /var/www/fixed_asset/app/views/assets/index.html.slim
+-'  1  0  /var/www/fixed_asset/Capfile
+-'  1  0  /var/www/fixed_asset/app/views/assets/_search.html.slim
+-'  5  0  /var/www/fixed_asset/app/views/assets/_search.html.slim
+-'  1  0  /var/www/fixed_asset/app/models/asset.rb
+-'  14  132  /var/www/fixed_asset/app/models/asset.rb
+-'  11  0  /var/www/fixed_asset/spec/requests/chargers_spec.rb
+-'  103  0  /var/www/fixed_asset/spec/models/asset_spec.rb
+-'  1  0  /var/www/fixed_asset/spec/models/asset_spec.rb
+-'  94  6  /var/www/fixed_asset/spec/models/asset_spec.rb
+-'  34  35  /var/www/fixed_asset/config/locales/simple_form.yml
+-'  1  0  /var/www/fixed_asset/app/controllers/assets_controller.rb
+-'  4  11  /var/www/fixed_asset/config/application.rb
+-'  4  10  /var/www/fixed_asset/app/controllers/assets_controller.rb
+-'  31  23  /var/www/fixed_asset/config/locales/simple_form.yml
+-'  2  2  /var/www/fixed_asset/app/controllers/departments_controller.rb
+-'  3  2  /var/www/fixed_asset/app/controllers/asset_types_controller.rb
+-'  1  0  /var/www/fixed_asset/app/controllers/dealers_controller.rb
+-'  1  0  /var/www/fixed_asset/app/controllers/producers_controller.rb
+-'  4  21  /var/www/fixed_asset/app/views/chargers/index.html.slim
+-'  3  16  /var/www/fixed_asset/app/views/chargers/_form.html.slim
+-'  1  0  /var/www/fixed_asset/config/locales/chargers.cn.yml
+-'  2  2  /var/www/fixed_asset/app/controllers/chargers_controller.rb
+-'  5  8  /var/www/fixed_asset/app/views/chargers/_form.html.slim
+-'  6  8  /var/www/fixed_asset/app/views/chargers/_form.html.slim
+-'  1  0  /var/www/fixed_asset/app/views/chargers/new.html.slim
+-'  2  2  /var/www/fixed_asset/app/controllers/storage_sites_controller.rb
+-'  1  0  /var/www/fixed_asset/app/views/departments/_form.html.slim
+-'  5  8  /var/www/fixed_asset/app/views/departments/_form.html.slim
+-'  6  8  /var/www/fixed_asset/app/views/departments/_form.html.slim
+-'  5  23  /var/www/fixed_asset/config/locales/simple_form.yml
+-'  2  0  /var/www/fixed_asset/app/views/departments/index.html.slim
+-'  4  6  /var/www/fixed_asset/app/controllers/home_controller.rb
+-'  6  21  /var/www/fixed_asset/app/controllers/home_controller.rb
+-'  63  4  /var/www/fixed_asset/config/locales/cn.yml
+-'  12  4  /var/www/fixed_asset/config/locales/cn.yml
+-'  1  0  /var/www/fixed_asset/app/assets/stylesheets/application.css.scss
+-'  15  28  /var/www/fixed_asset/app/assets/stylesheets/application.css.scss
+-'  16  1  /var/www/fixed_asset/app/assets/stylesheets/application.css.scss
+-'  17  19  /var/www/fixed_asset/app/assets/javascripts/application.js
+-'  36  16  /var/www/fixed_asset/Gemfile
+-'  1  0  /var/www/fixed_asset/Gemfile
+-'  4  13  /var/www/gene_bank/app/views/sample_heads/index.html.slim
+-'  2  10  /var/www/gene_bank/app/views/sample_heads/_form.html.slim
+-'  3  8  /var/www/gene_bank/app/views/sample_heads/_form.html.slim
+-'  7  77  /var/www/superwf/Capfile
+-'  1  0  /var/www/superwf/Gemfile
+-'  6  0  /var/www/superwf/app/assets/stylesheets/superwf.css.scss
+-'  130  13  /var/www/superwf/app/assets/stylesheets/superwf.css.scss
+-'  129  19  /var/www/superwf/app/assets/stylesheets/superwf.css.scss
+-'  133  10  /var/www/superwf/app/assets/stylesheets/superwf.css.scss
+-'  145  18  /var/www/superwf/app/assets/stylesheets/superwf.css.scss
+-'  3  18  /var/www/gene_bank/app/views/home/index.html.slim
+-'  6  88  /var/www/fixed_asset/app/views/home/index.html.slim
+-'  37  0  /var/www/fixed_asset/Gemfile
+-'  13  4  /var/www/gene_bank/app/assets/javascripts/samples.js.coffee
+-'  27  4  /var/www/gene_bank/app/models/sample_board.rb
+-'  41  0  /var/www/gene_bank/app/models/sample_board.rb
+-'  12  2  /var/www/gene_bank/app/models/sample_board.rb
+-'  9  15  /var/www/gene_bank/config/locales/simple_form.yml
+-'  1  0  /var/www/gene_bank/config/locales/simple_form.yml
+-'  6  4  /var/www/gene_bank/lib/board.rb
+-'  2  35  /var/www/gene_bank/app/controllers/sample_boards_controller.rb
+-'  1  0  /var/www/gene_bank/lib/board.rb
+-'  13  10  /var/www/gene_bank/lib/board.rb
+-'  3  0  /var/www/gene_bank/app/assets/stylesheets/samples.css.scss
+-'  1  0  /var/www/gene_bank/app/assets/stylesheets/samples.css.scss
+-'  7  13  /var/www/gene_bank/app/views/samples/_search.html.slim
+-'  5  74  /var/www/gene_bank/app/views/samples/_search.html.slim
+-'  3  30  /var/www/gene_bank/app/views/samples/_search.html.slim
+-'  2  0  /var/www/gene_bank/app/views/samples/_search.html.slim
+-'  3  2  /var/www/gene_bank/app/controllers/primers_controller.rb
+-'  1  0  /var/www/gene_bank/app/views/vectors/_search.html.slim
 
 # ç¼“å†²åŒºåˆ—è¡¨:
-%/var/www/lims/app/views/samples/redo_typeset.html.haml	2	401
-%/var/www/client_base/.gitignore	7	0
-%/var/www/lims/config/initializers/devise.rb	5	37
-%/var/www/lims/Gemfile	1	0
-%/var/www/lims/config/locales/samples.cn.yml	1	0
-%/var/www/lims/db/migrate/20130118024219_create_reactions.rb	31	19
-%/var/www/lims/app/models/reaction.rb	1	0
-%/var/www/lims/config/locales/reactions.cn.yml	17	25
-%/var/www/lims/app/views/orders/edit.html.haml	3	41
-%/var/www/lims/app/views/orders/_form.html.haml	25	10
-%/var/www/lims/app/controllers/samples_controller.rb	8	45
-%/var/www/lims/app/models/sample_head.rb	64	0
-%/var/www/lims/app/controllers/orders_controller.rb	1	0
-%/var/www/lims/app/views/orders/new.html.haml	7	131
-%/var/www/lims/app/views/orders/new_redo.html.haml	6	7
-%/var/www/lims/app/controllers/sample_boards_controller.rb	14	42
-%/var/www/lims/app/views/sample_boards/select.js.erb	1	0
-%/var/www/lims/app/assets/javascripts/orders.js.coffee	14	0
-%/var/www/lims/app/assets/javascripts/redo_typeset.js.coffee	5	56
-%/var/www/lims/app/assets/stylesheets/superwf.css.scss	20	1
-%/var/www/lims/app/views/clients/_search.html.haml	4	90
-%/var/www/lims/app/views/sample_boards/_table.html.haml	1	7
-%/var/www/lims/app/views/sample_boards/_show.html.haml	3	5
+%/var/www/fixed_asset/spec/models/asset_spec.rb	103	0
+%/var/www/fixed_asset/Gemfile	36	16
+%/var/www/gene_bank/app/views/sample_heads/_form.html.slim	1	0
+%/var/www/superwf/Capfile	7	77
+%/var/www/gene_bank/app/views/sample_heads/index.html.slim	1	0
+%/var/www/gene_bank/Capfile	1	0
+%/var/www/gene_bank/app/controllers/sample_heads_controller.rb	2	2
+%/var/www/gene_bank/config/locales/sample_heads.cn.yml	1	0
+%/var/www/gene_bank/app/views/samples/_search.html.slim	1	0
+%/var/www/gene_bank/app/views/sample_boards/index.html.slim	2	39
+%/var/www/fixed_asset/app/assets/javascripts/application.js	1	0
+%/var/www/fixed_asset/Capfile	1	0
+%/var/www/fixed_asset/app/assets/stylesheets/application.css.scss	17	1
+%/var/www/fixed_asset/config/locales/cn.yml	63	4
+%/var/www/fixed_asset/app/controllers/home_controller.rb	4	6
+%/var/www/fixed_asset/app/views/departments/index.html.slim	2	0
+%/var/www/fixed_asset/app/views/departments/_search.html.slim	1	0
+%/var/www/fixed_asset/app/views/departments/index.js.erb	1	0
+%/var/www/fixed_asset/config/locales/simple_form.yml	34	35
+%/var/www/fixed_asset/app/views/departments/_form.html.slim	1	0
+%/var/www/fixed_asset/app/controllers/storage_sites_controller.rb	2	2
+%/var/www/fixed_asset/app/controllers/chargers_controller.rb	2	2
+%/var/www/fixed_asset/app/views/chargers/_search.html.slim	3	0
+%/var/www/fixed_asset/app/views/chargers/index.js.erb	1	0
+%/var/www/fixed_asset/app/views/chargers/new.html.slim	1	0
+%/var/www/fixed_asset/app/views/chargers/_form.html.slim	3	16
+%/var/www/fixed_asset/config/locales/chargers.cn.yml	1	0
+%/var/www/fixed_asset/app/views/chargers/index.html.slim	4	21
+%/var/www/fixed_asset/app/controllers/producers_controller.rb	1	0
+%/var/www/fixed_asset/app/controllers/dealers_controller.rb	1	0
+%/var/www/fixed_asset/app/controllers/asset_types_controller.rb	3	2
+%/var/www/fixed_asset/app/controllers/assets_controller.rb	18	10
+%/var/www/fixed_asset/app/controllers/departments_controller.rb	3	0
+%/var/www/fixed_asset/app/views/departments/_table.html.slim	1	0
+%/var/www/fixed_asset/app/views/assets/_search.html.slim	4	15
+%/var/www/fixed_asset/app/views/assets/index.html.slim	1	0
+%/var/www/fixed_asset/config/application.rb	4	11
+%/var/www/fixed_asset/config/locales/assets.cn.yml	8	26
+%/var/www/fixed_asset/spec/requests/chargers_spec.rb	11	0
+%/var/www/fixed_asset/app/models/asset.rb	78	0
+%/var/www/fixed_asset/db/migrate/20120523022426_create_asset_types.rb	1	0
+%/var/www/fixed_asset/db/migrate/20120521032245_create_assets.rb	9	45
+%/var/www/fixed_asset/app/views/assets/_form.html.slim	18	29
+%/var/www/fixed_asset/app/views/assets/new.html.slim	1	0
+%/var/www/gene_bank/app/views/sample_heads/_table.html.slim	19	0
+%/var/www/gene_bank/unicornctl	5	0
+%/var/www/gene_bank/app/controllers/sample_boards_controller.rb	5	11
 
 # æ–‡ä»¶å†…çš„æ ‡è®°å†å²è®°å½• (ä»æ–°åˆ°æ—§):
 
-> /var/www/lims/app/views/samples/redo_typeset.html.haml
-	"	2	401
-	^	2	405
-	.	2	401
-	+	2	0
-	+	36	0
-	+	4	58
-	+	2	111
-	+	5	0
-	+	8	18
-	+	9	0
-	+	14	0
-	+	9	23
-	+	14	0
-	+	10	31
-	+	14	24
-	+	14	0
-	+	11	30
-	+	13	35
-	+	14	0
-	+	12	0
-	+	16	43
-	+	36	0
-	+	23	28
-	+	24	44
-	+	16	20
-	+	17	35
-	+	23	0
-	+	19	39
-	+	20	0
-	+	36	0
-	+	36	2
-	+	36	0
-	+	36	98
-	+	18	27
-	+	21	27
-	+	22	34
-	+	24	79
-	+	28	25
-	+	10	19
-	+	9	18
-	+	8	24
-	+	11	25
-	+	12	19
-	+	13	19
-	+	31	0
-	+	28	80
-	+	30	69
-	+	29	51
-	+	30	0
-	+	31	0
-	+	34	64
-	+	25	80
-	+	14	37
-	+	36	130
-	+	36	17
-	+	36	0
-	+	36	17
-	+	14	56
-	+	11	0
-	+	11	0
-	+	26	0
-	+	27	106
-	+	36	0
-	+	32	0
-	+	36	0
-	+	33	0
-	+	36	0
-	+	14	0
-	+	33	0
-	+	33	91
-	+	33	0
-	+	33	92
-	+	2	113
-	+	2	213
+> /var/www/gene_bank/app/views/sample_heads/_form.html.slim
+	"	1	0
+	.	1	0
+	+	1	0
 	+	3	0
-	+	36	0
-	+	36	0
-	+	36	0
-	+	36	0
-	+	35	0
-	+	36	0
-	+	1	23
-	+	2	335
-	+	2	0
-	+	2	371
-	+	2	286
-	+	2	489
-	+	1	37
-	+	35	19
-	+	2	401
+	+	1	0
 
-> /var/www/lims/config/initializers/devise.rb
-	"	5	37
-	^	5	38
-	.	5	37
-	+	5	37
-
-> /var/www/lims/Gemfile
+> /var/www/gene_bank/app/views/sample_heads/index.html.slim
 	"	1	0
-	^	50	1
-	.	51	0
-	+	4	10
-	+	1	26
-	+	3	19
-	+	13	0
-	+	12	0
-	+	13	0
-	+	12	0
-	+	6	20
+	^	1	1
+	.	1	0
+	+	1	0
+
+> /var/www/gene_bank/Capfile
+	"	1	0
+
+> /var/www/gene_bank/app/views/sample_boards/index.html.slim
+	"	2	39
+	^	2	40
+	.	2	39
+	+	1	47
+	+	2	31
+	+	1	0
 	+	4	0
-	+	4	9
-	+	4	0
-	+	4	7
+	+	2	39
+
+> /var/www/gene_bank/app/views/sample_heads/_table.html.slim
+	"	19	0
+
+> /var/www/gene_bank/unicornctl
+	"	5	0
+
+> /var/www/gene_bank/app/controllers/sample_boards_controller.rb
+	"	5	11
+	^	5	17
+	.	5	11
+	+	2	35
 	+	6	0
-	+	6	0
-	+	12	0
-	+	13	0
-	+	13	0
-	+	4	0
-	+	6	0
-	+	9	2
-	+	10	0
-	+	9	0
-	+	12	0
-	+	13	0
-	+	14	0
-	+	21	0
-	+	1	26
-	+	63	0
-	+	51	17
-	+	39	27
-	+	3	18
-	+	61	15
-	+	62	18
-	+	1	0
-	+	42	26
-	+	3	18
-	+	51	30
-	+	60	0
-	+	50	0
-	+	51	0
-
-> /var/www/lims/config/locales/samples.cn.yml
-	"	1	0
-	^	36	38
-	.	36	35
-	+	34	99
-	+	11	0
-	+	18	19
-	+	36	35
-
-> /var/www/lims/db/migrate/20130118024219_create_reactions.rb
-	"	31	19
-	^	31	20
-	.	31	19
-	+	34	64
-	+	11	61
-	+	10	6
-	+	12	0
-	+	9	62
-	+	31	19
-
-> /var/www/lims/app/models/reaction.rb
-	"	1	0
-	^	2	97
-	.	2	96
-	+	34	63
-	+	33	36
-	+	34	39
-	+	36	0
-	+	55	0
-	+	57	0
-	+	65	0
-	+	65	38
-	+	65	0
-	+	65	11
-	+	65	0
-	+	65	23
-	+	4	13
-	+	65	21
-	+	8	0
-	+	8	0
-	+	114	108
-	+	114	91
-	+	114	89
-	+	114	0
-	+	114	0
-	+	114	28
-	+	114	0
-	+	114	100
-	+	114	0
-	+	106	94
-	+	109	0
-	+	106	70
-	+	105	0
-	+	114	0
-	+	108	92
-	+	114	0
-	+	107	9
-	+	108	50
-	+	107	10
-	+	108	68
-	+	114	0
-	+	113	87
-	+	112	86
-	+	106	53
-	+	111	114
-	+	111	0
-	+	110	82
-	+	65	2
-	+	65	0
-	+	56	0
-	+	33	0
-	+	35	0
-	+	34	51
-	+	65	2
-	+	65	18
-	+	65	0
-	+	65	0
-	+	64	0
-	+	61	6
-	+	63	0
-	+	61	40
-	+	59	38
-	+	62	93
-	+	65	0
-	+	61	6
-	+	60	0
-	+	61	10
-	+	128	0
-	+	129	0
-	+	129	25
-	+	129	29
-	+	129	0
-	+	118	0
-	+	116	0
-	+	117	26
-	+	118	29
-	+	127	17
-	+	127	6
-	+	127	19
-	+	118	49
-	+	127	28
-	+	127	82
-	+	127	23
-	+	127	27
-	+	127	24
-	+	127	29
-	+	118	30
-	+	119	0
-	+	118	36
-	+	119	56
-	+	119	61
-	+	118	37
-	+	127	0
-	+	120	25
-	+	126	0
-	+	121	46
-	+	122	49
-	+	123	46
-	+	124	30
-	+	2	87
-	+	121	0
-	+	120	4
-	+	125	27
-	+	2	96
-
-> /var/www/lims/config/locales/reactions.cn.yml
-	"	17	25
-	^	17	28
-	.	17	25
-	+	11	20
-	+	12	28
-	+	13	30
-	+	14	17
-	+	15	32
-	+	16	21
-	+	15	38
-	+	17	25
-
-> /var/www/lims/app/views/orders/edit.html.haml
-	"	3	41
-	.	3	41
-	+	1	0
-	+	2	5
-	+	3	0
-	+	2	5
-	+	3	41
-
-> /var/www/lims/app/views/orders/_form.html.haml
-	"	25	10
-	^	6	61
-	.	8	0
-	+	23	22
-	+	25	233
-	+	18	34
-	+	23	29
-	+	23	0
-	+	23	0
-	+	27	0
-	+	23	0
-	+	22	30
-	+	23	0
-	+	26	0
-	+	27	0
-	+	11	40
-	+	12	0
-	+	1	32
-	+	11	53
-	+	12	13
-	+	22	22
-	+	26	20
-	+	6	60
-	+	8	0
-
-> /var/www/lims/app/controllers/samples_controller.rb
-	"	8	45
-	^	8	46
-	.	8	46
-	+	2	0
-	+	9	0
-	+	7	53
-	+	19	0
-	+	11	6
-	+	4	6
-	+	14	42
-	+	13	30
-	+	17	6
-	+	14	0
-	+	18	20
-	+	14	0
-	+	18	52
-	+	14	66
-	+	2	55
-	+	9	0
-	+	6	39
-	+	13	15
-	+	14	0
-	+	16	0
-	+	15	17
-	+	7	0
-	+	8	57
-	+	7	35
-	+	8	46
-
-> /var/www/lims/app/models/sample_head.rb
-	"	64	0
-	^	10	45
-	.	10	46
-	+	13	10
-	+	17	0
-	+	14	43
-	+	15	15
-	+	16	39
-	+	4	0
-	+	2	30
-	+	14	27
-	+	16	27
-	+	2	74
-	+	63	18
-	+	63	0
-	+	63	6
-	+	63	0
-	+	63	6
-	+	63	28
-	+	63	0
-	+	63	0
-	+	63	8
-	+	63	0
-	+	63	27
-	+	63	9
-	+	63	0
-	+	63	0
-	+	63	0
-	+	63	34
-	+	63	31
-	+	63	0
-	+	24	0
-	+	24	25
-	+	24	0
-	+	22	0
-	+	19	25
-	+	21	0
-	+	20	19
-	+	24	0
-	+	63	88
-	+	44	0
-	+	34	24
-	+	38	0
-	+	35	104
-	+	37	0
-	+	36	80
-	+	35	0
-	+	63	2
-	+	63	0
-	+	39	20
-	+	43	0
-	+	40	32
-	+	42	0
-	+	40	81
-	+	41	86
-	+	36	54
-	+	19	22
-	+	49	0
-	+	46	16
-	+	48	0
-	+	47	59
-	+	50	0
-	+	62	0
-	+	58	0
-	+	60	10
-	+	5	26
-	+	46	18
-	+	58	18
-	+	63	0
-	+	12	0
-	+	7	29
-	+	11	0
-	+	10	33
-	+	11	0
-	+	10	47
-	+	9	10
-	+	10	16
-	+	9	11
-	+	10	46
-	j	59	18
-
-> /var/www/lims/app/controllers/orders_controller.rb
-	"	1	0
-	^	43	63
-	.	43	62
-	+	40	6
-	+	44	0
-	+	43	53
-	+	43	79
-	+	42	30
-	+	17	79
-	+	43	62
-
-> /var/www/lims/app/views/orders/new.html.haml
-	"	7	131
-	^	7	158
-	.	7	157
-	+	7	30
-	+	7	0
-	+	7	157
-
-> /var/www/lims/app/views/orders/new_redo.html.haml
-	"	6	7
-	^	5	8
-	.	5	7
-	+	60	117
-	+	1	40
-	+	30	36
-	+	1	0
-	+	50	82
-	+	55	82
-	+	60	82
-	+	54	49
-	+	55	0
-	+	59	45
-	+	60	0
-	+	59	35
-	+	54	36
-	+	1	0
-	+	5	96
+	+	5	4
 	+	5	0
-	+	5	164
 	+	5	0
-	+	5	204
-	+	50	77
-	+	5	271
-	+	5	0
-	+	6	0
-	+	7	11
-	+	12	0
-	+	64	0
-	+	7	81
-	+	9	39
-	+	10	0
-	+	11	0
-	+	10	25
-	+	11	25
-	+	6	74
-	+	6	229
-	+	9	30
-	+	10	30
-	+	11	30
-	+	9	0
-	+	10	48
-	+	11	48
-	+	7	74
-	+	19	12
-	+	34	16
-	+	50	0
-	+	50	189
-	+	55	191
-	+	60	191
-	+	6	93
-	+	6	212
-	+	6	60
-	+	6	269
-	+	9	44
-	+	10	31
-	+	11	44
-	+	10	44
-	+	9	82
-	+	10	81
-	+	11	81
-	+	10	45
-	+	11	45
-	+	6	323
-	+	8	24
-	+	6	323
-	+	9	47
-	+	10	0
-	+	11	47
-	+	6	92
-	+	6	278
-	+	60	26
-	+	60	0
-	+	50	24
-	+	50	169
-	+	51	22
-	+	50	24
-	+	51	0
-	+	50	0
-	+	51	40
-	+	53	21
-	+	52	21
-	+	53	0
-	+	52	26
-	+	53	59
-	+	52	24
-	+	50	213
-	+	59	0
-	+	55	26
-	+	56	42
-	+	58	60
-	+	55	227
-	+	60	26
-	+	61	24
-	+	61	0
-	+	60	228
-	+	61	42
-	+	62	63
-	+	57	0
-	+	62	25
-	+	62	0
-	+	58	61
-	+	5	7
-
-> /var/www/lims/app/controllers/sample_boards_controller.rb
-	"	14	42
-	^	14	43
-	.	14	42
-	+	14	42
-
-> /var/www/lims/app/views/sample_boards/select.js.erb
-	"	1	0
-
-> /var/www/lims/app/assets/javascripts/orders.js.coffee
-	"	14	0
-	^	15	39
-	.	15	38
-	+	100	20
-	+	93	42
-	+	100	21
-	+	95	40
-	+	100	80
-	+	94	23
-	+	95	0
-	+	103	30
-	+	109	0
-	+	103	0
-	+	104	41
-	+	109	0
-	+	105	0
-	+	109	0
-	+	100	52
-	+	104	11
-	+	100	30
-	+	99	11
-	+	100	33
-	+	101	33
-	+	102	39
-	+	107	35
-	+	108	8
-	+	106	30
-	+	15	0
-	+	95	0
-	+	96	16
-	+	15	175
-	+	15	38
-
-> /var/www/lims/app/assets/javascripts/redo_typeset.js.coffee
-	"	5	56
-	^	5	57
-	.	5	56
-	+	3	0
-	+	6	0
-	+	1	3
-	+	4	120
-	+	2	19
-	+	5	56
-
-> /var/www/lims/app/assets/stylesheets/superwf.css.scss
-	"	20	1
-	^	25	15
-	.	25	14
-	+	25	14
-
-> /var/www/lims/app/views/clients/_search.html.haml
-	"	4	90
-
-> /var/www/lims/app/views/sample_boards/_table.html.haml
-	"	1	7
-	^	1	15
-	.	1	7
-	+	1	7
-
-> /var/www/lims/app/views/sample_boards/_show.html.haml
-	"	3	5
-	^	3	68
-	.	3	67
-	+	3	67
+	+	4	2
+	+	5	2
+	+	6	2
+	+	5	11
