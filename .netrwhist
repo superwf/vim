@@ -1,8 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/var/www/superwf/lib/omniauth/strategies'
-let g:netrw_dirhist_2='/var/www/superwf/app/models/sino_passport'
-let g:netrw_dirhist_3='/var/www/superwf/lib/superwf/recordor'
-let g:netrw_dirhist_4='/var/www/superwf/app/helpers'
-let g:netrw_dirhist_5='/var/www/user_passport/app/views/departments'
-let g:netrw_dirhist_6='/var/www/superwf/lib/superwf'
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/wangfan/erlang/synrc-n2o-fd2e507/src'
+let g:netrw_dirhist_2='/home/wangfan/erlang/webmachine/gogo/templates'
+let g:netrw_dirhist_3='/home/wangfan/erlang/n2o_sample/include'
+let g:netrw_dirhist_4='/etc/nginx/sites-enabled'

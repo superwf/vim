@@ -8,7 +8,7 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/btn
+~MSle0~/actionpack
 
 # Last Substitute Search Pattern:
 ~MSle0&plasmid_code
@@ -18,107 +18,107 @@ $
 
 # Command Line History (newest to oldest):
 :q
-:e 
-:e config/initializers/simple_form.rb
-:Rjavascript application
-:Rstylesheet application
+:.,.+1q
+:Rcontroller reports
+:Rmodel 
 :e Gemfile
-:Rview board_reco
-:Rview departments/index.js.erb
-:e app/
-:vsplit app/assets/stylesheets/for_1600.scss
-:e application.html.slim
-:tabedit 
-:e _nav_bar_top.html.slim
-:vsplit application.html.slim
-:e app/assets/stylesheets/for_1366.scss
-:e app/assets/stylesheets/for_1024.scss
-:e app/views/layouts/application.html.slim
-:vsplit app/controllers/modification_logs_controller.rb
-:e app/views/modification_logs/_search.html.slim
-:e app/views/modification_logs/index.html.slim
-:tabedit app/models/role.rb
-:e app/models/user_passport/api_config.rb
-:e lib/us
-:e app/models/role.rb
-:vsplit app/controllers/roles_controller.rb
-:e ../log/do_index.php
-:vsplit ../log/index.php
-:Rview ht_libraries/completed.html.haml
+:e .gitignore
+:Rcontroller api/v1/clients
+:vs Gemfile
+:Rcontroller api/v1/companies
+:e Gemfile.lock
+:Rc
+:Rcontroller api/v1/api
+:Rcontroller application
+:e config/application.rb
+:vsplit Gemfile
+:e do_index.php
+:e store.php
+:vsplit fenlei.php
+:vsplit daochu.php
+:e ruku.php
 :vsplit Capfile
-:Rcontroller ht_libraries
-:Rview ht_libraries/_search.html.haml
-:Rview ht_libraries/new_created.html.haml
-:Rview ht_libraries/new.html.haml
-:Rview ht_libraries/_form.html.haml
-:Rview checkouts/_search.html.slim
-:Rview orders/_search.html.slim
-:Rcontroller checkouts
+:Rmodel client
+:Renvironment development
+:Rview orders/_table.html.slim
+:Rlocale primers.cn.yml
+:Rview checkout_orders/edit.html.slim
+:Rview _show.html.slim
+:Rview checkouts/_orders.html.slim
+:R
+:Rview checkout_orders/
+:Rview edit.html.slim
+:Rjavascript checkouts
+:Rview _orders.html.slim
+:Rview show.js.erb
+:Rview checkouts/_show.html.slim
 :Rmodel checkout
-:Rview _search.html.slim
-:Rview checkouts/scope.html.slim
-:Rcontroller primers
-:Rview primers/_search.html.slim
-:Rview primers/_search.html.haml
-:Rv
-:Rcontroller orders
-:Rm
-:Rview orders/index.html.slim
-:Rlocale checkouts.cn.yml
-:Rlocale checkouts
+:e config/routes.rb
 :Rmodel primer
+:Rcontroller clients
+:Rview clients/_table.html.slim
+:vsplit config/routes.rb
+:Rcontroller api/v1/users
+:Rcontroller api/v1/cli
+:Rview home/index.html.slim
+:Rcontroller home
+:Rview home/
+:e app/assets/javascripts/home.js.coffee
+:Rjavascript application
+:e config/locales/cn.yml
+:Rlocale reports.cn.yml
 
 # Search String History (newest to oldest):
-?/btn
-?/horizontal
-? \<bootstrap\>
-?/sass
-?/boot
-?/search_date
-?/rescue
-?/keys
+?/actionpack
+?/cache
+?/fetch
+?/while
+?/query
+?/action
+? \<ä¿®å¿—åŽ\>
+? \<zjy\>
+?/zhangxuan
+?/sub
 ?/search
-?/referer
-?/index
-?/prepay
-?/invert
-?/puts
-?/checkouts
 ?/clients
-?/client_info
-?/price
-?/totalfee
-?/checkout_primer
-?/creator
-?/fee
-?/total
-?/toa
-?/reaction
-?/checkouting
-?/render
-?/to_report
-?/orders
-?/haml
+?/api
+?/R
+?/xhr
+?/progre
+?/gc_max
+?/session
+?/_SESSION
+?/setcookie
+?/login
+?/selecta
+?/img
+? \<fuzongshenpi\>
+?/sequence
+?/yinwuinfo_zhuangtai
+? \<WsSample\>
+? \<JavaScriptHelper\>
+?/run_
+?/go_back
+?/run_s
+?/ht_run_statuses
+?/go_b
+?/t
+?/status
+?/ht_run_status
+?/rp
+?/Sequence
+?/order_number
+?/actoin
+?/act
+?/active
+?/format
 ?/superwf
-?/print
-?/def index
-?/signpaper
-?/to_envelop
-?/sign_paper
-?/issue
-?/store_issue
-?/export
-?/electro
-?/to_syn
-?/syntheses
-? \<synthesis\>
-?/l:Rlo	 p
-? \<aminolyses\>
-? \<syntheses\>
-?/synthe
-?/flow
-?/sc
-?/to_seq
+?/PER
+?/prepare_reaction_head
+?/create_procedure
+?/abi_record
+?/scope
+?/abi_
 
 # Expression History (newest to oldest):
 
@@ -128,37 +128,25 @@ $
 
 # å¯„å­˜å™¨:
 "0	LINE	0
-	        input_html_options[:rows] ||= 6
-""1	LINE	0
-	# coding: utf-8
-"2	LINE	0
-	  .span7.offset3
-"3	LINE	0
-	    class SubmitInput < Base
-	      def input
-	        input_html_options[:class] ||= 'btn btn-success'
-	        @builder.submit value, input_html_options
-	      end
+	public/assets/
+"1	LINE	0
 	    end
+"2	LINE	0
+	    #caches_action :show
+"3	LINE	0
+	    self.page_cache_directory = "#{::Rails.root}/public/api/v1"
 "4	LINE	0
-	  include ::Anjlab::Widgets.simple_form
+	  self.page_cache_directory = "#{::Rails.root}/public/api/v1"
 "5	LINE	0
-	        span.glyphicon.glyphicon-user
+	
 "6	LINE	0
-	  .collapse.navbar-header.bs-navbar-collapse role='navigation'
-	    a.dropdown-toggle href='#' data-toggle='dropdown'
-	      i.icon-user
-	      = current_user.name
-	      span.caret
-	    ul.dropdown-menu role='menu'
-	      li
-	        = link_to I18n.t(:logout, scope: :layouts), main_app.sign_out_path, method: :delete
+	    #config.action_controller.page_cache_directory = "#{::Rails.root}/public/api/v1"
 "7	LINE	0
-	  .container
+	<input name="">
 "8	LINE	0
-	  .navbar-inner
+	
 "9	LINE	0
-	    == render 'layouts/flash', flash: flash
+	<title>æ— æ ‡é¢˜æ–‡æ¡£</title>
 "b	BLOCK	23
 	 NOT NULL AUTO_INCREMENT
 "c	CHAR	0
@@ -169,7 +157,7 @@ $
 "i	CHAR	0
 	378
 <""""i""iquadrantoreaction_board_id = _this.a??kbparn??kbent().attr()i""re??kb??kbireaction_board_I??kbid??k3kkkkkYGpwwwwwwwwwwwCbbbbddkkkkkkkYjVkyjGpzzjwwwwwwwwvf]sp[??kb??kb[]i""hireaction_board=??kb_id=lli  i++i  ireaction_board_idllllla[]iquadrna??kb??kbant=""i  i++i  iquadrant??k3??k3??k3??k3??k3????,????.??k3??k3??k3??k3??k3??k3??k3????,????.veee
-"k	CHAR	0
+"k@	CHAR	0
 	448
 <oukounless xhr?ujddujddoendk>>osession[]i:referear hla = referer if redererreferer.present?€k3kkkkkkkkkjjjjod€kbbefore_action :set_se, only: []i:new, :c€kbedit€k3€ý,€ý.x€k3€ýK€ýK€ýK€ýK€ýL€ýL€ýL€ýL€ý,€ý.xxxxxxxxkkwlllllxxxxxxxx€k3€k3€k3€k3€k3€k3bbbbwjjjjjjjI#€k3€k3€k3€k3€k3kkodef newend€k3kosession[]i:red€kbfererl:Rvi	 ho	i	hlla = ''hCroot_path€k3korender text: 'abc'€k3bddpwwwCsession[]i:refeer€kb€kbrer€k3€k5€k5
 "l	CHAR	0
@@ -214,132 +202,133 @@ $
 	wwwww.€k3lbxxxxxsvector€k3hjjA, w€kb€kb{}istyle: ''iwdi
 "x	CHAR	0
 	"
-"-	CHAR	0
-	, class: 'btn-success'
+""-	CHAR	0
+	for update from bootstrap2 to 3
 
 # å…¨å±€å˜é‡:
 
 # æ–‡ä»¶æ ‡è®°:
-'0  2  3  /var/www/superwf/lib/superwf/version.rb
-'1  13  4  /var/www/superwf/superwf.gemspec
-'2  1  0  /var/www/superwf/superwf.gemspec
-'3  2  2  /var/www/superwf/lib/generators/superwf/templates/views/_form.html.slim
-'4  7  25  /var/www/superwf/lib/generators/superwf/templates/views/_form.html.slim
-'5  98  25  /var/www/superwf/config/initializers/simple_form.rb
-'6  139  40  /var/www/superwf/config/initializers/simple_form.rb
-'7  3  2  /var/www/superwf/config/initializers/simple_form.rb
-'8  7  7  /var/www/primer_synthesis/Gemfile
-'9  15  0  /var/www/user_passport/app/assets/javascripts/application.js
+'0  4  2  /var/www/superwf/lib/superwf/version.rb
+'1  1  0  /var/www/superwf/lib/superwf/version.rb
+'2  8  16  /var/www/sino_analysis_report/app/controllers/reports_controller.rb
+'3  53  0  /var/www/sino_analysis_report/Gemfile
+'4  56  0  /var/www/sino_sequencing/Gemfile
+'5  6  2  /var/www/sino_sequencing/app/controllers/api/v1/api_controller.rb
+'6  1  0  /var/www/superwf/Capfile.2.bak
+'7  73  20  /var/www/kucun/kuadmin/sql/do_index.php
+'8  117  23  /var/www/dna/kehu/zhuangtai/downbaogao.php
+'9  121  33  /var/www/dna/kehu/zhuangtai/downbaogao.php
 
 # è·³è½¬åˆ—è¡¨ (ä»Žæ–°åˆ°æ—§):
--'  2  3  /var/www/superwf/lib/superwf/version.rb
--'  3  13  /var/www/superwf/lib/superwf/version.rb
+-'  4  2  /var/www/superwf/lib/superwf/version.rb
 -'  1  0  /var/www/superwf/lib/superwf/version.rb
--'  13  4  /var/www/superwf/superwf.gemspec
--'  1  0  /var/www/superwf/superwf.gemspec
--'  30  2  /var/www/superwf/superwf.gemspec
--'  2  2  /var/www/superwf/lib/generators/superwf/templates/views/_form.html.slim
--'  7  25  /var/www/superwf/lib/generators/superwf/templates/views/_form.html.slim
--'  1  0  /var/www/superwf/lib/generators/superwf/templates/views/_form.html.slim
--'  98  25  /var/www/superwf/config/initializers/simple_form.rb
--'  139  40  /var/www/superwf/config/initializers/simple_form.rb
--'  33  4  /var/www/superwf/lib/superwf/simple_form.rb
--'  34  15  /var/www/superwf/lib/superwf/simple_form.rb
--'  20  40  /var/www/superwf/lib/superwf/simple_form.rb
--'  13  27  /var/www/superwf/lib/superwf/simple_form.rb
--'  11  25  /var/www/superwf/lib/superwf/simple_form.rb
--'  18  4  /var/www/superwf/lib/superwf/simple_form.rb
--'  25  10  /var/www/superwf/lib/superwf/simple_form.rb
--'  12  0  /var/www/superwf/lib/superwf/simple_form.rb
--'  15  8  /var/www/superwf/lib/superwf/simple_form.rb
--'  16  4  /var/www/superwf/lib/superwf/simple_form.rb
--'  98  25  /var/www/superwf/config/initializers/simple_form.rb
--'  139  40  /var/www/superwf/config/initializers/simple_form.rb
--'  33  4  /var/www/superwf/lib/superwf/simple_form.rb
--'  34  15  /var/www/superwf/lib/superwf/simple_form.rb
--'  20  40  /var/www/superwf/lib/superwf/simple_form.rb
--'  13  27  /var/www/superwf/lib/superwf/simple_form.rb
--'  11  25  /var/www/superwf/lib/superwf/simple_form.rb
--'  18  4  /var/www/superwf/lib/superwf/simple_form.rb
--'  25  10  /var/www/superwf/lib/superwf/simple_form.rb
--'  12  0  /var/www/superwf/lib/superwf/simple_form.rb
--'  15  8  /var/www/superwf/lib/superwf/simple_form.rb
--'  16  4  /var/www/superwf/lib/superwf/simple_form.rb
--'  8  25  /var/www/superwf/lib/generators/superwf/templates/views/_form.html.slim
--'  98  25  /var/www/superwf/config/initializers/simple_form.rb
--'  139  40  /var/www/superwf/config/initializers/simple_form.rb
--'  33  4  /var/www/superwf/lib/superwf/simple_form.rb
--'  34  15  /var/www/superwf/lib/superwf/simple_form.rb
--'  20  40  /var/www/superwf/lib/superwf/simple_form.rb
--'  13  27  /var/www/superwf/lib/superwf/simple_form.rb
--'  11  25  /var/www/superwf/lib/superwf/simple_form.rb
--'  18  4  /var/www/superwf/lib/superwf/simple_form.rb
--'  25  10  /var/www/superwf/lib/superwf/simple_form.rb
--'  12  0  /var/www/superwf/lib/superwf/simple_form.rb
--'  15  8  /var/www/superwf/lib/superwf/simple_form.rb
--'  16  4  /var/www/superwf/lib/superwf/simple_form.rb
--'  98  25  /var/www/superwf/config/initializers/simple_form.rb
--'  139  40  /var/www/superwf/config/initializers/simple_form.rb
--'  33  4  /var/www/superwf/lib/superwf/simple_form.rb
--'  34  15  /var/www/superwf/lib/superwf/simple_form.rb
--'  20  40  /var/www/superwf/lib/superwf/simple_form.rb
--'  13  27  /var/www/superwf/lib/superwf/simple_form.rb
--'  11  25  /var/www/superwf/lib/superwf/simple_form.rb
--'  18  4  /var/www/superwf/lib/superwf/simple_form.rb
--'  25  10  /var/www/superwf/lib/superwf/simple_form.rb
--'  12  0  /var/www/superwf/lib/superwf/simple_form.rb
--'  15  8  /var/www/superwf/lib/superwf/simple_form.rb
--'  16  4  /var/www/superwf/lib/superwf/simple_form.rb
--'  2  2  /var/www/superwf/lib/generators/superwf/templates/views/_form.html.slim
--'  7  25  /var/www/superwf/lib/generators/superwf/templates/views/_form.html.slim
--'  1  0  /var/www/superwf/lib/generators/superwf/templates/views/_form.html.slim
--'  98  25  /var/www/superwf/config/initializers/simple_form.rb
--'  139  40  /var/www/superwf/config/initializers/simple_form.rb
--'  33  4  /var/www/superwf/lib/superwf/simple_form.rb
--'  34  15  /var/www/superwf/lib/superwf/simple_form.rb
--'  20  40  /var/www/superwf/lib/superwf/simple_form.rb
--'  13  27  /var/www/superwf/lib/superwf/simple_form.rb
--'  11  25  /var/www/superwf/lib/superwf/simple_form.rb
--'  18  4  /var/www/superwf/lib/superwf/simple_form.rb
--'  25  10  /var/www/superwf/lib/superwf/simple_form.rb
--'  12  0  /var/www/superwf/lib/superwf/simple_form.rb
--'  15  8  /var/www/superwf/lib/superwf/simple_form.rb
--'  16  4  /var/www/superwf/lib/superwf/simple_form.rb
--'  98  25  /var/www/superwf/config/initializers/simple_form.rb
--'  139  40  /var/www/superwf/config/initializers/simple_form.rb
--'  33  4  /var/www/superwf/lib/superwf/simple_form.rb
--'  34  15  /var/www/superwf/lib/superwf/simple_form.rb
--'  20  40  /var/www/superwf/lib/superwf/simple_form.rb
--'  13  27  /var/www/superwf/lib/superwf/simple_form.rb
--'  11  25  /var/www/superwf/lib/superwf/simple_form.rb
--'  18  4  /var/www/superwf/lib/superwf/simple_form.rb
--'  25  10  /var/www/superwf/lib/superwf/simple_form.rb
--'  12  0  /var/www/superwf/lib/superwf/simple_form.rb
--'  15  8  /var/www/superwf/lib/superwf/simple_form.rb
--'  16  4  /var/www/superwf/lib/superwf/simple_form.rb
--'  8  25  /var/www/superwf/lib/generators/superwf/templates/views/_form.html.slim
--'  98  25  /var/www/superwf/config/initializers/simple_form.rb
--'  139  40  /var/www/superwf/config/initializers/simple_form.rb
--'  33  4  /var/www/superwf/lib/superwf/simple_form.rb
--'  34  15  /var/www/superwf/lib/superwf/simple_form.rb
--'  20  40  /var/www/superwf/lib/superwf/simple_form.rb
--'  13  27  /var/www/superwf/lib/superwf/simple_form.rb
--'  11  25  /var/www/superwf/lib/superwf/simple_form.rb
--'  18  4  /var/www/superwf/lib/superwf/simple_form.rb
--'  25  10  /var/www/superwf/lib/superwf/simple_form.rb
--'  12  0  /var/www/superwf/lib/superwf/simple_form.rb
--'  15  8  /var/www/superwf/lib/superwf/simple_form.rb
--'  16  4  /var/www/superwf/lib/superwf/simple_form.rb
--'  98  25  /var/www/superwf/config/initializers/simple_form.rb
+-'  8  16  /var/www/sino_analysis_report/app/controllers/reports_controller.rb
+-'  10  28  /var/www/sino_analysis_report/app/controllers/reports_controller.rb
+-'  1  0  /var/www/sino_analysis_report/app/controllers/reports_controller.rb
+-'  53  0  /var/www/sino_analysis_report/Gemfile
+-'  1  0  /var/www/sino_analysis_report/Gemfile
+-'  25  2  /var/www/sino_analysis_report/Gemfile
+-'  40  0  /var/www/sino_analysis_report/Gemfile
+-'  56  0  /var/www/sino_sequencing/Gemfile
+-'  27  10  /var/www/sino_sequencing/.gitignore
+-'  7  0  /var/www/sino_sequencing/.gitignore
+-'  5  4  /var/www/sino_sequencing/app/controllers/api/v1/companies_controller.rb
+-'  6  2  /var/www/sino_sequencing/app/controllers/api/v1/api_controller.rb
+-'  57  2  /var/www/sino_sequencing/config/application.rb
+-'  6  0  /var/www/sino_sequencing/config/application.rb
+-'  7  9  /var/www/sino_sequencing/config/application.rb
+-'  11  0  /var/www/sino_sequencing/Gemfile
+-'  9  4  /var/www/sino_sequencing/app/controllers/api/v1/companies_controller.rb
+-'  1  0  /var/www/sino_sequencing/app/controllers/api/v1/companies_controller.rb
+-'  1  0  /var/www/superwf/Capfile.2.bak
+-'  12  0  /var/www/superwf/Capfile.2.bak
+-'  73  20  /var/www/kucun/kuadmin/sql/do_index.php
+-'  57  16  /var/www/kucun/kuadmin/sql/do_index.php
+-'  38  12  /var/www/kucun/kuadmin/sql/do_index.php
+-'  72  3  /var/www/kucun/kuadmin/sql/store.php
+-'  13  7  /var/www/kucun/kuadmin/sql/index.php
+-'  11  0  /var/www/kucun/kuadmin/sql/store.php
+-'  62  15  /var/www/kucun/kuadmin/sql/store.php
+-'  26  56  /var/www/kucun/kuadmin/sql/index.php
+-'  1  0  /var/www/kucun/kuadmin/sql/index.php
+-'  117  23  /var/www/dna/kehu/zhuangtai/downbaogao.php
+-'  121  33  /var/www/dna/kehu/zhuangtai/downbaogao.php
+-'  112  69  /var/www/dna/kehu/zhuangtai/downbaogao.php
+-'  131  21  /var/www/dna/kehu/zhuangtai/testdown.php
+-'  128  7  /var/www/dna/kehu/zhuangtai/testdown.php
+-'  126  11  /var/www/dna/kehu/zhuangtai/testdown.php
+-'  10  0  /var/www/kucun/.git/COMMIT_EDITMSG
+-'  11  0  /var/www/kucun/.git/COMMIT_EDITMSG
+-'  146  24  /var/www/kucun/kuadmin/sureruku/ruku.php
+-'  147  31  /var/www/kucun/kuadmin/sureruku/ruku.php
+-'  151  24  /var/www/kucun/kuadmin/sureruku/ruku.php
+-'  140  24  /var/www/kucun/kuadmin/sureruku/ruku.php
+-'  144  24  /var/www/kucun/kuadmin/sureruku/ruku.php
+-'  177  25  /var/www/kucun/kuadmin/sureruku/show.php
+-'  1  0  /var/www/kucun/kuadmin/sureruku/show.php
+-'  98  3  /var/www/dna/kehu/zhuangtai/testdown.php
+-'  79  2  /var/www/dna/kehu/zhuangtai/testdown.php
+-'  124  69  /var/www/dna/kehu/zhuangtai/testdown.php
+-'  3  53  /var/www/sino_sequencing/app/controllers/api/v1/companies_controller.rb
+-'  6  4  /var/www/sino_sequencing/app/controllers/api/v1/companies_controller.rb
+-'  10  4  /var/www/sino_sequencing/app/controllers/api/v1/companies_controller.rb
+-'  26  0  /var/www/sino_sequencing/Capfile
+-'  2  4  /var/www/sino_sequencing/app/controllers/api/v1/clients_controller.rb
+-'  3  27  /var/www/sino_sequencing/app/controllers/api/v1/clients_controller.rb
+-'  4  0  /var/www/sino_sequencing/app/controllers/api/v1/clients_controller.rb
+-'  8  6  /var/www/sino_sequencing/app/controllers/api/v1/clients_controller.rb
+-'  1  0  /var/www/sino_sequencing/app/controllers/api/v1/api_controller.rb
+-'  17  26  /var/www/sino_sequencing/app/controllers/api/v1/companies_controller.rb
+-'  1  0  /var/www/sino_sequencing/config/environments/development.rb
+-'  29  0  /var/www/sino_sequencing/config/environments/development.rb
+-'  27  9  /var/www/sino_sequencing/config/environments/development.rb
+-'  9  9  /var/www/sino_sequencing/config/environments/development.rb
+-'  26  0  /var/www/sino_sequencing/config/environments/development.rb
+-'  18  0  /var/www/sino_sequencing/config/environments/development.rb
+-'  3  18  /var/www/sino_sequencing/Gemfile
+-'  16  0  /var/www/sino_sequencing/Gemfile
+-'  13  12  /var/www/sino_sequencing/app/controllers/api/v1/clients_controller.rb
+-'  1  0  /var/www/sino_sequencing/app/controllers/api/v1/clients_controller.rb
+-'  37  43  /etc/nginx/sites-enabled/sequence
+-'  33  4  /etc/nginx/sites-enabled/sequence
+-'  53  4  /etc/nginx/sites-enabled/sequence
+-'  54  15  /etc/nginx/sites-enabled/sequence
+-'  40  4  /etc/nginx/sites-enabled/sequence
+-'  22  4  /etc/nginx/sites-enabled/sequence
+-'  25  63  /etc/nginx/sites-enabled/sequence
+-'  31  4  /etc/nginx/sites-enabled/sequence
+-'  1  0  /etc/nginx/sites-enabled/sequence
+-'  38  100  /etc/nginx/nginx.conf
+-'  1  0  /etc/nginx/nginx.conf
+-'  14  8  /var/www/sino_primer/config/locales/primers.cn.yml
+-'  23  28  /var/www/sino_primer/app/views/checkouts/_orders.html.slim
+-'  1  0  /var/www/sino_primer/app/views/checkout_orders/edit.js.erb
+-'  11  0  /var/www/sino_primer/NERD_tree_1
+-'  1  0  /var/www/sino_primer/NERD_tree_1
+-'  14  0  /var/www/sino_primer/NERD_tree_1
+-'  142  10  /var/www/sino_primer/app/models/checkout.rb
+-'  5  2  /var/www/sino_primer/app/assets/javascripts/checkouts.js.coffee
+-'  132  10  /var/www/sino_primer/app/models/checkout.rb
+-'  129  6  /var/www/sino_primer/app/models/checkout.rb
+-'  141  10  /var/www/sino_primer/app/models/checkout.rb
+-'  162  17  /var/www/sino_primer/app/models/checkout.rb
+-'  157  8  /var/www/sino_primer/app/models/checkout.rb
+-'  171  10  /var/www/sino_primer/app/models/checkout.rb
+-'  155  8  /var/www/sino_primer/app/models/checkout.rb
+-'  1  0  /var/www/sino_primer/app/models/checkout.rb
+-'  1  0  /var/www/sino_primer/config/routes.rb
+-'  29  45  /var/www/sino_primer/config/routes.rb
+-'  130  25  /var/www/sino_primer/app/models/primer.rb
 
 # ç¼“å†²åŒºåˆ—è¡¨:
-%/var/www/superwf/lib/superwf/version.rb	2	3
+%/var/www/superwf/lib/superwf/version.rb	4	2
 
 # æ–‡ä»¶å†…çš„æ ‡è®°åŽ†å²è®°å½• (ä»Žæ–°åˆ°æ—§):
 
 > /var/www/superwf/lib/superwf/version.rb
-	"	2	3
-	^	2	4
-	.	2	4
-	+	3	13
+	"	4	2
+	^	2	25
+	.	2	24
 	+	2	4
+	+	3	13
+	+	2	24

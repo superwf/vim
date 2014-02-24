@@ -8,7 +8,7 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/authentication_keys
+~MSle0~/img
 
 # Last Substitute Search Pattern:
 ~MSle0&plasmid_code
@@ -18,107 +18,107 @@ $
 
 # Command Line History (newest to oldest):
 :q
+: w
+:3
 :Rcontroller api/v1/users
-:Rcon api/v1/api
-:vsplit Capfile
-:Rmodel user
-:Rview devise/sessions/new.html.slim
-:Rmigration add_devise_to_users
-:Rmigration create_users
-:tabedit Capfile
-:Rmodel 
-:Rinitializer devise
-:Rview devise/mailer/reset_password_instructions.html.slim
-:Rmodel order
-:Rview primers/_show.html.slim
-:Rview show.js.erb
-:Rview primers/show.html.slim
-:Rlocale menus.cn.yml
-:Rlocale primers.cn.yml
-:Rview _go_button.html.slim
-:Rmodel primer
-:Rview primers/scope.html.slim
-:Rcontroller primers
-:Rview scope.html.slim
-:Rview _table.html.slim
-:Rview primers/index.html.slim
-:Rview 
-:Rview primers/_go_button.html.slim
-:Rview devise/passwords/new.html.slim
-:Rview devise/shared/_links.html.slim
-:Rlocale 
-:kj
-:Rmigration kk
-:Rmigration create_doorkeeper_tables
-:Rlocale cn.yml
-:Rview users/_table.html.slim
-:Rlocale simple_form.cn.yml
-:Rview _active.html.slim
-:Rview update.js.erb
-:Rview users/_search.html.slim
-:vsplit _se
-:Rview edit.html.slim
-:Rview users/new.html.slim
+:e testdown.php
+:Rjavascript application
+:Rjavascript angular/controllers/screencasts_ctrl
+:Rjavascript app
+:vsplit Gemfile
+:Rjavascript angular/directives/flow_player
 :Rview _form.html.slim
-:Rview users/index.js.erb
-:Rview users/index.html.slim
-:Rview home/profile.html.slim
-:e config/routes.rb
-:Rmodel client
-:Rm
+:Rview doorkeeper/applications/edit.html.slim
+:Rmigration create_attachments
+:e db/seeds.rb
+:e yujian.php
+:pwd
+:vsplit ../sino_sequencing/
+:Rview home/index.js.erb
+:Rcontroller home
+:vsplit Capfile
+:Rview home/index.html.slim
+:Rview sample_boards/index.html.slim
+:e lib/ws_sample.rb
+:Rmodel ws
+:Rjavascript samples
+:Rview samples/index.html.slim
+:Rview samples/new.html.slim
 :R
+:Rjavascript jquery_countdown
+:Rmodel project
+:Rview _search.html.haml
+:Rview projects/_flow_ht.html.haml
+:Rview projects/running_ht.html.haml
+:Rview ht_run_statuses/go.js.erb
+:e config/routes.rb
+:Rlocale projects.cn.yml
+:Rlocale project_checks.cn.yml
+:Rlocale ht_run_statuses.cn.yml
+:Rcontroller ht_run_statuses
+:Rview ht_run_statuses/go_back.js.erb
+:Rview projects/_ht_run_status.html.haml
+:Rl
+:Rhelper application
+:Rcontroller projects
+:Rhelper projects
+:Rhelper checkings
+:Rmodel ht_run_status
+:Rview _operation.html.haml
+:Rmodel 
+:Rview projects/_flow_conv.html.haml
 
 # Search String History (newest to oldest):
-?/authentication_keys
-?/email
-?/login
-? \<DEVISE_APP_PROTOCOL\>
-?/scope
-?/workflow
-?/def flow
-?/go_button
-?/render
-?/go_
-?/remem
-?/rem
-?/title
-?/superwf
-? \<secret_key\>
-?/auto_ex
-?/white
-?/haml
-?/dal
-?/redis
-?/pdf
-?/to_pdf
-?/next_flow
-?/checkouts
-?/checkout_records
-?/to_csv
-?/def conv
-?/prepare_
+?/selecta
+?/img
+? \<fuzongshenpi\>
+?/sequence
+?/yinwuinfo_zhuangtai
+?/action
+? \<WsSample\>
+? \<JavaScriptHelper\>
 ?/search
-?/params
-? \<type\>
-?/adfasdf
-?/type
-?/aty
-??\Vnav-pills
-?/b
-? \<checkout\>
-?/layout
-?/layouts
-?/success
-?/notice
-?/fix
-?/batch
-?/select
-?/invert
-? \<@create\>
-?/view_bac
-?/precheck
-?/prechecks
-?/ty
+?/run_
+?/go_back
+?/run_s
+?/ht_run_statuses
+?/go_b
+?/t
+?/status
+?/ht_run_status
+?/rp
+?/Sequence
+?/order_number
+?/actoin
+?/act
+?/active
+?/format
+?/superwf
+?/PER
+?/prepare_reaction_head
+?/create_procedure
+?/abi_record
+?/scope
+?/abi_
+?/create_quality_code
+?/create_reaction_board
+?/sample_hole
+?/sn
+?/sample_head
+?/compa
+?/po
+?/must
+? \<reaction_board_sn\>
+?/no_checkout
+? \<procedure_flow\>
+?/crea
+?/flow
+?/prepare_
+?/STATUS
+?/envelop
+?/uc
+?/date_from
+? \<store_issue_tag\>
 
 # Expression History (newest to oldest):
 
@@ -128,25 +128,37 @@ $
 
 # å¯„å­˜å™¨:
 "0	LINE	0
-	  = f.input :email, autofocus: true, input_html: {class: 'input-lg'}, label_html: {class: 'r-only'}
+	266
+<	#$dna_header='<td colspan="17" bgcolor="#FFFFFF"><div align="center"><img style="width: 100px;" src="http://61.49.28.136/images/mark.png" /><b><font size="5" face="åæ–‡ä»¿å®‹">åŒ—äº¬è¯ºèµ›åŸºå› ç»„ç ”ç©¶ä¸­å¿ƒæœ‰é™å…¬å¸DNAæµ‹åºæŠ¥å‘Š</font></b></div></td>';
 "1	LINE	0
-	DEVISE_APP_PROTOCOL = ::Rails.env.test? ? 'http' : 'https'
+	if(in_array($dept_id, array(13, 52, 15, 60, 90, 82, 85, 86)))
+	  $fuzongshenpi = true;
+	else
+	  $fuzongshenpi = false;
 "2	LINE	0
-	DEVISE_APP_PROTOCOL = ::Rails.env.test? ? 'http' : 'https'
-"3	LINE	0
-	DEVISE_APP_PROTOCOL = ::Rails.env.test? ? 'http' : 'https'
-"4	LINE	0
-	
+	if(in_array($dept_id, array(13, 52, 15, 60, 90, 82, 85, 86)))
+	  $fuzongshenpi = true;
+	else
+	  $fuzongshenpi = false;
+"3	BLOCK	0
+	 
+	 
+"4	BLOCK	0
+	 
+	 
+	 
 "5	LINE	0
-	      go_complete: ç›´æ¥å®Œæˆç”Ÿäº§
+	  
 "6	LINE	0
-	  - if params[:scope] == 'producing'
+	        <title>æ— æ ‡é¢˜æ–‡æ¡£</title>
 "7	LINE	0
-	    span = submit_tag t('.go_complete'), class: 'btn btn-success', name: 'go_complete'
+	    #if (!-f $request_filename) {
 "8	LINE	0
-	    == render 'primers/go_button'
+	    #  proxy_pass http://sequence-ends;
+	    #  break;
+	    #}
 "9	LINE	0
-	    span = submit_tag t('.go_complete'), class: 'btn btn-success', name: 'go_complete'
+	  #log_format  sequence_log  '$remote_addr - $remote_user [$time_local] "$request_filename" '
 "b	BLOCK	23
 	 NOT NULL AUTO_INCREMENT
 "c	CHAR	0
@@ -157,7 +169,7 @@ $
 "i	CHAR	0
 	378
 <""""i""iquadrantoreaction_board_id = _this.a??kbparn??kbent().attr()i""re??kb??kbireaction_board_I??kbid??k3kkkkkYGpwwwwwwwwwwwCbbbbddkkkkkkkYjVkyjGpzzjwwwwwwwwvf]sp[??kb??kb[]i""hireaction_board=??kb_id=lli  i++i  ireaction_board_idllllla[]iquadrna??kb??kbant=""i  i++i  iquadrant??k3??k3??k3??k3??k3????,????.??k3??k3??k3??k3??k3??k3??k3????,????.veee
-"k	CHAR	0
+"k@	CHAR	0
 	448
 <oukounless xhr?ujddujddoendk>>osession[]i:referear hla = referer if redererreferer.present?€k3kkkkkkkkkjjjjod€kbbefore_action :set_se, only: []i:new, :c€kbedit€k3€ı,€ı.x€k3€ıK€ıK€ıK€ıK€ıL€ıL€ıL€ıL€ı,€ı.xxxxxxxxkkwlllllxxxxxxxx€k3€k3€k3€k3€k3€k3bbbbwjjjjjjjI#€k3€k3€k3€k3€k3kkodef newend€k3kosession[]i:red€kbfererl:Rvi	 ho	i	hlla = ''hCroot_path€k3korender text: 'abc'€k3bddpwwwCsession[]i:refeer€kb€kbrer€k3€k5€k5
 "l	CHAR	0
@@ -203,149 +215,129 @@ $
 "x	CHAR	0
 	"
 ""-	CHAR	0
-	@users
+	<img style="width: 100px;" src="http://61.49.28.136/images/mark.png" />
 
 # å…¨å±€å˜é‡:
 
 # æ–‡ä»¶æ ‡è®°:
-'0  8  97  /var/www/sino_passport/app/controllers/api/v1/users_controller.rb
-'1  2  45  /var/www/user_passport/app/controllers/api/v1/api_controller.rb
-'2  15  4  /var/www/sino_passport/app/controllers/api/v1/users_controller.rb
-'3  26  2  /var/www/user_passport/config/initializers/devise.rb
-'4  2  2  /var/www/sino_primer/app/models/order.rb
-'5  8  2  /var/www/hello.c
-'6  1  0  /var/www/t.rb
-'7  4  2  /etc/nginx/sites-enabled/phpmyadmin
-'8  224  6  /var/www/sino_primer/app/models/primer.rb
-'9  9  0  /etc/apt/sources.list
+'0  13  6  /var/www/sino_passport/app/controllers/api/v1/users_controller.rb
+'1  124  69  /var/www/dna/kehu/zhuangtai/testdown.php
+'2  112  69  /var/www/dna/kehu/zhuangtai/downbaogao.php
+'3  20  0  /var/www/sino_analysis_report/app/assets/javascripts/application.js
+'4  1  0  /var/www/angular_casts/app/assets/javascripts/app.js.coffee
+'5  187  4  /var/www/kucun/caigou/caigoubushenpi/show.php
+'6  109  21  /var/www/kucun/caigou/caigoubushenpi/show.php
+'7  230  8  /var/www/kucun/caigou/shenpi/index.php
+'8  103  40  /var/www/kucun/caigou/caigoubushenpi/show.php
+'9  42  36  /var/www/kucun/caigou/shenpi/index.php
 
 # è·³è½¬åˆ—è¡¨ (ä»æ–°åˆ°æ—§):
--'  8  97  /var/www/sino_passport/app/controllers/api/v1/users_controller.rb
--'  5  0  /var/www/sino_passport/app/controllers/api/v1/users_controller.rb
--'  6  0  /var/www/sino_passport/app/controllers/api/v1/users_controller.rb
--'  2  45  /var/www/user_passport/app/controllers/api/v1/api_controller.rb
--'  4  4  /var/www/user_passport/app/controllers/api/v1/users_controller.rb
--'  15  4  /var/www/sino_passport/app/controllers/api/v1/users_controller.rb
--'  1  0  /var/www/sino_passport/Capfile
--'  8  2  /var/www/sino_passport/app/models/user.rb
--'  22  0  /var/www/sino_passport/app/models/user.rb
--'  7  0  /var/www/sino_passport/app/models/user.rb
--'  1  0  /var/www/sino_passport/app/models/user.rb
--'  26  2  /var/www/user_passport/config/initializers/devise.rb
--'  23  2  /var/www/user_passport/config/initializers/devise.rb
--'  10  2  /var/www/user_passport/config/initializers/devise.rb
--'  69  2  /var/www/user_passport/config/initializers/devise.rb
--'  1  0  /var/www/user_passport/db/migrate/20120620055802_add_devise_to_users.rb
--'  41  28  /var/www/user_passport/db/migrate/20120620055802_add_devise_to_users.rb
--'  7  105  /var/www/user_passport/app/views/devise/mailer/reset_password_instructions.html.slim
--'  4  0  /var/www/user_passport/app/views/devise/mailer/reset_password_instructions.html.slim
--'  1  0  /var/www/user_passport/Capfile
--'  14  2  /var/www/user_passport/db/migrate/20120620055748_create_users.rb
--'  1  0  /var/www/user_passport/db/migrate/20120620055748_create_users.rb
--'  2  2  /var/www/sino_primer/app/models/order.rb
--'  83  8  /var/www/sino_primer/app/models/order.rb
--'  1  38  /var/www/sino_primer/app/views/primers/show.js.erb
--'  1  0  /var/www/sino_primer/app/views/primers/show.html.slim
--'  8  2  /var/www/hello.c
--'  1  0  /var/www/hello.c
--'  1  0  /var/www/t.rb
--'  4  2  /etc/nginx/sites-enabled/phpmyadmin
--'  1  0  /etc/nginx/sites-enabled/phpmyadmin
--'  224  6  /var/www/sino_primer/app/models/primer.rb
--'  192  4  /var/www/sino_primer/app/models/primer.rb
--'  232  24  /var/www/sino_primer/app/models/primer.rb
--'  1  0  /var/www/sino_primer/Capfile
--'  49  44  /var/www/sino_primer/app/controllers/primers_controller.rb
--'  43  12  /var/www/sino_primer/app/controllers/primers_controller.rb
--'  45  19  /var/www/sino_primer/app/controllers/primers_controller.rb
--'  18  2  /var/www/sino_primer/app/views/primers/scope.html.slim
--'  46  31  /var/www/sino_primer/config/locales/primers.cn.yml
--'  45  14  /var/www/sino_primer/config/locales/primers.cn.yml
--'  1  0  /var/www/sino_primer/app/views/primers/_go_button.html.slim
--'  18  30  /var/www/sino_primer/app/views/primers/_go_button.html.slim
--'  20  4  /var/www/sino_primer/app/views/primers/scope.html.slim
--'  1  0  /var/www/sino_primer/app/views/primers/scope.html.slim
--'  9  0  /etc/apt/sources.list
--'  1  0  /var/www/sino_passport/app/views/devise/shared/_links.html.slim
--'  13  2  /var/www/sino_passport/app/views/devise/shared/_links.html.slim
--'  6  13  /var/www/sino_passport/config/locales/menus.cn.yml
--'  10  6  /var/www/sino_passport/db/migrate/20120903013112_create_users.rb
--'  11  0  /var/www/sino_passport/db/migrate/20120730061438_create_doorkeeper_tables.rb
--'  11  6  /var/www/sino_passport/db/migrate/20120903013112_create_users.rb
--'  9  0  /var/www/sino_passport/db/migrate/20120903013112_create_users.rb
--'  12  6  /var/www/sino_passport/db/migrate/20120903013112_create_users.rb
--'  24  4  /var/www/sino_passport/config/locales/cn.yml
--'  1  0  /var/www/sino_passport/config/locales/cn.yml
--'  2  2  /var/www/sino_passport/app/views/users/_active.html.slim
--'  1  0  /var/www/sino_passport/app/views/users/update.js.erb
--'  1  0  /var/www/sino_passport/app/views/users/_table.html.slim
--'  1  0  /var/www/sino_passport/app/views/users/_form.html.slim
--'  4  8  /var/www/sino_passport/app/views/users/_form.html.slim
--'  5  8  /var/www/sino_passport/app/views/users/_form.html.slim
--'  1  0  /var/www/sino_passport/app/views/users/index.js.erb
--'  1  0  /var/www/sino_passport/app/views/home/profile.html.slim
--'  1  11  /var/www/sino_passport/app/views/users/index.html.slim
--'  8  18  /var/www/sino_passport/app/views/home/profile.html.slim
--'  5  6  /var/www/sino_passport/app/views/home/profile.html.slim
--'  233  0  /var/www/sino_passport/config/initializers/devise.rb
--'  1  0  /var/www/sino_passport/config/initializers/devise.rb
--'  80  0  /var/www/sino_passport/Gemfile
--'  37  0  /var/www/sino_passport/Gemfile
--'  25  2  /var/www/sino_passport/Gemfile
--'  49  0  /var/www/sino_passport/Gemfile
--'  13  6  /var/www/sino_passport/config/routes.rb
--'  25  2  /var/www/sino_passport/config/routes.rb
--'  1  0  /var/www/sino_passport/Gemfile
--'  256  2  /var/www/client_base/config/initializers/devise.rb
--'  20  0  /var/www/client_base/config/initializers/devise.rb
--'  1  0  /var/www/client_base/config/environments/production.rb
--'  65  2  /var/www/client_base/config/environments/production.rb
--'  66  2  /var/www/client_base/config/environments/production.rb
--'  1  0  /var/www/client_base/Capfile
--'  29  30  /var/www/client_base/config/environments/development.rb
--'  27  23  /var/www/client_base/config/environments/development.rb
--'  1  0  /var/www/client_base/config/environments/development.rb
--'  51  2  /var/www/client_base/config/application.rb
--'  16  4  /var/www/client_base/config/application.rb
--'  1  0  /var/www/client_base/config/application.rb
--'  4  0  /var/www/client_base/app/models/client.rb
--'  1  0  /var/www/client_base/app/models/client.rb
--'  13  2  /var/www/client_base/config/initializers/devise.rb
--'  1  0  /var/www/client_base/app/views/clients/index.html.slim
--'  1  0  /var/www/client_base/db/migrate/20120730085536_create_clients.rb
--'  12  0  /var/www/sino_primer/.git/COMMIT_EDITMSG
--'  1  0  /var/www/sino_primer/.git/COMMIT_EDITMSG
--'  1  0  /var/www/sino_passport/.git/COMMIT_EDITMSG
--'  1  0  /var/www/sino_primer/app/models/company.rb
--'  17  2  /var/www/sino_primer/app/models/company.rb
+-'  13  6  /var/www/sino_passport/app/controllers/api/v1/users_controller.rb
+-'  1  0  /var/www/sino_passport/app/controllers/api/v1/users_controller.rb
+-'  124  69  /var/www/dna/kehu/zhuangtai/testdown.php
+-'  88  0  /var/www/dna/kehu/zhuangtai/testdown.php
+-'  606  68  /var/www/dna/kehu/zhuangtai/index.php
+-'  112  69  /var/www/dna/kehu/zhuangtai/downbaogao.php
+-'  111  68  /var/www/dna/kehu/zhuangtai/downbaogao.php
+-'  78  69  /var/www/dna/kehu/zhuangtai/downbaogao.php
+-'  20  0  /var/www/sino_analysis_report/app/assets/javascripts/application.js
+-'  1  0  /var/www/sino_analysis_report/app/assets/javascripts/application.js
+-'  18  0  /var/www/sino_analysis_report/app/assets/javascripts/application.js
+-'  1  0  /var/www/angular_casts/app/assets/javascripts/app.js.coffee
+-'  1  0  /var/www/angular_casts/app/assets/javascripts/application.js
+-'  1  0  /var/www/angular_casts/Gemfile
+-'  1  0  /var/www/angular_casts/app/assets/javascripts/angular/directives/flow_player.js.coffee
+-'  12  0  /var/www/angular_casts/app/assets/javascripts/angular/directives/flow_player.js.coffee
+-'  1  0  /var/www/angular_casts/app/assets/javascripts/angular/controllers/screencasts_ctrl.js.coffee
+-'  15  0  /var/www/angular_casts/app/assets/javascripts/angular/controllers/screencasts_ctrl.js.coffee
+-'  187  4  /var/www/kucun/caigou/caigoubushenpi/show.php
+-'  109  21  /var/www/kucun/caigou/caigoubushenpi/show.php
+-'  92  92  /var/www/kucun/caigou/caigoubushenpi/show.php
+-'  91  0  /var/www/kucun/caigou/caigoubushenpi/show.php
+-'  94  0  /var/www/kucun/caigou/caigoubushenpi/show.php
+-'  103  40  /var/www/kucun/caigou/caigoubushenpi/show.php
+-'  230  8  /var/www/kucun/caigou/shenpi/index.php
+-'  35  57  /var/www/kucun/caigou/shenpi/index.php
+-'  42  36  /var/www/kucun/caigou/shenpi/index.php
+-'  110  76  /var/www/kucun/caigou/caigoubushenpi/show.php
+-'  1  0  /var/www/kucun/caigou/caigoubushenpi/show.php
+-'  1  0  /var/www/kucun/caigou/shenpi/index.php
+-'  2  0  /var/www/kucun/caigou/caigoubushenpi/show.php
+-'  107  66  /var/www/kucun/caigou/caigoubushenpi/show.php
+-'  108  66  /var/www/kucun/caigou/caigoubushenpi/show.php
+-'  37  4  /etc/nginx/sites-enabled/analysis
+-'  14  2  /etc/nginx/sites-enabled/analysis
+-'  40  29  /etc/nginx/sites-enabled/analysis
+-'  1  0  /etc/nginx/sites-enabled/analysis
+-'  12  0  /var/www/superwf/bin/unictl
+-'  1  0  /var/www/superwf/bin/unictl
+-'  1  0  /var/www/user_passport/app/views/doorkeeper/applications/edit.html.slim
+-'  2  0  /var/www/user_passport/app/views/doorkeeper/applications/edit.html.slim
+-'  8  12  /var/www/user_passport/app/views/doorkeeper/applications/_form.html.slim
+-'  13  4  /var/www/sino_primer/config/routes.rb
+-'  47  0  /var/www/sino_primer/config/routes.rb
+-'  1  0  /var/www/sino_primer/config/routes.rb
+-'  40  17  /var/www/sino_primer/config/routes.rb
+-'  33  2  /var/www/sino_primer/config/routes.rb
+-'  46  2  /var/www/sino_primer/config/routes.rb
+-'  44  39  /var/www/sino_primer/config/routes.rb
+-'  1  0  /var/www/sino_primer/configr
+-'  4  6  /var/www/sino_sequencing/db/migrate/20130815014427_create_attachments.rb
+-'  1  0  /var/www/sino_sequencing/db/migrate/20130815014427_create_attachments.rb
+-'  7  0  /var/www/angular_casts/db/seeds.rb
+-'  4  0  /var/www/angular_casts/db/seeds.rb
+-'  7  0  /var/www/angular_casts/config/database.yml
+-'  1  0  /var/www/angular_casts/config/database.yml
+-'  64  275  /var/www/dna/cexu/384/index.php
+-'  42  4  /var/www/dna/cexu/384/index.php
+-'  1  0  /var/www/dna/cexu/384/index.php
+-'  15  2  /var/www/dna/yangzhun/result/yujian.php
+-'  12  45  /var/www/dna/yangzhun/result/yujian.php
+-'  4  0  /var/www/dna/yangzhun/result/yujian.php
+-'  58  2  /var/www/dna/yangzhun/result/yujian.php
+-'  143  17  /var/www/dna/yangzhun/result/index.php
+-'  217  21  /var/www/dna/yangzhun/result/index.php
+-'  1  0  /var/www/dna/yangzhun/result/index.php
+-'  1  0  /var/www/dna/yangzhun/yangzhunX.php
+-'  91  2  /var/www/dna/yangzhun/yangzhunX.php
+-'  2  0  /var/www/sino_analysis_report/Gemfile
+-'  1  0  /var/www/sino_analysis_report/Gemfile
+-'  36  0  /var/www/sino_analysis_report/Gemfile
+-'  44  0  /var/www/sino_analysis_report/Gemfile
+-'  52  0  /var/www/sino_analysis_report/Gemfile
+-'  50  0  /var/www/sino_analysis_report/Gemfile
+-'  53  0  /var/www/sino_analysis_report/Gemfile
+-'  1  0  /var/www/sino_analysis_report/config/database.yml
+-'  14  31  /var/www/sino_analysis_report/config/database.yml
+-'  35  31  /var/www/sino_analysis_report/config/database.yml
+-'  29  14  /var/www/sino_analysis_report/config/database.yml
+-'  18  10  /var/www/sino_analysis_report/config/database.yml
+-'  2  30  /var/www/dna/j.php
+-'  1  0  /var/www/dna/j.php
+-'  55  12  /var/www/dna/info/sendmailtest/sendmail_chgb.php
+-'  81  2  /var/www/dna/info/sendmailtest/sendmail_chgb.php
+-'  72  8  /var/www/dna/info/sendmailtest/sendmail_chgb.php
+-'  1  0  /var/www/dna/info/sendmailtest/sendmail_chgb.php
+-'  1  0  /var/www/user_passport/app/views/home/index.html.slim
+-'  14  6  /var/www/user_passport/app/views/home/index.html.slim
+-'  4  2  /var/www/gene_bank/app/views/sample_boards/index.html.slim
+-'  1  0  /var/www/gene_bank/app/views/sample_boards/index.html.slim
+-'  1  0  /var/www/gene_bank/app/assets/javascripts/samples.js.coffee
+-'  19  2  /var/www/gene_bank/app/assets/javascripts/samples.js.coffee
+-'  1  0  /var/www/gene_bank/lib/ws_sample.rb
+-'  11  6  /var/www/gene_bank/lib/ws_sample.rb
+-'  25  0  /var/www/gene_bank/lib/ws_sample.rb
+-'  1  0  /var/www/gene_bank/app/views/samples/index.html.slim
+-'  1  0  /var/www/gene_bank/app/views/samples/_form.html.slim
+-'  9  0  /var/www/gene_bank/app/views/samples/_form.html.slim
+-'  1  0  /var/www/gene_bank/app/views/samples/new.html.slim
 
 # ç¼“å†²åŒºåˆ—è¡¨:
-%/var/www/sino_passport/app/models/user.rb	16	2
-%/var/www/user_passport/db/migrate/20120620055748_create_users.rb	10	4
-%/var/www/sino_primer/app/views/primers/show.html.slim	1	0
-%/var/www/hello.c	8	2
-%/var/www/sino_primer/app/views/primers/show.js.erb	1	38
-%/var/www/sino_primer/Capfile	1	0
-%/var/www/sino_primer/app/views/primers/_show.html.slim	1	0
-%/var/www/sino_primer/app/models/order.rb	2	2
-%/var/www/user_passport/Capfile	1	0
-%/var/www/user_passport/db/migrate/20120620055802_add_devise_to_users.rb	5	15
-%/var/www/user_passport/app/models/user.rb	1	0
-%/var/www/user_passport/config/initializers/devise.rb	26	2
-%/var/www/user_passport/app/views/devise/mailer/reset_password_instructions.html.slim	7	105
-%/var/www/user_passport/app/controllers/api/v1/users_controller.rb	4	4
-%/var/www/user_passport/app/views/devise/sessions/new.html.slim	4	36
-%/var/www/sino_passport/Capfile	1	0
-%/var/www/sino_passport/app/controllers/api/v1/users_controller.rb	8	97
-%/var/www/user_passport/app/controllers/api/v1/api_controller.rb	2	45
+%/var/www/sino_passport/app/controllers/api/v1/users_controller.rb	13	6
+%/var/www/dna/kehu/zhuangtai/index.php	606	68
+%/var/www/dna/kehu/zhuangtai/testdown.php	124	69
 
 # æ–‡ä»¶å†…çš„æ ‡è®°å†å²è®°å½• (ä»æ–°åˆ°æ—§):
 
 > /var/www/sino_passport/app/controllers/api/v1/users_controller.rb
-	"	8	97
-	^	8	99
-	.	8	98
-	+	7	60
-	+	8	20
-	+	8	18
-	+	8	98
+	"	13	6

@@ -13,8 +13,9 @@ noremap <silent> n :call g:vimim_search_next()n
 nnoremap <silent> <Plug>NetrwBrowseX :call netrw#NetrwBrowseX(expand("<cWORD>"),0)
 nmap <silent> <Plug>VLToggle :let g:VeryLiteral = !g:VeryLiteral| echo "VeryLiteral " . (g:VeryLiteral ? "On" : "Off")
 vmap <kMultiply> *
+map <F7> :make
 map <F4> "*p
-map <F2> :up
+map <F2> :NERDTree:set number
 map <F3> :up
 imap <silent>  <Plug>VimIM
 imap <silent>  <Plug>VimimOneKey
@@ -24,7 +25,7 @@ let &cpo=s:cpo_save
 unlet s:cpo_save
 set backspace=indent,eol,start
 set expandtab
-set fileencodings=utf-8,ucs-bom,euc-jp,gb18030,gbk,gb2312,cp936
+set fileencodings=utf-8,gbk,ucs-bom,gb18030,euc-jp,gb2312,cp936
 set helplang=cn
 set history=50
 set hlsearch
@@ -44,14 +45,98 @@ set viminfo='200,%,!,<50,s10,h,rA,rB,/50,:50
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd /var/www/lims_order/app/assets/javascripts
+cd /var/www/sino_primer
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +0 orders.js.coffee
-args orders.js.coffee
-edit orders.js.coffee
+badd +0 app/assets/javascripts/orders.js.coffee
+badd +191 /var/www/sino_analysis_report/app/assets/javascripts/ckeditor.js
+badd +1 /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/sign_ctrl.js.coffee
+badd +40 /var/www/sino_sequencing/app/models/order.rb
+badd +29 config/environments/development.rb
+badd +2 /var/www/sino_project/app/assets/stylesheets/for_1600.scss
+badd +13 /var/www/sino_project/app/assets/stylesheets/application.css.scss
+badd +1 /var/www/sino_project/Gemfile
+badd +36 /var/www/sino_project/config/environments/development.rb
+badd +1 /var/www/sino_project/app/assets/stylesheets/superwf.css.scss
+badd +1 /var/www/sino_project/app/assets/stylesheets/jquery.jqplot.min.css
+badd +30 /var/www/sino_analysis_report/Gemfile
+badd +12 /var/www/sino_analysis_report/app/assets/javascripts/angular/services/lang.js.coffee
+badd +6 /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/templates_ctrl.js.coffee
+badd +14 /var/www/sino_analysis_report/app/assets/stylesheets/application.css
+badd +23 /var/www/sino_analysis_report/app/assets/stylesheets/stylesheet.css.scss
+badd +1 /var/www/sino_analysis_report/public/editor.css
+badd +8 /var/www/sino_analysis_report/app/views/models/template_form.html.slim
+badd +5 /var/www/sino_analysis_report/app/views/templates/_toolbar.html.slim
+badd +27 /var/www/sino_analysis_report/app/assets/javascripts/application.js
+badd +23 /var/www/sino_analysis_report/app/assets/javascripts/angular/directives/ckedit.js.coffee
+badd +20 /var/www/sino_analysis_report/app/views/models/template_table.html.slim
+badd +1 /var/www/sino_analysis_report/app/views/templates/index.json.jbuilder
+badd +1 /var/www/sino_analysis_report/app/controllers/templates_controller.rb
+badd +1 /var/www/sino_analysis_report/app/models/report.rb
+badd +10 /var/www/sino_analysis_report/db/migrate/20131121053017_create_reports.rb
+badd +23 /var/www/sino_analysis_report/config/application.rb
+badd +6 /var/www/sino_analysis_report/app/views/templates/_search.html.slim
+badd +19 /var/www/sino_analysis_report/config/locales/cn.yml
+badd +1 /var/www/sino_analysis_report/app/assets/javascripts/routes.js.coffee
+badd +4 /var/www/sino_analysis_report/app/models/template.rb
+badd +4 /var/www/sino_analysis_report/db/migrate/20131121054008_create_templates.rb
+badd +8 /var/www/sino_analysis_report/spec/models/template_spec.rb
+badd +8 /var/www/sino_analysis_report/spec/models/report_spec.rb
+badd +8 /var/www/sino_analysis_report/spec/factories/reports.rb
+badd +5 /var/www/sino_analysis_report/spec/factories/templates.rb
+badd +59 /var/www/sino_analysis_report/spec/fixtures/menus.yml.erb
+badd +12 /var/www/sino_analysis_report/config/locales/menus.cn.yml
+badd +1 /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/reports.js.coffee
+badd +9 /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/reports_ctrl.js.coffee
+badd +1 /var/www/sino_analysis_report/app/assets/javascripts/angular/services/report.js.coffee
+badd +2 /var/www/sino_analysis_report/app/assets/javascripts/angular/services/template.js.coffee
+badd +2 /var/www/sino_analysis_report/config/locales/reports.cn.yml
+badd +2 /var/www/sino_analysis_report/app/controllers/reports_controller.rb
+badd +1 /var/www/sino_analysis_report/app/views/models/report_table.html.slim
+badd +5 /var/www/sino_analysis_report/app/views/reports/_search.html.slim
+badd +3 /var/www/sino_analysis_report/app/views/models/report_form.html.slim
+badd +9 /var/www/sino_analysis_report/config/locales/templates.cn.yml
+badd +6 /var/www/sino_analysis_report/app/assets/javascripts/angular/directives/dialog_select.js.coffee
+badd +16 /var/www/sino_analysis_report/app/views/models/modal.html.slim
+badd +1 /var/www/sino_analysis_report/public/template/modal/window.html
+badd +1 /var/www/sino_analysis_report/public/template/modal/backdrop.html
+badd +161 /var/www/sino_analysis_report/app/assets/stylesheets/bootstrap.css
+badd +1 /home/wangfan/desktop/bootstrap-gh-pages/assets/bootstrap.css
+badd +5183 /home/wangfan/desktop/bootstrap/css/bootstrap.css
+badd +23 /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/modal_ctrl.js.coffee
+badd +26 /var/www/sino_analysis_report/app/controllers/sessions_controller.rb
+badd +1 /var/www/sino_analysis_report/config/routes.rb
+badd +1 /var/www/sino_analysis_report/app/controllers/translates_controller.rb
+badd +1 /var/www/sino_analysis_report/app/views/translates/t.json.jbuilder
+badd +12 /var/www/sino_analysis_report/app/views/layouts/application.html.slim
+badd +1 /var/www/sino_analysis_report/app/views/home/index.html.slim
+badd +3 /var/www/sino_analysis_report/app/views/layouts/_navbar_fix_top.html.slim
+badd +9 /var/www/sino_analysis_report/app/controllers/menus_controller.rb
+badd +7 /var/www/sino_analysis_report/db/migrate/20130108084532_create_menus.rb
+badd +1 /var/www/sino_analysis_report/app/views/menus/index.json.jbuilder
+badd +19 /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/layout_ctrl.js.coffee
+badd +2 /var/www/sino_analysis_report/app/views/models/sign_in.html.slim
+badd +1 /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/template_ctrl.js.coffee
+badd +1 /var/www/sino_analysis_report/app/views/models/_pager.html.slim
+badd +19 /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/report_ctrl.js.coffee
+badd +7 /var/www/sino_analysis_report/app/controllers/attachments_controller.rb
+badd +2 /var/www/sino_analysis_report/app/models/attachment.rb
+badd +5 /var/www/sino_analysis_report/db/migrate/20131127031321_create_attachments.rb
+badd +1 /var/www/sino_analysis_report/app/uploaders/file_uploader.rb
+badd +1 /var/www/sino_analysis_report/.gitignore
+badd +12 /var/www/sino_analysis_report/app/controllers/application_controller.rb
+badd +8 /var/www/sino_analysis_report/app/controllers/home_controller.rb
+badd +1 /var/www/sino_analysis_report/app/views/attachments/create.js.erb
+badd +14 /var/www/sino_analysis_report/public/assets/config.js
+badd +33 /var/www/sino_analysis_report/public/assets/plugins/image/dialogs/image.js
+badd +1 /var/www/sino_analysis_report/app/views/attachments/create.html.slim
+badd +2 /var/www/sino_analysis_report/app/views/attachments/create.html.erb
+badd +5 Capfile
+badd +0 app/assets/javascripts/application.js
+silent! argdel *
+edit app/assets/javascripts/orders.js.coffee
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -124,7 +209,7 @@ setlocal keywordprg=
 setlocal nolinebreak
 setlocal nolisp
 setlocal nolist
-setlocal makeprg=coffee\ -c\ \ $*\ orders.js.coffee
+setlocal makeprg=coffee\ -c\ \ $*\ app/assets/javascripts/orders.js.coffee
 setlocal matchpairs=(:),{:},[:]
 setlocal nomodeline
 setlocal modifiable
@@ -133,7 +218,7 @@ set number
 setlocal number
 setlocal numberwidth=4
 setlocal omnifunc=javascriptcomplete#CompleteJS
-setlocal path=.,lib,vendor,app/models/concerns,app/controllers/concerns,app/controllers,app/helpers,app/mailers,app/models,app/*,app/views,app/views/orders,public,test,test/unit,test/functional,test/integration,test/controllers,test/helpers,test/mailers,test/models,spec,spec/controllers,spec/helpers,spec/mailers,spec/models,spec/views,spec/lib,spec/features,spec/requests,spec/integration,vendor/plugins/*/lib,vendor/plugins/*/test,vendor/rails/*/lib,vendor/rails/*/test,/var/www/lims_order,/usr/include,
+setlocal path=.,lib,vendor,app/models/concerns,app/controllers/concerns,app/controllers,app/helpers,app/mailers,app/models,app/*,app/views,app/views/orders,public,spec,spec/controllers,spec/helpers,spec/mailers,spec/models,spec/views,spec/lib,spec/features,spec/requests,spec/integration,vendor/plugins/*/lib,vendor/plugins/*/test,vendor/rails/*/lib,vendor/rails/*/test,/var/www/sino_primer,/usr/include
 setlocal nopreserveindent
 setlocal nopreviewwindow
 setlocal quoteescape=\\
@@ -158,7 +243,7 @@ if &syntax != 'coffee'
 setlocal syntax=coffee
 endif
 setlocal tabstop=2
-setlocal tags=/var/www/lims_order/tags,/var/www/lims_order/tmp/tags,./tags,./TAGS,tags,TAGS
+setlocal tags=/var/www/sino_primer/tags,/var/www/sino_primer/tmp/tags,./tags,./TAGS,tags,TAGS
 setlocal textwidth=0
 setlocal thesaurus=
 setlocal noundofile
@@ -167,12 +252,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 6) / 13)
+let s:l = 19 - ((6 * winheight(0) + 8) / 16)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-normal! 0
+19
+normal! 013l
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf

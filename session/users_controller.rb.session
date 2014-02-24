@@ -41,6 +41,7 @@ set showcmd
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
 set tabstop=2
 set viminfo='200,%,!,<50,s10,h,rA,rB,/50,:50
+set window=13
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
@@ -49,26 +50,11 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +16 app/models/user.rb
-badd +10 /var/www/user_passport/db/migrate/20120620055748_create_users.rb
-badd +1 /var/www/sino_primer/app/views/primers/show.html.slim
-badd +8 /var/www/hello.c
-badd +1 /var/www/sino_primer/app/views/primers/show.js.erb
-badd +1 /var/www/sino_primer/Capfile
-badd +1 /var/www/sino_primer/app/views/primers/_show.html.slim
-badd +2 /var/www/sino_primer/app/models/order.rb
-badd +1 /var/www/user_passport/Capfile
-badd +5 /var/www/user_passport/db/migrate/20120620055802_add_devise_to_users.rb
-badd +1 /var/www/user_passport/app/models/user.rb
-badd +26 /var/www/user_passport/config/initializers/devise.rb
-badd +7 /var/www/user_passport/app/views/devise/mailer/reset_password_instructions.html.slim
-badd +4 /var/www/user_passport/app/controllers/api/v1/users_controller.rb
-badd +4 /var/www/user_passport/app/views/devise/sessions/new.html.slim
-badd +1 Capfile
-badd +15 app/controllers/api/v1/users_controller.rb
-badd +2 /var/www/user_passport/app/controllers/api/v1/api_controller.rb
+badd +0 /var/www/sino_passport/app/controllers/api/v1/users_controller.rb
+badd +606 /var/www/dna/kehu/zhuangtai/index.php
+badd +124 /var/www/dna/kehu/zhuangtai/testdown.php
 silent! argdel *
-edit app/controllers/api/v1/users_controller.rb
+edit /var/www/sino_passport/app/controllers/api/v1/users_controller.rb
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -194,12 +180,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 8 - ((5 * winheight(0) + 6) / 13)
+let s:l = 13 - ((12 * winheight(0) + 6) / 13)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-8
-normal! 097l
+13
+normal! 06l
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf

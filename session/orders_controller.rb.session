@@ -34,7 +34,6 @@ set isident=@,48-57,_,192-255,$
 set iskeyword=@,48-57,_,192-255,$
 set nomodeline
 set mouse=a
-set omnifunc=javascriptcomplete#CompleteJS
 set printoptions=paper:a4
 set pumheight=10
 set ruler
@@ -44,7 +43,7 @@ set showcmd
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
 set tabstop=2
 set viminfo='200,%,!,<50,s10,h,rA,rB,/50,:50
-set window=20
+set window=17
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
@@ -53,117 +52,63 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +65 db/seeds.rb
-badd +1 /var/www/sino_sequencing/spec/factories/menus.rb
-badd +9 /var/www/user_passport/app/views/devise/confirmations/new.html.slim
-badd +4 /var/www/sino_sequencing/app/views/companies/index.html.slim
-badd +1 /var/www/sino_sequencing/app/views/clients/_search.html.slim
-badd +4 app/views/clients/index.html.slim
-badd +4 /var/www/user_passport/app/controllers/home_controller.rb
-badd +283 app/models/order.rb
-badd +41 /var/www/sino_project/app/views/ht_samples/checked.html.haml
-badd +153 /var/www/sino_project/app/models/ht_sample.rb
-badd +43 /var/www/sino_project/app/models/client.rb
-badd +6 /etc/nginx/sites-enabled/phpmyadmin
-badd +1 /var/www/sino_project/Capfile
-badd +5 /var/www/sino_project/app/models/remote_client.rb
-badd +15 /var/www/sino_project/app/controllers/clients_controller.rb
-badd +12 /var/www/sino_project/config/initializers/hash.rb
-badd +89 /var/www/sino_project/app/models/ht_library.rb
-badd +76 /var/www/sino_project/app/controllers/ht_samples_controller.rb
-badd +1 /var/www/sino_project/app/views/ht_samples/index.html.haml
-badd +48 /var/www/sino_project/app/views/ht_samples/_table.html.haml
-badd +19 /var/www/sino_project/app/helpers/ht_samples_helper.rb
-badd +1 Capfile
-badd +14 app/controllers/primers_controller.rb
-badd +122 app/controllers/orders_controller.rb
-badd +22 config/routes.rb
-badd +14 app/views/primers/index.html.slim
-badd +28 app/assets/javascripts/primers.js.coffee
-badd +36 Gemfile
-badd +4 app/models/primer.rb
-badd +4 app/views/orders/new.html.slim
-badd +46 app/assets/javascripts/orders.js.coffee
-badd +4 app/views/orders/_for_sequence.html.slim
-badd +9 app/views/orders/_form.html.slim
-badd +1 app/views/orders/_primers_form.html.slim
-badd +1 config/locales/orders.cn.yml
-badd +6 app/views/orders/store_issue_tag.html.haml
-badd +15 app/views/primers/_search.html.slim
-badd +27 config/locales/primers.cn.yml
-badd +6 app/views/orders/_search.html.slim
-badd +1 db/migrate/20110704062443_create_orders.rb
-badd +1 config/deploy/production.rb
-badd +14 /var/www/user_passport/Capfile
-badd +4 /var/www/user_passport/app/controllers/application_controller.rb
-badd +62 /var/www/user_passport/config/routes.rb
-badd +1 /var/www/user_passport/app/views/home/profile.html.slim
-badd +1 /var/www/user_passport/app/controllers/users_controller.rb
-badd +2 /var/www/user_passport/config/deploy.rb
-badd +1 /var/www/user_passport/config/deploy/production.rb
-badd +13 config/deploy.rb
-badd +1 /var/www/user_passport/lib/capistrano/tasks/go.cap
+badd +4 app/views/checkouts/index.html.slim
+badd +38 /var/www/oa/web/new_order.php
+badd +1 /var/www/oa/web/index.php
+badd +8 /var/www/oa/web/css/new_order.css
+badd +31 /var/www/oa/web/js/new_order.js
+badd +1 app/views/checkouts/_table.html.slim
+badd +26 Capfile
+badd +1 config/locales/checkouts.cn.yml
+badd +1 app/views/checkouts/show.js.erb
+badd +1 config/routes.rb
+badd +1 app/views/checkouts/detail.js.erb
+badd +15 app/views/checkouts/_detail.html.slim
+badd +9 app/views/checkouts/_orders.html.slim
+badd +1 app/views/checkouts/_form.html.slim
+badd +2 app/views/checkout_orders/_form.html.slim
+badd +11 app/views/checkout_orders/edit.html.slim
+badd +162 /var/www/sino_primer/app/models/checkout.rb
+badd +38 Gemfile
+badd +56 /var/www/sino_primer/app/models/primer.rb
+badd +1 /var/www/sino_primer/app/models/price.rb
+badd +1 db/migrate/20110804051145_create_prices.rb
+badd +7 config/locales/prices.cn.yml
+badd +2 app/views/orders/show.html.slim
+badd +0 app/views/orders/_sendpaper.html.slim
+badd +0 /var/www/sino_primer/app/controllers/orders_controller.rb
+badd +5 app/views/clients/_search.html.slim
+badd +3 /var/www/sino_primer/app/controllers/clients_controller.rb
+badd +23 /var/www/sino_primer/app/models/client.rb
+badd +1 config/locales/clients.cn.yml
+badd +1 app/views/clients/index.html.slim
 badd +1 app/views/clients/_table.html.slim
-badd +13 app/models/client_info.rb
-badd +39 app/controllers/clients_controller.rb
-badd +6 db/migrate/20130923030329_create_client_infos.rb
-badd +11 mig_form_primer_synthesis.rb
-badd +6 db/migrate/20110721045643_create_checkout_orders.rb
-badd +1 db/migrate/20110811050855_create_checkout_primers.rb
-badd +1 db/migrate/20130913083952_create_checkout_records.rb
-badd +1 db/migrate/20110720072942_create_checkouts.rb
-badd +1 db/migrate/20130108084532_create_menus.rb
-badd +1 db/migrate/20130108084517_create_permissions.rb
-badd +8 db/migrate/20110804051145_create_prices.rb
-badd +6 db/migrate/20130913083930_create_primer_records.rb
-badd +1 db/migrate/20110705052601_create_primers.rb
-badd +4 db/migrate/20130108084519_create_roles.rb
-badd +15 db/migrate/20130916052155_create_users.rb
-badd +1 db/migrate/20110810154630_create_simple_captcha_data.rb
-badd +26 /var/www/sino_sequencing/Capfile
-badd +1 /var/www/sino_sequencing/app/views/clients/unpaid.js.erb
-badd +12 /var/www/sino_sequencing/config/locales/clients.cn.yml
-badd +1 /var/www/sino_sequencing/app/models/client.rb
-badd +1 /var/www/sino_sequencing/app/views/companies/_tr.html.slim
-badd +12 /var/www/sino_sequencing/app/views/companies/_tree.html.slim
-badd +7 /var/www/sino_sequencing/app/views/companies/_subtree.html.slim
-badd +9 /var/www/sino_sequencing/mig_from_uc.rb
-badd +1 /var/www/user_passport/app/views/doorkeeper/authorizations/new.html.slim
-badd +2 /var/www/user_passport/app/views/devise/passwords/new.html.slim
-badd +2 /var/www/user_passport/app/views/devise/shared/_links.html.slim
-badd +13 /var/www/user_passport/app/views/devise/passwords/edit.html.slim
-badd +1 /var/www/sino_sequencing/spec/fixtures/menus.yml.erb
-badd +66 /var/www/sino_sequencing/db/seeds.rb
-badd +11 config/locales/menus.cn.yml
-badd +12 lib/init_pdf.rb
-badd +7 app/views/orders/index.html.slim
-badd +12 app/views/primers/scope.html.slim
-badd +2 app/views/orders/edit.html.slim
-badd +1 app/views/primers/index.js.erb
-badd +17 config/locales/checkouts.cn.yml
-badd +6 app/views/checkouts/_search.html.slim
+badd +8 config/locales/companies.cn.yml
+badd +3 /var/www/sino_primer/app/models/company.rb
+badd +201 /var/www/sino_primer/app/models/order.rb
+badd +12 /var/www/sino_primer/app/controllers/checkouts_controller.rb
 silent! argdel *
-edit app/controllers/orders_controller.rb
+edit /var/www/sino_primer/app/controllers/orders_controller.rb
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
 argglobal
+let s:cpo_save=&cpo
+set cpo&vim
+nmap <buffer> gf <Plug>RailsTabFind
+nmap <buffer> f <Plug>RailsSplitFind
 nnoremap <buffer> <silent> g} :exe        "ptjump =RubyCursorIdentifier()"
 nnoremap <buffer> <silent> } :exe          "ptag =RubyCursorIdentifier()"
 nnoremap <buffer> <silent> g] :exe      "stselect =RubyCursorIdentifier()"
 nnoremap <buffer> <silent> g :exe        "stjump =RubyCursorIdentifier()"
 nnoremap <buffer> <silent>  :exe v:count1."stag =RubyCursorIdentifier()"
 nnoremap <buffer> <silent> ] :exe v:count1."stag =RubyCursorIdentifier()"
-let s:cpo_save=&cpo
-set cpo&vim
-nmap <buffer> gf <Plug>RailsTabFind
-nmap <buffer> f <Plug>RailsSplitFind
 nnoremap <buffer> <silent>  :exe  v:count1."tag =RubyCursorIdentifier()"
+nmap <buffer> gf <Plug>RailsFind
 nnoremap <buffer> <silent> g] :exe       "tselect =RubyCursorIdentifier()"
 nnoremap <buffer> <silent> g :exe         "tjump =RubyCursorIdentifier()"
-nmap <buffer> gf <Plug>RailsFind
 let &cpo=s:cpo_save
 unlet s:cpo_save
 setlocal keymap=
@@ -269,12 +214,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 16 - ((9 * winheight(0) + 10) / 20)
+let s:l = 107 - ((15 * winheight(0) + 8) / 17)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-16
-normal! 024l
+107
+normal! 08l
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf

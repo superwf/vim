@@ -30,6 +30,7 @@ set helplang=cn
 set history=50
 set hlsearch
 set incsearch
+set isident=@,48-57,_,192-255,$
 set nomodeline
 set mouse=a
 set printoptions=paper:a4
@@ -43,13 +44,14 @@ set viminfo='200,%,!,<50,s10,h,rA,rB,/50,:50
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd /var/www/checkout_flow
+cd /var/www/oa
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
+badd +27 inc/oa_config.php
 badd +0 .gitignore
-args .gitignore
+args inc/oa_config.php
 edit .gitignore
 set splitbelow splitright
 set nosplitbelow
@@ -159,12 +161,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 19 - ((14 * winheight(0) + 7) / 15)
+let s:l = 3 - ((2 * winheight(0) + 6) / 13)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-19
-normal! 0
+3
+normal! 04l
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf

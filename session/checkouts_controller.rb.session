@@ -13,6 +13,7 @@ noremap <silent> n :call g:vimim_search_next()n
 nnoremap <silent> <Plug>NetrwBrowseX :call netrw#NetrwBrowseX(expand("<cWORD>"),0)
 nmap <silent> <Plug>VLToggle :let g:VeryLiteral = !g:VeryLiteral| echo "VeryLiteral " . (g:VeryLiteral ? "On" : "Off")
 vmap <kMultiply> *
+map <F7> :make
 map <F4> "*p
 map <F2> :NERDTree:set number
 map <F3> :up
@@ -40,19 +41,22 @@ set showcmd
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
 set tabstop=2
 set viminfo='200,%,!,<50,s10,h,rA,rB,/50,:50
-set window=15
+set window=10
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd /var/www/sino_sequencing
+cd /var/www/sino_primer
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +0 /var/www/sino_sequencing/app/controllers/checkouts_controller.rb
-badd +258 /var/www/superwf/app/assets/javascripts/superwf.js.coffee
+badd +0 /var/www/sino_primer/app/controllers/checkouts_controller.rb
+badd +1 /etc/nginx/sites-enabled/rockmongo
+badd +26 Capfile
+badd +215 /var/www/sino_primer/app/models/order.rb
+badd +29 /var/www/sino_primer/app/models/client.rb
 silent! argdel *
-edit /var/www/sino_sequencing/app/controllers/checkouts_controller.rb
+edit /var/www/sino_primer/app/controllers/checkouts_controller.rb
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -143,7 +147,7 @@ set number
 setlocal number
 setlocal numberwidth=4
 setlocal omnifunc=rubycomplete#Complete
-setlocal path=.,lib,vendor,app/models/concerns,app/controllers/concerns,app/controllers,app/helpers,app/mailers,app/models,app/*,app/views,app/views/checkouts,public,test,test/unit,test/functional,test/integration,test/controllers,test/helpers,test/mailers,test/models,spec,spec/controllers,spec/helpers,spec/mailers,spec/models,spec/views,spec/lib,spec/features,spec/requests,spec/integration,vendor/plugins/*/lib,vendor/plugins/*/test,vendor/rails/*/lib,vendor/rails/*/test,/var/www/sino_sequencing,-e:1:in\\\ `<main>':\\\ undefined\\\ method\\\ `all_load_paths'\\\ for\\\ Gem:Module\\\ (NoMethodError)\
+setlocal path=.,lib,vendor,app/models/concerns,app/controllers/concerns,app/controllers,app/helpers,app/mailers,app/models,app/*,app/views,app/views/checkouts,public,spec,spec/controllers,spec/helpers,spec/mailers,spec/models,spec/views,spec/lib,spec/features,spec/requests,spec/integration,vendor/plugins/*/lib,vendor/plugins/*/test,vendor/rails/*/lib,vendor/rails/*/test,/var/www/sino_primer,-e:1:in\\\ `<main>':\\\ undefined\\\ method\\\ `all_load_paths'\\\ for\\\ Gem:Module\\\ (NoMethodError)\
 
 setlocal nopreserveindent
 setlocal nopreviewwindow
@@ -169,7 +173,7 @@ if &syntax != 'ruby'
 setlocal syntax=ruby
 endif
 setlocal tabstop=2
-setlocal tags=/var/www/sino_sequencing/tags,/var/www/sino_sequencing/tmp/tags,./tags,./TAGS,tags,TAGS
+setlocal tags=/var/www/sino_primer/tags,/var/www/sino_primer/tmp/tags,./tags,./TAGS,tags,TAGS
 setlocal textwidth=0
 setlocal thesaurus=
 setlocal noundofile
@@ -178,12 +182,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 109 - ((1 * winheight(0) + 7) / 15)
+let s:l = 11 - ((6 * winheight(0) + 5) / 10)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-109
-normal! 02l
+11
+normal! 04l
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf

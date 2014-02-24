@@ -43,7 +43,7 @@ set viminfo='200,%,!,<50,s10,h,rA,rB,/50,:50
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd /var/www/sino_primer
+cd /var/www/genetest
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
@@ -119,7 +119,7 @@ setlocal indentexpr=
 setlocal indentkeys=0{,0},:,0#,!^F,o,O,e
 setlocal noinfercase
 setlocal iskeyword=@,48-57,_,192-255
-setlocal keywordprg=git\ --git-dir='/var/www/sino_primer/.git'\ show
+setlocal keywordprg=git\ --git-dir='/var/www/genetest/.git'\ show
 setlocal nolinebreak
 setlocal nolisp
 setlocal nolist
@@ -132,7 +132,7 @@ set number
 setlocal number
 setlocal numberwidth=4
 setlocal omnifunc=
-setlocal path=lib,vendor,app/models/concerns,app/controllers/concerns,app/controllers,app/helpers,app/mailers,app/models,app/*,app/views,spec,spec/controllers,spec/helpers,spec/mailers,spec/models,spec/views,spec/lib,spec/features,spec/requests,spec/integration,vendor/plugins/*/lib,vendor/plugins/*/test,vendor/rails/*/lib,vendor/rails/*/test,/var/www/sino_primer,/var/www/sino_primer/.git
+setlocal path=lib,vendor,app/models/concerns,app/controllers/concerns,app/controllers,app/helpers,app/mailers,app/models,app/*,app/views,spec,spec/controllers,spec/helpers,spec/mailers,spec/models,spec/views,spec/lib,spec/features,spec/requests,spec/integration,vendor/plugins/*/lib,vendor/plugins/*/test,vendor/rails/*/lib,vendor/rails/*/test,/var/www/genetest,/var/www/genetest/.git
 setlocal nopreserveindent
 setlocal nopreviewwindow
 setlocal quoteescape=\\
@@ -157,7 +157,7 @@ if &syntax != 'gitcommit'
 setlocal syntax=gitcommit
 endif
 setlocal tabstop=2
-setlocal tags=/var/www/sino_primer/tags,/var/www/sino_primer/tmp/tags,./tags,./TAGS,tags,TAGS
+setlocal tags=/var/www/genetest/tags,/var/www/genetest/tmp/tags,./tags,./TAGS,tags,TAGS
 setlocal textwidth=72
 setlocal thesaurus=
 setlocal noundofile
@@ -166,11 +166,11 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 15 - ((0 * winheight(0) + 8) / 16)
+let s:l = 9 - ((8 * winheight(0) + 7) / 15)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-15
+9
 normal! 0
 tabnext 1
 if exists('s:wipebuf')

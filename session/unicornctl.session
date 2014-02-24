@@ -13,6 +13,7 @@ noremap <silent> n :call g:vimim_search_next()n
 nnoremap <silent> <Plug>NetrwBrowseX :call netrw#NetrwBrowseX(expand("<cWORD>"),0)
 nmap <silent> <Plug>VLToggle :let g:VeryLiteral = !g:VeryLiteral| echo "VeryLiteral " . (g:VeryLiteral ? "On" : "Off")
 vmap <kMultiply> *
+map <F7> :make
 map <F4> "*p
 map <F2> :NERDTree:set number
 map <F3> :up
@@ -29,6 +30,7 @@ set helplang=cn
 set history=50
 set hlsearch
 set incsearch
+set isident=@,48-57,_,192-255,$
 set nomodeline
 set mouse=a
 set printoptions=paper:a4
@@ -47,8 +49,9 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
+badd +43 Gemfile
 badd +0 unicornctl
-args unicornctl
+args Gemfile
 edit unicornctl
 set splitbelow splitright
 set nosplitbelow
@@ -165,12 +168,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 37 - ((5 * winheight(0) + 7) / 15)
+let s:l = 30 - ((15 * winheight(0) + 8) / 16)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-37
-normal! 0
+30
+normal! 02l
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf

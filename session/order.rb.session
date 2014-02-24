@@ -50,7 +50,13 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 set shortmess=aoO
 badd +0 /var/www/sino_sequencing/app/models/order.rb
-badd +6 /var/www/sino_primer/config/locales/checkout_primers.cn.yml
+badd +29 /var/www/sino_primer/config/environments/development.rb
+badd +2 /var/www/sino_project/app/assets/stylesheets/for_1600.scss
+badd +13 /var/www/sino_project/app/assets/stylesheets/application.css.scss
+badd +1 /var/www/sino_project/Gemfile
+badd +36 /var/www/sino_project/config/environments/development.rb
+badd +1 /var/www/sino_project/app/assets/stylesheets/superwf.css.scss
+badd +1 /var/www/sino_project/app/assets/stylesheets/jquery.jqplot.min.css
 silent! argdel *
 edit /var/www/sino_sequencing/app/models/order.rb
 set splitbelow splitright
@@ -178,12 +184,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 223 - ((11 * winheight(0) + 7) / 14)
+let s:l = 40 - ((13 * winheight(0) + 8) / 16)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-223
-normal! 08l
+40
+normal! 02l
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf

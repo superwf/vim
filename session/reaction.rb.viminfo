@@ -8,117 +8,117 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/Tempfile
+~MSle0~/Upload
 
 # Last Substitute Search Pattern:
 ~MSle0&plasmid_code
 
 # Last Substitute String:
-$client
+$
 
 # Command Line History (newest to oldest):
 :q
+:Rmodel report
+:Rjavascript angular/controllers/layout_ctrl
 :Rmodel 
-:Rmodel reaction
-:'<,'>Rmodel
-:Rmodel order
-:qall
-:Rcontroller api/v1/credentials
-:Rcontroller api/v1/api
-:Rcontroller api/v1/clients
-:vs config/deploy.rb
-:Rcontroller home
-:Rcontroller application
-:Rcontroller users
-:Rmodel user
-:Rview users/
-:Rlocale cn.yml
-:Rview users/index.html.slim
-:Rview _table.html.slim
-:vsplit Gemfile
-:Rview users/_search.html.slim
-:Rfixtures menus.yml.erb
-:Rfixtures 
-:Rmodel menu
-:Rstylesheet application
-:Rlayout app
-:Rview home/index.html.slim
-:Rl
+:Rview models/report_form.html.slim
+:Rjavascript angular/controllers/template_ctrl
+:Rjavascript angular/controllers/report_ctrl
+:Rview models/modal.html.slim
 :Rview 
-:Rinitializer wrap_parameters
+:Rjavascript angular/controllers/modal_ctrl
+:Rjavascript routes
+:Rlocale reports.cn.yml
+:Rlocale cn.yml
+:Rjavascript angular/services/report
+:Rjavascript angular/services/template
+:Rjavascript angular/controllers/templates_ctrl
+:Rjavascript angular/controllers/reports_ctrl
 :R
-:Rmodel client
+:Rjavascript a
+:e app/assets/javascripts/angular/controllers/report_ctrl.js.coffee
+:Rjavascript angular/controllers/report_ctrl.js.coffee
+:Rview reports/_search.html.slim
+:Rview template_table.html.slim
+:Rview models/_pager.html.slim
+:Rview report_table.html.slim
+:Rview models/template_form.html.slim
+:Rview templates/_search.html.slim
+:Rview models/template_table.html.slim
+:Rlocale templates.cn.yml
+:e app/assets/javascripts/angular/controllers/template_ctrl.js.coffee
+:Rjavascript an
+:Rlayout _navbar_fix_top.html.slim
+:vsplit Gemfile
+:Rlayout application.html.slim
+:Rview models/sign_in.html.slim
+:Rview home/index.html.slim
+:Rjavascript angular/services/lang
+:Rjavascript angular/controllers/sign_ctrl
 :e config/routes.rb
-:Rcontroller sessions
-:Rcontroller clients
-:Rcontroller 
-:Rmodel us
-:vs Gemfile
-:e /var/www/sino_project/config/deploy.rb
-:e /var/www/sino_project/Capfile
-:vs ../sino_project/Capfile
-:vsplit Capfile
-:tabedit Capfile
-:e config/application.rb
-:Rlocale clients.cn.yml
-:Rview clients/_form.html.slim
-:vs Capfile
-:Rview home/
-:Rview clients/_table.html.slim
-:Rmodel client_menu
-:Rm
+:e app/views/menus/index.json.jbuilder
+:Rview templates/index.json.jbuilder
+:Rlocale menus.cn.yml
+:Rmigration create_menus
+:Rcontroller menus
+:Rstylesheet application
+:e app/views/translates/t.json.jbuilder
+:e app/views/translates/t.
+:Rcontroller translates
+:Rmodel template
+:Rview modal.html.slim
 
 # Search String History (newest to oldest):
-?/Tempfile
-? \<tempfile\>
-?/role
-?/client
-?/ActiveSu
-?/www-data
-?/bash
-?/password
-?/fake
-?/api
-?/atomic
-?/scope
-?/uncomp
-?/upl
-?/auto
-?/whin
-?/mass
-?/whi
-?/roles
-?/haml
-?/carr
-?/cancan
-? \<mass_assignment_sanitizer\>
-?/eager
-?/asset
-?/users
-?/entry
-?/coffee
-?/rescue_
-? \<key2sym\>
-?/departments
-?/m
-?/jquery
-?/user_id
-?/whiny
-?/whitelist
+?/Upload
+? \<template\>
+?/select
+?/rootScope
+?/titl
+? \<\$routeParams\>
+? \<\$http\>
+?/lang
+? \<\$rootScope\>
+? \<\$location\>
+??\V$http
+?/class
+?/$scope.t
+?/Sign
+? \<sign_in_route\>
+?/menu
+?/modal
+? \<templates\>
+?/width
+?/ckeditor
+?/th
+?/attr
+?/ngMode
+?/te
+?/lang.te
+?/te.
+?/template
+?/Template
+? \<controller\>
 ?/simple_form
-?/superwf
-?/render
-? \<render\>
-?/flows
-?/procedures
-?/procedure
-?/order_mai
-?/menus
-? \<haml\>
-???k3kkkkkYGpwwwwwwwwwwwC
-?/devise
-?/head
-?/ori
+? \<content\>
+?/margin-
+?/commands
+?/img
+?/json
+?/scope
+?/http
+?/ng-controller
+?/delete
+?/sign_out
+?/gign
+?/redi
+?/redir
+?/lay
+?/layouts
+?/trans
+?/turbolink
+? \<commit_button\>
+? \<\$scope\>
+?/href
 
 # Expression History (newest to oldest):
 
@@ -128,32 +128,29 @@ $client
 
 # å¯„å­˜å™¨:
 "0	LINE	0
-	          td data-name='name' = user.name
+	          console.log $scope.template
 "1	LINE	0
-	
+	          console.log $scope.template
+	          console.log data.name
 "2	LINE	0
-	  def menus
-	    []
-	  end
+	          #$scope.$apply()
 "3	LINE	0
-	        = f.input :department, as: :dialog
-	        = f.input :role, as: :dialog
+	          $scope.template = data.name
 "4	LINE	0
-	        = f.input :signature
+	        $scope.template = template.name
+	        $scope.record.content = template.content
 "5	LINE	0
-	
+	        console.log template
 "6	LINE	0
-	  def index
-	    @users = User.search(params).paginate(:page => params[:page])
-	  end
+	    console.log template.name
 "7	LINE	0
-	= javascript_include_tag :users
+	    template = model.get({}, {id: id})
 "8	LINE	0
-	              span.active == render 'active', user: user
+	    console.log template.name
 "9	LINE	0
-	          td data-name='signature' 
-	            - unless user.signature.blank?
-	              img*{src: user.signature.url, style: 'max-width: 128px; max-height: 128px;'}
+	        $scope.$apply()
+"a	CHAR	0
+	a)i'bi'€k3€ý,€ý.i, $locationProvic€kbderjjjjo$$o€kbloc.ahtml4€kb5mode(true)
 "b	BLOCK	23
 	 NOT NULL AUTO_INCREMENT
 "c	CHAR	0
@@ -164,9 +161,9 @@ $client
 "i	CHAR	0
 	378
 <""""i""iquadrantoreaction_board_id = _this.a??kbparn??kbent().attr()i""re??kb??kbireaction_board_I??kbid??k3kkkkkYGpwwwwwwwwwwwCbbbbddkkkkkkkYjVkyjGpzzjwwwwwwwwvf]sp[??kb??kb[]i""hireaction_board=??kb_id=lli  i++i  ireaction_board_idllllla[]iquadrna??kb??kbant=""i  i++i  iquadrant??k3??k3??k3??k3??k3????,????.??k3??k3??k3??k3??k3??k3??k3????,????.veee
-"k	CHAR	0
-	266
-<jkkjbvVkkkdjwVjjjjjjjdVkkkd€k3l:e c	r	/abi_re€kb€kb€kbm€kb_machinesabi_nddnnddddbblD€k3€k3€k3jdd€k3jjjjjjjjjjjjjjkkkkkkjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjh:Rdcon	 orders:Rcon	 orders/max_numbernkkkkkkkkkkkkkjhlgg:Rvi	 checkouts	_go	
+"k@	CHAR	0
+	448
+<oukounless xhr?ujddujddoendk>>osession[]i:referear hla = referer if redererreferer.present?€k3kkkkkkkkkjjjjod€kbbefore_action :set_se, only: []i:new, :c€kbedit€k3€ý,€ý.x€k3€ýK€ýK€ýK€ýK€ýL€ýL€ýL€ýL€ý,€ý.xxxxxxxxkkwlllllxxxxxxxx€k3€k3€k3€k3€k3€k3bbbbwjjjjjjjI#€k3€k3€k3€k3€k3kkodef newend€k3kosession[]i:red€kbfererl:Rvi	 ho	i	hlla = ''hCroot_path€k3korender text: 'abc'€k3bddpwwwCsession[]i:refeer€kb€kbrer€k3€k5€k5
 "l	CHAR	0
 	lD€k3€k3€k3€k3€k3€k3gkjkjgtlgt:Rmo	 blas	:vs ap	mo	sam	/before_sam€kbvenzzjjjjkkkwjlkkkkkkkkkjjkkYhp€k3€k3€k3kwwwwwwwwllajkddkpuPjjoendkVk>€k3:Rmi cRmi	 creatrecreate_se	:Rmi	 	w
 "p	LINE	0
@@ -206,128 +203,131 @@ $client
 	473
 <jkV%>wveesself??k3??é½‚??é½‚??é½‚??é½ƒ??é½ƒ??é½‚??é½ƒ??é½ƒ????,????-????-????-????-????-????-????-????-????-????.sselfwwwwblveesself??k3gt:gtjjV%ddd??k3hjjbbbbluuwC????,????.????,????.bcwbcwc??kbmoduleA F??kb??kbFac??k3hjjjjjjbbbbveelx??k3??k3??k3??k3??k3????,????.cw::Filewwww.??k3????,????.xkjjI#??k3kY:Rfix	 hr??kbtcon	jjjjj:Rfix 	htRfix	 ht_smaple-re	??kb??kb??kb_r	:??kb??kb??kb??kb??kb??kb??kbamp		jkpdkddljjV%ddd??k3h??k3jjl??k3h
 "w	CHAR	0
-	537
-<V%yjwpjjkw$bbCnil??k3jVkkd??k3lbbbbwveeesif: ::Proc.new{}i|r| r.reaction_board && r.buuuuuhCtrue??k3??k3??k3??k3??k3??k3??k3??k3??k3??k3??k3??k3??k3hu??k3????,????.:Rmo	 heat	h:Rsp	 mo	heat	ljjwhjjwjjjjjjjkkjjjzzljjjjkzzhjjjjjjjjjjjjjjjjjljjjjkjzzhljwwwwCquadran: true??k3??k3??k3??k3hjjjjjjjjkkkwwwwwwllwwC7??k3h:Rmi	 heat	k$hC7??k3:Rfix	 heat	jjjjjjwwwwbcw1,2,3,4??k3??k2??k3??k3??k3:Rmi	 alc	jjjjkkkkklkjh:Rmi	 alc	jjkkl:Rmo	 alc	h:Rsp	 mo	aalc	lggjjwhjjjjjjjjwzzkkkkkjjjjjjjjjzzjjzz
+	wwwwwwlirootl~jbbbbbillirootl~€k3€k3€k3€k3€k3gt€k3€k3€k3gq
 "x	CHAR	0
-	s
+	"
 ""-	CHAR	0
-	#
+	'
 
 # å…¨å±€å˜é‡:
 
 # æ–‡ä»¶æ ‡è®°:
-'0  202  8  /var/www/lims/app/models/reaction.rb
-'1  14  28  /var/www/superwf/lib/superwf/navigation.rb
-'2  9  0  /etc/fuse.conf
-'3  15  0  /etc/fstab
-'4  1  0  /etc/mfsmount.cfg.dist
-'5  1  0  /mnt/mfs/backup/70/sqlbackup/get_blastdb.rb
-'6  13  0  /mnt/mfs/backup/70/sqlbackup/index.html
-'7  7  0  /var/www/sino_passport/app/controllers/api/v1/credentials_controller.rb
-'8  7  0  /var/www/sino_passport/Capfile
-'9  10  2  /var/www/sino_passport/app/controllers/application_controller.rb
+'0  8  2  /var/www/sino_sequencing/app/models/reaction.rb
+'1  1  0  /var/www/sino_sequencing/app/models/reaction
+'2  2  2  /var/www/superwf/config/initializers/carrierwave.rb
+'3  5  2  /var/www/sino_project/app/models/report.rb
+'4  10  44  /var/www/sino_analysis_report/public/assets/config.js
+'5  37  134  /var/www/sino_analysis_report/public/assets/plugins/image/dialogs/image.js
+'6  1  0  /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/template_ctrl.js.coffee
+'7  1  0  /var/www/sino_analysis_report/app/views/models/modal.html.slim
+'8  40  2  /var/www/sino_sequencing/app/models/order.rb
+'9  29  27  /var/www/sino_primer/config/environments/development.rb
 
 # è·³è½¬åˆ—è¡¨ (ä»Žæ–°åˆ°æ—§):
--'  202  8  /var/www/lims/app/models/reaction.rb
--'  218  17  /var/www/lims/app/models/reaction.rb
--'  195  17  /var/www/lims/app/models/reaction.rb
--'  198  32  /var/www/lims/app/models/reaction.rb
--'  210  4  /var/www/lims/app/models/reaction.rb
--'  219  32  /var/www/lims/app/models/reaction.rb
--'  227  4  /var/www/lims/app/models/reaction.rb
--'  122  6  /var/www/lims/app/models/reaction.rb
--'  257  4  /var/www/lims/app/models/order.rb
--'  273  4  /var/www/lims/app/models/order.rb
--'  258  32  /var/www/lims/app/models/order.rb
--'  260  32  /var/www/lims/app/models/order.rb
--'  1  0  /var/www/lims/app/models/order.rb
--'  14  28  /var/www/superwf/lib/superwf/navigation.rb
--'  13  31  /var/www/superwf/lib/superwf/navigation.rb
--'  9  0  /etc/fuse.conf
--'  4  0  /etc/fuse.conf
--'  1  0  /etc/fuse.conf
--'  15  0  /etc/fstab
--'  1  0  /etc/fstab
--'  1  0  /etc/mfsmount.cfg.dist
--'  1  0  /mnt/mfs/backup/70/sqlbackup/get_blastdb.rb
--'  13  0  /mnt/mfs/backup/70/sqlbackup/index.html
--'  1  0  /mnt/mfs/backup/70/sqlbackup/index.html
--'  7  0  /var/www/sino_passport/app/controllers/api/v1/credentials_controller.rb
--'  35  0  /var/www/sino_passport/app/controllers/api/v1/clients_controller.rb
--'  3  4  /var/www/sino_passport/app/controllers/api/v1/api_controller.rb
--'  1  0  /var/www/sino_passport/app/controllers/api/v1/clients_controller.rb
--'  19  21  /var/www/sino_passport/app/controllers/api/v1/clients_controller.rb
--'  7  11  /var/www/sino_passport/app/controllers/api/v1/clients_controller.rb
--'  7  0  /var/www/sino_passport/Capfile
--'  1  0  /var/www/sino_passport/Capfile
--'  10  2  /var/www/sino_passport/app/controllers/application_controller.rb
--'  12  13  /var/www/sino_passport/app/controllers/application_controller.rb
--'  11  34  /var/www/sino_passport/app/controllers/application_controller.rb
--'  5  2  /var/www/sino_passport/app/controllers/users_controller.rb
--'  17  8  /var/www/sino_passport/app/views/users/_table.html.slim
--'  6  4  /var/www/sino_passport/app/views/users/_search.html.slim
--'  25  0  /var/www/sino_passport/spec/fixtures/menus.yml.erb
--'  12  0  /var/www/sino_passport/spec/fixtures/menus.yml.erb
--'  3  2  /var/www/sino_passport/app/views/home/index.html.slim
--'  11  8  /var/www/sino_passport/app/views/home/index.html.slim
--'  1  0  /var/www/sino_passport/app/views/home/index.html.slim
--'  10  0  /var/www/sino_passport/app/models/user.rb
--'  8  10  /var/www/sino_passport/app/views/home/index.html.slim
--'  2  18  /var/www/sino_passport/app/views/home/index.html.slim
--'  1  0  /var/www/sino_passport/app/models/user.rb
--'  18  4  /var/www/sino_passport/app/models/user.rb
--'  2  0  /var/www/sino_passport/app/models/user.rb
--'  19  4  /var/www/sino_passport/app/models/user.rb
--'  8  0  /var/www/sino_passport/config/routes.rb
--'  2  14  /var/www/sino_passport/app/controllers/sessions_controller.rb
--'  11  2  /var/www/sino_passport/config/routes.rb
--'  6  38  /var/www/sino_passport/config/routes.rb
--'  7  2  /var/www/sino_passport/app/controllers/sessions_controller.rb
--'  2  0  /var/www/sino_passport/app/controllers/users_controller.rb
--'  35  2  /var/www/sino_passport/app/controllers/users_controller.rb
--'  33  0  /var/www/sino_passport/config/routes.rb
--'  18  6  /var/www/sino_passport/config/routes.rb
--'  15  0  /var/www/sino_passport/config/initializers/wrap_parameters.rb
--'  1  0  /var/www/sino_passport/config/initializers/wrap_parameters.rb
--'  1  0  /var/www/sino_passport/app/controllers/application_controller.rb
--'  3  4  /var/www/sino_passport/app/controllers/application_controller.rb
--'  8  0  /var/www/sino_passport/app/controllers/application_controller.rb
--'  4  0  /var/www/sino_passport/app/controllers/application_controller.rb
--'  57  5  /var/www/sino_passport/Gemfile
--'  1  0  /var/www/sino_passport/app/controllers/users_controller.rb
--'  32  66  /var/www/sino_passport/app/controllers/users_controller.rb
--'  31  0  /var/www/sino_passport/app/controllers/users_controller.rb
--'  4  28  /var/www/sino_passport/app/controllers/users_controller.rb
--'  1  0  /var/www/sino_passport/app/controllers/clients_controller.rb
--'  4  4  /var/www/sino_passport/app/controllers/clients_controller.rb
--'  2  2  /var/www/sino_passport/app/controllers/home_controller.rb
--'  1  0  /var/www/lims/app/models/reaction.rb
--'  10  14  /var/www/sino_passport/app/views/home/profile.html.slim
--'  6  43  /var/www/sino_passport/app/views/home/profile.html.slim
--'  1  0  /var/www/sino_passport/app/views/home/profile.html.slim
--'  4  16  /var/www/sino_passport/app/views/home/index.html.slim
--'  10  2  /etc/nginx/sites-available/sino_passport
--'  1  0  /etc/nginx/sites-available/sino_passport
--'  1  0  /var/www/sino_passport/Gemfile
--'  6  41  /var/www/lims/Capfile
--'  6  20  /var/www/sino_project/config/deploy.rb
--'  7  2  /var/www/lims/Capfile
--'  6  0  /var/www/sino_project/Capfile
--'  8  2  /var/www/lims/Capfile
--'  7  7  /var/www/superwf/Capfile
--'  6  57  /var/www/superwf/Capfile
--'  29  4  /var/www/client_base/app/controllers/api/v1/clients_controller.rb
--'  1  0  /var/www/client_base/Capfile
+-'  8  2  /var/www/sino_sequencing/app/models/reaction.rb
+-'  1  0  /var/www/sino_sequencing/app/models/reaction.rb
+-'  1  0  /var/www/sino_sequencing/app/models/reaction
+-'  2  2  /var/www/superwf/config/initializers/carrierwave.rb
+-'  1  0  /var/www/superwf/config/initializers/carrierwave.rb
+-'  5  2  /var/www/sino_project/app/models/report.rb
+-'  1  0  /var/www/sino_project/app/models/report.rb
+-'  10  44  /var/www/sino_analysis_report/public/assets/config.js
+-'  1  0  /var/www/sino_analysis_report/public/assets/config.js
+-'  37  134  /var/www/sino_analysis_report/public/assets/plugins/image/dialogs/image.js
+-'  1  0  /var/www/sino_analysis_report/public/assets/plugins/image/dialogs/image.js
+-'  1  0  /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/template_ctrl.js.coffee
+-'  1  0  /var/www/sino_analysis_report/app/views/models/report_form.html.slim
+-'  14  15  /var/www/sino_analysis_report/app/views/models/report_form.html.slim
+-'  6  2  /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/templates_ctrl.js.coffee
+-'  1  0  /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/templates_ctrl.js.coffee
+-'  26  4  /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/templates_ctrl.js.coffee
+-'  14  25  /var/www/sino_analysis_report/app/assets/javascripts/routes.js.coffee
+-'  30  0  /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/templates_ctrl.js.coffee
+-'  16  2  /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/templates_ctrl.js.coffee
+-'  24  15  /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/templates_ctrl.js.coffee
+-'  29  2  /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/templates_ctrl.js.coffee
+-'  23  2  /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/templates_ctrl.js.coffee
+-'  14  6  /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/templates_ctrl.js.coffee
+-'  20  8  /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/templates_ctrl.js.coffee
+-'  2  4  /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/templates_ctrl.js.coffee
+-'  15  8  /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/templates_ctrl.js.coffee
+-'  19  8  /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/templates_ctrl.js.coffee
+-'  2  11  /var/www/sino_analysis_report/app/assets/javascripts/angular/services/report.js.coffee
+-'  11  18  /var/www/sino_analysis_report/config/locales/cn.yml
+-'  1  0  /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/template_ctrl.js.coffee
+-'  1  0  /var/www/sino_analysis_report/app/views/models/report_form.html.slim
+-'  14  15  /var/www/sino_analysis_report/app/views/models/report_form.html.slim
+-'  6  2  /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/templates_ctrl.js.coffee
+-'  1  0  /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/templates_ctrl.js.coffee
+-'  26  4  /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/templates_ctrl.js.coffee
+-'  14  25  /var/www/sino_analysis_report/app/assets/javascripts/routes.js.coffee
+-'  30  0  /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/templates_ctrl.js.coffee
+-'  16  2  /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/templates_ctrl.js.coffee
+-'  24  15  /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/templates_ctrl.js.coffee
+-'  29  2  /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/templates_ctrl.js.coffee
+-'  23  2  /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/templates_ctrl.js.coffee
+-'  14  6  /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/templates_ctrl.js.coffee
+-'  20  8  /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/templates_ctrl.js.coffee
+-'  2  4  /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/templates_ctrl.js.coffee
+-'  15  8  /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/templates_ctrl.js.coffee
+-'  19  8  /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/templates_ctrl.js.coffee
+-'  2  11  /var/www/sino_analysis_report/app/assets/javascripts/angular/services/report.js.coffee
+-'  11  18  /var/www/sino_analysis_report/config/locales/cn.yml
+-'  37  134  /var/www/sino_analysis_report/public/assets/plugins/image/dialogs/image.js
+-'  1  0  /var/www/sino_analysis_report/public/assets/plugins/image/dialogs/image.js
+-'  1  0  /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/template_ctrl.js.coffee
+-'  1  0  /var/www/sino_analysis_report/app/views/models/report_form.html.slim
+-'  14  15  /var/www/sino_analysis_report/app/views/models/report_form.html.slim
+-'  6  2  /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/templates_ctrl.js.coffee
+-'  1  0  /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/templates_ctrl.js.coffee
+-'  26  4  /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/templates_ctrl.js.coffee
+-'  14  25  /var/www/sino_analysis_report/app/assets/javascripts/routes.js.coffee
+-'  30  0  /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/templates_ctrl.js.coffee
+-'  16  2  /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/templates_ctrl.js.coffee
+-'  24  15  /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/templates_ctrl.js.coffee
+-'  29  2  /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/templates_ctrl.js.coffee
+-'  23  2  /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/templates_ctrl.js.coffee
+-'  14  6  /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/templates_ctrl.js.coffee
+-'  20  8  /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/templates_ctrl.js.coffee
+-'  2  4  /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/templates_ctrl.js.coffee
+-'  15  8  /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/templates_ctrl.js.coffee
+-'  19  8  /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/templates_ctrl.js.coffee
+-'  2  11  /var/www/sino_analysis_report/app/assets/javascripts/angular/services/report.js.coffee
+-'  11  18  /var/www/sino_analysis_report/config/locales/cn.yml
+-'  1  0  /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/template_ctrl.js.coffee
+-'  1  0  /var/www/sino_analysis_report/app/views/models/report_form.html.slim
+-'  14  15  /var/www/sino_analysis_report/app/views/models/report_form.html.slim
+-'  6  2  /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/templates_ctrl.js.coffee
+-'  1  0  /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/templates_ctrl.js.coffee
+-'  26  4  /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/templates_ctrl.js.coffee
+-'  14  25  /var/www/sino_analysis_report/app/assets/javascripts/routes.js.coffee
+-'  30  0  /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/templates_ctrl.js.coffee
+-'  16  2  /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/templates_ctrl.js.coffee
+-'  24  15  /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/templates_ctrl.js.coffee
+-'  29  2  /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/templates_ctrl.js.coffee
+-'  23  2  /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/templates_ctrl.js.coffee
+-'  14  6  /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/templates_ctrl.js.coffee
+-'  20  8  /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/templates_ctrl.js.coffee
+-'  2  4  /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/templates_ctrl.js.coffee
+-'  15  8  /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/templates_ctrl.js.coffee
+-'  19  8  /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/templates_ctrl.js.coffee
+-'  2  11  /var/www/sino_analysis_report/app/assets/javascripts/angular/services/report.js.coffee
+-'  11  18  /var/www/sino_analysis_report/config/locales/cn.yml
+-'  37  134  /var/www/sino_analysis_report/public/assets/plugins/image/dialogs/image.js
+-'  1  0  /var/www/sino_analysis_report/public/assets/plugins/image/dialogs/image.js
+-'  1  0  /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/template_ctrl.js.coffee
+-'  1  0  /var/www/sino_analysis_report/app/views/models/report_form.html.slim
+-'  14  15  /var/www/sino_analysis_report/app/views/models/report_form.html.slim
+-'  6  2  /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/templates_ctrl.js.coffee
+-'  1  0  /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/templates_ctrl.js.coffee
+-'  26  4  /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/templates_ctrl.js.coffee
+-'  14  25  /var/www/sino_analysis_report/app/assets/javascripts/routes.js.coffee
+-'  30  0  /var/www/sino_analysis_report/app/assets/javascripts/angular/controllers/templates_ctrl.js.coffee
 
 # ç¼“å†²åŒºåˆ—è¡¨:
-%/var/www/lims/app/models/order.rb	257	4
-%/var/www/superwf/lib/superwf/navigation.rb	14	28
-%/var/www/lims/app/models/reaction.rb	202	8
+%/var/www/sino_sequencing/app/models/reaction.rb	8	2
 
 # æ–‡ä»¶å†…çš„æ ‡è®°åŽ†å²è®°å½• (ä»Žæ–°åˆ°æ—§):
 
-> /var/www/lims/app/models/order.rb
-	"	257	4
-
-> /var/www/lims/app/models/reaction.rb
-	"	202	8
+> /var/www/sino_sequencing/app/models/reaction.rb
+	"	8	2

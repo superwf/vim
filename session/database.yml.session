@@ -30,8 +30,6 @@ set helplang=cn
 set history=50
 set hlsearch
 set incsearch
-set isident=@,48-57,_,192-255,$
-set iskeyword=@,48-57,_,192-255,$
 set nomodeline
 set mouse=a
 set printoptions=paper:a4
@@ -42,118 +40,16 @@ set showcmd
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
 set tabstop=2
 set viminfo='200,%,!,<50,s10,h,rA,rB,/50,:50
-set window=17
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd /var/www/genetest
+cd /var/www/sino_primer
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +1 app/views/pdfs/select_pdf.html.haml
-badd +1 /var/www/sino_project/app/models/checkout.rb
-badd +3 /var/www/sino_primer/app/views/prices/index.html.slim
-badd +65 /var/www/sino_primer/db/seeds.rb
-badd +1 /var/www/sino_sequencing/spec/factories/menus.rb
-badd +9 /var/www/user_passport/app/views/devise/confirmations/new.html.slim
-badd +4 /var/www/sino_sequencing/app/views/companies/index.html.slim
-badd +1 /var/www/sino_sequencing/app/views/clients/_search.html.slim
-badd +4 /var/www/sino_primer/app/views/clients/index.html.slim
-badd +4 /var/www/user_passport/app/controllers/home_controller.rb
-badd +283 /var/www/sino_primer/app/models/order.rb
-badd +41 /var/www/sino_project/app/views/ht_samples/checked.html.haml
-badd +153 /var/www/sino_project/app/models/ht_sample.rb
-badd +43 /var/www/sino_project/app/models/client.rb
-badd +6 /etc/nginx/sites-enabled/phpmyadmin
-badd +1 /var/www/sino_project/Capfile
-badd +5 /var/www/sino_project/app/models/remote_client.rb
-badd +15 /var/www/sino_project/app/controllers/clients_controller.rb
-badd +12 /var/www/sino_project/config/initializers/hash.rb
-badd +89 /var/www/sino_project/app/models/ht_library.rb
-badd +76 /var/www/sino_project/app/controllers/ht_samples_controller.rb
-badd +1 /var/www/sino_project/app/views/ht_samples/index.html.haml
-badd +48 /var/www/sino_project/app/views/ht_samples/_table.html.haml
-badd +19 /var/www/sino_project/app/helpers/ht_samples_helper.rb
-badd +1 /var/www/sino_primer/Capfile
-badd +14 /var/www/sino_primer/app/controllers/primers_controller.rb
-badd +16 /var/www/sino_primer/app/controllers/orders_controller.rb
-badd +4 /var/www/sino_primer/config/routes.rb
-badd +14 /var/www/sino_primer/app/views/primers/index.html.slim
-badd +28 /var/www/sino_primer/app/assets/javascripts/primers.js.coffee
-badd +36 /var/www/sino_primer/Gemfile
-badd +4 /var/www/sino_primer/app/models/primer.rb
-badd +4 /var/www/sino_primer/app/views/orders/new.html.slim
-badd +46 /var/www/sino_primer/app/assets/javascripts/orders.js.coffee
-badd +4 /var/www/sino_primer/app/views/orders/_for_sequence.html.slim
-badd +9 /var/www/sino_primer/app/views/orders/_form.html.slim
-badd +1 /var/www/sino_primer/app/views/orders/_primers_form.html.slim
-badd +1 /var/www/sino_primer/config/locales/orders.cn.yml
-badd +6 /var/www/sino_primer/app/views/orders/store_issue_tag.html.haml
-badd +15 /var/www/sino_primer/app/views/primers/_search.html.slim
-badd +27 /var/www/sino_primer/config/locales/primers.cn.yml
-badd +6 /var/www/sino_primer/app/views/orders/_search.html.slim
-badd +1 /var/www/sino_primer/db/migrate/20110704062443_create_orders.rb
-badd +1 /var/www/sino_primer/config/deploy/production.rb
-badd +14 /var/www/user_passport/Capfile
-badd +4 /var/www/user_passport/app/controllers/application_controller.rb
-badd +62 /var/www/user_passport/config/routes.rb
-badd +1 /var/www/user_passport/app/views/home/profile.html.slim
-badd +1 /var/www/user_passport/app/controllers/users_controller.rb
-badd +2 /var/www/user_passport/config/deploy.rb
-badd +1 /var/www/user_passport/config/deploy/production.rb
-badd +13 /var/www/sino_primer/config/deploy.rb
-badd +1 /var/www/user_passport/lib/capistrano/tasks/go.cap
-badd +1 /var/www/sino_primer/app/views/clients/_table.html.slim
-badd +13 /var/www/sino_primer/app/models/client_info.rb
-badd +39 /var/www/sino_primer/app/controllers/clients_controller.rb
-badd +6 /var/www/sino_primer/db/migrate/20130923030329_create_client_infos.rb
-badd +11 /var/www/sino_primer/mig_form_primer_synthesis.rb
-badd +6 /var/www/sino_primer/db/migrate/20110721045643_create_checkout_orders.rb
-badd +1 /var/www/sino_primer/db/migrate/20110811050855_create_checkout_primers.rb
-badd +1 /var/www/sino_primer/db/migrate/20130913083952_create_checkout_records.rb
-badd +1 /var/www/sino_primer/db/migrate/20110720072942_create_checkouts.rb
-badd +1 /var/www/sino_primer/db/migrate/20130108084532_create_menus.rb
-badd +1 /var/www/sino_primer/db/migrate/20130108084517_create_permissions.rb
-badd +8 /var/www/sino_primer/db/migrate/20110804051145_create_prices.rb
-badd +6 /var/www/sino_primer/db/migrate/20130913083930_create_primer_records.rb
-badd +1 /var/www/sino_primer/db/migrate/20110705052601_create_primers.rb
-badd +4 /var/www/sino_primer/db/migrate/20130108084519_create_roles.rb
-badd +15 /var/www/sino_primer/db/migrate/20130916052155_create_users.rb
-badd +1 /var/www/sino_primer/db/migrate/20110810154630_create_simple_captcha_data.rb
-badd +26 /var/www/sino_sequencing/Capfile
-badd +1 /var/www/sino_sequencing/app/views/clients/unpaid.js.erb
-badd +12 /var/www/sino_sequencing/config/locales/clients.cn.yml
-badd +1 /var/www/sino_sequencing/app/models/client.rb
-badd +1 /var/www/sino_sequencing/app/views/companies/_tr.html.slim
-badd +12 /var/www/sino_sequencing/app/views/companies/_tree.html.slim
-badd +7 /var/www/sino_sequencing/app/views/companies/_subtree.html.slim
-badd +9 /var/www/sino_sequencing/mig_from_uc.rb
-badd +1 /var/www/user_passport/app/views/doorkeeper/authorizations/new.html.slim
-badd +2 /var/www/user_passport/app/views/devise/passwords/new.html.slim
-badd +2 /var/www/user_passport/app/views/devise/shared/_links.html.slim
-badd +13 /var/www/user_passport/app/views/devise/passwords/edit.html.slim
-badd +1 /var/www/sino_sequencing/spec/fixtures/menus.yml.erb
-badd +66 /var/www/sino_sequencing/db/seeds.rb
-badd +11 /var/www/sino_primer/config/locales/menus.cn.yml
-badd +12 /var/www/sino_primer/lib/init_pdf.rb
-badd +7 /var/www/sino_primer/app/views/orders/index.html.slim
-badd +12 /var/www/sino_primer/app/views/primers/scope.html.slim
-badd +2 /var/www/sino_primer/app/views/orders/edit.html.slim
-badd +1 /var/www/sino_primer/app/views/primers/index.js.erb
-badd +17 /var/www/sino_primer/config/locales/checkouts.cn.yml
-badd +6 /var/www/sino_primer/app/views/checkouts/_search.html.slim
-badd +1 /var/www/sino_primer/app/controllers/prices_controller.rb
-badd +1 /var/www/sino_primer/app/views/checkouts/index.html.slim
-badd +110 /var/www/sino_project/app/models/project.rb
-badd +9 /var/www/sino_project/app/controllers/checkouts_controller.rb
-badd +1 /var/www/sino_project/app/views/checkouts/index.js.erb
-badd +1 /var/www/sino_project/app/views/checkouts/_table.html.haml
-badd +21 /var/www/sino_project/app/views/checkouts/_ajax_table.html.haml
-badd +102 /var/www/genetest/app/controllers/pdfs_controller.rb
-badd +1849 lib/clinic_report.rb
 badd +0 config/database.yml
-silent! argdel *
+args config/database.yml
 edit config/database.yml
 set splitbelow splitright
 set nosplitbelow
@@ -222,7 +118,7 @@ setlocal includeexpr=RailsIncludeexpr()
 setlocal indentexpr=
 setlocal indentkeys=0{,0},:,0#,!^F,o,O,e
 setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255,$
+setlocal iskeyword=@,48-57,_,192-255
 setlocal keywordprg=
 setlocal nolinebreak
 setlocal nolisp
@@ -236,7 +132,7 @@ set number
 setlocal number
 setlocal numberwidth=4
 setlocal omnifunc=
-setlocal path=.,lib,vendor,app/models/concerns,app/controllers/concerns,app/controllers,app/helpers,app/mailers,app/models,app/*,app/views,spec,spec/controllers,spec/helpers,spec/mailers,spec/models,spec/views,spec/lib,spec/features,spec/requests,spec/integration,vendor/plugins/*/lib,vendor/plugins/*/test,vendor/rails/*/lib,vendor/rails/*/test,/var/www/genetest,/usr/include,
+setlocal path=.,lib,vendor,app/models/concerns,app/controllers/concerns,app/controllers,app/helpers,app/mailers,app/models,app/*,app/views,spec,spec/controllers,spec/helpers,spec/mailers,spec/models,spec/views,spec/lib,spec/features,spec/requests,spec/integration,vendor/plugins/*/lib,vendor/plugins/*/test,vendor/rails/*/lib,vendor/rails/*/test,/var/www/sino_primer,/usr/include,
 setlocal nopreserveindent
 setlocal nopreviewwindow
 setlocal quoteescape=\\
@@ -261,7 +157,7 @@ if &syntax != 'yaml'
 setlocal syntax=yaml
 endif
 setlocal tabstop=2
-setlocal tags=/var/www/genetest/tags,/var/www/genetest/tmp/tags,./tags,./TAGS,tags,TAGS
+setlocal tags=/var/www/sino_primer/tags,/var/www/sino_primer/tmp/tags,./tags,./TAGS,tags,TAGS
 setlocal textwidth=0
 setlocal thesaurus=
 setlocal noundofile
@@ -270,12 +166,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 37 - ((10 * winheight(0) + 8) / 17)
+let s:l = 1 - ((0 * winheight(0) + 10) / 20)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-37
-normal! 022l
+1
+normal! 0
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf

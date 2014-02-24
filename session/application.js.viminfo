@@ -8,7 +8,7 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/bootstrap
+~MSle0~/action
 
 # Last Substitute Search Pattern:
 ~MSle0&plasmid_code
@@ -18,107 +18,107 @@ $
 
 # Command Line History (newest to oldest):
 :q
-:Rjavascript application
-:Rstylesheet application
-:vsplit 
-:e Gemfile
-:Rcontroller api/v1/blast_caches
-:e mig_form_primer_synthesis.rb
-:Renvironment production
-:vsplit Capfile
-:Renvironment development
-:Rmodel primer
-:R
-:e lib/seq_order_api.rb
-:e lib/gene_bank_api.rb
-:Rmodel client
-:Rmigration create_clients
-:tabedit Capfile
-:Rmodel company
-:Rcontroller api/v1/companies
-:Rmodel sino
-:e app
-:Rmodel order
-:Rview primers/_show.html.slim
-:Rview show.js.erb
-:Rview primers/show.html.slim
+:e config/routes.rb
+:v
+:Rcontroller home
+:<F3>:q
+:Rcontroller 
+:Rlayout application.html.slim
 :Rlocale menus.cn.yml
-:Rlocale primers.cn.yml
-:Rview _go_button.html.slim
-:Rview primers/scope.html.slim
-:Rcontroller primers
-:Rview scope.html.slim
-:Rview _table.html.slim
-:Rview primers/index.html.slim
-:Rview 
-:Rview primers/_go_button.html.slim
-:Rview devise/passwords/new.html.slim
-:Rview devise/shared/_links.html.slim
-:Rlocale 
-:kj
-:Rmigration kk
-:Rmigration create_users
-:Rmigration create_doorkeeper_tables
-:Rlocale cn.yml
-:Rview devise/sessions/new.html.slim
-:Rview users/_table.html.slim
-:Rlocale simple_form.cn.yml
-:Rview _active.html.slim
-:Rview update.js.erb
-:Rview users/_search.html.slim
-:vsplit _se
+:Rcontroller project_types
+:Rlayout _current_count.html.haml
+:Rview projects/_search.html.haml
+:Rview projects/running_conv.html.haml
+:Rcontroller projects
+:Rmodel project
+:vsplit Capfile
+:Rmodel sequence_type
+:tabedit Capfile
+:Rlocale projects.cn.yml
+:Rview projects/conv_statistic.html.haml
+:Rinitializer devise
+:Rmodel invoice
+:Rlocale areas.cn.yml
+:Rlocale area
+:Rlocale invoices.cn.yml
+:Rcontroller invoices
+:e testdown.php
+:vsplit code_info.php
+:tabedit index.php
+:e downbaogao.php
+:vsplit down.php
+:vs index.php
+:vsplit /home/wangfan/send_lims_result/app/models/order.rb
+:vsplit /home/wangfan/send_lims_result/lib/code_info.rb
+:Rmodel order
+:e lib/code_info.rb
+:Rview send_result/attachment.haml
+:Rmodel primer
+:e send_result.sh
+:Rmodel result_mail
+:e send_result.rb
+:vsplit config_primer.rb
+:Rmigration create_templates
+:Rmodel location
+:Rfixtures locations.rb
+:Rmigration create_locations
+:vsplit Gemfile
+:tabedit Gemfile
+:e spec/spec_helper.rb
+:Rmigration create_reports
+:Rmodel template
 
 # Search String History (newest to oldest):
-?/bootstrap
-? \<TRUNCATE\>
-? '
-?/checkouts
-?/eager
-?/scope
-?/workflow
-?/def flow
-?/go_button
-?/render
-?/go_
-?/remem
-?/rem
-?/title
-?/superwf
-? \<secret_key\>
-?/auto_ex
-?/white
-?/haml
-?/dal
-?/redis
-?/pdf
-?/to_pdf
-?/next_flow
-?/checkout_records
-?/to_csv
-?/def conv
-?/prepare_
+?/action
+?/next_month
+?/count
+?/projects
 ?/search
-?/params
-? \<type\>
-?/adfasdf
-?/type
-?/aty
-??\Vnav-pills
-?/b
-? \<checkout\>
-?/layout
-?/layouts
-?/success
-?/notice
-?/fix
-?/batch
-?/select
-?/invert
-? \<@create\>
-?/view_bac
-?/precheck
-?/prechecks
-?/ty
+?/scope
+?/project_count_month
+?/project_count
+?/money_count
+? \<has_many\>
+?/statistic
+?/conv_statistic
+?/remem
+?/area
+?/service_type
+?/has_many
+?/receipt
+?/$result
+? \<foreach\>
+? )
+?/function
+?/fetch
+?/down
+?/remember
+?/duwenquan
+?/result_codes
+?/rescue_
+?/angular
+?/superwf
+?/actionpack
+?/cache
+?/while
+?/query
+? \<‰øÆÂøóÂçé\>
+? \<zjy\>
+?/zhangxuan
+?/sub
+?/clients
+?/api
+?/R
+?/xhr
+?/progre
+?/gc_max
+?/session
+?/_SESSION
+?/setcookie
+?/login
+?/selecta
+?/img
+? \<fuzongshenpi\>
 
 # Expression History (newest to oldest):
 
@@ -128,74 +128,16 @@ $
 
 # ÂØÑÂ≠òÂô®:
 "0	LINE	0
-	      event :go_complete, transitions_to: :completed
+	    @records = @projects = current_user.technician_projects.running.page(params[:page])
 "1	LINE	0
-	  db.execute 
+	          #d << "#{date_from} < #{date_to}"
+	          #i += 1
+	          #if i > 100
+	          #  break
+	          #end
 "2	LINE	0
-	  SEQ
-"3	BLOCK	11
-	db.execute "
-	db.execute "
-	db.execute "
-	db.execute "
-	db.execute "
-	db.execute "
-	db.execute "
-	db.execute "
-	db.execute "
-	db.execute "
-	db.execute "
-	db.execute "
-	db.execute "
-	db.execute "
-	db.execute "
-	db.execute "
-	db.execute "
-	db.execute "
-	db.execute "
-	db.execute "
-	db.execute "
-	db.execute "
-	db.execute "
-	db.execute "
-	db.execute "
-"4	BLOCK	0
-	"
-	"
-	"
-	"
-	"
-	"
-	"
-"5	BLOCK	0
-	"
-	"
-	"
-	"
-	"
-	
-	"
-	"
-	"
-	"
-	"
-	"
-	"
-	"
-	"
-	"
-	"
-	"
-"6	BLOCK	0
-	#
-	#
-	#
-	#
-	#
-	#
-	#
-	#
-	
+	        #render text: d.inspect
+"3	BLOCK	0
 	#
 	#
 	#
@@ -209,40 +151,24 @@ $
 	#
 	#
 	#
-	#
-	#
-	#
-	#
-	#
-	#
-	
-	#
-	#
-	#
-	#
-	
-	#
-	#
-	#
-	#
-	
-	#
-	#
-	#
-	#
-	#
-	
-	#
-	#
-	#
-	#
-	#
+"4	LINE	0
+	  var_dump($info);
+"5	LINE	0
+	  $info = show_code_info($order_id);
+	  if(count($info) > 0) {
+	    $result .= "<h3 style='text-align: center;'>ÊµãÂ∫èÁªìÊûúËØ¥Êòé</h3>";
+	    foreach($info as $k => $v) {
+	      $result .= "<p>{$v}</p>";
+	    }
+	  }
+"6	LINE	0
+	<?
 "7	LINE	0
-	
+	      ?>
 "8	LINE	0
-	      go_complete: Áõ¥Êé•ÂÆåÊàêÁîü‰∫ß
+	      <?
 "9	LINE	0
-	  - if params[:scope] == 'producing'
+	      ?>
 "b	BLOCK	23
 	 NOT NULL AUTO_INCREMENT
 "c	CHAR	0
@@ -253,7 +179,7 @@ $
 "i	CHAR	0
 	378
 <""""i""iquadrantoreaction_board_id = _this.a??kbparn??kbent().attr()i""re??kb??kbireaction_board_I??kbid??k3kkkkkYGpwwwwwwwwwwwCbbbbddkkkkkkkYjVkyjGpzzjwwwwwwwwvf]sp[??kb??kb[]i""hireaction_board=??kb_id=lli  i++i  ireaction_board_idllllla[]iquadrna??kb??kbant=""i  i++i  iquadrant??k3??k3??k3??k3??k3????,????.??k3??k3??k3??k3??k3??k3??k3????,????.veee
-"k	CHAR	0
+"k@	CHAR	0
 	448
 <oukounless xhr?ujddujddoendk>>osession[]i:referear hla = referer if redererreferer.present?Äk3kkkkkkkkkjjjjodÄkbbefore_action :set_se, only: []i:new, :cÄkbeditÄk3Ä˝,Ä˝.xÄk3Ä˝KÄ˝KÄ˝KÄ˝KÄ˝LÄ˝LÄ˝LÄ˝LÄ˝,Ä˝.xxxxxxxxkkwlllllxxxxxxxxÄk3Äk3Äk3Äk3Äk3Äk3bbbbwjjjjjjjI#Äk3Äk3Äk3Äk3Äk3kkodef newendÄk3kosession[]i:redÄkbfererl:Rvi	 ho	i	hlla = ''hCroot_pathÄk3korender text: 'abc'Äk3bddpwwwCsession[]i:refeerÄkbÄkbrerÄk3Äk5Äk5
 "l	CHAR	0
@@ -299,139 +225,127 @@ $
 "x	CHAR	0
 	"
 ""-	CHAR	0
-	#
+	{
 
 # ÂÖ®Â±ÄÂèòÈáè:
 
 # Êñá‰ª∂Ê†áËÆ∞:
-'0  19  0  /var/www/sino_sequencing/app/assets/javascripts/application.js
-'1  28  8  /var/www/gene_bank/app/controllers/api/v1/blast_caches_controller.rb
-'2  4  0  /var/www/sino_sequencing/mig_from_uc.rb
-'3  9  11  /var/www/sino_primer/config/environments/development.rb
-'4  111  138  /var/www/sino_primer/app/models/primer.rb
-'5  15  0  /var/www/sino_sequencing/mig_from_uc.rb
-'6  18  43  /var/www/sino_sequencing/db/migrate/20130109080710_create_clients.rb
-'7  2  2  /var/www/sino_primer/app/models/order.rb
-'8  8  2  /var/www/hello.c
-'9  1  0  /var/www/t.rb
+'0  2  0  /var/www/angular_casts/app/assets/javascripts/application.js
+'1  1  0  /var/www/angular_casts/app/assets/javascripts/home.js.coffee
+'2  38  35  /var/www/gene_bank/config/routes.rb
+'3  144  57  /var/www/sino_sequencing/config/routes.rb
+'4  4  10  /var/www/sino_analysis_report/app/views/layouts/application.html.slim
+'5  86  43  /var/www/sino_project/app/models/project.rb
+'6  13  12  /var/www/dna/.git/COMMIT_EDITMSG
+'7  1065  0  /var/www/dna/kehu/zhuangtai/index.php
+'8  242  36  /var/www/dna/kehu/zhuangtai/testdown.php
+'9  134  2  /var/www/sino_project/config/initializers/devise.rb
 
 # Ë∑≥ËΩ¨ÂàóË°® (‰ªéÊñ∞Âà∞Êóß):
--'  19  0  /var/www/sino_sequencing/app/assets/javascripts/application.js
--'  39  21  /var/www/sino_sequencing/Gemfile
--'  42  40  /var/www/sino_sequencing/Gemfile
--'  38  0  /var/www/sino_sequencing/Gemfile
--'  15  1  /var/www/sino_sequencing/app/assets/stylesheets/application.css.scss
--'  1  0  /var/www/sino_sequencing/app/assets/stylesheets/application.css.scss
--'  28  8  /var/www/gene_bank/app/controllers/api/v1/blast_caches_controller.rb
--'  1  0  /var/www/gene_bank/app/controllers/api/v1/blast_caches_controller.rb
--'  4  0  /var/www/sino_sequencing/mig_from_uc.rb
--'  15  0  /var/www/sino_sequencing/mig_from_uc.rb
--'  9  11  /var/www/sino_primer/config/environments/development.rb
--'  21  0  /var/www/sino_primer/config/environments/development.rb
--'  33  55  /var/www/sino_primer/mig_form_primer_synthesis.rb
--'  10  0  /var/www/sino_primer/mig_form_primer_synthesis.rb
--'  7  0  /var/www/sino_primer/mig_form_primer_synthesis.rb
--'  111  138  /var/www/sino_primer/app/models/primer.rb
--'  1  0  /var/www/sino_primer/app/models/primer.rb
--'  1  0  /var/www/sino_sequencing/mig_from_uc.rb
--'  18  43  /var/www/sino_sequencing/db/migrate/20130109080710_create_clients.rb
--'  1  0  /var/www/sino_sequencing/Capfile
--'  24  63  /var/www/sino_sequencing/app/models/client.rb
--'  6  44  /var/www/sino_sequencing/app/controllers/api/v1/companies_controller.rb
--'  1  0  /var/www/sino_sequencing/app/models/company.rb
--'  18  2  /var/www/sino_sequencing/app/models/company.rb
--'  23  19  /var/www/sino_sequencing/app/models/client.rb
--'  25  47  /var/www/sino_sequencing/app/models/client.rb
--'  13  2  /var/www/sino_sequencing/mig_form_primer_synthesis.rb
--'  15  0  /var/www/sino_sequencing/mig_form_primer_synthesis.rb
--'  14  7  /var/www/sino_sequencing/mig_form_primer_synthesis.rb
--'  2  2  /var/www/sino_primer/app/models/order.rb
--'  83  8  /var/www/sino_primer/app/models/order.rb
--'  1  38  /var/www/sino_primer/app/views/primers/show.js.erb
--'  1  0  /var/www/sino_primer/app/views/primers/show.html.slim
--'  8  2  /var/www/hello.c
--'  1  0  /var/www/hello.c
--'  1  0  /var/www/t.rb
--'  4  2  /etc/nginx/sites-enabled/phpmyadmin
--'  1  0  /etc/nginx/sites-enabled/phpmyadmin
--'  224  6  /var/www/sino_primer/app/models/primer.rb
--'  192  4  /var/www/sino_primer/app/models/primer.rb
--'  232  24  /var/www/sino_primer/app/models/primer.rb
--'  1  0  /var/www/sino_primer/Capfile
--'  49  44  /var/www/sino_primer/app/controllers/primers_controller.rb
--'  43  12  /var/www/sino_primer/app/controllers/primers_controller.rb
--'  45  19  /var/www/sino_primer/app/controllers/primers_controller.rb
--'  18  2  /var/www/sino_primer/app/views/primers/scope.html.slim
--'  46  31  /var/www/sino_primer/config/locales/primers.cn.yml
--'  45  14  /var/www/sino_primer/config/locales/primers.cn.yml
--'  1  0  /var/www/sino_primer/app/views/primers/_go_button.html.slim
--'  18  30  /var/www/sino_primer/app/views/primers/_go_button.html.slim
--'  20  4  /var/www/sino_primer/app/views/primers/scope.html.slim
--'  1  0  /var/www/sino_primer/app/views/primers/scope.html.slim
--'  9  0  /etc/apt/sources.list
--'  1  0  /var/www/sino_passport/app/views/devise/shared/_links.html.slim
--'  13  2  /var/www/sino_passport/app/views/devise/shared/_links.html.slim
--'  6  13  /var/www/sino_passport/config/locales/menus.cn.yml
--'  10  6  /var/www/sino_passport/db/migrate/20120903013112_create_users.rb
--'  11  0  /var/www/sino_passport/db/migrate/20120730061438_create_doorkeeper_tables.rb
--'  11  6  /var/www/sino_passport/db/migrate/20120903013112_create_users.rb
--'  9  0  /var/www/sino_passport/db/migrate/20120903013112_create_users.rb
--'  12  6  /var/www/sino_passport/db/migrate/20120903013112_create_users.rb
--'  24  4  /var/www/sino_passport/config/locales/cn.yml
--'  1  0  /var/www/sino_passport/config/locales/cn.yml
--'  2  2  /var/www/sino_passport/app/views/users/_active.html.slim
--'  1  0  /var/www/sino_passport/app/views/users/update.js.erb
--'  1  0  /var/www/sino_passport/app/views/users/_table.html.slim
--'  1  0  /var/www/sino_passport/app/views/users/_form.html.slim
--'  4  8  /var/www/sino_passport/app/views/users/_form.html.slim
--'  5  8  /var/www/sino_passport/app/views/users/_form.html.slim
--'  1  0  /var/www/sino_passport/app/views/users/index.js.erb
--'  1  0  /var/www/sino_passport/app/views/home/profile.html.slim
--'  1  11  /var/www/sino_passport/app/views/users/index.html.slim
--'  8  18  /var/www/sino_passport/app/views/home/profile.html.slim
--'  5  6  /var/www/sino_passport/app/views/home/profile.html.slim
--'  233  0  /var/www/sino_passport/config/initializers/devise.rb
--'  1  0  /var/www/sino_passport/config/initializers/devise.rb
--'  1  0  /var/www/sino_passport/Capfile
--'  80  0  /var/www/sino_passport/Gemfile
--'  37  0  /var/www/sino_passport/Gemfile
--'  25  2  /var/www/sino_passport/Gemfile
--'  49  0  /var/www/sino_passport/Gemfile
--'  13  6  /var/www/sino_passport/config/routes.rb
--'  25  2  /var/www/sino_passport/config/routes.rb
--'  1  0  /var/www/sino_passport/Gemfile
--'  256  2  /var/www/client_base/config/initializers/devise.rb
--'  20  0  /var/www/client_base/config/initializers/devise.rb
--'  1  0  /var/www/client_base/config/environments/production.rb
--'  65  2  /var/www/client_base/config/environments/production.rb
--'  66  2  /var/www/client_base/config/environments/production.rb
--'  1  0  /var/www/client_base/Capfile
--'  29  30  /var/www/client_base/config/environments/development.rb
--'  27  23  /var/www/client_base/config/environments/development.rb
--'  1  0  /var/www/client_base/config/environments/development.rb
--'  51  2  /var/www/client_base/config/application.rb
--'  16  4  /var/www/client_base/config/application.rb
--'  1  0  /var/www/client_base/config/application.rb
--'  4  0  /var/www/client_base/app/models/client.rb
--'  1  0  /var/www/client_base/app/models/client.rb
+-'  2  0  /var/www/angular_casts/app/assets/javascripts/application.js
+-'  1  0  /var/www/angular_casts/app/assets/javascripts/home.js.coffee
+-'  38  35  /var/www/gene_bank/config/routes.rb
+-'  41  57  /var/www/gene_bank/config/routes.rb
+-'  35  67  /var/www/gene_bank/config/routes.rb
+-'  1  0  /var/www/gene_bank/config/routes.rb
+-'  144  57  /var/www/sino_sequencing/config/routes.rb
+-'  138  67  /var/www/sino_sequencing/config/routes.rb
+-'  105  17  /var/www/sino_sequencing/config/routes.rb
+-'  102  16  /var/www/sino_sequencing/config/routes.rb
+-'  96  39  /var/www/sino_sequencing/config/routes.rb
+-'  87  15  /var/www/sino_sequencing/config/routes.rb
+-'  86  9  /var/www/sino_sequencing/config/routes.rb
+-'  85  9  /var/www/sino_sequencing/config/routes.rb
+-'  84  9  /var/www/sino_sequencing/config/routes.rb
+-'  83  9  /var/www/sino_sequencing/config/routes.rb
+-'  82  55  /var/www/sino_sequencing/config/routes.rb
+-'  81  61  /var/www/sino_sequencing/config/routes.rb
+-'  80  33  /var/www/sino_sequencing/config/routes.rb
+-'  79  57  /var/www/sino_sequencing/config/routes.rb
+-'  78  9  /var/www/sino_sequencing/config/routes.rb
+-'  77  10  /var/www/sino_sequencing/config/routes.rb
+-'  76  43  /var/www/sino_sequencing/config/routes.rb
+-'  75  46  /var/www/sino_sequencing/config/routes.rb
+-'  72  17  /var/www/sino_sequencing/config/routes.rb
+-'  57  15  /var/www/sino_sequencing/config/routes.rb
+-'  56  49  /var/www/sino_sequencing/config/routes.rb
+-'  55  46  /var/www/sino_sequencing/config/routes.rb
+-'  54  45  /var/www/sino_sequencing/config/routes.rb
+-'  53  45  /var/www/sino_sequencing/config/routes.rb
+-'  52  47  /var/www/sino_sequencing/config/routes.rb
+-'  51  15  /var/www/sino_sequencing/config/routes.rb
+-'  40  20  /var/www/sino_sequencing/config/routes.rb
+-'  39  47  /var/www/sino_sequencing/config/routes.rb
+-'  38  19  /var/www/sino_sequencing/config/routes.rb
+-'  36  19  /var/www/sino_sequencing/config/routes.rb
+-'  26  60  /var/www/sino_sequencing/config/routes.rb
+-'  7  68  /var/www/sino_sequencing/config/routes.rb
+-'  4  84  /var/www/sino_sequencing/config/routes.rb
+-'  188  35  /var/www/sino_sequencing/config/routes.rb
+-'  178  0  /var/www/sino_sequencing/config/routes.rb
+-'  117  32  /var/www/sino_sequencing/config/routes.rb
+-'  2  2  /var/www/sino_sequencing/app/controllers/home_controller.rb
+-'  1  0  /var/www/sino_sequencing/app/controllers/home_controller.rb
+-'  4  10  /var/www/sino_analysis_report/app/views/layouts/application.html.slim
+-'  1  0  /var/www/sino_analysis_report/app/views/layouts/application.html.slim
+-'  86  43  /var/www/sino_project/app/models/project.rb
+-'  77  4  /var/www/sino_project/app/models/project.rb
+-'  31  0  /var/www/sino_project/app/models/project.rb
+-'  1  0  /var/www/sino_project/app/models/project.rb
+-'  1  0  /var/www/sino_project/Capfile
+-'  57  18  /var/www/sino_project/app/controllers/project_types_controller.rb
+-'  1  0  /var/www/sino_project/app/controllers/project_types_controller.rb
+-'  316  8  /var/www/sino_project/app/controllers/projects_controller.rb
+-'  311  8  /var/www/sino_project/app/controllers/projects_controller.rb
+-'  289  10  /var/www/sino_project/app/controllers/projects_controller.rb
+-'  302  19  /var/www/sino_project/app/controllers/projects_controller.rb
+-'  287  8  /var/www/sino_project/app/controllers/projects_controller.rb
+-'  281  8  /var/www/sino_project/app/controllers/projects_controller.rb
+-'  297  10  /var/www/sino_project/app/controllers/projects_controller.rb
+-'  301  8  /var/www/sino_project/app/controllers/projects_controller.rb
+-'  285  8  /var/www/sino_project/app/controllers/projects_controller.rb
+-'  288  10  /var/www/sino_project/app/controllers/projects_controller.rb
+-'  300  10  /var/www/sino_project/app/controllers/projects_controller.rb
+-'  303  0  /var/www/sino_project/app/controllers/projects_controller.rb
+-'  291  10  /var/www/sino_project/app/controllers/projects_controller.rb
+-'  23  4  /var/www/sino_project/app/models/sequence_type.rb
+-'  8  2  /var/www/sino_project/app/models/sequence_type.rb
+-'  67  66  /var/www/sino_project/app/views/projects/conv_statistic.html.haml
+-'  21  13  /var/www/sino_project/app/models/invoice.rb
+-'  1  0  /var/www/sino_project/config/locales/areas.cn.yml
+-'  3  344  /var/www/sino_project/app/models/project.rb
+-'  18  2  /var/www/sino_project/app/models/invoice.rb
+-'  1  0  /var/www/sino_project/app/models/invoice.rb
+-'  8  0  /var/www/sino_project/config/locales/invoices.cn.yml
+-'  75  6  /var/www/sino_project/app/controllers/invoices_controller.rb
+-'  1  0  /var/www/sino_project/app/controllers/invoices_controller.rb
+-'  13  12  /var/www/dna/.git/COMMIT_EDITMSG
+-'  1  0  /var/www/dna/.git/COMMIT_EDITMSG
+-'  1065  0  /var/www/dna/kehu/zhuangtai/index.php
+-'  180  4  /var/www/dna/kehu/zhuangtai/downbaogao.php
+-'  179  5  /var/www/dna/kehu/zhuangtai/downbaogao.php
+-'  7  0  /var/www/dna/kehu/zhuangtai/downbaogao.php
+-'  6  0  /var/www/dna/kehu/zhuangtai/downbaogao.php
+-'  145  21  /var/www/dna/kehu/zhuangtai/downbaogao.php
+-'  6  0  /var/www/dna/kehu/zhuangtai/down.php
+-'  171  0  /var/www/dna/kehu/zhuangtai/down.php
+-'  1  0  /var/www/dna/kehu/zhuangtai/code_info.php
+-'  34  6  /var/www/dna/kehu/zhuangtai/code_info.php
+-'  144  57  /var/www/sino_sequencing/config/routes.rb
+-'  138  67  /var/www/sino_sequencing/config/routes.rb
+-'  105  17  /var/www/sino_sequencing/config/routes.rb
+-'  102  16  /var/www/sino_sequencing/config/routes.rb
+-'  96  39  /var/www/sino_sequencing/config/routes.rb
+-'  87  15  /var/www/sino_sequencing/config/routes.rb
+-'  86  9  /var/www/sino_sequencing/config/routes.rb
+-'  85  9  /var/www/sino_sequencing/config/routes.rb
+-'  84  9  /var/www/sino_sequencing/config/routes.rb
+-'  83  9  /var/www/sino_sequencing/config/routes.rb
 
 # ÁºìÂÜ≤Âå∫ÂàóË°®:
-%/var/www/sino_sequencing/app/assets/stylesheets/application.css.scss	15	1
-%/var/www/gene_bank/app/controllers/api/v1/blast_caches_controller.rb	28	8
-%/var/www/sino_sequencing/mig_from_uc.rb	4	0
-%/var/www/sino_sequencing/Gemfile	39	21
-%/var/www/sino_sequencing/app/assets/javascripts/application.js	19	0
+%/var/www/angular_casts/app/assets/javascripts/application.js	2	0
 
 # Êñá‰ª∂ÂÜÖÁöÑÊ†áËÆ∞ÂéÜÂè≤ËÆ∞ÂΩï (‰ªéÊñ∞Âà∞Êóß):
 
-> /var/www/sino_sequencing/app/assets/stylesheets/application.css.scss
-	"	15	1
-
-> /var/www/sino_sequencing/Gemfile
-	"	39	21
-	^	40	18
-	.	40	22
-	+	40	22
-
-> /var/www/sino_sequencing/app/assets/javascripts/application.js
-	"	19	0
+> /var/www/angular_casts/app/assets/javascripts/application.js
+	"	2	0

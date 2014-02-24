@@ -13,6 +13,7 @@ noremap <silent> n :call g:vimim_search_next()n
 nnoremap <silent> <Plug>NetrwBrowseX :call netrw#NetrwBrowseX(expand("<cWORD>"),0)
 nmap <silent> <Plug>VLToggle :let g:VeryLiteral = !g:VeryLiteral| echo "VeryLiteral " . (g:VeryLiteral ? "On" : "Off")
 vmap <kMultiply> *
+map <F7> :make
 map <F4> "*p
 map <F2> :NERDTree:set number
 map <F3> :up
@@ -42,12 +43,12 @@ set viminfo='200,%,!,<50,s10,h,rA,rB,/50,:50
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd /var/www/superwf
+cd /home/wangfan
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-args lib/superwf
+args /etc/nginx/sites-enabled/
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -157,7 +158,7 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal nowrap
 setlocal wrapmargin=0
-lcd /var/www/superwf
+lcd /home/wangfan
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf

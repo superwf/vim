@@ -8,117 +8,117 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/lims
+~MSle0~/65693439
 
 # Last Substitute Search Pattern:
-~MSle0&current_client
+~MSle0& 
 
 # Last Substitute String:
-$current_user
+$,
 
 # Command Line History (newest to oldest):
-:Rinitializer session_store
-:e config/application.rb
 :q
-:e Gemfile.lock
-:vs Gemfile
-:e config/routes.rb
-:Renvironment test
-:Renvironment development
-:Renvironment production
-:Rcontroller home
-:Rcontroller application
-:Rinitializer devise
-:Rstylesheet application
-:R
-:Rjavascript application
-:e Gemfile
-:Rview home/index.html.slim
-:e /var/www/lims/config/initializers/devise.rb
-:Rview clients/new.html.haml
-:Rinitializer wrap_parameters
-:Rmodel client
-:Rcontroller clients
-:Rcontroller samples
-:e lib/active_resource_config.rb
-:Rmodel reaction
+:vs Makefile
+:.,.+1q
+:.,.+2q
+:e myfirst.cpp
+:e echo.c
+:vs ~/.vimrc
+:vsplit hello.h
+:vsplit ~/.vimrc
+:e send.rb
+:Rmailer promotion
+:Rview promotion/promotion_20130918.html.haml
 :vsplit Gemfile
-:Rmodel order
-:Rmodel menu
-:Rmodel const
-:Rview home/index.html.haml
-:%s/current_client/current_user/g
-:vs ../user_passport/app/controllers/sessions_controller.rb
-:Rcontroller sessions
-:Rcontroller users
-:e config/
-:e config/r
-:Rinitializer doorkeeper
-:Rmodel user
-:Rmodel role
-:Rmi
-:Rmodel 
-:Rmigration create_users
-:vsplit Capfile
-:Rmigration create_roles
-:Rmodel ht_sample_report
-:Rmodel ht_sample
-:Rcontroller ht_sample_reports
-:Rview ht_samples/_search.html.haml
-:Rlocale ht_sample_reports.cn.yml
-:Rview _form.html.haml
+:Rview send_notify.html.haml
+:Rmailer send_result
+:e import_clients.rb
+:R
+:e config/application.rb
+:Renvironment test
+:Renvironment production
+:Renvironment 
+:Renvironment development
+:e Gemfile
+:e config/database.yml
+:Rmodel client
+:e app/views/promotion/promotion_20130918.html.haml
+:Rview promotion/send_promotion.html.haml
+:'<,'>s/ /,/g
+:e hello_fn.c
+:vs hello.h
+:vs config.yml
+:'<,'>/ /,/g
+:aq
+:w!
+:q!
+:Rjavascript socky.min
+:Rjavascript application
+:Rcontroller sockies
+:!q
+:e config/routes.rb
+:vs echo.rb
+:vs em_client.rb
+:vs socket_client.rb
+:e blast.rb
+:vs blast.rb
+:e demo_ncbi_rest.rb
+:tabedit ../../restclient.rb
+:vs ../../restclient.rb
+:vsgg
+:pwd
 
 # Search String History (newest to oldest):
-?/lims
-?/devise
-?/mass
-?/auto
-?/whitelist
-?/slim
-?/simple_form
-?/new_
-? current_client
-?/current_client
-?/rain
-?/doorkeeper
-?/gg
-? \<rest\>
-? \<active\>
-? \<acts_as_tree\>
-? \<simple_form\>
-? \<will_paginate\>
-? \<dalli\>
-? \<unicorn\>
-? \<jquery\>
-?/role
-?/render
-?/scope
-?/Tempfile
-? \<tempfile\>
-?/client
-?/ActiveSu
-?/www-data
-?/bash
-?/password
-?/fake
-?/api
-?/atomic
-?/uncomp
-?/upl
-?/whin
-?/whi
-?/roles
-?/haml
-?/carr
-?/cancan
-? \<mass_assignment_sanitizer\>
-?/eager
-?/asset
-?/users
-?/entry
-?/coffee
-?/rescue_
-? \<key2sym\>
+?/PATH
+?/65693439
+?/event
+?/focus
+?/click
+?/mouse
+?/egg
+??eggNum
+?/egg-status
+?/egg-trigger
+? \<go_game\>
+??30
+?/map
+?/73
+?/create_dialog
+?/img
+?/white
+?  
+?/git
+?/id=
+? g
+?/slider
+?/view
+?/superwf
+?/fix
+? \<runPlugin\>
+?/Run
+? \<@channels\>
+?/WebSocketMain
+?/ch
+?/joining
+?/channel
+?/rjs
+?/script
+?/STK
+?/log
+?/c\.log
+?/c.log
+?/sid
+?/jisuan
+? \<jisuan\>
+?/pear
+?/splice
+?/phpmyadm
+?/nt
+? \<gbopts\>
+?/START
+?/MAX
+?/TYPE
+? \<blast_factory\>
 
 # Expression History (newest to oldest):
 
@@ -128,211 +128,189 @@ $current_user
 
 # 寄存器:
 "0	CHAR	0
-	"#{DK[:protocol]}#{DK[:host]}"
+	/home/wangfan/android/sdk/platform-tools
 "1	LINE	0
-	LimsOrder::Application.routes.draw do
+	ANDROID_HOME="/home/wangfan/android/sdk"
 "2	LINE	0
 	
 "3	LINE	0
-	  # Raise exception on mass assignment protection for Active Record models
-	  config.active_record.mass_assignment_sanitizer = :strict
+	  cout.put('$');
 "4	LINE	0
-	
+	  cout << "sizeof int is " << sizeof(int) << endl;
 "5	LINE	0
-	  # Log the query plan for queries taking more than this (works
-	  # with SQLite, MySQL, and PostgreSQL)
-	  config.active_record.auto_explain_threshold_in_seconds = 0.5
+	#include <cmath>
 "6	LINE	0
-	
+	  int number{123};
 "7	LINE	0
-	  # Log the query plan for queries taking more than this (works
-	  # with SQLite, MySQL, and PostgreSQL)
-	  # config.active_record.auto_explain_threshold_in_seconds = 0.5
+	  cin >> side;
 "8	LINE	0
-	
+	  cout << "your age is " << age << endl;
 "9	LINE	0
-	    # Enforce whitelist mode for mass assignment.
-"b	BLOCK	23
-	 NOT NULL AUTO_INCREMENT
-"c	CHAR	0
-	278
-<wcbcwcreated_datewwwwbwwcwcreated_date_from??k3gtggjjjjjjjjjjkjkkwwwwwwwwwwwwwwwwwcwcreated_date_to??k3??齃??齃????,????.i@jjkfdi@jk;;i@jkkkkkkj/datanni@nni@nnnnnni@nni@nni@nni@#xnnI@uunni#??kb@nni@nni@nni@nni@nni@nni@nni@nni@nni@nni@nni@nni@nn
-"g	CHAR	0
-	
-"i	CHAR	0
-	378
-<""""i""iquadrantoreaction_board_id = _this.a??kbparn??kbent().attr()i""re??kb??kbireaction_board_I??kbid??k3kkkkkYGpwwwwwwwwwwwCbbbbddkkkkkkkYjVkyjGpzzjwwwwwwwwvf]sp[??kb??kb[]i""hireaction_board=??kb_id=lli  i++i  ireaction_board_idllllla[]iquadrna??kb??kbant=""i  i++i  iquadrant??k3??k3??k3??k3??k3????,????.??k3??k3??k3??k3??k3??k3??k3????,????.veee
-"k	CHAR	0
-	266
-<jkkjbvVkkkdjwVjjjjjjjdVkkkd�k3l:e c	r	/abi_re�kb�kb�kbm�kb_machinesabi_nddnnddddbblD�k3�k3�k3jdd�k3jjjjjjjjjjjjjjkkkkkkjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjh:Rdcon	 orders:Rcon	 orders/max_numbernkkkkkkkkkkkkkjhlgg:Rvi	 checkouts	_go	
-"l	CHAR	0
-	lD�k3�k3�k3�k3�k3�k3gkjkjgtlgt:Rmo	 blas	:vs ap	mo	sam	/before_sam�kbvenzzjjjjkkkwjlkkkkkkkkkjjkkYhp�k3�k3�k3kwwwwwwwwllajkddkpuPjjoendkVk>�k3:Rmi cRmi	 creatrecreate_se	:Rmi	 	w
+	  cout << "your age?" << endl;
 "p	LINE	0
 	
 	
 	::::::::::::::::::::::::
-	鏃ユ湡锛氬叕鍏??2013骞??1鏈??10鏃ャ????鏄熸湡鍥?? 
-	闆昏叇锛歶nix  0.008533 seconds 
-	鐗堟湰锛歷i=703 
-	绶ㄧ⒓锛歶tf-8銆??utf-8,ucs-bom,euc-jp,gb18030,gbk,gb2312,cp936 
-	鐠板??冿細zh_CN.UTF-8 
-	瑭炲韩锛氭嫾闊宠??炲韩锛??/home/wangfan/.vim/plugin/vimim.pinyin_quote_sogou.txt 
-	瑭炲韩锛氶洸瑭炲韩锛氱櫨搴﹂洸銆??3闆层????鎼滅嫍闆层????锛憋急闆层???? 
-	鑱??缍诧細Python2 Interface to Vim 
-	杓稿叆锛歏imIM銆??銆??灏忛洞闆欐嫾銆?? 
-	閬搁爡锛歷imimrc 
+	日期：公元2013年1月10日　星期四 
+	電腦：unix  0.010892 seconds 
+	版本：vi=703 
+	編碼：utf-8　utf-8,ucs-bom,euc-jp,gb18030,gbk,gb2312,cp936 
+	環境：zh_CN.UTF-8 
+	詞庫：拼音詞庫：/home/wangfan/.vim/plugin/vimim.pinyin_quote_sogou.txt 
+	詞庫：雲詞庫：百度雲　3雲　搜狗雲　ＱＱ雲　 
+	聯網：Python2 Interface to Vim 
+	輸入：VimIM　拼音　 
+	選項：vimimrc 
 	    :let g:vimim_cloud = 'baidu,3'  
-	    :let g:vimim_map = 'c-bslash'  
-	    :let g:vimim_mycloud = 0  
-	    :let g:vimim_shuangpin = 'flypy'  
-	  " :let g:vimim_mode = 'dynamic'  
+	    :let g:vimim_mode = 'static'  
+	  " :let g:vimim_map = ''  
+	  " :let g:vimim_mycloud = 0  
 	  " :let g:vimim_plugin = '/home/wangfan/.vim/plugin'  
 	  " :let g:vimim_punctuation = 2  
+	  " :let g:vimim_shuangpin = 0  
 	  " :let g:vimim_toggle = 'pinyin,baidu,3,sogou,qq' 
 	::::::::::::::::::::::::
+	-- 插入 ---- 插入 (语言) ---- 插入 ---- 插入 ---- 插入 (语言) --
 	
-	娌℃湁鍖归厤鐨勮嚜鍔ㄥ懡浠??
-	1963
-<娌℃湁鍖归厤鐨勮嚜鍔ㄥ懡浠??	PhkkkwVkVjjylPwwwwxxxscreator�k3�k3�k3�k3�k3�k3jjkkjjkjbcwrecord_type�k3jjjjjjjjjjkkkkkkkkkkkkhebe:Rm�kbmo	 sample/sample_cancelnI#�k3�k3�k3�k3�k3�k3�k3lkjbebjbjjjkebebjjjjllwwwbbbbbbwvestr�kbextwwwwbveeex�k3D�k3h:RMo	 Rmo	 cance	jkobelongs_to :sample, poli�kby: true�k3�k3�k3�k3A, as: :record�k3�k3�k3�k3�k3�k3xukkkkbukkkkbCuuebvestable_name�k3��,��.be��L��L��K��Kklu�k3�k3�k3�k3�k3�k3�k3��,��.��K��LYpwwwbcwreactionzzo#h�kb hooks�kb�kbb�kbafter_create doendkoself.record.destroy�k3:gth:Rcon	 sample_can	jjkjjkl:Rcon	 s�kbcancel	ukVjjjjd�k3hV%kkdlphkddlkpwwwbxxxxxxxxsrecord_typewwwwh:�k3:Rmi	 create_cancel	jjjwlbwwwekoinclude ::Superwf:S�kb:Sc�kb�kbRecordor::Creator�k3jhjj:Rmi	 create_sample_cancel	jjjkkkYjjjjjpjjkkbeeeeeeela, data:�kbbi:eexbbA, search: []i:c�kbcreator_id�k3bbbbbDjjjjjjjk�k3h:Rcon	 Rmo	 cancel	jklggjddhP�k3l�k3�k3�k3�k3�k3�k3h:Rvi	 samples	in	jjbbbbbbbbwllllhhhhvlllllllllllllllldicancel_�kbed_data�k3:e c	r	/cancel_�kbed/sample_cancelnnnOresources :canceled_datas, only: []i:index, :create�k3jebebI#�k3�k3�k3�k3�k3�k3Lhjjjjjwl:Rvi	 sample_cance	samples	in	jjkO= hindd�kb�kb�kbdden_field_tag :sampdata_ta�kbypebxxxsrecordA, ''isampleb~�k3bebebhveebcwrecordwwvees::�kb�kbeval()iparams[]i:record_type�k3wwwwvesidkbbwcwidjjbbbvesrecordwwlllllllbveebbescanceled_data�k3�k3�k3bicreate_�k3gt:Rmo	 samplejbbbbxwwvllbCcanceled_data�k3�k3�k3�k3�k3gtl:Rmi	 create_sc�kb�kbcanc	jjkggjjjwhjkeeeeeeeeeeeea, data: record.to_swwbwcwrecordbbhDjj�k3bbbbljjkkkjjjkhkkeeeeeeebbbbbbbbbirecord:�kb_id: id, record_type: u�k3�k3�k3�k3�k3����,����-����-����-����-����-����.:Rmo	 prepay	ggjjjjjjjjjjjjjjjgg:Rmo	 cancel	jkkkkkkwwwDbbbbbcwrecordjdd�k3�k3�k3�k3�k3:Rmo	 clientjjkkh:Rmo	 c�kbsampleggjjjjjwwA, as: :record�k3�k3�k3l��,��.��,��.��,��.��K��K:Rmo	 s�kbcancel	
-"q	CHAR	0
-	483
-<Vkkk<wlvt"screate prepaymentsjbbbwcwpostkop = ::Fac.build :�kb�kb()i:prepaymentA.attributes�k3ja, preap�kb�kbpayment: p�k3jbbbwwcw302�k3k�k3�k3�k3�k3�k3�k3�k3kop.deleteko[]bC%w{}icreated_at d�kbupdated_at d�kbcreator_idjkA.each do |a|joendk>>A a�k3�k3�k3�k3jjlkkkkkkkkkk:Rsp	 sp	req	res	hkkjop �kb[]i''icompanycompanyrecord_idA = create_company.id�k3:Rfic�kbx	 prepaym	n�kb�kb�kb�kb�kb�kb�kb�kb�kbs	l:Rmo	 prepam	�kb	jjjjjjjjjjjjjjjjjjjjjweb
-"s	CHAR	0
-	594
-<,hi,llxxepwxxxsuuf}xexepwxxxwewwxepwxxxwwllDjjwwxxewbea_tagea, params[]iswwxepwxxxwwwwwwxepwxxxwwxepwxxxjjkkjjj^wxxea_g??kbtagwwwwwxepwxxx??k3????,????.xepwxxxjjkwwwwwwwwwxepwxxxwwwwwwxepwxxxwwxepwxxxwjbbbbbbbbxepwxxx??k3??k3????,????.:Rvi	 quality_co	_ta	jkVjdljkggjjkwpVj>.jwveehxwwr xu$xbbbbbbbxepwxxx??k3hdd??k3l:Rvi	 ????,????.??齃??齂??齃????,????.????,????.$ibcwtruebbbbbwi, params[]i:result??k3:Rmo	 qual	Gkgg:_c	Gkwkkkwji#??k3??k3??k3??k3u??k3h:Rcon	 qua	jjjjjjjjjjjjjjjjjjjjjjjjjjjj:??kb??kb??kby_co	a, :desc??k3l:Rmo	 sample_he	G/searchgg:R
-"v	CHAR	0
-	473
-<jkV%>wveesself??k3??齂??齂??齂??齃??齃??齂??齃??齃????,????-????-????-????-????-????-????-????-????-????.sselfwwwwblveesself??k3gt:gtjjV%ddd??k3hjjbbbbluuwC????,????.????,????.bcwbcwc??kbmoduleA F??kb??kbFac??k3hjjjjjjbbbbveelx??k3??k3??k3??k3??k3????,????.cw::Filewwww.??k3????,????.xkjjI#??k3kY:Rfix	 hr??kbtcon	jjjjj:Rfix 	htRfix	 ht_smaple-re	??kb??kb??kb_r	:??kb??kb??kb??kb??kb??kb??kbamp		jkpdkddljjV%ddd??k3h??k3jjl??k3h
+	1 行被去掉；before #1  11 seconds ago-- 插入 --
+	
+	::::::::::::::::::::::::
+	　
+	日期：公元2013年1月10日　星期四 
+	::::::::::::::::::::::::
+	3242
+<-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P) 匹配 1 / 20-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P) 匹配 2 / 20-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P) 匹配 3 / 20-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P) 匹配 4 / 20-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P) 匹配 5 / 20-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P) 匹配 6 / 20-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P) 匹配 7 / 20-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P) 匹配 8 / 20-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P) 匹配 9 / 20-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P) 匹配 10 / 20-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P) 匹配 11 / 20-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P) 匹配 12 / 20-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P) 匹配 13 / 20-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P) 匹配 14 / 20-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P) 匹配 15 / 20-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P) 匹配 16 / 20-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P) 匹配 17 / 20-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P) 匹配 18 / 20-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P) 匹配 19 / 20-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P) 匹配 20 / 20-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P) 回到起点-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P) 匹配 1 / 20-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P) 匹配 2 / 20-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P) 匹配 3 / 20-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P) 匹配 4 / 20-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P) 匹配 5 / 20-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P) 匹配 6 / 20-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P) 匹配 7 / 20-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P)-- 全能补全 (^O^N^P) 匹配 8 / 20-- 插入 (语言) ---- 插入 (语言) ---- 插入 (语言) --
+	-- 插入 --
+	
+	1 行发生改变；before #3  2 seconds ago
+	1 行被去掉；before #2  31 seconds ago
+	已位于最旧的改变
+	已位于最旧的改变
 "w	CHAR	0
-	537
-<V%yjwpjjkw$bbCnil??k3jVkkd??k3lbbbbwveeesif: ::Proc.new{}i|r| r.reaction_board && r.buuuuuhCtrue??k3??k3??k3??k3??k3??k3??k3??k3??k3??k3??k3??k3??k3hu??k3????,????.:Rmo	 heat	h:Rsp	 mo	heat	ljjwhjjwjjjjjjjkkjjjzzljjjjkzzhjjjjjjjjjjjjjjjjjljjjjkjzzhljwwwwCquadran: true??k3??k3??k3??k3hjjjjjjjjkkkwwwwwwllwwC7??k3h:Rmi	 heat	k$hC7??k3:Rfix	 heat	jjjjjjwwwwbcw1,2,3,4??k3??k2??k3??k3??k3:Rmi	 alc	jjjjkkkkklkjh:Rmi	 alc	jjkkl:Rmo	 alc	h:Rsp	 mo	aalc	lggjjwhjjjjjjjjwzzkkkkkjjjjjjjjjzzjjzz
-"x	CHAR	0
-	s
+	478
+<wblll~kkjjkbbjjjjjjjjjjjjjjjeekbbwicolspan="2ujicolspan="1"�kb�kb2" �k3�k3��c��b��c��b��c��bbeb��c��bbevbveeexhx�k3�k3�k3�k3�k3��c��b��L��c��L��L��L��b��,��.��,��.��,��.~�k3��,��-��-��-��-��-��-��-��-��-��-��.xhxjjlveellxj.j.j.j.j.j.jkhvkkkkkkjjjjjjxkk�k3�k3�k3�k3�k3��c��b��c��b��K�kd�kd�kd�kd�kd�kd�kd�kd�ku�ku�ku�ku�ku�ku�ku�ku�ku�ku�ku�ku�kd�ku�ku�ku�ku�ku�ku�ku�kd�kd�kd�kd�kd�kd�kd�kd�kd�kd�kd�kddd�k3�k3�k3��c��L��L��K��K��K��K��L��L��L��K��L��K��b��,��.�k3	
 ""-	CHAR	0
-	Lims
+	/home/wangfan/android/sdk
 
 # 全局变量:
 
 # 文件标记:
-'0  7  2  /var/www/seq_order/Rakefile
-'1  1  111  /var/www/seq_order/config/initializers/session_store.rb
-'2  38  14  /var/www/seq_order/config/database.yml
-'3  21  9  /var/www/lims_order/config/application.rb
-'4  22  2  /var/www/lims_order/config/environments/development.rb
-'5  13  50  /var/www/lims_order/config/routes.rb
-'6  1  0  /var/www/superwf/config/locales/doorkeeper.cn.yml
-'7  13  6  /var/www/sino_passport/config/locales/doorkeeper.cn.yml
-'8  25  4  /var/www/user_passport/config/locales/simple_form.cn.yml
-'9  6  31  /var/www/user_passport/app/controllers/sessions_controller.rb
+'0  2  0  ~/android/info/Rakefile
+'1  1  0  ~/android/info/AndroidManifest.xml
+'2  115  111  ~/.bashrc
+'3  114  4  ~/android/sdk/tools/android
+'4  116  38  ~/.bashrc
+'5  111  0  ~/.bashrc
+'6  1  0  ~/sdk/tools/android
+'7  21  0  /mnt/iso/光盘说明.TXT
+'8  1  0  ~/desktop/sequence_primers.csv
+'9  1  19  ~/clang/Makefile
 
 # 跳转列表 (从新到旧):
--'  7  2  /var/www/seq_order/Rakefile
--'  1  0  /var/www/seq_order/Rakefile
--'  1  111  /var/www/seq_order/config/initializers/session_store.rb
--'  38  14  /var/www/seq_order/config/database.yml
--'  28  14  /var/www/seq_order/config/database.yml
--'  15  14  /var/www/seq_order/config/database.yml
--'  1  0  /var/www/seq_order/config/database.yml
--'  21  9  /var/www/lims_order/config/application.rb
--'  15  64  /var/www/lims_order/config/application.rb
--'  13  8  /var/www/lims_order/config/application.rb
--'  58  0  /var/www/lims_order/config/application.rb
--'  4  0  /var/www/lims_order/config/routes.rb
--'  27  2  /var/www/lims_order/config/routes.rb
--'  1  0  /var/www/lims_order/config/routes.rb
--'  22  2  /var/www/lims_order/config/environments/development.rb
--'  4  2  /var/www/lims_order/config/environments/test.rb
--'  28  26  /var/www/lims_order/config/environments/development.rb
--'  64  2  /var/www/lims_order/config/environments/production.rb
--'  2  38  /var/www/lims_order/app/controllers/home_controller.rb
--'  17  2  /var/www/lims_order/config/routes.rb
--'  10  4  /var/www/lims_order/config/initializers/devise.rb
--'  21  0  /var/www/lims_order/config/initializers/devise.rb
--'  7  0  /var/www/lims_order/app/views/home/index.html.slim
--'  1  0  /var/www/lims_order/app/controllers/samples_controller.rb
--'  16  0  /var/www/lims/config/initializers/devise.rb
--'  255  0  /var/www/lims/config/initializers/devise.rb
--'  1  0  /var/www/lims_order/app/views/clients/new.html.haml
--'  1  0  /var/www/lims_order/app/models/client.rb
--'  12  2  /var/www/lims_order/app/models/client.rb
--'  1  0  /var/www/lims_order/app/controllers/clients_controller.rb
--'  4  0  /var/www/lims_order/app/models/order.rb
--'  6  24  /var/www/lims_order/lib/active_resource_config.rb
--'  2  2  /var/www/lims_order/app/models/order.rb
--'  15  0  /var/www/lims_order/app/models/order.rb
--'  22  2  /var/www/lims_order/app/models/menu.rb
--'  7  2  /var/www/lims_order/app/models/menu.rb
--'  1  0  /var/www/lims_order/app/models/const.rb
--'  2  2  /var/www/lims_order/app/models/client.rb
--'  13  0  /var/www/lims_order/app/models/client.rb
--'  27  27  /var/www/lims_order/Gemfile
--'  47  0  /var/www/lims_order/Gemfile
--'  1  0  /var/www/lims_order/Gemfile
--'  61  2  /var/www/lims_order/config/environments/production.rb
--'  1  0  /var/www/lims_order/config/environments/production.rb
--'  32  0  /var/www/lims_order/config/environments/test.rb
--'  2  2  /var/www/lims_order/config/environments/test.rb
--'  34  2  /var/www/lims_order/config/environments/test.rb
--'  1  0  /var/www/lims_order/config/environments/test.rb
--'  1  0  /var/www/lims_order/config/environments/development.rb
--'  13  50  /var/www/lims_order/config/routes.rb
--'  7  14  /var/www/lims_order/config/routes.rb
--'  15  51  /var/www/lims_order/config/routes.rb
--'  21  17  /var/www/lims_order/config/routes.rb
--'  22  17  /var/www/lims_order/config/routes.rb
--'  6  30  /var/www/lims_order/config/routes.rb
--'  11  2  /var/www/lims_order/app/controllers/application_controller.rb
--'  7  2  /var/www/lims_order/app/controllers/application_controller.rb
--'  13  2  /var/www/lims_order/app/controllers/application_controller.rb
--'  16  32  /var/www/lims_order/app/controllers/application_controller.rb
--'  4  20  /var/www/lims_order/app/controllers/application_controller.rb
--'  3  0  /var/www/lims_order/app/controllers/application_controller.rb
--'  23  0  /var/www/lims_order/Gemfile
--'  46  0  /var/www/lims_order/Gemfile
--'  25  5  /var/www/lims_order/Gemfile
--'  33  5  /var/www/lims_order/Gemfile
--'  34  5  /var/www/lims_order/Gemfile
--'  28  5  /var/www/lims_order/Gemfile
--'  14  5  /var/www/lims_order/Gemfile
--'  12  5  /var/www/lims_order/Gemfile
--'  13  5  /var/www/lims_order/Gemfile
--'  1  0  /var/www/superwf/config/locales/doorkeeper.cn.yml
--'  211  6  /var/www/superwf/config/locales/doorkeeper.cn.yml
--'  85  0  /var/www/superwf/config/locales/doorkeeper.cn.yml
--'  13  6  /var/www/sino_passport/config/locales/doorkeeper.cn.yml
--'  211  6  /var/www/sino_passport/config/locales/doorkeeper.cn.yml
--'  1  0  /var/www/sino_passport/config/locales/doorkeeper.cn.yml
--'  25  4  /var/www/user_passport/config/locales/simple_form.cn.yml
--'  1  0  /var/www/user_passport/config/locales/simple_form.cn.yml
--'  6  31  /var/www/user_passport/app/controllers/sessions_controller.rb
--'  1  2  /var/www/sino_passport/app/controllers/sessions_controller.rb
--'  4  49  /var/www/user_passport/app/controllers/application_controller.rb
--'  7  27  /var/www/user_passport/app/controllers/application_controller.rb
--'  9  0  /var/www/user_passport/app/controllers/application_controller.rb
--'  1  0  /var/www/user_passport/app/controllers/application_controller.rb
--'  2  0  /var/www/user_passport/config/initializers/doorkeeper.rb
--'  1  0  /var/www/user_passport/Gemfile
--'  50  17  /var/www/user_passport/config/initializers/doorkeeper.rb
--'  48  0  /var/www/user_passport/config/initializers/doorkeeper.rb
--'  21  9  /var/www/lims_order/config/application.rb
--'  15  64  /var/www/lims_order/config/application.rb
--'  13  8  /var/www/lims_order/config/application.rb
--'  58  0  /var/www/lims_order/config/application.rb
--'  4  0  /var/www/lims_order/config/routes.rb
--'  27  2  /var/www/lims_order/config/routes.rb
--'  1  0  /var/www/lims_order/config/routes.rb
--'  22  2  /var/www/lims_order/config/environments/development.rb
--'  4  2  /var/www/lims_order/config/environments/test.rb
--'  28  26  /var/www/lims_order/config/environments/development.rb
--'  1  111  /var/www/seq_order/config/initializers/session_store.rb
+-'  2  0  ~/android/info/Rakefile
+-'  1  0  ~/android/info/Rakefile
+-'  1  0  ~/android/info/AndroidManifest.xml
+-'  16  0  ~/android/info/AndroidManifest.xml
+-'  115  111  ~/.bashrc
+-'  116  35  ~/.bashrc
+-'  114  4  ~/android/sdk/tools/android
+-'  1  0  ~/android/sdk/tools/android
+-'  111  0  ~/.bashrc
+-'  92  0  ~/.bashrc
+-'  1  0  ~/sdk/tools/android
+-'  21  0  /mnt/iso/光盘说明.TXT
+-'  1  0  /mnt/iso/光盘说明.TXT
+-'  1  0  ~/desktop/sequence_primers.csv
+-'  1  19  ~/clang/Makefile
+-'  6  11  ~/clang/Makefile
+-'  4  13  ~/clang/Makefile
+-'  5  7  ~/clang/Makefile
+-'  2  7  ~/clang/Makefile
+-'  6  7  ~/clang/myfirst.cpp
+-'  1  0  ~/clang/myfirst.cpp
+-'  7  15  ~/clang/myfirst.cpp
+-'  130  0  ~/uc.sql
+-'  18  0  ~/uc.sql
+-'  1  0  ~/uc.sql
+-'  1  0  ~/2013-11-11.sql
+-'  3328922  5  ~/293.sql
+-'  3329086  5  ~/293.sql
+-'  3329078  43  ~/293.sql
+-'  1  0  ~/293.sql
+-'  1  0  ~/desktop/synthesis_primers.csv
+-'  9  2  ~/clang/echo.c
+-'  1  0  ~/clang/hello.h
+-'  5  11  ~/xdot.sh
+-'  3  0  ~/xdot.sh
+-'  6  1  ~/xdot.sh
+-'  4  17  ~/xdot.sh
+-'  1  0  ~/xdot.sh
+-'  3  9817  ~/desktop/购物狂欢节-物价再回十年前-天猫Tmall.com-上天猫，就购了_files/index.js
+-'  1  0  ~/desktop/购物狂欢节-物价再回十年前-天猫Tmall.com-上天猫，就购了_files/index.js
+-'  3  9841  ~/desktop/tmall_files/index.js
+-'  1  0  ~/desktop/tmall_files/index.js
+-'  1  0  ~/desktop/egg.js
+-'  9  4  ~/desktop/egg.js
+-'  4  0  ~/desktop/egg.js
+-'  8  0  ~/desktop/jquery-2.0.3.min.js
+-'  23  41  ~/desktop/jquery-2.0.3.min.js
+-'  9  0  ~/desktop/jquery-2.0.3.min.js
+-'  30  8  ~/desktop/jquery-2.0.3.min.js
+-'  19  0  ~/desktop/jquery-2.0.3.min.js
+-'  20  2  ~/desktop/jquery-2.0.3.min.js
+-'  10  19  ~/desktop/jquery-2.0.3.min.js
+-'  4  0  ~/desktop/jquery-2.0.3.min.js
+-'  29  0  ~/desktop/jquery-2.0.3.min.js
+-'  1  0  ~/desktop/jquery-2.0.3.min.js
+-'  31  20  ~/desktop/jquery-2.0.3.min.js
+-'  1  0  ~/desktop/egg.js
+-'  9  4  ~/desktop/egg.js
+-'  4  0  ~/desktop/egg.js
+-'  8  0  ~/desktop/jquery-2.0.3.min.js
+-'  23  41  ~/desktop/jquery-2.0.3.min.js
+-'  9  0  ~/desktop/jquery-2.0.3.min.js
+-'  30  8  ~/desktop/jquery-2.0.3.min.js
+-'  19  0  ~/desktop/jquery-2.0.3.min.js
+-'  20  2  ~/desktop/jquery-2.0.3.min.js
+-'  10  19  ~/desktop/jquery-2.0.3.min.js
+-'  4  0  ~/desktop/jquery-2.0.3.min.js
+-'  29  0  ~/desktop/jquery-2.0.3.min.js
+-'  1  0  ~/desktop/jquery-2.0.3.min.js
+-'  31  20  ~/desktop/jquery-2.0.3.min.js
+-'  3  9841  ~/desktop/tmall_files/index.js
+-'  1  0  ~/desktop/tmall_files/index.js
+-'  1  0  ~/desktop/egg.js
+-'  9  4  ~/desktop/egg.js
+-'  4  0  ~/desktop/egg.js
+-'  8  0  ~/desktop/jquery-2.0.3.min.js
+-'  23  41  ~/desktop/jquery-2.0.3.min.js
+-'  9  0  ~/desktop/jquery-2.0.3.min.js
+-'  30  8  ~/desktop/jquery-2.0.3.min.js
+-'  19  0  ~/desktop/jquery-2.0.3.min.js
+-'  20  2  ~/desktop/jquery-2.0.3.min.js
+-'  10  19  ~/desktop/jquery-2.0.3.min.js
+-'  4  0  ~/desktop/jquery-2.0.3.min.js
+-'  29  0  ~/desktop/jquery-2.0.3.min.js
+-'  1  0  ~/desktop/jquery-2.0.3.min.js
+-'  31  20  ~/desktop/jquery-2.0.3.min.js
+-'  1  0  ~/desktop/egg.js
+-'  9  4  ~/desktop/egg.js
+-'  4  0  ~/desktop/egg.js
+-'  8  0  ~/desktop/jquery-2.0.3.min.js
+-'  23  41  ~/desktop/jquery-2.0.3.min.js
+-'  9  0  ~/desktop/jquery-2.0.3.min.js
+-'  30  8  ~/desktop/jquery-2.0.3.min.js
+-'  19  0  ~/desktop/jquery-2.0.3.min.js
+-'  20  2  ~/desktop/jquery-2.0.3.min.js
+-'  10  19  ~/desktop/jquery-2.0.3.min.js
+-'  4  0  ~/desktop/jquery-2.0.3.min.js
+-'  29  0  ~/desktop/jquery-2.0.3.min.js
+-'  1  0  ~/desktop/jquery-2.0.3.min.js
 
 # 缓冲区列表:
-%/var/www/seq_order/Rakefile	7	2
+%~/android/info/Rakefile	2	0
 
 # 文件内的标记历史记录 (从新到旧):
 
-> /var/www/seq_order/Rakefile
-	"	7	2
-	^	7	3
-	.	7	2
-	+	7	2
+> ~/android/info/Rakefile
+	"	2	0
