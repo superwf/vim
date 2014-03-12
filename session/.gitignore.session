@@ -10,7 +10,7 @@ vmap ]% ]%m'gv``
 vmap a% [%v]%
 nmap gx <Plug>NetrwBrowseX
 noremap <silent> n :call g:vimim_search_next()n
-nnoremap <silent> <Plug>NetrwBrowseX :call netrw#NetrwBrowseX(expand("<cWORD>"),0)
+nnoremap <silent> <Plug>NetrwBrowseX :call netrw#NetrwBrowseX(expand("<cfile>"),0)
 nmap <silent> <Plug>VLToggle :let g:VeryLiteral = !g:VeryLiteral| echo "VeryLiteral " . (g:VeryLiteral ? "On" : "Off")
 vmap <kMultiply> *
 map <F7> :make
@@ -30,12 +30,10 @@ set helplang=cn
 set history=50
 set hlsearch
 set incsearch
-set isident=@,48-57,_,192-255,$
-set nomodeline
 set mouse=a
 set printoptions=paper:a4
 set ruler
-set runtimepath=~/.vim,/var/lib/vim/addons,/usr/share/vim/vimfiles,/usr/share/vim/vim73,/usr/share/vim/vimfiles/after,/var/lib/vim/addons/after,~/.vim/after
+set runtimepath=~/.vim,~/.vim/bundle/syntastic,/var/lib/vim/addons,/usr/share/vim/vimfiles,/usr/share/vim/vim74,/usr/share/vim/vimfiles/after,/var/lib/vim/addons/after,~/.vim/after
 set shiftwidth=2
 set showcmd
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
@@ -44,14 +42,13 @@ set viminfo='200,%,!,<50,s10,h,rA,rB,/50,:50
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd /var/www/oa
+cd ~/.vim
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +27 inc/oa_config.php
 badd +0 .gitignore
-args inc/oa_config.php
+args .gitignore
 edit .gitignore
 set splitbelow splitright
 set nosplitbelow
@@ -120,7 +117,7 @@ setlocal nolisp
 setlocal nolist
 setlocal makeprg=
 setlocal matchpairs=(:),{:},[:]
-setlocal nomodeline
+setlocal modeline
 setlocal modifiable
 setlocal nrformats=octal,hex
 set number
@@ -156,17 +153,18 @@ setlocal tags=
 setlocal textwidth=0
 setlocal thesaurus=
 setlocal noundofile
+setlocal undolevels=-123456
 setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 3 - ((2 * winheight(0) + 6) / 13)
+let s:l = 1 - ((0 * winheight(0) + 7) / 15)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-3
-normal! 04l
+1
+normal! 0
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
