@@ -1,8 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_cnt =8
 let g:netrw_dirhist_1='/home/wangfan/erlang/synrc-n2o-fd2e507/src'
 let g:netrw_dirhist_2='/home/wangfan/erlang/webmachine/gogo/templates'
 let g:netrw_dirhist_3='/home/wangfan/erlang/n2o_sample/include'
 let g:netrw_dirhist_4='/etc/nginx/sites-enabled'
 let g:netrw_dirhist_5='/var/www/checkout_flow/app/models'
 let g:netrw_dirhist_6='/home/wangfan/nodejs/career-tree'
+let g:netrw_dirhist_7='/home/wangfan/nodejs/prisonerGym'
+let g:netrw_dirhist_8='/home/wangfan/nodejs/convict-conditioning'
