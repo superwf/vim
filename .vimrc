@@ -94,7 +94,7 @@ map <F3> :up<ENTER>
 "map <F2> :up<ENTER>
 map <F2> :NERDTree<ENTER>:set number<ENTER>
 map <F4> "*p
-map <F5> :mksession ~/.vim/session/
+map <F5> :mksession! ~/.vim/session/
 map <F6> :source ~/.vim/session/
 map <F7> :make<CR>
 ab =b =begin
@@ -109,7 +109,7 @@ set fileformats=unix,dos
 set viminfo='200,%,!,<50,s10,h,rA,rB,/50,:50
 "au VimLeave * mksession! ~/.vim/session/%:t.session
 "au VimLeave * wviminfo! ~/.vim/session/%:t.viminfo
-let vimim_cloud='qq,sogou,google'
+"let vimim_cloud='qq,sogou,google'
 set noignorecase
 "let g:vimim_cloud='baidu.static'
 "let g:vimim_mode='static'
