@@ -90,13 +90,12 @@ command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
 	 	\ | wincmd p | diffthis
 
 set number
+"map <F2> :NERDTree<ENTER>:set number<ENTER>
+map <F2> gT
 map <F3> :up<ENTER>
-"map <F2> :up<ENTER>
-map <F2> :NERDTree<ENTER>:set number<ENTER>
-map <F4> "*p
-map <F5> :mksession! ~/.vim/session/
-map <F6> :source ~/.vim/session/
-map <F7> :make<CR>
+map <F4> gt
+map <F7> :source ~/.vim/session/work.session
+map <F8> :mksession! ~/.vim/session/work.session
 ab =b =begin
 ab =e =end
 set shiftwidth=2
@@ -118,3 +117,9 @@ set noignorecase
 "let g:vimim_cloud_plugin="dll:/home/wangfan/.vim/plugin/mycloud/libvimim.so"
 "let g:vimim_shuangpin='sougou'
 execute pathogen#infect()
+"set foldmethod=syntax
+"set foldnestmax=1
+"let javaScript_fold=1
+"let html_fold=1
+
+set path+=./js,./myth,./view
