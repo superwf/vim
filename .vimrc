@@ -103,7 +103,8 @@ set tabstop=2
 "set enc=utf-8,latin1
 set fencs=utf-8,gbk,ucs-bom,gb18030,euc-jp,gb2312,cp936
 set et
-color default
+color elflord
+"color ron
 set fileformats=unix,dos
 set viminfo='200,%,!,<50,s10,h,rA,rB,/50,:50
 "au VimLeave * mksession! ~/.vim/session/%:t.session
