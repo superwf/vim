@@ -94,7 +94,7 @@ set number
 map <F2> gT
 map <F3> :up<ENTER>
 map <F4> gt
-map <F5> "+p
+"map <F5> "+p
 map <F6> :TagbarToggle<CR>
 map <F7> :source ~/.vim/session/work.session
 map <F8> :mksession! ~/.vim/session/work.session
@@ -129,3 +129,9 @@ set path+=./js,./myth,./view,./
 set suffixesadd+=.js
 set dict=./tags
 set complete+=k
+
+inoremap ( ()<ESC>i
+inoremap [ []<ESC>i
+inoremap { {}<ESC>i
+inoremap < <><ESC>i
+inoremap " ""<ESC>i
