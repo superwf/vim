@@ -119,7 +119,6 @@ set noignorecase
 "let g:vimim_map='c-bslash'
 "let g:vimim_cloud_plugin="dll:/home/wangfan/.vim/plugin/mycloud/libvimim.so"
 "let g:vimim_shuangpin='sougou'
-execute pathogen#infect()
 "set foldmethod=syntax
 "set foldnestmax=1
 "let javaScript_fold=1
@@ -130,8 +129,17 @@ set suffixesadd+=.js
 set dict=./tags
 set complete+=k
 
-inoremap ( ()<ESC>i
-inoremap [ []<ESC>i
-inoremap { {}<ESC>i
-inoremap < <><ESC>i
-inoremap " ""<ESC>i
+inoremap ( ()
+inoremap [ []
+inoremap { {}
+inoremap < <>
+inoremap " ""
+
+" set the runtime path to include Vundle and initialize
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'editorconfig/editorconfig-vim'
+call vundle#end()
+filetype plugin indent on
