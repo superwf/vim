@@ -1,30 +1,9 @@
-" An example for a vimrc file.
-"
-" Maintainer:	Bram Moolenaar <Bram@vim.org>
-" Last change:	2006 Nov 16
-"
-" To use it, copy it to
-"     for Unix and OS/2:  ~/.vimrc
-"	      for Amiga:  s:.vimrc
-"  for MS-DOS and Win32:  $VIM\_vimrc
-"	    for OpenVMS:  sys$login:.vimrc
-" When started as "evim", evim.vim will already have done these settings.
-if v:progname =~? "evim"
-  finish
-endif
-
-" Use Vim settings, rather then Vi settings (much better!).
-" This must be first, because it changes other options as a side effect.
 set nocompatible
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
-if has("vms")
-  set nobackup		" do not keep a backup file, use versions instead
-else
-  "set backup		" keep a backup file
-endif
+set nobackup		" do not keep a backup file, use versions instead
 set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
@@ -98,8 +77,6 @@ map <F4> gt
 map <F6> :TagbarToggle<CR>
 map <F7> :source ~/.vim/session/work.session
 map <F8> :mksession! ~/.vim/session/work.session
-ab =b =begin
-ab =e =end
 set shiftwidth=2
 set tabstop=2
 "set enc=utf-8,latin1
@@ -107,7 +84,7 @@ set fencs=utf-8,gbk,ucs-bom,gb18030,euc-jp,gb2312,cp936
 set et
 color elflord
 "color ron
-set fileformats=unix,dos
+set fileformats=unix
 set viminfo='200,%,!,<50,s10,h,rA,rB,/50,:50
 "au VimLeave * mksession! ~/.vim/session/%:t.session
 "au VimLeave * wviminfo! ~/.vim/session/%:t.viminfo
@@ -129,11 +106,10 @@ set suffixesadd+=.js
 set dict=./tags
 set complete+=k
 
-inoremap ( ()
-inoremap [ []
-inoremap { {}
-inoremap < <>
-inoremap " ""
+"inoremap ( ()
+"inoremap [ []
+"inoremap { {}
+"inoremap < <>
 
 " set the runtime path to include Vundle and initialize
 filetype off
