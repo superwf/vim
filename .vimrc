@@ -119,7 +119,11 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'isRuslan/vim-es6'
 Plugin 'SirVer/ultisnips'
+Plugin 'tpope/vim-fugitive'
 Plugin 'honza/vim-snippets'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-surround'
+Plugin 'scrooloose/syntastic'
 call vundle#end()
 filetype plugin indent on
 
@@ -128,3 +132,12 @@ let g:UltiSnipsExpandTrigger="<tab><tab>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
