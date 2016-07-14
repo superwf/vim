@@ -9,9 +9,6 @@ set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
 
-" For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
-" let &guioptions = substitute(&guioptions, "t", "", "g")
-
 " Don't use Ex mode, use Q for formatting
 map Q gq
 
@@ -25,44 +22,6 @@ if &t_Co > 2 || has("gui_running")
   set hlsearch
 endif
 
-" Only do this part when compiled with support for autocommands.
-if has("autocmd")
-
-  " Enable file type detection.
-  " Use the default filetype settings, so that mail gets 'tw' set to 72,
-  " 'cindent' is on in C files, etc.
-  " Also load indent files, to automatically do language-dependent indenting.
-  filetype plugin indent on
-
-  " Put these in an autocmd group, so that we can delete them easily.
-  augroup vimrcEx
-  au!
-
-  " For all text files set 'textwidth' to 78 characters.
-  autocmd FileType text setlocal textwidth=78
-
-	" set for ruby @ and @@ viriabal
-	autocmd FileType ruby setl isk=@-@,@,48-57,128-167,224-235,_
-
-  " When editing a file, always jump to the last known cursor position.
-  " Don't do it when the position is invalid or when inside an event handler
-  " (happens when dropping a file on gvim).
-  autocmd BufReadPost *
-    \ if line("'\"") > 0 && line("'\"") <= line("$") |
-    \   exe "normal! g`\"" |
-    \ endif
-
-  " remove all the space after each line
-	"autocmd BufWrite * :%s/\s*$//
-
-  augroup END
-
-else
-
-  set autoindent		" always set autoindenting on
-
-endif " has("autocmd")
-
 " Convenient command to see the difference between the current buffer and the
 " file it was loaded from, thus the changes you made.
 command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
@@ -73,13 +32,13 @@ set number
 map <F2> gT
 map <F3> :up<ENTER>
 map <F4> gt
-"map <F5> "+p
-map <F6> :TagbarToggle<CR>
+map <F5> :SyntasticCheck<ENTER>
+map <F6> :lnext<ENTER>
 map <F7> :source ~/.vim/session/work.session
 map <F8> :mksession! ~/.vim/session/work.session
 set shiftwidth=2
 set tabstop=2
-"set enc=utf-8,latin1
+set enc=utf-8
 set fencs=utf-8,gbk,ucs-bom,gb18030,euc-jp,gb2312,cp936
 set et
 color elflord
@@ -111,6 +70,11 @@ set complete+=k
 "inoremap { {}
 "inoremap < <>
 
+" auto insert , to end of line
+nmap <c-j> <ESC>mzA,<ESC>`z
+nmap <c-k> :lnext<ENTER>
+nmap <c-l> :lprevious<ENTER>
+
 " set the runtime path to include Vundle and initialize
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -129,19 +93,19 @@ call vundle#end()
 filetype plugin indent on
 
 " for snippets
-let g:UltiSnipsExpandTrigger="<tab><tab>"
+let g:UltiSnipsExpandTrigger="<c-h>"
 
 " If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
+" let g:UltiSnipsEditSplit="vertical"
 
 " for syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_javascript_checker = 1
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_javascript_eslint_exec = 'eslint'
+let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 0
+" let g:syntastic_check_on_open = 0
+" let g:syntastic_check_on_wq = 0
